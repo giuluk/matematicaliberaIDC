@@ -1,0 +1,328 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%        Matematica dolce
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright 2016-2020 Daniele Zambelli
+%------------------------------
+%% intestazioni.tex
+%------------------------------
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is 
+% Dimitrios Vrettos - d.vrettos@gmail.com
+%
+% This work consists of the files:
+%  -  algebra1_light_1ed.tex (this file)
+%  -  Makefile
+%  -  README
+%  -  the part of code of the files under chap/, img/  and lbr/ directories
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%========================
+% Classe del documento
+%========================
+
+% % tratti da Internet
+% \ifx\pdfoutput\undefined                  % compilazione htlatex
+% \documentclass{memoir}
+% % \usepackage{graphicx}
+% % \DeclareGraphicsExtensions{.png, .gif, .jpg} % dà errore
+% \newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
+% \newcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
+% % \newcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink} % dà errore
+% \else                                     % compilazione pdflatex
+% \documentclass[10pt,a4paper,openright]{\magdir matsweetmem}
+% % \usepackage[pdftex]{graphicx}
+% % \DeclareGraphicsExtensions{.pdf,.png,.jpg} % dà errore
+% \RequirePackage[colorlinks,hyperindex,pagebackref]{hyperref}
+% % \usepackage[colorlinks, hypertexnames=false]{hyperref} % originale di m.d.
+% \fi
+% 
+% \ifdefined\HCode
+%    \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
+% \fi 
+
+% fusione mia
+\ifdefined\HCode                          % compilazione htlatex
+  \documentclass{memoir}
+%   \documentclass{\magdir matsweetmem}
+  \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
+  % \usepackage{graphicx}
+  % \DeclareGraphicsExtensions{.png, .gif, .jpg} % dà errore
+  \newcommand{\href}[2]{\Link[#1]{}{} #2 \EndLink}
+  \newcommand{\hypertarget}[2]{\Link[]{}{#1} #2 \EndLink}
+  % \newcommand{\hyperlink}[2]{\Link[]{#1}{} #2 \EndLink} % dà errore
+\else                                     % compilazione pdflatex
+  \documentclass[a4paper]{\magdir matsweetmem}
+%   \documentclass[10pt,a4paper,openright]{\magdir matsweetmem}
+  % \usepackage[pdftex]{graphicx}
+  % \DeclareGraphicsExtensions{.pdf,.png,.jpg} % dà errore
+  \RequirePackage[colorlinks,hyperindex,pagebackref]{hyperref}
+  % \usepackage[colorlinks, hypertexnames=false]{hyperref} %originale di m.d.
+  %========================
+  % Per l'accessibilità
+  %========================
+  % Il seguente pacchetto dà errore se chiamato con make4ht:
+  \usepackage[accsupp]{axessibility}  % 349      Undefined control sequence.
+  % \usepackage{microtype}
+  % \DisableLigatures{encoding = *, family = *}
+
+%   \usepackage{fourier}  % in goniometria è definito \wideparen
+  % % % buono \widearc, ma è incompatibile con \overrightarrow
+  % % Ho estratto da fourier.sty le seguenti 4 righe e sembra funzionare!
+  % \DeclareFontEncoding{FMX}{}{}
+  % \DeclareFontSubstitution{FMX}{futm}{m}{n}
+  % \DeclareSymbolFont{largesymbols}{FMX}{futm}{m}{n}
+\fi
+
+%--------------------- original
+% \documentclass[10pt,a4paper,openright]{\magdir matsweetmem}
+% \documentclass{\magdir matsweetmem}
+% Per la versione in scala di grigio commentare la precedente e
+% decommentare la riga seguente
+% \documentclass[10pt,a4paper,openright,gray]{\magdir matsweetmem}
+%---------------------
+
+% \usepackage{framed}     % Per fare delle prove
+% \usepackage{xcolor}     % Per fare delle prove
+% \usepackage{lipsum}     % Per fare delle prove
+% % \usepackage{tcolorbox}     % Per fare delle prove
+% \usepackage{blindtext}%    % Per fare delle prove
+% \usepackage[theorems,breakable]{tcolorbox}%    % Per fare delle prove
+
+
+%========================
+%  Lingua & codifica
+%========================
+\PassOptionsToPackage{monochrome}{xcolor}
+% \usepackage[monochrome]{color}
+\usepackage[T1]{fontenc} 
+\usepackage{textcomp} 	
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel} 
+\usepackage{icomma} % per la virgola come separatore decimale in modo math
+\usepackage{quoting}        % per i testi citati
+\quotingsetup{font=small}
+%========================
+% Font
+%========================
+\renewcommand{\rmdefault}{ppl}
+\usepackage{mathpazo}
+%========================
+% Tipografia
+%========================
+\usepackage[bindingoffset=6mm]{geometry}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{emptypage}
+\usepackage{nonumonpart}
+% \usepackage[inline]{enumitem}  % Command \enumerate* already defined.
+% TODO: eliminare la definizione di \enumerate* per poter usare le
+% inline liste
+\usepackage{enumitem} % usare questo anche per le liste compatte 
+%                           \begin{enumerate} [nosep] o [noitemsep]
+% \usepackage{paralist} % va in conflitto con il pacchetto precedente
+\usepackage{tabto}
+\usepackage{microtype}
+%========================
+% Tabelle aggiunto da claudio
+%========================
+\usepackage{threeparttable}
+%========================
+% Matematica I
+%========================
+\usepackage[scaled=.95]{helvet}
+% % \usepackage{eulervm} % eulervm va in conflitto con fourier per: 
+% % \overrightarrow{} 
+% % dov'è che ho usato questo pacchetto? per fare che cosa?
+% \usepackage{fourier}  % in goniometria è definito \wideparen
+% % % % buono \widearc, ma è incompatibile con \overrightarrow
+% % % Ho estratto da fourier.sty le seguenti 4 righe e sembra funzionare!
+% % \DeclareFontEncoding{FMX}{}{}
+% % \DeclareFontSubstitution{FMX}{futm}{m}{n}
+% % \DeclareSymbolFont{largesymbols}{FMX}{futm}{m}{n}
+\DeclareMathAccent{\widearc}{\mathord}{largesymbols}{216}% per \widearc 
+\usepackage[e]{esvect} % per i vettori
+\usepackage{ushort} % per lesottolineature semplici o doppie
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{cancel}
+% \usepackage[]{units} Ridefinito \unit mi sembra più semplice!
+\usepackage[np,noaddmissingzero,autolanguage]{numprint}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % sottolineature:
+%   \uline, \uuline, \uwave, \sout, \xout, \dashuline, \dotuline
+%   \renewcommand{\ULdepth}{1.8pt}
+%\usepackage{eurosym}  % per il simbolo €
+
+
+% \RequirePackage{tcolorbox}      % Per fare delle prove sui theorem
+\usepackage{tcolorbox}      % Per fare delle prove sui theorem
+\tcbuselibrary{most, theorems}    % Per fare delle prove sui theorem
+\tcbuselibrary{listingsutf8}
+
+%========================
+% Grafica
+%========================
+% \usepackage[pdftex]{graphicx}
+% \usepackage{tcolorbox}      % Per fare delle prove sui theorem
+% \tcbuselibrary{theorems}    % Per fare delle prove sui theorem
+% \usepackage{cleveref}       % Per fare delle prove sui theorem
+\usepackage{rotating}
+\usepackage{shadow}
+\usepackage{fancybox} 
+% \usepackage{empheq} inutile: sostituito da \boxed
+\usepackage{framed}
+\usepackage{wrapfig}
+%========================
+% pgf & TikZ
+%========================
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{patchplots}
+\pgfplotsset{compat=1.8}
+% \usepackage{tkz-euclide}            % dà errore con make4ht
+\usepackage{tkz-fct}                % dà errore con make4ht
+% \usepackage{circuitikz}
+%\usetikzlibrary{circuits}            % dà errore con make4ht
+\usepackage{tikz-qtree} % aggiunto da daniele
+% \usetkzobj{all}
+% \usepackage{qtree} % per funzionitopologia
+
+%========================
+% Librerie TikZ
+%========================
+\usetikzlibrary{
+  arrows,%
+  arrows.meta,
+  through,
+  automata,%
+  backgrounds,%
+  calc,%
+  decorations.markings,%
+  decorations.shapes,%
+  decorations.text,% 
+  decorations.pathreplacing,%
+  fit,%
+  matrix,%
+  mindmap,%
+  patterns,%
+  positioning,%
+  intersections,%aggiunto da claudio
+  shapes,%
+  shapes.geometric,
+%  spline % linea curva per una lista di punti (differenziazione_grafici)
+}
+%========================
+% Simboli
+%========================
+\usepackage{marvosym}
+\usepackage{eurosym}
+\usepackage{pifont}
+% \usepackage{hiero}
+%========================
+% Matematica II               ????????????????????????????
+%========================
+\usepackage{\magdir matsweet}
+%\usepackage{\magdir shadethm}
+%========================
+% Collegamenti
+%========================
+% \usepackage[colorlinks, hypertexnames=false]{hyperref} già nell'if iniziale
+\usepackage{bookmark}
+%========================
+% Per il coding
+%========================
+\usepackage{listings} 
+\lstset{basicstyle=\small, language=Python, showstringspaces=false}
+\lstset{frame=trbl, frameround=ftff}
+
+%========================
+% Per la geometria
+%========================
+% \usepackage{textgreek}
+%========================
+% Personalizzazioni
+%========================
+% \input{lbr/variabili}
+% \graphicspath{{img/}}
+\setsecnumdepth{subsection} 
+\maxtocdepth{subsection}
+\setlength{\cftpartnumwidth}{2.25em}
+% \setlength{\shadeboxsep}{5pt}            % danno errore con make4ht
+% \setlength{\shadeboxrule}{.4pt} 
+% \setlength{\shadedtextwidth}{\textwidth}
+% \addtolength{\shadedtextwidth}{-2\shadeboxsep}
+% \addtolength{\shadedtextwidth}{-2\shadeboxrule}
+% \setlength{\shadeleftshift}{0pt}
+% \setlength{\shaderightshift}{0pt}
+\linespread{1.05}
+\captionnamefont{\small\scshape}
+\captiontitlefont{\small}
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+\definecolor{grigio80}{gray}{0.8}
+\definecolor{grigio70}{gray}{0.7}
+\hypersetup{%
+  pdffitwindow=true,%
+  linkcolor=RoyalBlue,%	
+%   linkcolor=Black,%	
+  linktocpage=true,%
+  filecolor=black,%
+  urlcolor=RoyalBlue,%
+%   urlcolor=Black,%
+  plainpages=false,%
+  pdftitle={\pdftitolo, \edizione \tipo},%
+  pdfauthor=Dimitrios Vrettos,%
+  pdfdisplaydoctitle=true%
+}
+\bookmarksetup{startatroot}
+%======================== o l'una o l'altra
+% Personalizzazione per matematica dolce
+% per: postulato, proposizione, parte, capitolo, numnameref, tggg
+% inacessibleblock
+% \input{lbr/definizioni}
+%========================
+% Caratteri sans serif
+%========================
+% \renewcommand{\familydefault}{\sfdefault}
+
+
+% ------------------------------------
+% Peccato che non funzioni:
+\usepackage{fancyhdr}
+%--------------------------------------------
+% Altra soluzione trovata guitex e modificata
+\pagestyle{fancy}
+\fancyhf{}
+% % \setlength{\headheight}{15pt}      % altezza dell'head
+% % \fancyfoot[C]{\thepage}            % numero in basso centrato
+% \renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}} % con numero
+% \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+% % \renewcommand{\chaptermark}[1]{\markboth{#1}{}}            % senza numero
+% % \renewcommand{\sectionmark}[1]{\markright{#1}}
+% % --- Dispari destra, Pari sinistra con numeri di pagina in minuscolo.
+% \fancyhead[RO]{{\footnotesize \nouppercase{\rightmark} 
+%                \qquad \oldstylenums{\thepage}}}
+% \fancyhead[LE]{{\footnotesize \oldstylenums{\thepage}
+%                \qquad \nouppercase{\leftmark}}}
+% % % --- Dispari sinistra, Pari destra
+% % \fancyhead[RO, LE]{\thepage}
+% % \fancyhead[LO]{\nouppercase{\slshape\rightmark}} 
+% % \fancyhead[RE]{\nouppercase{\slshape\leftmark}}
+% % % --- Centrato
+% % \fancyhead[RO, LE]{\thepage}
+% % \fancyhead[CO]{\nouppercase{\slshape\rightmark}} 
+% % \fancyhead[CE]{\nouppercase{\slshape\leftmark}}
+% % % --- Lunghezza della linea di separazione
+% % \renewcommand{\headrulewidth}{0pt} % senza linea di separazione
+% % \fancyheadoffset[RE,LO]{-0.1\textwidth} % lunghezza della testatina

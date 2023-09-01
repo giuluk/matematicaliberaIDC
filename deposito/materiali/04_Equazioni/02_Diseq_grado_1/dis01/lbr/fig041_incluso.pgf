@@ -1,0 +1,11 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Studio dei segni di una frazione
+%%%%
+ 
+\begin{tikzpicture}[smooth]
+
+\draw[fill, blue, thick] (0, 0) circle (2pt);
+
+\end{tikzpicture}

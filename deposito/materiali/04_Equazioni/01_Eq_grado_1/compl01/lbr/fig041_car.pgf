@@ -1,0 +1,11 @@
+% (c) 2012 Dimitrios Vrettos - d.vrettos@gmail.com
+\begin{tikzpicture}[font=\small,x=5mm, y=5mm]
+
+\draw[help lines,orange, dotted] (-3,-3) grid [step=1](5,5);
+
+\begin{scope}[thick,->]
+\draw (0,-3) -- (0,5);
+\draw (-3,0) -- (5,0);
+\end{scope}
+
+\end{tikzpicture}

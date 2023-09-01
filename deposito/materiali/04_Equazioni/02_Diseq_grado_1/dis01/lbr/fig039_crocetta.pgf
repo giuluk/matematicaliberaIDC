@@ -1,0 +1,12 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Studio dei segni di una frazione
+%%%%
+ 
+\begin{tikzpicture}[smooth]
+
+\draw ( -.1,  -.1) -- (+.1, +.1) 
+      ( -.1,  +.1) -- (+.1, -.1);
+
+\end{tikzpicture}

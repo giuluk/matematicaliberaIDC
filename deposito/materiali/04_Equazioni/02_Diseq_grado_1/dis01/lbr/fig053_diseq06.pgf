@@ -1,0 +1,16 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Intervallo ]oo; 2/9[ 
+%%%%
+ 
+\begin{tikzpicture}[x=1.5mm, y=1.5mm, smooth]
+
+% \clip (-7.5, -5.5) rectangle (10.9, 10.9);
+
+\coordinate (a) at (-10, 0);
+\coordinate (b) at (+10, 0);
+
+\input{\magdir assiepiani/asse10x.pgf}
+
+\end{tikzpicture}

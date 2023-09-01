@@ -1,0 +1,142 @@
+
+\begin{esempio}{}{}
+Eseguire la divisione tra i polinomi~\(A(x)=3x^4+5x-4x^3-1\) 
+e~\(B(x)=3x^2-1\).
+
+Prima di eseguire l'algoritmo dobbiamo sempre controllare che:
+\begin{itemize}[nosep]
+\item i polinomi siano ordinati secondo le potenze decrescenti della 
+variabile, in questo caso la~\(x\) poiché ciò
+non è vero, riscriviamo~\(A(x)\) ordinato:~\(A(x)=3x^4-4x^3+5x-1\)
+\item dividendo e divisore siano in forma completa, cioè abbiano i termini 
+con tutti i gradi; nel nostro esempio, i due polinomi non sono in
+forma completa, quindi inseriamo i termini mancanti ponendo~0 come 
+coefficiente delle potenze mancanti:
+\[A(x)=3x^4-4x^3+0x^2+5x-1; \quad B(x)=3x^2+0x-1\]
+\end{itemize}
+
+% \newpage %-----------------------------------------
+
+I passi da eseguire sono i seguenti:
+
+\def \primo{.49}
+\def \secondo{.49}
+
+\begin{enumerate}[nosep]
+\item ~
+
+\vspace{-1em}
+\affiancati{\primo}{\secondo}{
+Disponiamo i polinomi secondo il seguente schema, del tutto simile a 
+quello usato per la divisione tra numeri.
+}{
+\immagine[.8]{}{\divpola}
+}
+
+% \newpage %-----------------------------------------
+
+\item ~
+
+\vspace{-1.6em}
+\affiancati{\primo}{\secondo}{
+Dividiamo il primo termine del dividendo per il primo termine del divisore, 
+otteniamo~\(x^2\) che è il primo termine del quoziente;
+esso va riportato nello spazio dedicato al quoziente.
+}{
+\immagine[.8]{}{\divpolb}
+}
+\item ~
+
+\vspace{-.85em}
+\affiancati{\primo}{\secondo}{
+Moltiplichiamo il primo termine ottenuto 
+per tutti i termini del divisore e 
+trascriviamo il risultato del prodotto sotto il dividendo,
+avendo cura, per essere facilitati nel calcolo, di:
+\begin{itemize}[nosep]
+\item incolonnare i termini con lo stesso grado, ossia scrivere i risultati 
+del prodotto in ordine da sinistra verso destra;
+\item cambiare tutti i segni ottenuti, in questo modo risulta più pratico 
+eseguire la somma algebrica dei polinomi invece della sottrazione.\\
+\end{itemize}
+}{
+\immagine[.8]{}{\divpolc}
+}
+\item ~
+
+\vspace{-.8em}
+\affiancati{\primo}{\secondo}{
+Sommiamo il dividendo con il polinomio sottostante e riportiamo il risultato 
+in un'altra riga. Questo polinomio si chiama primo resto parziale.
+Notiamo che ha grado~\(3\), maggiore del grado~\(2\) del divisore, pertanto 
+la  divisione va continuata.\\
+}{
+\immagine[.8]{}{\divpold}
+}
+\item ~
+
+\vspace{-.8em}
+\affiancati{\primo}{\secondo}{
+Ripetiamo il procedimento tra il resto parziale ottenuto, 
+\(-4x^3+x^2+5x-1\) e il divisore~\(3x^2+0x-1\). Dividiamo il primo 
+termine  del resto che è~\(-4x^3\) per il primo termine del divisore che 
+è~\(3x^2\). 
+Otteniamo~\(-{\dfrac{4}{3}}x\) che è il secondo termine del quoziente.
+\\[18mm]
+}{
+\immagine[.8]{}{\divpole}
+}
+\item ~
+
+\vspace{-4em}
+\affiancati{\primo}{\secondo}{
+Proseguiamo moltiplicando~\(-{\frac{4}{3}}x\) per~\(B(x)\), riportiamo il 
+risultato del prodotto, con segno opposto, sotto i
+termini del primo resto parziale e addizioniamo i due polinomi.
+}{
+\immagine[.8]{}{\divpolf}
+}
+
+\newpage %-----------------------------------------------
+
+\item ~
+
+\vspace*{-4em}
+\affiancati{\primo}{\secondo}{
+Possiamo ripetere per l'ultima volta il procedimento precedente tra il 
+resto parziale~\(R_{p}(x)=x^2+\dfrac{11}{3}x-1\) e
+il divisore~\(B(x)\) in quanto hanno lo stesso grado. Dividendo il 
+termine di grado maggiore di~\(R_{p}(x)\), che è~\(x^2\),
+per il termine di grado maggiore di~\(B(x)\) che è~\(3x^2\) si 
+ottiene~\(\dfrac{1}{3}\) che è il terzo termine del polinomio quoziente.
+}{
+\vspace*{1.3em}
+\immagine[.8]{}{\divpolg}
+}
+\end{enumerate}
+
+Non possiamo più ripetere l'algoritmo poiché il resto ottenuto ha grado 
+minore del grado del divisore.
+
+In conclusione~\(A(x):B(x)\) ha 
+quoziente~\(Q(x)=x^2-\dfrac{4}{3}x+\dfrac{1}{3}\) e 
+resto~\(R(x)=+{\dfrac{11}{3}}x-\dfrac{2}{3}\).
+
+\paragraph{Verifica}
+Verifichiamo se abbiamo svolto correttamente i calcoli; dovrebbe risultare, 
+come detto sopra: \(Q(x)\cdot B(x)+R(x) = A(x)\).
+\begin{equation*}
+\begin{split}
+Q(x)\cdot B(x)+R(x) &= 
+\tonda{3x^2-1}\tonda{x^2-\dfrac{4}{3}x+\dfrac{1}{3}}+
+\dfrac{11}{3}x-\dfrac{2}{3} =\\ 
+&=3x^4-4x^3+x^2-x^2+\dfrac{4}{3}x-
+  \dfrac{1}{3}+\dfrac{11}{3}x-\dfrac{2}{3}=\\
+&= 3x^4-4x^3+\dfrac{15}{3}x-\dfrac{3}{3}
+= 3x^4-4x^3+5x-1 = A(x).
+\end{split}
+\end{equation*}
+I polinomi~\(Q(x)\) e~\(R(x)\) soddisfano quindi le nostre richieste. 
+Ma sono unici? È sempre possibile trovarli? 
+A queste domande risponde il seguente teorema.
+\end{esempio}

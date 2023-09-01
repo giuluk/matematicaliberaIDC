@@ -1,0 +1,300 @@
+% (c) 2017 Daniele Zambelli - daniele.zambelli@gmail.com
+% (c) 2012 Dimitrios Vrettos - d.vrettos@gmail.com
+% 
+% Tutti i grafici per il capitolo interi.tex
+% 
+
+\def \poscolor{blue!70!black}
+\def \negcolor{red!70!black}
+
+\newcommand{\everest}{
+  \disegno{
+    % Disegna Everest
+    \filldraw[fill=gray!70, draw=black] 
+      (0,0) -- (4mm,7mm) -- (10mm,14mm) -- (13mm,16mm) -- 
+      (15mm,19mm) -- (17mm,17mm) -- (19mm,16.5mm) -- (24mm,0);
+    % Disegna Fossa delle Marianne
+    \filldraw[fill=blue!70, draw=black]
+      (28mm, 0) -- (31mm, -6mm) -- (35mm, -8mm) -- (37mm, -15mm) -- 
+      (42mm, -20mm) -- (49mm, -21mm) -- (51mm, -17mm) -- 
+      (52mm, -5mm) -- (55mm, 0);
+    % Disegna il livello del mare 
+    \draw[thick] (-5mm,0) -- (60mm,0);
+    \begin{scope}[font=\scriptsize]
+      % Posiziona altezze
+      \node[left] (0)at (-5mm,0) {$0\munit{m}$};
+      \node [above](everest) at (15mm,19mm) {$+8\,855\munit{m}$};
+      \node [below](marianne) at (49mm,-21mm) {$-10\,916\munit{m}$};
+      % Posiziona etichette
+      \node (testo1) at (44mm,9.5mm) {Monte Everest};
+      \node (testo2) at (12mm,-5mm) {Livello  del mare};
+      \node (testo3) at (12mm,-12mm) {Fossa delle Marianne};
+    \end{scope}
+    % Disegna frecce
+    \draw[<-,red ] (everest) .. controls +(right:10mm) and +(up:10mm) .. 
+      node[]{} (testo1);
+    \draw[<-, blue](0)..controls +(down:5mm) and +(left:19mm)..
+      node[]{} (testo2);
+    \draw[<-, brown](marianne)..controls +(left:10mm) and +(down:13mm)..
+      node[]{} (testo3);
+  }
+}
+
+\newcommand{\asseint}[2]{
+  \def \minn{#1}
+  \def \maxn{#2}
+  \asseo{\minn - .5}{\maxn + .5}{0}{\dots}
+  \draw (\minn - .5, 0) node [below] {\dots};
+  \foreach \n in {\minn, ..., 0}{
+    \draw (\n, 0.1) -- (\n, -0.1) node [below] {\footnotesize $\n$};}
+  \foreach \n in {1, ..., +\maxn}{
+    \draw (\n, 0.1) -- (\n, -0.1) node [below] {\footnotesize $+\n$};}
+}
+
+\newcommand{\intrappgeo}{
+  \disegno[10]{
+    \asseint{-6}{+6}
+    \draw[|-|] (0, -.8) -- (1, -.8) node [right, font=\scriptsize] {unità};
+  }
+}
+
+\newcommand{\numeroevidenziato}[3]{
+  \def \nexpos{#1}
+  \def \nesegno{#2}
+  \def \nevalass{#3}
+  \begin{scope} [thick, font=\fontsize{18}{18}]
+    \draw [red!50!black] (\nexpos, 0) circle(9pt) 
+      node[black]{$\phantom{1} \nesegno \phantom{1}$};
+%       \draw (\nexpos, 0) node [circle, inner sep=0pt, draw=red!50!black]
+%         {$\nesegno \phantom{0}$};
+    \draw (\nexpos+1.4, 0) 
+      node [rectangle, inner sep=6pt, rounded corners=3pt,
+            draw=green!50!black] {$\nevalass$};
+  \end{scope}
+}
+
+\newcommand{\numerointero}{
+  \def \psegno{(-.5, 2)}
+  \def \pmodulo{(+1.5, -2)}
+  \disegno{
+    \numeroevidenziato{-3}{-}{7}
+    \numeroevidenziato{+3}{+}{5}
+    \draw \psegno node [above, red!50!black] {segno};
+    \draw \pmodulo node [below, green!50!black] {valore assoluto};
+    \draw [-latex, thick, red!50!black] 
+      \psegno to [out=215, in=90] (-3, .7);
+    \draw [-latex, thick, red!50!black] 
+      \psegno to [out=305, in=90] (+3, .7);
+    \draw [-latex, thick, green!50!black] 
+      \pmodulo to [out=135, in=-90] (-3+1.4, -.8);
+    \draw [-latex, thick, green!50!black] 
+      \pmodulo to [out=45, in=-90] (+3+1.4, -.8);
+  }
+}
+
+\newcommand{\rettaconfronto}{
+  \disegno[10]{
+    \asseint{-6}{+5}
+    \foreach \n in {-5, -3, -1, 0, +4}{
+      \draw (\n, -0.32) node [blue!50!black] {\footnotesize $\boxed{\n}$};}
+  }
+}
+
+\newcommand{\addizioneesegno}{
+  \def \psegno{(0.7, 2)}
+  \def \psimbo{(0, -2)}
+  \def \csegno {red!50!black}
+  \def \csimbo {green!50!black}
+  \disegno{
+    \draw (0, 0) node {$(+2) ~+~ (+5) ~=~ +8$};
+    \draw \psegno node [above, \csegno] {segno del numero};
+    \begin{scope} [-latex, thick, \csegno] 
+      \draw \psegno to [out=215, in=90] (-2.5, +.5);
+      \draw \psegno to [out=270, in=90] (-0.0, +.5);
+      \draw \psegno to [out=305, in=90] (+2.4, +.5);
+    \end{scope}
+    \draw \psimbo node [below=2pt, \csimbo] {simbolo dell'operazione};
+    \begin{scope} [-latex, thick, \csimbo] 
+      \draw \psimbo to [out=90, in=270] (-1.0, -.3);
+    \end{scope}
+  }
+}
+
+\newcommand{\intaddline}[5]{
+  \def \intlinmi{#1}
+  \def \intlinma{#2}
+  \def \oa{#3}
+  \def \ob{#4}
+  \def \ris{#5}
+  \pgfmathparse{\ris -1} \let\last\pgfmathresult
+  \def \oacolor{blue!60!black}
+  \def \obcolor{green!60!black}
+  \def \riscolor{orange!60!black}
+    \asseint{\intlinmi}{\intlinma}
+    \draw (\oa, -0.32) node [\oacolor] {\footnotesize $\boxed{\oa}$}
+          (\ris, -0.32) node [\riscolor] {\footnotesize $\boxed{\ris}$};
+    \foreach \c [count = \n]in {\oa,...,\last}{%
+      \draw [- latex, dotted, thick, color=\obcolor]
+           (\c, 0.2) arc (180:0:0.5 and 0.4);
+      \draw (\c+.5, 0.4) node [\obcolor] {\footnotesize $\n$};}
+}
+
+\newcommand{\intsubline}[5]{
+  \def \intlinmi{#1}
+  \def \intlinma{#2}
+  \def \oa{#3}
+  \def \ob{#4}
+  \def \ris{#5}
+  \pgfmathparse{\ris +1} \let\last\pgfmathresult
+%   \def \maxn{9}
+  \def \oacolor{blue!60!black}
+  \def \obcolor{green!60!black}
+  \def \riscolor{orange!60!black}
+    \asseint{-6}{+6}
+    \draw (\oa, -0.32) node [\oacolor] {\footnotesize $\boxed{\oa}$}
+          (\ris, -0.32) node [\riscolor] {\footnotesize $\boxed{\ris}$};
+    \foreach \c [count = \n]in {\oa,...,\last}{%
+      \draw [- latex, dotted, thick, color=\obcolor]
+           (\c, 0.2) arc (0:180:0.5 and 0.4);
+      \draw (\c-.5, 0.4) node [\obcolor] {\footnotesize $\n$};}
+}
+
+\newcommand{\intaddlinea}{
+  \disegno[10]{
+    \intaddline{-6}{+6}{-3}{+5}{+2}
+  }
+}
+
+\newcommand{\intaddlineb}{
+  \disegno[10]{
+    \intsubline{-6}{+6}{-1}{-3}{-4}
+  }
+}
+
+\newcommand{\intsublinea}{
+  \disegno[10]{
+    \intsubline{-6}{+6}{+5}{+7}{-2}
+  }
+}
+
+\newcommand{\sottrazioneint}{
+  \def \psimbol{(-.7, +2.3)}
+  \def \psegnol{(1.5, -2.3)}
+  \def \xsimboa{-3.1}
+  \def \xsimbob{+3.0}
+  \def \xsegnoa{-1.7}
+  \def \xsegnob{+4.4}
+  \def \csegno {red!50!black}
+  \def \csimbo {green!50!black}
+  \disegno{
+    \draw (0, 0) node {\Large $(+2) ~-~ (+3) ~=~ (+2) ~+~ (-3)$};
+    \draw \psimbol node [above, \csimbo] 
+      {Cambio la sottrazione in addizione};
+    \begin{scope} [-latex, thick, \csimbo] 
+      \draw (\xsimboa, +.5) to [out=70, in=110] (\xsimbob, +.5);
+    \end{scope}
+    \draw \psegnol node [below=2pt, \csegno] 
+      {Cambio il segno del secondo operando};
+    \begin{scope} [-latex, thick, \csegno] 
+      \draw (\xsegnoa, -.5) to [out=-70, in=-110] (\xsegnob, -.5);
+    \end{scope}
+  }
+}
+
+\newcommand{\sottrazionea}{
+  \disegno{
+  \matrix [matrix of math nodes,column sep={10mm,between origins},
+          ampersand replacement=\&] 
+  at (0,0)
+  {\node{(+2)}; \& \node[circle, draw=red](-){-}; \& 
+   \node[draw=blue,circle] (3pos){(+3)};
+   \& \node{=}; \& \node{(+2)}; \& \node[circle, draw=red](+){+}; \& 
+   \node[draw=blue,circle](3neg){(-3)};\\};
+  \node (testo1) at (0, -15mm) {Cambio $+3$ con il suo opposto $-3$};
+  \node (testo2) at (0,15mm) {Cambio la sottrazione in addizione};
+  \draw[->,red ] (testo2) .. controls +(down:5mm) and +(up:10mm) .. (-);
+  \draw[->,red ] (testo2) .. controls +(down:5mm) and +(up:10mm) .. (+);
+  \draw[->,blue ] 
+    (testo1) .. controls +(up:10mm) and +(down:10mm) .. (3neg) ;
+  \draw[->,blue ] 
+    (testo1) .. controls +(up:10mm) and +(down:10mm) .. (3pos) ;
+  }
+}
+
+\newcommand{\sommalgebrica}{
+  \def \intlinmi{-6}
+  \def \intlinma{+6}
+  \def \oa{-5}
+  \def \ob{+7}
+  \def \oc{-2}
+  \def \od{+6}
+  \def \oe{-3}
+  \def \of{-5}
+  \def \ris{-2}
+  \def \oacolor{blue!60!black}
+  \def \obcolor{green!60!black}
+  \def \riscolor{orange!60!black}
+  \disegno[10]{
+    \asseint{\intlinmi}{\intlinma}
+    \draw (\oa, -0.32) node [\oacolor] {\footnotesize $\boxed{\oa}$}
+          (\ris, -0.32) node [\riscolor] {\footnotesize $\boxed{\ris}$};
+    \let \startval \oa
+    \pgfmathparse{\startval + \ob} \let\endval\pgfmathresult
+    \draw [-latex, \poscolor] (\startval, .3) to [out=70, in=110] 
+          node [below] {\ob} (\endval, .3);
+%     \node at (-3, -1) {\startval}; \node at (+3, -1) {\endval};
+    \let \startval \endval
+    \pgfmathparse{\startval + \oc} \let\endval\pgfmathresult
+    \draw [-latex, \negcolor] (\startval, .3) to [out=90, in=90] 
+          node [below] {\oc} (\endval, .3);
+    \let \startval \endval
+    \pgfmathparse{\startval + \od} \let\endval\pgfmathresult
+    \draw [-latex, \poscolor] (\startval, .3) to [out=80, in=100] 
+          node [below] {\od} (\endval, .3);
+    \let \startval \endval
+    \pgfmathparse{\startval + \oe} \let\endval\pgfmathresult
+    \draw [-latex, \negcolor] (\startval, .3) to [out=90, in=90] 
+          node [below] {\oe} (\endval, .3);
+    \let \startval \endval
+    \pgfmathparse{\startval + \of} \let\endval\pgfmathresult
+    \draw [-latex, \negcolor] (\startval, .3) to [out=90, in=90] 
+          node [below] {\of} (\endval, .3);
+  }
+}
+
+\newcommand{\moltsegni}{
+  \begin{tikzpicture}[font=\huge]
+    \matrix (segni) [matrix of nodes, ampersand replacement=\&]{%
+    $\times$ \& $+$  \& $-$\\
+    $+$ \& $+$  \&$-$\\
+    $-$ \& $-$  \&$+$\\
+    };
+    \begin{scope}[thin, blue]
+  %     foreach \i in {1, 2, 3}{ % non funziona!!
+  %     \draw (segni-\i-1.south west)--(segni-\i-3.south east);
+  %     \draw (segni-1-\i.north east)--(segni-3-\i.south east);
+  %     }
+      \draw (segni-1-1.south west)--(segni-1-3.south east);
+      \draw (segni-2-1.south west)--(segni-2-3.south east);
+      \draw (segni-3-1.south west)--(segni-3-3.south east);
+      \draw (segni-1-1.north east)--(segni-3-1.south east);
+      \draw (segni-1-2.north east)--(segni-3-2.south east);
+      \draw (segni-1-3.north east)--(segni-3-3.south east);
+    \end{scope}
+  \end{tikzpicture}
+}
+
+\newcommand{\esec}{
+  \def \intlinmi{-6}
+  \def \intlinma{+6}
+  \disegno[10]{
+%     \asse{\minn - .5}{\maxn + .5}{0}{\dots}
+    \asseint{\intlinmi}{\intlinma}
+    \draw (\minn - .5, 0) node [below] {\dots};
+    \foreach \n in {\minn, ..., +\maxn}{
+      \draw (\n, 0.1) -- (\n, -0.1);}
+    \foreach \n in {0, +1}{
+      \draw (\n, -0.1) node [below] {\footnotesize $\n$};}
+  }
+}
+

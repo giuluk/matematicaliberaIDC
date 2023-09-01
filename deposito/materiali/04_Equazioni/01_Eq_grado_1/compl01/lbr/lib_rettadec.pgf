@@ -1,0 +1,18 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Retta decrescente con segni
+%%%%
+ 
+\coordinate (inizio) at (-10, 4);
+\coordinate (zero) at (0, 0);
+\coordinate (fine) at (10, -4);
+
+\input{lbr/assiepiani/asse10x.pgf}
+
+\draw [-] [ultra thick, blue!50!black] (inizio) -- (zero);
+\draw [-] [ultra thick, red!50!black] (zero) -- (fine);
+
+\node [xshift=-25, yshift=-3, above] at (zero) {$+$};
+\draw[blue, thick, fill=white] (zero) circle (2pt);
+\node [xshift=25, yshift=-3, above] at (zero) {$-$};

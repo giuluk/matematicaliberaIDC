@@ -1,0 +1,12 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Retta decrescente zero in 3
+%%%%
+ 
+\begin{tikzpicture}[x=1.5mm, y=1.5mm, smooth]
+
+\input{\folder lbr/lib_rettadec.pgf}
+\node [above] {$3$};
+
+\end{tikzpicture}

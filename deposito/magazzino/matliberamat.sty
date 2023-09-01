@@ -1,0 +1,259 @@
+%%
+%% This is file `matliberamat.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% matlibera.dtx  (with options: `matliberamat')
+%% 
+%% Copyright (C) 2013-2022 by Daniele Zambelli - daniele.zambelli@gmail.com
+%% 
+\NeedsTeXFormat{LaTeX2e}[[2018/01/01]
+\ProvidesPackage{matliberamat}[%
+    2023/06/13 v0.9.60
+    Macro matematiche usate nel libro Matematica Libera]
+\DeclareRobustCommand{\N}{\mathbb{N}}
+
+\DeclareRobustCommand{\Nz}{\mathbb{N}^0}
+
+\DeclareRobustCommand{\Z}{\mathbb{Z}}
+
+\DeclareRobustCommand{\Zz}{\mathbb{Z}^0}
+
+\DeclareRobustCommand{\Q}{\mathbb{Q}}
+
+\DeclareRobustCommand{\Qz}{\mathbb{Q}^0}
+
+\DeclareRobustCommand{\Qp}{\mathbb{Q}^+}
+
+\DeclareRobustCommand{\J}{\mathbb{J}}
+
+\DeclareRobustCommand{\R}{\mathbb{R}}
+
+\DeclareRobustCommand{\Rz}{\mathbb{R}^0}
+
+\DeclareRobustCommand{\Rp}{\mathbb{R}^+}
+
+\DeclareRobustCommand{\C}{\mathbb{C}}
+
+\DeclareRobustCommand{\IR}{{}^*\hspace{-.12em}\mathbb{R}}
+
+\DeclareRobustCommand{\IC}{{}^*\hspace{-.12em}\mathbb{C}}
+
+\DeclareRobustCommand{\IN}{{}^*\hspace{-.12em}\mathbb{N}}
+
+\DeclareRobustCommand{\IZ}{{}^*\hspace{-.12em}\mathbb{Z}}
+
+\DeclareRobustCommand{\A}{\mathbb{A}}
+
+\DeclareRobustCommand{\K}{\mathbb{K}}
+
+\newcommand{\Dispari}{\mathbb{D}}
+
+\newcommand{\Pari}{\mathbb{P}}
+
+\newcommand{\Pol}{\mathbb{P}}
+
+\AtBeginDocument{%
+\let \epsilon \varepsilon
+\let \theta \vartheta
+\let \rho \varrho
+\let \phi \varphi
+}
+
+\newcommand{\tonda}[1]{\left( #1 \right)}
+
+\newcommand{\quadra}[1]{\left[ #1 \right]}
+
+\newcommand{\rquadra}[1]{\left] #1 \right[}
+
+\newcommand{\graffa}[1]{\left \{ #1 \right \}}
+
+\newcommand{\valass}[1]{\left | #1 \right |} % valore assoluto.
+
+\newcommand{\angolare}[1]{\left \langle #1 \right \rangle} % par. angolare.
+
+\newcommand{\pint}[1]{\left \lfloor #1 \right \rfloor} % parte intera.
+
+\newcommand{\compreso}[1]{~[#1]~} % estremo incluso.
+
+\newcommand{\escluso}[1]{~]#1[~} % estremo escluso.
+
+\newcommand{\sistema}[1]{\left\{\begin{array}{lcl}#1\end{array}\right.}
+
+\newcommand{\fatratti}[1]{\left\{\begin{array}{rclcl}#1\end{array}\right.}
+
+\newcommand{\matrice}[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+\newcommand{\determ}[1]{\begin{vmatrix}#1\end{vmatrix}}
+
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+\DeclareRobustCommand{\coppia}[2]{\tonda{#1;~#2}}
+
+\newcommand{\terna}[3]{\tonda{#1;~#2;~#3}}
+
+\newcommand{\punto}[3]{#1\tonda{#2;~#3}}
+
+\newcommand{\dist}[2]{\mathcal{D}\coppia{#1}{#2}} % distanza orientata
+
+\newcommand{\lung}[2]{\mathcal{L}\coppia{#1}{#2}} % lunghezza segmento
+
+\DeclareMathOperator{\oarea}{\mathcal{A}} % area di una superficie
+
+\newcommand{\area}[1]{\oarea \tonda{#1}}
+
+\newcommand{\overbow}[1]{
+  % Sintassi: \overbow{riferimento}
+  % Esempio di chiamata:
+  % \overbow{AB}
+  \tikz [baseline = (N.base), every node/.style={}] {
+    \node [inner sep = 0pt] (N) {$#1$};
+    \draw [line width = 0.4pt] plot [smooth, tension=1.3] coordinates {
+        ($(N.north west) + (0.1ex,0)$)
+        ($(N.north)      + (0,0.5ex)$)
+        ($(N.north east) + (0,0)$)
+    };
+  }
+}
+
+\newcommand{\intervcc}[2]{\left[#1;~#2\right]}
+
+\newcommand{\intervac}[2]{\left]#1;~#2\right]}
+
+\newcommand{\intervca}[2]{\left[#1;~#2\right[}
+
+\newcommand{\intervaa}[2]{\left]#1;~#2\right[}
+
+\newcommand{\sand}{~ \wedge ~}
+
+\newcommand{\sor}{~ \vee ~}
+
+\newcommand{\scap}{~ \cap ~}
+
+\newcommand{\scup}{~ \cup ~}
+
+\newcommand{\svert}{~ \vert ~}
+
+\newcommand{\sLarrow}{~ \Leftarrow ~}
+
+\newcommand{\sLRarrow}{~ \Leftrightarrow ~}
+
+\newcommand{\sRarrow}{~ \Rightarrow ~}
+
+\newcommand{\slarrow}{~ \leftarrow ~}
+
+\newcommand{\slrarrow}{~ \leftrightarrow ~}
+
+\newcommand{\srarrow}{~ \rightarrow ~}
+
+\newcommand{\stext}[1]{~~\text{#1}~~}
+
+\newcommand{\ssLarrow}{\quad \Leftarrow \quad}
+
+\newcommand{\ssLRarrow}{\quad \Leftrightarrow \quad}
+
+\newcommand{\ssRarrow}{\quad \Rightarrow \quad}
+
+\newcommand{\sslarrow}{\quad \leftarrow \quad}
+
+\newcommand{\sslrarrow}{\quad \leftrightarrow \quad}
+
+\newcommand{\ssrarrow}{\quad \rightarrow \quad}
+
+\newcommand{\sstext}[1]{\quad\text{#1}\quad}
+
+\DeclareMathOperator{\orel}{\mathcal{R}}
+
+\newcommand{\Dom}{\mathcal{D}}
+
+\DeclareMathOperator{\ID}{I.D.}
+
+\newcommand{\Cod}{\mathcal{C}}
+
+\DeclareMathOperator{\II}{I.I.}
+
+\DeclareMathOperator{\CE}{C.E.}
+
+\DeclareMathOperator{\IS}{I.S.}
+
+\DeclareMathOperator{\dd}{d}
+
+\newcommand{\dx}{\dd{x}}
+
+\newcommand{\Deriv}[1]{\mathit{D}\quadra{#1}}
+
+\DeclareRobustCommand{\effestarREMOVE}{{}^*\hspace{-.15em}f}
+
+\DeclareRobustCommand{\fstar}[1]{{}^*\hspace{-.15em}#1}
+
+\DeclareMathOperator{\sen}{\sin}
+
+\DeclareMathOperator{\tg}{\tan}
+
+\DeclareMathOperator{\Log}{Log}
+
+\DeclareMathOperator{\ost}{st}
+
+\newcommand{\st}[1]{\ost \tonda{#1}}
+
+\DeclareMathOperator{\omon}{mon}
+
+\newcommand{\mon}[1]{\textrm{mon} \tonda{#1}}   % monade di
+
+\DeclareMathOperator{\oGal}{Gal}       % Galassia
+
+\newcommand{\Gal}[1]{\textrm{Gal} \tonda{#1}} % Galassia di
+
+\DeclareMathOperator{\infvic}{\approx}       % Infinitamente vicino
+
+\DeclareMathOperator{\indist}{\sim}       % Indistinguibile
+
+\newcommand{\Kor}{\mathbf{K}}
+
+\DeclareMathOperator{\divint}{div}
+
+\DeclareMathOperator{\Mod}{mod}
+
+\DeclareMathOperator{\mcd}{MCD}
+
+\DeclareMathOperator{\mcm}{mcm}
+
+\DeclareMathOperator{\ocard}{card}
+
+\newcommand{\card}[1]{\textrm{card} \tonda{#1}}   % cardinalità
+
+\newcommand{\duep}{\!:~}
+
+\DeclareMathOperator{\vari}{Var}
+
+\DeclareMathOperator{\cfvar}{CV}
+
+\DeclareMathOperator{\cvar}{CVar}
+
+\newcommand{\spV}{\mathbf{V}}
+
+\DeclareMathOperator{\media}{Media}
+
+\DeclareMathOperator{\mediana}{Mediana}
+\DeclareMathOperator{\moda}{Moda}
+\newcommand{\cels}{{}^\circ\hspace{-.10em}\mathrm{C}}
+\newcommand{\grado}{{}^{\circ}}
+\def \meuro{\, \text{\euro }}
+\newcommand{\munit}[1]{\, \mathrm{#1}}
+%% 
+%%  This file may be distributed and/or modified under the
+%%  conditions of the LaTeX Project Public Licence, either
+%%  version 1.3c of this licence or (at your option) any later
+%%  version. The latest version of this licence is in:
+%% 
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%%  and version 1.3c  or later is part of all distributions of
+%%  LaTeX version 2008/05/04 or later.
+%% 
+%%  This work has the LPPL maintenance status `maintained'.
+%%  and consists of the files listed in the README file.
+%% 
+%%
+%% End of file `matliberamat.sty'.

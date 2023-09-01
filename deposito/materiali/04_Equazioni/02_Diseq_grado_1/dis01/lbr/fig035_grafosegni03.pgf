@@ -1,0 +1,39 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Studio dei segni di una frazione
+%%%%
+ 
+\begin{tikzpicture}[x=2.5mm, y=5mm, smooth]
+
+\coordinate (a_top) at (-3.3, 1);
+\coordinate (a_bottom) at (-3.3, -2);
+\coordinate (b_top) at (3.3, 1);
+\coordinate (b_bottom) at (3.3, -2);
+
+\input{\folder lbr/lib_grafo3assi.pgf}
+\node [above] at (-3.3, 1) {$-2$};
+\node [above] at (3.3, 1) {$+3$};
+
+\node [above left] at (-10, 0) {$-3 x + 4$};
+\node [above] at (-6.5, 0) {$+$};
+\node [above] at (0, 0) {$+$};
+\draw (3.3, .5) circle (3pt);
+\node [above] at (6.5, 0) {$-$};
+
+\node [above left] at (-10, -1) {$x + 2$};
+\node [above] at (-6.5, -1) {$-$};
+\draw (-3.3 -.4, -.5 -.2) -- (-3.3 +.4, -.5 +.2) 
+      (-3.3 -.4, -.5 +.2) -- (-3.3 +.4, -.5 -.2);
+\node [above] at (0, -1) {$+$};
+\node [above] at (6.5, -1) {$+$};
+
+\node [above left] at (-10, -2.15) {$f(x)$};
+\node [above] at (-6.5, -2) {$-$};
+\draw (-3.3 -.4, -1.5 -.2) -- (-3.3 +.4, -1.5 +.2) 
+      (-3.3 -.4, -1.5 +.2) -- (-3.3 +.4, -1.5 -.2);
+\node [above] at (0, -2) {$+$};
+\draw (3.3, -1.5) circle (3pt);
+\node [above] at (6.5, -2) {$-$};
+
+\end{tikzpicture}

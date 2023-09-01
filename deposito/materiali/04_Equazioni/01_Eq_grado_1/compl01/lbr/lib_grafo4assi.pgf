@@ -1,0 +1,20 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Grafo per il calcolo del segno con tre assi
+%%%%
+ 
+\input{lbr/assiepiani/asse10x.pgf}
+\begin{scope}[yshift= -.5cm]
+  \input{lbr/assiepiani/asse10x.pgf}
+  \begin{scope}[yshift= -.5cm]
+    \input{lbr/assiepiani/asse10x.pgf}
+    \begin{scope}[yshift= -.5cm]
+      \input{lbr/assiepiani/asse10x.pgf}
+    \end{scope}
+  \end{scope}
+\end{scope}
+
+\draw [-] [] (a_top) -- (a_bottom);
+\draw [-] [] (b_top) -- (b_bottom);
+\draw [-] [] (c_top) -- (c_bottom);

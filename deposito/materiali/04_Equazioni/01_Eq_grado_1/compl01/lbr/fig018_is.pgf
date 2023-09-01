@@ -1,0 +1,33 @@
+% (c) 2012 Dimitrios Vrettos - d.vrettos@gmail.com
+\begin{tikzpicture}[font=\small,x=10mm, y=10mm]
+
+\draw[->] (-1.5,0) -- (8,0) node [below right] () {$r$};
+
+\foreach \x in {0,1,7}{
+\draw(\x,3pt)--(\x,-3pt);
+\begin{scope}[dotted]
+\draw (\x,0) -- (\x,-2);
+\draw (-1.5,-.5) -- (0,-.5);
+\draw (-1.5,-1) -- (1,-1);
+\draw (7,-1.5) -- (8,-1.5);
+\end{scope}}
+
+\node[above]  at (0,0) {$0$};
+\node[above]  at (1,0) {$\frac{11}{2}$};
+\node[above]  at (7,0) {$\frac{85}{2}$};
+\pattern[pattern= north east lines, pattern color=red] (1,-2) rectangle (7,-1.5);
+
+\node[below] () at (4,-2) {$\IS$};
+
+\begin{scope}[blue,thick]
+\draw (0,-.5) -- (8,-.5);
+\draw (1,-1) -- (8,-1);
+\draw (-1.5,-1.5) -- (7,-1.5);
+
+\draw[fill=white] (0,-.5)circle (1.5pt);
+\draw[fill=white] (1,-1)circle (1.5pt);
+\draw[fill=blue] (7,-1.5)circle (1.5pt);
+
+\end{scope}
+
+\end{tikzpicture}

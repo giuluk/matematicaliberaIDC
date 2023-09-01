@@ -1,0 +1,1186 @@
+% (c) 2017 Daniele Zambelli - daniele.zambelli@gmail.com
+% (c) 2012 Dimitrios Vrettos - d.vrettos@gmail.com
+% 
+% Tutti i grafici per il capitolo naturali.tex
+% 
+
+\newcommand{\disco}{%
+  \filldraw[fill=gray!20,draw=gray, rounded corners, shade,
+            shading=radial, inner color=white, outer color=blue!50]%
+           (-.6cm, .4cm) rectangle (.6cm,0.8cm);
+}
+
+\newcommand{\pallottoliere}{
+  \disegno[7]{
+    \foreach \a in {-15.25mm, 0, 15.25mm, 36.75mm, 52mm, 67.25mm}{
+      \begin{scope}[xshift=\a] % asta
+        \fill [fill=black!90,rounded corners,shading=radial, 
+               inner color=white, outer color=gray!90]%
+              (-1.25mm,3mm) rectangle (1.25mm,4.3cm);
+      \end{scope}
+    }
+    \foreach \x in {0cm, 5.2cm}{%
+      \begin{scope}[xshift=\x] % base
+        \filldraw [fill=black!90, draw=gray!80, rounded corners, 
+                   shading=radial, inner color=white, outer color=gray!90]%
+                  (-2.4cm, -0.2cm) rectangle (2.4cm,0.4cm);
+      \end{scope}
+    }
+    \foreach \y in {0, .4cm, ..., 3.2cm}{%
+      \begin{scope}[xshift=15.75mm, yshift=\y]
+    \disco
+      \end{scope}
+    }
+    \foreach \z in {0}{%
+      \begin{scope}[xshift=52mm,yshift=\z]
+        \disco
+      \end{scope}
+    }
+  }
+}
+
+% \usetikzlibrary{shapes.gates.logic.US,trees,positioning,arrows}
+
+% \newcommand{\grafiscatola}{% 
+%   % Funzione rappresentata la funzione come scatola nera
+%   \disegno[10]{
+%      \node [draw, fill=blue!20, minimum size=3em, rounded corners] 
+%             at (0, 0) (block 1) {add};
+%      \draw [->] (-1, -0.5) node [left] {$o_1$} -- (block 1);
+%      \draw [->] (-1, +0.5) node [left] {$o_2$} -- (block 1);
+%      \draw[->] (block 1.east) -- (1, 0) node [right] {somma};
+%         
+%      \node [draw, fill=blue!20, minimum size=3em, rounded corners] 
+%             at (0, 2) (block 2) {add};
+%      \draw [->] (1, 1.5) node [right] {$o_1$} -- (block 2);
+%      \draw [->] (1, +2.5) node [right] {$o_2$} -- (block 2);
+%      \draw[->] (block 2.west) -- (-1, 2) node [left] {somma};
+%   }
+% }
+
+\newcommand{\scatolasommasda}{% 
+  \disegno[10]{
+     \node [draw, fill=blue!20, minimum size=3em, rounded corners] 
+            at (0, 0) (block 1) {add};
+     \draw [->] (-1, +0.5) node [left] {$o_1$} -- (block 1);
+     \draw [->] (-1, -0.5) node [left] {$o_2$} -- (block 1);
+     \draw[->] (block 1.east) -- (1, 0) node [right] {somma};
+  }
+}
+
+\newcommand{\scatolasommadsa}{% 
+  \disegno[10]{
+     \node [draw, fill=blue!20, minimum size=3em, rounded corners] 
+            at (0, 2) (block 2) {add};
+     \draw [->] (1, +2.5) node [right] {$o_1$} -- (block 2);
+     \draw [->] (1, 1.5) node [right] {$o_1$} -- (block 2);
+     \draw[->] (block 2.west) -- (-1, 2) node [left] {somma};
+  }
+}
+
+\newcommand{\grafoscatolasd}[4]{% 
+  % Funzione binaria rappresentata come scatola nera a sinistra
+  % esempio di chiamata:
+  % \grafoscatolasx{add}{o_1}{o_2}{somma}
+  \def \nomef{#1}
+  \def \opa{#2}
+  \def \opb{#3}
+  \def \risultato{#4}
+  \disegno[10]{
+     \node [draw, fill=blue!20, minimum size=3em, rounded corners] 
+            at (0, 0) (block 1) {\nomef};
+     \draw [->] (-1, +0.5) node [left] {$\opa$} -- (block 1);
+     \draw [->] (-1, -0.5) node [left] {$\opb$} -- (block 1);
+     \draw[->] (block 1.east) -- (1, 0) node [right] {$\risultato$};
+  }
+}
+
+\newcommand{\grafoscatolads}[4]{% 
+  % Funzione binaria rappresentata come scatola nera a destra
+  % esempio di chiamata:
+  % \grafoscatoladx{add}{7}{5}{12}
+  \def \nomef{#1}
+  \def \opa{#2}
+  \def \opb{#3}
+  \def \risultato{#4}
+  \disegno[10]{
+     \node [draw, fill=blue!20, minimum size=3em, rounded corners] 
+            at (0, 2) (block 2) {\nomef};
+     \draw [->] (1, +2.5) node [right] {$\opa$} -- (block 2);
+     \draw [->] (1, 1.5) node [right] {$\opb$} -- (block 2);
+     \draw[->] (block 2.west) -- (-1, 2) node [left] {$\risultato$};
+  }
+}
+
+\begin{comment}
+ You can define a new style that automates setting the start coordinate and 
+drawing the arc:
+
+\tikzset{
+    partial ellipse/.style args={#1:#2:#3}{
+        insert path={+ (#1:#3) arc (#1:#2:#3)}
+    }
+}
+
+Then you can simply say
+
+\draw[thick, red, -latex] (0,0) [partial ellipse=30:150:3cm and 2cm];
+
+
+\begin{tikzpicture}
+ 
+% Arc operation
+\draw (2,0) arc
+    [
+        start angle=0,
+        end angle=300,
+        x radius=2cm,
+        y radius =1cm
+    ] ;
+ 
+\end{tikzpicture}
+ 
+ 
+ 
+\end{comment}
+
+
+\newcommand{\grafoportad}[5][1]{% 
+  % Funzione binaria rappresentata come porta logica
+  % esempio di chiamata:
+  % \grafoportad[3]{add}{o_1}{o_2}{somma}
+  \def \dim{#1}
+  \def \nomef{#2}
+  \def \opa{#3}
+  \def \opb{#4}
+  \def \risultato{#5}
+  \def \ddim{2*\dim}
+  \disegno{
+    \draw (0, 0) node {\nomef} (-\dim, +\dim) -- (-\dim, -\dim) 
+      arc [start angle=-90, end angle=90, x radius=\ddim, y radius =\dim]
+      -- cycle;
+     \draw (-1.5*\dim, .5*\dim) node [left=-4pt] {$\boxed{\opa}$} -- 
+       (-\dim, .5*\dim)
+       (-1.5*\dim, -.5*\dim) node [left=-4pt] {$\boxed{\opb}$} -- 
+       (-\dim, -.5*\dim)
+       (+\dim, 0) -- (+1.5*\dim, 0) 
+       node [right=-4pt] {$\boxed{\risultato}$};
+  }
+}
+
+\newcommand{\grafoportas}[5][1]{% 
+  % Funzione binaria rappresentata come porta logica
+  % esempio di chiamata:
+  % \grafoportas{add}{o_1}{o_2}{somma}
+  \def \dim{#1}
+  \def \nomef{#2}
+  \def \opa{#3}
+  \def \opb{#4}
+  \def \risultato{#5}
+  \def \ddim{2*\dim}
+  \disegno{
+    \draw (0, 0) node {\nomef} (+\dim, -\dim) -- (+\dim, +\dim) 
+      arc [start angle=+90, end angle=270, x radius=\ddim, y radius =\dim]
+      -- cycle;
+     \draw (+1.5*\dim, .5*\dim) node [right=-4pt] {$\boxed{\opa}$} -- 
+       (+\dim, .5*\dim)
+       (+1.5*\dim, -.5*\dim) node [right=-4pt] {$\boxed{\opb}$} -- 
+       (+\dim, -.5*\dim)
+       (-\dim, 0) -- (-1.5*\dim, 0) 
+       node [left=-4pt] {$\boxed{\risultato}$};
+  }
+}
+
+\newcommand{\nodoesp}[7][]{% nodo di un'espressione numerica
+  % IMPORTANTE: si aspetta che nel suo ambiente sia definita la variabile:
+  % \ndim, ad esempio:
+  % \def \ndim{.94}
+  % esempio di chiamata:
+  % \nodoesp{(-5, -1)}{(-4, -1)}{-4.5}{-3}{\times}{12}
+  \def \rdim{#1}
+  \def \popa{#2}
+  \def \popb{#3}
+  \def \xris{#4}
+  \def \yris{#5}
+  \def \nop{#6}
+  \def \nris{#7}
+  \def \ndim{1.0}
+  \def \dimalf{\ndim/2}
+  \def \ddim{\ndim/10}
+  \def \xtopl{\xris-\dimalf}
+  \def \xtopr{\xris+\dimalf}
+  \def \ytop{\yris+2*\ndim}
+  \def \ym{\yris+3*\dimalf}
+  \draw \popa to [out=270, in=90] (\xris-3*\ddim, \ytop);
+  \draw \popb to [out=270, in=90] (\xris+3*\ddim, \ytop);
+  \draw (\xtopl, \ytop) -- (\xtopr, \ytop) -- (\xtopr, \ym) 
+        arc (0:-180:\dimalf) -- cycle;
+  \draw (\xris, \ym) node {\rdim$\nop$}
+        (\xris, \yris) node[draw, above, rectangle,rounded corners=1pt] 
+                           {\rdim$\nris$};
+%         (\xris, \yris) node[draw, above, rectangle] {$\ris$};
+  
+}
+
+\newcommand{\parentesi}[5]{
+  \def \posx{#1}
+  \def \posy{#2}
+  \def \inter{#3}
+  \def \pa{#4}
+  \def \pb{#5}
+  \draw (\posx-\inter, \posy) node [above=-2pt] {$\pa$}
+        (\posx+\inter, \posy) node [above=-2pt] {$\pb$};
+  
+}
+
+\newcommand{\opfun}[9]{
+  \def \oa{#1}
+  \def \op{#2}
+  \def \ob{#3}
+  \def \ris{#4}
+  \def \xna{#5}
+  \def \xnb{#6}
+  \def \loa{#7}
+  \def \lob{#8}
+  \def \lris{#9}
+  \pgfmathparse{\xna/2 + \xnb/2} \let\xnr\pgfmathresult
+  \def \yla{-0.3}
+  \def \ylb{-2.8}
+  \disegno{
+    \draw (0, 0) node{$\oa ~\op~ \ob$};
+    \nodoesp{(\xna, \yla)}{(\xnb, \yla)}{\xnr}{\ylb}{\op}{\ris}
+    \freccia{(\xna-1, 0)}{(\xna-.3, 0)}{left}{\loa}
+    \freccia{(\xnb+1, 0)}{(\xnb+.3, 0)}{right}{\lob}
+    \freccia{(\xnr+1.5, \ylb+.5)}{(\xnr+.6, \ylb+.5)}{right}{\lris}
+  }
+}
+
+\newcommand{\assenat}[1]{
+  \def \maxn{#1}
+  \asse{(0, 0)}{(\maxn + .5, 0)}{below right}{\dots}
+  \foreach \n in {0, ..., \maxn}{
+    \draw (\n, 0.1) -- (\n, -0.1) node [below] {\footnotesize $\n$};}
+}
+
+\newcommand{\natrappgeo}{
+  \disegno[10]{
+    \assenat{11.5}
+    \draw[|-|] (0, -.8) -- (1, -.8) node [right, font=\scriptsize] {unità};
+  }
+}
+
+\newcommand{\nataddline}{
+  \def \oa{3}
+  \def \ob{5}
+  \def \ris{8}
+  \pgfmathparse{\ris -1} \let\last\pgfmathresult
+%   \def \maxn{9}
+  \def \oacolor{blue!60!black}
+  \def \obcolor{green!60!black}
+  \def \riscolor{orange!60!black}
+  \disegno[10]{
+    \assenat{9}
+    \draw (\oa, -0.32) node [\oacolor] {\footnotesize $\boxed{\oa}$}
+          (\ris, -0.32) node [\riscolor] {\footnotesize $\boxed{\ris}$};
+    \foreach \c [count = \n]in {\oa,...,\last}{%
+      \draw [- latex, dotted, thick, color=\obcolor]
+           (\c, 0.2) arc (180:0:0.5 and 0.4);
+      \draw (\c+.5, 0.4) node [\obcolor] {\footnotesize $\n$};}
+  }
+}
+
+\newcommand{\natsublinea}{
+  \def \oa{7}
+  \def \ob{5}
+  \def \ris{2}
+  \pgfmathparse{\ris +1} \let\last\pgfmathresult
+%   \def \maxn{9}
+  \def \oacolor{blue!60!black}
+  \def \obcolor{green!60!black}
+  \def \riscolor{orange!60!black}
+  \disegno[10]{
+    \assenat{9}
+    \draw (\oa, -0.32) node [\oacolor] {\footnotesize $\boxed{\oa}$}
+          (\ris, -0.32) node [\riscolor] {\footnotesize $\boxed{\ris}$};
+    \foreach \c [count = \n]in {\oa,...,\last}{%
+      \draw [- latex, dotted, thick, color=\obcolor]
+           (\c, 0.2) arc (0:180:0.5 and 0.4);
+      \draw (\c-.5, 0.4) node [\obcolor] {\footnotesize $\n$};}
+  }
+}
+
+\newcommand{\natsublineb}{
+  \def \oa{5}
+  \def \ob{7}
+  \def \ris{-2}
+  \pgfmathparse{\ris +1} \let\last\pgfmathresult
+%   \def \maxn{9}
+  \def \oacolor{blue!60!black}
+  \def \obcolor{green!60!black}
+  \def \riscolor{orange!60!black}
+  \disegno[10]{
+    \assenat{9}
+    \draw (\oa, -0.32) node [\oacolor] {\footnotesize $\boxed{\oa}$}
+          (\ris, -0.32) node [\riscolor] {\footnotesize $\boxed{?}$};
+    \foreach \c [count = \n]in {\oa,...,\last}{%
+      \draw [- latex, dotted, thick, color=\obcolor]
+           (\c, 0.2) arc (0:180:0.5 and 0.4);
+      \draw (\c-.5, 0.4) node [\obcolor] {\footnotesize $\n$};}
+  }
+}
+
+\newcommand{\defpot}{
+\begin{tikzpicture} 
+  \node at (0, 0)
+    {$2^3=1 \underbrace{\times 2\times 2\times 2}_{3 \text{ volte}} = 8$};
+%   \node at (0, 0)
+%     {$2^3=1 {\times 2\times 2\times 2} = 8$};
+\begin{scope}[font=\scriptsize]
+  \draw[<-]  (-1.4,.43)--(-1.2,.7) node[right] {esponente};
+  \draw[->]  (-2.0,-.1)--(-1.75,.1) node[below left=.2] {base};
+  \draw[<-]  (1.7,.1)--(2.0,-.1) node[below right] {potenza };
+\end{scope}
+\end{tikzpicture}
+}
+
+\newcommand{\potfun}{
+  \def \oa{2}
+  \def \op{\uparrow}
+  \def \ob{3}
+  \def \ris{8}
+  \def \xna{-.2}
+  \def \xnb{+.2}
+  \def \loa{base}
+  \def \lob{esponente}
+  \def \lris{potenza}
+  \pgfmathparse{\xna/2 + \xnb/2} \let\xnr\pgfmathresult
+  \def \yla{-0.3}
+  \def \ylb{-2.8}
+%   \def \ndim{1.0}
+  \disegno{
+    \draw (0, 0) node{$\oa^\ob$};
+    \nodoesp{(\xna, \yla)}{(\xnb, -.1)}{\xnr}{\ylb}{\op}{\ris}
+    \freccia{(\xna-1, 0)}{(\xna-.3, 0)}{left}{\loa}
+    \freccia{(\xnb+1, .2)}{(\xnb+.3, .2)}{right}{\lob}
+    \freccia{(\xnr+1.5, \ylb+.5)}{(\xnr+.6, \ylb+.5)}{right}{\lris}
+  }
+}
+
+\newcommand{\assocsinistra}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+%   \def \ndim{1.0}
+  \def \xa{-1.6} \def \xb{-0.8} \def \xc{-.1} \def \xd{+.8} \def \xe{+1.6}
+  \disegno{
+    \draw (0, 0) node{$7 ~+~ 5 ~\times~ 2$};
+    \nodoesp{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{+}{12}
+    \nodoesp{(\xb, \lb)}{(\xe, \la)}{\xd}{\lc}{\times}{24}
+  }
+}
+
+\newcommand{\precedenzaalg}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ndim{1.0}
+  \def \xa{-1.6} \def \xb{-0.8} \def \xc{-.1} \def \xd{+.8} \def \xe{+1.6}
+  \disegno{
+    \draw (0, 0) node{$7 ~+~ 5 ~\times~ 2$};
+    \nodoesp{(\xc, \la)}{(\xe, \la)}{\xd}{\lb}{\times}{10}
+    \nodoesp{(\xa, \la)}{(\xd, \lb)}{\xb}{\lc}{+}{17}
+  }
+}
+
+\newcommand{\albero}{
+
+\tikzset{
+  treenode/.style = {shape=rectangle, rounded corners,
+                     draw, align=center,
+                     top color=white},
+  root/.style     = {treenode, bottom color=red!30},
+  env/.style      = {treenode, bottom color=green!30},
+  dummy/.style    = {treenode, bottom color=blue!30}
+}
+\begin{tikzpicture}
+  [
+    grow                    = up,
+    sibling distance        = 6em,
+    level distance          = 3em,
+    edge from parent/.style = {draw},
+    every node/.style       = {font=\footnotesize},
+    sloped
+  ]
+  \node [root] {n0}
+    child { node [env] {n2}}
+    child { node [dummy] {n1}
+      child { node [dummy] {n4}
+        child { node [env] {n7}}
+        child { node [env] {n6}}
+        child { node [env] {n5}}}
+      child { node [env] {n3}}};
+\end{tikzpicture}
+
+% \begin{tikzpicture}[grow=up, edge from parent/.style={draw,-latex}, label 
+% distance = 0.2cm,
+%   level 1/.style = {level distance=1.5cm, sibling distance=22mm},
+%   level 2/.style = {level distance=1.5cm, sibling distance=11mm},
+%   level 3/.style = {level distance=1.5cm, sibling distance=6mm},
+%   ]
+%   \node[label=90:{t=0}] {11.45}
+%   child {node {19.08}
+%     child {node {29.54}
+%       child {node {40}}
+%       child {node[opacity=.5] {20}}
+%     }
+%     child {node[opacity=.75] {9.54}
+%       child {node[opacity=.5] {20}}
+%       child {node[opacity=.5] {0}}
+%     }
+%   }
+%   child {node[label=90:{t=1}] {4.53}
+%     child {node[opacity=.75] {9.54}
+%       child {node[opacity=.5] {20}}
+%       child {node[opacity=.5] {0}}
+%     }
+%     child {node[label=90:{t=2}] {0}
+%       child {node[opacity=.5] {0}}
+%       child {node[label=90:{t=3}] {0}}
+%     }
+%   };
+% \end{tikzpicture}
+
+}
+
+\newcommand{\espalberoav}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ld{-7.0}
+  \def \le{-8.7}
+%   \def \ndim{1.0}
+  \def \xa{-4.5} \def \xb{-3.5} 
+  \def \xc{-2.55} \def \xd{-2.35} \def \xe{-2.15} 
+  \def \xf{-1.45} 
+  \def \xg{-0.1} \def \xh{+0.63} \def \xi{+1.25} 
+  \def \xj{+2.37} \def \xk{+3.3} 
+  \disegno{
+%     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, \xd/d, \xe/e, 
+%                        \xf/f, \xg/g, \xh/h, \xi/i, \xj/j, 
+%                        \xk/k %, \xl/l, \xm/m, \xn/n, \xo/o, 
+% %                        \xp/p, \xq/q, \xr/r, \xs/s, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a
+%                        }{
+%       \draw (\x, \la) circle(1pt) node [below] {\l};
+%     }
+    \draw (0, 0) node{
+    $49 ~-~ [2^4 ~\times~ (14 ~:~ 7) ~+~ 10]~=$};
+    \nodoesp{(\xc, \la)}{(\xe, 0)}{\xd}{\lb}{\uparrow}{\phantom{16}}
+    \nodoesp{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{:}{\phantom{2}}
+    \parentesi{\xh}{\lb}{.8}{(}{)}
+    \nodoesp{(\xd, \lb)}{(\xh, \lb)}{\xf}{\lc}{\times}{\phantom{32}}
+    \nodoesp{(\xf, \lc)}{(\xk, \la)}{\xj}{\ld}{+}{\phantom{42}}
+    \parentesi{\xj}{\ld}{1}{[}{]}
+    \nodoesp{(\xa, \la)}{(\xj, \ld)}{\xb}{\le}{-}{\phantom{7}}
+    \draw (\xb, \le) 
+      node[draw, above, rectangle,rounded corners=1pt, very thick] 
+          {\phantom{$7$}};
+  }
+}
+
+\newcommand{\espalberoa}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ld{-7.0}
+  \def \le{-8.7}
+%   \def \ndim{1.0}
+  \def \xa{-4.5} \def \xb{-3.5} 
+  \def \xc{-2.55} \def \xd{-2.35} \def \xe{-2.15} 
+  \def \xf{-1.45} 
+  \def \xg{-0.1} \def \xh{+0.63} \def \xi{+1.25} 
+  \def \xj{+2.37} \def \xk{+3.3} 
+  \disegno{
+%     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, \xd/d, \xe/e, 
+%                        \xf/f, \xg/g, \xh/h, \xi/i, \xj/j, 
+%                        \xk/k %, \xl/l, \xm/m, \xn/n, \xo/o, 
+% %                        \xp/p, \xq/q, \xr/r, \xs/s, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a
+%                        }{
+%       \draw (\x, \la) circle(1pt) node [below] {\l};
+%     }
+    \draw (0, 0) node{
+    $49 ~-~ [2^4 ~\times~ (14 ~:~ 7) ~+~ 10]~=$};
+    \nodoesp{(\xc, \la)}{(\xe, 0)}{\xd}{\lb}{\uparrow}{16}
+    \nodoesp{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{:}{2}
+    \parentesi{\xh}{\lb}{.8}{(}{)}
+    \nodoesp{(\xd, \lb)}{(\xh, \lb)}{\xf}{\lc}{\times}{32}
+    \nodoesp{(\xf, \lc)}{(\xk, \la)}{\xj}{\ld}{+}{42}
+    \parentesi{\xj}{\ld}{1}{[}{]}
+    \nodoesp{(\xa, \la)}{(\xj, \ld)}{\xb}{\le}{-}{7}
+    \draw (\xb, \le) 
+      node[draw, above, rectangle,rounded corners=1pt, very thick] 
+          {$7$};
+  }
+}
+
+\newcommand{\espalberob}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ld{-7.8}
+  \def \le{-10.3}
+  \def \lf{-11.5}
+%   \def \ndim{1.0}
+  \def \xa{-6.9} \def \xb{-6} \def \xc{-5} 
+  \def \xd{-4.3} \def \xe{-3.1} \def \xf{-2.75} \def \xg{-2.4} 
+  \def \xh{-1.8} \def \xi{-0.7} \def \xj{0.27} 
+  \def \xk{+1.4} \def \xl{+1.8} \def \xm{+2.15} \def \xn{+3.15} 
+  \def \xo{+4.15} \def \xp{+5.2} \def \xq{+6.} 
+  \disegno{
+%     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, 
+%                        \xd/d, 
+%                        \xe/e, \xf/f, \xg/g, 
+%                        \xh/h, 
+%                        \xi/i, \xj/j, 
+%                        \xk/k , \xl/l, \xm/m, \xn/n, \xo/o, 
+%                        \xp/p, \xq/q%, \xr/r, \xs/s, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a, \xaa/a, \xaa/a, \xaa/a, 
+% %                        \xaa/a
+%                        }{
+%       \draw (\x, \la) circle(1pt) node [below] {\l};
+%     }
+    \draw (0, 0) node{
+    $8^9 ~\times~ 8^5 ~:~ (8^3)^4 ~:~ 
+    [4^{12} ~:~ (4^2)^5] ~+~ 27^2 ~:~ 9^2 ~=$};
+    \nodoesp[\footnotesize]{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{p1}{8^{14}}
+    \nodoesp[\footnotesize]{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{p3}{8^{12}}
+    \nodoesp[\footnotesize]{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{p3}{4^{10}}
+    \nodoesp[\footnotesize]{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{p5}{3^{2}}
+    \nodoesp[\footnotesize]{(\xb, \lb)}{(\xf, \lb)}{\xd}{\lc}{p2}{8^{2}}
+    \nodoesp[\footnotesize]{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{p2}{4^{2}}
+    \nodoesp{(\xp-.2, \lb+.2)}{(\xp+.2, \lb+.4)}{\xp}{\lc}{\uparrow}{9}
+    \nodoesp{(\xd-.2, \lc+.2)}{(\xd+.2, \lc+.4)}{\xd}{\ld}{\uparrow}{64}
+    \nodoesp{(\xj-.2, \lc+.2)}{(\xj+.2, \lc+.4)}{\xj}{\ld}{\uparrow}{16}
+    \parentesi{\xj}{\ld}{1}{[}{]}
+    \nodoesp{(\xd, \ld)}{(\xj, \ld)}{\xh}{\le}{:}{4}
+    \nodoesp{(\xh, \le)}{(\xp, \lc)}{\xn}{\lf}{+}{13}
+    \draw (\xn, \lf) 
+      node[draw, above, rectangle,rounded corners=1pt, very thick] {$13$};
+  }
+}
+
+\newcommand{\espalberoc}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ld{-7.5}
+  \def \le{-8.7}
+  \def \xa{-4.5} \def \xb{-4.3} \def \xc{-4.1} 
+  \def \xd{-3.4} 
+  \def \xe{-2.3} \def \xf{-2.1} \def \xg{-1.9} 
+  \def \xh{-1.2} \def \xi{-0.4} \def \xj{+0.4} 
+  \def \xk{+1.35} \def \xl{+1.65} \def \xm{+1.85} 
+  \def \xn{+2.45} 
+  \def \xo{+3.05} \def \xp{+3.25} \def \xq{+3.45} 
+  \disegno{
+%     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, \xd/d, \xe/e, 
+%                        \xf/f, \xg/g, \xh/h, \xi/i, \xj/j, 
+%                        \xk/k, \xl/l, \xm/m, \xn/n, \xo/o, 
+%                        \xp/p, \xq/q%, \xr/r, \xs/s, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a
+%                        }{
+%       \draw (\x, \la) circle(1pt) node [below] {\l};
+%     }
+    \draw (0, 0) node{
+    $3^3 ~-~ (5^2 ~\times~ 2 ~-~ 10^2 ~:~ 2^2) ~=$};
+    \nodoesp{(\xa, \la)}{(\xc, 0)}{\xb}{\lb}{\uparrow}{27}
+    \nodoesp{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{\uparrow}{25}
+    \nodoesp[\footnotesize]{(\xl, \la)}{(\xp, \la)}{\xn}{\lb}{p5}{5^2}
+    \nodoesp{(\xn-.2, \lb+.2)}{(\xn+.2, \lb+.4)}{\xn}{\lc}{\uparrow}{25}
+    \nodoesp{(\xf, \lb)}{(\xi, \la)}{\xh}{\lc}{\times}{50}
+    \nodoesp{(\xh, \lc)}{(\xn, \lc)}{\xj}{\ld}{-}{25}
+    \parentesi{\xj}{\ld}{1}{(}{)}
+    \nodoesp{(\xb, \lb)}{(\xj, \ld)}{\xd}{\le}{-}{2}
+    \draw (\xd, \le) 
+      node[draw, above, rectangle,rounded corners=1pt, very thick] 
+          {$2$};
+  }
+}
+
+% \phantom{}
+% \mathcolor{blue}{b}
+% \textcolor{blue}{b}
+
+\newcommand{\espbucoabase}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ld{-7.3}
+  \def \le{-8.7}
+  \def \lf{-10.5}
+%   \def \ndim{1.0}
+  \def \xa{-6.9} \def \xb{-6.15} 
+  \def \xc{-5.4} \def \xd{-4.57} \def \xe{-3.6} 
+  \def \xf{-2.8} \def \xg{-2.15} \def \xh{-1.35} 
+  \def \xi{-0.1} \def \xj{+0.85} \def \xk{+1.65} 
+  \def \xl{+1.85} \def \xm{+2.05} \def \xn{+3.2} 
+  \def \xo{+3.95} \def \xp{+4.82} \def \xq{+5.45} 
+%     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, \xd/d, \xe/e, 
+%                        \xf/f, \xg/g, \xh/h, \xi/i, \xj/j, 
+%                        \xk/k, \xl/l, \xm/m, \xn/n, \xo/o, 
+%                        \xp/p, \xq/q%, \xr/r, \xs/s, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a
+%                        }{
+%       \draw (\x, \la) circle(1pt) node [below] {\l};
+%     }
+    \draw (0, 0) node{
+    $[4 ~\times~ 5 ~+~ 16 ~:~ 2 ~-~ (13 ~-~ 2^{\dots}) ~\times~ 2] ~:~ 
+      2 ~=~ 9$};
+    \nodoesp{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{\times}{20}
+    \nodoesp{(\xe, \la)}{(\xg, \la)}{\xf}{\lb}{:}{8}
+    \nodoesp{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{\uparrow}{\phantom{8}}
+    \nodoesp{(\xb, \lb)}{(\xf, \lb)}{\xd}{\lc}{+}{28}
+    \nodoesp{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{-}{\phantom{5}}
+    \parentesi{\xj}{\lc}{.8}{(}{)}
+    \nodoesp{(\xj, \lc)}{(\xo, \la)}{\xn}{\ld}{\times}{\phantom{10}}
+    \nodoesp{(\xd, \lc)}{(\xn, \ld)}{\xh}{\le}{-}{\phantom{18}}
+    \parentesi{\xh}{\le}{1}{[}{]}
+    \nodoesp{(\xh, \le)}{(\xq, \la)}{\xp}{\lf}{:}{\phantom{9}}
+    \draw (\xp, \lf) 
+      node[draw, above, rectangle,rounded corners=1pt, very thick] 
+          {$\textcolor{blue}{9}$};
+}
+
+\newcommand{\espbucoaa}{
+  \disegno{
+    \espbucoabase
+    \draw (\xh, \le) node [above]
+      {\footnotesize$~\textcolor{blue}{\bigstar}~$};
+  }
+}
+
+\newcommand{\espbucoab}{
+  \disegno{
+    \espbucoabase
+    \draw (\xh, \le) node [above]{$\textcolor{blue}{18}$};
+    \draw (\xn, \ld) node [above]
+      {\footnotesize$~\textcolor{blue}{\bigstar}~$};
+  }
+}
+
+\newcommand{\espbucoac}{
+  \disegno{
+    \espbucoabase
+    \draw (\xh, \le) node [above]{$\textcolor{blue}{18}$};
+    \draw (\xn, \ld) node [above]{$\textcolor{blue}{10}$};
+    \draw (\xj, \lc) node [above]{$\textcolor{blue}{5}$};
+    \draw (\xl, \lb) node [above]{$\textcolor{blue}{8}$};
+    \draw (\xm, 0.3) node {\footnotesize$\textcolor{blue}{3}$};
+  }
+}
+
+\newcommand{\espbucob}{
+  \def \la{-0.3}
+  \def \lb{-2.8}
+  \def \lc{-5.3}
+  \def \ld{-7.8}
+  \def \le{-10.3}
+  \def \lf{-12.3}
+%   \def \ndim{1.0}
+  \def \xa{-7.6} \def \xb{-7.1} \def \xc{-6.8} 
+  \def \xd{-6.1} \def \xe{-5.3} \def \xf{-4.35} 
+  \def \xg{-3.4} \def \xh{-3.0} \def \xi{-2.65} \def \xj{-1.9} 
+  \def \xk{-1.1} \def \xl{+0.0} \def \xm{+0.7} \def \xn{+1.55} 
+  \def \xo{+2.75} \def \xp{+3.75} \def \xq{+4.5} 
+  \def \xr{+5.33} \def \xs{+6.1} 
+  \disegno{
+%     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, 
+%                        \xd/d, 
+%                        \xe/e, \xf/f, \xg/g, 
+%                        \xh/h, 
+%                        \xi/i, \xj/j, 
+%                        \xk/k , \xl/l, \xm/m, \xn/n, \xo/o, 
+%                        \xp/p, \xq/q, \xr/r, \xs/s%, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a, \xaa/a, \xaa/a, \xaa/a, 
+% %                        \xaa/a
+%                        }{
+%       \draw (\x, \la) circle(1pt) node [below] {\l};
+%     }
+    \draw (0, 0) node{
+    $(3^4)^3 ~\times~ 3^{\dots} : (3^3)^5 ~-~ 2^3 ~\times~ 2 
+     ~\times~ (20 ~-~ 3 ~\times~ 5) ~=~ 1$};
+    \nodoesp[\footnotesize]{(\xa, \la)}{(\xc, 0)}{\xb}{\lb}{p3}{3^{12}}
+    \nodoesp[\footnotesize]{(\xg, \la)}{(\xi, 0)}{\xh}{\lb}{p3}{3^{15}}
+    \nodoesp[\footnotesize]{(\xk, \la)}{(\xm, \la)}{\xl}{\lb}{p2}{8^{2}}
+    \nodoesp{(\xq, \la)}{(\xs, \la)}{\xr}{\lb}{\times}{15}
+    \nodoesp[\footnotesize]{(\xb, \lb)}{(\xe, \la)}{\xd}{\lc}{p1}
+      {\phantom{8^{14}}}
+    \nodoesp{(\xl-.2, \lb+.2)}{(\xl+.2, \lb+.4)}{\xl}{\lc}{\uparrow}{16}
+    \nodoesp{(\xo, \la)}{(\xr, \lb)}{\xp}{\lc}{-}{5}
+    \parentesi{\xp}{\lc}{.8}{(}{)}
+    \nodoesp[\footnotesize]{(\xd, \lc)}{(\xh, \lb)}{\xf}{\ld}{p2}
+      {\phantom{8^{14}}}
+    \nodoesp[\footnotesize]{(\xf-.2, \ld+.2)}{(\xf+.2, \ld+.4)}{\xf}{\le}
+      {\uparrow}{~\textcolor{blue}{\bigstar}}
+    \nodoesp{(\xl, \lc)}{(\xp, \lc)}{\xn}{\ld}{\times}{80}
+    \nodoesp{(\xf, \le)}{(\xn, \ld)}{\xj}{\lf}{-}{\phantom{1}}
+%     \nodoesp[\footnotesize]{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{p3}{8^{12}}
+%     \nodoesp[\footnotesize]{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{p3}{4^{10}}
+%     \nodoesp[\footnotesize]{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{p5}{3^{2}}
+%     \nodoesp[\footnotesize]{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{p2}{4^{2}}
+%     \nodoesp{(\xp-.2, \lb+.2)}{(\xp+.2, \lb+.4)}{\xp}{\lc}{\uparrow}{9}
+%     \nodoesp{(\xd-.2, \lc+.2)}{(\xd+.2, \lc+.4)}{\xd}{\ld}{\uparrow}{64}
+%     \nodoesp{(\xj-.2, \lc+.2)}{(\xj+.2, \lc+.4)}{\xj}{\ld}{\uparrow}{16}
+%     \nodoesp{(\xd, \ld)}{(\xj, \ld)}{\xh}{\le}{:}{4}
+%     \nodoesp{(\xh, \le)}{(\xp, \lc)}{\xn}{\lf}{+}{13}
+    \draw (\xj, \lf) 
+      node[draw, above, rectangle,rounded corners=1pt, very thick] 
+          {$\textcolor{blue}{1}$};
+    % per spostare il tutto verso l'alto:
+    \draw (\xj, \lf-2) node[opacity=0]{0}; 
+    % cosa che non sono riuscito a fare nel punto di chiamata della funzione
+  }
+}
+
+% \newcommand{\espressionealberodia}{
+%   \def \la{-0.3}
+%   \def \lb{-2.8}
+%   \def \lc{-5.3}
+%   \def \ld{-7.8}
+%   \def \le{-10.3}
+%   \def \lf{-12.8}
+%   \def \lg{-14.2}
+%   \def \ndim{1.0}
+%   \def \xa{-10.55} \def \xb{-9.62} 
+%   \def \xc{-8.7} \def \xd{-7.85} \def \xe{-7.0} 
+%   \def \xf{-6.05} 
+%   \def \xg{-4.8} \def \xh{-3.9} \def \xi{-3.0} 
+%   \def \xj{-2.05} 
+%   \def \xk{-1.2} \def \xl{-1.0} \def \xm{-0.8} 
+%   \def \xn{+0.1} 
+%   \def \xo{+0.95} \def \xp{+1.9} \def \xq{2.7} 
+%   \def \xr{+3.95} 
+%   \def \xs{5.1} \def \xt{5.3} \def \xu{5.5} 
+%   \def \xv{6.4} 
+%   \def \xw{7.25} \def \xx{7.45} \def \xy{7.65} 
+%   \def \xz{8.8} \def \xaa{9.7} 
+%   \disegno{
+% %     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, \xd/d, \xe/e, 
+% %                        \xf/f, \xg/g, \xh/h, \xi/i, \xj/j, 
+% %                        \xk/k, \xl/l, \xm/m, \xn/n, \xo/o, 
+% %                        \xp/p, \xq/q, \xr/r, \xs/s, \xt/t,
+% %                        \xu/u, \xv/v, \xw/w, \xx/x, \xy/y, 
+% %                        \xz/z, \xaa/a}{
+% %       \draw (\x, \la) circle(1pt) node [below] {\l};
+% %     }
+%     \draw (0, 0) node{
+%     $2 ~+~ 6 ~\times~ 2 ~: 
+%     \left[ \left(4 ~-~ 2 \right) \times~ 3^{2} ~-~ 3 ~\times~ 5 \right] ~+~
+%     \left( 5^{2} ~+~ 2^{3} \right) ~:~ 3 =$};
+%     \nodoesp{(\xc, \la)}{(\xe, \la)}{\xd}{\lb}{\times}{12}
+%     \nodoesp{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{-}{2}
+%     \parentesi{\xh}{\lb}{.8}{(}{)}
+%     \nodoesp{(\xk, \la)}{(\xm, +0.0)}{\xl}{\lb}{\uparrow}{9}
+%     \nodoesp{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{\times}{15}
+%     \nodoesp{(\xs, \la)}{(\xu, +0.0)}{\xt}{\lb}{\uparrow}{25}
+%     \nodoesp{(\xw, \la)}{(\xy, +0.0)}{\xx}{\lb}{\uparrow}{8}
+%     \nodoesp{(\xh, \lb)}{(\xl, \lb)}{\xj}{\lc}{\times}{18}
+%     \nodoesp{(\xt, \lb)}{(\xx, \lb)}{\xv}{\lc}{+}{33}
+%     \parentesi{\xv}{\lc}{1}{(}{)}
+%     \nodoesp{(\xj, \lc)}{(\xp, \lb)}{\xn}{\ld}{-}{3}
+%     \parentesi{\xn}{\ld}{.8}{[}{]}
+%     \nodoesp{(\xv, \lc)}{(\xaa, \la)}{\xz}{\ld}{:}{11}
+%     \nodoesp{(\xd, \lb)}{(\xn, \ld)}{\xf}{\le}{:}{4}
+%     \nodoesp{(\xa, \la)}{(\xf, \le)}{\xb}{\lf}{+}{6}
+%     \nodoesp{(\xb, \lf)}{(\xz, \ld)}{\xr}{\lg}{+}{17}
+%     \draw (\xr, \lg) 
+%       node[draw, above, rectangle,rounded corners=1pt, very thick] 
+%           {$\ris$};
+%   }
+% }
+
+%\newcommand{\grafoporta}{% 
+%  % Funzione rappresentata come porta logica
+  
+% \begin{circuitikz}[rotate=-90]
+% \draw (0,3) node[american and port] (A) {P1};
+% \begin{scope}
+% \ctikzset{tripoles/american or port/height=1.6}
+% \draw (A.out) -- ++(0.5,0)
+% node[american or port,
+% number inputs=5,
+% anchor=in 1] (B) {P2};
+% \end{scope}
+% \draw (0,1.5) node[american or port] (C) {P3};
+% \draw (C.out) |- (B.in 2);
+% \end{circuitikz}
+ 
+%  \disegno[10]{
+%    \draw (6,0) node[nand2ni,anchor=tip,draw] (n4) {}
+%      (n4.z) -- +(0mm,-5mm)
+%      (n4.b) |- ++(10mm,2mm) -- ++(0mm,2mm)
+%      node[and2in,anchor=z,draw,fill=gray] (n3) {}
+%      (n4.a) |- ++(-10mm,2mm) -- ++(0mm,2mm)
+%      node[or3nni,anchor=tip,draw] (n2) {}
+%      (n3.b) -- +(0mm,5mm) node[above] {$i_5$}
+%      (n3.a) |- ++(-5mm,2mm)
+%      coordinate (p) -- +(0mm,5mm) node[above] {$i_4$}
+%      (n2.c) |- (p)
+%      (n2.b) |- ++(6mm,12mm) -- +(0mm,5mm) node[above] {$i_3$}
+%      (n2.a) -- +(0mm,8mm)
+%      node[and2,anchor=tip,draw] (n1) {}
+%      (n1.b) -- +(0mm,5mm) node[above] {$i_2$}
+%      (n1.a) -- +(0mm,5mm) node[above] {$i_1$};
+%  }
+%}
+
+\newcommand{\algdiv}{
+  \disegno[10]{
+    \draw[-](0,.4)--(0,-.9); % verticale
+    \draw[-](0,0)--(.4,0) ; %orizzontale
+    \draw (-.1,-.5) -- (-.6,-.5); % resto
+    \node (a) at (.2,.2) {7};
+    \node (b) at (.2,-.2) {3};
+    \node (c) at (-.3,.2) {25};
+    \node (d) at (-.3,-.2) {21};
+    \node (e) at (-.2,-.7){4};
+    \begin{scope}[font=\scriptsize]
+      \freccia{(+0.9, +0.2)}{(+0.4, +0.2)}{right}{divisore}
+      \freccia{(+0.9, -0.2)}{(+0.4, -0.2)}{right}{quoziente}
+      \freccia{(-1.1, +0.2)}{(-0.6, +0.2)}{left}{dividendo}
+      \freccia{(-0.9, -0.7)}{(-0.4, -0.7)}{left}{resto}
+    \end{scope}
+  }
+}
+
+  \def \valposc{green!60!black}
+  \def \quozc{blue!60!black}
+  \def \restc{red!60!black}
+
+\newcommand{\divisinta}{
+\begin{tikzpicture}[node distance=-25ex, ampersand replacement=\&]
+  \begin{scope}[font=\ttfamily]
+    \matrix (divisionea) [matrix of nodes]
+      {%
+\&   \& |[\valposc]|M \& |[\valposc]|C \& |[\valposc]|D \& 
+|[\valposc]|U \&  \&  \&  \&[8mm]
+\&   \& |[\valposc]|M \& |[\valposc]|C \& |[\valposc]|D \& 
+|[\valposc]|U \&  \&  \&  \&[8mm]
+\&   \& |[\valposc]|M \& |[\valposc]|C \& |[\valposc]|D \& 
+|[\valposc]|U \&  \&  \&  \\
+\&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \&[8mm]
+\&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \&[8mm]
+\&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \\
+\& - \& 1 \& 4 \&   \& ~ \& |[\quozc]|2 \&  \&  \&
+\& - \& 1 \& 4 \&   \& ~ \& |[\quozc]|2 \& |[\quozc]|1 \&  \&
+\& - \& 1 \& 4 \&   \& ~ \& |[\quozc]|2 \& |[\quozc]|1 \& 
+|[\quozc]|7 \&\\
+\&   \&   \& 1 \&   \&   \& |[\valposc]|C \&  \&  \&
+\&   \&   \& 1 \& 2 \&   \& |[\valposc]|C \& |[\valposc]|D \&  
+\&
+\&   \&   \& 1 \& 2 \&   \& |[\valposc]|C \& |[\valposc]|D \& 
+|[\valposc]|U\\
+\&   \&   \&   \&   \&   \&   \&   \&   \&
+\&   \&   \& - \& 7 \&   \&   \&   \&   \&
+\&   \&   \& - \& 7 \&   \&   \&   \&\\
+\&   \&   \&   \&   \&   \&   \&   \&   \&
+\&   \&   \&   \& 5 \&   \&   \&   \&   \&
+\&   \&   \&   \& 5 \& 3 \&   \&   \&\\
+\&   \&   \&   \&   \&   \&   \&   \&   \&
+\&   \&   \&   \&   \&   \&   \&   \&   \&
+\&   \&   \& - \& 4 \& 9 \&   \&   \&\\
+\&   \&   \&   \&   \&   \&   \&   \&   \&
+\&   \&   \&   \&   \&   \&   \&   \&   \& 
+\&   \&   \&   \&   \& |[\restc]|4 \& \& \&\\
+      };
+  \end{scope}
+% Prima divisionea
+  \draw(divisionea-2-6.north east)--(divisionea-3-6.south east);
+  \draw(divisionea-2-6.south east)--(divisionea-2-9.south east);
+  \draw(divisionea-3-2.south west)--(divisionea-3-4.south east);
+%   \node (a) [above=of divisionea-3-6.north east] {1.};
+% Seconda divisionea
+  \draw(divisionea-2-15.north east)--(divisionea-3-15.south east);
+  \draw(divisionea-2-15.south east)--(divisionea-2-18.south east);
+  \draw(divisionea-3-11.south west)--(divisionea-3-13.south east);
+  \draw(divisionea-5-13.south west)--(divisionea-5-14.south east);
+  \draw[densely dotted,->] (divisionea-2-14) -- (divisionea-4-14);
+%   \node (b) [above=of divisionea-1-15.north east] {2.};
+% Terza divisionea
+  \draw(divisionea-2-24.north east)--(divisionea-3-24.south east);
+  \draw(divisionea-2-24.south east)--(divisionea-2-27.south east);
+  \draw(divisionea-3-20.south west)--(divisionea-3-22.south east);
+  \draw(divisionea-5-22.south west)--(divisionea-5-23.south east);
+  \draw(divisionea-7-22.south west)--(divisionea-7-24.south east);
+  \draw[densely dotted,->] (divisionea-2-23) -- (divisionea-4-23);
+  \draw[densely dotted,->] (divisionea-2-24) -- (divisionea-6-24);
+%   \node (c) [above=of divisionea-1-24.north east] {3.};
+  \node at (-4.0, 1.8) [above] {passo 1};
+  \node at (+0.15, 1.8) [above] {passo 2};
+  \node at (+4.3, 1.8) [above] {passo 3};
+\end{tikzpicture}
+}
+
+% \newcommand{\intb}{
+% \begin{tikzpicture}[node distance=-25ex, ampersand replacement=\&]
+%   \begin{scope}[font=\ttfamily]
+%     \matrix (divisionea) [matrix of nodes]
+%       {%
+% \&   \& |[\valposc]|M \& |[\valposc]|C \& |[\valposc]|D \& 
+% |[\valposc]|U \&  \&  \&  \&[8mm]
+% \&   \& |[\valposc]|M \& |[\valposc]|C \& |[\valposc]|D \& 
+% |[\valposc]|U \&  \&  \&  \&[8mm]
+% \&   \& |[\valposc]|M \& |[\valposc]|C \& |[\valposc]|D \& 
+% |[\valposc]|U \&  \&  \&  \\
+% \&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \&[8mm]
+% \&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \&[8mm]
+% \&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \\
+% \& - \& 1 \& 4 \&   \& ~ \& |[\quozc]|2 \&  \&  \&
+% \& - \& 1 \& 4 \&   \& ~ \& |[\quozc]|2 \& |[\quozc]|1 \&  \&
+% \& - \& 1 \& 4 \&   \& ~ \& |[\quozc]|2 \& |[\quozc]|1 \& 
+% |[\quozc]|7 \&\\
+% \&   \&   \& 1 \&   \&   \& |[\valposc]|C \&  \&  \&
+% \&   \&   \& 1 \& 2 \&   \& |[\valposc]|C \& |[\valposc]|D \&  
+% \&
+% \&   \&   \& 1 \& 2 \&   \& |[\valposc]|C \& |[\valposc]|D \& 
+% |[\valposc]|U\\
+% \&   \&   \&   \&   \&   \&   \&   \&   \&
+% \&   \&   \& - \& 7 \&   \&   \&   \&   \&
+% \&   \&   \& - \& 7 \&   \&   \&   \&\\
+% \&   \&   \&   \&   \&   \&   \&   \&   \&
+% \&   \&   \&   \& 5 \&   \&   \&   \&   \&
+% \&   \&   \&   \& 5 \& 3 \&   \&   \&\\
+% \&   \&   \&   \&   \&   \&   \&   \&   \&
+% \&   \&   \&   \&   \&   \&   \&   \&   \&
+% \&   \&   \& - \& 4 \& 9 \&   \&   \&\\
+% \&   \&   \&   \&   \&   \&   \&   \&   \&
+% \&   \&   \&   \&   \&   \&   \&   \&   \& 
+% \&   \&   \&   \&   \& |[\restc]|4 \& \& \&\\
+%       };
+%   \end{scope}
+% % Prima divisionea
+%   \draw(divisionea-2-6.north east)--(divisionea-3-6.south east);
+%   \draw(divisionea-2-6.south east)--(divisionea-2-9.south east);
+%   \draw(divisionea-3-2.south west)--(divisionea-3-4.south east);
+% %   \node (a) [above=of divisionea-3-6.north east] {1.};
+% % Seconda divisionea
+%   \draw(divisionea-2-15.north east)--(divisionea-3-15.south east);
+%   \draw(divisionea-2-15.south east)--(divisionea-2-18.south east);
+%   \draw(divisionea-3-11.south west)--(divisionea-3-13.south east);
+%   \draw(divisionea-5-13.south west)--(divisionea-5-14.south east);
+%   \draw[densely dotted,->] (divisionea-2-14) -- (divisionea-4-14);
+% %   \node (b) [above=of divisionea-1-15.north east] {2.};
+% % Terza divisionea
+%   \draw(divisionea-2-24.north east)--(divisionea-3-24.south east);
+%   \draw(divisionea-2-24.south east)--(divisionea-2-27.south east);
+%   \draw(divisionea-3-20.south west)--(divisionea-3-22.south east);
+%   \draw(divisionea-5-22.south west)--(divisionea-5-23.south east);
+%   \draw(divisionea-7-22.south west)--(divisionea-7-24.south east);
+%   \draw[densely dotted,->] (divisionea-2-23) -- (divisionea-4-23);
+%   \draw[densely dotted,->] (divisionea-2-24) -- (divisionea-6-24);
+% %   \node (c) [above=of divisionea-1-24.north east] {3.};
+%   \node at (-4.0, 1.8) [above] {passo 1};
+%   \node at (+0.15, 1.8) [above] {passo 2};
+%   \node at (+4.3, 1.8) [above] {passo 3};
+% \end{tikzpicture}
+% }
+
+\newcommand{\iniscomptree}{
+  \tikzset{
+    level distance=8mm,
+    level 1/.style={sibling distance=20mm},
+    level 2/.style={sibling distance=10mm},
+    level 3/.style={sibling distance=5mm}
+  }
+  \node {$\qquad \qquad \qquad 630 = 2 \cdot 3^2 \cdot 5 \cdot 7$}
+}
+
+\newcommand{\scompa}{
+  \disegno{
+    \iniscomptree
+    child {node {10}
+      child {node {2}}
+      child {node {5}}
+    }
+    child {node {63}
+      child {node {3}}
+      child {node {21}
+        child {node {7}}
+        child {node {3}}
+      }
+    };
+  }
+}
+
+\newcommand{\scompb}{
+  \disegno{
+    \iniscomptree
+    child {node {70}
+      child {node {7}}
+      child {node {10}
+        child {node {2}}
+        child {node {5}}
+      }
+    }
+    child {node {9}
+      child {node {3}}
+      child {node {3}}
+    };
+  }
+}
+
+\newcommand{\scompc}{
+  \disegno{
+    \iniscomptree
+    child {node {70}
+      child {node {2}}
+      child {node {35}
+        child {node {5}}
+        child {node {7}}
+      }
+    }
+    child {node {9}
+      child {node {$3^2$}}
+    };
+  }
+}
+
+\newcommand{\esematt}{
+  \disegno[10]{
+    \tikzset{
+      level distance=8mm,
+      level 1/.style={sibling distance=20mm},
+      level 2/.style={sibling distance=10mm},
+      level 3/.style={sibling distance=5mm}
+    }
+    \begin{scope}[xshift=-20mm]
+    \node {$\qquad \qquad \qquad 315 = 3^2 \cdot 5 \cdot 7$}
+      child {node {5}}
+      child {node {63}
+        child {node {3}}
+        child {node {21}
+          child {node {7}}
+          child {node {3}}
+        }
+      };
+    \end{scope}
+    \begin{scope}[xshift=20mm]
+    \node {$\qquad \qquad \qquad 435 = 3 \cdot 5 \cdot 29$}
+      child {node {5}}
+      child {node {87}
+        child {node {3}}
+        child {node {29}}
+      };
+    \end{scope}
+    \begin{scope}[xshift=50mm,yshift=-40mm, scale=.8,
+                  every node/.style={minimum size=10mm},on grid]
+        \draw[step=10mm, black, dashed] (0,0) grid (6,5);
+        \fill[gray, opacity=.4] (5,4) rectangle (6,5);
+        \draw[black,very thick] (0,0) rectangle (6,5);
+    \end{scope}
+  }
+}
+
+\newcommand{\eratostene}{
+\tikzset{%
+	table nodes/.style={%
+		rectangle,
+		draw=black,
+ 		align=center,
+   		minimum height=5mm,
+     	text depth=0.5ex,
+     	text height=1.5ex,
+     	inner xsep=-1pt,
+     	outer sep=0pt
+	},
+	table/.style={%
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={%
+            table nodes
+        },
+        execute at empty cell={\node[draw=none]{};}
+    }
+  }
+  \begin{tikzpicture}
+  \matrix (first) [table,text width=6mm, name=table, ampersand replacement=\&]
+  {
+  1 \& 2 \& 3 \&4 \& 5 \& 6 \& 7 \& 8 \& 9 \& 10\\
+  11 \& 12 \& 13 \& 14 \& 15 \& 16 \& 17 \& 18 \& 19 \& 20\\
+  21 \& 22 \& 23 \& 24 \& 25 \& 26 \& 27 \& 28 \& 29 \& 30\\
+  31 \& 32 \& 33 \& 34 \& 35 \& 36 \& 37 \& 38 \& 39 \& 40\\
+  41 \& 42 \& 43 \& 44 \& 45 \& 46 \& 47 \& 48 \& 49 \& 50\\
+  51 \& 52 \& 53 \& 54 \& 55 \& 56 \& 57 \& 58 \& 59 \& 60\\
+  61 \& 62 \& 63 \& 64 \& 65 \& 66 \& 67 \& 68 \& 69 \& 70\\
+  71 \& 72 \& 73 \& 74 \& 75 \& 76 \& 77 \& 78 \& 79 \& 80\\
+  81 \& 82 \& 83 \& 84 \& 85 \& 86 \& 87 \& 88 \& 89 \& 90\\
+  91 \& 92 \& 93 \& 94 \& 95 \& 96 \& 97 \& 98 \& 99 \& 100\\
+  };
+  \end{tikzpicture}
+}
+
+\newcommand{\divisintb}{
+\begin{tikzpicture}[node distance=-25ex, ampersand replacement=\&]
+  \begin{scope}[font=\ttfamily]
+    \matrix (divisioneb) [matrix of nodes]
+    {%
+% \&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \&[8mm]
+% \&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \&[8mm]
+% \&   \& 1 \& 5 \& 2 \& 3 \& 7 \& ~ \& ~ \\
+  \& 3 \& 2 \& 7 \& 2 \& 3 \&[8mm] 
+  \& 1 \& 3 \& 2 \& 9 \& 1 \& 0 \& 7 \&[8mm] 
+  \& 1 \& 2 \& 5 \& 9 \& 4 \& 3 \& 1 \& 7 \& 1\\
+- \& 2 \& 3 \&   \& |[\quozc]|1 \& |[\quozc]|4 \& 
+- \& 1 \& 0 \& 7 \&   \& |[\quozc]|1 \& |[\quozc]|2 \&  \& 
+- \& 1 \& 1 \& 9 \& 7 \&   \&   \& 
+|[\quozc]|7 \& |[\quozc]|3 \& |[\quozc]|6\\
+  \&   \& 9 \& 7 \&   \&   \& 
+  \&   \& 2 \& 5 \& 9 \&   \&   \&   \& 
+  \&   \&   \& 6 \& 2 \& 4 \&   \&   \&   \& \\
+  \& - \& 9 \& 2 \&  \&  \& 
+  \& - \& 2 \& 1 \& 4 \&  \&  \&  \&
+  \&   \& - \& 5 \& 1 \& 3 \&  \&  \&  \& \\
+  \&   \&   \& |[\restc]|5 \&  \&  \& 
+  \&   \&   \& |[\restc]|4 \& |[\restc]|5 \&  \&  \&  \&
+  \&   \&   \& 1 \& 1 \& 1 \& 3 \&   \&   \& \\
+  \&   \&   \&   \&   \&   \&
+  \&   \&   \&   \&   \&   \&   \&   \&
+  \&   \& - \& 1 \& 0 \& 2 \& 6 \&   \&   \& \\
+  \&   \&   \&   \&   \&   \&
+  \&   \&   \&   \&   \&   \&   \&   \&
+  \&   \&   \&   \&   \& |[\restc]|8 \& |[\restc]|7 \&   \&   \& \\
+    };
+  \end{scope}
+%   Prima divisioneb
+  \draw(divisioneb-1-5.north west)--(divisioneb-2-5.south west);
+  \draw(divisioneb-1-5.south west)--(divisioneb-1-6.south east);
+  \draw(divisioneb-2-2.south west)--(divisioneb-2-3.south east);
+  \draw(divisioneb-4-3.south west)--(divisioneb-4-4.south east);
+  \draw[densely dotted,->] (divisioneb-1-4) -- (divisioneb-3-4);
+  \node (a) [above=of divisioneb-1-4.north west] {$Q=14 \quad R=5$};
+%   Seconda divisioneb
+  \draw (divisioneb-1-12.north west) -- (divisioneb-2-12.south west);
+  \draw (divisioneb-1-12.south west) -- (divisioneb-1-14.south east);
+  \draw(divisioneb-2-8.south west)--(divisioneb-2-10.south east);
+  \draw (divisioneb-4-9.south west) -- (divisioneb-4-11.south east);
+  \draw[densely dotted,->] (divisioneb-1-11) -- (divisioneb-3-11);
+  \node (b) [above=of divisioneb-1-11.north west] {$Q=12 \quad R=45$};
+%   Terza divisioneb
+  \draw (divisioneb-1-22.north west) -- (divisioneb-2-22.south west);
+  \draw (divisioneb-1-22.south west) -- (divisioneb-1-24.south east);
+  \draw (divisioneb-2-16.south west) -- (divisioneb-2-19.south east);
+  \draw (divisioneb-4-18.south west) -- (divisioneb-4-20.south east);
+  \draw (divisioneb-6-18.south west) -- (divisioneb-6-21.south east);
+  \draw[densely dotted,->] (divisioneb-1-20) -- (divisioneb-3-20);
+  \draw[densely dotted,->] (divisioneb-1-21) -- (divisioneb-5-21);
+  \node (c) [above=of divisioneb-1-21.north west] {$Q=736 \quad R=87$};
+\end{tikzpicture}
+}

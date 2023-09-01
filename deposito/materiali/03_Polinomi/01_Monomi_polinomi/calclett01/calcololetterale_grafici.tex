@@ -1,0 +1,434 @@
+
+\def \areacolor{blue!30!gray!20}
+\def \upcolor{green!20!gray!10}
+\def \frontcolor{green!20!gray!30}
+\def \sidecolor{green!20!gray!50}
+
+\newcommand{\scatola}{
+  \def \base{15}
+  \def \alt{10}
+  \def \x{1.5}
+  \pgfmathparse{\base-2*\x} \let\a\pgfmathresult
+  \pgfmathparse{\alt-2*\x} \let\b\pgfmathresult
+  \pgfmathparse{\x/2} \let\xm\pgfmathresult
+  \pgfmathparse{\b/2} \let\bm\pgfmathresult
+  \pgfmathparse{\b/2/1.4142} \let\yc\pgfmathresult
+  \def \opacityf{.7}
+  \disegno[2]{
+    \filldraw [thick, green!50!black, fill=white, rounded corners=3pt] 
+      (-2*\x, -2*\x) rectangle (\a*4.3, \b*1.45); 
+    \draw [thick] (-\x, -\x) rectangle (\a+\x, \b+\x);
+    \draw [thick] (0, -\x) --  (0, 0)   (0, \b+\x) -- (0, \b) 
+                  (\a, -\x) --  (\a, 0)   (\a, \b+\x) -- (\a, \b); 
+    \draw [dashed] (-\x, 0) -- (\a+\x, 0)  (-\x, \b) -- (\a+\x, \b) 
+                          (0, 0) -- (0, \b)    (\a, 0) -- (\a, \b); 
+    \begin{scope} [xshift=35mm]
+      \draw [thick, join=round] 
+        (-\x, 0) coordinate (AA) -- ++ (0:\x) coordinate (A) -- ++ 
+        (-135:\x/2) -- ++ (0:\a) -- ++
+        (45:\x/2) coordinate (B) -- ++ (0:\x) -- ++ 
+        (45:\bm) -- ++ (180:\x) coordinate (C) -- ++ 
+        (45:\x/2) -- ++ (180:\a) -- ++
+        (-135:\x/2) coordinate (D) -- ++ (180:\x) coordinate (DD) -- cycle; 
+        \draw [dashed] (A) -- (B) -- (C) -- (D) -- cycle; 
+        \foreach \p in {AA, B, C, DD}{
+          \fill [fill=white, opacity=\opacityf] (\p) rectangle ++(\x, \x);
+          \draw [thick, join=round] (\p) rectangle ++(\x, \x);}
+    \end{scope}
+    \begin{scope} [xshift=70mm, thick, join=round]
+      \draw 
+        (0, 0) coordinate(A) --++ (45:\bm) coordinate(D) --++ 
+        (90:\x) coordinate(OD) --++ (-135:\bm) coordinate(OA) -- cycle;
+      \draw 
+        (D) --++ (0:\a) coordinate(C) --++ 
+        (90:\x) coordinate(OC) -- (OD) -- cycle;
+      \draw [shift={(\x, 0)}] (0, 0) -- (0, \x);
+      \draw [shift={(\a-\x, 0)}] (0, 0) -- (0, \x);
+      \draw [shift={(\x+\yc, \yc)}] (0, 0) -- (0, \x);
+      \draw [shift={(\a-\x+\yc, \yc)}] (0, 0) -- (0, \x);
+      \fill [fill=white, opacity=\opacityf] 
+        (\a, 0) coordinate(B) -- (C) -- 
+        (OC) --++ (-135:\bm) coordinate(OB) -- cycle;
+      \draw (B) -- (C) -- (OC) -- (OB) -- cycle;
+      \fill [fill=white, opacity=\opacityf] 
+        (A) -- (B) -- (OB) -- (OA)  -- cycle;
+      \draw (A) -- (B) -- (OB) -- (OA)  -- cycle;
+    \end{scope}
+
+  }
+}
+
+% \newcommand{\rettangolocl}[2]{
+%   \def \base{#1}
+%   \def \altezza{#2}
+%   \disegno[2]{
+%     \draw [fill=\areacolor] (0,0) rectangle (\base, \altezza); 
+%     \node[below] at (\base/2, 0) {$a$};
+%     \node [left] at (0, \altezza/2) {$b$};
+%   }
+% }
+
+\newcommand{\quadratobin}[2]{
+  \def \a{#1}
+  \def \b{#2}
+  \pgfmathparse{\a+\b} \let\apb\pgfmathresult
+  \disegno{
+    \fill [fill=red!30] (0, 0) rectangle ++(\a, \a)
+                        (\a, \a) rectangle ++(\b, \b); 
+    \fill [fill=blue!30] (0, \a) rectangle ++(\a, \b)
+                         (\a, 0) rectangle ++(\b, \a); 
+    \draw [thick] (0, 0) rectangle ++(\apb, \apb); 
+    \draw (\a, 0) -- (\a, \apb) (0, \a) -- (\apb, \a);
+    \node [below] at (\a/2, 0) {$a$};
+    \node [below=-2pt] at (\a+\b/2, 0) {$b$};
+    \node [left] at (0, \a/2) {$a$};
+    \node [left] at (0, \a+\b/2) {$b$};
+    \node at (\a/2, \a/2) {$a^2$};
+    \node at (\a+\b/2, \a+\b/2) {$b^2$};
+    \node at (\a/2, \a+\b/2) {$ab$};
+    \node at (\a+\b/2, \a/2) {$ab$};
+  }
+}
+
+\newcommand{\quadratotri}[3]{
+  \def \a{#1}
+  \def \b{#2}
+  \def \c{#3}
+  \pgfmathparse{\a+\b} \let\apb\pgfmathresult
+  \pgfmathparse{\b+\c} \let\bpc\pgfmathresult
+  \pgfmathparse{\a+\b+\c} \let\apbpc\pgfmathresult
+  \disegno{
+    \fill [fill=red!30] (0, 0) rectangle ++(\a, \a)
+                        (\a, \a) rectangle ++(\b, \b)
+                        (\apb, \apb) rectangle ++(\c, \c); 
+    \fill [fill=blue!30] (0, \a) rectangle ++(\a, \b)
+                         (0, \apb) rectangle ++(\a, \c)
+                         (\a, 0) rectangle ++(\b, \a)
+                         (\apb, 0) rectangle ++(\c, \a)
+                         (\a, \apb) rectangle ++(\b, \c)
+                         (\apb, \a) rectangle ++(\c, \b); 
+    \draw [thick] (0, 0) rectangle ++(\apbpc, \apbpc); 
+    \draw (\a, 0) -- (\a, \apbpc) (0, \a) -- (\apbpc, \a) 
+          (0, \apb) -- (\apbpc, \apb) (\apb, 0) -- (\apb, \apbpc);
+    \node [below] at (\a/2, 0) {$a$};
+    \node [below=-2pt] at (\a+\b/2, 0) {$b$};
+    \node [below] at (\apb+\c/2, 0) {$c$};
+    \node [left] at (0, \a/2) {$a$};
+    \node [left] at (0, \a+\b/2) {$b$};
+    \node [left] at (0, \apb+\c/2) {$c$};
+    \node at (\a/2, \a/2) {$a^2$};
+    \node at (\a+\b/2, \a+\b/2) {$b^2$};
+    \node at (\apb+\c/2, \apb+\c/2) {$c^2$};
+    \node at (\a/2, \a+\b/2) {$ab$};
+    \node at (\a+\b/2, \a/2) {$ab$};
+    \node at (\a/2, \apb+\c/2) {$ac$};
+    \node at (\apb+\c/2, \a/2) {$ac$};
+    \node at (\a+\b/2, \apb+\c/2) {$bc$};
+    \node at (\apb+\c/2, \a+\b/2) {$bc$};
+  }
+}
+
+\newcommand{\sommadifferenza}[2]{
+  \def \a{#1}
+  \def \b{#2}
+  \pgfmathparse{\a-\b} \let\amb\pgfmathresult
+  \pgfmathparse{\a+\b} \let\apb\pgfmathresult
+  \disegno{
+    \fill [fill=red!30] (0, 0) rectangle ++(\a, \a); 
+    \fill [fill=red!10!blue!10] (0, 0) rectangle ++(\b, \b); 
+    \draw [thick] (0, 0) rectangle ++(\a, \a)
+                  (0, 0) rectangle ++(\b, \b); 
+%     \draw (\a, 0) -- (\a, \apb) (0, \a) -- (\apb, \a);
+    \node [above] at (\a/2, \a) {$a$};
+    \node [left] at (0, +\b/2) {$b$};
+    \node at (\a/2, \a/2) {$a^2$};
+    \node at (\b/2, \b/2) {$b^2$};
+%     \node at (\a/2, \a+\b/2) {$ab$};
+%     \node at (\a+\b/2, \a/2) {$ab$};
+    \begin{scope}[xshift=23mm]
+      \fill [fill=red!30] (0, \b) rectangle ++(\apb, \amb);
+      \fill [fill=red!10] (\b, 0) rectangle ++(\amb, \b);  
+      \draw [thick] (0, \b) rectangle ++(\apb, \amb); 
+      \draw (\b, \b) -- (\b, 0) -- (\a, 0) -- (\a, \a);
+      \draw [-latex, gray] (\a-\b/2, \b/2) arc (90:180:-\b) -- 
+                           (\a+\b/2, \a-\b/2);
+      \node [above] at (\a/2+\b/2, \a) {$a+b$};
+      \node [above, rotate=90] at (0, \a/2+\b/2) {$a-b$};
+      \node at (\a/2+\b/2, \a/2+\b/2) {$a^2-b^2$};
+    \end{scope}
+
+  }
+}
+
+\newcommand{\trinot}[3]{
+  \def \x{#1}
+  \def \a{#2}
+  \def \b{#3}
+  \pgfmathparse{\x+\a} \let\xpa\pgfmathresult
+  \pgfmathparse{\x+\b} \let\xpb\pgfmathresult
+  \disegno{
+    \fill [fill=green!30] (0, 0) rectangle ++(\x, \x);
+    \fill [fill=red!30] (0, \x) rectangle ++(\x, \a); 
+    \fill [fill=blue!30] (\x, 0) rectangle ++(\b, \x); 
+    \fill [fill=red!15!blue!15] (\x, \x) rectangle ++(\b, \a); 
+    \draw [thick] (0, 0) rectangle ++(\xpb, \xpa); 
+    \draw (\x, 0) -- (\x, \xpa) (0, \x) -- (\xpb, \x);
+    \node [left] at (0, \x/2) {$x$};
+    \node [below] at (\x/2, 0) {$x$};
+    \node [left] at (0, \x+\a/2) {$a$};
+    \node [below] at (\x+\b/2, 0) {$b$};
+    \node at (\x/2, \x/2) {$x^2$};
+    \node at (\x/2, \x+\a/2) {$ax$};
+    \node at (\x+\b/2, \x/2) {$bx$};
+    \node at (\x+\b/2, \x+\a/2) {$ab$};
+  }
+}
+
+% \def \ucolora{red!30!gray!10}
+% \def \fcolora{red!30!gray!30}
+% \def \scolora{red!30!gray!50}
+% \def \ucolorb{blue!30!gray!10}
+% \def \fcolorb{blue!30!gray!30}
+% \def \scolorb{blue!30!gray!50}
+
+\def \ucolora{red!40!gray!10}    % Up
+\def \fcolora{red!40!gray!30}    % Front
+\def \scolora{red!40!gray!50}    % Side
+\def \ucolorb{blue!40!gray!10}   % Up
+\def \fcolorb{blue!40!gray!30}   % Front
+\def \scolorb{blue!40!gray!50}   % Side
+
+\newcommand{\romboidea}[5]{
+  \def \posinix{#1}
+  \def \posiniy{#2}
+  \def \latoa{#3}
+  \def \latocp{#4}
+  \def \facecolor{#5}
+  \draw [join=round, fill=\facecolor] 
+    (\posinix, \posiniy) -- (\posinix+\latoa, \posiniy) -- 
+    (\posinix+\latoa+\latocp, \posiniy+\latocp) -- 
+    (\posinix+\latocp, \posiniy+\latocp) -- cycle;
+}
+
+\newcommand{\romboideb}[5]{
+  \def \posinix{#1}
+  \def \posiniy{#2}
+  \def \latob{#3}
+  \def \latocp{#4}
+  \def \facecolor{#5}
+  \draw [join=round, fill=\facecolor] 
+    (\posinix, \posiniy) -- (\posinix+\latocp, \posiniy+\latocp) -- 
+    (\posinix+\latocp, \posiniy+\latocp+\latob) -- 
+    (\posinix, \posiniy+\latob) -- cycle;
+}
+
+\newcommand{\parallcubo}[8]{
+  \def \xa{#1}
+  \def \ya{#2}
+  \def \spiga{#3}
+  \def \spigb{#4}
+  \def \spigc{#5}
+  \def \upcolor{#6}
+  \def \frontcolor{#7}
+  \def \sidecolor{#8}
+  \pgfmathparse{\spigc*0.3535534} \let\cp\pgfmathresult
+  \romboidea{\xa}{\ya+\spigb}{\spiga}{\cp}{\upcolor} 
+  \romboideb{\xa+\spiga}{\ya}{\spigb}{\cp}{\sidecolor} 
+  \draw[join=round, fill=\frontcolor] (\xa, \ya) rectangle ++(\spiga, \spigb);
+}
+
+\newcommand{\cubobin}[3]{
+  \def \a{#1}
+  \def \b{#2}
+  \def \disp{#3}
+  \pgfmathparse{\a+\b} \let\spig\pgfmathresult
+  \pgfmathparse{\a*0.3535534} \let\ap\pgfmathresult
+  \pgfmathparse{\b*0.3535534} \let\bp\pgfmathresult
+  \pgfmathparse{\disp*0.3535534} \let\dispp\pgfmathresult
+  \pgfmathparse{\spig*0.3535534} \let\spigp\pgfmathresult
+  \disegno{
+    \parallcubo{\ap+\dispp}{\ap+\dispp}
+               {\a}{\a}{\b}{\ucolora}{\fcolora}{\scolora}
+    \parallcubo{\ap+\dispp}{\ap+\a+\dispp+\disp}
+               {\a}{\b}{\b}{\ucolorb}{\fcolorb}{\scolorb}
+    \parallcubo{\ap+\a+\dispp+\disp}{\ap+\dispp}
+               {\b}{\a}{\b}{\ucolorb}{\fcolorb}{\scolorb}
+    \parallcubo{\ap+\a+\dispp+\disp}{\ap+\a+\dispp+\disp}
+               {\b}{\b}{\b}{\ucolorb}{\fcolorb}{\scolorb}
+    \parallcubo{0}{0}
+               {\a}{\a}{\a}{\ucolora}{\fcolora}{\scolora}
+    \parallcubo{0}{\a+\disp}
+               {\a}{\b}{\a}{\ucolora}{\fcolora}{\scolora}
+    \parallcubo{\a+\disp}{0}
+               {\b}{\a}{\a}{\ucolora}{\fcolora}{\scolora}
+    \parallcubo{\a+\disp}{\a+\disp}
+               {\b}{\b}{\a}{\ucolorb}{\fcolorb}{\scolorb}
+    \draw (\a/2, -1) node [above] {$a$};
+    \draw (\a+\disp+\b/2, -1) node [above] {$b$};
+    \draw (0, \a/2) node [left] {$a$};
+    \draw (0, \a+\disp+\b/2) node [left] {$b$};
+    \draw (\spig+\disp+\ap, \ap/2) node [xshift=-3pt, yshift=-3pt]{$a$};
+    \draw (\spig+\disp+\ap+\dispp+\bp/2, \ap+\dispp+\bp/2) 
+      node [below right=-3pt] {$b$};
+  }
+}
+
+\newcommand{\tartaglia}{
+\begin{tikzpicture}[x=9mm,y=5mm] % fig002_tart
+
+  \tikzset{box/.style={
+      minimum height=5mm,
+      inner sep=.7mm,
+      outer sep=0mm,
+      text width=10mm,
+      text centered,
+      font=\small\ttfamily,
+      line width=.25mm,
+   }
+} 
+ \node[box=odd] (p-0-0) at (0,0) {1};
+  \foreach \linea in {1,...,6} {
+    \node[box=odd] (p-\linea-0) at (-\linea/2,-\linea) {1};
+    \pgfmathsetmacro{\valore}{1};
+    \foreach \col in {1,...,\linea} {
+      \pgfmathtruncatemacro{\valore}{\valore*((\linea-\col+1)/\col)+0.5};
+      \global\let\valore=\valore
+      \coordinate (pos) at (-\linea/2+\col,-\linea);
+      \pgfmathtruncatemacro{\rest}{mod(\valore,2)}
+      \ifnum \rest=0
+        \node[box=even] (p-\linea-\col) at (pos) {\valore};
+      \else
+        \node[box=odd] (p-\linea-\col) at (pos) {\valore};
+      \fi
+    }
+  }
+\end{tikzpicture}
+
+}
+
+\newcommand{\tartaglib}{
+\begin{tikzpicture}[x=12mm,y=8mm] % fig003_tarti
+  \tikzset{
+    box/.style={
+      minimum height=5mm,
+      inner sep=.7mm,
+      outer sep=0mm,
+      text width=10mm,
+      text centered,
+      font=\small\ttfamily,
+      line width=.25mm,
+    },
+    link/.style={->,blue,line width=.3mm},
+    plus/.style={text=red,font=\small\ttfamily}
+  }
+ 
+  \node[box=odd] (p-0-0) at (0,0) {1};
+  \foreach \linea in {1,...,4} {
+    \node[box=odd] (p-\linea-0) at (-\linea/2,-\linea) {1};
+    \pgfmathsetmacro{\valore}{1};
+    \foreach \col in {1,...,\linea} {
+      \pgfmathtruncatemacro{\valore}{\valore*((\linea-\col+1)/\col)+0.5};
+      \global\let\valore=\valore
+      \coordinate (pos) at (-\linea/2+\col,-\linea);
+      \pgfmathtruncatemacro{\rest}{mod(\valore,2)}
+      \ifnum \rest=0
+        \node[box=even] (p-\linea-\col) at (pos) {\valore};
+      \else
+        \node[box=odd] (p-\linea-\col) at (pos) {\valore};
+      \fi
+      \ifnum \col<\linea
+        \node[plus,above=0mm of p-\linea-\col]{+};
+        \pgfmathtruncatemacro{\plinea}{\linea-1}
+        \pgfmathtruncatemacro{\pcol}{\col-1}
+        \draw[link] (p-\plinea-\pcol) -- (p-\linea-\col);
+        \draw[link] ( p-\plinea-\col) -- (p-\linea-\col);
+      \fi
+    }
+  }
+\end{tikzpicture}
+}
+
+% \newcommand{\funzpol}{
+% %   \def \fun{4*x*x*x -10*x*x +6*x}
+%   \def \mix{-1}
+%   \def \max{+3}
+%   \def \miy{-2}
+%   \def \may{+4}
+%   \disegno[10]{
+%     \rcom{\mix}{\max}{\miy}{\may}{gray!50, very thin, step=1}
+%     \fpoints{4*\x*\x*\x -10*\x*\x +6*\x}{blue!50!black}{-0.2, -0.1, ...,2}
+%   }
+% }
+
+\newcommand{\funzpol}{
+  \disegno[10]{
+    \rcomfpunti{-1}{+3}{-2}{+4}
+      {4*\x*\x*\x -10*\x*\x +6*\x}{blue!50!black}{-0.2, -0.1, ...,2}
+  }
+}
+
+\def \dimdis{3.6}
+
+\newcommand{\funzpolese}[3]{
+  \def \fun{#1}
+  \def \mix{#2}
+  \def \max{#3}
+  \def \mima{7}
+  \disegno[\dimdis]{
+    \tkzInit[xmin=\mima-0.3,xmax=\mima+0.3,ymin=\mima-0.3,ymax=\mima+0.3]
+    \rcomfpunti{-\mima}{+\mima}{-\mima}{+\mima}{\fun}
+      {blue!50!black}{#2, ...,#3}
+  }
+}
+
+\newcommand{\quatagliato}[2]{
+  \def \a{#1}
+  \def \b{#2}
+  \disegno{
+    \draw [fill=\areacolor] (0,0) rectangle (\a, \a); 
+    \draw[fill=white] (0, 0) rectangle ++(\b, \b)
+                      (\a-\b, 0) rectangle ++(\b, \b)
+                      (0, \a-\b) rectangle ++(\b, \b)
+                      (\a-\b, \a-\b) rectangle ++(\b, \b);
+    \draw (\a,  0) node [right] {$A$} 
+          (\a, \a) node [right] {$B$}
+          (\a, \b) node [right] {$C$};
+  }
+}
+
+\newcommand{\parall}[3]{
+  \def \a{#1}
+  \def \b{#2}
+  \def \c{#3}
+  \pgfmathparse{\c*0.3535534} \let\cp\pgfmathresult
+  \disegno{
+    \draw[fill=\sidecolor] 
+      (\a, 0) -- (\a+\cp, \cp)-- (\a+\cp, \b+\cp)--(\a, \b) -- cycle;
+    \draw[fill=\frontcolor] (0,0) rectangle ++(\a, \b); 
+    \draw[fill=\upcolor]
+      (0, \b) -- (\cp, \b+\cp)-- (\a+\cp, \b+\cp)--(\a, \b);
+
+%     \node[below] at (\a/2,0) {a};
+%     \node[left] at (\a,5) {b};
+%     \node[below] at (8, 1) {c};
+  }
+}
+
+\newcommand{\uvenn}[3]{
+  \def \a{#1}
+  \def \b{#2}
+  \def \c{#3}
+  \draw [rounded corners, fill=\areacolor] (0,0) rectangle (5,4)  (4.5,3.5)
+    node {$\a$}; 
+  \draw[fill=white] (2.5,2) circle (1.4) node {$\b$};
+  \node[below] at (2.5,0) {$\c$};
+}
+
+\newcommand{\esevenn}{
+  \disegno{
+    \uvenn{M}{L}{A}
+    \begin{scope}[xshift=30mm]
+      \uvenn{L}{M}{B}
+    \end{scope}
+  }
+}

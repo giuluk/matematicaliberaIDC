@@ -1,0 +1,11 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Cerchietto
+%%%%
+ 
+\begin{tikzpicture}[smooth]
+
+\draw (0, 0) circle (3pt);
+
+\end{tikzpicture}

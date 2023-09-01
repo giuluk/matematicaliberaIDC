@@ -1,0 +1,840 @@
+% (c) 2012 - 2014 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c) 2014 Claudio Carboncini - claudio.carboncini@gmail.com
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+\input{\folder interi_grafici.tex}
+
+\chapter{Numeri interi relativi}
+
+\inicapitolo{
+\begin{itemize}
+\item i numeri interi;
+\item la funzione \emph{valore assoluto};
+\item il confronto tra interi;
+\item le operazioni con gli interi e le loro proprietà.
+\end{itemize}
+}
+
+\section{I numeri che precedono lo zero}
+\label{sec:int_negativi}
+
+Con i numeri naturali non sempre è possibile eseguire l'operazione di 
+sottrazione. 
+In particolare, non è possibile sottrarre un numero più grande da un numero 
+più piccolo, per esempio~\(5-12\). 
+Tuttavia ci sono situazioni in cui una sottrazione di questo tipo deve essere 
+eseguita.
+
+Per esempio, è possibile acquistare un'auto di \officialeuro\ 12\,000 pur 
+avendo soltanto risparmi in banca di soli \officialeuro\ 5\,000. 
+In questo caso si tratta di togliere dai \officialeuro\ 
+5\,000 i \officialeuro\ 12\,000 che servono per acquistare 
+l'auto: materialmente non è possibile e si ricorre a un prestito.
+
+Pensiamo a una comunicazione dei meteorologi relativa alle previsioni del 
+tempo: <<domani la temperatura, a causa di una perturbazione proveniente dai 
+paesi nordici, potrebbe subire un drastico calo e scendere anche di~10 
+gradi>>. 
+Riflettiamo: se oggi la temperatura è di~9 gradi, come possiamo esprimere 
+numericamente la temperatura prevista per domani? 
+Alcuni diranno: <<il liquido contenuto nel termometro si posizionerà al di 
+sotto dello zero>>,
+altri <<domani la temperatura sarà di un grado sotto lo zero>> e
+altri ancora <<la temperatura sarà di~\(-1\) grado>>.
+
+\affiancati{.49}{.49}{
+\immagine[.8]{Rappresentazione del monte Everest e della fossa 
+delle Marianne}{\everest}
+}{
+Leggiamo nel testo di geografia: <<Il punto più profondo della Terra si 
+trova nella fossa delle Marianne; esso supera di~2\,061 metri l'altezza del 
+monte Everest e si trova a~10\,916 metri sotto il livello del mare>>.
+Se attribuiamo al livello del mare il valore zero, allora potremmo 
+esprimere la profondità della Fossa con il numero~\(-10\,916\) e l'altezza 
+del monte Everest con il numero~\(+8\,855\).
+}
+
+Per rappresentare le grandezze che hanno due sensi, come temperature, 
+crediti e i debiti, latitudine nord e sud, altezze sopra il livello del 
+mare e profondità marine con i numeri naturali, siamo costretti a aggiungere 
+diversi giri di parole per le diverse situazioni. 
+I matematici, in tutte queste situazioni usano i numeri interi relativi che 
+si scrivono utilizzando gli stessi numeri naturali ma preceduti dal 
+segno~``\(+\)'' se sono numeri maggiori di~0 e dal segno~``\(-\)'' se sono 
+numeri minori di~0. L'insieme di questi numeri si costruisce raddoppiando 
+i numeri naturali~\(\N\) e facendo precedere ciascun numero dal 
+segno~``\(+\)'' o~``\(-\)'',
+ad eccezione dello~0, al quale non si attribuisce segno.
+\indc{\(\Z\)}{insieme \(\Z\)}
+\[\Z=\lbrace\ldots,~ -5,~ -4,~ -3,~ -2,~ -1,~~~0,~ +1,~ +2,~ +3,~ +4,~ +5,~ 
+\ldots \rbrace\]
+%\newpage
+
+\section{I numeri interi relativi e la retta}
+\label{sec:int_retta}
+
+Anche numeri relativi possono essere rappresentati su una retta. 
+Disegniamo una \indtc{retta}{retta degli interi}, su di essa prendiamo 
+un punto di riferimento al quale 
+associamo il numero zero, il \indt{verso di percorrenza} da sinistra verso 
+destra, un segmento~\(AB\) come un'unità di misura. 
+Riportiamo questa unità di misura più volte partendo da zero e procedendo nel 
+verso stabilito aggiungiamo ogni volta uno: ai punti trovati associamo gli 
+interi positivi.
+Ripetiamo l'operazione partendo dallo zero, ma con il verso di percorrenza 
+a sinistra: ai punti trovati associamo gli interi negativi.
+
+\immagine[.8]
+{Figura: Retta su cui sono rappresentati numeri sempre più piccoli verso 
+sinistra (-1, -2, -3, \dots) e sempre più grandi verso destra 
+(+1, +2, +3, \dots).}
+{\intrappgeo}
+
+Possiamo interpretare questi numeri come il numero di passi da fare sulla 
+retta, partendo dallo zero verso destra se il segno è positivo, verso 
+sinistra se il segno è negativo.
+
+\affiancati{.59}{.39}{
+L'insieme dei \indtc{numeri relativi}{numeri interi relativi} si indica con il 
+simbolo~\(\Z\). 
+In particolare, l'insieme dei \indtc{numeri relativi}{numeri interi positivi} 
+si indica con il 
+simbolo~\indtc{\(\Z\)}{\(\Z^+\)}, l'insieme dei \indtc{numeri relativi}{numeri 
+interi negativi} si indica con il simbolo~\indtc{\(\Z\)}{\(\Z^-\)}. \\
+Possiamo quindi dire che:
+\(\Z = \Z^- ~\scup~ \{0\} ~\scup~ \Z^+\).
+}{
+
+\immagine[.9]
+{Figura: in -7 il segno è meno e il valore assoluto è 7,
+in +5 il segno è più e il valore assoluto è 5.}
+{\numerointero}
+}
+
+\begin{definizione}{Numeri interi}{}
+Un numero intero è un numero naturale, preceduto da un segno,
+%si ottiene da un numero naturale con l'aggiunta di un segno 
+che può essere: \(-\) o \(+\).
+\end{definizione}
+
+\begin{osservazione}{}{}
+Il sottoinsieme formato dallo zero e dai numeri interi positivi, 
+\(\{0\} ~\scup~ \Z^+\) 
+è isomorfo\footnote{
+cioè funziona esattamente come i numeri naturali} 
+all'insieme dei numeri naturali.
+Questo permette di non considerare il segno \(+\) senza che sorgano 
+problemi: \(+13 = 13\)
+\end{osservazione}
+
+\begin{definizione}{}{}
+Due numeri relativi si dicono \emph{concordi}, se hanno lo stesso segno; 
+si dicono \emph{discordi} se hanno segni opposti.
+\indc{numeri relativi}{numeri concordi}
+\indc{numeri relativi}{numeri discordi}
+\end{definizione}
+
+\begin{esempio}{}{}
+Concordi-discordi.
+
+\(+3\) e~\(+5\) sono concordi; \quad 
+\(+3\) e~\(-5\) sono discordi; \quad 
+\(-5\) e~\(-2\) sono concordi.
+\end{esempio}
+
+\begin{definizione}{Valore assoluto}{}
+La funzione \emph{valore assoluto}\ind{valore assoluto}
+\indc{valore assoluto}{abs(n)}
+(\(\mathrm{abs}(n)\)) se riceve come argomento 
+un numero intero qualsiasi dà come risultato un numero intero non negativo.
+È definita come:
+\[\mathrm{abs}(x) = 
+\sistema{-x & \stext{ se } & x < 0 \\ +x & \stext{ se } & x \geqslant 0}\]
+\end{definizione}
+
+Il valore assoluto permette di passare dai numeri interi ai numeri naturali. 
+In questo passaggio si perde, ovviamente, dell'informazione.
+
+Nelle espressioni il valore assoluto si può indicare inserendo il numero 
+relativo tra due barre verticali~(\(\valass{\,}\)).\indc{valore 
+assoluto}{\(\valass{\,}\)} In linguaggio matematico:
+\[\valass{a}=a,\stext{ se }a\geqslant0,\qquad 
+  \valass{a}=-a,\stext{ se }a<0\]
+
+\begin{esempio}{}{}
+Valore assoluto: \\
+\(\valass{+2}=+2 \quad \valass{-5}=+5 \quad 
+\valass{-73}=+73 \quad \valass{+13}=+13\)
+\end{esempio}
+
+\begin{definizione}{}{}
+Due numeri interi relativi sono \emph{uguali} se hanno lo stesso segno e 
+lo stesso valore assoluto;
+si dicono \emph{opposti}
+\indc{numeri relativi}{numeri opposti} 
+se hanno lo stesso valore assoluto ma segni diversi.
+\end{definizione}
+
+\begin{esempio}{}{}
+Sono numeri opposti: \qquad \(+3\) e \(-3\) \quad \(+5\) e \(-5\) 
+\quad \(+19\) e \(-19\).
+\end{esempio}
+
+Numeri opposti hanno lo stesso valore assoluto: \qquad 
+\(\valass{-17} = \valass{+17} = +17\)
+
+\section{Confronto di numeri relativi}
+\label{sec:int_confronto}
+
+Usando la rappresentazione dei numeri sulla retta, 
+l'ordinamento\ind{ordinamento degli interi} risulta 
+facile da verificare:
+il verso di percorrenza della retta (la freccia) indica la direzione nella 
+quale i numeri crescono.\indc{retta}{ordinamento degli interi}
+Quindi dati due numeri interi relativi quello più grande è quello che, sulla 
+retta orientata è rappresentato \emph{dopo} muovendosi nel verso fissato.
+
+Le seguenti definizioni permettono di effettuare il \indtc{numeri 
+relativi}{confronto tra interi} relativi usando il confronto tra numeri 
+naturali.
+
+\begin{definizione}{Confronto di interi}{}
+Le seguenti tre regole permettono di confrontare due numeri interi qualunque.
+\begin{enumerate} [noitemsep] %, label=\alph*)]
+\item ogni numero negativo è minore di~0 e ogni numero 
+positivo è maggiore di~0;
+\item tra due numeri positivi il più grande è quello che ha valore 
+assoluto maggiore;
+\item tra due numeri negativi il più grande è quello che ha valore 
+assoluto minore.
+\end{enumerate}
+
+\end{definizione}
+
+\begin{esempio}{}{}
+Confronta le seguenti coppie di numeri.
+\begin{itemize} [noitemsep]
+\item \(+4 > +2\): i numeri sono positivi, il maggiore è~\(+4\) perché ha 
+valore assoluto maggiore;
+\item \(-1 > -3\): i due numeri sono negativi, il maggiore è~\(-1\) perché 
+ha valore assoluto minore;
+\item \(+4 > -5\): i numeri positivi sono maggiori dei numeri negativi;
+\item \(+4 > 0\): ogni numero positivo è maggiore di~0;
+\item \(0 > -3\): ogni numero negativo è minore di~0.
+\end{itemize}
+\immagine[.8]{Figura: retta con evidenziati i numeri dell'esempio.} 
+{\rettaconfronto}
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:2.1}, \ref{ese:2.2}, \ref{ese:2.3}, 
+% \ref{ese:2.4}, \ref{ese:2.5}}
+
+\section{Le operazioni con i numeri relativi}
+\label{sec:int_operazioni}
+
+Con i numeri relativi anche la sottrazione (oltre all'addizione e alla 
+moltiplicazione) è un'operazione interna\ind{legge di composizione interna} 
+cioè la differenza di due numeri relativi è un numero relativo.
+
+\subsection{Addizione in 
+\texorpdfstring{$\Z: \quad \coppia{\Z}{+}$}{Z: (Z; +)}}
+\indc{\(\Z\)}{\(\coppia{\Z}{+}\)}
+
+\affiancati{.64}{.34}{
+Il simbolo ``\(+\)'' ha ora due significati completamente diversi:
+\begin{itemize} [nosep]
+\item simbolo dell'addizione
+\item segno del numero
+\end{itemize}
+Dal contesto dobbiamo capire se \(+\) è un segno del numero o è un simbolo 
+di operazione. Lo stesso vale per il simbolo della sottrazione e per il 
+segno meno.
+
+All'inizio è bene usare una scrittura del tipo~\((+2)+(+5)\) per 
+indicare la somma tra i numeri~\(+2\) e~\(+5\); in seguito vedremo come 
+semplificare la scrittura (e complicare l'interpretazione).
+}{
+\immagine{Addizione tra due numeri relativi.}{\addizioneesegno}
+}
+
+La procedura per addizionare due numeri relativi dipende dal segno dei due 
+addendi.
+
+\begin{definizione}{Somma di numeri concordi}{}
+La \emph{somma di due numeri concordi}\ind{numeri concordi} è il numero che 
+ha per valore assoluto\ind{valore assoluto} la \emph{somma} dei valori 
+assoluti e come segno lo stesso segno degli addendi.
+\end{definizione}
+
+\begin{esempio}{}{}
+\( (+3)+(+5)=\ldots\): i due numeri da sommare sono concordi, 
+il loro segno è~``\(+\)'', i loro valori assoluti sono~3 e~5,
+la loro somma è~8. Pertanto~\((+3)+(+5)=+8\)
+\end{esempio}
+
+\begin{esempio}{}{}
+~\((-2)+(-5)=\ldots\): i due numeri sono entrambi negativi, quindi sono 
+concordi, 
+i loro valori assoluti sono~2 e~5,
+la somma ha valore assoluto~7, il segno è~``\(-\)''. Pertanto
+\[(-2)+(-5)=-7.\]
+\end{esempio}
+
+\begin{definizione}{Somma di numeri discordi}{}
+La \emph{somma di due numeri discordi}\ind{numeri discordi} è il numero che ha 
+per valore assoluto la \emph{differenza} dei valori assoluti
+e come segno il segno del numero che ha valore assoluto maggiore.
+\end{definizione}
+
+\begin{esempio}{}{}
+~\((-5)+(+2)=\ldots\): i due numeri da sommare sono discordi, i loro valori 
+assoluti sono~5 e~2, la differenza è~3,
+il numero che ha valore assoluto maggiore è~\(-5\), pertanto il risultato 
+ha lo stesso segno di~\(-5\), cioè è negativo.
+In definitiva~\((-5)+(+2)=-3\)
+\end{esempio}
+
+% \begin{esempio}{}{}
+% ~\((+5)+(-2)=\ldots\): i due numeri da sommare sono discordi, i loro valori 
+% assoluti sono~5 e~2, la loro differenza è~3,
+% il numero che ha valore assoluto maggiore è~\(+5\), pertanto il risultato 
+% ha lo stesso segno di~\(+5\), cioè è positivo. 
+% In definitiva~\((-5)+(-2)=+3\)
+% \end{esempio}
+
+\begin{esempio}{}{}
+~\((+3)+(-7)=\ldots\): i due numeri da sommare sono discordi, i loro valori 
+assoluti sono~3 e~7, la loro differenza è~4,
+il numero che ha valore assoluto maggiore è~\(-7\), quindi il risultato ha 
+segno negativo.
+In definitiva~\((+3)+(-7)=-4\)
+\end{esempio}
+
+L'addizione si può rappresentare nella retta dei numeri come l'azione di 
+partire dal punto indicato dal primo operando e 
+muoversi nel verso indicato dal segno del secondo addendo: 
+se è positivo ci si muove nel verso della retta, 
+se è negativo ci si muove verso contrario.
+\[(-3)+(+5)=2\]
+% 
+% \vspace{-2.5em}
+\immagine[.8]{Retta dei numeri interi con l'addizione tra -3 e +5}
+  {\intaddlinea}
+% 
+% \vspace{-2.5em}
+\[ (-1)+(-3) = -4\]
+% 
+% \vspace{-2.5em}
+\immagine[.8]{Retta dei numeri interi con l'addizione tra -1 e -3}
+  {\intaddlineb}
+
+\subsubsection{Proprietà dell'addizione in \texorpdfstring{$\Z$}{Z}}
+
+L'addizione in \(\Z\) può essere vista come una funzione che ha per 
+argomenti numeri interi e dà come risultato un numero intero.
+
+La struttura \(\coppia{\Z}{+}\)\ind{\(\coppia{\Z}{+}\)} presenta tutte le 
+proprietà della struttura \(\coppia{\N}{+}\) più un'importante proprietà:
+l'esistenza dell'elemento \emph{inverso}\ind{elemento inverso} di ogni numero 
+intero.
+L'inverso rispetto all'addizione si chiama \emph{opposto}\ind{numeri opposti}.
+Riassumendo:
+\begin{itemize} [nosep]
+ \item è una \emph{legge di composizione interna};
+ \item \emph{Associativa}: \quad \((a + b) + c = a + (b + c)\);
+\indc{proprietà}{associativa}
+ \item \emph{Elemento neutro è 0}: \quad \(a + 0 = 0 + a = a\);
+\indc{proprietà}{elemento neutro}
+ \item \emph{Opposto}:\indc{proprietà}{elemento opposto} \quad 
+ \(\text{per ogni~ } a \stext{ esiste un } a' \stext{ tale che }
+ a + a' = a' + a = 0\);
+ \item \emph{Commutativa}: \quad \(a + b = b + a\).
+ \indc{proprietà}{commutativa}
+\end{itemize}
+
+Avendo queste proprietà, la struttura algebrica \(\coppia{\Z}{+}\) viene 
+chiamata \emph{gruppo commutativo}.\ind{gruppo commutativo}
+
+% \ovalbox{\risolvii \ref{ese:2.6}, \ref{ese:2.7}, \ref{ese:2.8}}
+
+\subsection{Sottrazione in 
+\texorpdfstring{$\Z: \quad \coppia{\Z}{-}$}{Z: (Z; -)}}
+\indc{\(\Z\)}{\(\coppia{\Z}{-}\)}
+
+La nuova proprietà dell'addizione (l'esistenza dell'opposto di ogni numero) 
+trasforma la sottrazione in un'operazione interna agli interi:\ind{legge di 
+composizione interna}
+una funzione che per qualunque coppia di argomenti interi dà come risultato 
+un numero intero.
+Anzi, non solo la sottrazione si può sempre eseguire, ma addirittura \dots 
+non servirà più!
+Ma andiamo con ordine.
+
+\vspace{-1em}
+\[(+5) - (+7) = -2 \stext{ perché } (-2) + (+7) = +5\]
+
+\immagine[.8]{Retta dei numeri interi con la sottrazione tra +5 e +7}
+  {\intsublinea}
+
+
+\begin{definizione}{Differenza in \(\Z\)}{}
+La differenza di due numeri relativi si ottiene aggiungendo al primo 
+numero l'opposto del secondo.
+
+\vspace{-2em}
+\[a - b = (+a) - (+b) = a + (-b) \sstext{perché:} 
+  (+a) + (-b) + (+b) = a + 0 = a\]
+\end{definizione}
+
+La funzione sottrazione è quindi definita per qualunque coppia ordinata di 
+numeri relativi.
+
+\vspace{1em}
+\affiancati{.54}{.44}{
+\begin{esempio}{}{}
+Sottrazione di numeri relativi.
+\begin{enumerate} 
+[leftmargin=0cm, itemindent=.5cm, noitemsep, label=(\alph*)]
+\item \((+2)-(+3)=(+2)+(-3)=-1\)
+\item \((+3)-(-7)=(+3)+(+7)=+10\)
+% \item \((+1)-(+3)=(+1)+(-3)=-2\)
+\item \((-2)-(-1)=(-2)+(+1)=-1\)
+\item \((-5)-(+5)=(-5)+(-5)=-10\)
+\end{enumerate}
+\end{esempio}
+%\end{exrig}
+}{
+\hspace{-7mm}
+\immagine*[.8]
+{Figura: Cambio il simbolo della sottrazione in addizione e
+cambio il segno del secondo operando.}
+{\sottrazioneint}
+}
+% \ovalbox{\risolvii \ref{ese:2.9}, \ref{ese:2.10}, \ref{ese:2.11}, 
+% \ref{ese:2.12}, \ref{ese:2.13}}
+
+% \ifdefined\HCode 
+% \subsubsection{Proprietà della sottrazione negli interi}
+% \else
+% \subsubsection{Proprietà della sottrazione in \(\Z\)}
+% \fi
+
+\subsubsection{Proprietà della sottrazione in \texorpdfstring{$\Z$}{Z}}
+
+Negli interi, la sottrazione è una legge di composizione interna e gode 
+della proprietà invariantiva\indc{proprietà}{invariantiva} della 
+sottrazione:
+la differenza di due numeri non cambia se al minuendo e al sottraendo viene 
+aggiunto o tolto lo stesso numero.
+
+\subsection{Somma algebrica}
+
+Poiché la sottrazione può essere trasformata in addizione, si può 
+semplificare la scrittura di addizione e sottrazione di numeri relativi 
+utilizzando soltanto l'operazione di addizione e omettendo di scrivere
+il segno~``\(+\)'' dell'addizione. 
+Questo tipo di addizione tra numeri relativi si chiama \indt{somma algebrica}.
+Facciamolo passo passo:
+
+\vspace{-1em}
+\[(-5)-(-7)+(-2)+(+6)-(+3)+(-5) =\]
+all'interno delle parentesi ci sono i segni dei numeri e, fuori, i simboli 
+delle operazioni.\\
+Eliminiamo le sottrazioni trasformandole in addizioni 
+con l'opposto del sottraendo:
+
+\vspace{-1em}
+\[(-5)+(+7)+(-2)+(+6)+(-3)+(-5) =\]
+eliminiamo tutti i simboli di addizione e le parentesi: 
+
+\vspace{-1em}
+\[=-5+7-2+6-3-5 =\]
+ottenendo così una somma algebrica dove i simboli di addizione sono 
+sottintesi: 
+
+\vspace{-1em}
+\begin{center}
+\(= -5\) \quad più \quad \(+7\) \quad più \quad \(-2\) \quad più \quad 
+\(+6\) \quad più \quad \(-3\) \quad più \quad \(-5 =\)\\
+\end{center}
+
+Ora possiamo risolverla andando in ordine:
+\begin{enumerate} [nosep]
+\item sulla retta, partiamo da \(-5\);
+\item ogni volta che incontriamo un numero negativo ci spostiamo verso 
+sinistra; 
+\item ogni volta che incontriamo un numero positivo ci spostiamo verso 
+destra.
+\end{enumerate}
+
+\immagine[.8]
+{Figura: Rappresentazione sulla retta della somma algebrica precedente.}
+{\sommalgebrica}
+
+Cioè: parto da \(-5\) avanti di~7 indietro di 2 avanti di~6 indietro 
+di~3 indietro di~5.
+
+Oppure, dato che l'addizione gode della proprietà commutativa e associativa, 
+e qui abbiamo tutte addizioni,
+possiamo addizionare tutti i numeri positivi, tutti i numeri negativi e alla 
+fine calcolare la somma dei due risultati:
+\[-5+7-2+6-3-5 \quad=\quad +7+6-5-2-3-5 \quad=\quad +13 -15 \quad=\quad -2\]
+
+\begin{esempio}{}{}
+~Calcola: \((+1)+(-2)-(-10)+(+3)-(+13)-(-2)=\) 
+\begin{description}
+\item [trasformo le sottrazioni: \quad ] 
+\(=(+1)+(-2)+(+10)+(+3)+(-13)+(+2)=\)
+\item [sottintendo le addizioni: \quad ] \(=+1-2+10+3-13+2=\)
+\item [eseguo le addizioni: \qquad ~~\, ] \(=+16-15=+1\)
+\end{description}
+\end{esempio}
+
+Una volta capito il meccanismo, si possono riunire primi due passaggi 
+e, se ci sono numeri opposti, la loro somma è nulla.
+
+\begin{esempio}{}{}
+~Calcola: \\
+\((+13)+(-20)-(-60)+(+5)-(+13)-(-21)+(-60)=\) 
+
+Trasformo in addizione algebrica e annullo i termini opposti:\\
+\(=\cancel{+\;13}-20~\cancel{+\;60}+5~\cancel{-\;13}+21~\cancel{-\;60}=\)\\
+addiziono i termini rimasti:\hspace{15.3mm}
+\(= +26 - 20 = +6\)
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:2.14}, \ref{ese:2.15}}
+
+\subsection{Moltiplicazione in 
+\texorpdfstring{$\Z: \quad \coppia{\Z}{\times}$}{Z: (Z; x)}}
+
+Se dobbiamo moltiplicare due interi entrambi non negativi possiamo rifarci 
+alla definizione data per la moltiplicazione tra naturali, ad esempio:
+\[(+3) \cdot (+4) = 0 + (+3) + (+3) + (+3) + (+3) = +3+3+3+3 = +12\]
+Possiamo fare riferimento alla stessa definizione anche nel caso il primo 
+fattore sia negativo:
+\[(-3) \cdot (+4) = 0 + (-3) + (-3) + (-3) + (-3) = -3-3-3-3 = -12\]
+Se il secondo fattore è negativo, non ha molto senso aggiungere un numero 
+negativo di addendi!
+Possiamo però utilizzare la proprietà\indtc{proprietà}{commutativa} e 
+risolvere il problema:
+\[(+3) \cdot (-4) = (-4) \cdot (+3) = 
+  0 + (-4) + (-4) + (-4) = -4-4-4 = -12\]
+Il problema diventa più spinoso quando entrambi i fattori sono negativi.\\
+Come calcolare \((-3) \cdot (-4)\)?\\
+Partiamo da un'altra proprietà della moltiplicazione: zero è l'elemento 
+assorbente\indc{proprietà}{elemento assorbente}, cioè se moltiplico~0 per un 
+qualunque numero, il risultato 
+sarà~0.
+Quindi: \quad \(0 \cdot (-4) = 0\).\\
+Ma zero possiamo scriverlo anche come somma di due 
+\indc{numeri relativi}{numeri opposti} numeri opposti: \\ 
+\(0 = (+3) + (-3)\).\\
+Sostituiamo~0: \quad \(((+3) + (-3)) \cdot (-4) = 0\).\\
+Per la proprietà \indtc{proprietà}{distributiva}: \quad 
+\((+3) \cdot (-4) + (-3) \cdot (-4) = 0\).\\
+Il primo dei due prodotti l'abbiamo già calcolato: \quad 
+\((-12) + (-3) \cdot (-4) = 0\).\\
+Ma per ottenere~0, il prodotto deve essere l'opposto di \(-12\) quindi: 
+\quad \((-3) \cdot (-4) = +12\).
+
+È facile generalizzare quanto visto in questo caso particolare e mostrare che 
+se vogliamo che valgano le consuete proprietà delle operazioni, il prodotto 
+di due numeri negativi deve essere un numero positivo.
+
+Possiamo sintetizzare quanto visto nella seguente
+
+\begin{definizione}{Prodotto di numeri relativi}{}
+Il \emph{prodotto di due numeri interi relativi} è~0 se almeno uno dei due 
+fattori è~0, altrimenti è il numero intero avente 
+come valore assoluto il prodotto dei valori assoluti dei fattori e 
+come segno 
+il segno~``\(+\)'' se i fattori sono concordi
+\indc{numeri relativi}{numeri concordi},
+il segno~``\(-\)'' se i fattori sono discordi
+\indc{numeri relativi}{numeri discordi}.
+\end{definizione}
+
+\begin{esempio}{}{}
+Calcola i prodotti delle seguenti moltiplicazioni.
+\begin{enumerate}[noitemsep, label=(\alph*)]
+\item \((+3) \cdot (-2)=\) 
+il prodotto dei valori assoluti è \(3 \cdot 2 = 6\) 
+e i numeri sono discordi, quindi: \((+3) \cdot (-2) = -6\).
+\item \((-7) \cdot (+5) =\) 
+il prodotto dei valori assoluti è \(7 \cdot 5 = 35\) 
+e i numeri sono discordi, quindi: \((-7) \cdot (+5) = -35\).
+\item \((-20) \cdot (-4) =\) 
+il prodotto dei valori assoluti è \(20 \cdot 4 = 80\) 
+e i numeri sono concordi, quindi: \((-20) \cdot (-4) = +80\).
+\item \((+8) \cdot (+7) =\) 
+il prodotto dei valori assoluti è \(8 \cdot 7 = 56\) 
+e i numeri sono concordi, quindi: \((+8) \cdot (+7) = +56\).
+\item \((+8) \cdot (0) =\) 
+\(+8\) e  \(0\) non sono né concordi né discordi dato che 0 non è né 
+positivo né negativo, ma il prodotto di un numero per~0 è sempre~0.
+\end{enumerate}
+\end{esempio}
+
+\affiancati{.79}{.19}{
+Per determinare il segno di un prodotto si può ricorrere alla seguente 
+\indt{regola dei segni}: nella prima riga e nella prima colonna sono 
+collocati 
+i segni dei fattori, all'incrocio tra la riga e la colonna c'è il segno
+del risultato.
+}{
+\begin{center}
+\scalebox{.9}{\moltsegni}
+\end{center}
+}
+
+Nel caso si debbano eseguire più moltiplicazioni il segno del prodotto è 
+negativo se il segno meno è presente in un numero dispari di fattori 
+mentre se il segno negativo è presente un numero pari di volte il prodotto 
+è positivo.
+
+% \pagebreak %----------------------------------------
+\subsubsection{Proprietà della moltiplicazione in \texorpdfstring{$\Z$}{Z}}
+
+La moltiplicazione in \(\Z\) può essere vista come una funzione che ha per 
+argomenti numeri interi e dà come risultato un numero intero.
+
+La struttura \indc{struttura algebrica}{\(\coppia{\Z}{\times}\)} 
+\(\coppia{\Z}{\times}\) presenta le stesse proprietà della struttura 
+\(\coppia{\N}{\times}\).
+% \indc{struttura algebrica}{\(\coppia{\N}{\times}\)}.
+Riassumendo:
+\begin{itemize} [noitemsep]
+ \item è una \emph{legge di composizione interna};
+ \item \emph{Associativa}\indc{proprietà}{associativa}: \quad 
+ \((a \times b) \times c = a \times (b \times c)\);
+ \item \emph{Elemento neutro è 1}\indc{proprietà}{elemento neutro}: \quad 
+ \(a \times 1 = 1 \times a = a\);
+ \item \emph{Commutativa}\indc{proprietà}{commutativa}: \quad 
+ \(a \times b = b \times a\).
+\end{itemize}
+Avendo queste proprietà, la struttura algebrica \(\coppia{\Z}{\times}\) viene 
+chiamata \emph{monoide commutativo}
+\indc{struttura algebrica}{monoide commutativo}.
+
+Anche nell'insieme dei numeri interi vale la proprietà 
+\indtc{proprietà}{distributiva} della
+moltiplicazione rispetto l'addizione.
+
+\bigskip
+Poiché negli interi valgono queste proprietà, la struttura formata dagli 
+interi, dall'addizione e dalla moltiplicazione, \(\terna{\Z}{+}{\times}\),
+viene chiamata \emph{anello}\indc{struttura algebrica}{anello}.
+
+Nell'anello degli interi, possiamo sempre risolvere equazioni del tipo:
+\(x + a = 0\), ma equazioni del tipo \(ax + b = 0\) non hanno sempre 
+soluzione se \(a\), \(x\) e \(b\), sono numeri interi.
+
+% \ovalbox{\risolvii \ref{ese:2.16}, \ref{ese:2.17}, \ref{ese:2.18}}
+
+\subsection{Divisione in 
+\texorpdfstring{$\Z: \quad \coppia{\Z}{:}$}{Z: (Z; :)}}
+\indc{\(\Z\)}{\(\coppia{\Z}{:}\)}
+
+La regola della divisione è del tutto analoga a quella della 
+moltiplicazione.
+
+\begin{definizione}{Quoziente di numeri interi relativi}{}
+Il \emph{quoziente esatto di due numeri interi relativi}
+\indc{numeri relativi}{quoziente esatto} è il numero intero, 
+se esiste, avente come valore assoluto il quoziente esatto dei valori 
+assoluti e come segno 
+il segno~``\(+\)'' se i due numeri sono concordi,
+il segno~``\(-\)'' se i due numeri sono discordi.
+\end{definizione}
+
+Osserva che mentre addizione, sottrazione e moltiplicazione sono operazioni 
+interne\ind{legge di composizione interna} ai numeri interi relativi, ossia 
+il risultato di queste operazioni è sempre un numero intero relativo, il 
+risultato della divisione esatta\ind{divisione esatta} non 
+sempre è un numero intero relativo. 
+La divisione tra numeri relativi è possibile solo se è possibile la 
+divisione esatta tra i loro valori assoluti, ossia se
+il divisore è diverso da zero e il dividendo è un suo multiplo.
+
+\begin{esempio}{}{}
+Calcola i quozienti esatti delle seguenti divisioni.
+\begin{enumerate}[noitemsep, label=(\alph*)]
+\item \((+8) : (+2)=\) 
+il quoziente dei valori assoluti è \(8 : 2 = 4\) 
+e i numeri sono concordi, quindi: \((+8) : (+2) = +4\).
+\item \((+15) : (-3) =\) 
+il quoziente dei valori assoluti è \(15 : 3 = 5\) 
+e i numeri sono discordi, quindi: \((+15) : (-3) = -5\).
+\item \((-36) : (-4) =\) 
+il quoziente dei valori assoluti è \(36 : 4 = 9\) 
+e i numeri sono concordi, quindi: \((-36) : (-4) = +9\).
+\item \((+8) : (+7) =\) non ha un quoziente esatto intero.
+\item \((+8) : (0) =\) non è definito.
+\end{enumerate}
+\end{esempio}
+
+\subsubsection{Proprietà della divisione in \texorpdfstring{$\Z$}{Z}}
+
+Negli interi, la divisione non è una legge di composizione interna, 
+comunque, se dà un risultato intero, gode della proprietà 
+invariantiva\indc{proprietà}{invariantiva} 
+della divisione: 
+il quoziente di due interi non cambia se dividendo e divisore si 
+moltiplicano o si dividono per uno stesso valore diverso da zero.
+
+
+% \ovalbox{\risolvii \ref{ese:2.19}, \ref{ese:2.20}, \ref{ese:2.21}}
+
+\subsection{Potenza in 
+\texorpdfstring{$\Z: \quad \coppia{\Z}{\uparrow}$}{Z: (Z; ^)}}
+
+Ampliando la potenza\indc{\(\Z\)}{\(\coppia{\Z}{\uparrow}\)} 
+ai numeri interi distinguiamo i due casi di potenza con 
+base intera e esponente naturale e di base intera e esponente intero. 
+
+\subsubsection{Base in 
+\texorpdfstring{$\Z$ e esponente in $\N$}{Z e esponente in N}}
+
+In questo caso la definizione di potenza per un numero relativo è la stessa 
+di quella data per i numeri naturali.
+Se base e esponente non sono entrambi~0, la potenza si ottiene 
+moltiplicando~\(+1\) per tanti fattori uguali alla base quante volte è 
+indicato dall'esponente.
+
+Ricordiamo che un qualsiasi numero, diverso da~0, elevato a~0 dà come 
+risultato il numero~1 e che qualsiasi numero elevato a~1 rimane invariato.
+
+L'unica attenzione che dobbiamo avere è quella relativa al segno:
+\begin{itemize} [nosep]
+\item se la base è un numero positivo il risultato della potenza sarà 
+sempre positivo;
+\item se la base è un numero negativo il segno dipende dall'esponente: 
+\begin{itemize} [nosep]
+\item se l'esponente è dispari il risultato è un numero negativo,
+\item se l'esponente è pari il risultato è un numero positivo.
+\end{itemize}
+\end{itemize}
+
+%\begin{exrig}
+\begin{esempio}{}{}
+Potenze di numeri relativi.
+\begin{htmulticols}{2}
+\begin{itemize} [noitemsep]
+\item \((-3)^0=1\)
+\item \((+5)^0=1\) 
+\item \((-2)^1=-2\) 
+\item \((+7)^1=+7\) 
+\item \((+3)^2=(+3)\cdot(+3)=+9\)
+\item \((+3)^3=(+3)\cdot(+3)\cdot(+3)=+27\)
+\item \((-2)^2=(-2)\cdot(-2)=+4\)
+\item \((-2)^3=(-2)\cdot(-2)\cdot(-2)=-8\)
+\item \((-2)^4=+16\)
+\item \((-2)^5=-32\)
+\item \((-1)^6=+1\)
+\item \((-1)^7=-1\)
+\end{itemize}
+\end{htmulticols}
+\end{esempio}
+
+% %\end{exrig}
+% 
+% \[a^0=1\text{ con }a\neq~0,\qquad a^1=a.\]
+% %%\begin{exrig}
+% \begin{esempio}{}{}
+% Potenze di numeri relativi, con esponente~0 o~1.
+% \[,\qquad , \qquad , \qquad  \]
+% \end{esempio}
+
+\subsubsection{Base in 
+\texorpdfstring{$\Z$ e esponente in $\Z^-$}{Z e esponente in Z-}}
+
+Abbiamo visto come trattare potenze con base negativa, ma ha un senso una 
+potenza con esponente negativo\ind{potenza a esponente negativo}?
+
+Ricordiamo la seconda proprietà delle potenze: \(a^m : a^n = a^{m-n}\). \\
+Se \(m > n\) otteniamo: \(a^m : a^n = a^{m-n}\) dove \(m-n\) è 
+positivo situazione già trattata.\\
+Se \(m = n\) otteniamo giustamente: \(a^n : a^n = a^{n-n} = a^0 = 1\).\\
+Se \(m < n\) otteniamo: \(a^m : a^n = a^{m-n}\) dove \(m-n\) è 
+un numero negativo: situazione nuova.
+
+Riprendiamo la seconda proprietà delle potenze, ma questa volta 
+consideriamo \(m < n\):
+
+\[
+ a^{m-n} = a^m: a^n = \frac{a^m}{a^n}=
+ \frac{1 \cdot \overbrace{\cancel{a} \cdot \cancel{a} \cdot 
+       \ldots \cdot \cancel{a}}^{m \text{ volte}}}
+      {1 \cdot \underbrace{\cancel{a} \cdot \cancel{a} \cdot
+                           \ldots \cdot \cancel{a}}_{m \text{ volte}} 
+               \underbrace{\cdot a \cdot a \ldots 
+                           \cdot a}_{n-m \text{ volte}}}=
+ \frac{1}{a^{n-m}}
+\]
+
+Dato che \(n-m = -(m-n)\) possiamo concludere che in generale:
+\[a^n = \frac{1}{a^{-n}} = \tonda{\frac{1}{a}}^{-n}\]
+Notiamo che queste uguaglianze sono valide se la base è diversa da zero.
+
+Riassumendo, una potenza con base non nulla è uguale a una potenza che ha 
+per base il reciproco della base e per esponente l'opposto dell'esponente.
+Questo ci permette di risolvere i casi in cui l'esponente è negativo.
+
+Possiamo quindi ampliare la definizione di potenza.
+
+\begin{definizione}{Potenza in \(\Z\)}{}
+Dati due numeri interi~~\(b\)~~e~~\(e\),~~\emph{non entrambi nulli}, 
+\begin{itemize}[leftmargin=0cm, itemindent=.5cm]
+\item 
+Se \(e \geqslant 0\): l'operazione di \emph{potenza} 
+associa un terzo numero~\(p\) che si ottiene moltiplicando~1 per 
+\(e\) fattori uguali a~\(b\):
+\begin{inaccessibleblock}[Definizione di potenza come prodotti ripetuti.]
+\[\text{Se~} b = 0 \stext{e} e = 0 \quad 
+  b^e   \stext{non è definita \qquad altrimenti}
+  b^e = 1 \cdot \underbrace{b \cdot b \cdot \dots \cdot b}_{e~\text{ volte}} 
+  = p\]
+\end{inaccessibleblock}
+\item 
+Se \(e < 0 \stext{e} b \neq 0\): l'operazione di \emph{potenza} 
+associa un terzo numero~\(p\) che si ottiene elevando il reciproco della base 
+all'opposto dell'esponente:
+\begin{inaccessibleblock}[Definizione di potenza come prodotti ripetuti.]
+\[\text{Se~} b = 0 \stext{e} e < 0 \quad 
+  b^e   \stext{non è definita \qquad altrimenti}
+  b^e = \frac{1}{1 \cdot \underbrace{b \cdot b \cdot \dots 
+                 \cdot b}_{-e~\text{ volte}}} 
+  = p\]
+\end{inaccessibleblock}
+\end{itemize}
+\end{definizione}
+
+\begin{esempio}{}{}
+La successione delle potenze di~2 con esponente intero:
+{\footnotesize \[\dots; \quad 
+  2^{-3} = \frac{1}{8}; \quad 
+  2^{-2} = \frac{1}{4};\quad 
+  2^{-1} = \frac{1}{2};\quad 2^{0} = 1;\quad 
+  2^{+1} = 2;\quad 2^{+2} = 4; \quad 
+  2^{+3} = 8; \quad \dots\]}
+% \[\dots; \quad 
+% %   2^{-3} = \frac{1}{8}; \quad 
+%   2^{-2} = \frac{1}{4};\quad 
+%   2^{-1} = \frac{1}{2};\quad 2^{0} = 1;\quad 
+%   2^{+1} = 2;\quad 2^{+2} = 4; \quad 
+% %   2^{+3} = 8; \quad 
+%   \dots\]
+\end{esempio}
+
+\subsubsection{Proprietà della potenza in \texorpdfstring{$\Z$}{Z}}
+
+Con i numeri interi la potenza non è una legge di composizione interna: 
+come visto nell'esempio precedente, un numero intero elevato a un numero 
+intero in certi casi dà, come risultato, un numero non intero.
+
+% \ovalbox{\risolvii \ref{ese:2.22}, \ref{ese:2.23}, \ref{ese:2.24}, 
+% \ref{ese:2.25}, \ref{ese:2.26}, \ref{ese:2.27}}
+
+% \ovalbox{\risolvii \ref{ese:2.28}, \ref{ese:2.29}, \ref{ese:2.30}}
+

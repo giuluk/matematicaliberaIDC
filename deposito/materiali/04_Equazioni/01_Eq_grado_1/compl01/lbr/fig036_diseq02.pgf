@@ -1,0 +1,25 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Valori esterni all'intervallo -2; 3
+%%%%
+ 
+\begin{tikzpicture}[x=1.5mm, y=1.5mm, smooth]
+
+% \clip (-7.5, -5.5) rectangle (10.9, 10.9);
+
+\coordinate (m_i) at (-10, 0);
+\coordinate (a) at (-3, 0);
+\coordinate (b) at (3, 0);
+\coordinate (p_i) at (10, 0);
+
+\input{lbr/assiepiani/asse10x.pgf}
+
+\begin{scope}[blue,thick]
+\draw [-,decorate,decoration=snake] (m_i) -- (a);
+\draw[fill=white] (a) circle (2pt) node [above] {$-2$};
+\draw [-,decorate,decoration=snake] (b) -- (p_i);
+\draw[fill] (b) circle (2pt) node [above] {$3$};
+\end{scope}
+
+\end{tikzpicture}

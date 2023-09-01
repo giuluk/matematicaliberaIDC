@@ -1,0 +1,958 @@
+% (c) 2012-2013 Claudio Carboncini - claudio.carboncini@gmail.com
+% (c) 2012-2013 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c) 2015 Daniele Zambelli daniele.zambelli@gmail.com
+
+\input{\folder frazioni_algebriche_grafici}
+
+\chapter{Frazioni algebriche}
+
+% \begin{wrapfloat}{figure}{r}{0pt}
+% \includegraphics[scale=0.35]{img/fig000_.png}
+% \caption{...}
+% \label{fig:...}
+% \end{wrapfloat}
+% 
+% \begin{center} \input{\folder lbr/fig000_.pgf} \end{center}
+
+I polinomi, rispetto alle operazioni si comportano come i numeri interi, 
+in particolare la divisione tra due polinomi spesso dà un resto. 
+Così, proprio come abbiamo fatto con i numeri interi, anche con i polinomi 
+dovremo utilizzare le frazioni per poter eseguire sempre le divisioni. 
+Per poter operare con le frazioni dovremo imparare a calcolare il minimo 
+comune multiplo tra polinomi.
+
+\section{Divisore comune e multiplo comune}
+\label{sec:frazalg_MCDemcm}
+
+Per determinare~\(\mcd\) (\emph{massimo comune divisore}) 
+e~\(\mcm\) (\emph{minimo comune multiplo}) di due o più polinomi occorre 
+prima di tutto scomporli in fattori 
+irriducibili\indc{polinomio/polinomi}{fattori irriducibili di un polinomio}.
+
+\begin{osservazione}{}{} 
+La cosa non è semplice poiché non si può essere sicuri di aver 
+trovato il massimo comune divisore o il minimo comune multiplo
+per la difficoltà di decidere se un polinomio è irriducibile: 
+prudentemente si dovrebbe parlare di divisore comune e di multiplo comune.
+\end{osservazione}
+
+Un polinomio~\(A\) si dice multiplo di un 
+polinomio~\(B\)\indc{polinomio/polinomi}{polinomio multiplo di polinomio} se 
+esiste un polinomio~\(C\) per il quale~\(A=B\cdot C\) in questo caso diremo
+anche che~\(B\) è divisore del polinomio~\(A\).
+
+\subsection{Massimo Comun Divisore}\indc{polinomio/polinomi}{MCD di polinomi}
+Dati due o più polinomi, il massimo comune divisore il più grande polinomio 
+che è divisore di tutti.
+
+\begin{teorema}{}{}
+Dopo aver scomposto ciascun polinomio in fattori irriducibili, il massimo 
+comune divisore tra due o più polinomi è il prodotto di tutti i fattori 
+comuni ai polinomi, presi ciascuno una sola volta, con il minimo esponente.
+\end{teorema}
+
+% Sia i coefficienti numerici, sia i monomi possono essere considerati 
+% polinomi.
+
+% \begin{procedura}{}{}
+% Calcolare il~\(\mcd\) tra polinomi:
+% \begin{enumeratea}
+% \item scomponiamo in fattori irriducibili ogni polinomio;
+% \item prendiamo i fattori comuni a tutti i polinomi una sola volta con 
+% l'esponente più piccolo;
+% \item se non ci sono fattori comuni a tutti i polinomi il~\(\mcd\) è~\(1\).
+% \end{enumeratea}
+% \end{procedura}
+
+% \begin{exrig}
+\begin{esempio}{}{}
+Determina:\\
+\(\mcd \tonda{3a^{2}b^{3}-3b^{3};\quad 6a^{3}b^{2}-6b^{2}; 
+            \quad 12a^{2}b^{2}-24ab^{2}+12b^{2}} \).
+\begin{itemize}[nosep]
+\item Scomponiamo in fattori i singoli polinomi;
+\begin{itemize}[nosep]
+\item \(3a^{2}b^{3}-3b^{3}=3b^{3} \tonda{a^{2}-1} =3b^{3}(a-1)(a+1)\)
+\item \(6a^{3}b^{2}-6b^{2}=6b^{2} \tonda{a^{3}-1} =
+        6b^{2}(a-1) \tonda{a^{2}+a+1} \)
+\item \(12a^{2}b^{2}-24ab^{2}+12b^{2}=12b^{2} \tonda{a^{2}-2a+1} =
+        12b^{2}(a-1)^{2}\).
+\end{itemize}
+\item i fattori comuni a tutti i polinomi presi con l'esponente più piccolo 
+sono: \\
+\textcolor{Salmon}{\ding{224}} ~~ tra i numeri il~\(3\) \hfill
+\textcolor{Salmon}{\ding{224}} ~~ tra i monomi~\(b^{2}\) \hfill
+\textcolor{Salmon}{\ding{224}} ~~ tra i polinomi~\(a-1\).
+%   \begin{itemize}[nosep]
+%   \item tra i numeri il~\(3\)
+%   \item tra i monomi~\(b^{2}\)
+%   \item tra i polinomi~\(a-1\).
+%   \end{itemize}
+\item quindi il~\(\mcd=3b^{2}(a-1)\).
+\end{itemize}
+\end{esempio}
+% \end{exrig}
+
+\subsection{Minimo comune multiplo}\indc{polinomio/polinomi}{mcm di polinomi}
+Dati due o più polinomi, il minimo comune multiplo il più piccolo polinomio 
+che è multiplo di tutti.
+
+\begin{teorema}{}{}
+Dopo aver scomposto ciascun polinomio in fattori, il minimo comune multiplo 
+tra due o più polinomi è il prodotto dei fattori comuni e non comuni di tutti 
+i polinomi, presi una sola volta, con il massimo esponente.
+\end{teorema}
+
+% \begin{procedura}{}{}
+% Calcolare il~\(\mcm\) tra polinomi:
+% \begin{enumeratea}
+% \item scomponiamo in fattori irriducibili ogni polinomio;
+% \item prendiamo tutti i fattori comuni e non comuni dei polinomi, i fattori 
+%  comuni presi una sola volta con il massimo esponente.
+% \end{enumeratea}
+% \end{procedura}
+
+% \begin{exrig}
+\begin{esempio}{}{}
+Determina:\\
+\(\mcm \tonda{3a^{2}b^{3}-3b^{3};\quad 6a^{3}b^{2}-6b^{2};
+            \quad 2a^{2}b^{2}-24ab^{2}+12b^{2}} \).
+\begin{itemize}[nosep]
+\item Scomponiamo in fattori i singoli polinomi;
+\begin{itemize}[nosep]
+\item \(3a^{2}b^{3}-3b^{3}=3b^{3} \tonda{a^{2}-1} =3b^{3}(a-1)(a+1)\)
+\item \(6a^{3}b^{2}-6b^{2}=6b^{2} \tonda{a^{3}-1} =
+        6b^{2}(a-1) \tonda{a^{2}+a+1} \)
+\item \(12a^{2}b^{2}-24ab^{2}+12b^{2}=12b^{2} \tonda{a^{2}-2a+1} =
+        12b^{2}(a-1)^{2}\).
+\end{itemize}
+\item i fattori comuni e non comuni presi con il massimo esponente sono:
+\begin{itemize}[nosep]
+\item tra i coefficienti numerici il~\(12\)
+\item tra i monomi~\(b^{3}\)
+\item tra i polinomi~\((a-1)^{2}\cdot (a+1)\cdot  \tonda{a^{2}+a+1} \).
+\end{itemize}
+\item quindi il~\(\mcm=12b^{3}(a-1)^{2}(a+1) \tonda{a^{2}+a+1} \).
+\end{itemize}
+\end{esempio}
+% \end{exrig}
+
+% \ovalbox{\risolvii \ref{ese:18.1}, \ref{ese:18.2}, \ref{ese:18.3}, 
+% \ref{ese:18.4}, \ref{ese:18.5}, \ref{ese:18.6}, \ref{ese:18.7}, 
+% \ref{ese:18.8}, \ref{ese:18.9}, \ref{ese:18.10}, \ref{ese:18.11}}
+\begin{osservazione}{}{}
+Se viene chiesto di calcolare il \(\mcd\) o il \(\mcm\) di 
+oggetti di tipo diverso (singoli numeri, monomi, polinomi) le procedure  
+non cambiano. Infatti sia i numeri che i monomi possono essere visti come 
+particolari polinomi.
+\end{osservazione}
+
+\begin{esempio}{}{}
+Calcolare \(\mcd\) e \(\mcm\) di:\quad \(\tonda{3a^2b;\quad 12;\quad 
+15a(b^2-3)}\)
+\begin{itemize}[nosep]
+\item \(\mcd \tonda{6a^2b;\quad 12;\quad 15a(b^2-3)}=3\)
+\item \(\mcm \tonda{3a^2b;\quad 12;\quad 15a(b^2-3)}=60a^2b(b^2-3)\)
+\end{itemize}
+
+\end{esempio}
+
+
+\section{Definizione di frazione algebrica}
+\label{sec:frazalg_definizione}
+
+Abbiamo visto, nel capitolo sui polinomi che, a volte il quoziente di 
+due polinomi è un polinomio, altre volte la divisione tra polinomi dà un resto.
+In questo caso il quoziente esatto dei due polinomi non è un polinomio, ma 
+una \indt{frazione algebrica}, cioè una frazione che ha un polinomio al 
+numeratore e uno al denominatore.
+
+% \begin{wrapfloat}{figure}{r}{0pt}
+% \includegraphics[scale=0.35]{img/fig000_.png}
+% \caption{...}
+% \label{fig:...}
+% \end{wrapfloat}
+% 
+% \begin{center} \input{\folder lbr/fig000_.pgf} \end{center}
+
+Diamo la seguente definizione:
+\begin{definizione}{}{}
+Si definisce \textbf{frazione algebrica} una espressione del
+tipo~\(\dfrac{A}{B}\) dove~\(A\) e~\(B\) sono polinomi.
+\end{definizione}
+
+Anche una frazione algebrica può essere vista come una funzione: quando 
+alle variabili viene assegnato un valore, la frazione algebrica dà un 
+risultato.
+I valori delle variabili sono gli argomenti della funzione, il valore 
+assunto dalla frazione algebrica è il risultato della funzione.
+
+\affiancati{.58}{.38}{
+Quando l'espressione contiene una sola variabile, può essere vista come una 
+funzione ``reale'' cioè una funzione che associa ad ogni numero reale al 
+massimo un altro numero reale.
+In questo caso può essere rappresentata su un piano cartesiano.
+
+Ad esempio la funzione:\\ \(f(x) = \dfrac{x^2 -3x -4}{2x^2 +4x -16}\)\\
+produce il grafico a fianco.
+
+Si può osservare che la funzione presenta due zeri per i valori: 
+\(x_1=-1 \stext{e} x_2=+4\) e per due valori sembra non essere definita:
+\(x_3=-4 \stext{e} x_4=+2\).
+}{
+\immagine[.8]{Grafico della precedente frazione algebrica}
+{\graficofrazionea}
+}
+
+% Di seguito vediamo come calcolare il quoziente tra espressioni letterali.
+% Ricordiamo che la divisione è definita solo se il divisore è diverso da 
+% zero.
+% 
+% Quando nel semplificare una frazione, scompaiono dei fattori presenti a 
+% denominatore, dobbiamo specificare che quei fattori devono essere diversi 
+% da zero.
+% 
+% Vediamo alcuni esempi.
+% 
+% % \paragraph{Caso I}Quoziente tra monomi.
+% % \begin{exrig}
+%  \begin{esempio}{}{}
+% Eseguiamo le seguenti divisioni ricordando di indicare quali espressioni 
+% devono essere diverse da zero.
+% \begin{enumerate}
+% \item 
+% \(5a^{3}b^{2}c^{5}: \tonda{-3a^{2}bc^{5}} =
+%     \dfrac{5a^{\cancel{3}}b^{\cancel{2}}{\cancel{c^5}}}
+%           {-3\cancel{a^{2}}\cancel{b}\cancel{c^{5}}}=
+%     -\dfrac{5}{3}ab 
+%       \quad \text{ con } a \ne 0 \stext{e} b \ne 0 \stext{e} c \ne 0\)
+% \item 
+% \(4a^{3}b^{2}c^{5} : \tonda{-7a^{7}bc^{5}} =
+%     \dfrac{4\cancel{a^{3}}b^{\cancel{2}}\cancel{c^{5}}}
+%           {-7a^{\cancel{7}}\cancel{b}\cancel{c^{5}}}= 
+%     -{\dfrac{4b}{7a^{4}}}=
+%     -{\dfrac{4~}{7~}}a^{-4}b
+%        \quad \text{ con } a \ne 0 \stext{e} b \ne 0 \stext{e} c \ne 0\)
+% \item 
+% \(q=2a^{3}b: \tonda{a^{2}+b} =\dfrac{2a^{3}b}{a^{2}+b}
+%        \quad \text{ con } a^{2}+b \ne 0\)
+% \item 
+% \(\tonda{2a^{3}b+a^{5}b^{3}-3ab^{2}} : \tonda{\dfrac{1}{2}ab} =
+%   4a^{2}+2a^{4}b^{2}-6b
+%        \quad \text{ con } a \ne 0 \stext{e} b \ne 0\)
+% \item 
+% \(\tonda{2a^{3}b+a^{5}b^{3}-3ab^{2}} : \tonda{\dfrac{1}{2}a^{5}b} =
+%   \dfrac{4}{a^{2}}+2b^{2}-\dfrac{6b}{a^{4}}
+%        \quad \text{ con } a \ne 0 \stext{e} b \ne 0\)
+% \item 
+% \(\tonda{x-3} : \tonda{x^{2}+1}=\dfrac{x-3}{x^{2}+1}
+%        \quad \text{ con } x^{2}+1 \ne 0\)
+% \end{enumerate}
+% 
+%  \end{esempio}
+% 
+% \paragraph{Conclusione}
+% Il quoziente tra due polinomi è un polinomio se il dividendo è divisibile 
+% per il divisore, altrimenti il risultato della divisione può essere 
+% espresso da una \textbf{frazione algebrica}.
+% Una frazione algebrica può essere considerata come il quoziente tra due 
+% polinomi.
+
+\section{Condizioni di esistenza per una frazione algebrica}
+\label{sec:frazalg_condizioniesistenza}
+
+Poiché non è mai possibile dividere per~\(0\), una frazione algebrica perde 
+di significato per quei valori che attribuiti alle variabili rendono il 
+denominatore uguale a zero. 
+Per ``discussione di una frazione algebrica'' intendiamo la ricerca dei 
+valori che, attribuiti alle variabili, la rendano calcolabile. 
+Una frazione algebrica del tipo~\(\dfrac{A}{B}\) ha come 
+\indtc{f.algebrica}{condizione di esistenza} (\(\CE\)):~\(B\neq~0\).
+
+La funzione precedente non dà quindi un risultato quando: \(2x^2 +4x -16=0\).
+Scomponendo in fattori il polinomio a primo membro: 
+\(2 \tonda{\tonda{x+4}\tonda{x-2}}=0\),
+vediamo che il denominatore si annulla quando \(x=-4\) o \(x=+2\).
+Per questi due valori la funzione non è definita.
+% \begin{exrig}
+\begin{esempio}{}{}
+Determinare le condizioni di esistenza di esistenza delle seguenti funzioni, 
+cioè studiare per quali valori delle variabili il denominatore è diverso da 
+zero.
+
+\begin{enumerate} [left=0mm]
+\item \(f(x)=\dfrac{1+x}{x} \srarrow \CE:~ x\neq~0\)
+\item \(f(x)=\dfrac{x}{x+3} \srarrow \CE:~ x+3 \neq 0 \sRarrow x \neq -3\)
+\item \(f(x)=\dfrac{3a+5b-7}{ab} \srarrow 
+\CE:~ ab \neq 0 \sRarrow a\neq~0 \stext{e} b\neq~0\)
+\item \(f(x)=\dfrac{-6}{2x+5} \srarrow 
+\CE:~ 2x+5\neq~0 \sRarrow 2x \neq -5 \sRarrow x\neq -\dfrac{5}{2}\)
+\item \(f(x)=\dfrac{-x^{3}-8x}{x^{2}+2} \srarrow 
+\begin{array}{l}\CE\!:~ x^{2}+2 \neq 0 
+\text{, definita per ogni valore di } x
+\end{array}\)
+% \begin{array}{l}\CE\!:~ x^{2}+2 \neq 0\\
+% \text{definita per ogni valore di } x
+% \end{array}\)
+\end{enumerate}
+\end{esempio}
+
+Ci sono dei casi più laboriosi da risolvere, quando il denominatore si 
+presenta nella forma di un polinomio non lineare.
+
+Ricordiamoci che negli insiemi numerici che stiamo usando, il risultato 
+di una moltiplicazione è zero se almeno uno dei fattori è zero:
+
+\begin{teorema}{Legge di annullamento del prodotto}{}
+Nei numeri reali, il prodotto di più fattori è nullo se almeno uno dei 
+fattori è nullo\ind{annullamento del prodotto}.
+\end{teorema}
+
+Quando è possibile, dobbiamo scomporre in fattori il denominatore e studiare 
+ogni singolo fattore ponendolo diverso da zero.
+
+\begin{esempio}{}{}
+Determinare le condizioni di esistenza di~\(\dfrac{2x}{x^{2}-4}\).
+
+Scomponendo in fattori il denominatore otteniamo:\\
+\(\dfrac{2x}{x^{2}-4} = \dfrac{2x}{\tonda{x-2}\tonda{x+2}}\)\quad
+e per la legge di annullamento del prodotto ricaviamo:
+
+\(\CE:~ \tonda{x-2}\tonda{x+2} \neq~0 \sRarrow 
+\tonda{x-2} \neq 0 \stext{e} \tonda{x+2} \neq 0\\
+\sRarrow x \neq -2 \stext{e} x \neq +2\)
+
+La condizione \(x \neq -2 \stext{e} x \neq +2\) può anche essere sintetizzata 
+con l'espressione: \(x \neq \mp 2\).
+\end{esempio}
+% \end{exrig}
+
+\begin{procedura}{}{}
+Determinare la condizione di esistenza di una frazione algebrica:
+\begin{enumeratea}
+\item scomporre in fattori il denominatore;
+\item calcolare gli zeri del denominatore;
+\item escludere i valori che annullano il denominatore.
+\end{enumeratea}
+\end{procedura}
+
+Nel proporre i prossimi esempi ed esercizi daremo per scontata la condizione 
+di esistenza delle frazioni proposte, a meno che non diventi necessario 
+discuterne.
+% \ovalbox{\risolvii \ref{ese:19.1}, \ref{ese:19.2}, \ref{ese:19.3}, 
+% \ref{ese:19.4}}
+
+\section{Semplificazione di una frazione 
+algebrica}\indc{f.algebriche}{semplificazione}
+\label{sec:frazalg_semplificazione}
+
+Semplificare una frazione algebrica significa dividere numeratore e 
+denominatore per uno stesso fattore diverso da zero, in questo modo infatti 
+la proprietà invariantiva della divisione garantisce che la frazione non 
+cambia di valore.
+Quando riduciamo ai minimi termini una frazione numerica, dividiamo il 
+numeratore e il denominatore per il loro~\(\mcd\) che è sempre un numero
+diverso da zero, ottenendo una frazione equivalente a quella assegnata.
+
+Quando semplifichiamo una frazione algebrica, dobbiamo 
+porre attenzione a escludere quei valori che, attribuiti alle variabili, 
+rendono nullo il~\(\mcd\).
+
+% \begin{exrig}
+\begin{esempio}{}{}
+Semplificare~\(\dfrac{16x^{3}y^{2}z}{10xy^{2}}\)
+\[%\text{ con } x \ne 0 \stext{e} y \ne 0: \quad 
+\dfrac{\cancel{16}x^{\cancel{3}}\cancel{y^{2}}z}
+      {\cancel{10}\cancel{x}\cancel{y^{2}}}=
+\dfrac{8x^{2}z}{5}=\dfrac{8}{5}x^{2}z
+\quad \text{ con } x \ne 0 \stext{e} y \ne 0
+\]
+\end{esempio}
+
+\begin{osservazione}{}{} 
+In una frazione non possiamo semplificare singoli 
+addendi ma solo fattori.
+\end{osservazione}
+
+Vediamo un esempio numerico: \quad \(\dfrac{2+6}{2+12}\). 
+
+Se operiamo correttamente otteniamo: \quad
+\(\dfrac{2+6}{2+12}=\dfrac{8}{14}=\dfrac{4}{7}\)
+
+Se ci avventuriamo in ``semplificazioni'' fantasiose, possiamo 
+semplificare il \(2\) con il \(2\) e il \(6\) con il 
+\(12\), ottenendo: \quad
+\(\dfrac{\cancel{2} +\cancel{6}}{\cancel{2} +\cancel{12}}=
+\dfrac{1+1}{1+2}=\dfrac{2}{3}\)
+
+È chiaro che quest'ultimo calcolo non è accettabile: infatti semplificare una 
+frazione significa ottenerne un'altra con numeri più piccoli, ma equivalente 
+alla prima e \(\dfrac{4}{7}\) è equivalente a \(\dfrac{8}{14}\) mentre 
+\(\dfrac{2}{3}\) non lo è.
+
+% \newpage % ------------------------------------------------
+
+Di seguito possiamo vedere alcuni esempi di ``semplificazioni'' errate:
+\begin{htmulticols}{3}
+\begin{itemize}
+\item \(\dfrac{\cancel{a}+b}{\cancel{a}}\)
+\item \(\dfrac{\cancel{x^2}+x+4}{\cancel{x^2}+2}\) 
+\item \(\dfrac{x^{\cancel{2}}+y^{\cancel{2}}}{(x+y)^{\cancel{2}}}=1\) 
+\item \(\dfrac{\cancel{3a}(a-2)}{\cancel{3a}x-7}=\dfrac{a-2}{x-7}\) 
+\item \(\dfrac{\cancel{ \tonda{x-y^2}}}
+            {\cancel{ \tonda{y^2-x}}}=1\)
+%  \item \(\dfrac{\cancel{(2x-3y)}}{(3y-2x)^{\cancel{2}}}=\dfrac{1}{3y-2x}\) 
+\item \(\dfrac{\cancel{a}+b}{a^{\cancel{2}}}=\dfrac{1+b}{a}\)
+\end{itemize}
+\end{htmulticols}
+
+La semplificazione di una funzione razionale produce un'altra funzione che si 
+comporta \emph{quasi} sempre come la funzione di partenza.
+
+\affiancati{.48}{.48}{
+\immagine[.8]{Grafico di ((x-3)(x-1))/((x-3)(x+2))}{\graficofrazioneb}
+}{
+\immagine[.8]{Grafico di (x-1)/(x+2)}{\graficofrazionec}
+}
+
+Le funzioni \(f_1\) e \(f_2\) sono uguali dappertutto tranne che in \(x=+3\) 
+dove \(f_1\) non è definita mentre \(f_2\) vale \(\dfrac{2}{5}\).
+% : 
+% \(f_1\) non è definita in \(-2\) e \(+3\) (zeri del denominatore), 
+% \(f_2\) non è definita in solo in \(-2\). 
+
+\begin{esempio}{}{}
+Ridurre ai minimi termini la frazione:\quad \(\dfrac{a^{2}-6a+9}{a^{4}-81}\).
+\begin{enumerate} [left=0mm]
+\item Scomponiamo in fattori
+\begin{itemize}[left=0mm, nosep]
+\item il numeratore:~\(a^2 - 6a +9 = (a - 3 )^2\)
+\item il denominatore:~\(a^4 - 81 = \tonda{a^2 - 9} \tonda{a^2 + 9} = 
+                         \tonda{a\!-\!3}\tonda{a\!+\!3} \tonda{a^2\!+\!9} \)
+\end{itemize}
+% \[\dfrac{a^{2}-6a+9}{a^{4}-81} = 
+%   \dfrac{\tonda{a-3}^2}
+%         {\tonda{a-3} \tonda{a+3} \tonda{a^{2}+9}}\]
+\item Semplifichiamo:
+\[\dfrac{(a-3)^{\cancel{2}}}
+        {\cancel{(a-3)}\cdot (a+3)\cdot  \tonda{a^{2}+9} }=
+  \dfrac{a-3}{\tonda{a+3)(a^{2}+9}}\]
+\item Indichiamo quali sono le condizioni che si sono perse nella 
+semplificazione:
+\[a-3 \neq 0 \sRarrow a \neq +3\]
+\end{enumerate}
+Il tutto può essere scritto in un'unica espressione:
+\[\dfrac{a^{2}-6a+9}{a^{4}-81} \stackrel{1}{=} 
+  \dfrac{(a-3)^{\cancel{2}}}
+        {\cancel{(a-3)}\cdot (a+3)\cdot \tonda{a^{2}+9}}\stackrel{2}{=} 
+  \dfrac{a-3}{ \tonda{a+3)(a^{2}+9}} \stackrel{3}{\stext{con}} 
+  a \neq +3\]
+\end{esempio}
+
+\begin{esempio}{}{}
+Ridurre ai minimi termini la frazione in due variabili:\\
+\central{
+\(\dfrac{x^{4}+x^{2}y^{2}-x^{3}y-xy^{3}}
+        {x^{4}-x^{2}y^{2}+x^{3}y-xy^{3}}\)
+}
+% \phantom{.}\hfill
+% \(\dfrac{x^{4}+x^{2}y^{2}-x^{3}y-xy^{3}}
+%         {x^{4}-x^{2}y^{2}+x^{3}y-xy^{3}}\) \hfill ~
+\begin{itemize}[left=0mm, nosep]
+\item Scomponiamo in fattori con il raccoglimento parziale
+\begin{itemize}[nosep]
+\item \(x^{4}+x^{2}y^{2}-x^{3}y-xy^{3}=
+x^{2}  \tonda{x^{2}+y^{2}} -xy  \tonda{x^{2}+y^{2}} =\newline
+\hspace*{30mm}= x \tonda{x^{2}+y^{2}}  (x-y)\)
+\item \(x^{4}-x^{2}y^{2}+x^{3}y-xy^{3}=
+x^{2}  \tonda{x^{2}-y^{2}} +xy  \tonda{x^{2}-y^{2}} =\newline
+\hspace*{30mm}= x (x+y)^{2} (x-y)\)
+\end{itemize}
+\item Semplifichiamo:\\
+\hspace*{-5mm}
+\(\dfrac{x^{4}+x^{2}y^{2}-x^{3}y-xy^{3}}
+      {x^{4}-x^{2}y^{2}+x^{3}y-xy^{3}}=
+\dfrac{\cancel{x}  \tonda{x^{2}+y^{2}}  \cancel{(x-y)}}
+      {\cancel{x}(x+y)^{2} \cancel{(x-y)}}=\dfrac{x^2+y^2}{(x+y)^2} 
+%   \textcon x-y \neq 0 \sRarrow x \neq y \texte x \neq 0\]
+\stext{ con } \sistema{x \neq 0 \\ x \neq y}\)
+% \stext{con} x \neq y \stext{e} x \neq 0\)
+\end{itemize}
+\end{esempio}
+% \end{exrig}
+
+% \ovalbox{\risolvii \ref{ese:19.5},\ref{ese:19.6}, \ref{ese:19.7}, 
+% \ref{ese:19.8}, \ref{ese:19.9}, \ref{ese:19.10}, \ref{ese:19.11}, 
+% \ref{ese:19.12}}
+
+
+\section{Moltiplicazione di frazioni algebriche}
+\label{sec:frazalg_moltiplicazione}
+
+Il prodotto di due frazioni\indc{f.algebriche}{prodotto tra f.algebriche} 
+è una frazione che ha per numeratore il prodotto dei numeratori e 
+per denominatore il prodotto dei denominatori.
+
+% Si vuole determinare il prodotto~\(p=\dfrac{7}{15}\cdot \dfrac{20}{21}\) 
+% possiamo 
+% % scrivere prima il risultato dei prodotti dei numeratori e dei 
+% % denominatori e poi ridurre ai minimi termini la frazione
+% % ottenuta:~\(p=\dfrac{7}{15}\cdot \dfrac{20}{21}=
+% % \dfrac{\cancel{140}^4}{\cancel{315}^9}=\dfrac{4}{9}\),
+% % oppure 
+% prima operare la semplificazione incrociata e poi
+% moltiplicare:~\(p=\dfrac{7}{15}\cdot \dfrac{20}{21}=
+% \dfrac{\cancel{7}^1}{\cancel{15}^3}\cdot \dfrac{\cancel{20}^4}{\cancel{21}
+% ^3} = \dfrac{4}{9}\).
+
+% \begin{exrig}
+\begin{esempio}{}{}
+Calcola il prodotto delle frazioni algebriche:\\
+\central{
+\(f_{1}=-\dfrac{3a^{2}}{10b^{3}c^{4}}\) ~~e~~ 
+\(f_{2}=\dfrac{25bc^{7}}{9}\)}\\ [-.5em]
+
+Il prodotto si ottiene semplificando e ponendo le condizioni per ogni fattore 
+semplificato: 
+
+\vspace{-1em}
+\[f_1 \cdot f_2 =
+-\dfrac{\cancel{3}a^{2}}{\cancel{10}b^{\cancel{3}}\cancel{c^{4}}}
+\cdot \dfrac{\cancel{25}\cancel{b}c^{\cancel{7}}}{\cancel{9}}=
+-{\dfrac{5a^{2}c^{3}}{6b^{2}}} 
+\stext{ con } \sistema{b \neq 0 \\ c \neq 0}\]
+% \stext{ con } b \neq 0 \stext{e} c \neq 0\]
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcola il prodotto delle frazioni algebriche:\\
+\central{
+\(f_{1}=-{\dfrac{3a}{2b+1}}\) ~~e~~ \(f_{2}=\dfrac{10b}{a-3}\)}\\ [-.5em]
+
+In questo caso non è possibile alcuna semplificazione, il prodotto si ottiene 
+moltiplicando fra loro i numeratori e i denominatori:
+
+\vspace{-.5em}
+\[f_1 \cdot f_2 = 
+-{\dfrac{3a}{2b+1}}\cdot\dfrac{10b}{a-3}=
+-{\dfrac{30ab}{(2b+1)(a-3)}}\] 
+\begin{osservazione}{}{}
+Come detto sopra, ``semplificazioni'' di questo tipo:~~
+\(f=-{\dfrac{3\cancel{a}}{2\cancel{b}+1}}\cdot
+    \dfrac{10\cancel{b}}{\cancel{a}-3}\), 
+sono proprio sbagliate!
+\end{osservazione}
+
+
+\end{esempio}
+
+Quando al numeratore e al denominatore abbiamo polinomi, per prima cosa 
+dobbiamo scomporli in fattori in modo da poter semplificare le frazioni.
+
+\begin{esempio}{}{}
+Calcola il prodotto delle frazioni: \\
+\central{
+\(f_{1}=\dfrac{-x+2x^2}{x^2-3x+2}\) ~~e~~ 
+\(f_{2}=\dfrac{5x-5}{x-4x^2+4x^3}\)}\\ [-.5em]
+
+\begin{enumerate} [left=0mm]
+\item Scomponiamo in fattori tutti i denominatori (servirà per la 
+determinazione delle~\(\CE\)) e
+  tutti i numeratori (servirà per le eventuali semplificazioni),
+\begin{itemize}%[nosep]
+\item \(f_1=\dfrac{2x^2-x}{x^2-3x+2}=
+            \dfrac{x \cdot (2x-1)}{(x-1) \cdot (x-2)}\)
+\item \(f_2=\dfrac{5x-5}{4x^3-4x^2+x}=
+            \dfrac{5 \cdot (x-1)}{x \cdot \tonda{4x^2-4x+1}}=
+            \dfrac{5 \cdot (x-1)}{x \cdot (2x-1)^2}\)
+\end{itemize}
+\item determiniamo la frazione prodotto, effettuando le eventuali 
+semplificazioni:
+
+\vspace{-2.0em}
+\[f_1 \cdot f_2 = 
+\dfrac{\cancel{x} \cdot \cancel{(2x-1)}}{\cancel{(x-1)} \cdot {(x-2)}} \cdot 
+\dfrac{5\cdot\cancel{(x-1)}}{\cancel{x}\cdot(2x-1)^{\cancel{2}}}=
+\dfrac{5}{(x-2)(2x-1)} \text{ con }
+\sistema{x \neq 0 \\ x \neq +1 \\ x \neq +\dfrac{1}{2}}
+\]
+% {\central
+% \(\text{con } x \neq 0 \stext{e} x \neq +1 \stext{e} x \neq +\dfrac{1}{2}\)}
+%  \item esplicitiamo le~\(\CE\) relative ai fattori che sono stati 
+%semplificati:
+% \[\CE \sistema{x \neq 0 \\
+%       x-1 \neq 0 \\
+%       2x-1 \neq 0}
+% \sRarrow
+% \sistema{x \neq 0 \\
+%          x \neq +1 \\
+%          x \neq +\dfrac{1}{2}}
+%       \]
+
+% \[\CE x \neq 0 \stext{e} 
+%       x-1 \neq 0 \sRarrow x\neq +1 \stext{e} 
+%       2x-1 \neq 0 \sRarrow x \neq +\dfrac{1}{2}\]
+\end{enumerate}
+\end{esempio}
+% \end{exrig}
+
+% \ovalbox{\risolvii \ref{ese:19.13}, \ref{ese:19.14}, \ref{ese:19.15}, 
+% \ref{ese:19.16}, \ref{ese:19.17}}
+
+\section{Divisione di frazioni algebriche}
+\label{sec:frazalg_divisione}
+
+L'introduzione delle frazioni algebriche permette di trasformare ogni 
+divisione in una moltiplicazione quindi si può sempre eseguire la divisione, 
+a patto che il divisore sia diverso da zero\indc{f.algebriche}{divisione di 
+f.algebriche}.
+L'insieme delle frazioni algebriche è chiuso anche per la divisione.
+
+Il quoziente di due frazioni è la frazione che si ottiene moltiplicando la 
+prima per il reciproco della seconda.
+Lo schema di calcolo può essere illustrato nel modo seguente, come del resto 
+abbiamo visto nell'insieme dei numeri razionali:
+
+\[\dfrac{m}{n}:\dfrac{p}{q}=\dfrac{m}{n} \cdot \dfrac{q}{p}=
+\dfrac{m \cdot q}{n \cdot p}\]
+
+% Per determinare il quoziente di due frazioni 
+% numeriche si procede nel seguente modo:
+% \[\dfrac{5}{12}:\dfrac{7}{4}=
+%     \dfrac{5}{\cancel{12}^3}\cdot\dfrac{\cancel{4}^1}{7}=\dfrac{5}{21}\]
+
+Quando eseguiamo il reciproco di una frazione algebrica perdiamo 
+un'informazione, può darsi che il reciproco di una frazione si possa 
+calcolare per determinati valori delle variabili, ma che non si possa 
+calcolare la frazione di partenza, ad esempio:
+\(\dfrac{5}{0}\) non si può calcolare, ma il suo reciproco, 
+\(\dfrac{0}{5}\), sì.
+Quindi prima di operare il reciproco di una frazione dobbiamo porre le
+\(\CE\) di quella frazione:
+
+\begin{esempio}{}{}
+Calcola il reciproco di \(f=\dfrac{2x^2-12x+18}{3x^2-75}\).
+\begin{enumerate}
+\item Scomponiamo in fattori i polinomi
+\begin{itemize}[nosep]
+\item \(f=\dfrac{2x^2-12x+18}{3x^2-75}=
+          \dfrac{2 \tonda{x^2-6x+9}}{3 \tonda{x^2-25}}=
+          \dfrac{2\cdot \tonda{x-3}^2}{3\tonda{x-5} \cdot \tonda{x+5}}\)
+\end{itemize}
+\item Condizione di esistenza della frazione di partenza: \quad
+\(x \neq -5 \stext{e} x \neq +5\)
+\end{enumerate}
+In un'unica espressione, il reciproco di:
+
+\vspace{-1.5em}
+\[\dfrac{2x^2-12x+18}{x^2-25} =
+\dfrac{2\cdot \tonda{x-3}^2}{3\tonda{x-5} \cdot \tonda{x+5}}
+\sstext{è}
+\dfrac{\tonda{x-5} \cdot \tonda{x+5}}{2\cdot \tonda{x-3}^2} \stext{con}
+x \neq \mp 5\]
+\end{esempio}
+
+
+% \begin{exrig}
+\begin{esempio}{}{}
+Calcola il quoziente delle frazioni algebriche:\\
+\central{
+\(f_{1}=\dfrac{3a-3b}{2a^{2}}\) \quad e \quad 
+\(f_{2}=\dfrac{a^{2}-ab}{b^{2}}\)}%\\ [-.5em]
+
+\begin{enumerate} [left=0mm]
+\item Esplicitiamo la condizione di esistenza del divisore: \(b \neq 0\)
+\item Scomponiamo in fattori i polinomi\\
+\begin{itemize*}[nosep]
+\item \(f_{1}=\dfrac{3a-3b}{2a^{2}}=\dfrac{3\cdot(a-b)}{2a^{2}}\qquad\)
+\item \(f_{2}=\dfrac{a^{2}-ab}{b^{2}}=\dfrac{a\cdot (a-b)}{b^{2}};\)
+\end{itemize*}
+% \item Cambiamo la divisione in una moltiplicazione e semplifichiamo:
+% \[
+% \dfrac{3\cdot(a-b)}{2a^{2}}:\dfrac{a\cdot(a-b)}{b^2}=
+% \dfrac{3\cdot\cancel{(a-b)}}{2a^{2}}\cdot
+% \dfrac{b^2}{a\cdot\cancel{(a-b)}}=\dfrac{3b^2}{2a^3}
+% \]
+%  \item Esplicitiamo tutte le condizioni d'esistenza:
+% \(\sistema{b\neq~0\\a \neq b}\)
+\end{enumerate}
+In un'unica espressione:\\
+{\small
+\(f_1 : f_2 = 
+\dfrac{3\cdot(a-b)}{2a^{2}}:\dfrac{a\cdot(a-b)}{b^2}=
+\dfrac{3\cdot\cancel{(a-b)}}{2a^{2}}\cdot
+\dfrac{b^2}{a\cdot\cancel{(a-b)}}=\dfrac{3b^2}{2a^3} \stext{ con }
+\sistema{b \neq 0 \\ a \neq b}\)}
+\end{esempio}
+% \end{exrig}
+
+% \ovalbox{\risolvii \ref{ese:19.19}, \ref{ese:19.20}, \ref{ese:19.21}}
+
+\section{Potenza di una frazione algebrica}\indc{f.algebriche}{potenza di una 
+f.algebrica}
+\label{sec:frazalg_potenza}
+
+La potenza di esponente~\(n\), naturale diverso da zero, della frazione 
+algebrica~\(\dfrac{A}{B}\) con~\(B{\neq}0\) (\(\CE\)) è la frazione
+avente per numeratore la potenza di esponente~\(n\) del numeratore e per 
+denominatore la potenza di esponente~\(n\)
+del denominatore:~\( \tonda{\dfrac{A}{B}} ^{n}=\dfrac{A^{n}}{B^{n}}\).
+
+\begin{esempio}{}{}
+Calcola  \( \tonda{\dfrac{x-2}{x^{2}-1}} ^{3}\)
+
+\vspace{-.5em}
+\[\tonda{\dfrac{x-2}{x^{2}-1}} ^{3} =
+\dfrac{\tonda{x-2}^3}{\quadra{(x-1)\cdot(x+1)}^3} = 
+\dfrac{\tonda{x-2}^3}{\tonda{x-1}^3 \cdot \tonda{x+1}^3}\]
+\end{esempio}
+% \end{exrig}
+
+\subsection{Casi particolari dell'esponente}
+
+\subsubsection{Esponente nullo}
+Se~\(n = 0\) sappiamo che qualsiasi numero \emph{diverso da zero}, elevato a 
+zero è uguale a~\(1\). 
+Lo stesso si può dire se la base è una frazione algebrica.
+\(\tonda{\dfrac{A}{B}}^0=1\) se la frazione è definita: 
+\(B\neq~0\) e è diversa da zero: \(A\neq~0\).
+
+\begin{esempio}{}{}
+Quali valori può avere la variabile~\(a\) perché sia: \\
+\(\tonda{\dfrac{3a-2}{5a^{2}+10a}} ^{0}=1\)?
+
+\vspace{.5em}
+\begin{itemize}[nosep]
+\item Scomponiamo in fattori numeratore e denominatore della 
+frazione:\\ \( \tonda{\dfrac{3a-2}{5a\cdot (a+2)}} ^{0}\)
+\item determiniamo le~\(\CE\) della frazione:
+\(a\neq~0 \stext{e} a+2\neq~0\) 
+da cui, \(\CE a\neq~0 \stext{e} a\neq -2\).
+\item Una frazione è nulla se è definita e il suo numeratore è nullo, 
+quindi:
+\(3a-2 \neq 0 \sRarrow a\neq \dfrac{2}{3}\)
+\end{itemize}
+In definitiva: \(a\neq -2 \stext{e} a\neq~0 \stext{e} a\neq \dfrac{2}{3}\).
+\end{esempio}
+% \end{exrig}
+
+\subsubsection{Esponente negativo}
+Se~\(n\) è intero negativo la potenza con base diversa da zero è uguale alla 
+potenza che ha per base il reciproco della base e per esponente l'opposto
+dell'esponente. 
+\( \tonda{\dfrac{A}{B}} ^{-n}=
+\tonda{\dfrac{B}{A}} ^{+n}\) con~\(A\neq~0\) e~\(B\neq~0\).
+
+Quindi deve esistere sia la frazione di partenza, sia il suo reciproco, cioè 
+dovranno essere diversi da zero sia il denominatore sia il numeratore.
+
+% \begin{exrig}
+\begin{esempio}{}{}
+Determinare~\(f = \tonda{\dfrac{x^{2}+5x+6}{x^{3}+x}} ^{-2}\)
+\begin{itemize}[nosep]
+\item Scomponiamo in fattori numeratore e denominatore: \\
+\( \tonda{\dfrac{ \tonda{x+2} \cdot  \tonda{x+3} }
+                          {x\cdot  \tonda{x^{2}+1} }} ^{-2}\)
+\item \(\CE\) della frazione: \(x\neq~0 \stext{e} x^2+1\neq~0\) da cui
+\(x \neq 0\) essendo l'altro fattore sempre positivo.
+\item \(\CE\) del reciproco: \(x+2 \neq 0 \stext{e} x+3 \neq 0\) da cui 
+\(x \neq -2 \stext{e} x \neq -3\)
+\end{itemize}
+Quindi:
+\(\tonda{\dfrac{(x+2)\cdot (x+3)}{x\cdot  \tonda{x^2+1} }}^{-2}=
+\dfrac{x^2 \cdot \tonda{x^2+1}^2}{\tonda{x+2}^{2} \cdot \tonda{x+3}^2}
+\text{con} \sistema{x \neq 0 \\ x \neq -2 \\ x\neq-3}\).
+\end{esempio}
+% \end{exrig}
+
+% \ovalbox{\risolvi \ref{ese:19.18}}
+
+\section{Addizione di frazioni algebriche}\indc{f.algebriche}{somma tra 
+f.algebriche}
+\label{sec:frazalg_addizione}
+
+% \subsection{Proprietà della addizione tra frazioni algebriche}
+% Nell'insieme delle frazioni algebriche la somma:
+% \begin{itemize}[nosep]
+% \item è commutativa:~\(f_1+ f_2 = f_2 + f_1\)
+% \item è associativa:~\((f_1+ f_2) + f_3 = f_1 + (f_2 + f_3) = f_1 + f_2 + 
+% f_3\)
+% \item possiede l'elemento neutro, cioè esiste una frazione~\(F^0\) tale che 
+% per 
+%  qualunque frazione~\(f\) si abbia~\(F^{0} + f = f + F^0= f\) e~\(F^0 = 0\)
+% \item ogni frazione algebrica~\(f\), possiede la frazione opposta~\((-f )\) 
+%  tale che
+% \[(-f) + f = f + (- f) = F^0 = 0.\]
+% \end{itemize}
+% Quest'ultima proprietà ci permette di trattare contemporaneamente 
+% l'operazione 
+% di addizione e di sottrazione, perché ogni sottrazione può essere 
+% trasformata 
+% nell'addizione tra il primo termine e l'opposto del secondo.
+% Come per i numeri relativi, quando si parlerà di somma di frazioni si 
+% intenderà ``somma algebrica''.
+
+Come per le frazioni numeriche, anche nelle frazioni algebriche l'addizione
+è l'operazione più complicata. Infatti per addizionare due frazioni 
+algebriche bisogna:
+
+\begin{procedura}{}{}
+Per addizionare frazioni algebriche:
+\begin{enumerate} [label=\alpha), noitemsep]
+\item scomporre in fattori i denominatori;
+\item determinare il \(\mcm\);
+\item riscrivere le frazioni in modo che abbiano lo stesso denominatore;
+\item addizionare i numeratori;
+\item semplificare il risultato ottenuto ponendo le condizioni di esistenza.
+\end{enumerate}
+\end{procedura}
+
+% \begin{exrig}
+\begin{esempio}{}{}
+\(\dfrac{x+2}{x^{2}-2x}-\dfrac{x-2}{2x+x^{2}}+\dfrac{-4x}{x^{2}-4}\)\\
+
+\begin{enumeratea}
+\item \emph{scomporre in fattori i denominatori}
+
+\vspace{-1.2em}
+\[\dfrac{x+2}{x(x-2)}-\dfrac{x-2}{x(2+x)}+\dfrac{-4x}{(x+2)(x-2)}\]
+
+\item \emph{determinare il \(\mcm\)}
+
+\vspace{-1.2em}
+\[\mcm = x\cdot (x+2) \cdot (x-2)\]
+
+%  \item poniamo le~\(\CE\) \(x(x+2)(x-2){\neq}0\) da cui~\(\CE\) \(x{\neq}
+% 0\), 
+%   \({x\neq}2\) e~\({x\neq}-2\)
+
+\item \emph{riscrivere le frazioni in modo che abbiano lo stesso
+denominatore}
+
+dividiamo il~\(\mcm\) per ciascun denominatore e moltiplichiamo il 
+quoziente ottenuto per il relativo numeratore:
+
+\vspace{-1.2em}
+\[\dfrac{(x+2)^{2}-(x-2)^{2}-4x^{2}}{x\cdot(x+2)\cdot(x-2)}\]
+\item \emph{addizionare i numeratori} eseguiamo le operazioni al numeratore:
+
+\vspace{-1.2em}
+  \begin{equation*}
+    \dfrac{x^{2}+4x+4-x^{2}+4x-4-4x^{2}}{x\cdot(x+2)\cdot(x-2)}=
+    \dfrac{8x-4x^{2}}{x\cdot(x+2)\cdot(x-2)}
+    \end{equation*}
+\item \emph{semplificare il risultato ottenuto ponendo le condizioni di 
+esistenza}
+
+per semplificare la frazione dobbiamo scomporre il numeratore:
+
+\vspace{-1.2em}
+  \begin{equation*}
+  \dfrac{-4\cancel{x}\cdot\cancel{(x-2)}}
+        {\cancel{x}\cdot(x+2)\cdot\cancel{(x-2)}}=
+  \dfrac{-4}{x+2} \quad  \stext{con} \quad x \neq 0 \quad  \stext{e} \quad x 
+\neq 2.
+  \end{equation*}
+\end{enumeratea}
+\end{esempio}
+
+% \newpage % ------------------------------------------------
+
+\begin{esempio}{}{}
+\(\dfrac{x}{x-2}-\dfrac{2x}{x+1}+
+\dfrac{x}{x-1}-\dfrac{5x^{2}-7}{x^{3}-2x^{2}+2-x}\)\\
+
+\begin{enumeratea}
+\item Scomponiamo in fattori~\(x^{3}-2x^{2}+2-x\), 
+essendo gli altri denominatori irriducibili: 
+\(x^{3}-2x^{2}+2-x=x^2(x-2)-1(x-2)=(x-2) \tonda{x^2-1} =
+  (x-2)(x+1)(x-1)\)% che è anche il~\(\mcm\) dei denominatori;
+
+\item Calcoliamo il \(\mcm\) dei denominatori: 
+\(\mcm=(x-2)(x+1)(x-1)\);
+
+%  \item poniamo le~\(\CE\) \((x-2)(x+1)(x-1){\neq}0\) da cui~\(\CE\) \
+% (x{\neq}2\), \({x\neq}-1\) e~\({x\neq}1\)
+\item dividiamo il~\(\mcm\) per ciascun denominatore e moltiplichiamo il 
+quoziente ottenuto per il relativo numeratore:
+
+\vspace{-2em}
+\[=\dfrac{x(x+1)(x-1)-2x(x-2)(x-1)+x(x-2)(x+1)-(5x^{2}-7)}
+        {(x-2)(x+1)(x-1)}=\]
+\item eseguiamo le operazioni al numeratore:
+
+\vspace{-2em}
+\[=\dfrac{x(x^2-1)-2x(x^2-3x+2)+x(x^2-x-2)-(5x^{2}-7)}{(x-2)(x+1)(x-1)} = \]
+\[=\dfrac{\cancel{x^3}-x~\cancel{-2x^3}~\cancel{+6x^2}-4x~\cancel{+x^3}
+        ~\cancel{-x^2}-2x~\cancel{-5x^2}+7}
+        {(x-2)(x+1)(x-1)}=\]
+\[=\dfrac{-x-4x-2x+7}{(x-2)(x+1)(x-1)}=\dfrac{-7x+7}{(x-2)(x+1)(x-1)}=\]
+\item scomponiamo il numeratore e semplifichiamo la frazione ottenuta, 
+ponendo le condizioni. La frazione somma è:
+
+\vspace{-2em}
+\[=\dfrac{-7\cancel{(x-1)}}{(x-2)(x+1)\cancel{(x-1)}}=
+  -{\dfrac{7}{(x-2)(x+1)}} \quad  \stext{con} \quad x \neq +1\]
+\end{enumeratea}
+\end{esempio}
+
+% \end{exrig}
+% 
+% A volte la situazione è più semplice:
+% 
+% \begin{itemize}[nosep]
+%  \item se i denominatori sono dei monomi, sono già scomposti in fattori;
+%  \item a volte le frazioni hanno già lo stesso denominatore.
+% \end{itemize}
+% 
+%  In questi casi si può saltare una parte della procedura.
+% 
+% % \begin{exrig}
+%  \begin{esempio}{}{}
+% \(\dfrac{x+y}{3x^{2}y}-\dfrac{2y-x}{2xy^{3}}\).
+% 
+% Dobbiamo trasformare le frazioni in modo che abbiano lo stesso 
+% denominatore:
+% \begin{itemize}[nosep]
+%  \item calcoliamo il~\(\mcm(3x^{2}y, 2xy^{3}) = 6x^{2}y^{3}\)
+%  \item poniamo le~\(\CE\) \(6x^{2}y^{3}{\neq}0\) da cui~\(\CE x{\neq}0\) 
+% e~\(y{\neq}0\)
+%  \item dividiamo il~\(\mcm\) per ciascun denominatore e moltiplichiamo il 
+%  quoziente ottenuto per il relativo numeratore:
+%  
+% \[\dfrac{2y^{2}\cdot(x+y)}{6x^{2}y^{3}}-
+% \dfrac{3x\cdot(2y-x)}{6x^{2}y^{3}}\]
+%  \item la frazione somma ha come denominatore lo stesso denominatore e come 
+%  numeratore la somma dei numeratori:
+%     \begin{equation*}
+%     
+% \dfrac{2y^{2}\cdot(x+y)}{6x^{2}y^{3}}-\dfrac{3x\cdot(2y-x)}{6x^{2}y^{3}}=
+%     \dfrac{2xy^{2}+2y^{3}+2x^{2}y-6xy+3x^{2}}{6x^{2}y^{3}}.
+%     \end{equation*}
+% \end{itemize}
+%  \end{esempio}
+% 
+%  \begin{esempio}{}{}
+% \(\dfrac{2x-3y}{x+y}+\dfrac{x+2y}{x+y}\)
+% 
+% Poniamo le~\(\CE\) \(x + y{\neq}0\) da cui~\(\CE x{\neq}-y\) allora
+% \begin{equation*}
+% 
+% 
+% \dfrac{2x-3y}{x+y}+\dfrac{x+2y}{x+y}=\dfrac{(2x-3y)+(x+2y)}{x+y}=
+% \dfrac{3x-y}{x+y}.
+% \end{equation*}
+%  \end{esempio}
+%  
+% \begin{osservazione}{}{} 
+% A questo caso ci si può sempre ricondurre trasformando le 
+% frazioni allo stesso denominatore. 
+% Si potrebbe scegliere un qualunque denominatore comune, ad esempio il 
+% prodotto 
+% di tutti i denominatori ma, scegliamo il~\(\mcm\) dei denominatori delle 
+% frazioni addendi per semplificare i calcoli.
+% \end{osservazione}
+
+% \ovalbox{\risolvii \ref{ese:19.22}, \ref{ese:19.23}, \ref{ese:19.24}, 
+% \ref{ese:19.25}, \ref{ese:19.26}, \ref{ese:19.27}, \ref{ese:19.28}, 
+% \ref{ese:19.29}, \ref{ese:19.30}}

@@ -1,0 +1,56 @@
+% Copyright (c) 2023 Daniele Zambelli - daniele.zambelli@gmail.com
+% --------------------------------
+% Variabili che devono essere istanziate e che vengono usate da 
+% frontespizio.
+% \newcommand{\serie}{Matematica Libera}
+% \newcommand{\tipo}{Modulo} %{Volume}
+% \newcommand{\numero}{12}
+% \newcommand{\titolo}{Calcolo infinitesimale}
+% \newcommand{\inclusivita}{}%{(versione accessibile)}{(versione ciechi)}
+% \newcommand{\descr}{Testo a moduli \protect\\ [1em]
+%                     per la Scuola Secondaria di $II$ grado}
+% \newcommand{\editore}{Pippo}
+% \newcommand{\anno}{2023}
+% --------------------------------
+
+% Variabili che devono essere istanziate ma che non vengono usate da 
+% frontespizio.
+% \newcommand{\titolodritto}{\volume \numero: Calcolo infinitesimale}
+% \newcommand{\docvers}{\texttt{0.9.9}}
+% \newcommand{\mcisbn}{}
+
+\pdfbookmark{frontespizio}{frontespizio}
+\thispagestyle{empty}
+
+\newlength{\drop}
+\drop=0.15\textheight
+\vspace{\drop}
+% {\flushleft %\centering
+\fontsize{26pt}{0in}%
+\selectfont \textbf{\serie}
+
+\vspace{.5em}
+\Large \descr
+% }
+
+\vspace{1\drop}
+
+\begin{flushright}
+\fontsize{18pt}{0pt}%
+\selectfont \textbf{\tipo{} \numero}\\[1em]
+\fontsize{26pt}{0pt}%
+\selectfont \textbf{\titolo}\\[.8em]
+% \fontsize{18pt}{0pt}%
+\LARGE \textit{\inclusivita}
+% \selectfont \textit{\inclusivita}
+\end{flushright}
+
+\vspace*{\fill}
+
+\begin{flushright} % \begin{center}
+\Large 
+\editore{} -- \textbf{\anno} --
+\end{flushright} % \end{center}
+
+\normalsize
+\newpage

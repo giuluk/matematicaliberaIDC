@@ -1,0 +1,2400 @@
+% (c) 2012 Claudio Carboncini - claudio.carboncini@gmail.com
+% (c) 2012 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+\input{\folder calcololetterale_grafici.tex}
+
+\chapter{Calcolo letterale}
+
+\inicapitolo{
+\begin{itemize}
+\item espressioni letterali;
+\item modello di un problema;
+\item monomi;
+\item polinomi;
+\item prodotti notevoli;
+\item la funzione polinomiale \emph{in una variabile}.
+\end{itemize}
+}
+
+\section{Espressioni letterali e valori numerici}
+\label{sec:calclett_esplett}
+
+Quando scriviamo che \(5 +7 = 7 +5\) indichiamo una frase vera relativa 
+ai due numeri \emph{cinque} e \emph{sette}.
+Ma la proprietà commutativa non vale solo per \(5\) e \(7\), vale anche 
+per \emph{molte} altre coppie numeri.
+Elencarle tutte sarebbe un problema dato che ce ne sono infinite.
+Abbiamo già visto, nei moduli sugli insiemi numerici, che è possibile 
+riferirsi a un generico numero usando delle lettere 
+(o delle combinazioni di lettere).
+
+In questo capitolo affronteremo il calcolo con le lettere.
+
+\subsection{Modello di un problema}\ind{modello}
+\label{subsec:calclett_modello}
+
+\begin{problema}{}{}\label{cartoni}
+Lo scatolificio ``Cartoni'' deve produrre delle scatole (aperte) partendo 
+da un rettangolo di cartoncino delle dimensioni di 
+\(2\munit{dm} \times 3\munit{dm}\).
+
+Le scatole si ottengono operando quattro tagli tutti della stessa 
+lunghezza paralleli ai lati corti del rettangolo e alla stessa distanza 
+dai lati corti. 
+Fatto questo, con qualche piegatura e quattro punti di colla si ottiene 
+la scatola.
+
+Lo scatolificio è interessato a sapere se le scatole così prodotte,
+al variare della lunghezza del taglio, hanno tutte lo stesso volume e, 
+se hanno volumi diversi, quanto deve essere lungo 
+il taglio per ottenere la scatola di volume massimo. \\[.5em]
+% \hspace*{\fill} \scatola \hspace*{\fill} 
+\scatola 
+\end{problema}
+
+Prima di affrontare il problema generale, possiamo provare a risolvere 
+alcuni casi particolari.
+Se il taglio è di un centimetro, cioè di \(0,1\munit{dm}\) i tre spigoli 
+del parallelepipedo saranno: \\
+\(s_1 = \tonda{2 - 2 \cdot 0,1}\munit{dm} = 1,8\munit{dm}; \quad 
+  s_2 = \tonda{3 - 2 \cdot 0,1}\munit{dm} = 2,8\munit{dm}; \quad 
+  s_3 = 0,1\munit{dm}\)\\
+e di conseguenza il volume: \quad
+\(V = s_1  \times s_2 \times s_3 = 
+  \tonda{1,8 \times 2,8 \times 0,1} \munit{dm^3} = 0,504\munit{dm^3}\)
+
+Se il taglio è di due centimetri, cioè di \(0,2\munit{dm}\) i tre spigoli 
+del parallelepipedo saranno: \\
+\(s_1 = \tonda{2 - 2 \cdot 0,2}\munit{dm} = 1,6\munit{dm}; \quad 
+  s_2 = \tonda{3 - 2 \cdot 0,2}\munit{dm} = 2,6\munit{dm}; \quad 
+  s_3 = 0,2\munit{dm}\)\\
+e di conseguenza il volume: \quad
+\(V = s_1  \times s_2 \times s_3 = 
+  \tonda{1,6 \times 2,6 \times 0,2} \munit{dm^3} = 0,832\munit{dm^3}\)
+
+Possiamo generalizzare la soluzione del problema dando un nome alla 
+lunghezza del taglio. 
+Un buon nome per una variabile da cui dipendono altri risultati è \(x\).
+
+Sottintendendo le unità di misura, se il taglio è lungo \(x\) 
+i tre spigoli del parallelepipedo saranno: \qquad
+\(s_1 = 2 - 2 \cdot x; \qquad 
+  s_2 = 3 - 2 \cdot x; \qquad 
+  s_3 = x\)\\
+e di conseguenza il volume: \qquad
+\(V = s_1  \times s_2 \times s_3 = 
+  \tonda{2 - 2 \cdot x} \times \tonda{3 - 2 \cdot x} \times x 
+\)
+
+L'ultima che abbiamo ottenuto è un'espressione che contiene una lettera: 
+\(x\). 
+Le espressioni matematiche che contengono lettere si dicono 
+\emph{espressioni letterali}\ind{espressione letterale} e generalizzano 
+soluzioni di problemi.
+
+\affiancati{.69}{.29}{
+Le espressioni letterali possono esprimere funzioni: infatti 
+danno risultati che dipendono unicamente dai valori assegnati alle 
+variabili identificate dalle lettere. 
+In questo esempio il volume dipende dal valore dato alla variabile \(x\):
+\[V(x) = \tonda{2 - 2 \cdot x} \cdot \tonda{3 - 2 \cdot x} \cdot x\]
+Possiamo calcolare diversi valori del volume in corrispondenza dei 
+diversi valori dati all'argomento \(x\).
+
+Prima di completare la tabella a fianco, prova a fare qualche congettura 
+sui valori della funzione e per quale valore di \(x\) il volume potrebbe 
+essere massimo.
+}{
+\begin{center}
+\begin{tabular}{cc}
+taglio: x & vol.: V(x)\\
+\hline
+0 & 0\\
+0,1 & 0,504\\
+0,2 & 0,832\\
+0,3 & \dots\\ % 1,008
+0,4 & \dots\\ % 1,056
+0,5 & \dots\\ % 1
+0,6 & \dots\\ % 0,864
+0,7 & \dots\\ % 0,672
+0,8 & \dots\\ % 0,448
+0,9 & \dots\\ % 0,216
+1,0 & \dots\\ % 0
+\hline
+\end{tabular}
+\end{center}
+}
+
+\begin{osservazione}{}{}
+Attenzione, quando si usa un'espressione come \indt{modello} di una 
+situazione concreta, dobbiamo stare attenti ai limiti che la situazione 
+stessa pone.
+\end{osservazione}
+
+Nel nostro caso, se operiamo tagli lunghi \(2\) otteniamo come volume: 
+\(V(2) = 4\) che è maggiore di tutti i volumi calcolati sopra.
+
+Ma ha senso operare tagli di \(2\munit{dm}\) su un cartoncino di 
+\(2\munit{dm} \times 3\munit{dm}\)?
+Qual è il massimo valore che posso dare alla variabile \(x\) per questo 
+particolare modello?
+
+È evidente che non è possibile costruire scatole operando tagli 
+superiori a \(1\munit{dm}\). E non è neppure possibile operare tagli 
+negativi. 
+Il modello del problema precedente deve tener conto di questi due limiti 
+e quindi diventa:
+\[\sistema{0 \leqslant x < 1,0 \\ 
+    V(x) = \tonda{2 - 2 \cdot x} \cdot \tonda{3 - 2 \cdot x} \cdot x}
+\]
+
+\subsection{Espressioni e formule}
+\label{subsec:calclett_formule}
+
+Abbiamo visto sopra il modello di un problema semplice, 
+ma non semplicissimo.
+Ci sono molti problemi di cui è importante conoscere la funzione che 
+esprime il \indt{modello} matematico.
+Ne vediamo alcuni.
+
+\begin{center}
+\begin{tabular}{ll}
+problema & funzione\\
+\hline\\
+superficie del quadrato di lato \(l\) & \(S_{quad}(l) = l^2\)\\[.5em]
+volume del cubo di spigolo \(s\) & \(V_{cubo} (s) = s^3\) \\[.5em]
+superficie del triangolo con base \(b\) e altezza \(h\) & 
+\(S_{tri}\coppia{b}{h} = \frac{1}{2} b \cdot h\) \\[.5em]
+media tra i due numeri \(n_0\) e \(n_1\) & 
+\(Media\coppia{n_0}{n_1} = \frac{1}{2}\tonda{n_0 + n_1}\) \\[.5em]
+sup. del trapezio con basi \(b_0\) e \(b_1\), e altezza \(h\) & 
+\(S_{trap}\terna{b_0}{b_1}{h} = \frac{1}{2} \tonda{b_0 + b_1} h\) \\[1em]
+\hline
+\end{tabular}
+\end{center}
+
+Vediamo che espressioni letterali possono rappresentare funzioni in una, 
+due, o più variabili (con uno, due o più parametri).
+
+Il risultato di una funzione rappresentata da un'espressione letterale è 
+anche detto \indt{valore numerico dell'espressione} e si ottiene 
+sostituendo le variabili con il loro valore numerico.
+
+\begin{esempio}{}{}
+Un trapezio ha basi di \(38\munit{cm}\) e \(42\munit{cm}\) e ha l'altezza 
+di \(12\munit{cm}\) calcola la superficie.\\
+\(S_{trap}\terna{b_0}{b_1}{h} = \dfrac{1}{2} \tonda{b_0 + b_1} h\)\\
+\(S_{trap}\terna{38\munit{cm}}{42\munit{cm}}{12\munit{cm}} = 
+  \dfrac{1}{2} \tonda{38\munit{cm} + 42\munit{cm}} \cdot 12\munit{cm} =
+%   \dfrac{80\munit{cm} \cdot 12\munit{cm}}{2} = 
+  \dots =
+  480\munit{cm^2}
+\)
+\end{esempio}
+
+\begin{comment}
+
+\begin{esempio}{}{}
+In tutte le villette a schiera di recente costruzione del nuovo quartiere 
+Stella, vi è un terreno rettangolare di 
+larghezza ~~ \(b = 5\munit{m}\) ~~ e ~~ 
+lunghezza ~~ \(a = 12\munit{m}\). 
+\\
+Quanto misura la superficie del terreno?\\
+
+\affiancati{.40}{.50}{
+\begin{center}
+\rettangolocl{12}{5}
+\end{center}
+}{
+Il prodotto delle dimensioni rappresenta la misura richiesta: \\
+\(S = a \cdot b = 12\munit{m} \cdot 5\munit{m} = 60 \munit{m^2}\).
+}
+\end{esempio}
+
+Il semplice problema che abbiamo risolto è relativo a un caso particolare; 
+quel terreno con quelle dimensioni. Ma se le dimensioni fossero diverse?
+
+La procedura per determinare la misura della superficie ovviamente è 
+sempre la stessa e la possiamo esprimere con la formula~\(A=b\cdot h\) 
+nella quale abbiamo indicato con~\(b\) la misura di una dimensione e 
+con~\(h\) la misura dell'altra dimensione, assegnate rispetto alla 
+stessa unità di misura.
+
+\begin{osservazione}{}{} 
+La formula ha carattere generale; essa serve ogni 
+qualvolta 
+si chiede di determinare la superficie di un rettangolo, note le misure 
+delle dimensioni (base e altezza) rispetto alla stessa unità di misura.
+\end{osservazione}
+
+In geometria si utilizzano tantissime formule che ci permettono di 
+determinare perimetro e area delle figure piane, superficie laterale e 
+totale 
+e volume dei solidi. Nelle formule le lettere sostituiscono le misure di 
+determinate grandezze, tipiche di quella figura o di quel solido.
+
+% \ovalbox{\risolvi c}
+
+\end{comment}
+
+\subsection{Parole per descrivere schemi di calcolo}
+\label{subsec:calclett_parole}
+
+\begin{esempio}{}{}
+ L'insegnante chiede agli alunni di scrivere 
+ <<il doppio della somma di due numeri>>.
+
+\begin{itemize} [nosep]
+\item Antonella scrive:~\(2\cdot (3+78)\)
+\item Maria chiede <<Quali sono i numeri? Se non li conosco non posso 
+  soddisfare la richiesta>>;
+\item Giulia scrive:~\(2\cdot (a+b)\).
+\end{itemize}
+Maria si è posta il problema ma non ha saputo generalizzare la richiesta. 
+Antonella si è limitata a un caso particolare. 
+Giulia ha espresso con una formula l'operazione richiesta dall'insegnante.
+\end{esempio}
+
+% \begin{osservazione}{}{} 
+L'uso di lettere o nomi di variabili per indicare numeri ci permette 
+di generalizzare uno schema di calcolo.
+% \end{osservazione}
+
+
+\begin{definizione}{}{}
+Un'\textbf{espressione letterale}, detta anche \textbf{espressione
+algebrica},\ind{espressione algebrica} è un'espressione in cui compaiono 
+numeri e lettere legati dai simboli delle operazioni.
+\end{definizione}
+
+Per scrivere un'\indt{espressione letterale} ci si deve attenere a regole 
+precise, quelle stesse che utilizziamo per scrivere espressioni numeriche.
+
+Per esempio, la scrittura~``\(3\cdot 4+\)'' non è corretta, in quanto il 
+simbolo~``\(+\)'' dell'addizione deve essere seguito da un altro numero 
+per completare l'operazione. Analogamente non è corretta l'espressione 
+letterale~``\(a \cdot + c\)''.
+
+Come nelle espressioni numeriche, anche nelle espressioni letterali le 
+parentesi indicano le operazioni da eseguire per prime.
+
+\begin{esempio}{}{}
+\begin{enumerate} [nosep]
+\item 
+La formula~\(a \cdot (b +c)\) rappresenta 
+``il prodotto di un numero per la somma di due numeri''. 
+\item 
+La formula  \(a\cdot b +c\) rappresenta 
+``la somma fra il prodotto di due numeri e un terzo numero''.
+\end{enumerate}
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:8.2}, \ref{ese:8.3}, \ref{ese:8.4}}
+
+\subsection{Lettere per esprimere proprietà}
+\label{subsec:calclett_proprieta}
+
+Nei capitoli precedenti abbiamo già incontrato espressioni letterali, 
+le abbiamo usate tutte le volte che volevamo illustrare delle proprietà 
+valide che valgono usando qualunque numero. 
+
+\begin{esempio}{}{}
+\begin{enumerate} [nosep]
+\item 
+L'espressione ``\((a+b)+c=a+(b+c)\)'' esprime la proprietà 
+associativa dell'addizione. 
+\item 
+L'espressione ``\(a^m \cdot a^n = a^{m + n}\)'' esprime la prima 
+proprietà delle potenze. 
+\end{enumerate}
+Se non viene specificata qualche condizione, le lettere stanno al posto 
+di numeri qualsiasi.
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:8.5}, \ref{ese:8.6}, \ref{ese:8.7}, 
+% \ref{ese:8.8}, \ref{ese:8.9}, \ref{ese:8.10}, \ref{ese:8.11}, 
+% \ref{ese:8.12}}
+
+\begin{comment}
+
+\subsection{Valore numerico di un'espressione letterale}
+\label{subsec:valnum}
+
+Ogni espressione letterale rappresenta uno schema di calcolo in cui le 
+lettere che vi compaiono sostituiscono numeri.
+L'espressione letterale~\(2\cdot x^{2}+x\) traduce una catena di 
+istruzioni che in linguaggio naturale sono così descritte: ``prendi un 
+numero; fanne il quadrato; raddoppia quanto ottenuto; aggiungi al 
+risultato il numero preso inizialmente''.
+
+Questa catena di istruzioni si può anche rappresentare in modo schematico
+\[x\rightarrow x^{2}\rightarrow~2\cdot x^{2}\rightarrow~2\cdot x^{2}+x\]
+e può essere usata per istruire un esecutore a ``calcolare'' l'espressione 
+letterale quando al posto della lettera~\(x\) si sostituisce un numero.
+
+Calcoliamo il valore dell'espressione~\(2\cdot x^{2}+x\), sostituendo 
+alla lettera il numero naturale~5.
+Seguiamo la schematizzazione~\(x\rightarrow x^{2}\rightarrow~2\cdot 
+x^{2}\rightarrow~2\cdot x^{2}+x\) e otteniamo:
+\(5\rightarrow~25\rightarrow~50\rightarrow~55\).
+Il risultato è~\(55\).
+Più brevemente scriviamo~\(5\) nell'espressione letterale al posto 
+di~\(x\): otteniamo l'espressione numerica~\(2\cdot 5^{2}+5\) il cui 
+risultato è~\(55\).
+
+E se al posto di~\(x\) sostituiamo~\(-5\)? Cambia il risultato?
+
+Eseguiamo la sostituzione:  \(2\cdot (-5)^{2}+(-5)=\ldots\) Lasciamo a 
+te il calcolo finale. Ti sarai accorto che il risultato è cambiato.
+
+\begin{definizione}{}{}
+In un'espressione letterale le \emph{lettere} rappresentano 
+le \emph{variabili} che assumono un preciso significato quando vengono 
+sostituite da numeri.
+Chiamiamo \emph{valore} di un'espressione letterale il risultato numerico 
+che si ottiene eseguendo le operazioni indicate dallo
+schema di calcolo quando alle lettere sostituiamo un numero. 
+Il valore dell'espressione letterale dipende dal \emph{valore assegnato} 
+alle sue variabili.
+\end{definizione}
+
+\begin{esempio}{}{}
+Calcolare il valore numerico dell'espressione:
+\(3a(a-b)\) per~\(a = 1\), \(b = 1\).
+
+\emph{Svolgimento}:~\(3\cdot 1\cdot (1-1)=3\cdot 1\cdot 0=0\).
+\end{esempio}
+ % \end{exrig}
+
+% \ovalbox{\risolvii \ref{ese:8.13}, \ref{ese:8.14}, \ref{ese:8.15}, 
+% \ref{ese:8.16}, \ref{ese:8.17}, \ref{ese:8.18}, \ref{ese:8.19}, 
+% \ref{ese:8.20}, \ref{ese:8.21}, \ref{ese:8.22}, \ref{ese:8.23},
+% \ref{ese:8.24}}
+
+\end>{comment}
+
+\begin{comment}
+
+\subsection{Condizione di esistenza di un'espressione letterale}
+\label{subsec:condes}
+
+Ti proponiamo adesso alcuni casi particolari per
+l'espressione~\(E=\dfrac{x-y}{3\cdot x}\).
+
+\paragraph{Caso I}
+
+\begin{center}
+\begin{tabular*}{.2\textwidth}{@{\extracolsep{\fill}}*{3}{c}}
+\toprule
+\(x\) & \(y\) & \(E\)\\
+1 & 1 & 0\\
+\bottomrule
+\end{tabular*}
+\end{center}
+
+Il numeratore della frazione è~0, mentre il denominatore vale~3; il
+calcolo finale è dunque~\(\frac{0}{3}=0\).
+Vi sono secondo te altre coppie che fanno
+assumere ad~\(E\) quello stesso valore?
+
+\paragraph{Caso II}
+\begin{center}
+\begin{tabular*}{.2\textwidth}{@{\extracolsep{\fill}}*{3}{c}}
+\toprule
+\(x\) &\(y\) &\(E\)\\
+0 &25 &?\\
+\bottomrule
+\end{tabular*}
+\end{center}
+
+Invece di mettere un valore ad~\(E\), abbiamo messo punto di domanda
+perché in questo caso il numeratore della frazione è~\(-25\) mentre
+il denominatore vale~0; il calcolo finale è dunque~\(-{\frac{25}{0}}\), 
+impossibile. Vi sono secondo te altre coppie che rendono
+impossibile il calcolo del valore per~\(E\)?
+
+Non possiamo allora concludere che per ogni coppia di numeri 
+razionali~\((x,y)\) 
+l'espressione~\(E\) assume un numero razionale.
+Per poter calcolare il valore di~\(E\) non possiamo scegliere coppie 
+aventi~\(x\) 
+uguale a zero.
+Scriveremo quindi come premessa alla ricerca dei valori di~\(E\) la 
+\emph{Condizione di Esistenza}\,(\(\CE\))~\(x\neq~0\).
+
+L'esempio appena svolto ci fa capire che di fronte a
+un'espressione letterale dobbiamo riflettere sullo
+schema di calcolo che essa rappresenta prima di assegnare valori alle
+variabili che vi compaiono.
+
+Se l'espressione letterale presenta una divisione in cui
+il divisore contiene variabili, dobbiamo stabilire la~\(\CE\), 
+eliminando quei valori che rendono nullo il divisore.
+Per comprendere la necessità di porre le condizioni
+d'esistenza ricordiamo la definizione di divisione.
+
+Quanto fa~15 diviso~5? Perché? In forma matematica:~\(15:5=3\) perché 
+\(3\cdot 
+5=15\). Quindi, 
+generalizzando~\(a:b=c\) se~\(c\cdot b=a\).
+
+Vediamo ora cosa succede quando uno dei numeri è~0:
+
+\begin{itemize} [nosep]
+ \item quanto fa~0:5? Devo cercare un numero che moltiplicato per~5 mi 
+dia~0: 
+   trovo solo~0; infatti~\(0\cdot 5=0\).
+ \item quanto fa~15:0? Devo cercare un numero che moltiplicato per~0 mi 
+dia~15:
+non lo trovo; infatti nessun numero moltiplicato per~0 fa~15. Quindi,
+\(15:0\) è impossibile perché non esiste
+\(x\) per il quale~\(x\cdot 0=15\).
+ \item quanto fa~0:0? Devo cercare un numero che moltiplicato per~0 mi 
+dia~0:
+non ne trovo solo uno. Infatti, qualunque numero moltiplicato per~0
+fa~0. Per esempio, \(0:0=33\) infatti
+\(33\cdot 0=0\). Anche~\(0:0=-189,6\)
+infatti~\(-189,6\cdot 0=0\). Anche \(0:0=0\)
+infatti~\(0\cdot 0=0\). 
+Ancora~\(0:0=10^{99}\) infatti~\(10^{99}\cdot 0=0\).
+Quindi~\(0:0\) è indeterminato, perché
+non è possibile determinare un~\(x\) tale che~\(x\cdot 0=0\),
+per qualunque valore di~\(x\) si ha~\(x\cdot 0=0\).
+\end{itemize}
+
+Consideriamo l'espressione letterale~\(E=\frac{a-b}{a+b}\) dove~\(a\) 
+e~\(b\) rappresentano numeri razionali.
+Premettiamo:
+
+\begin{enumeratea}
+ \item la descrizione a parole dello schema di calcolo:
+``divisione tra la differenza di due numeri e la loro
+somma'';
+ \item la domanda che riguarda il denominatore: ``quando
+sommando due numeri razionali otteniamo~0 al
+denominatore?'';
+ \item la~\(\CE\): ``\(a\) e~\(b\) non devono essere numeri opposti''.
+\end{enumeratea}
+
+Siamo ora in grado di completare la tabella:
+\begin{center}
+\begin{tabular*}{.8\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
+\toprule
+\(a\) & 3 &0 & \(\frac{3}{4}\) &\(-{\frac{5}{8}}\) & \(-{\frac{19}{2}}\) \\
+\(b\) & \(-3\) & \(-{\frac{1}{2}}\) & 0 &\(\frac{5}{8}\) & 
+\(-{\frac{19}{2}}\) 
+\\
+\midrule
+\(E=\frac{a-b}{a+b}\) & & & & &\\
+\bottomrule
+\end{tabular*}
+\end{center}
+
+Dalla~\(\CE\), ci accorgiamo subito che la
+prima coppia e la quarta sono formate da numeri opposti, pertanto non
+possiamo con esse calcolare il valore di~\(E\). L'ultima
+coppia è formata da numeri uguali pertanto la loro differenza è~0;
+il numeratore si annulla e quindi il valore di~\(E\) è~0. 
+Per la coppia~\(\tonda{0,-\frac{1}{2}}\) il valore di~\(E\) è~\(-1\) 
+mentre 
+è~1 per la coppia~\(\tonda{\frac{3}{4},0}\).
+La tabella verrà quindi così completata:
+
+\begin{center}
+\begin{tabular*}{.8\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
+\toprule
+\(a\) & 3 &0 & \(\frac{3}{4}\) &\(-{\frac{5}{8}}\) & \(-{\frac{19}{2}}\) \\
+\(b\) & \(-3\) & \(-{\frac{1}{2}}\) & 0 &\(\frac{5}{8}\) & 
+\(-{\frac{19}{2}}\) 
+\\
+\midrule
+\(E\) &impossibile & \(-1\)& 1& impossibile&0\\
+\bottomrule
+\end{tabular*}
+\end{center}
+
+Cosa succede per la coppia~(0,0)?
+
+% \vspazio\ovalbox{\risolvii \ref{ese:8.25}, \ref{ese:8.26}, 
+% \ref{ese:8.27}, \ref{ese:8.28}, \ref{ese:8.29}, \ref{ese:8.30}, 
+% \ref{ese:8.31}, \ref{ese:8.32}}
+\end{comment}
+
+% (c) 2012-2014 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+\section{I monomi}\ind{monomio/monomi}
+\label{sec:calclett_monomi}
+
+A questo punto, per poter fare pratica con il calcolo letterale, 
+è importante:
+\begin{itemize} [nosep]
+\item imparare alcuni termini tecnici e definizioni,
+\item abituarci a alcune convenzioni.
+\end{itemize}
+
+
+\subsection{Definizioni}
+\label{subsec:monomi_definizioni}
+
+D'ora in poi quando scriveremo un'espressione letterale in cui compare
+l'operazione di moltiplicazione, tralasceremo il puntino fin qui usato 
+per evidenziare l'operazione.
+Così l'espressione~\(5 \cdot a^2 \cdot b \cdot x^3\) 
+verrà scritta in modo
+più compatto~\(5a^2bx^3\).
+
+%\begin{definizione}{}{}
+% Una espressione letterale in cui numeri e lettere sono legati dalla 
+% sola moltiplicazione si chiama \emph{monomio}.
+% \end{definizione}
+% 
+% % \begin{exrig}
+% \begin{esempio}{}{}
+% L'espressione nelle due variabili~\(a\) e~\(b\), \(E=5\cdot 
+% 2a^{2}\frac{3}{8}ab7b^{2}\)
+% è un monomio perché numeri e lettere sono legate solo dalla 
+% moltiplicazione.
+% \end{esempio}
+Quanto scritto sopra viene detto ``monomio''\ind{monomio/monomi}.
+
+\begin{definizione}{}{}
+Chiamiamo \textbf{monomio} una espressione letterale in cui non compare
+l'addizione algebrica.
+\end{definizione}
+
+\begin{esempio}{}{}
+\begin{enumerate} [nosep]
+\item 
+L'espressione: \(5 \cdot 2a^{2} \dfrac{3}{8}ab7b^{2}\)
+è un monomio perché nell'espressione non appaiono addizioni o sottrazioni.
+\item 
+L'espressione: \(2a^{2}-ab^{2}\) non è un monomio poiché compare anche il 
+segno di sottrazione.
+\end{enumerate}
+\end{esempio}
+
+% \begin{osservazione}{}{}
+% Gli elementi di un monomio sono \emph{fattori}, perché sono termini
+% di una moltiplicazione ma possono comparire anche \emph{potenze},
+% infatti la potenza è una moltiplicazione di fattori uguali. 
+% % Non possono invece comparire esponenti negativi o frazionari. 
+% % In un monomio gli esponenti delle variabili devono essere numeri 
+% % naturali.
+% \end{osservazione}
+
+\begin{definizione}{}{}
+Un monomio si dice \textbf{ridotto in forma normale}
+\indc{monomio/monomi}{in forma normale} quando è scritto come 
+prodotto di un solo fattore numerico e di potenze letterali con basi 
+diverse, scritte in ordine alfabetico.
+\end{definizione}
+
+\begin{esempio}{}{}
+Applicando le proprietà delle operazioni scrivi i seguenti monomi in 
+forma normale.
+
+\begin{enumerate*} 
+\item 
+\(5 \cdot 2a^{2} \dfrac{3}{8}ab2b^{2} = \dfrac{15}{2}a^3b^3\) \qquad~
+\item 
+\(5 x a^{4}\dfrac{3}{20}ab6b^{2} = \dfrac{9}{2}a^{5}b^{3}x\).
+\end{enumerate*}
+\end{esempio}
+
+% \begin{procedura}{}{}
+%  Ridurre in forma normale un monomio:
+%  \begin{enumeratea}
+%  \item moltiplicare tra loro i fattori numerici;
+%  \item moltiplicare le potenze con la stessa base.
+%  \end{enumeratea}
+% \end{procedura}
+
+% \ovalbox{\risolvi \ref{ese:9.2}}
+
+In un monomio possiamo distinguere due parti:
+
+\begin{definizione}{}{}
+Una volta ridotto in forma normale: 
+\begin{itemize} [nosep]
+\item chiamiamo \textbf{coefficiente}\indc{monomio/monomi}{coefficiente}
+la parte numerica;
+\item chiamiamo \textbf{parte letterale} il complesso delle
+lettere\indc{monomio/monomi}{parte letterale}.
+\end{itemize}
+\end{definizione}
+
+Se nel monomio non appare il coefficiente, è sottinteso \(1\), 
+cioè \(a\) vuol dire \textbf{un} \(\mathbf{a}\):~~ \(a = 1a\).
+
+\begin{esempio}{}{}
+Nella tabella seguente sono segnati alcuni monomi e i rispettivi 
+coefficienti.
+
+\vspace{-1em}
+\begin{center}
+\begin{tabular}{lcc}
+monomio & coefficiente & parte letterale \\
+\hline \\[-.5em]
+\(-{\dfrac{1}{2}}abc\) & \(-{\dfrac{1}{2}}\) & \(abc\) \\[1em]
+\(3x^{3}y^{5}\) & \(3\) & \(x^{3}y^{5}\) \\[.5em]
+\(a^{5}b^{7}\) & \(1\) & \(a^{5}b^{7}\) \\[.5em]
+\(-k^{2}\) & \(-1\) & \(k^{2}\) %\\[.5em]
+% \hline
+\end{tabular}
+\end{center}
+\end{esempio}
+
+% % \begin{exrig}
+% \begin{esempio}{}{}
+% L'espressione letterale~\(\frac{3}{5}a^{3}bc^{2}\) è un monomio;
+% il numero~\(\frac{3}{5}\) e le lettere~\(a^{3}\), \(b\), \(c^{2}\) 
+% sono legate dall'operazione di moltiplicazione; il suo coefficiente 
+% è il numero~\(\frac{3}{5}\) e la parte letterale è~\(a^{3}bc^{2}\).
+% \end{esempio}
+% 
+% \begin{esempio}{}{}
+%  Controesempi:
+% 
+%  \begin{enumeratea}
+%  \item l'espressione letterale~\(\frac{3}{5}a^{3}+bc^{2}\)
+%  non è un monomio dal momento che numeri e lettere sono legati oltre
+% che dalla moltiplicazione anche dalla addizione;
+% \item l'espressione letterale~\(\frac{3}{5}a^{-3}bc^{2}\)
+% non è un monomio in quanto la potenza con esponente negativo
+% rappresenta una divisione, infatti~\(a^{-3}=\frac{1}{a^{3}}\).
+% \end{enumeratea}
+% \end{esempio}
+% % \end{exrig}
+
+Alcuni testi non chiamano monomi quelli che hanno lettere al 
+denominatore, ma noi distinguiamo tra 
+\indtc{monomio/monomi}{monomi interi o fratti}.
+
+\begin{definizione}{}{}
+Diciamo che un monomio è: 
+\begin{itemize} [nosep]
+\item \textbf{intero} se non ha lettere al denominatore
+(o se le lettere non hanno esponenti negativi);
+\item \textbf{fratto} se ha lettere al denominatore
+(o se ci sono lettere con esponenti negativi).
+\end{itemize}
+\end{definizione}
+
+% \begin{esempio}{}{}
+% \begin{itemize} [nosep]
+% \item Il monomio \quad \(\dfrac{3}{5}a^{3}bc^{2}\) \quad è intero;
+% \item il monomio \quad \(5a^{-3}b^{-1}c^{2}=
+%              5 \dfrac{c^{2}}{a^{3}b} =
+%              \dfrac{5c^{2}}{a^{3}b}\) \quad è fratto.
+% \end{itemize}
+%\end{esempio}
+
+\begin{esempio}{}{}
+Classifica i seguenti monomi:
+
+\hfill \labelitemi~~ \(\dfrac{3}{5}a^{3}bc^{2}\):\quad intero; 
+\hfill
+\labelitemi~~ \(5a^{-3}b^{-1}c^{2}=
+             5 \dfrac{c^{2}}{a^{3}b} =
+             \dfrac{5c^{2}}{a^{3}b}\):\quad fratto. \hfill~
+\end{esempio}
+
+Vediamo ora il significato di alcuni termini che vengono utilizzati con i 
+monomi.
+
+\begin{definizione}{}{}
+Due o più monomi sono \textbf{simili}\indc{monomio/monomi}{monomi simili} se
+hanno \indtc{monomio/monomi}{parte letterale} identica.
+\end{definizione}
+
+\begin{esempio}{}{}
+Il monomio~\(\dfrac{3}{5}a^{3}bc^{2}\) è simile
+a~\(68a^{3}bc^{2}\) e anche a~\(-0,5a^{3}bc^{2}\), ma non è simile
+a~\(\dfrac{3}{5}a^{2}bc^{3}\). 
+L'ultimo monomio ha le stesse lettere degli altri ma sono elevate a 
+esponenti diversi.
+\end{esempio}
+
+\begin{definizione}{}{}
+Si dicono \textbf{opposti}\indc{monomio/monomi}{monomi opposti} due monomi
+simili che hanno \indtc{monomio/monomi}{coefficiente} opposto.
+\end{definizione}
+
+\begin{esempio}{}{}
+\begin{itemize} [nosep]
+\item
+I monomi~\(\dfrac{3}{5}a^{3}bc^{2}\) e~\(-{\dfrac{3}{5}}a^{3}bc^{2}\) 
+sono opposti, infatti sono simili e hanno coefficienti opposti.
+\item
+I monomi~\(\dfrac{3}{5}a^{3}bc^{2}\) e \(-\dfrac{5}{3}a^{3}bc^{2}\) 
+non sono opposti ma semplicemente simili. 
+\item
+I monomi~\(\dfrac{3}{5}a^{3}bc^{2}\) e \(-\dfrac{3}{5}a^{2}bc^{3}\) 
+hanno i coefficienti opposti ma non sono opposti perché non sono 
+simili. 
+\end{itemize}
+\end{esempio}
+
+\begin{definizione}{}{}
+Se il coefficiente del monomio è zero il \textbf{monomio} si dice
+\textbf{nullo}\indc{monomio/monomi}{monomio nullo}, qualunque sia la parte
+letterale; tutti i monomi nulli sono equivalenti.
+\end{definizione}
+
+% \ovalbox{\risolvi \ref{ese:9.3}}
+
+\begin{definizione}{}{}
+Il \textbf{grado complessivo} di un monomio\indc{monomio/monomi}{grado di
+un monomio} è la somma degli esponenti della parte letterale.
+
+Quando il monomio è ridotto a forma normale, l'esponente di una sua 
+variabile ci indica il
+\textbf{grado} del monomio \textbf{rispetto a quella variabile}.
+\end{definizione}
+
+Dobbiamo ricordarci che quando non c'è l'esponente è sottinteso 1: \quad 
+\(a = a^1\).
+
+\begin{esempio}{}{}
+Il monomio~\(\dfrac{3}{5}a^{3}bc^{2}\) ha grado complessivo~6,
+ottenuto sommando gli esponenti della sua parte letterale~\((3+1+2=6)\).\\
+Rispetto alla variabile~\(a\) è di terzo grado, rispetto alla
+variabile~\(b\) è di primo grado, rispetto alla variabile
+\(c\) è di secondo grado.
+\end{esempio}
+
+% Abbiamo detto che gli esponenti della parte letterale del monomio sono
+% numeri naturali, dunque possiamo anche avere una o più variabili
+% elevate ad esponente~0. Cosa succede allora nel monomio?
+% 
+% Consideriamo il monomio~\(56a^{3}b^{0}c^{2}\), sappiamo che qualunque
+% numero diverso da zero elevato a zero è uguale a~1, quindi possiamo
+% sostituire la variabile~\(b\) che ha esponente~0 con~1 e
+% otteniamo~\(56a^{3}\cdot 1\cdot c^{2}=56a^{3}c^{2}\). Se in un monomio 
+% ogni variabile ha esponente~0, il monomio rimane solamente con il suo
+% coefficiente numerico: per esempio~\(-3a^{0}x^{0}=-3\cdot 1\cdot 1=-3\).
+
+
+\begin{osservazione}{}{} 
+Esistono \emph{monomi di grado~0}; essi presentano solo il
+coefficiente e pertanto \emph{sono} equiparabili ai \emph{numeri}.
+
+Possiamo quindi vedere l'insieme dei monomi come un'estensione dei numeri.
+
+Esiste un sottoinsieme dei monomi che si comporta esattamente come i 
+numeri, cioè è isomorfo all'insieme numerico a cui appartengono i 
+coefficienti.
+\end{osservazione}
+
+\begin{esempio}{}{}
+il numero \(7,2\) può essere visto come:\\ 
+\labelitemi~ monomio di grado zero che di coefficiente \(7,2\) 
+\quad o \quad 
+\labelitemi~ numero \(7,2\).
+\end{esempio}
+
+
+\begin{comment}
+
+
+\subsection{Valore di un monomio}
+\label{subsec:monomi_valore}
+
+Poiché il monomio è un'espressione letterale,
+possiamo calcolarne il valore quando alle sue variabili sostituiamo 
+numeri.
+
+\begin{esempio}{}{}
+ Calcola il valore del monomio~\(3x^{4}y^{5}z\) per i valori~\(x=-3\), 
+\(y=5\) 
+e~\(z=0\).
+
+Sostituendo i valori assegnati 
+otteniamo~\(3\cdot (-3)^{4}\cdot 5^{5}\cdot 0=0\) 
+essendo uno dei fattori nullo.
+\end{esempio}
+
+
+\begin{osservazione}{}{} 
+Il valore di un monomio è nullo quando almeno una 
+delle sue 
+variabili assume il valore~0.
+\end{osservazione}
+
+
+Molte formule di geometria sono scritte sotto forma di monomi: area del
+triangolo~\(\frac{1}{2}bh\) area del quadrato~\(l^{2}\)
+perimetro del quadrato~\(4l\) area del rettangolo~\(bh\) volume del 
+cubo~\(l^{3}\) ecc.
+Esse acquistano significato quando alle lettere sostituiamo
+numeri che rappresentano le misure della figura considerata.
+
+% \ovalbox{\risolvii \ref{ese:9.4}, \ref{ese:9.5}, \ref{ese:9.6}, 
+% \ref{ese:9.7}, \ref{ese:9.8}, \ref{ese:9.9}, \ref{ese:9.10}, 
+% \ref{ese:9.11}, \ref{ese:9.12}}
+
+\end{comment}
+
+
+\subsection{Operazioni con i monomi}
+\label{subsec:monomi_operazioni}
+
+Ci proponiamo ora di introdurre nell'insieme dei monomi
+le operazioni di addizione, sottrazione, moltiplicazione, potenza,
+divisione.
+
+Ricordiamo che definire in un insieme un'operazione
+significa stabilire una legge che associa a due elementi
+dell'insieme un altro elemento dell'insieme stesso.
+
+\subsubsection{Moltiplicazione di monomi}
+\label{subsubsec:monomi_moltiplicazione}
+
+La moltiplicazione di due monomi si indica con lo stesso simbolo della
+moltiplicazione tra numeri; i suoi termini si chiamano fattori e il
+risultato si chiama prodotto, proprio come negli insiemi numerici.
+Dato che nella moltiplicazione vale la proprietà commutativa:
+
+\begin{definizione}{}{}
+Il \textbf{prodotto di monomi}\indc{monomio/monomi}{prodotto di monomi}
+è il monomio che ha per coefficiente il prodotto dei coefficienti e per 
+parte letterale il prodotto delle parti letterali.
+\end{definizione}
+
+\begin{esempio}{}{}
+Dati i monomi~\(m_{1}=-4x^{2}yz^{3}\) e~\(m_{2}=\dfrac{5}{6}x^{3}z^{6}\),
+il monomio prodotto è:
+
+\vspace{-1.5em}
+\[m_{1} \cdot m_{2}=\tonda{-4x^{2}yz^{3}} \tonda{\frac{5}{6}x^{3}z^{6}}=
+\tonda{-4\cdot {\frac{5}{6}}}\tonda{x^{2}\cdot x^{3}}\cdot 
+y\cdot \tonda{z^{3}\cdot z^{6}}=-\frac{10}{3}x^{5}yz^{9}.\]
+\end{esempio}
+
+
+% \begin{procedura}{}{}
+% [per moltiplicare due monomi]
+% La moltiplicazione tra monomi si effettua moltiplicando prima i
+% coefficienti numerici e dopo le parti letterali:
+% 
+% \begin{enumeratea}
+%  \item nella moltiplicazione tra i coefficienti usiamo le regole note 
+% della moltiplicazione tra numeri razionali;
+%  \item nella moltiplicazione tra le parti letterali applichiamo la 
+% regola del prodotto di potenze con la stessa base.
+% \end{enumeratea}
+% \end{procedura}
+
+% \subsubsection{Proprietà della moltiplicazione}
+% 
+% \begin{enumeratea}
+% \item commutativa:~\(m_{1}\cdot m_{2}=m_{2}\cdot m_{1}\)
+% \item associativa:~\(m_{1}\cdot m_{2}\cdot m_{3}=(m_{1}\cdot m_{2})\cdot 
+% m_{3}=m_{1}\cdot (m_{2}\cdot m_{3})\)
+% \item 1 è l'elemento neutro:~\(1\cdot m=m\cdot 1=m\)
+% \item se uno dei fattori è uguale a~0 il prodotto è~0, cioè~\(0\cdot 
+% m=m\cdot 0=0\).
+% \end{enumeratea}
+
+% \ovalbox{\risolvii \ref{ese:9.13}, \ref{ese:9.14}, \ref{ese:9.15}, 
+% \ref{ese:9.16}}
+
+\subsubsection{Potenza di un monomio}
+\label{subsubsec:monomi_potenza}
+
+% Ricordiamo che tra i numeri l'operazione di elevamento a
+% potenza ha un solo termine, la base, sulla quale si agisce a seconda
+% dell'esponente.
+% 
+% \[\text{Potenza }=\text{ base }^\text{ esponente}= 
+% \underbrace{(\text{ base 
+% }\cdot \text{ base }\cdot\text{ base }\cdot\ldots\cdot \text{ base 
+% })}_{\text{tanti fattori quanti ne indica l'esponente}}.\]
+% 
+% Analogamente viene indicata la potenza di un monomio: la base è un
+% monomio e l'esponente è un numero naturale.
+
+\begin{definizione}{}{}
+La \textbf{potenza di un monomio}\indc{monomio/monomi}{potenza di monomio}
+è un monomio che ha per coefficiente la potenza del coefficiente e per 
+parte letterale la potenza della parte letterale.
+\end{definizione}
+
+\begin{esempio}{}{}
+Calcoliamo il quadrato e il cubo del 
+monomio~\(m_{1}=-{\dfrac{1}{2}}a^{2}b\).
+
+\vspace{-.5em}
+\[\tonda{-{\frac{1}{2}}a^{2}b}^{2}
+=\tonda{-{\frac{1}{2}}}^{2}\cdot\tonda{a^{2}}^{2}\cdot (b)^{2}
+=\frac{1}{4}a^{4}b^{2}\]
+
+\vspace{-.5em}
+\[\tonda{-{\frac{1}{2}}a^{2}b}^{3}
+=\tonda{-{\frac{1}{2}}}^{3}\cdot\tonda{a^{2}}^{3}\cdot (b)^{3}
+=-{\frac{1}{8}}a^{6}b^{3}\]
+% \begin{align*}
+% \tonda{-{\frac{1}{2}}a^{2}b}^{2}
+% &=\tonda{-{\frac{1}{2}}}^{2}\cdot\tonda{a^{2}}^{2}\cdot (b)^{2}
+% =\frac{1}{4}a^{4}b^{2}
+% \end{align*}
+% \begin{align*}
+% \tonda{-{\frac{1}{2}}a^{2}b}^{3}
+% &=\tonda{-{\frac{1}{2}}}^{3}\cdot\tonda{a^{2}}^{3}\cdot (b)^{3}
+% =-{\frac{1}{8}}a^{6}b^{3}
+% \end{align*}
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcoliamo il quadrato e il cubo del monomio~\(m_{2}=5a^{3}b^{2}c^{2}\).
+
+\vspace{-.5em}
+\[\tonda{5a^{3}b^{2}c^{2}}^{2}
+=\tonda{5}^{2}\cdot \tonda{a^{3}}^{2}\cdot\tonda{b^{2}}^{2}\cdot 
+\tonda{c^{2}}^{2}
+=25a^{6}b^{4}c^{4}\]
+
+\vspace{-.5em}
+\[\tonda{5a^{3}b^{2}c^{2}}^{3}
+=\tonda{5}^{3}\cdot \tonda{a^{3}}^{3}\cdot\tonda{b^{2}}^{3}\cdot 
+\tonda{c^{2}}^{3}
+=125a^{9}b^{6}c^{6}\]
+\end{esempio}
+
+% \begin{procedura}{}{}
+% Eseguire la potenza di un monomio:
+% 
+% \begin{enumeratea}
+%  \item applichiamo la proprietà relativa alla potenza di un prodotto,
+% eseguiamo cioè la potenza di ogni singolo fattore del monomio;
+%  \item applichiamo la proprietà relativa alla potenza di potenza,
+% moltiplicando l'esponente della variabile per l'esponente delle potenza.
+% \end{enumeratea}
+% \end{procedura}
+
+% \ovalbox{\risolvii \ref{ese:9.17}, \ref{ese:9.18}, \ref{ese:9.19}, 
+% \ref{ese:9.20}}
+
+\subsubsection{Divisione tra due monomi}
+\label{subsubsec:monomi_divisione}
+
+Premessa: ricordiamo che il quoziente della divisione tra un dividendo 
+\(n\) e un divisore \(d \neq 0\) è il numero \(q\) che moltiplicato per 
+il divisore dà come risultato il dividendo: \\
+\hspace*{39mm}\(n : d = q \sLRarrow q \cdot d = n\)\\
+Con i numeri razionali la divisione si trasforma nella moltiplicazione 
+tra il dividendo e il reciproco del divisore: \quad
+\(n : d = n \cdot \dfrac{1}{d}\)
+
+Possiamo usare la stessa regola anche per i monomi se prima definiamo 
+cosa è il reciproco di un monomio:
+
+\begin{definizione}{}{}
+Il \textbf{reciproco} di un monomio è il monomio che si ottiene
+moltiplicando il reciproco del coefficiente con il reciproco della parte 
+letterale\indc{monomio/monomi}{monomio reciproco}.
+\end{definizione}
+
+\begin{esempio}{}{}
+ il reciproco di \(\dfrac{3}{4}a^3bc^2\) \quad è\\
+\(\dfrac{4}{3}\dfrac{1}{a^3bc^2}\) \quad o anche \quad
+\(\dfrac{4}{3a^3bc^2}\) \quad o anche \quad
+\(\dfrac{4}{3}a^{-3}b^{-1}c^{-2}\)
+\end{esempio}
+
+Usando il reciproco, definire la divisione è facile.
+
+\begin{definizione}{}{}
+Il \textbf{quoziente}\indc{monomio/monomi}{monomio quoziente} tra due
+monomi si ottiene moltiplicando il primo per il reciproco del secondo.
+\end{definizione}
+
+\begin{esempio}{}{}
+Calcola: \(\tonda{+36x^{5}y^{2}z^2}:\tonda{-18x^{3}y}\)
+
+\vspace{-.5em}
+\[\tonda{+36x^{5}y^{2}z^2}:\tonda{-18x^{3}y} =
+\tonda{+36x^{5}y^{2}z^2} \cdot \tonda{-\frac{1}{18x^{3}y}} =-2x^{2}yz^2\]
+
+\vspace{-.5em}
+Infatti~\((-2x^{2}yz^2)\cdot(-18x^{3}y)=(+36x^{5}y^{2}z^2)\).\\
+Dato che la divisione è definita solo se il divisore è diverso da 0, il 
+risultato ottenuto è valido solo se:
+\(x \neq 0 \text{ e } y\neq 0\)
+\end{esempio}
+% % \end{exrig}
+% 
+% \begin{procedura}{}{}
+% [Calcolare il quoziente di due monomi]
+% Il quoziente di due monomi è così composto:
+% 
+% \begin{enumeratea}
+%  \item il coefficiente è il quoziente dei coefficienti dei monomi dati;
+%  \item la parte letterale ha gli esponenti ottenuti sottraendo gli 
+% esponenti
+% delle stesse variabili;
+%  \item se la potenza di alcune lettere risulta negativa il risultato 
+% della divisione non è un monomio.
+% \end{enumeratea}
+% \end{procedura}
+% 
+% % \begin{exrig}
+\begin{esempio}{}{}
+Calcola: 
+\(\tonda{\dfrac{7}{2}a^{3}x^{4}y^{2}}:\tonda{-\dfrac{21}{8}ax^{2}y}\).
+\[\tonda{\frac{7}{2}a^{3}x^{4}y^{2}}:\tonda{-\frac{21}{8}ax^{2}y} =
+  \tonda{\frac{7}{2}a^{3}x^{4}y^{2}}\cdot \tonda{-\frac{8}{21ax^{2}y}} =
+  -\frac{4}{3}a^{2}x^{2}y\]
+con: \(a \neq 0 \text{ e } x \neq 0 \text{ e } y\neq 0\)
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcola: 
+\(\tonda{\dfrac{9}{20}a^{2}b^{4}c}:\tonda{-{\dfrac{1}{8}}a^{5}b^{2}}\)
+
+Si può eseguire la divisione solo se~\(a\neq~0\text{ e }b\neq~0\), 
+in questo caso:
+\[\tonda{\frac{9}{20}a^{2}b^{4}c}:\tonda{-{\frac{1}{8}}a^{5}b^{2}} =
+\tonda{\frac{9}{20}a^{2}b^{4}c} \cdot \tonda{-\frac{8}{a^{5}b^{2}}} =
+-\frac{18b^2c}{5a^3} = -\frac{18}{5} \frac{b^2c}{a^3}\]
+con: 
+\(a \neq 0 \text{ e } b \neq 0\)
+\end{esempio}
+
+% In conclusione, l'operazione di divisione tra due monomi
+% ha come risultato un monomio se ogni variabile del dividendo ha
+% esponente maggiore o uguale all'esponente con cui
+% compare nel divisore.
+
+
+% \vspazio\ovalbox{\risolvii \ref{ese:9.21}, \ref{ese:9.22}, 
+% \ref{ese:9.23}}
+
+\subsubsection{Addizione di due monomi}
+\label{subsubsec:monomi_addizione}
+
+Di solito quando si affrontano le operazioni, si inizia con l'addizione, 
+invece con i monomi l'abbiamo tenuta per ultima perché c'è un problema: 
+non sempre la somma di due monomi è un monomio. 
+L'addizione di monomi non è una legge di composizione interna.
+
+\paragraph{Addizione di monomi simili}
+~
+
+\begin{definizione}{}{}
+La \textbf{somma algebrica di due monomi simili} è un monomio simile agli
+addendi che ha come coefficiente la somma algebrica dei 
+coefficienti\indc{monomio/monomi}{addizione fra monomi}.
+\end{definizione}
+
+\begin{esempio}{}{}
+Calcoliamo~\(3x^{3}+(-7x^{3})\).
+
+I due addendi sono monomi simili dunque la somma è ancora un monomio
+ed è simile ai singoli addendi. Precisamente
+\(3x^{3}+(-7x^{3})=(3+(-7))x^{3}=-4x^{3}\).
+
+La somma di monomi simili si riduce alla somma algebrica di numeri.
+\end{esempio}
+
+% \ovalbox{\risolvi \ref{ese:9.24}}
+
+% \subsubsection{Proprietà della addizione}
+% 
+% \begin{enumeratea}
+%  \item commutativa:~\(m_{1}+m_{2}=m_{2}+m_{1}\)
+%  \item 
+% associativa:~\(m_{1}+m_{2}+m_{3}=(m_{1}+m_{2})+m_{3}=m_{1}+(m_{2}+m_{3})\)
+%  \item 0 è l'elemento neutro:~\(0+m=m+0=m\)
+%  \item per ogni monomio m esiste il monomio opposto, cioè un
+%  monomio~\(m\Ast\) tale che
+%  \[m + m\Ast = m\Ast +m=0.\]
+% \end{enumeratea}
+% 
+% L'ultima proprietà enunciata ci permette di definire
+% nell'insieme dei monomi simili anche la sottrazione di
+% monomi. Essa si indica con lo stesso segno della sottrazione tra numeri
+% e il suo risultato si chiama differenza.
+
+% \begin{osservazione}{}{} 
+% Per sottrarre due monomi simili si aggiunge al primo
+% \end{osservazione}
+
+% l'opposto del secondo.
+% 
+% % \begin{exrig}
+% \begin{esempio}{}{}
+% Assegnati~\(m_{1}=\frac{1}{2}a^{2}b\), \(m_{2}=-\text{5a}^{2}b\) 
+% determina~\(m_{1} - m_{2}\).
+% 
+% L'operazione richiesta
+% \(\frac{1}{2}a^{2}b-(-5a^{2}b)\) diventa
+% \(\frac{1}{2}a^{2}b+5a^{2}b=\frac{11}{2}a^{2}b\).
+% \end{esempio}
+% % \end{exrig}
+% 
+% Sulla base di quanto detto, possiamo unificare le due operazioni di
+% addizione e sottrazione di monomi simili in un'unica
+% operazione che chiamiamo \textbf{somma algebrica di monomi}.
+% 
+% 
+% \begin{osservazione}{}{} 
+% La somma algebrica di due monomi simili è un monomio 
+% simile 
+% % agli addendi avente per coefficiente la somma algebrica dei 
+% % coefficienti.
+% \end{osservazione}
+
+\begin{esempio}{}{}
+Determiniamo la somma 
+\quad 
+\(\dfrac{3}{5}x^{4}-\dfrac{1}{3}x^{4}+x^{4}+
+  \dfrac{4}{5}x^{4}-2x^{4}-\dfrac{1}{2}x^{4}\)
+
+\vspace{.5em}
+Osserviamo che tutti gli addendi sono tra loro simili dunque:
+
+\vspace{-1.5em}
+\[\frac{3}{5}x^{4}-\frac{1}{3}x^{4}+x^{4}+
+  \frac{4}{5}x^{4}-2x^{4}-\frac{1}{2}x^{4}=
+  \tonda{\frac{3}{5}-\frac{1}{3}+1+\frac{4}{5}-2-\frac{1}{2}}x^{4}=
+  -{\frac{13}{30}}x^{4}\]
+\end{esempio}
+
+\paragraph{Addizione di monomi non simili}
+~
+
+Analizziamo il caso dell'addizione:\\
+\(7a^{3}b^{2}-5a^{2}b^{3}+a^{3}b^{2}\), si vuole determinarne la somma. 
+I monomi addendi non sono tutti tra loro simili; 
+lo sono però il primo e il terzo. 
+Le proprietà associativa e commutativa ci consentono di riscrivere
+l'addizione precedente ``avvicinando'' i monomi simili e
+sostituendo ad essi la loro somma:
+\[7a^{3}b^{2}-5a^{2}b^{3}+a^{3}b^{2}=(7a^{3}b^{2}+a^{3}b^{2})-5a^{2}b^{3}
+=8a^{3}b^{2}-5a^{2}b^{3}.\]
+L'espressione così ottenuta è la somma richiesta, e non è un monomio.
+% \vspazio\ovalbox{\risolvi \ref{ese:9.25}}\vspazio
+Il procedimento che abbiamo seguito per determinare il risultato
+dell'addizione assegnata viene chiamato 
+\emph{riduzione dei termini simili}
+\indc{monomio/monomi}{riduzione termini simili}.
+
+L'operazione di addizione tra monomi ha come risultato 
+un \emph{monomio} se tutti gli addendi sono monomi simili altrimenti 
+il risultato è un \emph{polinomio}\indc{polinomio/polinomi}{polinomio}.
+
+\begin{esempio}{}{}
+Calcola la seguente somma:\quad \(3a-7a+2a+a\).
+
+Il risultato è un monomio poiché gli addendi sono tutti monomi
+simili: \(-a\).
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcola la seguente somma:\quad 
+\(\dfrac{1}{2}a^{3}+b-\dfrac{3}{4}a^{3}-\dfrac{6}{5}b\).
+
+Gli addendi non sono tutti simili, ottengo un polinomio: \quad
+\(-{\dfrac{1}{4}}a^{3}-\dfrac{1}{5}b\).
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:9.26}, \ref{ese:9.27}, \ref{ese:9.28}, 
+% \ref{ese:9.29}, \ref{ese:9.30}, \ref{ese:9.31}, \ref{ese:9.32}}
+
+\subsection{Espressioni con i monomi}
+\label{subsec:monomi_espressioni}
+
+\noindent Consideriamo l'espressione letterale: \\ 
+\(\qquad E(a,~b)=\tonda{-{\dfrac{1}{2}}a^{2}b}^{3}:\tonda{a^{5}b}+
+  \tonda{-2ab}\cdot\tonda{\dfrac{1}{2}b+b}+5ab^{2}\)
+
+Vediamo che è in due variabili, le variabili sono infatti~\(a\) e~\(b\). 
+Inoltre, i termini delle operazioni che vi compaiono sono monomi.
+
+Se volessimo calcolare il valore di~\(E\) per~\(a = 10,~~b = -2\), 
+dovremmo sostituire nell'espressione tali valori e risolvere
+l'espressione numerica che ne risulta. 
+Inoltre se dovessimo calcolare il valore di~\(E\) per altre coppie di 
+valori dovremmo ogni volta applicare questo procedimento.
+
+Dal momento che abbiamo studiato come eseguire le operazioni razionali
+con i monomi, prima di sostituire i numeri alle lettere, applichiamo le
+regole del calcolo letterale in modo da ridurre~\(E\), se possibile, 
+in una espressione più semplice.
+
+Prima di procedere, essendovi una divisione poniamo innanzi tutto
+la~\(\CE a \neq~0\) e~\(b \neq~0\) e eseguiamo rispettando la precedenza
+delle operazioni come facciamo nelle espressioni numeriche.
+% \newpage
+\begin{esempio}{}{}
+ \begin{align*}
+ &\tonda{-{\frac{1}{2}}a^{2}b}^{3}:(a^{5}b)+
+  (-2ab)\cdot\tonda{\frac{1}{2}b+b}+5ab^{2} =
+&& \text{eseguiamo il cubo}\\
+=&\tonda{-{\frac{1}{8}}a^{6}b^{3}:a^{5}b}+
+  (-2ab)\cdot{\frac{3}{2}}b+5ab^{2} =
+&& \text{eseguiamo div. e molt.}\\
+=&-{\frac{1}{8}}ab^{2}-3ab^{2}+5ab^{2} 
+= \frac{15}{8}ab^{2} \quad \stext{con} a, b \ne 0 
+&& \text{sommiamo i mon. simili}
+\end{align*}
+Ora è più semplice calcolarne il valore: per~\(a=10\) e~\(b=-2\) si ha:\\
+\(E(10, -2) =
+  \dfrac{15}{8}\cdot 10\cdot(-2)^{2}=\dfrac{15}{8}\cdot 10\cdot 4=75\).
+\end{esempio}
+
+\begin{esempio}{}{}
+ \begin{align*}
+ &\tonda{\frac{2}{3}ab^{2}c}^{2}:\tonda{-3ab^{3}}-\frac{2}{9}abc^{2} =
+&& \text{Sviluppiamo le potenze}\\
+ =&\frac{4}{9}a^{2}b^{4}c^{2}:\tonda{-3ab^{3}}-\frac{2}{9}abc^{2} =
+&& \text{eseguiamo div. e molt.}\\
+ =&-{\frac{4}{27}}abc^{2}-\frac{2}{9}abc^{2} =
+&& \text{sommiamo i monomi simili}\\
+=&\frac{-4-6}{27}abc^{2} 
+ =-{\frac{10}{27}}abc^{2} \quad \stext{con} a, b \ne 0 && 
+  \text{e otteniamo il risultato}
+ \end{align*}
+\end{esempio}
+
+\begin{esempio}{}{}
+\(\quadra{\tonda{-{\dfrac{14}{16}}x^{2}y^{2}}:\tonda{-{\dfrac{14}{4}}
+xy}}^{3}+\dfrac{1}{2}xy\cdot{\dfrac{1}{4}}x^{2}y^{2}\).
+
+Trasformiamo la divisione in moltiplicazione, poi
+\begin{align*}
+ =&\quadra{+{\frac{14}{16}}\cdot{\frac{4}{14}}xy}^{3}+\frac{1}{2}xy\cdot 
+{\frac{1}{4}}x^{2}y^{2}= && \text{calcoliamo i prodotti}\\
+=&\quadra{\frac{1}{4}xy}^{3}+\frac{1}{8}x^{3}y^{3} =
+&& \text{sviluppiamo il cubo}\\
+=&\frac{1}{64}x^{3}y^{3}+\frac{1}{8}x^{3}y^{3}= && 
+\text{sommiamo i monomi simili}\\
+=&\frac{1+8}{64}x^{3}y^{3} 
+=\frac{9}{64}x^{3}y^{3} \quad \stext{con} x, y \ne 0 && 
+  \text{e otteniamo il risultato}
+\end{align*}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:9.33}, \ref{ese:9.34}, \ref{ese:9.35}, 
+% \ref{ese:9.36}, \ref{ese:9.37}, \ref{ese:9.38}, \ref{ese:9.39}, 
+% \ref{ese:9.40}, \ref{ese:9.41}, \ref{ese:9.42}}
+
+\subsection{Massimo Comune Divisore e minimo comune multiplo tra monomi}
+\label{subsec:monomi_mcdemcm}
+
+In questa sezione considereremo solo monomi interi.
+
+\begin{definizione}{}{}
+Un monomio~\(A\) si dice \textbf{multiplo} di un monomio~\(B\) se esiste
+un monomio~\(C\) per il quale~\(A=B\cdot C\). 
+In questo caso diremo anche che~\(B\) è \textbf{divisore} del monomio~\(A\).
+\end{definizione}
+
+\subsubsection{Massimo Comune Divisore}
+\indc{monomio/monomi}{MCD di monomi}
+
+\begin{definizione}{}{}
+ Il \textbf{massimo comune divisore} tra due o più monomi è il
+monomio che, tra tutti i divisori comuni dei monomi dati, ha grado
+massimo.
+
+Si ottiene moltiplicando tra di loro solo i \emph{fattori comuni} presi con 
+il \emph{grado minimo}.
+\end{definizione}
+
+Il \indtc{monomio/monomi}{coefficiente} numerico può essere un qualunque 
+numero reale: se i coefficienti sono tutti interi è opportuno scegliere 
+il loro~\(\mcd\), se non sono interi è opportuno scegliere~1.
+
+% \begin{esempio}{}{}
+% Calcola il~\(\mcd\) dei monomi \quad 
+% \(12a^{3}b^{2}c\) \quad e \quad \(16a^{2}bx\) 
+% 
+% I fattori comuni sono: \quad 
+% \(4;\quad a;\quad b\)
+% 
+% Prendendo questi fattori con il grado minimo presente nei monomi 
+% si ottiene:\quad \(4a^{2}b\).
+% \end{esempio}
+
+% \begin{procedura}{}{}
+% Calcolare il~\(\mcd\) tra monomi
+% 
+% Il~\(\mcd\) di un gruppo di monomi è il monomio che ha:
+% 
+% \begin{enumeratea}
+%  \item per coefficiente numerico il~\(\mcd\) dei valori assoluti dei
+% coefficienti dei monomi qualora
+% questi siano numeri interi, se non sono interi si prende~1;
+%  \item la parte letterale formata da tutte le lettere comuni ai monomi
+% dati, ciascuna presa una sola volta e con l'esponente minore con cui 
+% compare.
+% \end{enumeratea}
+% \end{procedura}
+
+\begin{esempio}{}{}
+Calcolare~\(\mcd \terna{14a^{3}b^{4}c^{2}}{4ab^{2}}{8a^{2}b^{3}c}\) 
+
+I fattori comuni sono: \quad 
+\(2; \quad a; \quad b\)
+
+Prendendo questi fattori con il grado minimo presente nei monomi 
+si ottiene:
+\[\mcd \terna{14a^{3}b^{4}c^{2}}{4ab^{2}}{8a^{2}b^{3}c}=2ab^{2}\]
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcolare il massimo comune divisore tra: 
+
+\(\quad 5x^{3}y^{2}z^{3}; \quad -\dfrac{1}{8}xy^{2}z^{2}; 
+  \quad 7x^{3}z^{2}\)
+
+Si osservi che i coefficienti numerici dei monomi non sono numeri interi.
+Scegliamo~1 come coefficiente del~\(\mcd\).
+Le lettere in comune sono~\(xz\), prese ciascuna con
+l'esponente minore con cui compaiono si ha:
+\[\mcd \terna{5x^{3}y^{2}z^{3}}{-\frac{1}{8}xy^{2}z^{2}}{7x^{3}z^{2}} = 
+  xz^{2}\]
+\end{esempio}
+
+
+\begin{osservazione}{}{} 
+La scelta di porre uguale a~1 il coefficiente 
+numerico del~\(\mcd\), nel
+caso in cui i monomi abbiano coefficienti razionali, è dovuta al
+fatto che una qualsiasi frazione divide tutte le altre e quindi una
+qualsiasi frazione potrebbe essere il coefficiente del~\(\mcd\).
+Ad essere più precisi, dovremmo dichiarare a quale degli insiemi 
+numerici appartengono i coefficienti. 
+Qui consideriamo coefficienti che appartengono all'insieme numerico 
+più ampio che conosciamo.
+\end{osservazione}
+
+
+\begin{definizione}{}{}
+Due monomi si dicono \textbf{primi tra loro}
+\indc{monomio/monomi}{monomi primi tra loro} se il loro~\(\mcd\) è~1.
+\end{definizione}
+
+\subsubsection{Minimo comune multiplo}
+\indc{monomio/monomi}{mcm di monomi}.
+
+\begin{definizione}{}{}
+Il \textbf{minimo comune multiplo di due o più monomi}
+è il monomio che, tra tutti i monomi multipli comuni,
+ha il grado minore.
+
+Si ottiene moltiplicando i fattori comuni e non comuni presi con il massimo 
+esponente.
+\end{definizione}
+
+Il \indtc{monomio/monomi}{coefficiente} numerico può essere un qualunque 
+numero reale: se i coefficienti sono tutti interi è opportuno scegliere 
+il loro~\(\mcm\), se non lo sono è opportuno scegliere~1.
+
+% \begin{esempio}{}{}
+% Calcola il minimo comune multiplo tra~\(5a^{3}bc\) e~\(10a^{2}b^{2}\) 
+% 
+% I fattori primi comuni e non comuni sono: \quad 
+% \(2;~5;~a;~b;~c\)
+% 
+% Moltiplicando tutti questi fattori presi con il massimo esponente 
+% otteniamo:
+% \[\mcm\tonda{5a^{3}bc;~10a^{2}b^{2}} = 10a^{3}b^{2}c\]
+% \end{esempio}
+% 
+% In realtà applicando la definizione è poco pratico calcolare il~\(\mcm\), 
+% è utile invece la seguente procedura.
+% 
+% \begin{procedura}{}{}
+% [Calcolo del~\(\mcm\) tra due o più monomi]
+% Il~\(\mcm\) di un gruppo di monomi è il monomio che ha:
+% 
+% \begin{enumeratea}
+% \item per coefficiente numerico il~\(\mcm\) dei valori assoluti dei
+% coefficienti dei monomi qualora
+% questi siano numeri interi, se non sono interi si prende~1;
+% \item la parte letterale formata da tutte le lettere comuni e non comuni
+% ai monomi dati, ciascuna
+% presa una sola volta e con l'esponente maggiore con
+% cui compare.
+% \end{enumeratea}
+% \end{procedura}
+% 
+% % \begin{exrig}
+\begin{esempio}{}{}
+Calcola \(\mcm \tonda{5a^{3}bc;~12ab^{2}c;~10a^{3}bc^{2}}\)
+
+I fattori primi comuni e non comuni sono: \quad 
+\(2;~3;~5;~a;~b;~c\)
+
+Moltiplicandoli con il massimo esponente si ottiene:
+\[\mcm \tonda{5a^{3}bc;~12ab^{2}c;~10a^{3}bc^{2}} = 60a^{3}b^{2}c^{2}\]
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcola 
+\(\mcm \tonda{6x^{2}y;~-\dfrac{1}{2}xy^{2}z;~\dfrac{2}{3}x^{3}yz}\)
+
+Almeno uno dei coefficienti è una frazione quindi non consideriamo i 
+coefficienti.
+Moltiplicando le singole lettere con il massimo esponente si ottiene:
+\[\mcm \tonda{6x^{2}y;~-\frac{1}{2}xy^{2}z;~\frac{2}{3}x^{3}yz} = 
+x^{3}y^{2}z\]
+\end{esempio}
+
+Assegnati due monomi, per esempio~\(x^{2}y\) e~\(xy^{2}z\),
+calcoliamo~\(\mcd\) e \(\mcm\).\\
+\hspace*{\fill}\(\mcd (x^{2}y;xy^{2}z)=xy\)\quad e \quad 
+\(\mcm (x^{2}y;xy^{2}z)=x^{2}y^{2}z\).\hspace*{\fill}\\
+Moltiplichiamo ora~\(\mcd\) e~\(\mcm\), abbiamo: \quad 
+\(xy\cdot x^{2}y^{2}z = x^{3}y^{3}z.\)\\
+Moltiplichiamo ora i monomi assegnati, abbiamo: \quad 
+\((x^{2}y) \cdot (xy^{2}z)=x^{3}y^{3}z\).
+
+Il prodotto\indc{monomio/monomi}{prodotto di monomi} dei due monomi è 
+uguale al prodotto tra il~\(\mcd\) e il~\(\mcm\). 
+Si può dimostrare che questa proprietà vale in generale.
+
+\begin{teorema}{}{}
+Dati due monomi, il prodotto tra il loro massimo comune
+divisore e il loro minimo comune multiplo è uguale al prodotto tra i
+monomi stessi.
+\end{teorema}
+
+% \ovalbox{\risolvii \ref{ese:9.41}, \ref{ese:9.42}, \ref{ese:9.43}, 
+% \ref{ese:9.44}, \ref{ese:9.45}, \ref{ese:9.46}, \ref{ese:9.47}}
+
+\section{Polinomi $\Pol$}
+\label{subsec:poli_polinomi}
+
+\subsection{Definizioni fondamentali}
+\label{subsec:poli_definizioni}
+
+\begin{definizione}{}{}
+Un polinomio\indc{polinomio/polinomi}{polinomio} è un'\indt{espressione 
+letterale} che consiste in una somma algebrica di monomi interi.
+\end{definizione}
+
+\begin{osservazione}{}{}
+Se in un polinomio non tutti i monomi sono interi, otteniamo un 
+\emph{polinomio fratto}\indc{polinomio/polinomi}{polinomio fratto}, 
+cioè formato da \emph{frazioni algebriche}.
+Per studiare questi oggetti, abbiamo bisogno di alcuni strumenti 
+matematici che ancora non sappiamo usare. 
+Dovete portare pazienza: li studieremo dopo aver imparato a scomporre 
+in fattori i polinomi.
+\end{osservazione}
+
+
+\begin{esempio}{}{}
+Sono polinomi:
+\(6a+2b\),\quad \(5a^2b+3b^2\),\quad \(6x^2-5y^2x-1\),\quad 
+\(7ab-2a^2b^3+4\).
+\end{esempio}
+
+Se tra i termini di un polinomio non sono presenti monomi simili, il 
+polinomio si dice in \emph{forma normale} o
+\emph{ridotto}; se al contrario si presentano dei termini simili, 
+possiamo eseguire la riduzione del polinomio sommando i termini simili. 
+Tutti i polinomi sono quindi riducibili 
+\indtc{polinomio/polinomi}{in forma normale}.
+
+Un polinomio in forma normale può presentare tra i suoi termini un 
+monomio di grado~0 che viene comunemente chiamato 
+\emph{termine noto}\indc{polinomio/polinomi}{termine noto}.
+
+\begin{esempio}{}{}
+Il polinomio~\(3ab+b^2-2ba+4-6ab^2+5b^2\) ridotto in forma normale 
+diventa~\(ab+6b^2-6ab^2+4\). Il termine noto è~\(4\).
+\end{esempio}
+
+% \ovalbox{\risolvi\ref{ese:10.1}}\vspazio
+
+Un polinomio può anche essere costituito da un unico termine, pertanto 
+un monomio è anche un polinomio.
+Un polinomio che, ridotto in forma normale, è somma algebrica di due, 
+tre, quattro monomi non nulli si dice rispettivamente binomio, trinomio, 
+quadrinomio.
+
+\begin{esempio}{}{}
+Binomi, trinomi, quadrinomi.
+\begin{enumeratea}
+\item \(xy-5x^3y^2\) \quad è un binomio;
+\item \(3ab^2 +a-4a^3\) \quad è un trinomio;
+\item \(a-6ab^2+3ab-5b\) \quad è un quadrinomio.
+\end{enumeratea}
+\end{esempio}
+
+\begin{definizione}{}{}
+Due polinomi, ridotti in forma normale, formati da termini uguali si dicono 
+\textbf{uguali}\indc{polinomio/polinomi}{polinomi uguali, opposti, nulli}.
+
+% Due polinomi, ridotti in forma normale, formati da termini uguali si 
+% dicono 
+% \emph{uguali}, più precisamente vale il \emph{principio di identità dei 
+% polinomi}:
+% due polinomi~\(p(x)\) e~\(q(x)\) sono uguali se, e solo se, sono uguali
+% i coefficienti dei termini simili.
+
+Se due polinomi sono formati da termini opposti, allora si dicono 
+\textbf{polinomi opposti}.
+
+Definiamo, inoltre, un \textbf{polinomio nullo} quando i suoi termini sono
+a coefficienti nulli. 
+Il polinomio nullo coincide con il monomio nullo e quindi con il numero~0.
+\end{definizione}
+
+\begin{esempio}{}{}
+Polinomi uguali, opposti, nulli.
+\begin{enumeratea}
+\item I polinomi
+\(\quad \frac{1}{3}xy+2y^3-x\) \(\quad~2y^3-x+\frac{1}{3}xy \quad\) 
+sono uguali;
+\item i polinomi~\(\quad~6ab-3a+2b\) \(\quad~3a-2b-6ab \quad\) 
+sono opposti;
+\item il polinomio~\(\quad~7ab+4a^2-ab+b^3-4a^2-2b^3-6ab+b^3 \quad\) è un 
+polinomio nullo, infatti riducendolo in forma normale otteniamo il 
+monomio nullo~\(0\).
+\end{enumeratea}
+\end{esempio}
+
+\begin{definizione}{}{}
+Il \textbf{grado complessivo} (o semplicemente
+\textbf{grado}\indc{polinomio/polinomi}{grado del polinomio}) di un
+polinomio è il \textbf{massimo} dei gradi complessivi dei suoi termini.
+Si chiama, invece, \textbf{grado di un polinomio rispetto a una
+data lettera} l'esponente maggiore con cui quella lettera compare nel 
+polinomio, dopo che è stato ridotto a forma normale.
+\end{definizione}
+
+\begin{esempio}{}{} Grado di un polinomio.
+\begin{itemize} [nosep]
+\item Il polinomio~\(2ab+3-4a^2b^2\) ha grado complessivo~\(4\) perché il 
+monomio con grado massimo è~\(-4a^2b^2 \), che è un monomio di quarto 
+grado;
+\item il grado del polinomio~\(a^3+3b^2a-4b^5a^2\) rispetto alla 
+lettera~\(a\) è~\(3\) perché l'esponente più grande con cui tale lettera 
+compare è~\(3\).
+\end{itemize}
+\end{esempio}
+
+% \ovalbox{\risolvi\ref{ese:10.2}}
+
+\begin{definizione}{}{}
+Un polinomio si dice \textbf{omogeneo}\indc{polinomio/polinomi}{polinomio
+omogeneo} se tutti i termini che lo compongono sono dello stesso grado.
+\end{definizione}
+
+\begin{esempio}{}{}
+Il polinomio~\(a^3-b^3+ab^2\) è un polinomio omogeneo di grado~\(3\).
+\end{esempio}
+
+% \ovalbox{\risolvi\ref{ese:10.3}}
+
+\begin{definizione}{}{}
+Un polinomio si dice \textbf{ordinato secondo le potenze decrescenti
+(crescenti) di una lettera}\indc{polinomio/polinomi}{polinomio ordinato}, 
+quando i suoi
+termini sono ordinati in maniera tale che gli esponenti di tale lettera 
+decrescono (crescono), leggendo il
+polinomio da sinistra verso destra.
+\end{definizione}
+
+L'essere ordinato non è una caratteristica del polinomio, ma di come 
+viene rappresentato.
+
+\begin{esempio}{}{}
+Il polinomio~\(\dfrac{1}{2}x^3+\dfrac{3}{4}x^2y-2xy^2+\dfrac{3}{8}y^3\) 
+è ordinato secondo le potenze decrescenti della lettera~\(x\), e secondo 
+le potenze crescenti della lettera~\(y\).\\
+\(\dfrac{3}{8}y^3+\dfrac{1}{2}x^3+\dfrac{3}{4}x^2y-2xy^2\) è lo stesso
+polinomio ma non ordinato
+\end{esempio}
+
+\begin{definizione}{}{}
+Un polinomio di grado~\(n\) rispetto a una data lettera si dice 
+\textbf{completo}\indc{polinomio/polinomi}{polinomio completo} se contiene
+anche tutte le potenze di tale lettera di grado 
+inferiore a~\(n\), compreso il termine di grado zero.
+\end{definizione}
+
+\begin{esempio}{}{}
+Il polinomio~\(x^4-3x^3+5x^2+6x-7\) è completo di 
+grado~\(4\) e inoltre risulta ordinato rispetto alla lettera~\(x\). Il 
+termine di grado zero è~\(-7\).
+% Il polinomio~\(x^4-3x^3+5x^2+\dfrac{1}{2}x-\dfrac{3}{5}\) è completo di 
+% grado~\(4\) e inoltre risulta ordinato rispetto alla lettera~\(x\). Il 
+% termine 
+% noto è~\(-\dfrac{3}{5}\).
+\end{esempio}
+
+\begin{osservazione}{}{}
+Ogni polinomio può essere scritto sotto forma ordinata e completa: 
+l'ordinamento si può effettuare per la proprietà commutativa della 
+somma, 
+la completezza si può ottenere aggiungendo termini 
+con coefficiente uguale a~\(0\).
+
+Per esempio, il polinomio~\(x^4-x+1+4x^2\) può essere scritto sotto forma 
+ordinata e completa come~\(x^4+0x^3+4x^2-x+1\).
+\end{osservazione}
+
+% \vspazio\ovalbox{\risolvii 
+% \ref{ese:10.4},\ref{ese:10.5},\ref{ese:10.6},\ref{ese:10.7},
+% \ref{ese:10.8},
+% \ref{ese:10.9},\ref{ese:10.10}}
+
+\subsection{Somma algebrica di polinomi}
+\label{subsec:poli_somma}
+
+I polinomi sono somme algebriche di monomi e quindi le espressioni 
+letterali che si ottengono dalla somma
+o differenza di polinomi sono ancora somme algebriche di monomi.
+
+L'addizione è una legge di composizione interna all'insieme dei polinomi.
+
+\begin{definizione}{}{}
+La \textbf{somma di due o più polinomi}\indc{polinomio/polinomi}{somma di
+polinomi} è un polinomio avente per termini tutti i termini dei polinomi 
+addendi.
+\end{definizione}
+
+La differenza di polinomi si può trasformare nella somma del primo 
+con l'opposto del secondo.
+
+\begin{esempio}{}{}
+Differenza di polinomi.
+\begin{equation*}
+\begin{split}
+&\tonda{3a^2+2b - \frac{1}{2}ab} - \tonda{2a^2+ab - \frac{1}{2}b} =
+3a^2+2b - \frac{1}{2}ab - 2a^2 - ab + \frac{1}{2}b = \\
+&=a^2 + \frac{-1-2}{2}ab + \frac{4+1}{2}b = 
+a^2 - \frac{3}{2}ab + \frac{5}{2}b
+\end{split}
+\end{equation*}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:10.11}, \ref{ese:10.12}, \ref{ese:10.13}}
+
+\subsection{Prodotto di un polinomio per un monomio}
+\label{subsec:poli_prodottopermonomio}
+
+Per eseguire il prodotto tra un monomio e un polinomio si applica la 
+proprietà distributiva: \quad 
+\( a \cdot \tonda{b + c} = a \cdot b + a \cdot c\)
+
+\begin{definizione}{}{} 
+Il \textbf{prodotto di un monomio per un polinomio} si ottiene moltiplicando
+il monomio per ciascun termine del polinomio\indc{polinomio/polinomi}
+{prodotto per un monomio}.
+% Il prodotto di un monomio per un polinomio è
+% un polinomio avente come termini i prodotti del monomio per ciascun
+% termine del polinomio.
+\end{definizione}
+
+
+% \newpage
+\begin{esempio}{}{}
+ Prodotto di un monomio per un polinomio.\\ [.5em]
+% \(\tonda{3x^{2}y} \cdot \tonda{2{xy}-5x^{3}y^{2}}=
+% \tonda{3x^{2}y} \cdot \tonda{2{xy}} +
+% \tonda{3x^{2}y} \cdot \tonda{-5x^{3}y^{2}} =
+% 6x^{3}y^{2}-15x^{5}y^{3}\)\\[.5em]
+\(
+\tonda{3x^{3}y}\cdot\tonda{\dfrac{1}{2}x^{2}y^{2}+\dfrac{4}{3}{xy}^{3}}
+=\tonda{3x^{3}y}\cdot\tonda{\dfrac{1}{2}x^{2}y^{2}}
++\tonda{3x^{3}y}\cdot\tonda{\dfrac{4}{3}{xy}^{3}} = \newline
+=\dfrac{3}{2}x^{5}y^{3}+4x^{4}y^{4}
+\)
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:10.14}, \ref{ese:10.15}}
+
+\subsection{Quoziente tra un polinomio e un monomio}
+\label{subsec:poli_quozientepermonomio}
+
+Il quoziente\indc{polinomio/polinomi}{divisione per un monomio} tra un 
+polinomio e un monomio si calcola applicando la
+proprietà distributiva della divisione rispetto
+all'addizione.
+
+\begin{definizione}{}{}
+Si dice che un \textbf{polinomio è divisibile per un monomio non
+nullo} se esiste un polinomio che, moltiplicato per il monomio, dà
+come risultato il polinomio dividendo; il monomio si dice
+\textbf{divisore} del polinomio.
+\end{definizione}
+
+\begin{definizione}{}{}
+Il \textbf{quoziente tra un polinomio e un monomio suo divisore} è un
+polinomio ottenuto dividendo ogni termine del polinomio per il monomio
+divisore.
+\end{definizione}
+
+\begin{esempio}{}{}
+Quoziente tra un polinomio e un monomio.\\ [.5em]
+\(\tonda{6x^{5}y+9x^{3}y^{2}}:\tonda{3x^{2}y} = 
+2x^{(5-2)}y^{(1-1)}+3x^{(3-2)}y^{(2-1)} = 2x^{3}+3{xy}\)
+\end{esempio}
+
+\begin{osservazione}{}{}
+\begin{enumeratea}
+\item Poiché ogni monomio è divisibile per qualsiasi numero diverso
+da zero, allora anche ogni polinomio è divisibile per un qualsiasi
+numero diverso da zero;
+\item un polinomio è divisibile per un monomio, non nullo, se ogni
+fattore letterale del monomio compare in ogni monomio del polinomio
+con grado uguale o maggiore;
+\item la divisione tra un polinomio e un qualsiasi monomio non nullo è
+sempre possibile, tuttavia il risultato è un polinomio solo nel caso
+in cui il monomio sia divisore di tutti i termini del polinomio.
+\end{enumeratea}
+\end{osservazione}
+
+\begin{esempio}{}{}
+Quoziente tra un polinomio e un monomio.
+\begin{align*}
+\tonda{8a^{4}b-14a^{3}b^{2}}:\tonda{2a^{4}b^3} &= 
+4a^{(4-4)}b^{(1-3)}-7a^{(3-4)}b^{(2-3)} = \\
+& = 4b^{-2}-7a^{-1}b^{-1} = \frac{4}{b^2}-\frac{7}{ab}
+\end{align*}
+% \[\tonda{8a^{4}b-14a^{3}b^{2}}:\tonda{2a^{4}b^3} = 
+% 4a^{(4-4)}b^{(1-3)}-7a^{(3-4)}b^{(2-3)} = 4b^{-2}-7a^{-1}b^{-1} =
+% \frac{4}{b^2}-\frac{7}{ab}\]
+Il risultato non è un polinomio, ma un 
+\indtc{polinomio/polinomi}{polinomio fratto} o frazione algebrica.
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:10.16}, \ref{ese:10.17}, \ref{ese:10.18}}
+
+\subsection{Prodotto di polinomi}
+\label{subsec:poli_prodotto}
+
+\begin{definizione}{}{}
+Il \textbf{prodotto di due polinomi} è il
+polinomio\indc{polinomio/polinomi}{prodotto tra due polinomi} che si 
+ottiene moltiplicando ogni termine del primo polinomio per ciascun 
+termine del secondo polinomio.
+\end{definizione}
+
+% \newpage
+\begin{esempio}{}{}
+ Esegui i seguenti prodotti riducendo i termini simili.
+
+\begin{enumerate} [left=0mm]
+\item 
+\(\tonda{a^{2}b+3a-4{ab}}\tonda{\dfrac{1}{2}a^{2}b^{2}-a+3{ab}^{2}}=\)
+
+\(=\dfrac{1}{2}a^{4}b^{3}-a^{3}b+\underline{3a^{3}b^{3}}+
+   \dfrac{3}{2}a^{3}b^{2}
+-3a^{2}+9a^{2}b^{2} -\underline{2a^{3}b^{3}}+4a^{2}b-12a^{2}b^{3}=\newline
+=\dfrac{1}{2}a^{4}b^{3}-a^{3}b+a^{3}b^{3}+
+ \dfrac{3}{2}a^{3}b^{2}-3a^{2}+9a^{2}b^{2}+4a^{2}b-12a^{2}b^{3}\)
+\item 
+\(\tonda{x-y^{2}-3{xy}}\tonda{-2x^{2}y-3y}=-2x^{3}y+3{xy}+2x^{2}y^
+{3}-3y^{3}+6x^{3}y^{2}+9{xy}^{2}\)
+\item 
+\(\tonda{\dfrac{1}{2}x^{3}-2x^{2}}\tonda{\dfrac{3}{4}x+1}=
+\dfrac{3}{8}x^{4}+\underline{\dfrac{1}{2}x^{3}}-
+ \underline{\dfrac{3}{2}x^{3}}-2x^{2}
+=\dfrac{3}{8}x^{4}-x^{3}-2x^{2}\)
+\end{enumerate}
+\end{esempio}
+% \ovalbox{\risolvi \ref{ese:10.19}}
+
+\subsection{Quoziente di polinomi}
+\label{subsec:poli_quoziente}
+
+\begin{definizione}{}{}
+Il \textbf{quoziente di due polinomi}
+\indc{polinomio/polinomi}{quoziente tra due polinomi}, se esiste, è il 
+polinomio che moltiplicato per il \textbf{divisore} dà il \textbf{dividendo}.
+\end{definizione}
+
+\begin{osservazione}{}{}
+Il \emph{quoziente di due polinomi} non sempre è un polinomio.
+
+Esiste una \emph{divisione con resto} di polinomi mentre, 
+per poter avere sempre il quoziente esatto di due polinomi, 
+dobbiamo estendere l'insieme \(\Pol\) ai 
+polinomi fratti o frazioni algebriche.
+\end{osservazione}
+
+Affronteremo il problema della divisione tra polinomi dopo aver 
+affrontato la scomposizione in fattori di polinomi.
+
+
+\subsection{Proprietà delle operazioni con i polinomi}
+\label{subsec:poli_proprieta}
+
+\begin{osservazione}{}{}
+Rispetto alle operazioni aritmetiche, i polinomi si comportano in modo 
+analogo ai numeri interi. 
+\end{osservazione}
+
+Poiché nelle operazioni con i polinomi (\(\Pol\)) valgono le stesse 
+proprietà che valgono nei numeri interi, anche la struttura formata dai 
+polinomi, dall'addizione e dalla moltiplicazione, 
+\(\terna{\Pol}{+}{\times}\), viene chiamata anello.
+
+\section{Prodotti notevoli}
+\label{sec:poli_prodnot}
+
+Con l'espressione \indtc{polinomio/polinomi}{prodotti notevoli} si 
+indicano alcune identità che si ottengono in seguito alla moltiplicazione 
+di polinomi aventi caratteristiche particolari facili da ricordare.
+Per cui è più utile imparare a memoria il prodotto che calcolarlo 
+eseguendo la moltiplicazione.
+
+\subsection{Quadrato di un binomio}
+\indc{polinomio/polinomi}{quadrato di un binomio}
+\label{subsec:prodnot_quadratobinomio}
+
+Consideriamo il binomio~\(A+B\) in cui~\(A\) e~\(B\) rappresentano due 
+monomi ed analizziamo che cosa succede moltiplicando il binomio per se
+stesso, eseguendo cioè la
+moltiplicazione~\(\tonda{A+B}\tonda{A+B}\), che sotto forma di 
+potenza si scrive~\(\tonda{A+B}^{2}\).
+\[\tonda{A+B}^{2}=\tonda{A+B}\tonda{A+B}=A^{2}+{AB}+{BA}+B^{2
+}=A^{2}+2{AB}+B^{2}.\]
+Pertanto, senza effettuare i passaggi intermedi si ha:
+
+\begin{teorema}{}{} 
+Il quadrato di un binomio è
+uguale alla somma tra il quadrato del primo termine, il doppio prodotto 
+del primo termine per il secondo e il quadrato del secondo termine: \quad 
+\(\tonda{A+B}^{2}=A^{2}+2{AB}+B^{2}\)
+\end{teorema}
+
+\affiancati{.74}{.24}{
+È possibile dare anche
+un'interpretazione geometrica di questo prodotto notevole 
+sostituendo~\(A\) e~\(B\) rispettivamente con le misure~\(a\) e~\(b\)
+di due segmenti.
+
+Costruiamo il segmento di lunghezza~\(a+b\) e il quadrato 
+di lato~\(a+b\), il quale avrà area~\((a+b)^{2}\).
+Possiamo dividere il quadrato in quattro parti come nella figura a fianco.
+Il quadrato di lato~\(a+b\) è composto da due quadrati
+di area rispettivamente~\(a^{2}\) e~\(b^{2}\) e
+da due rettangoli di area~\(ab\). 
+}{
+% \scalebox{.6}{\input{\folder lbr/fig001_quad.pgf}}
+ \centering \quadratobin{1.8}{3}
+}
+
+Di conseguenza l'area del quadrato è uguale 
+a:~\((a+b)^{2}=a^{2}+b^{2}+{ab}+{ab}=a^{2}+2{ab}+b^{2}\).
+
+\begin{osservazione}{}{} 
+Nel quadrato di un binomio:
+\begin{itemize} [nosep]
+\item I termini quadrati~\(A^{2}\) e~\(B^{2}\) sono sempre positivi.
+\item Il termine rettangolare~\(2AB\) è positivo se~\(A\) e~\(B\) sono 
+concordi, negativo se sono discordi.
+\end{itemize}
+\end{osservazione}
+
+% Nella identità precedente, \(A\) e~\(B\) rappresentano due monomi 
+% qualsiasi,
+% quindi la scrittura~\(A+B\) deve intendersi come somma algebrica di due
+% monomi che, rispetto al segno, possono essere concordi o discordi.
+% 
+% Ne consegue che:
+% 
+% \begin{wrapfloat}{figure}{r}{0pt}
+% \scalebox{.6}{\input{\folder lbr/fig001_quad.pgf}}
+% \end{wrapfloat}
+
+\begin{esempio}{}{} Calcola i seguenti quadrati:
+\begin{enumerate} [nosep]
+\item \(\tonda{3a^2-5ab}^2 = 9a^4 - 30 a^3 b + 25a^2 b^2\)
+\item \(\tonda{-2a^2-7ab}^2 = 4a^4 + 28 a^3 b + 49a^2 b^2\)
+\item \(\tonda{xy^2+2xz}^2 = x^2 y^4 + 4 x^2 y^2 z + 4x^2 y^2\)
+\end{enumerate}
+\end{esempio}
+
+\begin{esempio}{}{} Trova quale quadrato dà come risultato il seguente 
+trinomio:\\
+\(9x^4 - 12 x^2 y + 4y^2= 
+\tonda{3x^2}^2 +2\tonda{3x^2}\tonda{-2y}+\tonda{-2y}^2=
+\tonda{3x^2-2y}^2\)
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:11.1}, \ref{ese:11.2}, 
+% \ref{ese:11.3}, \ref{ese:11.4}, \ref{ese:11.5}, \ref{ese:11.6}, 
+% \ref{ese:11.7}, \ref{ese:11.8}, \ref{ese:11.9}, \ref{ese:11.10}}
+
+\subsection{Quadrato di un polinomio}
+\label{subsec:prodnot_quadratopolinomio}
+
+\affiancati{.69}{.29}{
+Si consideri il trinomio~\(A+B+C\), il suo quadrato sarà:
+
+\vspace{-1.5em}
+\begin{align*}
+&\tonda{A+B+C}^{2}=\tonda{A+B+C}\cdot\tonda{A+B+C}=\\
+&=A^{2}+{AB}+{AC}+{BA}+B^{2}+{BC}+{CA}+{CB}+C^{2}=\\
+&=A^{2}+B^{2}+C^{2}+2{AB}+2{AC}+2{BC}
+\end{align*}
+
+\vspace{-.5em}
+Perciò: \quad
+\(\tonda{A+B+C}^{2}=A^{2}+B^{2}+C^{2}+2{AB}+2{AC}+2{BC}\)
+}{
+\immagine*{Quadrato che ha per lato a+b+c.}
+{\hspace*{-3mm}\quadratotri{1.2}{2}{2.8}}
+}
+
+
+\begin{teorema}{}{} 
+Il quadrato di un polinomio è uguale alla somma
+dei quadrati dei monomi che lo compongono e dei doppi prodotti di ogni
+termine per ciascuno dei successivi.
+
+Nel caso di un polinomio composto da quattro monomi si ha:
+\[\tonda{A+B+C+D}^{2}=A^{2}+B^{2}+C^{2}+D^{2}+2{AB}+2{AC}+2{AD}+2{BC}+2
+{BD}+2{CD}\]
+\end{teorema}
+
+\begin{esempio}{}{} 
+Calcola il seguente quadrato:\\
+\(\tonda{2a^3-4b-c}^2 = 4a^6 + 16b^2 +c^2 -16a^3 b -4 a^3 c +8 bc\)
+\end{esempio}
+
+\begin{esempio}{}{} 
+Trova quale quadrato dà come risultato il seguente 
+polinomio:\\
+\(x^2 + 4y^2 + z^2 -4xy +2xz -4yz = \tonda{x-2y+z}^2\)
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:11.11}, \ref{ese:11.12}, \ref{ese:11.13}, 
+% \ref{ese:11.14}, \ref{ese:11.15}}
+
+\subsection{Prodotto della somma fra due monomi per la loro differenza}
+\label{subsec:prodnot_sommaperdifferenza}
+
+Osserviamo i seguenti prodotti:
+\begin{align*}
+\tonda{A-B}\tonda{A+B}   &= A^{2}+{AB}-{AB}-B^{2}=A^{2}-B^{2}\\
+\tonda{-A+B}\tonda{A+B}  &= -A^{2}-{AB}+{AB}+B^{2}=-A^{2}+B^{2}\\
+\tonda{-A+B}\tonda{-A-B} &= A^{2}+{AB}-{AB}-B^{2}=A^{2}-B^{2}\\
+\tonda{A-B}\tonda{-A-B}  &= A^{2}-{AB}+{AB}-B^{2}=-A^{2}+B^{2}
+\end{align*}
+
+\affiancati{.59}{.29}{
+Quando eseguiamo il prodotto\indc{polinomio/polinomi}
+{somma per differenza} tra due binomi che hanno due termini uguali e due 
+termini opposti i prodotti incrociati si annullano e rimangono i due 
+prodotti del termine uguale per se stesso e dei due termini opposti: 
+il primo, prodotto tra i due termini che non cambiano segno, risulterà 
+positivo, il secondo, prodotto tra i termini che cambiano segno, 
+risulterà negativo. 
+}{
+\immagine*{Differenza di due quadrati e rettangolo equivalente}
+{\hspace{-15mm}\sommadifferenza{3}{1}}
+}
+
+\begin{definizione}{}{} 
+Il \textbf{prodotto tra due binomi} che hanno due termini uguali e
+due termini opposti è uguale alla somma dei prodotti dei due termini 
+uguali e dei due termini opposti.
+\[\tonda{A-B}\tonda{A+B} = A^{2} - B^{2} \qquad
+  \tonda{A-B}\tonda{-A-B} = -A^{2} + B^{2}\]
+\end{definizione}
+
+\begin{esempio}{}{}
+Alcuni esempi:
+\begin{enumerate}
+\item \(\tonda{-3a^{2}-5{ab}} \tonda{3a^{2}-5{ab}}=-9a^{2}+25a^{2}b^{2}\)
+\item \(9a^2b^4-4x^6 = \tonda{3ab^{2}+2x^3} \tonda{3ab^{2}-2x^3}\)
+\item \(\tonda{-{\dfrac{1}{4}}x^{2}+b}\cdot \tonda{+{\dfrac{1}{4}}x^{2}+b}=
+        -\dfrac{1}{16}x^{4}+b^{2}\)
+\item calcola il prodotto~\(28 \cdot 32\).~~
+Soluzione:~\(28\cdot 32=(30-2)(30+2)=900-4=896\)
+\item \((2x+1-y)(2x+1+y)=\)
+\(\tonda{(\underbrace{2x+1}_{A})-\underbrace{y}_{B}}
+  \tonda{(\underbrace{2x+1}_{A})+\underbrace{y}_{B}}= \newline
+\hspace*{38mm}
+=\underbrace{(2x+1)^{2}}_{A^{2}}-\underbrace{y^{2}}_{B^{2}}=
+4x^{2}+4x+1-y^{2}\)
+\end{enumerate}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:11.16}, \ref{ese:11.17}, \ref{ese:11.18}, 
+% \ref{ese:11.19}, \ref{ese:11.20}, \ref{ese:11.21}, \ref{ese:11.22}, 
+% \ref{ese:11.23}}
+
+
+\subsection{Prodotto particolare}
+\label{subsec:prodnot_particolare}
+
+Consideriamo la moltiplicazione tra due binomi di primo grado che hanno 
+i coefficienti dei termini di primo grado uguali a 
+uno\indc{polinomio/polinomi}{prodotto particolare}:
+
+\affiancati{.69}{.29}{
+\vspace*{-.5em}
+\[\tonda{x +3} \tonda{x+4} = x^2 +3x +4x +12 = x^2 +7x +12\]
+Ora generalizziamo il calcolo mettendo al posto dei numeri dei parametri:
+
+\vspace*{-1.5em}
+\[\tonda{x +a} \tonda{x+b} = x^2 +ax +bx +ab = x^2 +\tonda{a+b}x +ab\]
+}{
+% \vspace*{-1em}
+\immagine{}{\trinot{3}{1}{2}}
+}
+
+% \vspace*{-.5em}
+Chiamando:\\
+\(a+b=s\) \quad somma dei termini di grado zero e\\
+\(ab=p\) \quad prodotto degli stessi due termini,\\
+possiamo dire che il prodotto tra i due binomi è un trinomio di secondo 
+grado che ha per coefficienti rispettivamente 
+\(~~ 1, ~~ s,~~ p\) ~cioè:~~
+\(\tonda{x +a} \tonda{x+b} = x^2 +sx +p\).
+
+\begin{definizione}{}{} 
+Il \textbf{prodotto tra due binomi} che hanno il primo termine
+uguale è un trinomio costruito 
+secondo lo schema seguente:
+\[\tonda{A+B}\tonda{A+C} = A^{2} + (B+C)A + BC\]
+\end{definizione}
+
+\begin{esempio}{}{}
+Alcuni esempi:
+\begin{enumerate}
+\item \(\tonda{x+7} \tonda{x+5}\) \quad poiché: \quad 
+\(s=7+5=12\) ~~ e ~~ \(p=7 \cdot 5=35\), \\ 
+\(\tonda{x+7} \tonda{x+5}=x^2+12x+35\)
+\item \(\tonda{x-3} \tonda{x+5}\) \quad poiché: \quad 
+\(s=-3+5=+2\) ~~ e ~~ \(p=-3 \cdot 5=-15\):\\ 
+\(\tonda{x-3} \tonda{x+5}=x^2+2x-15\)
+% \item \(\tonda{x-4} \tonda{x-6}\) \quad poiché: 
+% \quad \(s=-4-6=-10\) ~~ e ~~ \(p=-4 \cdot \tonda{-6}=+24\): \\ 
+% \(\tonda{x-4} \tonda{x-6}=x^2-10x+24\)
+\end{enumerate}
+\end{esempio}
+
+\begin{osservazione}{}{}
+I prodotti notevoli ``somma per differenza'' e ``quadrato del binomio'' 
+possono essere visti come un caso particolare di trinomio particolare.
+\end{osservazione}
+
+\begin{esempio}{}{}
+Alcuni esempi:
+\begin{enumerate}
+\item \(\tonda{x-3} \tonda{x+3}\) \quad poiché: \quad 
+\(s=-3+3=0\) ~~ e ~~ \(p=-3 \cdot 3 = -9\): \\ 
+\(\tonda{x-3} \tonda{x+3}=x^2-9\)
+\item \(\tonda{x-3} \tonda{x-3}\) \quad poiché: \quad 
+\(s=-3-3=-6\) ~~ e ~~ \(p=-3 \cdot -3 = +9\): \\ 
+\(\tonda{x-3} \tonda{x-3}=x^2-6x+9\)
+\end{enumerate}
+\end{esempio}
+
+\begin{esempio}{}{}
+Trova la moltiplicazione di binomi che dia come prodotto il seguente 
+trinomio: \(x^2+3x-40\)\\
+Devo trovare i due numeri \(a\) e \(b\) tali che: 
+\(a+b=+3\) e \(a \cdot b=-40\). \\
+Si inizia sempre dal valore assoluto del prodotto:\quad
+\(40 = 1 \cdot 40; \quad 2 \cdot 20; \quad 4 \cdot 10; 
+  \quad 5 \cdot 8;~\dots\)\\
+I due fattori che hanno per somma algebrica \(3\) sono : 
+\(5\) e \(8\).\\
+Inseriamoli nello schema della moltiplicazione: \quad
+\(\tonda{x \quad 5} \tonda{x \quad 8}\)\\
+Ora aggiustiamo i segni in modo che 
+la somma sia \(+3\) e il prodotto \(-40\):\\[-1em]
+\begin{center}\(x^2+3x-40 = \tonda{x-5} \tonda{x+8}\)\end{center}
+\end{esempio}
+
+\subsection{Cubo di un binomio}
+\label{subsec:prodnot_cubo}
+
+Si consideri il binomio~\(A+B\), possiamo ottenere il suo cubo 
+in diversi modi\indc{polinomio/polinomi}{cubo di un binomio}:
+
+\affiancati{.62}{.36}{
+\begin{align*} \small
+&\tonda{A+B}^{3}=\tonda{A+B}^{2}\tonda{A+B}= \\
+&=\tonda{A^{2}+2{AB}+B^{2}}\tonda{A+B}=\\
+%\tonda{A+B}^{3}&=\tonda{A+B}^{2}\tonda{A+B}=\\
+%&=\tonda{A^{2}+2{AB}+B^{2}}\tonda{A+B}=\\
+&=A^{3}+A^{2}B+2A^{2}B+2{AB}^{2}+{AB}^{2}+B^{3}=\\
+&=A^{3}+3A^{2}B+3{AB}^{2}+B^{3}
+\end{align*}
+Al posto dei due monomi possiamo considerare le lunghezze di due 
+segmenti \(a\) e \(b\). 
+Osservando il cubo che ha per spigolo \(a + b\), possiamo vedere che è 
+composto da due cubi e altri 6 parallelepipedi, a 3 a 3 uguali.
+
+\vspace{1em}
+Oppure possiamo sviluppare il cubo come la moltiplicazione tra tre 
+binomi uguali, il prodotto si ottiene moltiplicando tutti i primi 
+elementi, poi il primo per il primo per il secondo, poi il primo per il 
+secondo per il primo e così via esaurendo tutte le possibilità:
+\begin{align*} \small
+&\tonda{a+a}^{3} = \tonda{a+b}\tonda{a+b}\tonda{a+b} = \\
+&= aaa + aab + aba + abb + baa + bab + bba + bbb = \\
+&= a^3 + 3a^2b + 3ab^2 +b^3
+\end{align*}
+}{
+\immagine*{Cubo scomposto in due cubi e sei parallelepipedi.}
+{\hspace{-10mm}\cubobin{3}{1}{0}}
+
+\vspace{+4mm}
+\immagine*{Cubo scomposto in due cubi e sei parallelepipedi, esploso.}
+{\hspace{-10mm}\cubobin{3}{1}{1.4}}
+}
+
+% Quindi:
+
+\begin{teorema}{}{} 
+Il cubo di un binomio è uguale alla somma tra il
+cubo del primo monomio, il triplo prodotto del quadrato del primo
+% monomio 
+per il secondo, il triplo prodotto del primo 
+% monomio 
+per il quadrato del secondo e il cubo del secondo monomio.
+
+\vspace{-2.em}
+\[\tonda{A+B}^3=A^3+3A^2B+3AB^2+B^3 \qquad
+  \tonda{A-B}^3=A^3-3A^2B+3AB^2-B^3\]
+
+\vspace{-3.em}
+\[\tonda{-A+B}^3=-A^3+3A^2B-3AB^2+B^3 \hspace{5.8mm}
+  \tonda{-A-B}^3=-A^3-3A^2B-3AB^2-B^3\]
+\end{teorema}
+
+% Essendo~\(\tonda{A-B}^{3}=\left[A+\tonda{-B}\right]^{3}\), il
+% cubo della differenza di due monomi si ottiene facilmente dal cubo
+% della somma, quindi
+% \(\tonda{A-B}^{3}=A^{3}-3A^{2}B+3{AB}^{2}-B^{3}\).
+
+\begin{esempio}{}{} Calcola i seguenti cubi di binomi:
+% \begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(\tonda{x-2}^3= x^3-6x^2+12x-8\)
+\item \(\tonda{-x+1}^3= -x^3+3x^2-3x+1\)
+\item \(\tonda{-x-4}^3= -x^3-12x^2-48x-64\)
+\item \(\tonda{2x+3y}^3= 8x^3+12x^2y+18xy^2+27\)
+\end{enumeratea}
+% \end{htmulticols}
+\end{esempio}
+
+\begin{esempio}{}{}
+Trova il cubo del binomio equivalente al seguente quadrinomio:\\
+\(x^3-9x^2a+27xa^2-27a^3\)\\
+Osserviamo che: \(x^3\) è il cubo di \(x\) \quad 
+e \quad \(-27a^3\) è il cubo di \(-3a\)\\
+possiamo sospettare che: \(x^3-9x^2a+27xa^2-27a^3 = \tonda{x-3a}^3\)\\
+eseguendo il prodotto notevole, ne abbiamo la conferma.
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:11.24}, \ref{ese:11.25}, 
+% \ref{ese:11.26}, \ref{ese:11.27}}
+
+\subsection{Potenza n-esima di un binomio}
+\indc{polinomio/polinomi}{potenze di un binomio}
+\label{subsec:prodnot_potenzabinomio}
+
+\affiancati{.54}{.44}{
+Finora abbiamo calcolato le potenze del binomio~\(a+b\) fino
+all'ordine tre, in questo paragrafo ci si propone di
+fornire un criterio che permetta di calcolare la potenza~\((a+b)^{n}\),
+con~\(n\in \N\). Osserviamo le potenze ottenute:
+}{
+\begin{align*}
+&(a+b)^0 = 1\\
+&(a+b)^1 = a+b\\
+&(a+b)^2 = a^2+2ab+b^2\\
+&(a+b)^3 = a^3+3a^2b+3ab^2+b^3
+\end{align*}
+}
+Si può notare che:
+
+\begin{itemize} [nosep]
+\item lo sviluppo di ciascuna potenza dà origine a un polinomio
+omogeneo dello stesso grado dell'esponente della
+potenza, completo e ordinato secondo le potenze decrescenti di~\(a\) e 
+crescenti di~\(b\)
+\item il primo e l'ultimo coefficiente sono sempre uguali a~1;
+\item i coefficienti di ciascuna riga si ottengono utilizzando una
+disposizione dei numeri a triangolo, detto (in Italia) 
+\emph{triangolo di Tartaglia}.
+\ind{triangolo di Tartaglia}
+\end{itemize}
+
+\affiancati{.44}{.44}{
+\immagine*{Triangolo di Tartaglia.}{\hspace*{-5mm}\tartaglia}
+}{
+\immagine*{Come ricavare il triangolo di Tartaglia.}{\hspace*{-2mm}\tartaglib}
+}
+
+In questo triangolo i numeri di ciascuna riga 
+% (tranne il primo e l'ultimo che sono uguali a~1) 
+sono la somma dei due che stanno sopra.
+Con questa semplice regola si hanno gli sviluppi:
+
+\begin{itemize} [nosep]
+\item \((a+b)^{0}=1\)
+\item \((a+b)^{1}=a+b\)
+\item \((a+b)^{2}=a^{2}+2{ab}+b^{2}\)
+\item \((a+b)^{3}=a^{3}+3a^{2}b+3{ab}^{2}+b^{3}\)
+\item \((a+b)^{4}=a^{4}+4a^{3}b+6a^{2}b^{2}+4{ab}^{3}+b^{4}\)
+\item \((a+b)^{5}=a^{5}+5a^{4}b+10a^{3}b^{2}+10a^{2}b^{3}+5{ab}^{4}+b^{5}\)
+\item \dots
+\end{itemize}
+
+\begin{esempio}{}{} Calcola le seguenti potenze di binomi:
+\begin{enumeratea}
+\item \(\tonda{-3x-4}^0  = 1\)
+\item \(\tonda{-5x+4}^1  = -5x+4\)
+\item \(\tonda{-2x-3y}^2 = 4x^2+12xy+9y^2\)
+\item \(\tonda{-2x-3y}^3 = -8x^3-36x^2y-54xy^2-27y^3\)
+\item \(\tonda{x-2}^4    = x^4 -8x^3+24x^2-32x+16\)
+\item \(\tonda{-x+1}^5   = -x^5 +5x^4-10x^3+10x^2-5x+1\)
+\end{enumeratea}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:11.28}, \ref{ese:11.29}, \ref{ese:11.30}}
+
+\section{Valori un polinomio}
+\label{sec:poli_funzione}
+
+\subsection{Riprendiamo il problema di partenza}
+
+Nel problema di inizio capitolo (pag.~\pageref{cartoni}) abbiamo trovato 
+che il volume dipende 
+dalla lunghezza del taglio secondo la seguente funzione:
+\[V(x) = \tonda{2 - 2 \cdot x} \cdot \tonda{3 - 2 \cdot x} \cdot x\]
+
+Ora che abbiamo imparato a usare monomi e polinomi possiamo riscrivere 
+questa espressione in modo più compatto:
+\[V(x) = \tonda{-2x +2}\tonda{-2x +3}x\]
+Possiamo eseguire il prodotto tra i due binomi:
+\[V(x) = \tonda{-2x +2}\tonda{-2x +3}x = 
+  \tonda{+4x^2-6x-4x+6}x = \tonda{+4x^2-10x+6}x\]
+e, moltiplicando il polinomio per il monomio, otteniamo un
+trinomio di terzo grado:
+\[V(x) = +4x^3 -10x^2 +6x\]
+
+\affiancati{.59}{.39}{
+Fornendo a \(x\) diversi valori compresi tra \(0\) e \(1\) abbiamo 
+trovato un massimo per \(x=0,4\): \\
+\(V(0,4) = 1,056\).\\
+Ma forse il massimo si trova un po' prima o un po' dopo a \(0,4\).
+Facciamo qualche prova:\\ 
+\(V(0,35) = +4 \cdot 0,35^3 -10 \cdot 0,35^2 +6 \cdot 0,35 = 1,0465\)\\
+\(V(0,45) = +4 \cdot 0,45^3 -10 \cdot 0,45^2 +6 \cdot 0,45 = 1,0395\)\\
+Chiaramente il massimo è compreso tra \(0,35\) e \(0,40\).
+
+Costruiamo la tabella per questi valori della variabile \(x\).
+
+% Punti stazionari: \(\dfrac{5\mp\sqrt{7}}{6}\)\\
+% \(x_1 \approx 0,3923747814892349;\quad x_2 \approx 1,2742918851774319\)\\
+% \(f(x_1) \approx 1,0563058954611901\quad 
+%   f(x_2) \approx -0,3155651547204489\)
+}{
+\begin{center}
+\begin{tabular}{cc}
+taglio: x & volume: V(x)\\
+\hline
+0,35 & 1,046500\\ 
+0,36 & 1,050624\\ % 
+0,37 & 1,053612\\ % 
+0,38 & 1,055488\\ % 
+0,39 & 1,056276\\ % 
+0,40 & 1,056000\\ %
+\hline
+\end{tabular}
+\end{center}
+}
+
+Il massimo volume trovato è di \(1,056276\munit{dm^2}\) per un taglio di 
+\(3,9\munit{cm}\), ma il vero massimo potrebbe essere un po' prima o un 
+po' dopo al valore di \(3,9\munit{cm}\).
+
+La fustellatrice dello scatolificio ``Cartoni'' è in grado di effettuare 
+tagli con la precisione di mezzo millimetro.
+Calcoliamo allora il volume per i valori \(0,385\) e \(0,395\):\\ 
+\(V(0,385) = +4 \cdot 0,385^3 -10 \cdot 0,385^2 +6 \cdot 0,385=1,0560165\)\\
+\(V(0,395) = +4 \cdot 0,395^3 -10 \cdot 0,395^2 +6 \cdot 0,395=1,0562695\)
+
+Il confronto dei tre volumi dà:\quad 
+\(V(0,385) < V(0,390) > V(0,395)\) \quad 
+quindi con quella fustellatrice, il massimo volume lo si può ottenere con 
+il taglio di lunghezza \(x = 0,390\).
+
+Come consulenti abbiamo svolto il nostro compito, ma come ricercatori 
+possiamo essere soddisfatti?
+
+Continuando con il metodo di approssimazioni successive possiamo trovare 
+un ``massimo'' per \(x=0,3923747814892349\), ma siamo sicuri che il 
+massimo non si trovi un po' prima o un po' dopo a questo valore?
+
+Per rispondere in modo preciso a questa domanda avremo bisogno di 
+esplorare altre regioni della matematica.
+
+\subsection{Funzione polinomiale}\ind{funzione polinomiale}
+
+Nel nostro problema, abbiamo visto che non avevano senso tagli 
+\(x < 0\) o \(x \geqslant 1\).
+Ma possiamo astrarre da quel problema e considerare la funzione 
+\[f(x):~ x \mapsto 4x^3 -10x^2 +6x\]
+senza particolari limitazioni al valore della variabile \(x\).
+
+Ora possiamo interpretare i diversi valori della variabile \(x\) come le 
+ascisse di punti nel piano cartesiano e i corrispondenti valori della 
+funzione come le ordinate \(y\) degli stessi punti.
+Riportando alcuni di questi punti in un piano cartesiano, otteniamo una 
+figura più o meno definita a seconda di quanti valori di \(x\) 
+consideriamo.
+
+\affiancati{.39}{.59}{
+{\footnotesize
+\begin{center}
+\begin{tabular}{cl}
+\(x\) & \(y=f(x)\)\\
+\hline
+\(-0.2\) & \( -1.632\) \\
+\(-0.1\) & \( -0.704\) \\
+\(+0.0\) & \(   +0.0\) \\
+\(+0.1\) & \( +0.504\) \\
+\(+0.2\) & \( +0.832\) \\
+\(+0.3\) & \( +1.008\) \\
+\(+0.4\) & \( +1.056\) \\
+\(+0.5\) & \(   +1.0\) \\
+\(+0.6\) & \( +0.864\) \\
+\(+0.7\) & \( +0.672\) \\
+\(+0.8\) & \( +0.448\) \\
+\(+0.9\) & \( +0.216\) \\
+\(+1.0\) & \(   +0.0\) \\
+\(+1.1\) & \( -0.176\) \\
+\(+1.2\) & \( -0.288\) \\
+\(+1.3\) & \( -0.312\) \\
+\(+1.4\) & \( -0.224\) \\
+\(+1.5\) & \(   +0.0\) \\
+\(+1.6\) & \( +0.384\) \\
+\(+1.7\) & \( +0.952\) \\
+\(+1.8\) & \( +1.728\) \\
+\(+1.9\) & \( +2.736\) \\
+\(+2.0\) & \(   +4.0\) \\
+\hline
+\end{tabular}
+\end{center}
+}
+}{
+\begin{center}
+\funzpol
+\end{center}
+}
+
+

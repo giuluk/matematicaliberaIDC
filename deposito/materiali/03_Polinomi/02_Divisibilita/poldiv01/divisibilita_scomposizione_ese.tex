@@ -1,0 +1,2126 @@
+% (c) 2012 Claudio Carboncini - claudio.carboncini@gmail.com
+% (c) 2012 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c) 2015 Daniele Zambelli daniele.zambelli@gmail.com
+
+\section{Esercizi}
+
+\subsection{Esercizi dei singoli paragrafi}
+
+\subsubsection*{\numnameref{subsec:divpol_divisione_euclide}}
+
+\begin{esercizio}
+\label{ese:12.1}
+Completa la divisione
+\immagine[.8]{Divisione tra polinomi con l'algoritmo di Euclide.}
+{\esedivisionea}
+\end{esercizio}
+
+\begin{esercizio}\label{ese:}
+Esegui le seguenti divisioni
+\begin{enumeratea}
+\item  \(\left(-20 x^5 -20 x^4 +12 x^3 +6 x -10 \right) : \left(2 x  \right)\)
+\sol{Q = -10 x^4 -10 x^3 +6 x^2 +3;~R = -10}
+%   \item  \(\left(-27 x^6 -51 x^5 -64 x^4 -12 x^3 +5 x -2 \right) : 
+% \left(3 x^2 +2 x +1 \right)\)
+%    \sol{Q = -9 x^4 -11 x^3 -11 x^2 +7 x -1;~R = -1}
+\item  \(\left(-9 x^4 +86 x^3 -44 x^2 -73 \right) : \left(x -9 \right)\)
+\sol{Q = -9 x^3 +5 x^2 + x +9;~R = 8}
+\item  \(\left(9 x^4 -49 x^2 -18 x -54 \right) : \left(-3 x -7 \right)\)
+\sol{Q = -3 x^3 +7 x^2 +6;~R = -12}
+% \item  \(\left(-14 x^5 -44 x^4 -42 x^3 +36 x -1 \right) : \left(2 x +4 
+% \right)\)
+% \sol{Q = -7 x^4 -8 x^3 -5 x^2 +10 x -2;~R = 7}
+\item  \(\left(-12 x^4 +30 x^3 +42 x +3 \right) : \left(6 x  \right)\)
+\sol{Q = -2 x^3 +5 x^2 +7;~R = 3}
+\item  \(\left(-6 x^4 -27 x^2 +18 x +7 \right) : \left(3 x -3 \right)\)
+\sol{Q = -2 x^3 -2 x^2 -11 x -5;~R = -8}
+\item  \(\left(81 x^4 -46 x^2 +78 x +17 \right) : \left(-9 x -10 \right)\)
+\sol{Q = -9 x^3 +10 x^2 -6 x -2;~R = -3}
+%   \item  \(\left(-66 x^6 +35 x^5 +4 x^4 +47 x^3 -61 x^2 +27 \right) : 
+% \left(11 x^2 -4 x -5 \right)\)
+%    \sol{Q = -6 x^4 + x^3 -2 x^2 +4 x -5;~R = 2}
+\item  \(\left(72 x^4 -36 x^3 +24 x +5 \right) : \left(-12 x  \right)\)
+\sol{Q = -6 x^3 +3 x^2 -2;~R = 5}
+\item  \(\left(22 x^4 +7 x^3 -11 x^2 +5 x  \right) : \left(-2 x +1 \right)\)
+\sol{Q = -11 x^3 -9 x^2 + x -2;~R = 2}
+% \item  \(\left(-8 x^5 +61 x^4 -24 x^3 -76 x^2 -45 \right) : \left(x -7 
+% \right)\)
+% \sol{Q = -8 x^4 +5 x^3 +11 x^2 + x +7;~R = 4}
+\item  \(\left(-22 x^4 +41 x^3 -4 x -22 \right) : \left(-2 x +3 \right)\)
+\sol{Q = 11 x^3 -4 x^2 -6 x -7;~R = -1}
+\item  \(\left(-18 x^4 +20 x^2 -74 x +41 \right) : \left(-6 x +4 \right)\)
+\sol{Q = 3 x^3 +2 x^2 -2 x +11;~R = -3}
+\item  \(\left(32 x^4 +72 x^2 +80 x +9 \right) : \left(8 x  \right)\)
+\sol{Q = 4 x^3 +9 x +10;~R = 9}
+\item  \(\left(2 x^4 +15 x^3 +22 x^2 -4 \right) : \left(2 x +11 \right)\)
+\sol{Q = x^3 +2 x^2 ;~R = -4}
+\item  \(\left(110 x^4 -51 x^3 -198 x^2 +46 \right) : \left(-11 x -7 \right)\)
+\sol{Q\! =\! -10 x^3 +11 x^2 +11 x -7;~R\! =\! -3}
+% \item  \(\left(66 x^5 +66 x^4 +72 x^3 -60 x^2 +11 \right) : \left(-6 x  
+% \right)\)
+% \sol{Q = -11 x^4 -11 x^3 -12 x^2 +10 x ;~R = 11}
+%   \item  \(\left(90 x^6 -60 x^5 -184 x^4 +202 x^3 -70 x^2 -62 x  \right) : 
+% \left(-10 x^2 +10 x +6 \right)\)
+%    \sol{Q = -9 x^4 -3 x^3 +10 x^2 -12 x +1;~R = -6}
+\item  \(\left(-24 x^4 -12 x^3 +26 x -6 \right) : \left(4 x -2 \right)\)
+\sol{Q = -6 x^3 -6 x^2 -3 x +5;~R = 4}
+%   \item  \(\left(-30 x^5 +13 x^4 +34 x^3 -25 x^2 -19 x  \right) : 
+% \left(-3 x -2 \right)\)
+%    \sol{Q = 10 x^4 -11 x^3 -4 x^2 +11 x -1;~R = -2}
+\item  \(\left(-18 x^4 -21 x^3 +45 x^2 -84 \right) : \left(6 x +9 \right)\)
+\sol{Q = -3 x^3 + x^2 +6 x -9;~R = -3}
+\item  \(\left(20 x^4 -6 x^3 +36 x^2 +6 x  \right) : \left(4 x +2 \right)\)
+\sol{Q = 5 x^3 -4 x^2 +11 x -4;~R = 8}
+\item  \(\left(64 x^4 -136 x^3 +80 x^2 -20 \right) : \left(8 x -8 \right)\)
+\sol{Q = 8 x^3 -9 x^2 + x +1;~R = -12}
+\item  \(\left(64 x^4 -65 x^2 -61 x -6 \right) : \left(8 x +3 \right)\)
+\sol{Q = 8 x^3 -3 x^2 -7 x -5;~R = 9}
+\item  \(\left(-9 x^4 -91 x^3 -118 x^2 -21 x  \right) : \left(9 x +1 \right)\)
+\sol{Q = - x^3 -10 x^2 -12 x -1;~R = 1}
+\end{enumeratea}
+\end{esercizio}
+
+
+\begin{esercizio}\label{ese:}
+Esegui le seguenti divisioni con la regola di Ruffini
+\begin{enumeratea}
+% \item  \(\left(8 x^5 +7 x^4 -7 x^3 + x^2 -4 x -11 \right) : 
+%     \left(x +1 \right)\)
+% \sol{Q = 8 x^4 - x^3 -6 x^2 +7 x -11;~R = 0}
+\item  \(\left(-8 x^4 -19 x^3 +21 x +17 \right) : \left(x +1 \right)\)
+\sol{Q = -8 x^3 -11 x^2 +11 x +10;~R = 7}
+\item  \(\left(7 x^4 -19 x^2 +19 x -7 \right) : \left(x -1 \right)\)
+\sol{Q = 7 x^3 +7 x^2 -12 x +7;~R = 0}
+\item  \(\left(2 x^5 -13 x^3 -27 x^2 +33 x +9 \right) : 
+    \left(x -3 \right)\)
+\sol{Q = 2 x^4 +6 x^3 +5 x^2 -12 x -3;~R = 0}
+\item  \(\left(3 x^4 +5 x^3 -3 x^2 +4 \right) : \left(x +2 \right)\)
+\sol{Q = 3 x^3 - x^2 - x +2;~R = 0}
+\item  \(\left(-7 x^5 - x^4 +19 x^3 -3 x -5 \right) : \left(x -1 \right)\)
+\sol{Q = -7 x^4 -8 x^3 +11 x^2 +11 x +8;~R = 3}
+\item  \(\left(x^5 -26 x^3 +36 x^2 +26 x -40 \right) : 
+    \left(x -4 \right)\)
+\sol{Q = x^4 +4 x^3 -10 x^2 -4 x +10;~R = 0}
+\item  \(\left(2 x^4 - x^2 -2 x -12 \right) : \left(x +1 \right)\)
+\sol{Q = 2 x^3 -2 x^2 + x -3;~R = -9}
+\item  \(\left(6 x^5 +15 x^4 +9 x^3 +6 x^2 +17 x  \right) : 
+    \left(x +1 \right)\)
+\sol{Q = 6 x^4 +9 x^3 +6 x +11;~R = -11}
+\item  \(\left(2 x^5 -24 x^3 +29 x^2 -24 x -27 \right) : 
+    \left(x -3 \right)\)
+\sol{Q = 2 x^4 +6 x^3 -6 x^2 +11 x +9;~R\! =\! 0}
+\item  \(\left(11 x^5 + x^4 -5 x^3 -6 x^2 +6 \right) : \left(x +1 \right)\)
+\sol{Q\! =\! 11 x^4 -10 x^3 +5 x^2 -11 x +11;~R\! =\! -5}
+\item  \(\left(- x^5 +12 x^3 +18 x^2 +12 x +17 \right) : \left(x +2 \right)\)
+\sol{Q = - x^4 +2 x^3 +8 x^2 +2 x +8;~R\! =\! 1}
+% \item  \(\left(-5 x^5 +24 x^4 -23 x^3 +22 x^2 +33 x  \right) : 
+%     \left(x -4 \right)\)
+% \sol{Q = -5 x^4 +4 x^3 -7 x^2 -6 x -3;~R = 0}
+\item  \(\left(7 x^5 -18 x^3 +17 x^2 -3 x  \right) : \left(x -1 \right)\)
+\sol{Q = 7 x^4 +7 x^3 -11 x^2 +6 x +3;~R = 3}
+\item  \(\left(9 x^5 -25 x^4 -8 x^2 -26 x -12 \right) : 
+    \left(x -3 \right)\)
+\sol{Q = 9 x^4 +2 x^3 +6 x^2 +10 x +4;~R = 0}
+\item  \(\left(-8 x^5 +48 x^4 +2 x^2 -20 x +41 \right) : \left(x -6 \right)\)
+\sol{Q = -8 x^4 +2 x -8;~R = -7}
+\item  \(\left(4 x^4 -7 x^3 -12 x^2 -38 \right) : \left(x -3 \right)\)
+\sol{Q = 4 x^3 +5 x^2 +3 x +9;~R = -11}
+\item  \(\left(-12 x^4 +11 x^3 + x \right) : \left(x -1 \right)\)
+\sol{Q = -12 x^3 - x^2 - x ;~R = 0}
+\item  \(\left(-4 x^4 -7 x^3 +41 x^2 +23 x  \right) : \left(x +4 \right)\)
+\sol{Q = -4 x^3 +9 x^2 +5 x +3;~R = -12}
+\item  \(\left(-4 x^4 +2 x^3 +25 x^2 -20 \right) : \left(x +2 \right)\)
+\sol{Q = -4 x^3 +10 x^2 +5 x -10;~R = 0}
+\item  \(\left(6 x^4 -2 x^2 -2 x -11 \right) : \left(x -1 \right)\)
+\sol{Q = 6 x^3 +6 x^2 +4 x +2;~R = -9}
+\item  \(\left(4 x^5 -9 x^4 +15 x^3 -7 x^2 -3 \right) : 
+    \left(x -1 \right)\)
+\sol{Q = 4 x^4 -5 x^3 +10 x^2 +3 x +3;~R = 0}
+%   \item  \(\left(5 x^4 -14 x^2 +8 x -1 \right) : \left(x -1 \right)\)
+%    \sol{Q = 5 x^3 +5 x^2 -9 x -1;~R = -2}
+% \item \(\left(-5 x^5 +2 x^4 +10 x^3 +26 x +1 \right) : 
+% \left(x -2 \right)\)
+%    \sol{Q = -5 x^4 -8 x^3 -6 x^2 -12 x +2;~R = 5}
+%   \item  \(\left(- x^5 - x^4 +4 x^3 +32 x^2 -21 x  \right) : \left(x -3 
+% \right)\)
+%    \sol{Q = - x^4 -4 x^3 -8 x^2 +8 x +3;~R = 9}
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}\label{ese:}
+Esegui le seguenti divisioni
+\begin{enumeratea}
+\item  \(\left(5 x^4 -10 x^3 + x^2 + x  \right) : 
+\left(x -2 \right)\)
+\sol{Q = 5 x^3 + x +3;~R = 6}
+\item  \(\left(-32 x^4 +64 x^3 -40 x -2 \right) : 
+\left(8 x -8 \right)\)
+\sol{Q = -4 x^3 +4 x^2 +4 x -1;~R = -10}
+\item  \(\left(-99 x^4 +7 x^3 +20 x^2 -61 x  \right) : 
+\left(-9 x -1 \right)\)
+\sol{Q = 11 x^3 -2 x^2 -2 x +7;~R = 7}
+% \item  \(\left(7 x^5 +5 x^4 -13 x^3 -21 x^2 -12 x  \right) : 
+% \left(x +1 \right)\)\\
+% \sol{Q = 7 x^4 -2 x^3 -11 x^2 -10 x -2;~R = 2}
+\item  \(\left(-4 x^5 -12 x^4 +5 x^3 +7 x^2 -25 x  \right) : 
+\left(-2 x +1 \right)\)\\
+\sol{Q = 2 x^4 +7 x^3 + x^2 -3 x +11;~R = -11}
+\item  \(\left(-6 x^5 -21 x^4 +34 x^2 +25 x +20 \right) : 
+\left(x +3 \right)\)\\
+\sol{Q = -6 x^4 -3 x^3 +9 x^2 +7 x +4;~R = 8}
+\item  \(\left(-10 x^6 -51 x^5 +42 x^4 +160 x^3 -98 x -47 \right) : 
+\left(5 x^2 -2 x -10 \right)\)\\
+\sol{Q = -2 x^4 -11 x^3 +10 x +4;~R = 10 x -7}
+\item  \(\left(-6 x^5 -15 x^4 -20 x^3 + x -7 \right) : 
+\left(x +1 \right)\)\\
+\sol{Q = -6 x^4 -9 x^3 -11 x^2 +11 x -10;~R = 3}
+\end{enumeratea}
+\end{esercizio}
+
+% \begin{esercizio}\label{ese:div.002}
+%  Esegui le seguenti divisioni
+%  \begin{enumeratea}
+% % \item \(\left(-20 x^{10} +120 x^9 -78 x^8 -76 x^7 -62 x^6 -71 x^5 -63 
+% x^4 - 122 x^3 -8 x^2 -5 x +22 \right) : 
+% %           \left(2 x^4 -10 x^3 -3 x +3 \right)\) \\
+% %    \sol{Q = -10 x^6 +10 x^5 +11 x^4 +2 x^3 +9 x^2 +11 x +10;
+% %            ~R = - x^3 -2 x^2 -8 x -8}
+%   \item  \(\left(-2 x^5 +8 x^4 +10 x^3 -52 x^2 +14 x +34 \right) : 
+%           \left(2 x -4 \right)\) \\
+%    \sol{Q = - x^4 +2 x^3 +9 x^2 -8 x -9;~R = -2}
+% \item \(\left(5 x^6 +10 x^5 -30 x^4 -15 x^3 -20 x^2 +75 x -103 \right) : 
+%           \left(-5 x +10 \right)\) \\
+%    \sol{Q = - x^5 -4 x^4 -2 x^3 - x^2 +2 x -11;~R = 7}
+% %   \item  \(\left(24 x^8 -62 x^7 -93 x^6 -97 x^5 -101 x^4 -50 x^3 -118 
+% x^2 - 118 x -98 \right) : \left(-2 x^3 +7 x^2 + x +9 \right)\) \\
+% %    \sol{Q = -12 x^5 -11 x^4 +2 x^3 -4 x^2 -12 x -10;~R = -8}
+% %   \item  \(\left(-10 x^{10} -58 x^9 +160 x^8 -234 x^7 -33 x^6 +229 x^5 -
+% %                 127 x^4 -213 x^3 +236 x^2 +40 x -103 \right) : 
+% %           \left(- x^4 -7 x^3 +8 x^2 -10 x -12 \right)\) \\
+% %    \sol{Q = 10 x^6 -12 x^5 +4 x^4 +10 x^3 -5 x^2 -10 x +9;
+% %             ~R = 4 x^2 +10 x +5}
+%   \item  \(\left(-10 x^5 +33 x^4 +26 x^3 +20 x^2 -58 x +37 \right) : 
+%           \left(- x +4 \right)\) \\
+%    \sol{Q = 10 x^4 +7 x^3 +2 x^2 -12 x +10;~R = -3}
+%   \item  \(\left(55 x^8 -7 x^7 -61 x^6 +50 x^5 -79 x^4 +24 x^3 +8 x^2 +
+%                 26 x -5 \right) : \left(-5 x^2 -3 x +7 \right)\) \\
+%    \sol{Q = -11 x^6 +8 x^5 -8 x^4 +6 x^3 + x^2 +3 x -2;~R = - x +9}
+% \item \(\left(12 x^8 +69 x^7 +120 x^6 -20 x^5 +123 x^4 -265 x^3 +93 x^2 -
+%   161 x +107 \right) : \left(-12 x^3 +3 x^2 -6 x +11 \right)\) \\
+% \sol{Q = - x^5 -6 x^4 -11 x^3 + x^2 -10 x +9;~R = -5 x^2 +3 x +8}
+% %   \item  \(\left(-32 x^{10} +24 x^9 +20 x^8 -120 x^7 +24 x^6 +80 x^5 -49 
+% % x^4 - 17 x^3 +68 x^2 +106 x +53 \right) : 
+% %           \left(4 x^4 - x^3 - x^2 +8 x +6 \right)\) \\
+% %    \sol{Q = -8 x^6 +4 x^5 +4 x^4 -12 x^3 +8 x^2 +5 x +9;
+% %             ~R = 5 x^3 -11 x^2 +4 x -1}
+%   \item  \(\left(-40 x^5 -12 x^4 -40 x^3 -44 x^2 +124 x -40 \right) : 
+%           \left(8 x -4 \right)\) \\
+%    \sol{Q = -5 x^4 -4 x^3 -7 x^2 -9 x +11;~R = 4}
+%   \item  \(\left(40 x^5 -60 x^3 +90 x^2 +220 x +121 \right) : 
+%           \left(-10 x -10 \right)\) \\
+%    \sol{Q = -4 x^4 +4 x^3 +2 x^2 -11 x -11;~R = 11}
+%   \item  \(\left(88 x^8 -29 x^7 +36 x^6 +56 x^5 -165 x^4 -187 x^3 -53 x^2 +
+%                 111 x +83 \right) : \left(-11 x^2 +5 x +10 \right)\) \\
+%    \sol{Q = -8 x^6 - x^5 -11 x^4 -11 x^3 +7 x +8;~R = x +3}
+% % \item \(\left(-77 x^6 -202 x^5 -31 x^4 +163 x^3 +98 x^2 +7 x -3 \right) 
+% % : \left(11 x^2 +10 x +3 \right)\) \\
+% %    \sol{Q = -7 x^4 -12 x^3 +10 x^2 +9 x -2;~R = 3}
+% % \item \(\left(-90 x^7 +36 x^6 -54 x^5 +27 x^4 +36 x^3 -81 x^2 -12 
+% % \right) : \left(-9 x  \right)\) \\
+% %    \sol{Q = 10 x^6 -4 x^5 +6 x^4 -3 x^3 -4 x^2 +9 x ;~R = -12}
+% % \item \(\left(55 x^6 -45 x^5 +88 x^4 -39 x^3 -148 x^2 +55 x +44 \right) 
+% % : \left(11 x -9 \right)\) \\
+% %    \sol{Q = 5 x^5 +8 x^3 +3 x^2 -11 x -4;~R = 8}
+% %   \item  \(\left(-90 x^5 +5 x^4 +55 x^3 -105 x^2 -40 x +16 \right) : 
+% %           \left(10 x +5 \right)\) \\
+% %    \sol{Q = -9 x^4 +5 x^3 +3 x^2 -12 x +2;~R = 6}
+% % \item \(\left(81 x^6 +63 x^5 -116 x^4 -79 x^3 +95 x^2 +30 x -29 \right) 
+% % : \left(9 x^2 +2 x -2 \right)\) \\
+% %    \sol{Q = 9 x^4 +5 x^3 -12 x^2 -5 x +9;~R = 2 x -11}
+% %   \item  \(\left(-60 x^7 +82 x^6 -36 x^5 +74 x^4 +12 x^3 +50 x^2 +
+% %                 8 x +78 \right) : \left(6 x -10 \right)\) \\
+% %    \sol{Q = -10 x^6 -3 x^5 -11 x^4 -6 x^3 -8 x^2 -5 x -7;~R = 8}
+% %   \item  \(\left(-45 x^{10} +66 x^9 -92 x^8 +134 x^7 +4 x^6 -154 x^5 +
+% %                 198 x^4 -16 x^3 -61 x^2 +32 x -27 \right) : 
+% %           \left(9 x^4 -6 x^3 -8 x^2 + x -3 \right)\) \\
+% %    \sol{Q = -5 x^6 +4 x^5 -12 x^4 +11 x^3 -5 x^2 -8 x +7;
+% %             ~R = -12 x^2 + x -6}
+% % \item \(\left(-4 x^9 -3 x^8 +2 x^7 +72 x^6 +183 x^5 +95 x^4 +60 x^2 +
+% %        127 x +111 \right) : \left(- x^3 -3 x^2 -9 x -10 \right)\) \\
+% %    \sol{Q = 4 x^6 -9 x^5 -11 x^4 +2 x^3 -3 x -11;~R = -2 x +1}
+%  \end{enumeratea}
+% \end{esercizio}
+% 
+% 
+% \begin{esercizio}[*]
+% \label{ese:div.003}
+% Esegui le divisioni tra polinomi.
+%  \begin{enumeratea}
+%  \item \(\left(3x^{2}-5x+4\right):\left(2x-2\right)\)
+%   \sol{Q(x)=\frac{3}{2}x-1; \quad R(x)=2}
+%  \item \(\left(4x^{3}-2x^{2}+2x-4\right):\left(3x-1\right)\)
+%   \sol{Q(x)=\frac{4}{3}x^{2}-\frac{2}{9}x+\frac{16}{27}; 
+%          \quad R(x)=-{\frac{92}{27}}}
+%  \item \(\left(5a^{3}-a^{2}-4\right) : \left(a-2\right)\)
+%   \sol{Q(a)=5a^{2}+9a+18; \quad R(a)=32}
+%  \item \(\left(6y^{5}-5y^{4}+y^{2}-1\right):\left(2y^{2}-3\right)\)
+%   \sol{Q(y)=3y^{3}-\frac{5}{2}y^{2}+\frac{9}{2}y-\frac{13}{4}; 
+%          \quad R(y)=\frac{27}{2}y-\frac{43}{4}}
+% %  \item \(\left(-7a^{4}+3a^{2}-4+a\right):\left(a^{3}-2\right)\)
+% %   \sol{Q(a)=-7a; \quad R(a)=3a^{2}-13a-4}
+% %  \item \(\left(x^{7}-4\right):\left(x^{3}-2x^{2}+3x-7\right)\)
+% %   \sol{Q(x)=x^{4}+2x^{3}+x^{2}+3x+17; \quad R(x)=32x^{2}-30x+115}
+% %  \item \(\left(x^{3}-\dfrac{1}{2}x^{2}-4x+\dfrac{3}{2}\right):
+% %         \left(x^{2}+3x\right)\)
+% %   \sol{Q(x)=x-\frac{7}{2}; \quad R(x)=\frac{13}{2}x+\frac{3}{2}}
+% %  \item \(\left(2x^{4}+2x^{3}-\dfrac{15}{2}x^{2}-15x-7\right):(2x+3)\)
+% %   \sol{Q(x)=x^{3}-\frac{1}{2}x^{2}-3x-~3; \quad R(x)=2}
+%  \item \(\left(6-7a+3a^{2}-4a^{3}+a^{5}\right):\left(1-2a^{3}\right)\)
+%   \sol{Q(a)=2-\frac{1}{2}a^{2}; \quad R(a)=\frac{7}{2}a^{2}-7a+4}
+% %  \item \((a^{6}-1):(1+a^{3}+2a^{2}+2a)\)
+% %   \sol{Q(a)=a^{3}-2a^{2}+2a-1; \quad R(a)=0}
+% %  \item 
+% % \(\left(a^{4}-\dfrac{5}{4}a^{3}+\dfrac{11}{8}a^{2}-\dfrac{a}{2}\right):
+% %         \left(a^{2}-\dfrac{a}{2}\right)\)
+% %   \sol{Q(a)=a^{2}-\frac{3}{4}a+1; \quad R(a)=0}
+% %  \item \(\left(2x^{3}-6x^{2}+6x-2\right):\left(2x-2\right)\)
+% %   \sol{Q(x)=x^{2}-2x+1; \quad R(x)=0}
+%  \item \(\left(2x^{5}-11x^{3}+2x+2\right):\left(x^{3}-2x^{2}+1\right)\)
+%  \item \(\left(15x^{4}-2x+5\right):\left(2x^{2}+3\right)\)
+%  \item \(\left(-{\dfrac{9}{2}}x^{2}-2x^{4}+\dfrac{1}{2}x^{3}-
+%                 \dfrac{69}{8}x-\dfrac{9}{4}-\dfrac{4}{3}x^{5}\right):
+%                   \left(-2x^{2}-3x-\dfrac{3}{4}\right)\)
+%  \end{enumeratea}
+% \end{esercizio}
+% 
+% % \subsubsection*{12.2 - Polinomi in più variabili}
+% % 
+% % \begin{esercizio}
+% % \label{ese:12.6}
+% % Dividi il polinomio~\(A(x,y)=x^{3}+3x^{2}y+2xy^{2}\) per il 
+% % polinomio~\(B(x,y)=x+y\) rispetto alla variabile~\(x\)
+% % Il quoziente è~\(Q(x,y)=\ldots \ldots \ldots\), il resto è~\(R(x,y)=0\)
+% % 
+% % Ordina il polinomio~\(A(x,y)\) in modo decrescente rispetto alla 
+% % variabile~\(y\) ed esegui
+% % nuovamente la divisione. Il quoziente è sempre lo stesso? Il resto è 
+% % sempre zero?
+% % \end{esercizio}
+% % 
+% % \begin{esercizio}
+% % \label{ese:12.7}
+% % Esegui le divisioni tra polinomi rispetto alla variabile~\(x\)
+% %  \begin{enumeratea}
+% %  \item 
+% % \(\left(3x^{4}+5ax^{3}-a^{2}x^{2}-6a^{3}x+2a^{4}\right):\left(3x^{2}-
+% % ax-2a^{2}\right)\)
+% %  \item 
+% % \(\left(-4x^{5}+13x^{3}y^{2}-12y^{3}x^{2}+17x^{4}y-12y^{5}\right):
+% % \left(2x^{3}-3yx^{2}+2y^{2}x-3y^{3}\right)\)
+% %  \item \(\left(x^{5}-x^{4}-2ax^{3}+3ax^{2}-2a\right):
+% % \left(x^{2}-2a\right)\)
+% %  \end{enumeratea}
+% % \end{esercizio}
+
+% % \subsubsection*{12.3 - Regola di Ruffini}
+% \subsubsection*{\numnameref{subsec:divpol_divisione_ruffini}}
+
+% \vspace{0mm}
+
+% \begin{esercizio}\label{ese:div.004}
+%  Esegui le seguenti divisioni
+%  \begin{enumeratea}
+%   \item  \(\left(-11 x^5 +11 x^4 -4 x +3 \right) : \left(x -1 \right)\)
+%    \sol{Q = -11 x^4 -4;~R = -1}
+% %   \item  \(\left(7 x^5 -95 x^4 +142 x^3 -130 x^2 +109 x +124 \right) : 
+% \left(x -12 \right)\)
+% %    \sol{Q = 7 x^4 -11 x^3 +10 x^2 -10 x -11;~R = -8}
+% %   \item  \(\left(9 x^6 +38 x^5 +28 x^4 -18 x^3 -2 x^2 +9 x -42 \right) : 
+% \left(x +3 \right)\)
+% %    \sol{Q = 9 x^5 +11 x^4 -5 x^3 -3 x^2 +7 x -12;~R = -6}
+%   \item  \(\left(-12 x^4 +126 x^3 -68 x^2 +78 x +29 \right) : \left(x -10 
+% \right)\)
+%    \sol{Q = -12 x^3 +6 x^2 -8 x -2;~R = 9}
+%   \item  \(\left(2 x^4 -12 x^3 +17 x^2 -8 x +24 \right) : \left(x -3 
+% \right)\)
+%    \sol{Q = 2 x^3 -6 x^2 - x -11;~R = -9}
+%   \item  \(\left(-7 x^4 -45 x^3 -18 x^2 +5 x +36 \right) : \left(x +6 
+% \right)\)
+%    \sol{Q = -7 x^3 -3 x^2 +5;~R = 6}
+% %   \item  \(\left(x^6 -8 x^5 -41 x^4 +27 x^3 -10 x^2 -24 x -10 \right) : 
+% \left(x +4 \right)\)
+% %    \sol{Q = x^5 -12 x^4 +7 x^3 - x^2 -6 x ;~R = -10}
+% %   \item  \(\left(8 x^5 +69 x^4 -112 x^3 -25 x^2 -45 x +39 \right) : 
+% % \left(x +10 \right)\)
+% %    \sol{Q = 8 x^4 -11 x^3 -2 x^2 -5 x +5;~R = -11}
+% \item \(\left(-5 x^4 -4 x^3 -3 x^2 +7 x +4 \right) : \left(x +1 \right)\)
+%    \sol{Q = -5 x^3 + x^2 -4 x +11;~R = -7}
+%   \item  \(\left(9 x^4 -94 x^3 -52 x^2 -30 x -22 \right) : \left(x -11 
+% \right)\)
+%    \sol{Q = 9 x^3 +5 x^2 +3 x +3;~R = 11}
+% % \item \(\left(-9 x^6 -94 x^5 -40 x^4 -4 x^3 -36 x^2 +41 x +15 \right) : 
+% % \left(x +10 \right)\)
+% %    \sol{Q = -9 x^5 -4 x^4 -4 x^2 +4 x +1;~R = 5}
+%   \item  \(\left(-4 x^5 -54 x^4 -106 x^3 +44 x^2 +7 x +73 \right) : 
+%           \left(x +11 \right)\)
+%    \sol{Q = -4 x^4 -10 x^3 +4 x^2 +7;~R = -4}
+% %   \item  \(\left(11 x^5 +83 x^4 -48 x^3 -55 x^2 +65 x -67 \right) : 
+% % \left(x +8 \right)\)
+% %    \sol{Q = 11 x^4 -5 x^3 -8 x^2 +9 x -7;~R = -11}
+% %   \item  \(\left(-3 x^5 +13 x^4 -15 x^3 +35 x^2 +43 x -38 \right) : 
+% % \left(x -4 \right)\)
+% %    \sol{Q = -3 x^4 + x^3 -11 x^2 -9 x +7;~R = -10}
+% %   \item  \(\left(-6 x^5 -60 x^4 +65 x^3 -16 x^2 -54 x -1 \right) : 
+% % \left(x +11 \right)\)
+% %    \sol{Q = -6 x^4 +6 x^3 - x^2 -5 x +1;~R = -12}
+% \item \(\left(7 x^4 -42 x^3 -2 x^2 +6 x +41 \right) : \left(x -6 \right)\)
+%    \sol{Q = 7 x^3 -2 x -6;~R = 5}
+%   \item  \(\left(10 x^4 -66 x^3 -26 x^2 -25 x +81 \right) : \left(x -7 
+% \right)\)
+%    \sol{Q = 10 x^3 +4 x^2 +2 x -11;~R = 4}
+% % \item \(\left(-2 x^5 -2 x^4 +68 x^3 -50 x^2 +49 x -6 \right) : \left(x 
+% % -5 \right)\)
+% %    \sol{Q = -2 x^4 -12 x^3 +8 x^2 -10 x -1;~R = -11}
+% \item \(\left(3 x^4 -10 x^3 +14 x^2 -6 x +3 \right) : \left(x -1 \right)\)
+%    \sol{Q = 3 x^3 -7 x^2 +7 x +1;~R = 4}
+%   \item  \(\left(11 x^4 +80 x^3 +17 x^2 -39 x -66 \right) : \left(x +7 
+% \right)\)
+%    \sol{Q = 11 x^3 +3 x^2 -4 x -11;~R = 11}
+%  \end{enumeratea}
+% \end{esercizio}
+% 
+% % \begin{esercizio}
+% % \label{ese:12.8}
+% % Completa la seguente divisione utilizzando la regola di 
+% % Ruffini:\quad~\(\left(x^{2}-3x+1\right):(x-3)\)
+% % \begin{itemize*}
+% % \item Calcolo del resto:~\((+3)^{2}-3(+3)+1=\ldots\)
+% % \item calcolo del quoziente:~\(Q(x)=1x+0=x\) \quad~\(R=\ldots\)
+% % \item verifica:~\((x-3)\cdot x+\ldots =x^{2}-3x+1\)
+% % \end{itemize*}
+% % \end{esercizio}
+% 
+% \begin{esercizio}[*]
+% \label{ese:div.005}
+% Risolvi le seguenti divisioni utilizzando la regola di Ruffini.
+%  \begin{enumeratea}
+%  \item \(\left(3x^{3}-4x^{2}+5x-1\right):(x-2)\)%ex~441
+%   \sol{Q(x)=3x^{2}+2x+9; \quad R(x)=17}
+%  \item \(\left(x^{5}-x^{3}+x^{2}-1\right):(x-1)\)%ex~442
+%   \sol{Q(x)=x^{4}+x^{3}+x+1; \quad R(x)=0}
+%  \item \(\left(x^{4}-10x^{2}+9\right):(x-3)\)%ex~443
+%   \sol{Q(x)=~x^{3}+3x^{2}-x-3; \quad R(x)=0}
+%  \item \(\left(x^{4}+5x^{2}+5x^{3}-5x-6 \right):(x+2)\)%ex~444
+%   \sol{Q(x)=x^{3}+3x^{2}-x-3; \quad R(x)=0}
+%  \item \(\left(4x^{3}-2x^{2}+2x-4 \right):(x+1)\)%ex~445
+%   \sol{Q(x)=4x^{2}-6x+8; \quad R(x)=-12}
+% %  \item \(\left(\dfrac{4}{3}y^{4}-2y^{2}+\dfrac{3}{2}y-2\right):
+% %  \left(y+\dfrac{1}{2}\right)\)%ex~446
+% %   \sol{Q(y)=\frac{4}{3}y^{3}-\frac{2}{3}y^{2}-\frac{5}{3}y+\frac{7}{3}; 
+% %           \quad R(y)=-\frac{19}{6}}
+% %  \item \(\left(\dfrac{1}{3}x^{5}-\dfrac{3}{2}x-2\right):(x+2)\)
+% %   \sol{Q(x)=\frac{1}{3}x^{4}-\frac{2}{3}x^{3}+\frac{4}{3}x^{2}-
+% %           \frac{8}{3}x+\frac{23}{6}; \quad R(x)=-\frac{29}{3}}
+% %  \item \(\left(2a-\dfrac{4}{3}a^{4}-2a^{2}-\dfrac{1}{3}\right):
+% %         \left(a-\dfrac{1}{2}\right)\)
+% % \sol{Q(a)=~{-\frac{4}{3}a^{3}-\frac{2}{3}a^{2}-
+% % \frac{7}{3}a+\frac{5}{6}}
+% %           \quad R(a)=\frac{1}{12}}
+%  \item \(\left(\dfrac{4}{3}y^{4}-\dfrac{3}{2}y^{3}+\dfrac{3}{2}y-2\right):
+%         \left(y+3\right)\)
+%   \sol{Q(y)=\frac{4}{3}y^{3}-\frac{11}{2}y^{2}+\frac{33}{2}y-48; 
+%           \quad R(y)=142}
+%  \item \(\left(27x^{3}-3x^{2}+2x+1\right):(x+3)\)
+%  \item \(\left(2x^{4}-5x^{3}-3x+2\right):(x-1)\)
+% %  \item \(\left(\dfrac{3}{4}x^{2}-\dfrac{x^{3}}{3}+2x^{4}\right):
+% %         \left(2x-\dfrac{3}{2}\right)\)
+% %  \item \(\left(6a^{3}-9a^{2}+9a-6\right):(3a-2)\)
+% %  \item \((2x^{4}-3x^{2}-5x+1):(2x-3)\)
+%  \item \(\left(x^{5}+\dfrac{1}{3}x^{4}-2x^{2}-\dfrac{2}{3}x\right):
+%         \left(x+\dfrac{1}{3}\right)\)
+% %  \item \(\left(x^{3}-2x^{2}+2x-4\right):(2x-2)\)
+% %   \sol{Q(x)=\frac{1}{2}x^{2}-\frac{1}{2}x+\frac{1}{2}; \quad 
+% % R(x)=-3}
+% %  \item \(\left(3x^{4}-2x^{3}+x-1\right):(2x-3)\)
+% % \sol{Q(x)=\frac{3}{2}x^{3}+\frac{5}{4}x^{2}+\frac{15}{8}x+
+% % \frac{53}{16}; \quad R(x)=\frac{143}{16}}
+% %  \item \(\left(\dfrac{3}{2}a^{4}-2a^{2}+a-\dfrac{1}{2}\right):(3a-1)\)
+% % \sol{Q(a)=\frac{1}{2}a^{3}+\frac{1}{6}a^{2}-
+% % \frac{11}{18}a+\frac{7}{54}; \quad R(a)=-{\frac{10}{27}}}
+%  \end{enumeratea}
+% \end{esercizio}
+% 
+% % \begin{esercizio}[*]
+% % \label{ese:12.15}
+% % Risolvi le seguenti divisioni nella variabile~\(a\)
+% %  \begin{enumeratea}
+% %  \item \(\left(3a^{4}b^{4}+a^{2}b^{2}+2ab+2\right):(ab-1)\)
+% %  \item \(\left(3a^{4}b^{2}-2a^{2}b\right):(a^{2}b-3)\)
+% %  \end{enumeratea}
+% % \end{esercizio}
+% % \paragraph{12.15.}
+% % a)~\(Q(a)=3a^{3}b^{3}+3a^{2}b^{2}+4ab+6\) \(R(a)=8\),\quad 
+% b)~\(Q(a)=3a^{2}b+7\) \(R(a)=21\)
+% % 
+% % \begin{esercizio}[*]
+% % \label{ese:12.16}
+% % Risolvi le seguenti divisioni nella variabile~\(x\) utilizzando la 
+% % regola di Ruffini.
+% %  \begin{enumeratea}
+% %  \item \(\left(x^{4}-ax^{3}-4a^{2}x^{2}+7a^{3}x-6a^{4}\right):(x-2a)\)
+% %  \item \(\left(x^{4}-2ax^{3}+2a^{3}x-a^{4}\right):(x+a)\)
+% %  \end{enumeratea}
+% % \end{esercizio}
+% % \paragraph{12.16.}
+% % a)~\(Q(x)=x^{3}+ax^{2}-2a^{2}x+3a^{3}\) \(R(x)=0\)\quad 
+% % b)~\(Q(x)=x^3-3ax^2+3a^2 x-a^3\) \(R(x)=0\)
+
+\subsubsection*{\numnameref{subsec:divpol_teorema_ruffini}}
+
+\begin{esercizio}[*]
+\label{ese:div.006}
+Risolvi utilizzando, quando puoi, il teorema di Ruffini.
+\begin{enumeratea}
+\item Per quale valore di~\(k\) il polinomio~\(x^{3}-2x^{2}+kx+2\) 
+è divisibile per~\(x^{2}-1\)? 
+\sol{k=-1}
+\item Per quale valore di~\(k\) il polinomio~\(x^{3}-2x^{2}+kx\) 
+è divisibile per~\(x^{2}-1\)? 
+\hfill[nessuno]
+\item Per quale valore di~\(k\) il polinomio~\(x^{3}-3x^{2}+x-k\) 
+è divisibile per~\(x+2\)? 
+\sol{k=-22}
+\item Scrivi, se possibile, un polinomio nella variabile~\(a\) che, 
+diviso per~\(a^{2}-1\) dia come quoziente~\(a^{2}+1\) e 
+come resto~\(-1\). 
+\sol{a^{4}-2} % ? perché devo mettere \mbox?
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:div.007}
+Risolvi utilizzando il teorema di Ruffini.
+\begin{enumeratea}
+\item Trovare un polinomio di secondo grado nella variabile~\(x\) che 
+risulti divisibile per~\((x-1)\) e per~\((x-2)\) e tale che il resto 
+della divisione per~\((x-3)\) sia uguale a~\(-4\) 
+\sol{-2x^2+6x-4}
+\item Per quale valore di~\(a\) la 
+divisione~\(\left(2x^{2}-ax+3\right):(x+1)\) dà resto~\(5\)? 
+\sol{a=0}
+\item Per quale valore di~\(k\) il 
+polinomio~\(2x^{3}-x^{2}+kx-3k\) è divisibile per~\(x+2\)? 
+\sol{k=-4}
+\item I polinomi~\(A(x)=x^3+2x^2-x+3k-2\) e~\(B(x)=kx^2-(3k-1)x-4k+7\) 
+divisi entrambi per~\(x+1\) per quale valore di~\(k\) hanno lo stesso resto? 
+\sol{k=2}
+\end{enumeratea}
+\end{esercizio}
+
+% \subsubsection*{15.1 - Cosa vuol dire scomporre in fattori}
+\subsubsection*{\numnameref{subsec:divpol_scomporre}}
+
+\begin{esercizio}
+\label{ese:div.008}
+Associa le espressioni a sinistra con i polinomi a destra.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \((a+2b)^{2}\)
+\item \(3ab^{2}(a^{2}-b)\)
+\item \((2a+3b)(a-2b)\)
+\item \((3a-b)(3a+b)\)
+\item \((a+b)^{3}\)
+\item \((a+b+c)^{2}\)
+\item \(2a^{2}-4ab+3ab-6b^{2}\)
+\item \(a^{2}+4ab+4b^{2}\)
+\item \(9a^{2}-b^{2}\)
+\item \(3a^{3}b^{2}-3ab^{3}\)
+\item \(a^{2}+b^{2}+c^{2}+2ab+2bc+2ac\)
+\item \(a^{3}+3a^{2}b+3ab^{2}+b^{3}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \subsubsection*{15.2 - Raccoglimento totale a fattore comune}
+\subsubsection*{\numnameref{subsec:divpol_fattorecomune}}
+
+\begin{esercizio}[*]
+\label{ese:div.009}
+Scomponi in fattori raccogliendo a fattore comune.
+\begin{enumeratea}
+\item \(ax+3a^{2}x-abx\) 
+\sol{ax(3a-b+1)}
+\item \(15b^{2}+12bc+21abx+6ab^{2}\) 
+\sol{3b(7ax+2ab+5b+4c)}
+\item \(15x^{2}y-10xy+25x^{2}y^{2}\) 
+\sol{5xy(5xy+3x-2)}
+\item \(-12a^{8}b^{9}-6a^{3}b^{3}-15a^{4}b^{3}\) 
+\sol{-3a^{3}b^{3}\left(4a^{5}b^{6}+5a+2\right)}
+\item \(2ab^{2}+2b^{2}c-2a^{2}b^{2}-2b^{2}c^{2}\) 
+\sol{2b^{2}(a+c-a^{2}-c^{2})}
+\item \(2m^{7}+8m^{6}+8m^{5}\) 
+\sol{2m^{5}\left(m+2\right)^{2}}
+\item \(9x^{2}b+6xb+18xb^{2}\) 
+\sol{3bx(3x+6b+2)}
+\item \(20a^{5}+15a^{7}+10a^{4}\) 
+\sol{5a^{4}\left(3a^{3}+4a+2\right)}
+\item \(x^{2}b-x^{5}-4x^{3}b^{2}\) 
+\sol{-x^{2}\left(x^{3}+4b^{2}x-b\right)}
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:div.010}
+Scomponi in fattori raccogliendo a fattore comune.
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(3xy+6x^{2}\)
+\item \(3xy-12y^{2}\)
+\item \(x^{3}-ax^{2}\)
+\item \(9a^{3}-6a^{2}\)
+\item \(b^{3}+\dfrac{1}{3}b\)
+\item \(5x^{2}-15x\)
+\item \(ab^{2}-a+a^{2}\)
+%  \item \(18x^{2}y-12y^{2}\)
+%  \item \(4x^{2}y-x^{2}\)
+%  \item \(5x^{3}-2x^{2}\)
+\item \(-2x^{3}+2x\)
+%  \item \(3a+3\)
+\item \(-8x^{2}y^{3}-10x^{3}y^{2}\)
+\item \(\dfrac{1}{7}x^{2}y+x\)
+\item \(2b^{6}+4b^{4}-b^{9}\)
+\item \(2a^{2}b^{2}x-4a^{2}b\)
+\item \(-a^{4}-a^{3}-a^{5}\)
+\item \(-3a^{2}b^{2}+6ab^{2}-15b\)
+\item \(-{\dfrac{4}{9}}x+\dfrac{2}{3}x^{2}-\dfrac{1}{3}x^{3}\)
+\item \(a^{2}b-b+b^{2}\)
+\item \(x^{2}y^{3}ab-x^{2}yab\)
+\item \(\dfrac{1}{2}a^{2}+\dfrac{1}{2}a\)
+\item \(2b^{6}+4b^{4}-b^{9}\)
+\item \(-5a^{4}-10a^{2}-30a\)
+\item \(\dfrac{3}{5}ax^{2}+\dfrac{7}{5}ax\)
+\item \(-a^{2}b^{2}-a^{3}b^{5}+b^{3}\)
+\item \(-2x^{6}+4x^{5}-6x^{3}y^{9}\)
+\item \(\dfrac{3}{4}x^{3}y+\dfrac{1}{2}x^{2}y-xy\)
+%  \item \(-2x^{2}z^{3}+4z^{5}-6x^{3}z^{3}\)
+%  \item \(\dfrac{1}{3}ab^{3}+\dfrac{1}{6}a^{3}b^{2}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+%inserire dei raccoglimenti in cui un risultato sia 1: (9a^4+3a^2)
+
+
+\begin{esercizio}
+\label{ese:div.011}
+Scomponi in fattori raccogliendo a fattore comune.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(\dfrac{2}{3}a^{2}b-\dfrac{4}{3}a^{4}b^{3}-\dfrac{5}{9}a^{2}b^{2}\)
+\item \(12a^{3}x^{5}-18ax^{6}-6a^{3}x^{4}+3a^{2}x^{4}\)
+\item \(-5a^{2}+10ab^{2}-15a\)
+\item \(\dfrac{2}{3}a^{4}bc^{2}-4ab^{3}c^{2}+\dfrac{10}{3}abc^{2}\)
+\item \((x+y)^{3}-(x+y)^{2}\)
+\item \(a(x+y)-b(x+y)\)
+\item \(2(x-3y)-y(3y-x)\)
+\item \(2x(x-1)-3a^{2}(x-1)\)
+\item \(-{\dfrac{3}{5}}a^{4}bx+\dfrac{3}{2}ab^{4}x-2a^{3}b^{2}x\)
+\item \(5y^{3}(x-y)^{3}-3y^{2}(x-y)\)
+\item \(5a(x+3y)-3(x+3y)\)
+\item 
+\(-{\dfrac{5}{2}}a^{3}b^{3}-\dfrac{5}{3}a^{4}b^{2}+\dfrac{5}{6}a^{3}b^{4}\)
+\item \(91m^{5}n^{3}+117m^{3}n^{4}\)
+% \item \(\dfrac{2}{3}a^{2}x+\dfrac{5}{4}ax^{2}-\dfrac{5}{4}ax\)
+\item \(a^{n}+a^{n-1}+a^{n-2}\)
+ \item \(a^{n}+a^{2n}+a^{3n}\)
+ \item \(2x^{2n}-6x^{(n-1)}+4x^{(3n+1)}\)
+%  \item \(a^{2}x^{n-1}-2a^{3}x^{n+1}+a^{4}x^{2n}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}[*]
+% \label{ese:15.13}
+% Scomponi in fattori raccogliendo a fattore comune.
+%  \begin{enumeratea}
+%  \item \(a^{n}+a^{n+1}+a^{n+2}\) 
+%   \sol{a^{n}(1+a+a^{2})}
+%  \item \((a+2)^{3}-(a+2)^{2}-a-2\) 
+%   \sol{(a+2)\left(a^{2}+3a+1\right)}
+%  \item \(2a(x-2)+3x(x-2)^{2}-(x-2)^{2}\) 
+%   \sol{(x-2)\left(3x^2-7x+2a+2\right)}
+%  \item \(x^{2}(a+b)^{3}+x^{3}(a+b)+x^{5}(a+b)^{2}\) 
+%   \sol{x^{2}(a+b)(ax^{3}+bx^{3}+x+a^{2}+2ab+b^{2})}
+%  \item \(3(x+y)^{2}-6(x+y)+2x(x+y)\) 
+%   \sol{(x+y)\left(5x+3y-6\right)}
+% \end{enumeratea}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+Scomponi in fattori raccogliendo a fattore comune.
+\label{ese:div.012}
+\begin{enumeratea}
+\item \(3x^{2}(a+b)-2x^{3}(a+b)+5x^{5}(a+b)\)
+\sol{x^{2}(a+b)(5x^{3}-2x+3)}
+\item \((2x-y)^{2}-5x^{3}(2x-y)-3y(2x-y)^{3}\)
+\sol{(2x-y)\left(2x-y-5x^3-12x^2y+12xy^2-3y^3\right)}
+\end{enumeratea}
+\end{esercizio}
+
+% \subsubsection*{15.3 - Raccoglimento parziale a fattore comune}
+\subsubsection*{\numnameref{subsec:divpol_raccoglimentoparziale}}
+
+\begin{esercizio}[*]
+\label{ese:div.013}
+Scomponi in fattori con il raccoglimento parziale a fattore comune, se 
+possibile.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(2x-2y+ax-ay\) 
+\sol{(x-y)(2+a)}
+\item \(3ax-6a+x-2\) 
+\sol{(x-2)(3a+1)}
+\item \(ax+bx-ay-by\) 
+\sol{(a+b)(x-y)}
+\item \(3x^{3}-3x^{2}+3x-3\) 
+\sol{(3x-3)\left(x^2+1\right)}
+\item \(x^{3}-x^{2}+x-1\) 
+\sol{(x-1)\left(x^{2}+1\right)}
+\item \(ay+2x^{3}-2ax^{3}-y\) 
+\sol{(a-1)\left(y-2x^{3}\right)}
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:div.014}
+Scomponi in fattori con il raccoglimento parziale a fattore comune, se 
+possibile.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(3ax-9a-x+3\)
+\item \(ax^{3}+ax^{2}+bx+b\)
+\item \(2ax-4a-x+2\)
+\item \(b^{2}x+b^{2}y+2ax+2ay\)
+\item \(-x^{3}+x^{2}+x-1\)
+\item \(x^{3}+x^{2}-x-1\)
+\item \(x^{3}-1-x+x^{2}\)
+\item \(-x^{3}-x-1-x^{2}\)
+\item \(x^{3}+x^{2}+x+1\)
+\item \(b^{2}x-b^{2}y+2x-2y\)
+\item \(b^{2}x-b^{2}y-2ax-2ay\)
+\item \(xy+x+ay+a+by+b\)
+\item \(3x+6+ax+2a+bx+2b\)
+\item \(2x-2+bx-b+ax-a\)
+\item \(2x-2+bx-b-ax+a\)
+\item \(2x+2+bx-b-ax+a\)
+ \item \(3xy^{3}-6xy-ay^{2}+2a\)
+ \item \(a^{2}x^{3}+a^{2}x^{2}+a^{2}x-2x^{2}-2x-2\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+% 
+% \begin{esercizio}
+% \label{ese:15.23}
+% Scomponi in fattori con il raccoglimento parziale a fattore comune, se 
+% possibile.
+% \begin{htmulticols}{2}
+% \begin{enumeratea}
+%  \item \(2x-b+ax-a-2+bx\)
+%  \item \(a^{3}+2a^{2}+a+2\)
+%  \item \(a^{2}x+ax-a-1\)
+%  \item \(3x^{4}-3x^{3}+3x^{2}-3x\)
+%  \item \(2ax-2a+abx-ab+a^{2}x-a^{2}\)
+%  \item \(\dfrac{2}{3}x^{3}-\dfrac{1}{3}x^{2}+2x-1\)
+%  \item \(3x^{4}y^{4}-6x^{4}y^{2}-ax^{3}y^{3}+2ax^{3}y\)
+%  \item \(ax+bx+2x-a-b-2\)
+%  \item \(3(x+y)^{2}+5x+5y\)
+%  \item \(3x^{4}+9x^{2}-6x^{3}-18x\)
+%  \item \(2a-a^{2}+8b-4ab\)
+%  \item \(4x^{2}+3a+4xy-4ax-3y-3x\)
+%  \item \(3x^{4}-3x^{3}+2x-2\)
+%  \item \(\dfrac{2}{5}b^{2}x-\dfrac{4}{5}bx+by-2y\)
+% \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:div.015}
+Scomponi in fattori con il raccoglimento parziale a fattore comune, se 
+possibile.
+\begin{enumeratea}
+\item \(bx^{2}-bx+b+x^{2}-x+1\) 
+\sol{(b+1)(x^{2}-x+1)}
+\item \(a^{3}-a^{2}b^{2}-ab+b^{3}\) 
+\sol{\left(a^{2}-b\right)\left(a-b^{2}\right)}
+\item \(\dfrac{1}{5}a^{2}b+3ab^{2}-\dfrac{1}{3}a-5b\) 
+\sol{\left(\frac{3}{5}ab-1\right)\left(\frac{1}{3}a+5b\right)}
+\end{enumeratea}
+\end{esercizio}
+% 
+% \begin{esercizio}[*]
+% \label{ese:15.28}
+% Scomponi in fattori con il raccoglimento parziale a fattore comune, se 
+% possibile.
+%  \begin{enumeratea}
+%  \item \((a-2)(a-3)+ab-2b\) 
+%   \sol{(a-2)(a-3+b)}
+%  \item \(\dfrac{1}{8}x^{3}-2xy^{2}+\dfrac{1}{2}yx^{2}-8y^{3}\)
+%   \sol{(x+4y)\left(\frac{1}{8}x^2-2y^2\right)}
+%  \item \(ab-bx^{2}-\dfrac{2}{3}ax+\dfrac{2}{3}x^{3}\)
+%   \sol{\left(a-x^2\right)\left(b-\frac{2}{3}x\right)}
+% \end{enumeratea}
+% \end{esercizio}
+% 
+% \begin{esercizio}[*]
+% \label{ese:15.29}
+% Scomponi in fattori con il raccoglimento parziale a fattore comune, se 
+% possibile.
+% \begin{enumeratea}
+%  \item \(45x^{3}+15xy+75x^{2}y+21x^{2}y^{2}+7y^{3}+35xy^{3}\)
+%   \sol{\left(15x+7y^{2}\right)\left(3x^{2}+y+5xy\right)}
+%  \item \(10x^3-12x^2-5xy+6y\)
+%   \sol{\left(2x^2-y\right)(5x-6)}
+%  \item \(6a^3+3a^2b-2ab^3-b^4\)
+%   \sol{(3a^2-b^3)(2a+b)}
+% \end{enumeratea}
+% \end{esercizio}
+% 
+% \begin{esercizio}[*]
+% \label{ese:15.30}
+% Scomponi in fattori raccogliendo prima a fattore comune totale e poi parziale.
+%  \begin{enumeratea}
+%  \item \(a^{14}+4a^{10}-2a^{12}-8a^{8}\)
+%   \sol{a^{8}\left(a^{2}-2\right)\left(a^{4}+4\right)}
+%  \item \(3x^{2}(x+y)^{2}+5x^{3}+5x^{2}y\)
+%   \sol{x^{2}(x+y)(3x+3y+5)}
+%  \item \(ax^{3}y+ax^{2}y+axy+ay\)
+%   \sol{ay(x+1)(x^{2}+1)}
+% \end{enumeratea}
+% \end{esercizio}
+% 
+% \begin{esercizio}
+% \label{ese:15.31}
+% Scomponi in fattori raccogliendo prima a fattore comune totale e poi parziale.
+% \begin{htmulticols}{2}
+% \begin{enumeratea}
+%  \item \(b^{2}x+b^{2}y-2bx-2by\) %ex63
+%  \item \(b^{2}x-2bx-2by+b^{2}y\)%ex65
+%  \item \(2ab^{2}+2b^{2}c-2a^{2}b^{2}-2ab^{2}c\) %ex67
+%  \item \(3ax+6a+a^{2}x+2a^{2}+abx+2ab\)%ex69
+% \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:div.016}
+Scomponi in fattori raccogliendo prima a fattore comune totale e poi 
+parziale.
+\begin{enumeratea}
+\item \(2^{11}x^{2}+2^{12}x+2^{15}x+2^{16}\)
+\sol{2^{11}(x+2)(x+16)}
+\item \(6x^{2}+6xy-3x(x+y)-9x^{2}(x+y)^{2}\)
+\sol{-3x(x+y)\left(3x^2+3xy-1\right)}
+\item \(2x^{3}+2x^{2}-2ax^{2}-2ax\)
+\sol{2x(x+1)(x-a)}
+\item \(\dfrac{2}{3}ax^{3}-\dfrac{1}{3}ax^{2}+\dfrac{2}{3}ax-\dfrac{1}{3}a\)
+\sol{\frac{1}{3}a(x^{2}+1)(2x-1)}
+\item \(\dfrac{7}{3}x^{2}-\dfrac{7}{3}xy+\dfrac{1}{9}x^{3}-
+\dfrac{1}{9}x^{2}y-\dfrac{5}{9}(x^{2}-xy)\)
+\sol{\frac{1}{9}x(x-y)(16+x)}
+\item \(2b(x+1)^{2}-2bax-2ba+4bx+4b\)
+\sol{2b(x+1)(x-a+3)}
+%  \item \(2bx^{2}+4bx-2x^{2}-4ax\)
+%  \item \(x^{4}+x^{3}-x^{2}-x\)
+%  \item \(15x(x+y)^{2}+5x^{2}+5xy\)
+%  \item \(2a^{2}mx-2ma^{2}-2a^{2}x+2a^{2}\)
+\end{enumeratea}
+\end{esercizio}
+
+% \newpage %-----------------------------------------
+
+% \subsubsection*{16.4 - Differenza di due quadrati}
+\paragraph*{\numnameref{subsubsec:divpol_difquad}}
+
+\begin{esercizio}
+\label{ese:div.017}
+Scomponi i seguenti polinomi come differenza di quadrati.
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(a^{2}-25b^{2}\)
+\item \(16-x^{2}y^{2}\)
+\item \(25-9x^{2}\)
+\item \(4a^{4}-9b^{2}\)
+\item \(x^{2}-16y^{2}\)
+\item \(\dfrac{1}{4}x^{4}-\dfrac{1}{9}y^{4}\)
+\item \(144x^{2}-9y^{2}\)
+\item \(16x^{4}-81z^{2}\)
+\item \(a^{2}b^{4}-c^{2}\)
+\item \(4x^{6}-9y^{4}\)
+\item \(-36x^{8}+25b^{2}\)
+\item \(\dfrac{a^{2}}{4}-\dfrac{y^{2}}{9}\)
+\item \(-1+a^{2}\)
+\item \(2a^{2}-50\)
+\item \(a^{3}-16{ab}^{6}\)
+\item \(-4x^{2}y^{2}+y^{2}\)
+\item \(-4a^{2}+b^{2}\)
+\item \(25x^{2}y^{2}-\dfrac{1}{4}z^{6}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}
+% \label{ese:16.32}
+% Scomponi i seguenti polinomi come differenza di quadrati.
+% \begin{htmulticols}{3}
+% \begin{enumeratea}
+%  \item \(-a^{2}b^{4}+49\)
+%  \item \(16y^{4}-z^{4}\)
+%  \item \(a^{8}-b^{8}\)
+%  \item \(a^{4}-16\)
+%  \item \(\dfrac{1}{4}x^{2}-1\)
+%  \item \(16a^{2}-9b^{2}\)
+%  \item \(9-4x^{2}\)
+%  \item \(a^{2}-9b^{2}\)
+%  \item \(1,5625a^{2}-1\)
+%  \item \(25a^{2}b^{2}-\dfrac{9}{16}y^{6}\)
+%  \item \(-16+25x^{2}\)
+%  \item \(-4x^{8}+y^{12}\)
+%  \item \(x^{6}-y^{8}\)
+%  \item \(x^{4}-y^{8}\)
+%  \item \(\dfrac{1}{4}x^{2}-0,01y^{4}\)
+% \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:div.018}
+Quando è possibile, scomponi in fattori, riconoscendo la differenza di due 
+quadrati.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \((b+3)^{2}-x^{2}\) 
+\sol{(b+3-x)(b+3+x)}
+\item \(a^{8}-(b-1)^{2}\) 
+\sol{(a^{4}-b+1)(a^{4}+b-1)}
+\item \((x-1)^{2}-a^{2}\) 
+\sol{(x+a-1)(x-a-1)}
+\item \((x-3)^{2}-9y^{2}\) 
+\sol{(x+3y\!-\!3)(x-3y\!-\!3)}
+\item \((x+1)^{2}-(y-1)^{2}\) 
+\sol{(x+y)(x-y+2)}
+\item \(x^{2}+2x+1-y^{2}\) 
+\sol{(x\!+\!y\!+\!1)(x\!-\!y\!+\!1)}
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}
+% \label{ese:16.36}
+% Quando è possibile, scomponi in fattori, riconoscendo la differenza di due 
+% quadrati.
+% \begin{htmulticols}{3}
+% \begin{enumeratea}
+%  \item \((x-y)^{2}-(y+z)^{2}\)
+%  \item \(-(2a-1)^{2}+(3b+3)^{2}\)
+%  \item \(x^{2}-b^{2}-9-6b\)
+%  \item \(b^{2}-x^{4}+1+2b\)
+%  \item \(a^{4}+4a^{2}+4-y^{2}\)
+%  \item \(x^{2}-y^{2}-1+2y\)
+%  \item \(-(a+1)^{2}+9\)
+%  \item \(a^{2}+1+2a-9\)
+%  \item \(16x^{2}y^{6}-(xy^{3}+1)^{2}\)
+%  \item \(4a^{2}+1-4a-16\)
+%  \item \(x^{2}y^{4}-z^{2}+9+6xy^{2}\)
+%  \item \((a-1)^{2}-(a+1)^{2}\)
+%  \item \(a^{2n}-4\)
+%  \item \(a^{2m}-b^{2n}\)
+%  \item \(x^{2n}-y^{4}\)
+% \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:div.019}
+Quando è possibile, scomponi in fattori, riconoscendo la differenza di due 
+quadrati.
+\begin{enumeratea}
+\item \((2x+3)^{2}-(2y+1)^{2}\) 
+\sol{4(x+y+2)(x-y+1)}
+\item \(a^{2}-2{ab}+b^{2}-4\) 
+\sol{(a-b-2)(a-b+2)}
+\item \((2x-3a)^{2}-(x-a)^{2}\) 
+\sol{(3x-4a)(x-2a)}
+\item \(a^{2}-6a+9-x^{2}-16-8x\) 
+\sol{-(x+a+1)(x-a+7)}
+\item \(x^{2}+25+10x-y^{2}+10y-25\) 
+\sol{(x+y)(x-y+10)}
+\end{enumeratea}
+\end{esercizio}
+
+% \subsubsection*{16.1 - Quadrato di un binomio}
+\paragraph*{\numnameref{subsubsec:divpol_quadbin}}
+
+\begin{esercizio}
+\label{ese:div.020}
+Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un binomio.
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(a^{2}-2a+1\)
+\item \(x^{2}+4x+4\)
+\item \(y^{2}-6y+9\)
+\item \(16t^{2}+8t+1\)
+\item \(\dfrac{1}{4}a^{2}+ab+b^{2}\)
+\item \(\dfrac{1}{4}x^{2}-\dfrac{1}{3}x+\dfrac{1}{9}\)
+\item \(9a^{2}-6a+1\)
+\item \(4x^{2}-12x+9\)
+\item \(9x^{2}+4+12x\)
+\item \(4x^{2}+4xy+y^{2}\)
+\item \(\dfrac{4}{9}a^{{4}}-4a^{2}+9\)
+\item \(-9x^{2}-\dfrac{1}{4}+3x\)
+\item \(4x^{2}+1+4x\)
+\item \(-x^{2}-6xy-9y^{2}\)
+\item \(x^{2}-6xy+9y^{2}\)
+\item \(a^{4}+36a^{2}+12a^{3}\)
+\item \(16a^{2}+\dfrac{1}{4}b^{2}-4ab\)
+\item \(144x^{2}-6xa^{2}+\dfrac{1}{16}a^{4}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}
+% \label{ese:16.4}
+% Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un 
+% binomio.
+% \begin{htmulticols}{2}
+% \begin{enumeratea}
+%  \item \(25+10x+x^{2}\)
+%  \item \(25-10x+x^{2}\)
+%  \item \(4x^{2}+2x^{4}+1\)
+%  \item \(4x^{2}-4x^{4}-1\)
+%  \item \(-a^{3}-2a^{2}-a\)
+%  \item \(3a^{7}b-6a^{5}b^{2}+3a^{3}b^{3}\)
+%  \item \(100+a^{2}b^{4}+20ab^{2}\)
+%  \item \(2x^{13}-8x^{8}y+8x^{3}y^{2}\)
+%  \item \(x^{8}+8x^{4}y^{2}+16y^{4}\)
+%  \item \(\dfrac{1}{4}x^{2}+\dfrac{1}{3}xy+\dfrac{1}{9}y^{2}\)
+%  \item \(\dfrac{9}{25}a^{4}-6a^{2}+25\)
+%  \item \(-x^{2}+6{xy}+9y^{2}\)
+%  \item \(4a^{2}b^{4}-12ab^{3}+9b^{6}\)
+%  \item \(a^{2}+a+1\)
+%  \item \(36a^{6}b^{3}+27a^{5}b^{4}+12a^{7}b^{2}\)
+%  \item \(25x^{14}+9y^{6}+30x^{7}y^{3}\)
+%  \item \(-a^{7}-25a^{5}+10a^{6}\)
+%  \item \(25a^{2}+49b^{2}+35ab\)
+%  \item \(4y^{6}+4-4y^{2}\)
+%  \item \(25a^{2}-10{ax}-x^{2}\)
+%  \item \(\dfrac{9}{x^{2}}+\dfrac{4}{y^{2}}-\dfrac{1}{3}{xy}\)
+%  \item \(\dfrac{1}{4}a^{2}+2ab+b^{2}\)
+% \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+
+\begin{esercizio}
+\label{ese:16.8}
+Individua perché i seguenti polinomi non sono quadrati di un binomio.
+\begin{enumeratea}
+\item \(4x^{2}+4xy-y^{2}\)\, non è un quadrato di binomio perché\,\dotfill;
+\item \(x^{2}-6xy+9y\)\, non è un quadrato di binomio perché\dotfill;
+\item \(25+100x+x^{2}\)\, non è un quadrato di binomio perché\dotfill;
+\item \(\dfrac{1}{4}x^{2}+\dfrac{2}{3}xy+\dfrac{1}{9}\) 
+non è un quadrato di binomio perché\dotfill;
+\item \(25t^{2}+4-10t\)\, non è un quadrato di binomio perché\dotfill%ex103
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:div.021}
+Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un 
+binomio.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(24a^{3}+6a+24a^{2}\) 
+\sol{6a(2a+1)^{2}}
+\item \(3a^{2}x-12axb+12b^{2}x\) 
+\sol{3x(a-2b)^{2}}
+\item \(25a^{2}+10ax+x^{2}\) 
+\sol{(x+5a)^{2}}
+\item \(x^{6}y+x^{2}y+2x^{4}y\) 
+\sol{x^{2}y\left(x^{2}+1\right)^{2}}
+\item \(x^{5}+4x^{4}+4x^{3}\) 
+\sol{x^{3}(x+2)^{2}}
+\item \(2y^{3}-12y^{2}x+18x^{2}y\) 
+\sol{2y(3x-y)^{2}}
+\item \(-50t^{3}-8t+40t^{2}\) 
+\sol{-2t(5t-2)^{2}}
+\item \(2^{10}x^{2}+2^{6}\cdot 3^{20}x+3^{40}\) 
+\sol{\left(2^{5}x+3^{20}\right)^{2}}
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}[*]
+% \label{ese:16.11}
+% Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un 
+% binomio.
+% \begin{enumeratea}
+%  \item \(2^{20}x^{40}-2^{26}\cdot x^{50}+2^{30}\cdot x^{60}\)
+%   \sol{2^{20} x^{40}\left(1-2^{5}x^{10} \right)^2}
+%  \item \(10^{100}x^{50}-2\cdot 10^{75}x^{25}+10^{50}\)
+%   \sol{10^{50}\left(10^{25} x^{25}-1 \right)^2}
+%  \item \(10^{11}x^{10}-2\cdot 10^{9}x^{5}+10^{6}\)
+%   \sol{10^{6} \left(10^{5} x^{10}-2 \cdot 10^{3}x^{5}+1\right)}
+%  \item \(x^{2n}+2x^{n}+1\)
+%   \sol{\left(x^{n}+1\right)^2}
+% \end{enumeratea}
+% \end{esercizio}
+
+% \newpage %-----------------------------------------
+
+% \subsubsection*{16.2 - Quadrato di un polinomio}
+\paragraph*{\numnameref{subsubsec:divpol_quadpol}}
+
+\begin{esercizio}
+\label{ese:16.13}
+Quando è possibile, scomponi in fattori.
+
+\vspace{-.5em}
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(a^{2}+b^{2}+c^{2}+2ab+2ac+2bc\)
+\item \(x^{2}+y^{2}+z^{2}+2xy-2xz-2yz\)
+\item \(x^{2}+y^{2}+4+4x+2xy+4y\)
+\item \(4a^{4}-6{ab}-4a^{2}b+12a^{3}+b^{2}+9a^{2}\)
+\item \(x^{2}+\dfrac{1}{4}y^{2}+4-xy+4x-2y\)
+\item \(9x^{6}+2y^{2}z+y^{4}-6x^{3}z-6x^{3}y^{2}+z^{2}\)
+\item \(a^{2}+2ab+b^{2}-2a+1-2b\)
+\item \(a^{2}+b^{2}+c^{2}-2ac-2bc+2ab\)
+\item \(-x^{2}-2xy-9-y^{2}+6x+6y\)
+%  \item \(4a^{2}+4ab-8a+b^{2}-4b+4\)
+%  \item \(a^{2}b^{2}+2a^{2}b+a^{2}-2ab^{2}-2ab+b^{2}\)
+\item \(\dfrac{1}{4}a^{2}+b^{4}+c^{6}+ab^{2}+{ac}^{3}+2b^{2}c^{3}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\begin{esercizio}
+Individua perché i seguenti polinomi non sono quadrati.
+\label{ese:16.16}
+\begin{enumeratea}
+\item \(a^{2}+b^{2}+c^{2}\)\, non è un quadrato perché\dotfill;
+\item \(x^{2}+y^{2}+4+4x+4xy+4y\)\, non è un quadrato perché\dotfill;
+\item \(a^{2}+b^{2}+c^{2}-2ac-2bc-2ab\)\, non è un quadrato perché\dotfill;
+\item \(a^{2}+b^{2}-1-2a-2b+2ab\)\, non è un quadrato perché\dotfill
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:16.17}
+Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un 
+polinomio.
+\begin{enumeratea}
+\item \(a^{2}+4ab-2a+4b^{2}-4b+1\)
+\sol{(a+2b-1)^{2}}
+\item \(a^{2}b^{2}+2a^{2}b+a^{2}+4ab^{2}+4ab+4b^{2}\)
+\sol{(ab+a+2b)^{2}}
+\item \(x^{2}-6xy+6x+9y^{2}-18y+9\)
+\sol{(x-3y+3)^{2}}
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:16.18}
+Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un 
+polinomio.
+\begin{enumeratea}
+\item \(x^{4}+2x^{3}+3x^{2}+2x+1\)\quad  sostituisci 
+\quad~\(3x^{2}\) con: \(x^{2}+2x^{2}\)
+\item \(4a^{4}+8a^{2}+1+8a^{3}+4a\)\quad  sostituisci 
+\quad~\(8a^{2}\) con: \(4a^{2}+4a^{2}\)
+\item \(9x^{4}+6x^{3}-11x^{2}-4x+4\) \quad sostituisci 
+\quad~\(-11x^{2}\) in maniera opportuna
+\end{enumeratea}
+\end{esercizio}
+
+% \begin{esercizio}
+% \label{ese:16.19}
+% Quando è possibile, scomponi in fattori, riconoscendo il quadrato di un 
+% polinomio.
+% \begin{enumeratea}
+%  \item \(25x^{2}-20ax-30bx+4a^{2}+12ab+9b^{2}\)
+%  \item \(2a^{10}x+4a^{8}x+2a^{6}x+4a^{5}x+4a^{3}x+2x\)
+%  \item \(a^{2}+b^{2}+c^{2}+d^{2}-2ab+2ac-2ad-2bc+2bd-2cd\)
+%  \item \(x^{6}+x^{4}+x^{2}+1+2x^{5}+2x^{4}+2x^{3}+2x^{3}+2x^{2}+2x\)
+% \end{enumeratea}
+% \end{esercizio}
+
+% \subsubsection*{16.3 - Cubo di un binomio}
+\paragraph*{\numnameref{subsubsec:divpol_cubobin}}
+
+\begin{esercizio}
+\label{ese:16.20}
+Quando è possibile, scomponi in fattori, riconoscendo il cubo di un binomio.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(a^{6}+3a^{4}b^{2}+3a^{2}b^{4}+b^{6}\) 
+\sol{\left(a^{2}+b^{2}\right)^{3}}
+\item \(8a^{3}\!-\!36a^{2}b\!+\!54ab^{2}\!-\!27b^{3}\) 
+\sol{(2a\!-\!3b)^{3}}
+\item \(a^{6}+3a^{5}+3a^{4}+a^{3}\) 
+\sol{a^{3}(a+1)^{3}}
+\item \(a^{10}-8a-6a^{7}+12a^{4}\) 
+\sol{a\left(a^3-2\right)^3}
+\item \(-x^{9}-3x^{6}+3x^{3}+8\)
+%  \item \(8a^{3}+b^{3}+12a^{2}b+6ab^{2}\)
+\item \(b^{3}+12a^{2}b-6ab^{2}-8a^{3}\)
+\item \(-12a^{2}+8a^{3}-b^{3}+6ab\)
+\item \(-12a^{2}b+6ab+8a^{3}-b^{3}\)
+\item \(x^{3}+x^{2}+\dfrac{1}{3}x+\dfrac{1}{27}\)
+\item \(-x^{3}-6x^{2}-12x-8\)
+%  \item \(0,001x^{6}+0,015x^{4}+0,075x^{2}+0,125\)
+\item \(x^{3}y^{6}+1+3x^{2}y^{2}+3xy^{2}\)
+\item \(x^{3}+3x-3x^{2}-1\)
+\item \(-5x^{5}y^{3}-5x^{2}-15x^{4}y^{2}-15x^{3}y\)
+%  \item \(-a^{6}+27a^{3}+9a^{5}-27a^{4}\)
+%  \item \(64a^{3}-48a^{2}+12a-1\)
+%  \item \(a^{6}+9a^{4}+27a^{2}+27\)
+%  \item \(\dfrac{27}{8}a^{3}-\dfrac{27}{2}a^{2}x+18ax^{2}-8x^{3}\)
+\item \(x^{3}-x^{2}+\dfrac{1}{3}x-\dfrac{1}{27}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:16.24}
+Individua perché i seguenti polinomi non sono cubi.
+\begin{enumeratea}
+\item \(a^{10}-8a-6a^{7}+12a^{4}\)\, non è un cubo perché\dotfill;
+\item \(27a^{3}-b^{3}+9a^{2}b-9ab^{2}\)\, non è un cubo perché\dotfill;
+\item \(8x^{3}+b^{3}+6x^{2}b+6{xb}^{2}\)\, non è un cubo perché\dotfill;
+\item \(x^{3}+6ax^{2}-6a^{2}x+8a^{3}\)\, non è un cubo perché\dotfill
+\end{enumeratea}
+\end{esercizio}
+
+% \begin{esercizio}
+% \label{ese:16.27}
+% Quando è possibile, scomponi in fattori, riconoscendo il cubo di un binomio.
+% \begin{htmulticols}{2}
+% \begin{enumeratea}
+%  \item \(x^{3}-6x^{2}+12x-8\)
+%  \item \(a^{3}b^{3}+12ab+48ab+64\)
+%  \item \(216x^{3}-540ax^{2}+450a^{2}x-125a^{3}\)
+%  \item \(8x^{3}+12x^{2}+6x+2\)
+%  \item \(8x^{3}-36x^{2}+54x-27\)
+%  \item \(x^{6}+12ax^{4}+12a^{2}x^{2}+8a^{3}\)
+%  \item \(x^{300}-10^{15}-3\cdot 10^{5}x^{200}+3\cdot 10^{10}x^{100}\)
+%  \item \(a^{6n}+3a^{4n}x^{n}+3a^{2n}x^{2n}+x^{3n}\)
+% \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+% 
+% \begin{esercizio}
+% \label{ese:16.28}
+% Quando è possibile, scomponi in fattori, riconoscendo il cubo di un binomio.
+% \begin{enumeratea}
+%  \item \(10^{15}a^{60}+3\cdot 10^{30}a^{45}+3\cdot 
+% 10^{45}a^{30}+10^{60}a^{15}\)
+%  \item \(10^{-33}x^{3}-3\cdot 10^{-22}x^{2}+3\cdot 10^{-11}x-1\)
+% \end{enumeratea}
+% \end{esercizio}
+
+% \newpage %-----------------------------------------
+
+% \subsubsection*{17.1 - Trinomi particolari}
+\subsubsection*{\numnameref{subsubsec:trinpart}}
+
+\begin{esercizio}
+\label{ese:17.1}
+Scomponi in fattori i seguenti trinomi particolari.
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(x^{2}-5x-36\)
+\item \(x^{2}-17x+16\)
+\item \(x^{2}-13x+12\)
+\item \(x^{2}+6x+8\)
+\item \(x^{2}+7x+12\)
+\item \(x^{2}-2x-3\)
+\item \(x^{2}+9x+18\)
+\item \(x^{2}-5x+6\)
+\item \(x^{2}-8x-9\)
+\item \(x^{2}-7x+12\)
+\item \(x^{2}-6x+8\)
+\item \(x^{2}-51x+50\)
+\item \(x^{2}-3x-4\)
+\item \(x^{2}+5x-14\)
+\item \(x^{2}+4x-12\)
+\item \(x^{2}-3x+2\)
+\item \(x^{2}+3x-10\)
+\item \(x^{2}+13x+12\)
+\item \(x^{2}+2x-35\)
+\item \(x^{2}+5x-36\)
+\item \(x^{2}+8x+7\)
+%  \item \(x^{2}-10x+24\)
+%  \item \(y^{2}+y-20\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:17.5}
+Scomponi in fattori i seguenti trinomi particolari.
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(x^{4}+8x^{2}+12\)
+\item \(x^{4}-5x^{2}+4\)
+\item \(x^{6}-5x^{3}+4\)
+\item \(x^{4}+9x^{2}-10\)
+\item \(x^{6}-x^{3}-30\)
+\item \(x^{2}y^{2}-2xy-35\)
+\item \(a^{4}b^{2}-a^{2}b-72\)
+\item \(x^{4}+11x^{2}+24\)
+\item \(-x^{6}+7x^{3}-10\)
+%  \item \(2x^{3}+14x^{2}+20x\)
+%  \item \(-3x^{6}+15x^{4}-12x^{2}\)
+%  \item \(x^{4}-37x^{2}+36\)
+%  \item \(x^{20}+4x^{12}-32x^{4}\)
+%  \item \(x^{40}-x^{20}-20\)
+%  \item \(x^{14}-37x^{7}+36\)
+%  \item \(x^{2}+4xy-32y^{2}\)
+%  \item \(a^{2}-ax-20x^{2}\)
+%  \item \(a^{2}-12xa-64x^{2}\)
+%  \item \(m^{2}+20mn+36n^{2}\)
+%  \item \(x^{4}-8x^{2}a+12a^{2}\)
+%  \item \(x^{6}+9x^{3}y^{2}-36y^{4}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:17.9}
+Scomponi i seguenti polinomi seguendo la traccia.
+\begin{enumeratea}
+\item \(2x^{{2}}-3x-5=2x^{2}+2x-5x-5=\dotfill\) 
+\sol{(x+1)(2x-5)}
+\item \(3y^{{2}}+y-10 = 3y^{2}+6y-5y-10 =\dotfill\) 
+\sol{(y+z)(3y-5)}
+\item \(5t^{{2}}-11t+2 = 5t^{2}-10t-t+2 =\dotfill\) 
+\sol{(t-2)(5t-1)}
+\item \(-3t^{{2}}+4t-1= -3t^{2}+3t+t-1 = \dotfill\) 
+\sol{(t-1)(-3t+1)}
+\item \(2x^{2}-3x-9= 2x^{2}-6x+3x-9 = \dotfill\) 
+\sol{(x-3)\left(2x+3\right)}
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:17.10}
+Scomponi i seguenti polinomi.
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(3a^{{2}}-4a+1\)
+\item \(11k-6k^{2}+7\)
+\item \(4b^{{2}}-4b-3\)
+\item \(6x^{2}-13x-15\)
+\item \(x^{2}+10ax+16a^{2}\)
+\item \(2x^{{4}}+x^{{2}}-3\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \subsubsection*{17.2 - Scomposizione con la regola Ruffini}
+\subsubsection*{\numnameref{subsubsec:divpol_scompruff}}
+
+\begin{esercizio}\label{ese:}
+Scomponi i seguenti polinomi usando il teorema di Ruffini.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(x^{2} + x - 6\)
+\sol{\left(x - 2\right) \left(x + 3\right)}
+\item \(x^{2} - 5 x + 4\)
+\sol{\left(x - 4\right) \left(x - 1\right)}
+\item \(x^{2} - 8 x + 12\)
+\sol{\left(x - 6\right) \left(x - 2\right)}
+\item \(2 x^{2} + 5 x + 2\)
+\sol{\left(x + 2\right) \left(2 x + 1\right)}
+\item \(2 x^{2} - 11 x + 5\)
+\sol{\left(x - 5\right) \left(2 x - 1\right)}
+\item \(3 x^{2} + 12 x - 15\)
+\sol{3 \left(x - 1\right) \left(x + 5\right)}
+\item \(2 x^{3} - 9 x^{2} - 18 x\)
+\sol{x \left(x - 6\right) \left(2 x + 3\right)}
+\item \(x^{3} + 2 x^{2} - 7 x + 4\)
+\sol{\left(x - 1\right)^{2} \left(x + 4\right)}
+\item \(x^{4} - 2 x^{3} + x\)
+\sol{x \left(x - 1\right) \left(x^{2} - x - 1\right)}
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\begin{esercizio}\label{ese:}
+Scomponi i seguenti polinomi usando il teorema di Ruffini.
+\begin{enumeratea}
+% \item \(x^{2} + x - 6\)
+%   \sol{\left(x - 2\right) \left(x + 3\right)}
+% \item \(x^{2} - 5 x + 4\)
+%   \sol{\left(x - 4\right) \left(x - 1\right)}
+% \item \(x^{2} - 8 x + 12\)
+%   \sol{\left(x - 6\right) \left(x - 2\right)}
+% \item \(2 x^{2} + 5 x + 2\)
+%   \sol{\left(x + 2\right) \left(2 x + 1\right)}
+% \item \(2 x^{2} - 11 x + 5\)
+%   \sol{\left(x - 5\right) \left(2 x - 1\right)}
+% \item \(3 x^{2} + 12 x - 15\)
+%   \sol{3 \left(x - 1\right) \left(x + 5\right)}
+% \item \(2 x^{3} - 9 x^{2} - 18 x\)
+%   \sol{x \left(x - 6\right) \left(2 x + 3\right)}
+% \item \(x^{3} + 2 x^{2} - 7 x + 4\)
+%   \sol{\left(x - 1\right)^{2} \left(x + 4\right)}
+% \item \(x^{4} - 2 x^{3} + x\)
+%   \sol{x \left(x - 1\right) \left(x^{2} - x - 1\right)}
+\item \(- x^{3} + 3 x^{2} - 2\)
+\sol{- \left(x - 1\right) \left(x^{2} - 2 x - 2\right)}
+\item \(- x^{3} + 2 x^{2} + 7 x + 4\)
+\sol{- \left(x - 4\right) \left(x + 1\right)^{2}}
+\item \(x^{3} - x^{2} - 11 x + 15\)
+\sol{\left(x - 3\right) \left(x^{2} + 2 x - 5\right)}
+\item \(x^{3} - 3 x^{2} - 3 x + 5\)
+\sol{\left(x - 1\right) \left(x^{2} - 2 x - 5\right)}
+\item \(x^{3} - 3 x^{2} - 20 x - 6\)
+\sol{\left(x + 3\right) \left(x^{2} - 6 x - 2\right)}
+\item \(x^{3} + 9 x^{2} + 21 x + 18\)
+\sol{\left(x + 6\right) \left(x^{2} + 3 x + 3\right)}
+\item \(3 x^{3} - 5 x^{2} - 13 x + 3\)
+\sol{\left(x - 3\right) \left(3 x^{2} + 4 x - 1\right)}
+\item \(2 x^{3} + 9 x^{2} - 16 x + 12\)
+\sol{\left(x + 6\right) \left(2 x^{2} - 3 x + 2\right)}
+\item \(x^{4} - 2 x^{3} - 10 x^{2} - 4 x\)
+\sol{x \left(x + 2\right) \left(x^{2} - 4 x - 2\right)}
+\item \(x^{3} - 6 x^{2} + 5 x + 12\)
+\sol{\left(x - 4\right) \left(x - 3\right) \left(x + 1\right)}
+\item \(2 x^{4} - 8 x^{3} + 6 x^{2} - 4 x + 12\)
+\sol{2 \left(x - 3\right) \left(x^{3} - x^{2} - 2\right)}
+\item \(- x^{4} + x^{3} + x^{2} + 2 x + 3\)
+\sol{- \left(x + 1\right) \left(x^{3} - 2 x^{2} + x - 3\right)}
+\item \(x^{4} - 8 x^{3} + 11 x^{2} - 3 x + 10\)
+\sol{\left(x - 2\right) \left(x^{3} - 6 x^{2} - x - 5\right)}
+%  \end{enumeratea}
+% \end{esercizio}
+% 
+% \begin{esercizio}[*]
+% \label{ese:17.13}
+% Scomponi in fattori i seguenti polinomi utilizzando il teorema di Ruffini.
+%  \begin{enumeratea}
+\item \(x^{3}-9x-9+x^{2}\)
+\sol{(x+1)(x+3)\left(x-3\right)}
+\item \(m^{3}+2m^{2}-m-2\)
+\sol{(m-1)(m+1)\left(m+2\right)}
+\item \(a^{3}+a^{2}-4a-4\)
+\sol{(a+1)(a-2)\left(a+2\right)}
+\item \(3a^{2}+a-2\)
+\sol{(a+1)\left(3a-2\right)}
+\item \(6a^{3}-a^{2}-19a-6\)
+\sol{(a-2)(3a+1)\left(2a+3\right)}
+% \item \(x^{3}-5x^{2}+8x-4\)
+%   \sol{(x-1)(x-2)^{2}}
+% \item \(3t^{3}-t^{2}-12t+4\)
+%   \sol{(t+2)(t-2)\left(3t-1\right)}
+% \item \(3x^{4}+x^{3}-29x^{2}-17x+42\)
+%   \sol{(x-3)(x-1)(x+2)(3x+7)}
+% \item \(y^{4}+y^{3}-3y^{2}-4y-4\)
+%   \sol{(y+2)(y-2)\left(y^{2}+y+1\right)}
+% \item \(t^{4}-8t^{2}-24t-32\)
+%   \sol{(t+2)(t-4)\left(t^{2}+2t+4\right)}
+\end{enumeratea}
+\end{esercizio}
+
+% \begin{esercizio}[*]
+% \label{ese:17.14}
+% Scomponi in fattori i seguenti polinomi utilizzando il teorema di Ruffini.
+%  \begin{enumeratea}
+%  \item \(2x^{5}+16x^{4}+25x^{3}-34x^{2}-27x+90\)
+%   \sol{(x+2)(x+3)(x+5)\left(2x^{2}-4x+3\right)}
+% \item \(x^{5}-x^{4}-4x^{3}-5x^{2}-9x+18\)
+%   \sol{(x+2)(x-3)(x-1)\left(x^{2}+x+3\right)}
+% \item \(x^{4}+2x^{3}-3x^{2}-4x+4\)
+%   \sol{(x-1)^{2}\left(x+2\right)^{2}}
+% \item \(a^{5}+3a^{4}-2a^{3}-9a^{2}-11a-6\)
+%   \sol{(a+1)(a-2)(a+3)(a^{2}+a+1)}
+% \item \(2x^{5}+16x^{4}+19x^{3}-94x^{2}-213x-90\)
+%   \sol{(x+2)(x+3)(x+5)(2x^{2}-4x-3)}
+% \item \(6x^{2}-7x+2\)
+%   \sol{(2x-1)(3x-2)}
+% \item \(3x^{3}+x^{2}+x-2\)
+%   \sol{(3x-2)\left(x^{2}+x+1\right)}
+% \item \(2x^{3}+x^{2}+2x+1\)
+%   \sol{(2x+1)\left(x^{2}+1\right)}
+% \item \(3x^{3}+9x-x^{2}-3\)
+%   \sol{(3x-1)\left(x^{2}+3\right)}
+% \item \(1+5x+6x^{2}+4x^{3}+8x^{4}\)
+%   \hfill []
+%  \end{enumeratea}
+% \end{esercizio}
+% 
+% \begin{esercizio}
+% \label{ese:17.11}
+% Scomponi in fattori i seguenti polinomi utilizzando il teorema di Ruffini.
+% \begin{htmulticols}{3}
+%  \begin{enumeratea}
+% \item \(2x^{2}-5x+2\)
+% \item \(3x^{2}-5x-2\)
+% \item \(x^{3}-4x^{2}+x+6\)
+% \item \(x^{3}+2x^{2}-9x-18\)
+% \item \(2x^{3}-3x^{2}-8x+12\)
+% \item \(x^{4}-x^{3}-5x^{2}-x-6\)
+% \item \(x^{3}+2x^{2}-2x+3\)
+% \item \(x^{3}+x^{2}-5x+3\)
+% \item \(2x^{3}-9x^{2}+7x+6\)
+% \item \(3x^{3}+5x^{2}-16x-12\)
+% \item \(2x^{3}+5x^{2}+5x+3\)
+% \item \(2x^{3}-13x^{2}+24x-9\)
+% \item \(6x^{3}-11x^{2}-3x+2\)
+% \item \(4x^{4}-4x^{3}-25x^{2}+x+6\)
+%  \end{enumeratea}
+% \end{htmulticols}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:17.15}
+Scomponi in fattori i seguenti polinomi utilizzando il teorema di Ruffini.
+\begin{enumeratea}
+\item \(a^{6}+6a^{4}+11a^{2}+6\)
+\quad \emph{Sugg.}: sostituisci~\(a^{2}=x\)
+\sol{(a^{2}+1)(a^{2}+2)(a^{2}+3)}
+\item \(2x^{2n}+x^{n}-3\)
+\quad \emph{Sugg.}:~\(x^{n}=a\)
+\sol{(x^{n}-1)(2x^{n}+3)}
+\item \(x^{3}-ax^{2}-2ax+2a^{2}\)
+\quad \emph{Sugg.}: cerca le radici tra i divisori di~\(2a^{2}\)
+\sol{(x-a)\left(x^{2}-2a\right)}
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}
+\label{ese:17.11}
+Scomponi in fattori i seguenti polinomi utilizzando il teorema di Ruffini.
+\begin{htmulticols}{4}
+\begin{enumeratea}
+\item \(x^{3}-8\)
+\item \(x^{3}+8\)
+\item \(-x^{3}-8\)
+\item \(-x^{3}+8\)
+\item \(27x^{3}-1\)
+\item \(x^{5}+32\)
+\item \(x^{5}-32\)
+\item \(8x^{3}+1\)
+\item \(27x^{3}-8\)
+\item \(x^{3}+a^{3}\)
+\item \(x^{3}-a^{3}\)
+\item \(125x^{3}+8a^{3}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \subsubsection*{17.3 - Somma e differenza di due cubi}
+\subsubsection*{\numnameref{subsubsec:divpol_binomo}}
+
+\begin{esercizio}
+\label{ese:17.16}
+Scomponi in fattori i seguenti binomi omogenei.
+\begin{htmulticols}{4}
+\begin{enumeratea}
+\item \(x^{3}-1\)
+\item \(27-x^{3}\)
+\item \(x^{3}+1\)
+\item \(x^{3}+\dfrac{1}{27}\)
+%  \item \(64a^{3}-8b^{3}\)
+%  \item \(\dfrac{1}{125}x^{3}-\dfrac{1}{8}y^{3}\)
+\item \(8x^{3}-27y^{3}\)
+\item \(0,001^{3}-x^{3}\)
+\item \(10^{-3}x^{3}-10^{3}y^{3}\)
+\item \(\dfrac{1}{8}a^{3}-\dfrac{1}{27}b^{3}\)
+\item \(x^{6}-y^{6}\)
+\item \(27x^{3}-8y^{3}\)
+%  \item \(0,064x^{3}+\dfrac{1}{27}y^{3}\)
+\item \(a^{3}b^{3}-1\)
+\item \(\dfrac{27}{8}x^{3}-8\)
+%  \item \(a^{9}-1\)
+\item \(a^{6}-1\)
+\item \(a^{3}-125\)
+\item \(x^{6}-y^{3}\)
+\item \(x^{9}+\dfrac{8}{27}y^{3}\)
+%  \item \(\dfrac{1}{8}a^{3}-\dfrac{1}{27}t^{3}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}
+% \label{ese:17.18}
+%  Scomponi in fattori tenendo presente la somma e la differenza di cubi.
+%  \begin{htmulticols}{3}
+%  \begin{enumeratea}
+%  \item \(8x^{12}-1\)
+%  \item \(a^{300}+1\)
+%  \item \(5x^{4}y^{3}+\dfrac{625}{8}x\)
+%  \item \(a^{3n}-8b^{3}\)
+%  \item \(a^{3n+3}+1\)
+%  \item \(\dfrac{5}{8}a^{4}-\dfrac{5}{27}ab^{3}\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+\subsection{Esercizi riepilogativi}
+
+\begin{esercizio}[*]
+\label{ese:17.19}
+Scomponi in fattori.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \((x+1)^{2}-(y-1)^{2}\) 
+\sol{(x+y)\left(x-y+2\right)}
+\item \(5x^{4}y^{2}+5x^{2}y+\dfrac{5}{4}\) 
+\sol{5\left(\frac{1}{2}+x^{2}y\right)^{2}}
+\item \((y-1)^{2}-2y+2\) 
+\sol{(y-1)\left(y-3\right)}
+\item \(4-(y-1)^{2}\) 
+\sol{(y+1)\left(3-y\right)}
+\item \(4x^{2}-xy-4x+y\) 
+\sol{(x-1)\left(4x-y\right)}
+\item \(0,\overline{{3}}a^{2}-\dfrac{1}{3}b^{2}\) 
+\sol{\frac{1}{3}(a+b)\left(a-b\right)}
+\item \(3x+k+3x^{2}+kx\) 
+\sol{(x+1)\left(3x+k\right)}
+\item \(\dfrac{1}{16}a^{2}+4b^{4}-ab^{2}\)
+\sol{\left(\frac{1}{4}a-2b^{2}\right)^{2}}
+\item \(x^{3}+3x-4x^{2}\) 
+\sol{x(x-1)\left(x-3\right)}
+\item \(4x^{2}-7x-2\) 
+\sol{(x-2)\left(4x+1\right)}
+\item \(6x^{2}-24xy+24y^{2}\) 
+\sol{6\left(x-2y\right)^{2}}
+% \item \(x^{2}-(2+a)x+2a\)
+% \sol{(x-2)\left(x-a\right)}
+\item \(2x^{2}+5x-12\)
+\sol{(x+4)\left(2x-3\right)}
+% \item \(81a-16a^{3}b^{2}\)
+%   \sol{a(9-4{ab})(9+4{ab})}
+% \item \(a^{2}-10a-75\)
+%   \sol{(a-15)(a+5)}
+% \item \(ax+bx-3ay-3by\)
+%   \sol{(a+b)(x-3y)}
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+\pagebreak %-----------------------------------------
+
+\begin{esercizio}[*]
+\label{ese:17.20}
+Scomponi in fattori.
+\begin{enumeratea}
+\item \(x^{5}+x^{3}+x^{2}+1\)
+\sol{(x+1)\left(x^{2}+1\right)\left(x^{2}-x+1\right)}
+\item \(0,09x^{4}y^{5}-0,04y\)
+\sol{\frac{1}{100}y\left(3x^{2}y^{2}+2\right)\left(3x^{2}y^{2}-2\right)}
+\item \(-a^{2}x-2{abx}-b^{2}x+5a^{2}+10{ab}+5b^{2}\)
+\sol{(a+b)^{2}\left(5-x\right)}
+\item \(\dfrac{1}{9}x^{2}-0,25b^{2}\)
+\sol{\frac{1}{36}(2x+3b)\left(2x-3b\right)}
+\end{enumeratea}
+\end{esercizio}
+
+% \begin{esercizio}[*]
+%  \label{ese:17.21}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+% \item \(8a^{3}-\frac{1}{8}b^{3}\)
+% \sol{\left(2a-\frac{1}{2}b\right)\left(4a^{2}+{ab}+
+% \frac{1}{4}b^{2}\right)}
+% \item \(4a^{3}+8a^{2}-a-2\)
+%   \sol{(a+2)\left(2a+1\right)\left(2a-1\right)}
+% \item \(x^{3}-x^{4}+8-8x\)
+%   \sol{(1-x)\left(x+2\right)\left(x^{2}-2x+4\right)}
+% \item \(4xy+4{xz}-3{ya}-3{za}-{yh}-{zh}\)
+%   \sol{(y+z)(4x-3a-h)}
+% \item \(x^{6}-81x^{2}\)
+%   \sol{x^{2}(x+3)(x-3)\left(x^{2}+9\right)}
+% \item \(54a^{3}b-2b^{4}\)
+%   \sol{2b(3a-b)\left(9a^{2}+3{ab}+b^{2}\right)}
+% \item \(-12{xyz}+9{ya}+6x^{3}a-8x^{4}z\)
+%   \sol{(3a-4{xz})\left(2x^{3}+3y\right)}
+% \item \(y^{2}+{ay}-6a^{2}\)
+%   \sol{(y-2a)\left(y+3a\right)}
+% \item \(2x^{3}+4x-3x^{2}-6\)
+%   \sol{\left(x^{2}+2\right)(2x-3)}
+% \item \((x^{2}-7x+10)^{2}-x^{2}+10x-25\)
+%   \sol{(x-5)^{2}(x-1)(x-3)}
+%  \end{enumeratea}
+% \end{esercizio}
+
+% \begin{esercizio}[*]
+%  \label{ese:17.22}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+%   \item \(\dfrac{4}{9}a^{2}-b^{2}+\dfrac{2}{3}a+b\)
+%   \sol{\left(\frac{2}{3}a+b\right)\left(\frac{2}{3}a-b+1\right)}
+% \item \(x^{2}-6x+9-(y^{2}-2y+1)\)
+%   \sol{(x-4+y)(x-2-y)}
+% \item \(16a^{4}x^{2}-8a^{2}b^{2}x^{2}+b^{4}x^{2}\)
+%   \sol{x^{2}(2a-b)^{2}(2a+b)^{2}}
+% \item \(4(x-1)^{2}-4y(x-1)+y^{2}\)
+%   \sol{(2x-2-y)^{2}}
+% \item \(4a^{4}b-4a^{3}b^{2}+6a^{3}b^{3}-6a^{2}b^{4}\)
+%   \sol{2a^{2}b(2a+3b^{2})(a-b)}
+% \item \(8x^{3}-14x^{2}+7x-1\)
+%   \sol{(x-1)(2x-1)(4x-1)}
+% \item \(x^{4}-3x^{3}-10x^{2}+24x\)
+%   \sol{x(x-2)(x+3)(x-4)}
+% \item \(81a^{4}-64a^{2}b^{2}\)
+%   \sol{a^{2}(9a-8b)(9a+8b)}
+% \item \(4x^{3}+8x^{2}+x-3\)
+%   \sol{(2x+3)(2x-1)(x+1)}
+%  \item \(2a^{4}b^{3}c-8a^{2}bc^{5}\)
+%   \sol{2a^{2}{bc}({ab}-2c^{2})({ab}+2c^{2})}
+%  \end{enumeratea}
+% \end{esercizio}
+
+% \begin{esercizio}[*]
+%  \label{ese:17.23}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+%   \item \(x^{3}+2x^{2}-x-2\)
+%   \sol{(x-1)(x+2)(x+1)}
+% \item \(20x^{3}-45x\)
+%   \sol{5x(2x-3)(2x+3)}
+% \item \(18p^{3}q^{2}x-2pq^{4}x+18p^{3}q^{2}y-2pq^{4}y\)
+%   \sol{2{pq}^{2}(3p-q)(3p+q)(x+y)}
+% \item \(20a^{6}-16a^{3}c-25a^{4}b+20abc\)
+%   \sol{a(4a^{2}-5b)(5a^{3}-4c)}
+% \item \(2a^{7}-6a^{4}x^{2}+6a^{4}b^{2}-18ab^{2}x^{2}\)
+%   \sol{2a(a^{3}+3b^{2})(a^{3}-3x^{2})}
+% \item \(x^{3}-6x^{2}y+12xy^{2}-8y^{3}\)
+%   \sol{(x-2y)^{3}}
+% \item \(3x^{5}+12x^{4}-21x^{3}-66x^{2}+72x\)
+%   \sol{3x(x-1)(x-2)(x+3)(x+4)}
+% \item \(32a^{3}x^{2}y-48a^{3}xy^{2}+4b^{3}x^{2}y-6b^{3}xy^{2}\)
+%   \sol{2xy(2a+b)(2x-3y)(4a^{2}-2{ab}+b^{2})}
+% \item \(x^{5}+3x^{4}-xy^{4}-3y^{4}\)
+%   \sol{(x+3)(x-y)(x+y)(x^{2}+y^{2})}
+% \item \(48a^{5}bx+16a^{5}by-6a^{2}b^{4}x-2a^{2}b^{4}y\)
+%   \sol{2a^{2}b(2a-b)(3x+y)(4a^{2}+2{ab}+b^{2})}
+%  \end{enumeratea}
+% \end{esercizio}
+
+% \newpage %----------------------------------------
+
+\begin{esercizio}[*]
+\label{ese:17.24}
+Scomponi in fattori usando anche la regola di Ruffini.
+\begin{enumeratea}
+\item \(2x^{4}-9x^{2}-81\)
+\sol{(x+3)(x-3)(2x^{2}+9)}
+\item \(x^{5}-2x^{2}-x+2\)
+\sol{(x+1)(x-1)^{2}(x^{2}+x+2)}
+\item \(x^{8}-y^{8}-2x^{6}y^{2}+2x^{2}y^{6}\)
+\sol{(x-y)^{3}(x+y)^{3}(x^{2}+y^{2})}
+\item \(16ab-81a^{5}b^{9}\)
+\sol{{ab}(2-3{ab}^{2})(2+3{ab}^{2})(4+9a^{2}b^{4})}
+\item \(6x^{7}+2x^{6}-16x^{5}+8x^{4}\)
+\sol{2x^{4}(x-1)(x+2)(3x-2)}
+\item \(x^{4}-4x^{2}-45\)
+\sol{(x-3)(x+3)(x^{2}+5)}
+\item \(-3a^{7}x^{2}+9a^{5}x^{4}-9a^{3}x^{6}+3ax^{8}\)
+\sol{3ax^{2}(x-a)^{3}(x+a)^{3}}
+\item \(x^{3}-13x^{2}+35x+49\)
+\sol{(x+1)(x-7)^{2}}
+% \item \(4ab^{3}c^{2}+20ab^{3}-3abc^{2}-15ab\)
+% \sol{{ab}(4b^{2}-3)(c^{2}+5)}
+% \item \(6a^{6}b^{3}-12a^{4}b^{5}+6a^{2}b^{7}\)
+%   \sol{6a^{2}b^{3}(a-b)^{2}(a+b)^{2}}
+\end{enumeratea}
+\end{esercizio}
+
+% \begin{esercizio}[*]
+%  \label{ese:17.25}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+%   \item \(y^{3}-5y^{2}-24y\)
+%   \sol{y(y+3)(y-8)}
+% \item \(x^{2}+4xy-6x+4y^{2}-12y+9\)
+%   \sol{(x+2y-3)^{2}}
+% \item \(2x^{4}-4x^{3}+4x^{2}-4x+2\)
+%   \sol{2(x^{2}+1)(x-1)^{2}}
+% \item \(x^{2}-y^{2}+2{ay}-a^{2}\)
+%   \sol{(x-a+y)(x+a-y)}
+% \item \(\left(3-a\right)^{2}+\left(5+a\right)\cdot \left(a-3\right)\)
+%   \sol{2(a-3)(a+1)}
+% \item \(3x^{{3}}-x-1+3x^{2}\)
+%   \sol{(3x^{2}-1)(x+1)}
+% \item \(x^{3}y^{2}-x^{2}y^{3}+\dfrac{1}{4}xy^{4}\)
+%   \sol{xy^{2}(x-\frac{1}{2}y)^{2}}
+% \item \(-27x^{6}+9x^{5}-x^{4}+\dfrac{x^{3}}{27}\)
+%   \sol{x^{3}\left(\frac{1}{3}-3x\right)^{3}}
+% \item \(4x^{2}-9y^{2}-6{yz}^{2}-z^{4}\)
+%   \sol{(2x+3y+z^{2})(2x-3y-z^{2})}
+% \item \(\dfrac{1}{8}a^{4}b^{2}-\dfrac{3}{4}a^{3}b^{3}+
+%        \dfrac{3}{2}a^{2}b^{4}-{ab}^{5}\)
+%   \sol{\frac{1}{8}{ab}^{2}(a-2b)^{3}}
+%  \end{enumeratea}
+% \end{esercizio}
+
+% \begin{esercizio}[*]
+%  \label{ese:17.26.}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+% \item \(a^{2}+4{ab}+4b^{2}-x^{2}+2xy-y^{2}\)
+%   \sol{(a+2b+x-y)(a+2b-x+y)}
+% \item \(a^{4}b-2a^{3}b^{2}+4a^{3}{bc}+a^{2}b^{3}-4a^{2}b^{2}c+4a^{2}bc^{2}\)
+%   \sol{a^{2}b(a-b+2c)^{2}}
+% \item \(3a^{4}-3a^{3}x+a^{2}x^{2}-\dfrac{1}{9}ax^{3}\)
+%   \sol{3a\left(a-\frac{1}{3}x\right)^{3}}
+% \item \(a^{3}x+4a^{2}x+4ax\)
+%   \sol{ax(a+2)^{2}}
+% \item \(a^{3}b^{5}-\dfrac{2}{3}a^{2}b^{6}+\dfrac{1}{9}ab^{7}\)
+%   \sol{{ab}^{5}\left({ab}-\frac{1}{3}b^{2}\right)^{2}}
+% \item \(a^{2}-{ab}-9a+3b+18\)
+%   \sol{(a-3)(a-b-6)}
+% \item \(8{ab}^{2}-2a^{3}\)
+%   \sol{-2a(a+2b)(a-2b)}
+% \item \(a^{4}-6a^{3}+3a^{2}+18a+9-1\)
+%   \sol{(a-4)(a+1)(a^{2}-3a-2)}
+% \item \(a^{3}+3a^{2}b+a^{2}+3{ab}^{2}+2{ab}+b^{3}+b^{2}\)
+%   \sol{(a+b)^{2}(a+b+1)}
+% \item \(\dfrac{x^{7}}{3}+x^{5}+x^{3}+\dfrac{x}{3}\)
+%   \sol{\frac{1}{3}x(x^{2}+1)^{3}}
+%  \end{enumeratea}
+% \end{esercizio}
+
+% \begin{esercizio}[*]
+%  \label{ese:17.27}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+% \item \(\dfrac{a^{2}}{4}+2{ab}-16b^{4}+4b^{2}\)
+% \sol{\left(\frac{1}{2}a+2b-4b^{2}\right)
+% \left(\frac{1}{2}a+2b+4b^{2}\right)}
+% \item \(5a^{4}x^{3}-40a^{4}y^{3}-45a^{2}b^{2}x^{3}+360a^{2}b^{2}y^{3}\)
+%   \sol{5a^{2}(a-3b)(a+3b)(x-2y)(x^{2}+2xy+4y^{2})}
+% \item \(-24a^{4}b^{2}x^{2}-72a^{4}b^{2}y^{2}-3ab^{5}x^{2}-9ab^{5}y^{2}\)
+%   \sol{-3{ab}^{2}(2a+b)(x^{2}+3y^{2})(4a^{2}-2{ab}+b^{2})}
+% \item \(2ax^{4}y-6bx^{4}y-2axy^{4}+6bxy^{4}\)
+%   \sol{2xy(a-3b)(x-y)(x^{2}+xy+y^{2})}
+% \item \(640a^{3}x^{2}y-960a^{3}xy^{2}+10b^{3}x^{2}y-15b^{3}xy^{2}\)
+%   \sol{5xy(4a+b)(2x-3y)(16a^{2}-4{ab}+b^{2})}
+% \item \(-4x-3-2(x+1)(16x^{2}+9+24x)\)
+%   \sol{-(4x+3)(8x^{2}+14x+7)}
+% \item \((x-2)+3(x^{2}-4x+4)-(x+1)(x-2)^{2}\)
+%   \sol{(x-1)(x-2)(3-x)\),\quad h)~\((x-1)^{2}(1-3x)}
+% \item \((x-1)^{2}-(x+2)(x^{2}-2x+1)-2(x^{3}-3x^{2}+3x-1)\)
+%   \hfill []
+% \item \((3x+6)-5(x^{2}+4x+4)^{2}\)
+%   \sol{-(2+x)(5x^{3}+30x^{2}+60x+37)}
+% \item \((y-x)^{2}(3x+2)-2(x-y)^{3}-2x^{2}+2y^{2}\)
+%   \sol{(x-y)(x^{2}+xy-4y-2y^{2})}
+%  \end{enumeratea}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:17.28}
+Scomponi in fattori.
+\begin{enumeratea}
+\item \((-x^{2}+6x-9)^{2}-(4x-12)(x+1)\)
+\sol{(x-3)(x^{3}-9x^{2}+23x-31)}
+\item \(x+1-2(x^{2}+2x+1)+(3x^{2}+x^{3}+3x+1)(x-2)\)
+\sol{(x+1)(x^{3}-5x-3)}
+\item \(36x^{2}+24xy-48x+4y^{2}-16y+15\)
+\sol{(6x+2y-3)(6x+2y-5)}
+\item \(x^{5}-2-x+2x^{4}\)
+\sol{(x+2)\left(x^{2}+1\right)(x+1)(x-1)}
+\item \(6a^{3}+11a^{2}+3a\)
+\sol{a(3a+1)(2a+3)}
+\item \(3a^{4}-24ax^{3}\)
+\sol{3a(a-2x)\left(a^{2}+2ax+4x^{2}\right)}
+% \item \(x^{2}-2x+1\)
+% \hfill 
+% \item \(x^{2}+y^{2}+z^{4}-2xy+2{xz}^{2}-2{yz}^{2}\)
+% \hfill 
+% \item \(a^{6}+b^{9}+3a^{4}b^{3}+3a^{2}b^{6}\)
+% \hfill 
+% \item \(a^{3}-6a^{2}+12a-8\)
+% \hfill 
+\end{enumeratea}
+\end{esercizio}
+
+\begin{esercizio}
+Scomponi in fattori.
+\begin{htmulticols}{2}
+\begin{enumeratea}
+\item \(a^{2}+b^{2}-1-2{ab}\)
+\item \(a^{4}+2b-1-b^{2}\)
+\item \(-8a^{2}b+24{ab}^{2}-18b^{3}\)
+\item \(6a^{5}-24{ab}^{4}\)
+\item \(a^{4}+b^{4}-2a^{2}b^{2}\)
+\item \(x^{6}-9x^{4}y+27x^{2}y^{2}-27y^{3}\)
+\item \(x^{2}-12x+32\)
+\item \(x^{2}-8x+15\)
+\item \(x^{4}-7x^{2}-60\)
+\item \(x^{3}-5x^{2}+6x\)
+\item \(x^{2}+10xy+25y^{2}\)
+\item \(27a^{6}-54a^{4}b+36a^{2}b^{2}-8b^{3}\)
+\item \(64a^{9}-48a^{6}b^{2}+12a^{3}b^{4}-b^{6}\)
+\item \(4a^{2}x^{2}-4b^{2}x^{2}-9a^{2}y^{2}+9b^{2}y^{2}\)
+\item \(x^{6}-6x^{4}+12x^{2}-8\)
+\item \(a^{7}-a^{4}b^{2}-4a^{3}b^{2}+4b^{4}\)
+% \item \(x^{4}+6x^{2}-40\)
+% \item \(x^{5}-13x^{3}+12x^{2}\)
+% \item \(32ab-2a^{5}b^{5}\)
+% \item \(24x^{4}y+36x^{3}y^{3}+18x^{2}y^{5}+3xy^{7}\)
+\end{enumeratea}
+\end{htmulticols}
+\end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+%   \item \(4a^{2}-9-4b^{2}+12b\)
+% \item \(x^{5}-13x^{3}+36x\)
+% \item \(4a^{2}+4a+1\)
+% \item \(4x^{2}y^{2}-4xy+1\)
+% \item \(x^{3}+1\)
+% \item \(a^{2}+6a+9\)
+% \item \(12xy-16y^{2}\)
+% \item \(2x^{3}-16\)
+% \item \(2x^{2}+4x+8\)
+% \item \(ax^{2}-{ay}^{2}\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+%   \item \(a^{3}-8+12a-6a^{2}\)
+% \item \(7t^{2}-28\)
+% \item \(2x^{2}+8+8x\)
+% \item \(25+9x^{2}+30x\)
+% \item \(z^{{8}}-2z^{{4}}+1\)
+% \item \(3k^{{4}}+k^{{6}}+1+3k^{2}\)
+% \item \(3x^{5}-27xy^{4}\)
+% \item \(25y^{4}-10y^{2}+1\)
+% \item \(8a^{4}b-8a^{3}b^{2}+12a^{3}b^{3}-12a^{2}b^{4}\)
+% \item \(3a^{3}x+3a^{3}y-3abx-3aby\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+%   \item \(81a^{6}b^{3}-a^{2}b^{3}\)
+% \item \(6{abx}-3x+2{aby}-y\)
+% \item \(x^{3}+6x^{2}y+12xy^{2}+8y^{3}\)
+% \item \(8a^{7}b-8a^{3}b^{3}+12a^{6}b-12a^{2}b^{3}\)
+% \item \(4a^{2}x-4a^{2}y^{2}-4ab^{2}x+4ab^{2}y^{2}\)
+% \item \(a^{2}+12a+36\)
+% \item \(x^{8}-y^{8}-2x^{6}y^{2}+2x^{2}y^{6}\)
+% \item \(5x^{4}-5x^{2}y^{4}\)
+% \item \((2x-1)^{3}-(3-6x)^{2}\)
+% \item \(x^{4}-2x^{3}+6x^{2}y+x^{2}-6xy+9y^{2}\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+%   \item \(\dfrac{4}{9}a^{4}+\dfrac{4}{9}a^{2}b+\dfrac{b^{2}}{9}\)
+% \item \(-2a^{10}+12a^{7}b-24a^{4}b^{2}+16{ab}^{3}\)
+% \item \(x^{3}-7x^{2}-25x+175\)
+% \item \(2ab^{6}+54a^{4}+18a^{2}b^{4}+54a^{3}b^{2}\)
+% \item \(128a^{3}-200a\)
+% \item \(\dfrac{4}{25}+\dfrac{4}{5}xy+x^{2}y^{2}\)
+% \item \(x{4}-6x^{2}-27\)
+% \item \(x^{4}+4x^{3}+x^{2}-6x\)
+% \item \(8a^{5}b^{2}-64a^{2}b^{5}\)
+% \item \(4a^{2}b^{5}-81b\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+%   \item \(ax + bx - 3ay - 3by \)
+% \item \(2ax^{2} + 8ay^{2} + 8axy\)
+% \item \(81a^{4} - b^{4}\)
+% \item \(3a^{5}b^{3} + 24a^{2}b^{9}\)
+% \item \(4x^{2} + 2xy +\dfrac{1}{4}y^{2}\)
+% \item \(x^{2} - 3a^{3} + ax - 3a^{2}x \)
+% \item \(x^{2}-12x+133\)
+% \item \(3x^{5} - 27xy^{4}\)
+% \item \(25y^{4} - 10y^{2}+1\)
+% \item \(\dfrac{16}{27}x^{3}+\dfrac{8}{3}x^{2}y+4xy^{2}+2y^{3}\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+%   \item \(1 - 9x + 27x^{2} - 27x^{3}\)
+% \item \(6x^{3}y-12x^{2}y^{2}+6xy^{3}\)
+% \item \(x^{4} + 3x^{2} - 28 \)
+% \item \(2x^{3} - 3x^{2} - 5x + 6\)
+% \item \(3x^{4}y^{3} + 9x^{4} - 9xy^{3} - 27x\)
+% \item \(81a^{6} - 18a^{4}b^{2} + a^{2}b^{2}\)
+% \item \(125 + 75y + 15y^{2} + y^{3}\)
+% \item \(4a^{2}x^{2} - 16a^{2}y^{2} - b^{2}x^{2} + 4b^{2}y^{2}\)
+% \item \(x^{4} + 2x^{2} - 24\)
+% \item \(5x^{3} - 17x^{2} + 16x - 4\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+% \item \(27a^{6} - 54a^{4}b + 36a^{2}b^{2} - 8b^{3}\)
+% \item \(18a^{4}b - 2b^{3}\)
+% \item \(x^{4} - 9x^{2} + 20\)
+% \item \(3a^{4}b^{3} - 6a^{3}b^{3} - 9a^{2}b^{3}\)
+% % \item \(4a^{5}b^{2} + 32a^{2}b^{5}\)
+% % \item \(32a - 50ab^{2}\)
+% % \item \(5x^{4} y^{2} + 5x^{4} - 5xy^{4} - 5xy^{2}\)
+% % \item \(4y^{2} - 12y + 9\)
+% % \item \(x^{4} - 4x^{2} - 45\)
+% \item \(\dfrac{1}{4}x^{2}+\dfrac{1}{3}ax+\dfrac{1}{9}a^{2}\)
+% \item \(3x^{3} + x^{2} - 8x + 4\)
+% \item \(4a^{2} - 9 - 4b^{2} + 12b \)
+% \item \(x^{3} + 3x^{2} - 6x - 8\)
+% % \item \(2ax^{2} + 8ay^{2} + 8axy\)
+% % \item \(x^{6} - 81x^{2} + x - 3\)
+% % \item \(x^{6} - y^{6} + x^{3} + y^{3}\)
+% % \item \(x^{2} - 3a^{3} + ax - 3a^{2}x\)
+% % \item \(50a^{4}b^{3} - 2b^{3}\)
+% \item \(16x^{3}-72x^{2}+108x-54\)
+% \item \(\dfrac{1}{8}x^{6}-\dfrac{1}{4}x^{4}+
+% \dfrac{1}{6}x^{2}-\dfrac{1}{27}\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+% \item \(\dfrac{8}{27}x^{3}-2x^{2}+\dfrac{9}{2}x-\dfrac{27}{8}\)
+% \item \(\dfrac{1}{9}a^{6} + 9a^{2} - 2a^{4}\)
+% \item \(5x^{4} - 5x^{3}y^{2} - 5x^{2}y + 5xy^{3}\)
+% \item \(-8a^{3} + 12a^{2}x^{2} - 6ax^{4} + x^{6}\)
+% \item \(x^{2}+14x-32\)
+% \item \(\dfrac{4}{49}x^{2}y^{2}-\dfrac{4}{7}xyz+z^{2}\)
+% \item \(1-\dfrac{3}{2}x^{3}+\dfrac{9}{16}x^{6}\)
+% \item \(2b^{6}c - 8c^{3}\)
+% \item \(16a^{4}x^{2} - 8a^{2}b^{2}x^{2} + b^{4}x^{2}\)
+% \item \(4x^{3} + 7x^{2} - 14x + 3\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+% \item \(625a^{4} - b^{4}\)
+% \item \(12ax^{2}+12{axy}+3{ay}^{2}\)
+% \item \(x^{4} + 5x^{2} - 36\)
+% \item \(-4x^{7} + 16x^{6} + 28x^{5} - 88x^{4} - 96x^{3}\)
+% \item \(\dfrac{1}{9}x^6 - 2x^{4} + 9x^{2}\)
+% \item \(a^{4} + 4a^{2} - 32\)
+% \item \(4x^{3} + 7x^{2} - 14x + 3\)
+% \item \(2ax^{4}y - 8bx^{4}y - 2axy^{4} + 8bxy^{4}\)
+% \item \(36ab - 49a^{3}b^{3}\)
+% \item \(\dfrac{4}{25}a^4+\dfrac{25}{9}b^2-\dfrac{4}{3}a^{2}b\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+% \item \(t^{5}-z^{5}\)
+% \item \(3x^{2}+6x+6\)
+% \item \(t^{{6}}-2t^{{3}}+1\)
+% \item \(tx+x^{2}+y^{2}+ty+2xy\)
+% \item \(12m^{3}+9m^{5}-3m^{7}\)
+% \item \(a^{2}b-25b+a^{2}-25\)
+% \item \(2ab-b^{2}+3\cdot \left(b-2a\right)^{2}\)
+% \item \(x^{{6}}-y^{{6}}\)
+% \item \(3k^{{3}}-k^{2}+k+5\)
+% \item \(y^{{6}}+y^{{3}}-2\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{htmulticols}{2}
+%  \begin{enumeratea}
+% \item \(a^{{8}}-1\)
+% \item \(32a^{4}b^{3} - 2b^{3}\)
+% \item \(x^{6} - 8a^{3} + 12a^{2}x^{2} - 6ax^{4}\)
+% \item \(x^{2} - 3a^{3} + ax - 3a^{2}x\)
+% \item \(9y^{2}+6y+1\)
+% \item \(9a^{3}-9\)
+% \item \(a^{3}+4a-2a^{2}-3\)
+% \item \(3a+2a^{3}-7a^{2}\)
+% \item \(50a^{3}b^{2}-8a^{5}\)
+% \item \(2xy+16-x^{2}-y^{2}\)
+%  \end{enumeratea}
+%  \end{htmulticols}
+% \end{esercizio}
+
+% \begin{esercizio}
+%  Scomponi in fattori.
+%  \begin{enumeratea}
+% \item \(20ab^{2}c+8abc+2abc^{2}+2a^{2}bc^{2}+2a^{2}b^{2}c\)
+% \item \(ab^{4}-\dfrac{1}{3}a^{2}b^{2}-b^{6}+\dfrac{1}{27}a^{3}\)
+% \item \((a+2)\left(a^{3}-8\right)+\left(a^{3}+8\right)(a-2)\)
+% \item \((x-y)^{2}+2(x-y)(3a+b)+(3a+b)^{2}\)
+% \item \(x^{6}-27+26x^{3}\)
+% \item \(4y^{2}-12x^{2}y+25x^{2}y^{2}-20xy^{2}+9x^{4}+30x^{3}y\)
+% \item \(\frac{1}{8}-8x^{3}y^{3}+6x^{2}y^{2}+\frac{3}{2}xy\)
+% \item \(4xy(a-3b)+2xy^{2}a-6xy^{2}b-2x^{2}y(3b-a)\)
+% \item \(x^{2}-4x-5xy+x^{2}y+6y+4\)
+% \item \(x^{6}-8-7x^{3}\)
+%  \end{enumeratea}
+% \end{esercizio}
+
+\begin{esercizio}[*]
+\label{ese:17.45}
+Scomponi in fattori.
+\begin{enumeratea}
+\item \(x^{a+1}-5x^{a}-4x^{a-2}\)
+\sol{x^{a-2}(x^{3}-5x^{2}-4)}
+\item \(x^{n^{2}-1}+2x^{n^{2}+2}+x^{n^{2}}(x-3)\)
+\sol{x^{n^{2}-1}(2x-1)(x^{2}+x-1)}
+\item \(x^{4n+1}-x^{3n+1}y^{n}+2x^{n}y^{4n}-2y^{5n}\)
+\sol{(x^{n}-y^{n})(x^{3n+1}+2y^{4n})}
+\item \(x^{n+2}+3x^{n}y^{2n}-x^{2}y^{3}-3y^{3+2n}\)
+\sol{(x^{n}-y^{3})(x^{2}+3y^{2n})}
+% \item \(x^{a}y^{b}+x^{a}-y^{b}-1\)
+%   \sol{(x^{a}-1)(y^{b}+1)}
+% \item \(x^{2n+1}y^{h+1}-2x^{2n+1}-y^{h+1}+2\)
+%   \sol{(x^{2n+1}-1)(y^{1+h}-2)}
+% \item \(x^{a+4}-3x^{a+2}y^{a}+x^{2}y^{2}-3y^{2+a}\)
+%   \sol{(x^{2+a}+y^{2})(x^{2}-3y^{a})}
+\end{enumeratea}
+\end{esercizio}
+

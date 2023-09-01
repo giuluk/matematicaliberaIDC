@@ -1,0 +1,965 @@
+%%
+%% This is file `matliberagraf.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% matlibera.dtx  (with options: `matliberagraf')
+%% 
+%% Copyright (C) 2013-2022 by Daniele Zambelli - daniele.zambelli@gmail.com
+%% 
+\NeedsTeXFormat{LaTeX2e}[[2018/01/01]
+\ProvidesPackage{matliberagraf}[%
+    2023/06/13 v0.9.60
+   Macro grafiche usate nel libro Matematica Libera]
+
+\newcommand{\disegno}[2][5]{% Inizializza un disegno
+  % Sintassi: \disegno[dimensione unità]{comandi grafici}
+  % Esempi di chiamata:
+  % \disegno{\draw (0, 0) -- (4, 6);}
+  % \disegno[3]{\draw (0, 0) -- (4, 6);}
+\begin{tikzpicture}[x=#1 mm, y=#1 mm, smooth, line cap=round]
+  #2
+\end{tikzpicture}
+}
+
+\newcommand{\vettored}[3][black]{% Disegna un vettore.
+  % Sintassi: \vettored[parametri]{pi}{pf}
+  % Esempio di chiamata:
+  % \disegno{\vettored[red]{(0, 0)}{(4, 6)}}
+  \draw [->] [#1] #2 -- #3;
+}
+
+\newcommand{\vettorenome}[4][black]{% Vettore con un nome.
+  % Sintassi: \vettorenome[parametri]{pi}{pf}{nome}
+  % Esempio di chiamata:
+  % \disegno{\vettorenome[red]{(0, 0)}{(4, 6)}{vettore}}
+  \draw [->, #1] #2 -- node {$\vect{#4}$} #3;
+}
+
+\newcommand{\vettoreAB}[7][black]{% Vettore con etichette agli estremi.
+  % Sintassi: \vettoreAB[parametri]{pi}{pf}{posni}{nomei}{posnf}{nomef}
+  % Esempio di chiamata:
+  % \disegno{
+  %   \vettoreAB[green]{(8, 0)}{(12, 6)}{below left}{A}{above left}{B}
+  % }
+  \draw [->, #1] #2 node [#4]{$#5$} -- #3 node [#6]{$#7$};
+}
+
+\newcommand{\freccia}[5][black]{% Freccia che punta a un testo.
+  % Sintassi: \freccia[parametri]{pi}{pf}{poslabel}{nome}
+  % Esempio di chiamata:
+  % \disegno[10]{\freccia{(-0.9, -0.7)}{(-0.4, -0.7)}{left}{resto}}
+  \draw [-{Latex[length=2mm, width=1mm]}, #1]
+    #2 node[#4]{\footnotesize $#5$} -- #3;
+}
+
+\newcommand{\segorientato}[3][black]{% Segmento orientato ERA \assev
+  % Sintassi: \segorientato[parametri]{pi}{pf}
+  % Esempio di chiamata:
+  % \disegno{\segorientato{(0, 0)}{(4, 6)}}
+  \draw [-{Stealth[length=2mm, open, round]}, #1] #2 -- #3;
+}
+
+\newcommand{\asse}[5][black]{
+  % Asse: aggiunge una variabile al segmento orientato.
+  % Sintassi: \asse[parametri]{pi}{pf}{posizione var}{var}
+  % Esempio di chiamata:
+  %% \disegno{\asse{(-7, -2}{(+7, 5}{below right}}{t}
+  \segorientato[#1]{#2}{#3}
+  \node [#4] at #3 {$#5$};
+}
+
+\newcommand{\asseo}[5][black]{% Asse orizzontale. ERA: \asse
+  % Sintassi: \asseo[parametri]{xi}{xf}{y}{var}
+  % Esempio di chiamata:
+  %% \disegno{\asseo{-7}{+7}{0}{t}}
+  \asse[#1]{(#2-.3, #4)}{(#3+.3, #4)}{below}{#5}
+}
+
+\newcommand{\assev}[5][black]{% Asse verticale.
+  % Sintassi: \assev[parametri]{yi}{yf}{x}{var}
+  % Esempio di chiamata:
+  %% \disegno{\asseo{-7}{+7}{0}{t}}
+  \asse[#1]{(#4, #2-.3)}{(#4, #3+.3)}{left}{#5}
+}
+
+\newcommand{\assex}[4][black]{% Asse x.
+  % Sintassi: \assex[parametri]{xi}{xf}{y}
+  % Esempio di chiamata:
+  %% \disegno{\assex{-5}{+5}{0}}
+  \asseo[#1]{#2}{#3}{#4}{x};
+}
+
+\newcommand{\segmentocontrattini}[4][black]{% Segmento con trattini.
+  % Sintassi: \segmentocontrattini[parametri]{xi}{xf}{y}
+  % Esempio di chiamata:
+  %% \disegno{\segmentocontrattini{-7}{+7}{0}}
+  \foreach \x in {#2, ..., #3}
+    \draw[very thin] (\x, #4-0.1) -- (+\x, #4+0.1);
+  \draw [#1] (#2-.3, #4) -- (#3+.3, #4);
+}
+
+\newcommand{\assecontrattini}[5][black]{% Asse con trattini da sx a dx.
+  % Sintassi: \assecontrattini[parametri]{xi}{xf}{y}{var}
+  % Esempio di chiamata:
+  %% \disegno{\assecontrattini{-7}{+7}{0}{t}
+  \foreach \x in {#2, ..., #3}
+    \draw[very thin] (\x, #4-0.1) -- (+\x, #4+0.1);
+    \asseo[#1]{#2}{#3}{#4}{#5}
+}
+
+\newcommand{\assecontrattinir}[5][black]{% Asse con trattini da dx a sx.
+  % Sintassi: \assecontrattinir[parametri]{xi}{xf}{y}{var}
+  % Esempio di chiamata:
+  %% \disegno{\assecontrattini{+7}{-7}{0}{t}
+  \foreach \x in {#2, ..., #3}
+    \draw[very thin] (\x, #4-0.1) -- (+\x, #4+0.1);
+    \asseo[#1]{#2+.6}{#3-.6}{#4}{#5}
+}
+
+\NewDocumentCommand \rcomvar{s O{black} m m m m m m}{
+  % Riferimento Cartesiano Ortogonale Monometrico.
+  % Se c'è l'asterisco non viene disegnata la griglia.
+  % Sintassi: \rcomvar[*][parametri]{xi}{xf}{yi}{yf}{varasc}{varord}
+  % Esempio di chiamata:
+  %% \disegno{\rcomvar*{-7}{+7}{-11}{+10}{t}{s}
+  %% \disegno{\rcomvar{-7}{+7}{-11}{+10}{t}{s}
+  \IfBooleanF{#1}
+    {\draw[gray!50, very thin, step=1]
+      (#3-0.3, #5-0.3) grid (#4+0.3, #6+0.3);}
+  \begin{scope}[-{Stealth[length=2mm, open, round]}, #2] % Assi
+    \draw (#3-0.3, 0) -- (#4+0.5, 0)
+      node [below, xshift=-3pt] {$#7$};
+    \draw (0, #5-0.3) -- (0, #6+0.5)
+      node [left, yshift=-3pt] {$#8$};
+  \end{scope}
+}
+
+\NewDocumentCommand \rcom{s O{black} m m m m}{
+  % Riferimento Cartesiano Ortogonale Monometrico.
+  % Se c'è l'asterisco non viene disegnata la griglia.
+  % Sintassi: \rcomvar[*][parametri]{xi}{xf}{yi}{yf}
+  % Esempio di chiamata:
+  %% \disegno{\rcom*{-7}{+7}{-11}{+10}
+  %% \disegno{\rcom{-7}{+7}{-11}{+10}
+  \IfBooleanTF{#1}
+    {\rcomvar*[#2]{#3}{#4}{#5}{#6}{x}{y}}
+    {\rcomvar[#2]{#3}{#4}{#5}{#6}{x}{y}}
+}
+
+\newcommand{\xbar}[7]{
+  % Sintassi:
+  % \xbar{x}{y}{lx}{\colorline}{\colorpoint}{\colorlabel}{\lbelow}
+  % example:
+  % \disegno{\xbar{0.7}{1.5}{a_1}{gray!50}{blue!50!black}{red}{0}}
+  \draw [thin, dashed, #4]
+        (#1, #2) |- node [#6, below=#7] {\small $#3$}(0, 0);
+  \filldraw (#1, #2) [#5] circle(1.5pt);
+}
+
+\newcommand{\ybar}[4]{
+  % Sintassi:
+  % \ybar{x}{y}{ly}{colorline}
+  % example:
+  % \disegno{\ybar{0.7}{1.5}{a_1}{gray!50}}
+  \draw [dashed, #4]
+        (0, #2) node [left] {\small $#3$} -- (#1, #2);
+}
+
+\NewDocumentCommand{\gnomino}
+  {m O{above right} m O{below} m O{left} m m O{#8}}{
+  % Sintassi:
+  % \gnomino{pos}[parn]{nome}[parx]{labx}[pary]{laby}{parline}{parpoint}
+  % Esempio di chiamata:
+  % \disegno{
+  %   \rcom{-4}{+4}{-4}{+4}
+  %   \gnomino{(-3.0, 0.5)}[above right]{C}
+  %     [black, below=5pt]{-3}[right]{+0.5}{red!50!black}{violet}}
+  \draw [thin, dashed, #8]
+        #1 |- node [#4] {\small $#5$} (0, 0)
+        #1 -| node [#6] {\small $#7$} (0, 0);
+  \filldraw #1 [#9] circle(1.5pt) node [#2]{$#3$};
+}
+
+\newcommand{\graficoxy}[6]{  % Grafico di una funzione.
+  % Sintassi: \graficoxy{xmi}{xma}{ymi}{yma}{colore}{funzione}
+  % Esempio di chiamata:
+  % \disegno{\graficoxy{-7}{+7}{-11}{+10}{blue!50!black}{2*x+3}}
+  \rcom{#1}{#2}{#3}{#4}
+  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
+  \tkzFct[domain=#1-0.3:#2+0.3, ultra thick, #5]{#6}
+}
+
+\newcommand{\graficixy}[5]{  % Grafico di più funzioni.
+  % Sintassi: \graficixy{xmi}{xma}{ymi}{yma}{lista funzione/colore}
+  % Esempio di chiamata:
+  % \disegno{
+  %   \graficixy{0}{7}{0}{7}{{x-2}/blue, {x*x/2.}/red, {(x-2)**2/2.}/violet}
+  % }
+  \rcom{#1}{#2}{#3}{#4}
+  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
+  \foreach \funzione/\colore in {#5}{
+    \tkzFct[domain=#1-0.3:#2+0.3, ultra thick, color=\colore]{\funzione}
+  }
+}
+
+\newcommand{\graficospezzato}[7]{  % Grafico di una funzione.
+  % Sintassi:  \grafparti{xmi}{xma}{ymi}{yma}{colore}{f}{intervalli}
+  % Esempio di chiamata:
+  % \disegno{\graficospezzato{-7}{+7}{-11}{+10}{blue!50!black}
+  %                          {(-2*x-5)/(x**2-x-6)}
+  %                          {-8.3/-2.01, -1.99/+2.9, +3.1/8.3}}
+  \rcom{#1}{#2}{#3}{#4}
+  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
+  \foreach \mii/\mai in {#7}{
+    \tkzFct[domain=\mii:\mai, ultra thick, #5]{#6}}
+}
+
+\newcommand{\grafparti}[7]{%
+  % Sintassi:  \grafparti{xmi}{xma}{ymi}{yma}{colore}{listaf}{listap}
+  % Dove gli elementi di listaf sono: <da>/<a>/<funzione>
+  % Dove gli elementi di listap sono: <xp>/<yp>/<colore>
+  % Esempio chiamata:
+  %   \disegno{
+  %     \grafparti{0}{10}{0}{8}{green!50!black}
+  %               {-.3/+4/-0.62*x*x+3.34*x+1.46,
+  %               +4/+7/-1.03*x+9.4,
+  %               +7/+9.25/(-(1.65*(x-3.65)+0.66)+10)**-1+2.35,
+  %               +9.35/+10.3/(-(1.65*(x-3.65)+0.66)+10)**-1+2.35
+  %               }
+  %               {4/4.88/white, 4/5.28/blue, 7/2.19/white, 7/2.61/blue}
+  %   }
+  % % Da notare l'uso di ``(...)**-1'' per evitare ``/'' che va in conflitto
+  % % con la sintassi di \foreach
+  \rcom{#1}{#2}{#3}{#4}
+  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
+  \foreach \da/\fino/\func in {#6} {
+    \tkzFct[domain=\da:\fino, ultra thick, #5] {\func}}
+  \foreach \px/\py/\pc in {#7} {
+    \filldraw (\px, \py) [fill=\pc] circle(1.5pt);}
+}
+
+\newcommand{\fpunti}[3]{% ERA:\fpoints
+  % Sintassi: \fpunti{funzione}{colore}{lista x}
+  % punti di una funzione.
+  % esempio di chiamata:
+  %   \disegno{
+  %     \rcom{-3}{+8}{-4}{+12}
+  %     \tkzInit[xmin=-3.3, xmax=+8.3, ymin=-4.3, ymax=+12.3]
+  %     \fpunti{1./3*\x*\x -2*\x +5}{blue!50!black}{-2, ..., 8}
+  %   }
+    \foreach \x in {#3}
+      \filldraw [#2] (\x, #1) circle (2pt);
+}
+
+\newcommand{\graficoepunti}[4]{%
+  % Grafico di una funzione con alcuni punti evidenziati.
+  % Sintassi: \graficoepunti{parametrif}{funzione}{colore}{lista x}
+  % esempio di chiamata:
+  %   \disegno{
+  %     \rcom{-3}{+8}{-4}{+12}
+  %     \tkzInit[xmin=-3.3, xmax=+8.3, ymin=-4.3, ymax=+12.3]
+  %     \graficoepunti{ultra thick, color=blue!50!black, domain=-3.3:+8.3}
+  %                   {1./3*\x*\x -2*\x +5}
+  %                   {green!50!black}{-2, ..., 8}
+  %   }
+  \tkzFct[#1]{#2}
+    \foreach \x in {#4}
+      \filldraw [#3] (\x, #2) circle (2pt);
+}
+
+\newcommand{\rcomfpunti}[7]{% ERA: \rcomfpoints
+  % Sintassi: \rcomfpunti{xmi}{xma}{ymi}{yma}{funzione}{colore}{lista x}
+  % punti di una funzione.
+  % esempio di chiamata:
+  %   \disegno[10]{
+  %     \rcomfpunti{-1}{+3}{-2}{+4}
+  %       {4*\x*\x*\x -10*\x*\x +6*\x}{blue!50!black}{-0.2, -0.1, ...,2}
+  %   }
+  \rcom{#1}{#2}{#3}{#4}
+  \foreach \x in {#7}
+    \filldraw [#6] (\x, #5) circle (2pt);
+}
+
+\newcommand{\boxfcomposta}{% Rappresentazione di una funzione composta
+  % Sintassi:
+  % \boxfcomposta
+  % Devono essere assegnate alcune variabili.
+  % Esempio di chiamata:
+  %   \def \latox{4}
+  %   \def \latoy{2}
+  %   \def \lab{\dfrac{\tonda{3x -2}^2}{8}}
+  %   \def \labf{\dfrac{x^2}{8}}
+  %   \def \labff{\dfrac{\xoo^2}{8}}
+  %   \def \xo{6}
+  %   \def \ff{\xoo*\xoo / 8}
+  %   \def \labg{3x -2}
+  %   \def \labgg{3 \cdot \xo -2}
+  %   \def \labfa{g}
+  %   \def \fg{3*\xo -2}
+  %   \def \labfg{f(g(\xo))}
+  %   \boxfcomposta
+  \def \slx{\latox/2}
+  \def \sly{\latoy/2}
+  \disegno{
+    \pgfmathparse{round(10*(\fg))/10} \let\xoo\pgfmathresult
+    \pgfmathparse{round(10*(\ff))/10} \let\xooo\pgfmathresult
+    \begin{scope}[-latex, rounded corners=4]
+      \draw (\slx*6, +\sly*3) node [above] {$\lab$}
+            (\slx*2, -\sly*2) rectangle ++ (\slx*8, \sly*5);
+      \draw (0, 0) -- (\slx*2, 0) node [midway, yshift=6pt] {$x=\xo$};
+      \draw (\slx*2, 0) -- (\slx*3, 0);
+      \draw (\slx*4, +\sly) node [above] {$\labg$}
+            (\slx*3, -\sly) rectangle ++ (\latox, \latoy)
+            node [midway] {$\labgg$};
+      \draw (\slx*5, 0) -- (\slx*7, 0)
+            node [midway, yshift=6pt] {$\labfa(\xo) = \xoo$};
+      \draw (\slx*7, -\sly) rectangle ++ (\latox, \latoy)
+            node [midway] {$\labff$}
+            (\slx*8, +\sly) node [above] {$\labf$};
+      \draw (\slx*9, 0) -- (\slx*10, 0);
+      \draw (\slx*10, 0) -- (\slx*12.5, 0)
+            node [midway, yshift=6pt] {$\labfg = \xooo$};
+    \end{scope}
+  }
+}
+
+\NewDocumentCommand{\eulerovenne}{s O{gray} m m m m m m}{
+  % Grafo di eulero-venn con etichette
+  % Sintassi: \eulerovenne{pos}{a}{b}{poslab}{lab}{x1/y1/l1, x2/y2/l2, ...}
+  % La versione con l'asterisco produce un rettangolo arrotondato
+  % Esempi:
+  % \disegno[10]{
+  %   \eulerovenne{(0, 0)}{2}{1}{(1, 1)}{A}
+  %               {-1/.2/0, 0/.2/1, +1/.2/2, -1/-.7/3, 0/-.7/4, +1/-.7/5}
+  % }
+  \IfBooleanTF{#1}
+    {\draw [#2, very thick, rounded corners] #3 rectangle (#4, #5)
+     #6 node{$#7$};}
+    {\draw [#2, very thick] #3 ellipse(#4 and #5) #6 node{$#7$};}
+    \foreach \x/\y/\lab in {#8}{
+      \filldraw [fill=CornflowerBlue, draw=black]
+        (\x, \y) node {\small$\lab$};
+  }
+}
+
+\NewDocumentCommand{\eulerovennp}{s O{gray} m m m m m m}{
+  % Grafo di eulero-venn con etichette
+  % Sintassi: \eulerovennp{pos}{a}{b}{poslab}{lab}{x1/y1/l1, x2/y2/l2, ...}
+  % La versione con l'asterisco produce un rettangolo arrotondato
+  % Esempi:
+  % \disegno[10]{
+  %   \eulerovennp{(0, 0)}{2}{1}{(1, 1)}{A}
+  %               {-1/.2/0, 0/.2/1, +1/.2/2, -1/-.7/3, 0/-.7/4, +1/-.7/5}
+  % }
+  \IfBooleanTF{#1}
+    {\draw [#2, very thick, rounded corners] #3 rectangle (#4, #5)
+     #6 node{$#7$};}
+    {\draw [#2, very thick] #3 ellipse(#4 and #5) #6 node{$#7$};}
+    \foreach \x/\y in {#8}{
+    \filldraw [fill=CornflowerBlue, draw=black]
+      (\x, \y) circle (2pt);
+  }
+}
+
+\newcommand{\collega}[5][dotted, very thick, green!70!black, opacity=50]{%
+  % Traccia una linea senza freccia da - a.
+  % Sintassi: \collega{da}{angoloda}{a}{angoloa}
+  % esempio: \collega{(-4.9, 1.4)}{10}{(-0.4, 0)}{120}
+  \draw [#1] #2 to [out=#3, in=#5] #4;
+}
+
+\newcommand{\collegas}[5][dotted, very thick, green!70!black, opacity=50]{%
+  % Traccia una freccia da - a.
+  % Sintassi: \collegas{da}{angoloda}{a}{angoloa}
+  % esempio: \collegas{(-4.9, 1.4)}{10}{(-0.4, 0)}{120}
+  \draw [#1, -{latex[length=1.5mm, width=1.5mm]}] #2 to [out=#3, in=#5] #4;
+}
+
+\newcommand{\collegad}[5][dotted, very thick, green!70!black, opacity=50]{%
+  % Traccia una freccia doppia da - a.
+  % Sintassi: \collegad{da}{angoloda}{a}{angoloa}
+  % esempio: \collegad{(-4.9, 1.4)}{10}{(-0.4, 0)}{120}
+  \draw [#1,
+    {latex[length=1.5mm, width=1.5mm]}-{latex[length=1.5mm, width=1.5mm]}]
+    #2 to [out=#3, in=#5] #4;
+}
+
+\newcommand{\collegaarc}[5][dotted, very thick, green!70!black, opacity=50]{%
+  % Traccia un arco da - a.
+  % Sintassi: \collegaarc{raggio}{da}{angoloda}{angoloa}
+  % esempio: \collegaarc{(55:3.2)}{-60}{210}{2mm}
+  \draw [#1] #2 arc (#3:#4:#5);
+}
+
+
+\newcommand{\collegaarcs}[5][dotted, very thick, green!70!black, opacity=50]{%
+  % Traccia una freccia a arco da - a.
+  % Sintassi: \collegaarcs{raggio}{da}{angoloda}{angoloa}
+  % esempio: \collegaarcs{(55:3.2)}{-60}{210}{2mm}
+  \draw [#1, -{latex[length=1.5mm, width=1.5mm]}] #2 arc (#3:#4:#5);
+}
+
+\newcommand{\testodrawRIMUOVERE}[3]{% Scrive un testo.
+  % Esempio di chiamata:
+  %
+  \def \testo{#1}
+  \def \posizione{#2}
+  \def \parametri{#3}
+  \coordinate [label={ #3 $\testo$}] (T) at (\posizione);
+}
+
+\def \centerarc[#1](#2)(#3:#4:#5){% Dis. arco partendo dal centro
+  % Sintassi: [draw options] (center) (initial angle:final angle:radius)
+  \draw[#1] ([shift=(#3:#5)]#2) arc (#3:#4:#5);
+}
+
+\def \angolodraw[#1](#2)(#3:#4:#5)#6{% Marca un angolo.
+  % Sintassi: [draw opt] (centro) (angoloini:angolofin:raggio)etichetta
+  % Esempio di chiamata:
+  % \disegno{
+  % \draw (8, 5) -- ++(-40:30mm)
+  %       (8, 5) -- ++(+5:30mm);
+  % \angolodraw[thick, blue](8, 5)(-40:5:8mm){\alpha}
+  % }
+  \centerarc[#1](#2)(#3:#4:#5)
+  \draw (#2) ++(#3/2+#4/2:#5*1.3) node [#1] {\(#6\)};
+}
+
+\newcommand{\molla}[4]{% Disegna una molla.
+  % Sintassi: \molla{posizione}{lunghezza}{ampiezza}{angolo}
+  % Esempio di chiamata:
+  % \disegno{\molla{(3, 2)}{5}{1}{-20}}
+  \draw [rotate=#4, shift={(#1)}]
+  (0,-0.5*#3) --(0,0.5*#3);
+  \draw plot [variable=\t, domain=45:7245, smooth, rotate=#4,
+  shift={(#1)}]
+  ({#2*0.0001388*\t}, {#3*(sin(\t)^2-0.5)});
+}
+
+\newcommand{\ellisse}[4][]{
+  % Ellisse dati: parametri, centro, semiassi, colore
+  % Sintassi: \ellisse[parametri]{centro}{semiasse a}{semiasse b}
+  % Esempio di chiamata:
+  % \ellisse[ultra thick, Maroon!50!black]{(3, 2)}{5}{4}
+  \draw [#1] #2 circle [x radius = {#3}, y radius = {#4}];
+}
+
+\newcommand{\grafofunzsx}[3]{%
+  % Funzione rappresentata come scatola nera a sinistra
+  % Sintassi: \grafofunzsx{nome}{argomento}{risultato}
+  % esempio di chiamata:
+  % \disegno{\grafofunzsx{add}{x}{y}}
+  \node [draw, fill=blue!20, minimum size=3em, rounded corners]
+         at (0, 0) (block 1) {#1};
+  \draw [angle 45-] (block 1.west) --++ (-.5, 0) node [left] {#2};
+  \draw [-angle 45] (block 1.east) --++ (+.5, 0) node [right] {#3};
+}
+
+\newcommand{\cerchietto}[2]{% Cerchietto
+  % Sintassi: \cerchietto{posx}{posy}
+  % Esempio di chiamata:
+  %% \cerchietto{-5}{0}
+  \def \dim{.25}
+  \draw (#1, #2) circle (\dim);
+}
+
+\newcommand{\crocetta}[2]{% Crocetta (estremo escluso)
+  % Sintassi: \crocetta{posx}{posy}
+  % Esempio di chiamata:
+  %% \crocetta{+5/3}{0}
+  \def \dim{.25}
+  \draw (#1-\dim,  #2-\dim) -- (#1+\dim, #2+\dim)
+        (#1-\dim,  #2+\dim) -- (#1+\dim, #2-\dim);
+}
+
+\newcommand{\rettdec}[2][x]{% Retta decrescente
+  \asseo{-3}{+3}{0}{#1}
+  \draw [-] [ultra thick,blue!50!black] (-3, 1.2) -- (0, 0);
+  \draw [-] [ultra thick,red!50!black] (0, 0) -- (+3, -1.2);
+  \draw [black] (0, -.3) -- (0, +.8) node [above] {$#2$};
+}
+
+\newcommand{\rettcre}[2][x]{% Retta crescente
+  \asseo{-3}{+3}{0}{#1}
+  \draw [-] [ultra thick, red!50!black] (-3, -1.2) -- (0, 0);
+  \draw [-] [ultra thick, blue!50!black] (0, 0) -- (+3, +1.2);
+  \draw [black] (0, -.3) -- (0, +.8) node [above] {$#2$};
+}
+
+\newcommand{\rettpos}[1][x]{% Retta positiva
+  \asseo{-3}{+3}{0}{#1}
+  \draw [-] [ultra thick, blue!50!black] (-3.3, +1) -- (+3.3, +1);
+}
+
+\newcommand{\rettneg}[1][x]{% Retta negativa
+  \asseo{-3}{+3}{0}{#1}
+  \draw [-] [ultra thick, red!50!black] (-3.3, -1) -- (+3.3, -1);
+}
+
+\newcommand{\rettadec}[2][x]{% Retta decrescente
+  \disegno{\rettdec[#1]{#2}}
+}
+
+\newcommand{\rettacre}[2][x]{% Retta decrescente
+  \disegno{\rettcre[#1]{#2}}
+}
+
+  % \newcommand{\segni}[3]{% Segni della retta
+  %   \node at (-2, .4) {$#1$};
+  %   %   \draw (0, .4) circle (3pt);
+  %   #2{0}{.4}
+  %   \node  at (+2, .4) {$#3$};
+  % }
+\NewDocumentCommand \segni{s m s m}{
+  % Segno di un polinomio di primo grado.
+  % Se c'è l'asterisco lo zero viene reso con una crocetta.
+  % Sintassi: \segni[*]{primosegno}{secondosegno}
+  % Esempio di chiamata:
+  % \disegno{\segni*{-}{+}
+  % \disegno{\segni{-}{+}
+  % \disegno{\segni{-}*{+}
+  \node at (-2, .4) {$#2$};
+  \IfBooleanF{#3}
+    {\IfBooleanTF{#1}
+      {\crocetta{0}{.4}}
+      {\cerchietto{0}{.4}}}
+  \node at (+2, .4) {$#4$};
+}
+
+\NewDocumentCommand{\segnidec}{s O{x} m}{% Retta decrescente
+  \disegno{
+    \rettdec[#2]{#3}
+    \IfBooleanTF{#1}
+      {\segni*{+}{-}}
+      {\segni{+}{-}}
+  }
+}
+
+\NewDocumentCommand{\segnicre}{s O{x} m}{% Retta crescente
+  \disegno{
+    \rettcre[#2]{#3}
+    \IfBooleanTF{#1}
+      {\segni*{-}{+}}
+      {\segni{-}{+}}
+  }
+}
+
+\newcommand{\segnipos}[1][x]{% segni retta positiva
+  \disegno[5]{
+    \rettpos[#1]
+    \segni{+}*{+}
+  }
+}
+
+\newcommand{\segnineg}[1][x]{% segni retta negativa
+  \disegno[5]{
+    \rettneg[#1]
+    \segni{-}*{-}
+  }
+}
+
+\newcommand{\evidenzia}[3][blue]{% evidenzia un segmento
+  % Sintassi: \evidenzia[colore]{pos_da}{pos_a}}
+  % Esempio di chiamata:
+  % \disegno{\evidenzia[green]{(0, -2)}{(+2, +5)}}
+  \draw [#1, thick, decorate, decoration=snake] #2 -- #3;
+}
+
+\newcommand{\evidenziameno}[4][blue]{
+  % Evidenzia un intervallo meno alcuni punti
+  % Sintassi: \evidenziameno[colore]{pos_da}{pos_a}}{lista_punti}
+  % Esempio di chiamata:
+  % \disegno{\evidenziameno[orange]{(-5.3, 7)}{(+5.3, +7)}
+  %                                {(-4, 7), (-2, 7), (+3, 7)}}
+  \evidenzia[#1]{#2}{#3}
+  \foreach \pos in {#4}{
+    \draw [#1, fill=white] \pos circle (3pt);}
+}
+
+\newcommand{\evidenziada}[4][blue]{% Evidenzia da un punto
+  % Sintassi: \evidenziada[colore]{pos_da}{pos_a}}{riempimento_punto}
+  % Esempio di chiamata:
+  % \disegno{\evidenziada[red]{(0, -2)}{(+2, +5)}{blue}}
+  \evidenzia[#1]{#2}{#3}
+  \draw [#1, fill=#4] #2 circle (3pt);
+}
+
+\newcommand{\evidenziafino}[4][blue]{% Evidenzia fino ad un punto
+  % Sintassi: \evidenziada[colore]{pos_da}{pos_a}}{riempimento_punto}
+  % Esempio di chiamata:
+  % \disegno{\evidenziafino{(0, -2)}{(+2, +5)}{white}}
+  \evidenzia[#1]{#2}{#3}
+  \draw [#1, fill=#4] #3 circle (3pt);
+}
+
+\newcommand{\evidenziadafino}[5][blue]{
+  % Evidenzia da un punto fino ad un punto
+  % Sintassi: \evidenziada[colore]{pos_da}{pos_a}}{riemp_da}{riemp_a}
+  % Esempio di chiamata:
+  % \disegno{\evidenziafino{(0, -2)}{(+2, +5)}{white}{blue}}
+  \evidenzia[#1]{#2}{#3}
+  \draw [#1, fill=#4] #2 circle (3pt);
+  \draw [#1, fill=#5] #3 circle (3pt);
+}
+
+\newcommand{\punti}[3]{% Evidenzia alcuni punti
+  % Sintassi: \punti{posy}{lista xpunto/etichetta}{colore}
+  % Esempio di chiamata:
+  % \disegno{\punti{0}{1/+2, 5/+5}{blue}}}
+  \foreach \xp/\lab in {#2}{
+    \draw [fill=#3] (\xp, #1) circle (3pt) node [above] {$\lab$};}
+}
+
+\newcommand{\ray}[5]{% Semiretta sinistra
+  % Sintassi: \ray{y}{xda}{xp}{labelp}{colorintp}
+  % Esempio di chiamata:
+  % \disegno{\ray{0}{-5}{-2}{p}{white}}
+  \evidenziafino{(#2, #1)}{(#3, #1)}{#5}
+  \draw[fill=#5] (#3, #1) circle (3pt) node [above] {$#4$};
+}
+
+\newcommand{\inti}[7]{% Intervallo interno orizzontale
+  % Sintassi: \inti{y}{xda}{xa}{labelda}{labela}{intda}{inta}
+  % Esempio di chiamata:
+  % \disegno{\inti{0}{-2}{+2}{a}{b}{white}{black}}
+  \evidenzia{(#2, #1)}{(#3, #1)}
+  \draw[fill=#6] (#2, #1) circle (3pt) node [above] {$#4$};
+  \draw[fill=#7] (#3, #1) circle (3pt) node [above] {$#5$};
+}
+
+\newcommand{\inte}[9]{% Intervallo esterno orizzontale
+  % Sintassi:
+  % \inti{y}{xda}{xa}{xpa}{xpb}{labelpa}{labelpb}{colorintpa}{colorintpb}
+  % Esempio di chiamata:
+  % \disegno{\inte{0}{-5}{+5}{-2}{+3}{a}{b}{white}{blue}}
+  \ray{#1}{#2}{#4}{#6}{#8}
+  \ray{#1}{#3}{#5}{#7}{#9}
+}
+
+\newcommand{\inticonasse}[8]{
+  % Intervallo interno con asse orizzontale da (0, #1) a (#2, #1)
+  % Sintassi: \inticonasse{y}{lung}{xpa}{xpb}{labelda}{labela}{intda}{inta}
+  % Esempio di chiamata:
+  % \disegno{\inticonasse{0}{10}{+2}{+7}{a}{b}{white}{black}}
+  \inti{#1}{#3}{#4}{#5}{#6}{#7}{#8}
+  \assex{0}{#2}{#1}
+}
+
+\newcommand{\inteconasse}[8]{
+  % Intervallo esterno con asse orizzontale da (0, #1) a (#2, #1)
+  % Sintassi: \inteconasse{y}{lung}{xpa}{xpb}{labela}{labelb}{inta}{intb}
+  % Esempio di chiamata:
+  % \disegno{\inteconasse{0}{10}{+2}{+7}{a}{b}{white}{black}}
+  \inte{#1}{-0.3}{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+  \assex{0}{#2}{#1}
+}
+
+\newcommand{\raylconasse}[6]{% semiretta sinistra con asse
+  % Sintassi: \raylconasse{y}{lung}{originesemiretta}{label}{into}{var}
+  % Esempio di chiamata:
+  % \disegno{\raylconasse{0}{5}{+2}{p}{white}{t}}
+  \ray{#1}{0-.3}{#3}{#4}{#5}
+  \asseo{0}{#2}{#1}{#6}
+}
+
+\newcommand{\rayrconasse}[6]{% semiretta destra con asse
+  % Sintassi: \rayrconasse{y}{lung}{originesemiretta}{label}{into}{var}
+  % Esempio di chiamata:
+  % \disegno{\rayrconasse{0}{7}{+2}{\frac{3}{2}}{blue}{x}}
+  \ray{#1}{#2+.3}{#3}{#4}{#5}
+  \asseo{0}{#2}{#1}{#6}
+}
+
+\newcommand{\allx}[3]{% per ogni x
+  % Sintassi: \allx{y}{lung}{var}
+  % Esempio di chiamata:
+  % \disegno{\allx{0}{7}{}}
+  \evidenzia{(-0.3, #1)}{(#2+0.3, #1)};
+  \asseo{0}{#2}{#1}{#3}
+  \draw [opacity=0] (0, 0) -- (0, .6);
+}
+
+\newcommand{\emptyx}[3]{% non esiste x
+  % Sintassi: \emptyx{y}{lung}{var}
+  % Esempio di chiamata:
+  % \disegno{\emptyx{0}{7}{v}}
+  \asseo{0}{#2}{#1}{#3}
+  \draw [opacity=0] (0, 0) -- (0, .6);
+}
+
+\newcommand{\intpunto}[4]{% Punto
+  % Disegna un punto su un asse.
+  % Sintassi:
+  % \intpunto{semiasse}{pospunto}{labelpunto}{colore}
+  % Esempio:
+  % \intpunto{4}{0}{+2}{blue}
+  \disegno{
+    \draw[fill=#4] (#2, 0) circle (2pt) node [above] {\(#3\)};
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\intid}[7]{% Intervallo interno a due punti.
+  % Sintassi: \intid{y}{semiasse}{xa}{xb}{labela}{labelb}{cola}{colb}
+  % Esempio di chiamata: \intid{5}{-3}{+2}{a}{b}{\white}{blue}
+  \disegno{
+  \inti{0}{#2}{#3}{#4}{#5}{#6}{#7}
+  \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\inted}[7]{% Intervallo esterno a due punti.
+  % Sintassi: \inted{y}{semiasse}{xa}{xb}{labela}{labelb}{cola}{colb}
+  % Esempio di chiamata: \inted{5}{-3}{+2}{a}{b}{blue}{white}
+  \disegno{
+  \inte{0}{-#1-.3}{+#1}{#2}{#3}{#4}{#5}{#6}{#7}
+  \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\intr}[1]{% Tutta la retta reale.
+  % Sintassi: \intid{semiasse}
+  % Esempio di chiamata: \intr{5}
+  \disegno{
+    \evidenzia{(-#1-.3, 0)}{(+#1, 0)}
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\intv}[1]{% Nessun valore di x.
+  % Sintassi: \intid{semiasse}
+  % Esempio di chiamata: \intv{5}
+  \disegno{
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\intiaa}[5]{% Intervallo ]a; b[
+  % Sintassi: \intiaa{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \intiaa{5}{-3}{3}{a}{b}
+  \intid{#1}{#2}{#3}{#4}{#5}{white}{white}
+}
+
+\newcommand{\intica}[5]{% Intervallo [a; b[
+  % Sintassi: \intica{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \intica{5}{-3}{3}{a}{b}
+  \intid{#1}{#2}{#3}{#4}{#5}{blue}{white}
+}
+
+\newcommand{\intiac}[5]{% Intervallo ]a; b]
+  % Sintassi: \intiac{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \intiac{5}{-3}{3}{a}{b}
+  \intid{#1}{#2}{#3}{#4}{#5}{white}{blue}
+}
+
+\newcommand{\inticc}[5]{% Intervallo [a; b]
+  % Sintassi: \inticc{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \inticc{5}{-3}{3}{a}{b}
+  \intid{#1}{#2}{#3}{#4}{#5}{blue}{blue}
+}
+
+\newcommand{\inteaa}[5]{% Intervallo ]a; b[
+  % Sintassi: \inteaa{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \inteaa{5}{-2}{+2}{a}{b}
+  \inted{#1}{#2}{#3}{#4}{#5}{white}{white}
+}
+
+\newcommand{\inteca}[5]{% Intervallo ]a; b[
+  % Sintassi: \inteca{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \inteaa{5}{-2}{+2}{a}{b}
+  \inted{#1}{#2}{#3}{#4}{#5}{blue}{white}
+}
+
+\newcommand{\inteac}[5]{% Intervallo ]a; b[
+  % Sintassi: \inteac{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \inteac{5}{-2}{+2}{a}{b}
+  \inted{#1}{#2}{#3}{#4}{#5}{white}{blue}
+}
+
+\newcommand{\intecc}[5]{% Intervallo ]a; b[
+  % Sintassi: \intecc{semiasse}{xa}{xb}{labela}{labelb}
+  % Esempio di chiamata: \intecc{5}{-2}{+2}{a}{b}
+  \inted{#1}{#2}{#3}{#4}{#5}{blue}{blue}
+}
+
+\newcommand{\rayla}[3]{% Intervallo ]a; b[
+  % Sintassi: \rayla{semiasse}{xa}{labela}
+  % Esempio di chiamata: \rayla{5}{-2}{a}
+  \disegno{
+    \ray{0}{-#1-.3}{#2}{#3}{white}
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\raylc}[3]{% Intervallo ]a; b[
+  % Sintassi: \raylc{semiasse}{xa}{labela}
+  % Esempio di chiamata: \raylc{5}{-2}{a}
+  \disegno{
+    \ray{0}{-#1-.3}{#2}{#3}{blue}
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\rayra}[3]{% Intervallo ]a; b[
+  % Sintassi: \rayra{semiasse}{xa}{labela}
+  % Esempio di chiamata: \rayra{5}{-2}{a}
+  \disegno{
+    \ray{0}{+#1+.3}{#2}{#3}{white}
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\newcommand{\rayrc}[3]{% Intervallo ]a; b[
+  % Sintassi: \rayrc{semiasse}{xa}{labela}
+  % Esempio di chiamata: \rayrc{5}{-2}{a}
+  \disegno{
+    \ray{0}{+#1+.3}{#2}{#3}{blue}
+    \assex{-#1}{+#1}{0}
+  }
+}
+
+\NewDocumentCommand \trespolo{s m m m m}{
+  % Grafo intervalli con enne assi e enne segnaposti.
+  % Sintassi:
+  % \trespolo{larghezza}{altezza}
+  %          {lista: posizione verticale/etichetta}
+  %          {lista: posizione orizzontale/etichetta}
+  % Esempi di chiamata:
+  % Trespolo per le disequazioni:
+  % \disegno{
+  % \trespolo{6}{-3}
+  %          {-1/D_1, -2/D_2, -3/D_3}
+  %          {1.5/-1, 3/\frac{1}{8}, 4.5/\frac{2}{7}}
+  % }
+  % Trespolo per i segni (starred):
+  % \disegno{
+  % \trespolo*{6}{-3}
+  %           {-1/D_1, -2/D_2, -3/D_3}
+  %           {1.5/-1, 3/\frac{1}{8}, 4.5/\frac{2}{7}}
+  % }
+  \IfBooleanTF{#1}
+    {\foreach \posy/\ea in {#4}{
+       \node at (-.3, \posy) [above left] {\(\ea\)};
+       \asse{(0, \posy)}{(#2, \posy)}{below right}{}
+     }
+    }
+    {\foreach \posy/\ea in {#4}{
+       \node at (-.3, \posy) [left] {\(\ea\)};
+       \asse{(0, \posy)}{(#2, \posy)}{right}{}
+     }
+    }
+  \foreach \i/\e in {#5}{
+    \draw (\i, #3) -- (\i, -0.3);
+    \node at (\i, +0.4) {\(\e\)};
+  }
+}
+
+\newcommand{\ruffini}[4]{% Divisione con il trespolo di Ruffini
+  % Sintassi: \ruffini{rigaa}{rigab}{rigac}{ncolonneF}
+  % Esempio di chiamata:
+  % \disegno{\ruffini{~,+1,+2,-8}{+2,~,+2,+8}{~,+1,+4,~~~0}{4}}
+  \foreach \val [count = \ival] in {#1}
+    \node at (\ival*2, 0) {$\val$};
+  \foreach \val [count = \ival] in {#2}
+    \node at (\ival*2, -1) {$\val$};
+  \foreach \val [count = \ival] in {#3}
+    \node at (\ival*2, -2) {$\val$};
+  \begin{scope}[blue!50!black]
+    \draw (3, .5) -- (3, -2.5);
+    \draw (#4*2 - 1, .5) -- (#4*2 - 1, -2.5);
+    \draw (1, -1.5) -- (#4*2+1, -1.5);
+  \end{scope}
+}
+
+\newcommand{\rettangolo}[5][(0, 0)]{
+  % Disegna il rettangolo ABCD date le dimensioni
+  % \disegno{\rettangolo[puntobase]{base}{altezza}{colore}{riempimento}
+  % \disegno{\rettangolo{5}{3}{blue!50!black}{blue!5}}
+  % \disegno{\rettangolo[(4, 2)]{5}{3}{blue!50!black}{blue!5}}
+  \draw [color=#4, fill=#5]
+    #1 node [below left=-.2] {$A$} -- ++
+    (#2, 0) node [below right=-.2] {$B$} -- ++
+    (0, #3) node [above right=-.2] {$C$} -- ++
+    (-#2, 0) node [above left=-.2]  {$D$} -- cycle;
+}
+
+\newcommand{\zeriprodotto}[3]{%
+  % \zeriprodotto{(x-4)(x+2)(3x-1)=0}
+  %              {+1.6/{3x-1=0~ \sRarrow ~x_1=\dfrac{1}{3}},
+  %               -0.8/{~~x+2=0~ \sRarrow ~x_2=\dfrac{2}{5}},%-2},
+  %               -2.9/{~~x-4=0~ \sRarrow ~x_3=4}}
+  %              {-1.8}
+  \def \equazione{#1}
+  \def \variabili{#2}
+  \def \deltay{#3}
+  \def \xf{4.5}
+  \def \yi{-.5}
+  \disegno{
+  \node at (0, 0) {$\equazione$};
+  \foreach \xe\lab [count = \cont]in \variabili
+  \draw [-latex] (\xe, \yi) --  (\xe, \cont*\deltay) --
+                 (\xf, \cont*\deltay) node [right] {$\lab$};
+    }
+}
+
+\newcommand{\microscopio}[7]{%
+  % Sintassi: \microscopio{punto}{lung}{angoloa}{angolob}{raggio}
+  %                       {postoetichetta}{etichetta}
+  % Esempio di chiamata:
+  % \disegno{\microscopio{(8, 5)}{2}{120}{-50}{2}
+  %                      {(7.6, 10)}{$\times\infty$}}
+  \draw [color=gray, fill=white, line join=round] #1 -- +(#3: #2)
+        arc [start angle=#4, delta angle=350, radius=#5] -- cycle;
+  \node [gray] at #6 {\footnotesize #7};
+}
+
+\newcommand{\grandangolo}[7]{%
+  % Esempio di chiamata:
+  % Sintassi: \grandangolo{punto}{lung}{angoloa}{angolob}{raggio}
+  %                       {postoetichetta}{etichetta}
+  % \disegno{\grandangolo{(8, 5)}{2}{120}{-50}{2}
+  %                      {(7.6, 10)}{$\times\infty$}}
+  \begin{scope}[densely dash dot]
+    \microscopio{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+  \end{scope}
+}
+
+\tikzset{
+  telescopio/.pic={% Disegna un telescopio non standard
+  % Sintassi: telescopio=<fattore ingrandimento>
+  % Esempio di chiamata:
+  % \disegno{\draw (-1, 1) pic [rotate=0, scale=.5]{telescopio=$\infty$};}
+  \begin{scope}[color=gray, ultra thick]
+    \draw [fill=gray, rounded corners=2] (5.4, -1.4) rectangle (6.9, -0.4);
+    \draw [fill=white, rounded corners=2] (1.4, -1.3) rectangle (5.6, -0.5);
+    \draw [fill=white](0.4, -1.2) rectangle (1.4, -0.6);
+    \draw [fill=white] (0.8, -1.2) circle (0.2);
+    \draw [fill=gray, rounded corners=1]
+          (0.4, -1.3) -- (0.4, -0.5) -- (-0.45, -0.5) -- cycle;
+    \draw [fill=white] (-0.2, -0.5) rectangle (0.2, -0.2);
+    \draw [fill=gray, rounded corners=.5] (-0.3, -0.2) rectangle (0.3, 0);
+    \draw [-{Stealth[length=2mm, open, round]}] (7.2, -.9) -- (8.2, -.9);
+  \end{scope}
+    \node at (9.2, -.9) [gray] {\footnotesize #1};
+  }
+}
+
+
+%% 
+%%  This file may be distributed and/or modified under the
+%%  conditions of the LaTeX Project Public Licence, either
+%%  version 1.3c of this licence or (at your option) any later
+%%  version. The latest version of this licence is in:
+%% 
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%%  and version 1.3c  or later is part of all distributions of
+%%  LaTeX version 2008/05/04 or later.
+%% 
+%%  This work has the LPPL maintenance status `maintained'.
+%%  and consists of the files listed in the README file.
+%% 
+%%
+%% End of file `matliberagraf.sty'.

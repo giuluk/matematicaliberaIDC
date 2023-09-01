@@ -1,0 +1,16 @@
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+%%%
+% Retta crescente
+%%%%
+ 
+\coordinate (inizio) at (-10, -3);
+\coordinate (zero) at (0, 0);
+\coordinate (fine) at (10, -3);
+
+\input{\magdir assiepiani/asse10x.pgf}
+
+\draw [-] [ultra thick, red!50!black] (inizio) -- (fine);
+
+\node [xshift=-25, yshift=-3, above] at (zero) {$-$};
+\node [xshift=25, yshift=-3, above] at (zero) {$-$};

@@ -1,7 +1,21 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %        Matematica Libera
 %
 % Copyright 2022-26 Daniele Zambelli
+%
+%------------------------------
+% Modulo: Insiemi Numerici
+%
+% Compilation:
+% $> lualatex --shell-escape ml01InsiemiNumerici.tex
+% $> make4ht ml01InsiemiNumerici.tex -f html5-common_domfilters 
+%    -c ml_make4ht -l -u -s -d ./html/mathjax 
+%    "mathjax, 3, sec-filename, fn-in, blind" 
+% or
+% $> ../../../compila.py -l ml01InsiemiNumerici.tex
+% $> ../../../compila.py -j ml01InsiemiNumerici.tex
+% 
+%------------------------------
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -52,23 +66,27 @@
 
 \newcommand{\editore}{}
 \newcommand{\tipo}{Modulo}
-\newcommand{\numero}{1}
-\newcommand{\titolo}{Insiemi numerici}
+\newcommand{\numero}{8}
+\newcommand{\titolo}{Disequazioni 2}
 % \newcommand{\titolodritto}{\tipo \numero: \titolo}
 % \newcommand{\pdftitolo}{Insiemi numerici}
-\newcommand{\docvers}{\texttt{1.0.0}}
+\newcommand{\docvers}{\texttt{2.0.0}}
 % \newcommand{\edizione}{2023}
 % \newcommand{\Edizione}{Edizione}
 %\newcommand{\inclusivita}{}%
 % {versione accessibile}{versione ciechi}
-\newcommand{\anno}{2023}
+\newcommand{\anno}{2024}
 \newcommand{\mese}{settembre}
 \newcommand{\oggi}{\mese\ \anno}
 \newcommand{\mcisbn}{}
 
 %------------------------
 % Con o senza soluzioni nelle tabelle
-
+% Non tutte le soluzioni sono stampate, ad esempio gli esercizi formati da 
+% una tabella da riempire hanno le celle vuote.
+% Dove è previsto, è possibile stampare tutte le soluzioni 
+% (nel caso precedente le tabelle già completate) commentando la linea con 
+% \verb |solallfalse| e decommentando la linea con \verb|solalltrue|.
 \newif\ifsolall % va messo nella classe???
 \solallfalse    % Non tutte le soluzioni (tabelle vuote)
 % \solalltrue     % tutte le soluzioni (tabelle gia compilate)
@@ -92,21 +110,17 @@
 %\newpage
 %\input{ml01InsiemiNumerici_pref}
 %\cleardoublepage
+% \newpage
+% \newpage
 
 % --------------------------------
 % Capitoli
 % --------------------------------
 \mainmatter
 % ..................................................
-% Modulo 1: Insiemi numerici
-\capitolo{\matdir 02_Insiemi_numerici/01_Numeri_naturali/nat01/}
-         {naturali}
-\capitolo{\matdir 02_Insiemi_numerici/02_Numeri_interi/int01/}
-         {interi}
-\capitolo{\matdir 02_Insiemi_numerici/03_Numeri_razionali/raz02/}
-         {razionali}
-%\capitolo{\matdir 02_Insiemi_numerici/05_Numeri_reali/re01/}
-%         {reali2}
+% Modulo 8: Disequazioni 2
+\capitolo{\matdir 04_Equazioni/05_Diseq_grado_2/dis201/}
+         {diseq2gr}
 
 % %..................................................
 % Azzeramento numerazione capitoli

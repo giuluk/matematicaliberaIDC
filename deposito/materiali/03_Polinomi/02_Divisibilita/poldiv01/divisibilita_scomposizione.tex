@@ -16,7 +16,8 @@ Ricordiamo la divisione nei numeri interi, per esempio~\(147:4\).
 \affiancati{.39}{.59}{
 Si tratta di trovare un quoziente~\(q\) e un resto~\(r<4\), 
 in modo che~\(147=q\times~4+r\). 
-Un algoritmo per trovare questi due numeri è il seguente:
+Un algoritmo per trovare questi due numeri è quello illustrato a lato.
+
 Verifichiamo che~\(147=36\times~4+3\), dunque~\(q=36\) e~\(r=3\) soddisfano 
 la nostra richiesta.
 }{
@@ -34,8 +35,9 @@ altri due polinomi, \(Q(x)\) \emph{quoziente} e~\(R(x)\) \emph{resto},
 con grado di~\(R(x)\) minore del grado di~\(B(x)\), per i 
 quali:~\(A(x) = B(x){\cdot}Q(x) + R(x)\).
 
-Per eseguire la \indtc{polinomio/polinomi}{divisione tra polinomi} si usa un 
-algoritmo molto simile a quello usato per la divisione tra numeri interi. 
+Per eseguire la \indtc{polinomio/polinomi}{divisione tra polinomi} 
+si usa un algoritmo molto simile a quello usato per la divisione tra numeri 
+interi. 
 Illustriamo l'algoritmo con un esempio.
 
 \begin{esempio}{}{}
@@ -188,7 +190,7 @@ A queste domande risponde il seguente teorema.
 \begin{teorema}{Divisione euclidea}{}
 Siano~\(A(x)\) e~\(B(x)\) due polinomi in una sola variabile: esistono 
 e sono unici due polinomi~\(Q(x)\) e~\(R(x)\), con grado di~\(R(x)\)
-minore o uguale del grado di~\(B(x)\), tali che~\(A(x)=Q(x)\cdot B(x)+R(x)\).
+minore del grado di~\(B(x)\), tali che~\(A(x)=Q(x)\cdot B(x)+R(x)\).
 \end{teorema}
 
 \begin{osservazione}{}{} 
@@ -216,10 +218,12 @@ Eseguendo la divisione otteniamo:
 
 \(\tonda{x^3-2x^2+x-2}:\tonda{x^2+1}=(x-2)\) 
 
-il resto~\(R(x)\) è il polinomio nullo quindi \(A(x)\) è divisibile 
-per~\(B(x)\).
+Infatti:\\
+\(\tonda{x^2+1} \cdot (x-2)=\tonda{x^3-2x^2+x-2}\).
 
-Infatti~\(\tonda{x^2+1} \cdot (x-2)=\tonda{x^3-2x^2+x-2}\).
+Poiché il resto \(R(x)\) è il polinomio nullo, \(A(x)\) è divisibile 
+per \(B(x)\).
+
 }{
 \immagine[.8]{Divisione con resto zero.}{\divdue}
 }
@@ -472,16 +476,17 @@ che risulti: \\
 per~\(x+k\) \quad allora \quad \(A(-k)=0\).
 
 Poiché \(A(x)\) è divisibile per~\(x+k\), per definizione di divisibilità 
-deve essere~\(R=0\). 
+deve essere \(R=0\). 
 Ma, per il teorema del resto, \(A(-k)=R=0\), 
 quindi, per la proprietà transitiva dell'uguaglianza, \(A(-k)=0\).
 
 \noindent \emph{Seconda implicazione}: \quad se \(A(-k)=0\) \quad 
-allora \quad \(A(x)\) è divisibile per~\(x+k\).
+allora \quad \(A(x)\) è divisibile per \(x+k\).
 
-Il resto della divisione del polinomio~\(A(x)\) per il binomio~\(x+k\),
-per il teorema del resto risulta~\(R=A(-k)\) e per ipotesi~\(A(-k)=0\),
-ne segue che~\(R=0\), quindi~\(A(x)\) è divisibile per~\(x+k\).
+Per il teorema del resto risulta che il resto della divisione del 
+polinomio \(A(x)\) per il binomio \(x+k\) è ~\(R=A(-k)\) poiché per 
+ipotesi \(A(-k)=0\), ne segue che \(R=0\), quindi \(A(x)\) è divisibile 
+per \(x+k\).
 \end{proof}
 
 % ----------------- Scomposizione -------------------------
@@ -648,7 +653,7 @@ minore:~\(\mcd=5x^2y^{3}z\)
 
 \begin{osservazione}{}{} 
 Raccogliendo un fattore con il segno~\((-)\), avremmo 
-ottenuto:~\(-5x^2y^{3}z \cdot (-2x^3+3xy^{2}+4z)\).
+ottenuto:~\(-5x^2y^{3}z \cdot (-2x^3+3xy^{2}-1)\).
 \end{osservazione}
 
 \begin{esempio}{}{}
@@ -1232,8 +1237,8 @@ Dato che \(S = +4\) il polinomio si scompone:
 \begin{esempio}{}{}
 Scomponi: \(x^2-\overset{S}{3}x-\overset{P}{10}\)
 
-Le coppie di numeri il cui prodotto è~\(P=-10\) sono:
-\(\{\punto{-1}{+10};~\punto{+1}{-10};~\punto{-2}{+5};~\punto{+2}{-5}\}\).
+Le coppie di numeri il cui prodotto è~\(P=-10\) sono:\\ 
+\(\{\coppia{-1}{+10};~\coppia{+1}{-10};~\coppia{-2}{+5};~\coppia{+2}{-5}\}\).
 
 Dato che~\(S=-3\), la scomposizione sarà:
 
@@ -1243,9 +1248,8 @@ Dato che~\(S=-3\), la scomposizione sarà:
 
 \begin{esempio}{}{}
 In alcuni casi si può applicare questa regola anche quando il trinomio
-non è di secondo grado, è necessario però che il termine di grado
-intermedio sia esattamente di grado pari alla metà di quello di grado
-maggiore.
+non è di secondo grado, è necessario però che il termine 
+intermedio sia di grado uguale alla metà di quello di grado maggiore.
 
 \begin{itemize}[nosep]
 \item \(x^4+5x^2+6=\tonda{x^2+3}\cdot \tonda{x^2+2}\)
@@ -1266,7 +1270,7 @@ maggiore.
 
 
 È possibile applicare questo metodo anche quando il
-polinomio è in due variabili.
+polinomio è in più variabili.
 
 \begin{esempio}{}{}
 Scomponi: \(x^2+5xy+6y^{2}\).
@@ -1277,8 +1281,8 @@ trinomio in questo modo:~\(x^2+\overset{S}{5}xy+\overset{P}{6}y{^{2}}\).
 Bisogna cercare due monomi~\(A\) e~\(B\) tali che~\(A+B=5y\)
 e~\(A\cdot B=6y^{2}\). Partendo dal fatto che i due numeri che danno~5
 come somma e~6 come prodotto sono~\(+3\) e~\(+2\), i monomi cercati 
-sono~\(+3y\) e~\(+2y\), infatti~\(+3y+3y=+5y\) 
-e~\(+3y\cdot (+2y)=+6y^{2}\).\\
+sono~\(+3y\) e~\(+2y\), infatti~\(+3y+2y=+5y\) 
+e~\(+3y \cdot (+2y) = +6y^{2}\).\\
 Pertanto si può scomporre come segue:~\(x^2+5xy+6y^{2}=(x+3y)(x+2y)\).
 \end{esempio}
 
@@ -1336,8 +1340,8 @@ polinomi\indc{scomposizione}{scomporre con Ruffini}.
 
 Chiamiamo \emph{zeri}\indc{polinomio/polinomi}{zeri di un polinomio} di un 
 polinomio o \emph{zeri} di una funzione in 
-una variabile, i valori \(k\) che, se sostituiti alla variabile annullano il 
-valore del polinomio o della funzione. 
+una variabile, i valori \(k\) che, se sostituiti alla variabile, annullano 
+il valore del polinomio o della funzione: \(P(k) = 0\).
 
 Il teorema di Ruffini dice che:
 
@@ -1740,6 +1744,7 @@ Scomponi in fattori irriducibili: \(x^2+y^{2}+2xy-2x-2y\).
 Facendo un raccoglimento parziale del coefficiente~2 tra gli ultimi tre 
 monomi otterremmo~\(x^2+y^{2}+2\cdot\tonda{xy-x-y}\) su cui non possiamo
 fare alcun ulteriore raccoglimento.
+Dobbiamo seguire un'altra strada.
 
 I primi tre termini formano però il quadrato di un binomio e tra gli
 altri due possiamo raccogliere~\(-2\). 
@@ -1831,7 +1836,7 @@ scomporlo come trinomio notevole.
 
 \vspace{-1em}
 \[x^{{3}}-7x-6 = 
-\tonda{x+1} \tonda{x-3} \tonda{x^2-x-6} = 
+\tonda{x+1} \tonda{x^2-x-6} = 
 \tonda{x+1} \tonda{x-3} \tonda{x+2}\]
 \end{esempio}
 %  

@@ -191,48 +191,6 @@ Then you can simply say
   }
 }
 
-\newcommand{\nodoesp}[7][]{% nodo di un'espressione numerica
-  % IMPORTANTE: si aspetta che nel suo ambiente sia definita la variabile:
-  % \ndim, ad esempio:
-  % \def \ndim{.94}
-  % esempio di chiamata:
-  % \nodoesp{(-5, -1)}{(-4, -1)}{-4.5}{-3}{\times}{12}
-  \def \rdim{#1}
-  \def \popa{#2}
-  \def \popb{#3}
-  \def \xris{#4}
-  \def \yris{#5}
-  \def \nop{#6}
-  \def \nris{#7}
-  \def \ndim{1.0}
-  \def \dimalf{\ndim/2}
-  \def \ddim{\ndim/10}
-  \def \xtopl{\xris-\dimalf}
-  \def \xtopr{\xris+\dimalf}
-  \def \ytop{\yris+2*\ndim}
-  \def \ym{\yris+3*\dimalf}
-  \draw \popa to [out=270, in=90] (\xris-3*\ddim, \ytop);
-  \draw \popb to [out=270, in=90] (\xris+3*\ddim, \ytop);
-  \draw (\xtopl, \ytop) -- (\xtopr, \ytop) -- (\xtopr, \ym) 
-        arc (0:-180:\dimalf) -- cycle;
-  \draw (\xris, \ym) node {\rdim$\nop$}
-        (\xris, \yris) node[draw, above, rectangle,rounded corners=1pt] 
-                           {\rdim$\nris$};
-%         (\xris, \yris) node[draw, above, rectangle] {$\ris$};
-  
-}
-
-\newcommand{\parentesi}[5]{
-  \def \posx{#1}
-  \def \posy{#2}
-  \def \inter{#3}
-  \def \pa{#4}
-  \def \pb{#5}
-  \draw (\posx-\inter, \posy) node [above=-2pt] {$\pa$}
-        (\posx+\inter, \posy) node [above=-2pt] {$\pb$};
-  
-}
-
 \newcommand{\opfun}[9]{
   \def \oa{#1}
   \def \op{#2}
@@ -248,7 +206,7 @@ Then you can simply say
   \def \ylb{-2.8}
   \disegno{
     \draw (0, 0) node{$\oa ~\op~ \ob$};
-    \nodoesp{(\xna, \yla)}{(\xnb, \yla)}{\xnr}{\ylb}{\op}{\ris}
+    \nodobin{(\xna, \yla)}{(\xnb, \yla)}{\xnr}{\ylb}{\op}{\ris}
     \freccia{(\xna-1, 0)}{(\xna-.3, 0)}{left}{\loa}
     \freccia{(\xnb+1, 0)}{(\xnb+.3, 0)}{right}{\lob}
     \freccia{(\xnr+1.5, \ylb+.5)}{(\xnr+.6, \ylb+.5)}{right}{\lris}
@@ -359,7 +317,7 @@ Then you can simply say
 %   \def \ndim{1.0}
   \disegno{
     \draw (0, 0) node{$\oa^\ob$};
-    \nodoesp{(\xna, \yla)}{(\xnb, -.1)}{\xnr}{\ylb}{\op}{\ris}
+    \nodobin{(\xna, \yla)}{(\xnb, -.1)}{\xnr}{\ylb}{\op}{\ris}
     \freccia{(\xna-1, 0)}{(\xna-.3, 0)}{left}{\loa}
     \freccia{(\xnb+1, .2)}{(\xnb+.3, .2)}{right}{\lob}
     \freccia{(\xnr+1.5, \ylb+.5)}{(\xnr+.6, \ylb+.5)}{right}{\lris}
@@ -374,8 +332,8 @@ Then you can simply say
   \def \xa{-1.6} \def \xb{-0.8} \def \xc{-.1} \def \xd{+.8} \def \xe{+1.6}
   \disegno{
     \draw (0, 0) node{$7 ~+~ 5 ~\times~ 2$};
-    \nodoesp{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{+}{12}
-    \nodoesp{(\xb, \lb)}{(\xe, \la)}{\xd}{\lc}{\times}{24}
+    \nodobin{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{+}{12}
+    \nodobin{(\xb, \lb)}{(\xe, \la)}{\xd}{\lc}{\times}{24}
   }
 }
 
@@ -387,8 +345,8 @@ Then you can simply say
   \def \xa{-1.6} \def \xb{-0.8} \def \xc{-.1} \def \xd{+.8} \def \xe{+1.6}
   \disegno{
     \draw (0, 0) node{$7 ~+~ 5 ~\times~ 2$};
-    \nodoesp{(\xc, \la)}{(\xe, \la)}{\xd}{\lb}{\times}{10}
-    \nodoesp{(\xa, \la)}{(\xd, \lb)}{\xb}{\lc}{+}{17}
+    \nodobin{(\xc, \la)}{(\xe, \la)}{\xd}{\lb}{\times}{10}
+    \nodobin{(\xa, \la)}{(\xd, \lb)}{\xb}{\lc}{+}{17}
   }
 }
 
@@ -476,13 +434,13 @@ Then you can simply say
 %     }
     \draw (0, 0) node{
     $49 ~-~ [2^4 ~\times~ (14 ~:~ 7) ~+~ 10]~=$};
-    \nodoesp{(\xc, \la)}{(\xe, 0)}{\xd}{\lb}{\uparrow}{\phantom{16}}
-    \nodoesp{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{:}{\phantom{2}}
+    \nodobin{(\xc, \la)}{(\xe, 0)}{\xd}{\lb}{\uparrow}{\phantom{16}}
+    \nodobin{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{:}{\phantom{2}}
     \parentesi{\xh}{\lb}{.8}{(}{)}
-    \nodoesp{(\xd, \lb)}{(\xh, \lb)}{\xf}{\lc}{\times}{\phantom{32}}
-    \nodoesp{(\xf, \lc)}{(\xk, \la)}{\xj}{\ld}{+}{\phantom{42}}
+    \nodobin{(\xd, \lb)}{(\xh, \lb)}{\xf}{\lc}{\times}{\phantom{32}}
+    \nodobin{(\xf, \lc)}{(\xk, \la)}{\xj}{\ld}{+}{\phantom{42}}
     \parentesi{\xj}{\ld}{1}{[}{]}
-    \nodoesp{(\xa, \la)}{(\xj, \ld)}{\xb}{\le}{-}{\phantom{7}}
+    \nodobin{(\xa, \la)}{(\xj, \ld)}{\xb}{\le}{-}{\phantom{7}}
     \draw (\xb, \le) 
       node[draw, above, rectangle,rounded corners=1pt, very thick] 
           {\phantom{$7$}};
@@ -513,13 +471,13 @@ Then you can simply say
 %     }
     \draw (0, 0) node{
     $49 ~-~ [2^4 ~\times~ (14 ~:~ 7) ~+~ 10]~=$};
-    \nodoesp{(\xc, \la)}{(\xe, 0)}{\xd}{\lb}{\uparrow}{16}
-    \nodoesp{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{:}{2}
+    \nodobin{(\xc, \la)}{(\xe, 0)}{\xd}{\lb}{\uparrow}{16}
+    \nodobin{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{:}{2}
     \parentesi{\xh}{\lb}{.8}{(}{)}
-    \nodoesp{(\xd, \lb)}{(\xh, \lb)}{\xf}{\lc}{\times}{32}
-    \nodoesp{(\xf, \lc)}{(\xk, \la)}{\xj}{\ld}{+}{42}
+    \nodobin{(\xd, \lb)}{(\xh, \lb)}{\xf}{\lc}{\times}{32}
+    \nodobin{(\xf, \lc)}{(\xk, \la)}{\xj}{\ld}{+}{42}
     \parentesi{\xj}{\ld}{1}{[}{]}
-    \nodoesp{(\xa, \la)}{(\xj, \ld)}{\xb}{\le}{-}{7}
+    \nodobin{(\xa, \la)}{(\xj, \ld)}{\xb}{\le}{-}{7}
     \draw (\xb, \le) 
       node[draw, above, rectangle,rounded corners=1pt, very thick] 
           {$7$};
@@ -556,18 +514,18 @@ Then you can simply say
     \draw (0, 0) node{
     $8^9 ~\times~ 8^5 ~:~ (8^3)^4 ~:~ 
     [4^{12} ~:~ (4^2)^5] ~+~ 27^2 ~:~ 9^2 ~=$};
-    \nodoesp[\footnotesize]{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{p1}{8^{14}}
-    \nodoesp[\footnotesize]{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{p3}{8^{12}}
-    \nodoesp[\footnotesize]{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{p3}{4^{10}}
-    \nodoesp[\footnotesize]{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{p5}{3^{2}}
-    \nodoesp[\footnotesize]{(\xb, \lb)}{(\xf, \lb)}{\xd}{\lc}{p2}{8^{2}}
-    \nodoesp[\footnotesize]{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{p2}{4^{2}}
-    \nodoesp{(\xp-.2, \lb+.2)}{(\xp+.2, \lb+.4)}{\xp}{\lc}{\uparrow}{9}
-    \nodoesp{(\xd-.2, \lc+.2)}{(\xd+.2, \lc+.4)}{\xd}{\ld}{\uparrow}{64}
-    \nodoesp{(\xj-.2, \lc+.2)}{(\xj+.2, \lc+.4)}{\xj}{\ld}{\uparrow}{16}
+    \nodobin[\footnotesize]{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{p1}{8^{14}}
+    \nodobin[\footnotesize]{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{p3}{8^{12}}
+    \nodobin[\footnotesize]{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{p3}{4^{10}}
+    \nodobin[\footnotesize]{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{p5}{3^{2}}
+    \nodobin[\footnotesize]{(\xb, \lb)}{(\xf, \lb)}{\xd}{\lc}{p2}{8^{2}}
+    \nodobin[\footnotesize]{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{p2}{4^{2}}
+    \nodobin{(\xp-.2, \lb+.2)}{(\xp+.2, \lb+.4)}{\xp}{\lc}{\uparrow}{9}
+    \nodobin{(\xd-.2, \lc+.2)}{(\xd+.2, \lc+.4)}{\xd}{\ld}{\uparrow}{64}
+    \nodobin{(\xj-.2, \lc+.2)}{(\xj+.2, \lc+.4)}{\xj}{\ld}{\uparrow}{16}
     \parentesi{\xj}{\ld}{1}{[}{]}
-    \nodoesp{(\xd, \ld)}{(\xj, \ld)}{\xh}{\le}{:}{4}
-    \nodoesp{(\xh, \le)}{(\xp, \lc)}{\xn}{\lf}{+}{13}
+    \nodobin{(\xd, \ld)}{(\xj, \ld)}{\xh}{\le}{:}{4}
+    \nodobin{(\xh, \le)}{(\xp, \lc)}{\xn}{\lf}{+}{13}
     \draw (\xn, \lf) 
       node[draw, above, rectangle,rounded corners=1pt, very thick] {$13$};
   }
@@ -598,14 +556,14 @@ Then you can simply say
 %     }
     \draw (0, 0) node{
     $3^3 ~-~ (5^2 ~\times~ 2 ~-~ 10^2 ~:~ 2^2) ~=$};
-    \nodoesp{(\xa, \la)}{(\xc, 0)}{\xb}{\lb}{\uparrow}{27}
-    \nodoesp{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{\uparrow}{25}
-    \nodoesp[\footnotesize]{(\xl, \la)}{(\xp, \la)}{\xn}{\lb}{p5}{5^2}
-    \nodoesp{(\xn-.2, \lb+.2)}{(\xn+.2, \lb+.4)}{\xn}{\lc}{\uparrow}{25}
-    \nodoesp{(\xf, \lb)}{(\xi, \la)}{\xh}{\lc}{\times}{50}
-    \nodoesp{(\xh, \lc)}{(\xn, \lc)}{\xj}{\ld}{-}{25}
+    \nodobin{(\xa, \la)}{(\xc, 0)}{\xb}{\lb}{\uparrow}{27}
+    \nodobin{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{\uparrow}{25}
+    \nodobin[\footnotesize]{(\xl, \la)}{(\xp, \la)}{\xn}{\lb}{p5}{5^2}
+    \nodobin{(\xn-.2, \lb+.2)}{(\xn+.2, \lb+.4)}{\xn}{\lc}{\uparrow}{25}
+    \nodobin{(\xf, \lb)}{(\xi, \la)}{\xh}{\lc}{\times}{50}
+    \nodobin{(\xh, \lc)}{(\xn, \lc)}{\xj}{\ld}{-}{25}
     \parentesi{\xj}{\ld}{1}{(}{)}
-    \nodoesp{(\xb, \lb)}{(\xj, \ld)}{\xd}{\le}{-}{2}
+    \nodobin{(\xb, \lb)}{(\xj, \ld)}{\xd}{\le}{-}{2}
     \draw (\xd, \le) 
       node[draw, above, rectangle,rounded corners=1pt, very thick] 
           {$2$};
@@ -625,11 +583,11 @@ Then you can simply say
   \def \lf{-10.5}
 %   \def \ndim{1.0}
   \def \xa{-6.9} \def \xb{-6.15} 
-  \def \xc{-5.4} \def \xd{-4.57} \def \xe{-3.6} 
-  \def \xf{-2.8} \def \xg{-2.15} \def \xh{-1.35} 
-  \def \xi{-0.1} \def \xj{+0.85} \def \xk{+1.65} 
-  \def \xl{+1.85} \def \xm{+2.05} \def \xn{+3.2} 
-  \def \xo{+3.95} \def \xp{+4.82} \def \xq{+5.45} 
+  \def \xc{-5.45} \def \xd{-4.7} \def \xe{-3.7} 
+  \def \xf{-2.85} \def \xg{-2.1} \def \xh{-1.35} 
+  \def \xi{-0.1} \def \xj{+0.8} \def \xk{+1.5} 
+  \def \xl{+1.85} \def \xm{+2.02} \def \xn{+3.1} 
+  \def \xo{+3.9} \def \xp{+4.85} \def \xq{+5.6} 
 %     \foreach \x/\l in {\xa/a, \xb/b, \xc/c, \xd/d, \xe/e, 
 %                        \xf/f, \xg/g, \xh/h, \xi/i, \xj/j, 
 %                        \xk/k, \xl/l, \xm/m, \xn/n, \xo/o, 
@@ -642,16 +600,16 @@ Then you can simply say
     \draw (0, 0) node{
     $[4 ~\times~ 5 ~+~ 16 ~:~ 2 ~-~ (13 ~-~ 2^{\dots}) ~\times~ 2] ~:~ 
       2 ~=~ 9$};
-    \nodoesp{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{\times}{20}
-    \nodoesp{(\xe, \la)}{(\xg, \la)}{\xf}{\lb}{:}{8}
-    \nodoesp{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{\uparrow}{\phantom{8}}
-    \nodoesp{(\xb, \lb)}{(\xf, \lb)}{\xd}{\lc}{+}{28}
-    \nodoesp{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{-}{\phantom{5}}
+    \nodobin{(\xa, \la)}{(\xc, \la)}{\xb}{\lb}{\times}{20}
+    \nodobin{(\xe, \la)}{(\xg, \la)}{\xf}{\lb}{:}{8}
+    \nodobin{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{\uparrow}{\phantom{8}}
+    \nodobin{(\xb, \lb)}{(\xf, \lb)}{\xd}{\lc}{+}{28}
+    \nodobin{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{-}{\phantom{5}}
     \parentesi{\xj}{\lc}{.8}{(}{)}
-    \nodoesp{(\xj, \lc)}{(\xo, \la)}{\xn}{\ld}{\times}{\phantom{10}}
-    \nodoesp{(\xd, \lc)}{(\xn, \ld)}{\xh}{\le}{-}{\phantom{18}}
+    \nodobin{(\xj, \lc)}{(\xo, \la)}{\xn}{\ld}{\times}{\phantom{10}}
+    \nodobin{(\xd, \lc)}{(\xn, \ld)}{\xh}{\le}{-}{\phantom{18}}
     \parentesi{\xh}{\le}{1}{[}{]}
-    \nodoesp{(\xh, \le)}{(\xq, \la)}{\xp}{\lf}{:}{\phantom{9}}
+    \nodobin{(\xh, \le)}{(\xq, \la)}{\xp}{\lf}{:}{\phantom{9}}
     \draw (\xp, \lf) 
       node[draw, above, rectangle,rounded corners=1pt, very thick] 
           {$\textcolor{blue}{9}$};
@@ -716,30 +674,30 @@ Then you can simply say
     \draw (0, 0) node{
     $(3^4)^3 ~\times~ 3^{\dots} : (3^3)^5 ~-~ 2^3 ~\times~ 2 
      ~\times~ (20 ~-~ 3 ~\times~ 5) ~=~ 1$};
-    \nodoesp[\footnotesize]{(\xa, \la)}{(\xc, 0)}{\xb}{\lb}{p3}{3^{12}}
-    \nodoesp[\footnotesize]{(\xg, \la)}{(\xi, 0)}{\xh}{\lb}{p3}{3^{15}}
-    \nodoesp[\footnotesize]{(\xk, \la)}{(\xm, \la)}{\xl}{\lb}{p2}{8^{2}}
-    \nodoesp{(\xq, \la)}{(\xs, \la)}{\xr}{\lb}{\times}{15}
-    \nodoesp[\footnotesize]{(\xb, \lb)}{(\xe, \la)}{\xd}{\lc}{p1}
+    \nodobin[\footnotesize]{(\xa, \la)}{(\xc, 0)}{\xb}{\lb}{p3}{3^{12}}
+    \nodobin[\footnotesize]{(\xg, \la)}{(\xi, 0)}{\xh}{\lb}{p3}{3^{15}}
+    \nodobin[\footnotesize]{(\xk, \la)}{(\xm, \la)}{\xl}{\lb}{p2}{8^{2}}
+    \nodobin{(\xq, \la)}{(\xs, \la)}{\xr}{\lb}{\times}{15}
+    \nodobin[\footnotesize]{(\xb, \lb)}{(\xe, \la)}{\xd}{\lc}{p1}
       {\phantom{8^{14}}}
-    \nodoesp{(\xl-.2, \lb+.2)}{(\xl+.2, \lb+.4)}{\xl}{\lc}{\uparrow}{16}
-    \nodoesp{(\xo, \la)}{(\xr, \lb)}{\xp}{\lc}{-}{5}
+    \nodobin{(\xl-.2, \lb+.2)}{(\xl+.2, \lb+.4)}{\xl}{\lc}{\uparrow}{16}
+    \nodobin{(\xo, \la)}{(\xr, \lb)}{\xp}{\lc}{-}{5}
     \parentesi{\xp}{\lc}{.8}{(}{)}
-    \nodoesp[\footnotesize]{(\xd, \lc)}{(\xh, \lb)}{\xf}{\ld}{p2}
+    \nodobin[\footnotesize]{(\xd, \lc)}{(\xh, \lb)}{\xf}{\ld}{p2}
       {\phantom{8^{14}}}
-    \nodoesp[\footnotesize]{(\xf-.2, \ld+.2)}{(\xf+.2, \ld+.4)}{\xf}{\le}
+    \nodobin[\footnotesize]{(\xf-.2, \ld+.2)}{(\xf+.2, \ld+.4)}{\xf}{\le}
       {\uparrow}{~\textcolor{blue}{\bigstar}}
-    \nodoesp{(\xl, \lc)}{(\xp, \lc)}{\xn}{\ld}{\times}{80}
-    \nodoesp{(\xf, \le)}{(\xn, \ld)}{\xj}{\lf}{-}{\phantom{1}}
-%     \nodoesp[\footnotesize]{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{p3}{8^{12}}
-%     \nodoesp[\footnotesize]{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{p3}{4^{10}}
-%     \nodoesp[\footnotesize]{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{p5}{3^{2}}
-%     \nodoesp[\footnotesize]{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{p2}{4^{2}}
-%     \nodoesp{(\xp-.2, \lb+.2)}{(\xp+.2, \lb+.4)}{\xp}{\lc}{\uparrow}{9}
-%     \nodoesp{(\xd-.2, \lc+.2)}{(\xd+.2, \lc+.4)}{\xd}{\ld}{\uparrow}{64}
-%     \nodoesp{(\xj-.2, \lc+.2)}{(\xj+.2, \lc+.4)}{\xj}{\ld}{\uparrow}{16}
-%     \nodoesp{(\xd, \ld)}{(\xj, \ld)}{\xh}{\le}{:}{4}
-%     \nodoesp{(\xh, \le)}{(\xp, \lc)}{\xn}{\lf}{+}{13}
+    \nodobin{(\xl, \lc)}{(\xp, \lc)}{\xn}{\ld}{\times}{80}
+    \nodobin{(\xf, \le)}{(\xn, \ld)}{\xj}{\lf}{-}{\phantom{1}}
+%     \nodobin[\footnotesize]{(\xe, \la)}{(\xg, 0)}{\xf}{\lb}{p3}{8^{12}}
+%     \nodobin[\footnotesize]{(\xk, \la)}{(\xm, 0)}{\xl}{\lb}{p3}{4^{10}}
+%     \nodobin[\footnotesize]{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{p5}{3^{2}}
+%     \nodobin[\footnotesize]{(\xi, \la)}{(\xl, \lb)}{\xj}{\lc}{p2}{4^{2}}
+%     \nodobin{(\xp-.2, \lb+.2)}{(\xp+.2, \lb+.4)}{\xp}{\lc}{\uparrow}{9}
+%     \nodobin{(\xd-.2, \lc+.2)}{(\xd+.2, \lc+.4)}{\xd}{\ld}{\uparrow}{64}
+%     \nodobin{(\xj-.2, \lc+.2)}{(\xj+.2, \lc+.4)}{\xj}{\ld}{\uparrow}{16}
+%     \nodobin{(\xd, \ld)}{(\xj, \ld)}{\xh}{\le}{:}{4}
+%     \nodobin{(\xh, \le)}{(\xp, \lc)}{\xn}{\lf}{+}{13}
     \draw (\xj, \lf) 
       node[draw, above, rectangle,rounded corners=1pt, very thick] 
           {$\textcolor{blue}{1}$};
@@ -784,22 +742,22 @@ Then you can simply say
 %     $2 ~+~ 6 ~\times~ 2 ~: 
 %     \left[ \left(4 ~-~ 2 \right) \times~ 3^{2} ~-~ 3 ~\times~ 5 \right] ~+~
 %     \left( 5^{2} ~+~ 2^{3} \right) ~:~ 3 =$};
-%     \nodoesp{(\xc, \la)}{(\xe, \la)}{\xd}{\lb}{\times}{12}
-%     \nodoesp{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{-}{2}
+%     \nodobin{(\xc, \la)}{(\xe, \la)}{\xd}{\lb}{\times}{12}
+%     \nodobin{(\xg, \la)}{(\xi, \la)}{\xh}{\lb}{-}{2}
 %     \parentesi{\xh}{\lb}{.8}{(}{)}
-%     \nodoesp{(\xk, \la)}{(\xm, +0.0)}{\xl}{\lb}{\uparrow}{9}
-%     \nodoesp{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{\times}{15}
-%     \nodoesp{(\xs, \la)}{(\xu, +0.0)}{\xt}{\lb}{\uparrow}{25}
-%     \nodoesp{(\xw, \la)}{(\xy, +0.0)}{\xx}{\lb}{\uparrow}{8}
-%     \nodoesp{(\xh, \lb)}{(\xl, \lb)}{\xj}{\lc}{\times}{18}
-%     \nodoesp{(\xt, \lb)}{(\xx, \lb)}{\xv}{\lc}{+}{33}
+%     \nodobin{(\xk, \la)}{(\xm, +0.0)}{\xl}{\lb}{\uparrow}{9}
+%     \nodobin{(\xo, \la)}{(\xq, \la)}{\xp}{\lb}{\times}{15}
+%     \nodobin{(\xs, \la)}{(\xu, +0.0)}{\xt}{\lb}{\uparrow}{25}
+%     \nodobin{(\xw, \la)}{(\xy, +0.0)}{\xx}{\lb}{\uparrow}{8}
+%     \nodobin{(\xh, \lb)}{(\xl, \lb)}{\xj}{\lc}{\times}{18}
+%     \nodobin{(\xt, \lb)}{(\xx, \lb)}{\xv}{\lc}{+}{33}
 %     \parentesi{\xv}{\lc}{1}{(}{)}
-%     \nodoesp{(\xj, \lc)}{(\xp, \lb)}{\xn}{\ld}{-}{3}
+%     \nodobin{(\xj, \lc)}{(\xp, \lb)}{\xn}{\ld}{-}{3}
 %     \parentesi{\xn}{\ld}{.8}{[}{]}
-%     \nodoesp{(\xv, \lc)}{(\xaa, \la)}{\xz}{\ld}{:}{11}
-%     \nodoesp{(\xd, \lb)}{(\xn, \ld)}{\xf}{\le}{:}{4}
-%     \nodoesp{(\xa, \la)}{(\xf, \le)}{\xb}{\lf}{+}{6}
-%     \nodoesp{(\xb, \lf)}{(\xz, \ld)}{\xr}{\lg}{+}{17}
+%     \nodobin{(\xv, \lc)}{(\xaa, \la)}{\xz}{\ld}{:}{11}
+%     \nodobin{(\xd, \lb)}{(\xn, \ld)}{\xf}{\le}{:}{4}
+%     \nodobin{(\xa, \la)}{(\xf, \le)}{\xb}{\lf}{+}{6}
+%     \nodobin{(\xb, \lf)}{(\xz, \ld)}{\xr}{\lg}{+}{17}
 %     \draw (\xr, \lg) 
 %       node[draw, above, rectangle,rounded corners=1pt, very thick] 
 %           {$\ris$};

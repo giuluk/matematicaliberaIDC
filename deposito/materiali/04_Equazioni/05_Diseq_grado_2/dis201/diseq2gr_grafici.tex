@@ -1,0 +1,575 @@
+% (c) 2017 Daniele Zambelli - daniele.zambelli@gmail.com
+% 
+% Tutti i grafici per il capitolo relativo alle disequazioni di secondo grado
+%
+
+\newcommand{\funzioneassociata}[2]{% blocco relativo alla funz. associata
+  \def \funz{#1}
+  \def \grafico{#2}
+  \begin{minipage}{.54\textwidth}
+  Funzione Associata:~~ \funz
+  \end{minipage}
+  \begin{minipage}{.40\textwidth}
+%   \begin{center}
+  \grafico
+%   \end{center}
+  \end{minipage}
+}
+% 
+% \newcommand{\insiemesoluzione}[3]{% blocco relativo alla soluzione
+%   \def \grafica{#1}
+%   \def \predicati{#2}
+%   \def \parentesi{#3}
+%  Insieme soluzione\\
+%  
+%   \noindent\begin{minipage}[t]{.32\textwidth}
+%   Forma grafica\\[-.5em]
+%   
+%  \begin{center}
+%    \grafica
+%   \vspace{.4em}
+%  \end{center}
+%   \end{minipage}
+%   \begin{minipage}[t]{.32\textwidth}
+%   Espressione con i predicati\\%[-.9em]
+%   
+%  \begin{center}
+%   \predicati
+% %   \vspace{1em}
+%  \end{center}
+%   \end{minipage}
+%   \begin{minipage}[t]{.32\textwidth}
+%   Espressione con le parentesi\\%[-.3em]
+%   
+%  \begin{center}
+%   \parentesi
+% %   \vspace{.8em}
+%  \end{center}
+%   \end{minipage}
+% }
+
+\newcommand{\segnofatt}[4]{% Segno di un fattore 
+  \def \ea{#1}
+  \def \fa{#2}
+  \def \inaccessiblebl{#3}
+  \def \segno{#4}
+ \begin{minipage}{.33\textwidth}
+  E.A.:~\ea
+ \end{minipage}
+ \begin{minipage}{.23\textwidth}
+  F.A.:~\fa
+ \end{minipage}
+ \begin{minipage}{.33\textwidth}
+  \begin{inaccessibleblock}[\inaccessiblebl]
+  \segno
+\end{inaccessibleblock}
+ \end{minipage}
+}
+
+\newcommand{\parabolaamidmi}{% Parabola a<0 e Delta<0
+  \disegno{
+    \assex{-4}{+4}{0}
+    \tkzInit[xmin=-4,xmax=+4,ymin=-1.3,ymax=+1.3]
+    \tkzFct[domain=-4:+4, ultra thick, color=red!50!black]{-.125*x*x-.5};
+    \foreach \x in {-3, 0, +3}
+      \node at (\x, 0) [above, yshift=-3pt] {\(-\)};
+  }
+}
+
+\newcommand{\parabolaamadmi}{% Parabola a>0 e Delta<0
+  \disegno{
+    \assex{-4}{+4}{0}
+    \tkzInit[xmin=-4,xmax=+4,ymin=-1.3,ymax=+1.3]
+    \tkzFct[domain=-4:+4, ultra thick, color=blue!50!black]{+.125*x*x+.5};
+    \foreach \x in {-3, 0, +3}
+      \node at (\x, 0) [above, yshift=-3pt] {\(+\)};
+  }
+}
+
+\newcommand{\parabolaamidz}[1]{% Parabola a<0 e Delta=0
+  \def \zero{#1}
+  \disegno{      
+    \assex{-4}{+4}{0}
+    \tkzInit[xmin=-4,xmax=+4,ymin=-1.3,ymax=+1.3]
+    \tkzFct[domain=-4:4, ultra thick, color=red!50!black]{-.125*x*x};
+    \draw [black] (0, -.3) -- (0, +.8) node [above] {\(\zero\)};
+    \foreach \x in {-3, +3} 
+      \node at (\x, 0) [above, yshift=-3pt] {\(-\)};
+    \draw (0, .4) circle (3pt);
+    \draw[fill=orange] (0, 0) circle (1.5pt);
+  }
+}
+
+\newcommand{\parabolaamadz}[1]{% Parabola a>0 e Delta=0
+  \def \zero{#1}
+  \disegno{      
+    \assex{-4}{+4}{0}
+    \tkzInit[xmin=-4,xmax=+4,ymin=-1.3,ymax=+1.3]
+    \tkzFct[domain=-4:+4, ultra thick, color=blue!50!black]{+.125*x*x};
+    \draw [black] (0, -.3) -- (0, +.8) node [above] {\(\zero\)};
+    \foreach \x in {-3, +3} 
+      \node at (\x, 0) [above, yshift=-3pt] {\(+\)};
+    \draw (0, .4) circle (3pt);
+    \draw[fill=orange] (0, 0) circle (1.5pt);
+  }
+}
+
+\newcommand{\parabolaamidma}[2]{% Parabola a<0 e Delta>0
+  \def \zeroa{#1}
+  \def \zerob{#2}
+  \def \para{-.15*x*x+.6}
+  \disegno{
+    \assex{-4}{+4}{0}
+    \tkzInit[xmin=-4,xmax=+4,ymin=-1.3,ymax=+1.3]
+    \begin{scope}[ultra thick]
+    \tkzFct[domain=-4:-2, color=red!50!black]{\para};
+    \tkzFct[domain=-2:+2, color=blue!50!black]{\para};
+    \tkzFct[domain=+2:+4, color=red!50!black]{\para};
+    \end{scope}
+    \draw [black] (-2, -.3) -- (-2, +.8) node [above] {\(\zeroa\)}
+                  (+2, -.3) -- (+2, +.8) node [above] {\(\zerob\)};
+    \foreach \x in {-3.2, +3.2} 
+      \node at (\x, 0) [above=-1pt, red!50!black] {\(-\)};
+      \node at (0, 0) [above=-3pt, blue!50!black] {\(+\)};
+    \foreach \x in {-2, +2} {
+      \draw[fill=orange] (\x,0) circle (1.5pt);
+      \draw (\x, .4) circle (3pt);}
+  }
+}
+
+\newcommand{\parabolaamadma}[2]{% Parabola a>0 e Delta>0
+  \def \zeroa{#1}
+  \def \zerob{#2}
+  \def \para{+.15*x*x-.6}
+  \disegno{
+    \assex{-4}{+4}{0}
+    \tkzInit[xmin=-4,xmax=+4,ymin=-1.3,ymax=+1.3]
+    \begin{scope}[ultra thick]
+    \tkzFct[domain=-4:-2, color=blue!50!black]{\para};
+    \tkzFct[domain=-2:+2, color=red!50!black]{\para};
+    \tkzFct[domain=+2:+4, color=blue!50!black]{\para};
+    \end{scope}
+    \draw [black] (-2, -.3) -- (-2, +.8) node [above] {\(\zeroa\)}
+                  (+2, -.3) -- (+2, +.8) node [above] {\(\zerob\)};
+    \foreach \x in {-3.2, +3.2} 
+      \node at (\x, 0) [above=-3pt, blue!50!black] {\(+\)};
+    \node at (0, 0) [above=-1pt, red!50!black] {\(-\)};
+    \foreach \x in {-2, +2} {
+      \draw[fill=orange] (\x,0) circle (1.5pt);
+      \draw (\x, .4) circle (3pt);}
+  }
+}
+
+% \newcommand{\inti}[7]{% Intervallo interno
+%   % \disegno{\inti{0}{-2}{+2}{a}{b}{white}{blue}}
+%   \def \posy{#1}
+%   \def \posa{#2}
+%   \def \posb{#3}
+%   \def \labela{#4}
+%   \def \labelb{#5}
+%   \def \inta{#6}
+%   \def \intb{#7}
+%   \coordinate (a) at (\posa, \posy);
+%   \coordinate (b) at (\posb, \posy);
+%   \draw [blue, thick, decorate, decoration=snake] (a) -- (b);
+%   \draw[fill=\inta] (a) circle (2pt) node [above] {\(\labela\)};
+%   \draw[fill=\intb] (b) circle (2pt) node [above] {\(\labelb\)};
+% }
+% 
+% \newcommand{\ray}[5]{% semiretta sinistra
+%   % \disegno{\ray{0}{-5}{-2}{p}{white}}
+%   \def \posy{#1}
+%   \def \lung{#2}
+%   \def \posp{#3}
+%   \def \labelp{#4}
+%   \def \intp{#5}
+%     \coordinate (p) at (\posp, \posy);
+%     \draw [blue, thick, decorate, decoration=snake] (-\lung, \posy) -- (p);
+%     \draw[fill=\intp] (p) circle (2pt) node [above] {\(\labelp\)};
+% }
+% 
+% \newcommand{\ray}[5]{% semiretta destra
+%   % \disegno{\ray{0}{5}{-2}{p}{white}}
+%   \def \posy{#1}
+%   \def \lung{#2}
+%   \def \posp{#3}
+%   \def \labelp{#4}
+%   \def \intp{#5}
+%     \coordinate (p) at (\posp, \posy);
+%     \draw [blue, thick, decorate, decoration=snake] (p) -- (+\lung, \posy);
+%     \draw[fill=\intp] (p) circle (2pt) node [above] {\(\labelp\)};
+% }
+% 
+% \newcommand{\inte}[8]{% Intervallo esterno
+%   % \disegno{\inte{0}{5}{-2}{+2}{a}{b}{white}{blue}}
+% %   \def \posy{#1}
+% %   \def \lung{#2}
+% %   \def \posa{#3}
+% %   \def \posb{#4}
+% %   \def \labela{#5}
+% %   \def \labelb{#6}
+% %   \def \inta{#7}
+% %   \def \intb{#8}
+%   \ray{#1}{#2}{#3}{#5}{#7}
+%   \ray{#1}{#2}{#4}{#6}{#8}
+% }
+
+% \newcommand{\intpunto}[4]{% Punto
+%   \def \slung{#1}
+%   \def \posp{#2}
+%   \def \labelp{#3}
+%   \def \intp{#4}
+%   \disegno{
+%     \assex{-\slung}{+\slung}{0}
+%     \draw[fill=\intp] (\posp, 0) circle (2pt) node [above] {\(\labelp\)};
+%   }
+% }
+% 
+% \newcommand{\intid}[7]{% Intervallo ]a; b[ con disegno e asse
+%   % \intid{5}{-2}{+2}{a}{b}{white}{blue}
+%   \disegno{
+%     \assex{-#1}{+#1}{0}
+%     \inti{0}{#2}{#3}{#4}{#5}{#6}{#7}
+%   }
+% }
+% 
+% \newcommand{\inted}[7]{%  ]-infty; a[ u ]b; +infty[ con disegno e asse
+%   % \inted{5}{-2}{+2}{a}{b}{white}{blue}
+%   \disegno{
+%     \assex{-#1}{+#1}{0}
+%     \inte{0}{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+%   }
+% }
+% 
+% \newcommand{\intiaa}[5]{% Intervallo ]a; b[
+%   % \intiaa{5}{-3}{3}{a}{b}
+%   \intid{#1}{#2}{#3}{#4}{#5}{white}{white}
+% }
+% 
+% \newcommand{\intica}[5]{% Intervallo ]a; b[
+%   \intid{#1}{#2}{#3}{#4}{#5}{blue}{white}
+% }
+% 
+% \newcommand{\intiac}[5]{% Intervallo ]a; b[
+%   \intid{#1}{#2}{#3}{#4}{#5}{white}{blue}
+% }
+% 
+% \newcommand{\inticc}[5]{% Intervallo ]a; b[
+%   \intid{#1}{#2}{#3}{#4}{#5}{blue}{blue}
+% }
+% 
+% \newcommand{\inteaa}[5]{% Intervallo ]a; b[
+%   % \inteaa{5}{-3}{3}{a}{b}
+%   \inted{#1}{#2}{#3}{#4}{#5}{white}{white}
+% }
+% 
+% \newcommand{\inteca}[5]{% Intervallo ]a; b[
+%   \inted{#1}{#2}{#3}{#4}{#5}{blue}{white}
+% }
+% 
+% \newcommand{\inteac}[5]{% Intervallo ]a; b[
+%   \inted{#1}{#2}{#3}{#4}{#5}{white}{blue}
+% }
+% 
+% \newcommand{\intecc}[5]{% Intervallo ]a; b[
+%   \inted{#1}{#2}{#3}{#4}{#5}{blue}{blue}
+% }
+% 
+% \newcommand{\puntoa}[3]{% Intervallo ]a; b[
+%   \intpunto{#1}{#2}{#3}{white}
+% }
+% 
+% \newcommand{\puntoc}[3]{% Intervallo [a; a]
+%   \intpunto{#1}{#2}{#3}{blue}
+% }
+% 
+% \newcommand{\intv}[1]{% Intervallo vuoto
+%   \def \lung{#1}
+%   \disegno{
+%     \assex{-\lung / 2}{+\lung / 2}{0}
+%   }
+% }
+% 
+% \newcommand{\intr}[1]{% Intervallo vuoto
+%   \def \lung{#1}
+%   \disegno{
+%     \assex{-\lung / 2}{+\lung / 2}{0}
+%     \draw [blue, thick, decorate, decoration=snake] 
+%           (-\lung / 2, 0) -- (+\lung / 2, 0);
+%   }
+% }
+
+% TODO: sostituire \trespolosegni con \trespolosegnidis!
+\newcommand{\trespolosegni}[4]{% Grafo calcolo del segno con tre assi
+  % Esempio di chiamata:
+  %% \trespolosegni{5}{1.2}{3}{3}
+  \def \dimx{#1}
+  \def \dimy{#2}
+  \def \numassi{#3}
+  \def \numpunti{#4}
+  \pgfmathparse{\dimx*2 / (\numpunti+1)} \let\largx\pgfmathresult
+   \foreach \i in {1,...,\numassi}
+     \assex{-\dimx}{+\dimx}{-\i*\dimy};
+   \foreach \i in {1,...,\numpunti}
+     \draw (\i*\largx-\dimx, 0) -- (\i*\largx-\dimx, -\numassi * \dimy);
+}
+
+\newcommand{\trespolosegnidis}[6]{% Grafo calcolo del segno con tre assi
+  % Esempio di chiamata:
+  %% \trespolosegni{5}{1.2}{3}{f(x), g(x), f(x)\cdot g(x)}{2}{2, 5}
+  \def \dimx{#1}
+  \def \dimy{#2}
+  \def \numassi{#3}
+  \def \labassi{#4}
+  \def \numpunti{#5}
+  \def \labpunti{#6}
+  \foreach \li [count = \i] in \labassi{
+    \assex{-\dimx}{\dimx}{-\i*\dimy}
+    \node at (-\dimx, -\i*\dimy) (posy) [above left=-.2] {$\li$};
+  }
+  \pgfmathparse{\dimx*2 / (\numpunti+1)} \let\largx\pgfmathresult
+  \foreach \li [count = \i] in \labpunti{
+    \draw (\i*\largx-\dimx, -\numassi * \dimy) -- (\i*\largx-\dimx, 0)
+          node [above] {$\li$};
+  }
+}
+
+\newcommand{\grrsegnoprodottoa}{% Segno del prodotto di due funzioni
+  \disegno{
+    \trespolosegni{5}{1.2}{3}{3}
+    \node at (-2.5, 0) [above] {\(-2\)};
+    \node at (-0, 0) [above] {\(\frac{3}{2}\)};
+    \node at (+2.5, 0) [above] {\(+2\)};
+    \node at (-5, -1.2) [above left] {\(x^2-4\)};
+    \node at (-5, -2.4) [above left] {\(-2x+3\)};
+    \node at (-5, -3.6) [above left] {\(f(x)\)};
+    \foreach \x/\y in {-2.5/-.7, +2.5/-.7, 0/-1.9, 
+                       -2.5/-3.1, +2.5/-3.1, 0/-3.1}
+      \cerchietto{\x}{\y}
+    \foreach \x/\s in {-3.5/+, -1.25/-, 1.25/-, 3.5/+}
+      \node at (\x, -1.2) [above] {\(\s\)};
+    \foreach \x/\s in {-3.5/+, -1.25/+, 1.25/-, 3.5/-}
+      \node at (\x, -2.4) [above] {\(\s\)};
+    \foreach \x/\s in {-3.5/+, -1.25/-, 1.25/+, 3.5/-}
+      \node at (\x, -3.6) [above] {\(\s\)};
+  }
+}
+
+\newcommand{\solprodottoa}{% Soluzione disequazione prodotto di funzioni
+  \disegno{
+    \assex{-4}{+4}{0}
+    \inti{0}{-2.5}{0}{-2}{\frac{3}{2}}{blue}{blue}
+    \ray{0}{4}{2}{+2}{blue}
+  }
+}
+
+\newcommand{\grrsegnoprodottob}{% Segno del prodotto di due funzioni
+  \disegno{
+    \trespolosegni{5}{1.2}{3}{3}
+    \node at (-5, -1.2) [above left] {\(3x^2-8x-3\)};
+    \node at (-5, -2.4) [above left] {\(x\)};
+    \node at (-5, -3.6) [above left] {\(f(x)\)};
+  }
+}
+
+\newcommand{\segnofrazionea}{% Segno del prodotto di due funzioni
+  \disegno{
+    \trespolosegni{5}{1.2}{3}{3}
+    \node at (-2.5, 0) [above] {\(-4\)};
+    \node at (-0, 0) [above] {\(7\)};
+    \node at (+2.5, 0) [above] {\(29\)};
+    \node at (-5, -1.2) [above left] {\(-x +29\)};
+    \node at (-5, -2.4) [above left] {\(x^2-3x-28\)};
+    \node at (-5, -3.6) [above left] {\(f(x)\)};
+    \foreach \x/\y in {2.5/-.7, 2.5/-3.1} \cerchietto{\x}{\y}
+    \foreach \x/\y in {-2.5/-1.9, 0/-1.9, 
+                       -2.5/-3.1, 0/-3.1}
+      \crocetta{\x}{\y}
+    \foreach \x/\s in {-3.5/+, -1.25/+, 1.25/+, 3.5/-}
+      \node at (\x, -1.2) [above] {\(\s\)};
+    \foreach \x/\s in {-3.5/+, -1.25/-, 1.25/+, 3.5/+}
+      \node at (\x, -2.4) [above] {\(\s\)};
+    \foreach \x/\s in {-3.5/+, -1.25/-, 1.25/+, 3.5/-}
+      \node at (\x, -3.6) [above] {\(\s\)};
+  }
+}
+
+\newcommand{\solfrazionea}{% Soluzione disequazione prodotto di funzioni
+  \disegno{
+    \assex{-4}{+4}{0}
+    \ray{0}{-4}{-2}{-4}{white}
+    \inti{0}{0}{2}{7}{29}{white}{blue}
+  }
+}
+
+\newcommand{\segnofrazioneb}{% Segno del quoziente di due funzioni
+  \disegno{
+    \trespolosegni{6}{1.2}{3}{4}
+    \node at (-6, -1.2) [above left] {\(-2x^2+x+3\)};
+    \node at (-6, -2.4) [above left] {\(4x^2-1\)};
+    \node at (-6, -3.6) [above left] {\(f(x)\)};
+  }
+}
+
+\newcommand{\segnofrazionec}{% Segno del quoziente di due funzioni
+  \disegno{
+    \trespolosegni{6}{1.2}{3}{4}
+    \node at (-6, -1.2) [above left] {\(-6x^2 +2x +1\)};
+    \node at (-6, -2.4) [above left] {\(-2x^2 +x +1\)};
+    \node at (-6, -3.6) [above left] {\(f(x)\)};
+  }
+}
+
+\newcommand{\segnosistemaaa}{% Segno prima disequazione del primo sistema
+  \disegno{
+    \trespolosegni{5}{1.2}{3}{3}
+    \node at (-2.5, 0) [above] {\(-3\)};
+    \node at (-0, 0) [above] {\(-\frac{3}{2}\)};
+    \node at (+2.5, 0) [above] {\(+3\)};
+    \node at (-5, -1.2) [above left] {\(x^2-9\)};
+    \node at (-5, -2.4) [above left] {\(2x+3\)};
+    \node at (-5, -3.6) [above left] {\(f(x)\)};
+    \foreach \x/\y in {2.5/-.7, 2.5/-3.1} \cerchietto{\x}{\y}
+    \foreach \x/\y in {-2.5/-.7,          +2.5/-.7,
+                                  0/-1.9, 
+                       -2.5/-3.1, 0/-3.1, +2.5/-3.1}
+      \cerchietto{\x}{\y}
+    \foreach \x/\s in {-3.5/+, -1.25/-, 1.25/-, 3.5/+}
+      \node at (\x, -1.2) [above] {\(\s\)};
+    \foreach \x/\s in {-3.5/-, -1.25/-, 1.25/+, 3.5/+}
+      \node at (\x, -2.4) [above] {\(\s\)};
+    \foreach \x/\s in {-3.5/-, -1.25/+, 1.25/-, 3.5/+}
+      \node at (\x, -3.6) [above] {\(\s\)};
+    \ray{-3.6}{-5}{-2.5}{}{white}
+    \inti{-3.6}{0}{2.5}{}{}{white}{white}
+      
+  }
+}
+
+\newcommand{\segnosistemaab}{% Segno del prodotto di due funzioni
+  \disegno{
+    \trespolosegni{6}{1.2}{3}{4}
+    \node at (-3.6, 0) [above] {\(-5\)};
+    \node at (-1.2, 0) [above] {\(-\frac{3}{2}\)};
+    \node at (+1.2, 0) [above] {\(+\frac{3}{2}\)};
+    \node at (+3.6, 0) [above] {\(+3\)};
+    \node at (-6, -1.2) [above left] {\(-x^2 -2x+15\)};
+    \node at (-6, -2.4) [above left] {\(4x^2-9\)};
+    \node at (-6, -3.6) [above left] {\(f(x)\)};
+    \foreach \x/\y in {-3.6/-.7, +3.6/-.7, 
+                       -3.6/-3.1, +3.6/-3.1} \cerchietto{\x}{\y}
+    \foreach \x/\y in {-1.2/-1.9, +1.2/-1.9, 
+                       -1.2/-3.1, +1.2/-3.1}
+      \crocetta{\x}{\y}
+    \foreach \x/\s in {-4.7/-, -2.3/+, 0/+, 2.3/+, 4.7/-}
+      \node at (\x, -1.2) [above] {\(\s\)};
+    \foreach \x/\s in {-4.7/+, -2.3/+, 0/-, 2.3/+, 4.7/+}
+      \node at (\x, -2.4) [above] {\(\s\)};
+    \foreach \x/\s in {-4.7/-, -2.3/+, 0/-, 2.3/+, 4.7/-}
+      \node at (\x, -3.6) [above] {\(\s\)};
+    \ray{-3.6}{-6}{-3.6}{}{blue}
+    \inti{-3.6}{-1.2}{+1.2}{}{}{white}{white}
+    \ray{-3.6}{6}{+3.6}{}{blue}
+  }
+}
+
+\newcommand{\grrsistemaa}{% Intersezione soluzioni sistema a
+  \disegno{
+    \trespolosegni{6}{1.2}{3}{5}
+    \node at (-4, 0) [above] {\(-5\)};
+    \node at (-2, 0) [above] {\(-3\)};
+    \node at (0, 0) [above] {\(-\frac{3}{2}\)};
+    \node at (+2, 0) [above] {\(+\frac{3}{2}\)};
+    \node at (+4, 0) [above] {\(+3\)};
+    \node at (-6, -1.2) [left] {\(D_1\)};
+    \node at (-6, -2.4) [left] {\(D_2\)};
+    \node at (-6, -3.6) [left] {\(S\)};
+    \ray{-1.2}{-6}{-2}{}{white}
+    \inti{-1.2}{0}{4}{}{}{white}{white}
+    \ray{-2.4}{-6}{-4}{}{blue}
+    \inti{-2.4}{0}{2}{}{}{white}{white}
+    \ray{-2.4}{6}{+4}{}{blue}
+    \ray{-3.6}{-6}{-4}{}{blue}
+    \inti{-3.6}{0}{2}{}{}{white}{white}
+  }
+}
+
+\newcommand{\segnosistemaba}{% Segno prima disequazione del primo sistema
+  \disegno{
+    \trespolosegni{3}{1.2}{3}{2}
+    \node at (-1, 0) [above] {\(-4\)};
+    \node at (+1, 0) [above] {\(+7\)};
+    \node at (-3, -1.2) [above left] {\(-x^2 +3x +21\)};
+    \node at (-3, -2.4) [above left] {\(x-7\)};
+    \node at (-3, -3.6) [above left] {\(f(x)\)};
+    \foreach \x/\y in {-1/-.7, +1/-.7, -1/-3.1} \cerchietto{\x}{\y}
+    \foreach \x/\y in {+1/-1.9, +1/-3.1} \crocetta{\x}{\y}
+    \foreach \x/\s in {-2/-, 0/+, +2/-}
+      \node at (\x, -1.2) [above] {\(\s\)};
+    \foreach \x/\s in {-2/-, 0/-, +2/+}
+      \node at (\x, -2.4) [above] {\(\s\)};
+    \foreach \x/\s in {-2/+, 0/-, +2/-}
+      \node at (\x, -3.6) [above] {\(\s\)};
+    \ray{-3.6}{-3}{-1}{}{blue}
+      
+  }
+}
+
+\newcommand{\segnosistemabb}{% Segno del prodotto di due funzioni
+  \disegno{
+    \trespolosegni{4}{1.2}{3}{3}
+    \node at (-2, 0) [above] {\(-5\)};
+    \node at (-0, 0) [above] {\(-4\)};
+    \node at (+2, 0) [above] {\(+4\)};
+    \node at (-4, -1.2) [above left] {\(-x -5\)};
+    \node at (-4, -2.4) [above left] {\(-x^2 +16\)};
+    \node at (-4, -3.6) [above left] {\(f(x)\)};
+    \foreach \x/\y in {-2/-.7, -2/-3.1} \cerchietto{\x}{\y}
+    \foreach \x/\y in {0/-1.9, +2/-1.9, 
+                       0/-3.1, +2/-3.1}
+      \crocetta{\x}{\y}
+    \foreach \x/\s in {-3/+, -1/-, 1/-, 3/-}
+      \node at (\x, -1.2) [above] {\(\s\)};
+    \foreach \x/\s in {-3/-, -1/-, 1/+, 3/-}
+      \node at (\x, -2.4) [above] {\(\s\)};
+    \foreach \x/\s in {-3/-, -1/+, 1/-, 3/+}
+      \node at (\x, -3.6) [above] {\(\s\)};
+    \inti{-3.6}{-2}{0}{}{}{blue}{white}
+    \ray{-3.6}{4}{+2}{}{white}
+  }
+}
+
+\newcommand{\grrsistemab}{% Intersezione soluzioni sistema a
+  \disegno{
+    \trespolosegni{4}{1.2}{3}{3}
+    \node at (-2, 0) [above] {\(-5\)};
+    \node at (-0, 0) [above] {\(-4\)};
+    \node at (+2, 0) [above] {\(+4\)};
+    \node at (-4, -1.2) [left] {\(C_1\)};
+    \node at (-4, -2.4) [left] {\(C_2\)};
+    \node at (-4, -3.6) [left] {\(S\)};
+    \ray{-1.2}{-4}{0}{}{blue}
+    \inti{-2.4}{-2}{0}{}{}{blue}{white}
+    \ray{-2.4}{4}{+2}{}{white}
+    \inti{-3.6}{-2}{0}{}{}{blue}{white}
+  }
+}
+
+
+\newcommand{\parabole}{% Varie parabole nel piano cartesiano
+  \disegno[8]{
+    \rcom{-5}{+5}{-4}{+4}{gray!50, very thin, step=1}
+    \tkzInit[xmin=-5.3,xmax=+5.3,ymin=-4.3,ymax=+4.3]
+    \tkzFct[domain=-1.5:1.5,thick,color=darkgray]{2*x*x-1}
+    \node [inner sep=0pt, circle, fill=gray!20] (a) at (-1.1, 2.7) {B};
+    \tkzFct[domain=0:3,thick,color=blue]{-2*x*x+6*x-4};
+    \node [inner sep=0pt, circle, fill=gray!20] (a) at (.6, -3) {D};
+    \tkzFct[domain=-3.3:-.7,thick,color=RedOrange]{-2*x*x-8*x-8.5};
+    \node [inner sep=0pt, circle, fill=gray!20] (a) at (-3, -3.5) {E};
+    \tkzFct[domain=1.5:4.5,thick,color=purple]{2*x*x-12*x+18};
+    \node [inner sep=0pt, circle, fill=gray!20] (a) at (2, 3.7) {C};
+    \tkzFct[domain=-4.5:-1.5,thick,color=olive]{2*x*x+12*x+19};
+    \node [inner sep=0pt, circle, fill=gray!20] (a) at (-3.8, 3.5) {A};
+    
+  }
+}

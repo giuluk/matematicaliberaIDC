@@ -1,0 +1,18 @@
+\ifdefined\HCode                          % compilazione htlatex
+
+\else
+\pdfbookmark{Indice}{Indice}
+\fi
+\nouppercaseheads
+
+% \pagestyle{matc3page}
+\markboth{Indice}{Indice}
+
+% Profondità indice
+\setcounter{tocdepth}{2}
+% Rimuove la voce 'indice' dall'indice
+\begin{KeepFromToc}
+  \tableofcontents
+\end{KeepFromToc}
+
+% \cleardoublepage

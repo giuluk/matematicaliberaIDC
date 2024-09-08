@@ -1,7 +1,21 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %        Matematica Libera
 %
 % Copyright 2022-26 Daniele Zambelli
+%
+%------------------------------
+% Modulo: Insiemi Numerici
+%
+% Compilation:
+% $> lualatex --shell-escape ml01InsiemiNumerici.tex
+% $> make4ht ml01InsiemiNumerici.tex -f html5-common_domfilters 
+%    -c ml_make4ht -l -u -s -d ./html/mathjax 
+%    "mathjax, 3, sec-filename, fn-in, blind" 
+% or
+% $> ../../../compila.py -l ml01InsiemiNumerici.tex
+% $> ../../../compila.py -j ml01InsiemiNumerici.tex
+% 
+%------------------------------
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -55,20 +69,24 @@
 \newcommand{\numero}{3}
 \newcommand{\titolo}{Calcolo letterale 2}
 % \newcommand{\titolodritto}{\tipo \numero: \titolo}
-% \newcommand{\pdftitolo}{Calcolo letterale}
-\newcommand{\docvers}{\texttt{1.0.0}}
+% \newcommand{\pdftitolo}{Insiemi numerici}
+\newcommand{\docvers}{\texttt{2.0.0}}
 % \newcommand{\edizione}{2023}
 % \newcommand{\Edizione}{Edizione}
 %\newcommand{\inclusivita}{}%
 % {versione accessibile}{versione ciechi}
-\newcommand{\anno}{2023}
+\newcommand{\anno}{2024}
 \newcommand{\mese}{settembre}
 \newcommand{\oggi}{\mese\ \anno}
 \newcommand{\mcisbn}{}
 
 %------------------------
 % Con o senza soluzioni nelle tabelle
-
+% Non tutte le soluzioni sono stampate, ad esempio gli esercizi formati da 
+% una tabella da riempire hanno le celle vuote.
+% Dove è previsto, è possibile stampare tutte le soluzioni 
+% (nel caso precedente le tabelle già completate) commentando la linea con 
+% \verb |solallfalse| e decommentando la linea con \verb|solalltrue|.
 \newif\ifsolall % va messo nella classe???
 \solallfalse    % Non tutte le soluzioni (tabelle vuote)
 % \solalltrue     % tutte le soluzioni (tabelle gia compilate)
@@ -90,8 +108,10 @@
 % Decommentare per la prefazione
 \input{\matdir 00_intestazioni/les/prefazione}
 %\newpage
-%\input{ml05CalcoloLetterale_pref.tex}
-% \cleardoublepage
+%\input{ml01InsiemiNumerici_pref}
+%\cleardoublepage
+% \newpage
+% \newpage
 
 % --------------------------------
 % Capitoli
@@ -105,11 +125,11 @@
          {frazioni_algebriche}
 
 % %..................................................
-% % Azzeramento numerazione capitoli
+% Azzeramento numerazione capitoli
 \renewcommand{\thechapter}{\Alph{chapter}}
 \setcounter{chapter}{0}
 
-% Generazione indici
+% generazione indici
 \ifdefined\HCode 
 .
 \else
@@ -119,4 +139,3 @@
  \printindex
 \fi
 \end{document}
-

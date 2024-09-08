@@ -34,7 +34,7 @@
 \chapter{Numeri razionali}
 
 \inicapitolo{
-\begin{itemize}
+\begin{itemize}[left=0mm, nosep]
 \item i numeri razionali;
 \item la notazione decimale e numeri periodici;
 \item le frazioni;
@@ -96,7 +96,9 @@ resto.
 
 \vspace{.5em}
 \affiancati{.49}{.49}{
-\immagine{Algoritmo della divisione tra 4347 e 35.}{\divisionea}
+\immagine{Testo alternativo figura: algoritmo della divisione tra 
+4347 e 35.}
+{\divisionea}
 }{
 La filastrocca di questa divisione è:\\
 Il 35 nel 43 ci sta 1 volta, scrivo 1 con il resto di 8; riporto il 4.\\
@@ -106,7 +108,7 @@ Il 35 nel 147 ci sta 4 volte, scrivo 4; 4 per 35 fa 140 al 147: 7.\\
 }
 
 A questo punto nella divisione intera ci eravamo fermati, 
-ora invece poniamo la virgola ne quoziente parziale, 
+ora invece poniamo la virgola nel quoziente parziale,
 aggiungiamo~0 decimi a destra di~7 e calcoliamo quanti decimi di 35 sono 
 contenuti in~70 riprendo la filastrocca: \\
 Il 35 nel 70 ci sta 2 volte, scrivo 2; 2 per 35 fa 70 al 70: 0.\\
@@ -126,7 +128,9 @@ Il 7 nel 53 ci sta 7 volte. Scrivo 7 come terza cifra del quoziente.
 7 per 7 fa 49, al 53: 4. Scrivo 4 sotto al 3.
 
 }{
-\immagine{Algoritmo della divisione tra 1523 e 7.}{\divisioneb}
+\immagine{Testo alternativo figura: algoritmo della divisione tra 
+1523 e 7.}
+{\divisioneb}
 }
 
 % \begin{comment}
@@ -185,6 +189,9 @@ lettura.
 
 Il risultato è:
 \(100 : 23 = 4,\overline{3478260869565217391304}\)
+\immagine*{Testo alternativo: \(100 : 23 = 4,(3478260869565217391304)\), 
+sostanzialmente il periodo è formato da tutte le cifre al'interno della 
+parentesi tonda dopo la virgola.}{}
 
 Lo stesso risultato si può ottenere inventando un nuovo modo di 
 rappresentare il risultato della divisione:
@@ -199,8 +206,10 @@ L'oggetto matematico: \(\quad \dfrac{42}{75} \quad\)
 si chiama frazione ed è composto da tre parti: 
 \emph{numeratore}, \emph{linea di frazione}, \emph{denominatore}.
 }{
-\immagine{Frazione con indicato il numeratore, la linea di frazione e il 
-denominatore}{\frazionea}
+\immagine{Testo alternativo: frazione con indicato il numeratore, la 
+linea di frazione e il denominatore; nel caso specifico 42 è il numeratore 
+e 75 il denominatore}
+{\frazionea}
 }
 Questo nuovo oggetto matematico ci permette di evitare, in molti casi, 
 l'esecuzione dell'algoritmo della divisione.
@@ -257,7 +266,14 @@ numero razionale un preciso punto\indc{frazione}{rappresentare sulla retta}.
 
 Alcuni esempi:
 \immagine[.8]
-{Varie frazioni rappresentate su un asse cartesiano.}{\rettafra}
+{Testo alternativo figura: varie frazioni rappresentate su una retta orientata verso destra. Unità di misura pari a 1, intervallo d -6 a +6.
+Partendo da sinistra: 
+-6, \(-\frac{17}{3}\), -5, \(-\frac{9}{2}\), -4, \(-\frac{1}{3}\), 
+-3, \(-\frac{5}{2}\), -2, \(-\frac{4}{3}\), -1, 0, \(\frac{1}{4}\), 
+\(\frac{1}{2}\), \(\frac{3}{4}\), +1, \(\frac{4}{3}\), \(\frac{5}{3}\), 
+\(\frac{6}{3}\) coincidente con +2, \(\frac{5}{2}\), +3, \(\frac{7}{2}\), 
++4, \(\frac{24}{5}\), +5, \(\frac{26}{5}\), +6}
+{\rettafra}
 
 \begin{teorema}{}{}
  Tra due numeri razionali diversi esiste sempre almeno un altro numero 
@@ -336,8 +352,8 @@ denominatore per il loro Massimo Comune Divisore.
 %    \dfrac{7}{6}
 % \]
  \[\dfrac{420}{360} = 
-   \dfrac{42}{36} =  
-   \dfrac{21}{18} =   
+   \dfrac{42}{36} = 
+   \dfrac{21}{18} = 
    \dfrac{7}{6}
 \]
 \else
@@ -362,6 +378,12 @@ numeratore sia il denominatore per~60:
  \[\dfrac{\cancelto{420}{7}}{\bcancelto{360}{6}} = \dfrac{7}{6}\]
 \fi
 \end{esempio}
+\immagine*{Testo alternativo: sostanzialmente la prima semplificazione è 
+stata fatta dividendo numeratore e denominatore per 10, ottenendo 
+\(\frac{42}{36}\); la seconda semplificazione dividendo numeratore e 
+denominatore per 2, ottenendo \(\frac{21}{18}\); la terza semplificazione 
+dividendo numeratore e denominatore per 3, ottenendo \(\frac{7}{6}\).}{}
+
 Un altro modo per ridurre ai minimi termini una frazione consiste nello 
 scomporre in fattori primi il numeratore e il denominatore.
 
@@ -374,7 +396,9 @@ termini} \(\dfrac{420}{360}\)
         {2 \cdot 2 \cdot 2 \cdot 3 \cdot 3 \cdot 5} = 
   \dfrac{7}{2 \cdot 3} = \dfrac{7}{6}\)
 \end{esempio}
-
+\immagine*{Testo alternativo: sostanzialmente l'unica semplificazione è 
+stata fatta dividendo numeratore e denominatore per 60, ottenendo 
+\(\frac{7}{6}\).}{}
 
 A volte, invece, non siamo interessati a trovare le frazioni ridotte ai 
 minimi termini, ma, ad esempio, \indtc{frazione}{frazioni equivalenti} che 
@@ -661,6 +685,8 @@ da zero}, si ottiene scambiando il numeratore con il denominatore.
 \fi
 \end{center}
 \end{definizione}
+\immagine*{Testo alternativo: il reciproco di \(\frac{a}{b}\) è 
+\(\frac{b}{a}\).}{}
 
 Ora abbiamo un metodo semplice per calcolare il quoziente di due frazioni di 
 cui la seconda non nulla.
@@ -716,6 +742,11 @@ a quell'esponente.
        {1 \underbrace{\cdot b \cdot b \ldots \cdot b }_{e \text{ volte}}} = 
 \dfrac{a^e}{b^e}\]
 \end{definizione}
+\immagine*{Testo alternativo: \(\tonda{\frac{a}{b}}^e\) è uguale a 1 che 
+moltiplica \(\frac{a}{b}\) per e volte e questo è uguale a:
+linea di frazione, al numeratore 1 che moltiplica a per e volte, al denominatore 1 che moltiplica b per e volte e questo infine è uguale a:
+\(\frac{a^e}{b^e}\).}{}
+
 Così abbiamo ridotto il calcolo della potenza di una frazione al calcolo 
 delle potenze del numeratore e del denominatore.
 
@@ -812,13 +843,16 @@ solito algoritmo\indc{frazione}{frazione \(\leftrightarrows\) decimale}.
 
 \begin{esempio}{}{}
 Trasforma in numero decimale la frazione: \(\dfrac{197}{8}\)
-\immagine{La divisione tra 197 e 8 produce un numero decimale limitato.}
+\immagine{Testo alternativo: la divisione tra 197 e 8 produce un numero 
+decimale limitato, in particolare 28,625.}
 {\frazdeca}
 \end{esempio}
 
 \begin{esempio}{}{}
 Trasforma in numero decimale la frazione: \(\dfrac{155}{12}\)
-\immagine{La divisione tra 155 e 12 produce un numero decimale limitato.}
+\immagine{Testo alternativo: la divisione tra 155 e 12 produce un numero 
+decimale periodico, in particolare 12,91(6). La cifra all'interno della 
+parentesi tonda indica il periodo.}
 {\frazdecb}
 \end{esempio}
 
@@ -855,7 +889,14 @@ Supponiamo di voler trasformare il numero \(n = 14,3\overline{56}\) in
 frazione, moltiplichiamo n per~1000 e da questo togliamo il numero di 
 partenza moltiplicato per 10:
 
-\immagine{Sottrazione tra due particolari numeri periodici.}
+\immagine{Testo alternativo:
+come indicato sopra, si svolge la sottrazione tra due particolari numeri 
+periodici.
+In particolare:
+1000n=14356,56565656...
+10n=143,56565656...
+E si ottiene:
+990n=14213,00000000...}
 {\sottrazioneraz}
 
 Abbiamo così eliminato il periodo scoprendo che \(990n\) è un numero 
@@ -1062,7 +1103,8 @@ valore~2,6 anziché~26, in quanto il numero~\(k\) deve essere minore di~10.
 Consideriamo ora la misura del raggio medio della Terra, 
 ovvero~\(6\,378\,000\munit{m}\),
 la sua espressione in notazione scientifica sarà: \\ 
-\(6\,378\,000\munit{m} = 6,378\cdot1\,000\,000 = 6,378\cdot10^6\).
+\(6\,378\,000\munit{m} = 6,378\cdot1\,000\,000\munit{m} = 
+6,378\cdot10^6\munit{m}\).
 
 % Allo stesso modo il numero~\(340\,000\,000\,000\) scritto in notazione 
 % scientifica è~\(3,4\cdot10^{11}\).
@@ -1072,7 +1114,18 @@ la sua espressione in notazione scientifica sarà: \\
 
 % \vspace{-2em}
 \immagine[.8]
-{Collegamento tra i numeri della retta e i valori di a e di n.}
+{Testo alternativo figura: collegamento tra i numeri della retta e i 
+valori di \(a\) e di \(n\).
+Si consideri: \(\alpha = a\cdot 10^n\) e una retta orientata verso destra 
+di numeri razionali.
+1) Si consideri il caso \(a<0\):
+- se \(n>0\), il numero \(\alpha\) sarà minore di \(-10\);
+- se \(n=0\), il numero \(\alpha\) sarà compreso tra \(-10\) e \(-1\);
+- se \(n<0\), il numero \(\alpha\) sarà compreso tra \(-1\) e \(0\).
+2) Adesso invece si consideri il caso \(a>0\):
+- se \(n>0\), il numero \(\alpha\) sarà maggiore di \(+10\);
+- se \(n=0\), il numero \(\alpha\) sarà compreso tra \(+1\) e \(+10\);
+- se \(n<0\), il numero \(\alpha\) sarà compreso tra \(0\) e \(+1\).}
 {\notesp}
 
 
@@ -1137,13 +1190,13 @@ alla~\(-5\):\quad\(3,40 \cdot 10^{-5}\).
 
 \begin{esempio}{}{}
 Trasforma in notazione scientifica e calcola
-\(\displaystyle{\frac{3000:6\text{ milioni}}{5000\cdot0,000002}}\).
+\(\displaystyle{\frac{3000:6\text{ milioni}}{5000 \cdot 0,000002}}\).
 \begin{align*}
-  \frac{3000:6\text{ milioni}}{5000\cdot0,000002}&=\frac{3\cdot10^3:
-    (6\cdot 10^6)}{5\cdot10^3\cdot(2\cdot10^{-6})}
-  =\frac{3:6\cdot10^{-3}}{5\cdot2\cdot 10^{-3}}
-  =\frac{0,5}{10}\cdot10^{-3+3} = \\
- &= 0,05\cdot10^0 = 5\cdot10^{-2}
+  \frac{3000:6\text{ milioni}}{5000 \cdot 0,000002}&=\frac{3 \cdot 10^3:
+    (6 \cdot 10^6)}{5 \cdot 10^3 \cdot (2 \cdot 10^{-6})}
+  =\frac{3:6 \cdot 10^{-3}}{5 \cdot 2 \cdot 10^{-3}}
+  =\frac{0,5}{10} \cdot 10^{-3+3} = \\
+ &= 0,05\cdot10^0 = 5 \cdot 10^{-2}
 \end{align*}
 \end{esempio}
 
@@ -1182,6 +1235,8 @@ Lo stesso problema può essere espresso in notazione scientifica:
 \end{center}
 }
 \end{esempio}
+\immagine*{Testo alternativo: immagine di un rettangolo in verticale con 
+base b di 4 quadretti e altezza h di 9 quadretti.}{}
 
 
 % \ovalbox{\risolvii \ref{ese:3.61}, \ref{ese:3.62}, \ref{ese:3.63}, 
@@ -1204,7 +1259,7 @@ la potenza di~\(10\).
 \begin{procedura}{}{}
 Determinare l'ordine di grandezza di un numero:
 \begin{enumerate}[noitemsep, label=(\alph*)]
-\item scrivi il numero in notazione scientifica~\({k\cdot10^n}\)
+\item scrivi il numero in notazione scientifica~\({k \cdot 10^n}\)
 \item l'ordine di grandezza è~\(10^{n}\).
 \end{enumerate}
 \end{procedura}
@@ -1216,8 +1271,8 @@ Determinare l'ordine di grandezza di un numero:
 Determinare l'ordine di grandezza dei numeri~0,000\,074 e~47\,000\,000\,000.
 
 Scriviamo dapprima i numeri in notazione scientifica:
-\[0,000\,074 = 7,4\cdot 10^{-5} \sstext{ e } 
-  47\,000\,000\,000 = 4,7\cdot 10^{10}.\]
+\[0,000\,074 = 7,4 \cdot 10^{-5} \sstext{ e } 
+  47\,000\,000\,000 = 4,7 \cdot 10^{10}.\]
 L'o.d.g. del primo numero è~\(10^{-5}\); \qquad 
 l'o.d.g del secondo numero è~\(10^{10}\).
  \end{esempio}
@@ -1376,10 +1431,10 @@ non sono più necessarie.
   Calcola il valore della seguente espressione.
 
 \[\graffa{
-  \frac{3}{20}\cdot\quadra{
-    \tonda{\frac{4}{9}-\frac{1}{3}} : 5 + 
-    \tonda{\frac{3}{7}-\frac{2}{5}} :
-    \frac{1}{14}+\frac{1}{5}\cdot\frac{1}{9}}+
+  \frac{3}{20} \cdot \quadra{
+    \tonda{\frac{4}{9} - \frac{1}{3}} : 5 + 
+    \tonda{\frac{3}{7} - \frac{2}{5}} :
+    \frac{1}{14} + \frac{1}{5} \cdot \frac{1}{9}}+
   \frac{2}{15}} : 2=\]
 \begin{enumerate} % [nosep]
  \item 
@@ -1389,9 +1444,9 @@ Trasformo le divisioni in moltiplicazioni.
 
 \vspace{-1em}
 \[= \graffa{
-  \frac{3}{20}\cdot\quadra{
+  \frac{3}{20} \cdot \quadra{
     \frac{4 - 3}{9} \cdot \frac{1}{5} + 
-    \frac{15-14}{35}\cdot\frac{14}{1} +
+    \frac{15-14}{35} \cdot \frac{14}{1} +
     \frac{1}{45}} +
   \frac{2}{15}} \cdot \frac{1}{2}=
 \]
@@ -1402,7 +1457,7 @@ Eseguo le addizioni presenti nei numeratori di due frazioni.
 \[= \graffa{
   \frac{3}{20} \cdot \quadra{
     \frac{1}{9} \cdot \frac{1}{5} + 
-    \frac{1}{35}\cdot\frac{14}{1} +
+    \frac{1}{35} \cdot \frac{14}{1} +
     \frac{1}{45}} +
   \frac{2}{15}} \cdot 
 \frac{1}{2}=\]
@@ -1480,27 +1535,27 @@ una frazione.
 \begin{flalign*}
 &\quadra{
   \frac{13}{5}:\tonda{3+\frac{9}{10}}+\frac{7}{8}+
-  \tonda{\frac{13}{4}-2}\cdot\frac{4}{15}-\frac{7}{8}%
+  \tonda{\frac{13}{4}-2} \cdot \frac{4}{15}-\frac{7}{8}%
 }\cdot
 \frac{11}{3}:\tonda{6-\frac{1}{2}}=&\\
 &=\quadra{
   \frac{13}{5}:\frac{39}{10}+\frac{7}{8}+
-  \frac{5}{4}\cdot\frac{4}{15}-\frac{7}{8}
+  \frac{5}{4} \cdot \frac{4}{15}-\frac{7}{8}
 }\cdot
 \frac{11}{3}:\frac{11}{2}=\\
 &=\quadra{
-  \frac{13}{5}\cdot\frac{10}{39}+\frac{7}{8}+
-  \frac{5}{4}\cdot\frac{4}{15}-\frac{7}{8}
+  \frac{13}{5} \cdot \frac{10}{39} + \frac{7}{8}+
+  \frac{5}{4} \cdot \frac{4}{15} - \frac{7}{8}
 }\cdot
-\frac{11}{3}\cdot\frac{2}{11}=\\
+\frac{11}{3} \cdot \frac{2}{11}=\\
 &=\quadra{
-  \frac{2}{3}+\frac{7}{8}+\frac{1}{3}-\frac{7}{8}
+  \frac{2}{3} + \frac{7}{8} + \frac{1}{3} - \frac{7}{8}
 }\cdot
 \frac{2}{3}=\\
 &=\quadra{
-  \frac{2}{3}+\frac{1}{3}
+  \frac{2}{3} + \frac{1}{3}
 }\cdot
-\frac{2}{3}=1\cdot\frac{2}{3}=\frac{2}{3}
+\frac{2}{3} = 1 \cdot \frac{2}{3} = \frac{2}{3}
 %\end{soluzione}
 \end{flalign*}
 \end{esempio}
@@ -1514,8 +1569,8 @@ potenza ma scriverla sotto forma di prodotto:
 
 \begin{esempio}{}{}
 \(\tonda{\dfrac{2}{3}}^4 \cdot \tonda{\dfrac{9}{4}}^3  = 
--\dfrac{2\cdot2\cdot2\cdot2\cdot9\cdot9\cdot9}
-      {3\cdot3\cdot3\cdot3\cdot4\cdot4\cdot4} = \dfrac{9}{4}\)
+-\dfrac{2 \cdot 2 \cdot 2 \cdot 2 \cdot 9 \cdot 9 \cdot 9}
+      {3 \cdot 3 \cdot 3 \cdot 3 \cdot 4 \cdot 4 \cdot 4} = \dfrac{9}{4}\)
 \end{esempio}
 
 In questo caso siamo riusciti a risolvere l'espressione senza eseguire
@@ -1530,8 +1585,8 @@ Calcola il valore della seguente espressione.
 &\quadra{
   \tonda{\frac{7}{5}-\frac{1}{2}}^{2}:
   \tonda{\frac{9}{10}}^{2}-
-  \tonda{\frac{2}{15}}^{4}\cdot
-  \tonda{\frac{5}{2}}^2\cdot
+  \tonda{\frac{2}{15}}^{4} \cdot
+  \tonda{\frac{5}{2}}^2 \cdot
   \tonda{\frac{15}{2}}^{2}
 }^{2}:
 \tonda{\frac{10}{9}}^{2}-
@@ -1539,9 +1594,9 @@ Calcola il valore della seguente espressione.
 &=\quadra{
   \tonda{\frac{14 - 5}{10}}^{2}:
   \tonda{\frac{9}{10}}^{2}-
-  \frac{2\cdot2\cdot2\cdot2}{15\cdot15\cdot15\cdot15}\cdot
-  \frac{5\cdot5}{2\cdot2}\cdot
-  \frac{15\cdot15}{2\cdot2}
+  \frac{2 \cdot 2 \cdot 2 \cdot 2}{15 \cdot 15 \cdot 15 \cdot 15} \cdot
+  \frac{5 \cdot 5}{2 \cdot 2} \cdot
+  \frac{15 \cdot 15}{2 \cdot 2}
 }^{2}:
 \tonda{\frac{10}{9}}^{2}-
 \frac{25 + 40 + 1}{25}=\\
@@ -1549,54 +1604,53 @@ Calcola il valore della seguente espressione.
   \tonda{\frac{9}{10}}^{2}:
   \tonda{\frac{9}{10}}^{2}-
   \frac{1}{9}
-}^{2}\cdot
+}^{2} \cdot
 \tonda{\frac{9}{10}}^{2}-
 \frac{66}{25}=
 \quadra{
   1 -\frac{1}{9}
-}^{2}\cdot
+}^{2} \cdot
 \tonda{\frac{9}{10}}^{2}-
 \frac{66}{25}=\\
-&=\quadra{\frac{8}{9}}^{2}\cdot
+&=\quadra{\frac{8}{9}}^{2} \cdot
 \tonda{\frac{9}{10}}^{2}-
 \frac{66}{25}=
-\frac{8\cdot8}{9\cdot9}\cdot
-\frac{9\cdot9}{10\cdot10}-
-\frac{66}{25}=\frac{16}{25}-\frac{66}{25}=-\frac{50}{25}=-2
+\frac{8\cdot8}{9 \cdot 9} \cdot
+\frac{9\cdot9}{10 \cdot 10}-
+\frac{66}{25} = \frac{16}{25} - \frac{66}{25} = -\frac{50}{25} = -2
 \end{align*}
 }
 \end{esempio}
 
 Se nell'espressione, oltre alle frazioni, ci sono anche numeri decimali 
-limitati o periodici, conviene in un primo passaggio trasformare ogni numero
-razionale in frazione e poi calcolare\indc{espressione}{espressione con 
-numeri 
-razionali}.
+limitati o periodici, conviene in un primo passaggio trasformare ogni 
+numero razionale in frazione e poi calcolare
+\indc{espressione}{espressione con numeri razionali}.
 
 \begin{esempio}{}{}
 Calcola il valore della seguente espressione.
    
 \begin{align*}
-&3,5 \cdot 0,4-1,2-0,8\bar{6}\cdot\tonda{
+&3,5 \cdot 0,4-1,2-0,8\bar{6} \cdot \tonda{
    1,\bar{6}+5,8\bar{3}-5,5-\frac{23}{13}
 }=&\\
 &=\frac{35}{10} \cdot \frac{4}{10}-\frac{12}{10}-
- \frac{86-8}{90}\cdot\tonda{
-   \frac{16-1}{9}+\frac{583-58}{90}-\frac{55}{10}-\frac{23}{13}
+ \frac{86-8}{90} \cdot \tonda{
+   \frac{16-1}{9} + \frac{583-58}{90} - \frac{55}{10} - \frac{23}{13}
  }=\\
 &=\frac{7}{5}-\frac{6}{5}-
- \frac{78}{90}\cdot\tonda{
-   \frac{15}{9}+\frac{525}{90}-\frac{55}{10}-\frac{23}{13}
+ \frac{78}{90} \cdot \tonda{
+   \frac{15}{9} + \frac{525}{90} - \frac{55}{10} - \frac{23}{13}
  }=\\
 &=\frac{1}{5}-
- \frac{13}{15}\cdot\tonda{
-   \frac{5}{3}+\frac{35}{6}-\frac{11}{2}-\frac{23}{13}
+ \frac{13}{15} \cdot \tonda{
+   \frac{5}{3} + \frac{35}{6} - \frac{11}{2} - \frac{23}{13}
  }=\\
 &=\frac{1}{5}-
- \frac{13}{15}\cdot
-   \frac{130+455-429-138}{2\cdot3\cdot13}=
- \frac{1}{5}-\frac{13}{15}\cdot\frac{18}{2\cdot3\cdot13}=
-\frac{1}{5}-\frac{1}{5}=0
+ \frac{13}{15} \cdot
+   \frac{130+455-429-138}{2 \cdot 3 \cdot 13} =
+ \frac{1}{5} - \frac{13}{15} \cdot \frac{18}{2 \cdot 3 \cdot 13}=
+\frac{1}{5} - \frac{1}{5} = 0
 \end{align*}
 
 \end{esempio}
@@ -1625,9 +1679,9 @@ ciascuna frazione:
 
 \begin{htmulticols}{3}
 \begin{itemize} [noitemsep]
-\item cr.:~\(\dfrac{3}{4}\cdot 568 =426\)
-\item ci..:~\(\dfrac{1}{8}\cdot 568 =71\)
-\item ma..:~\(\dfrac{1}{8}\cdot 568 =71\)
+\item cr.:~\(\dfrac{3}{4} \cdot 568 =426\)
+\item ci..:~\(\dfrac{1}{8} \cdot 568 =71\)
+\item ma..:~\(\dfrac{1}{8} \cdot 568 =71\)
 \end{itemize}
 \end{htmulticols}
  \end{esempio}
@@ -1650,7 +1704,7 @@ Mario ha speso~\(21\meuro\) che corrispondono ai~\(3/5\) della somma
 che possedeva. Quanto possedeva?
 
 È sufficiente dividere~21 per la frazione: \quad 
-\(21\meuro : \dfrac{3}{5} = 21\meuro \cdot \dfrac{5}{3}=35\meuro\)
+\(21\meuro : \dfrac{3}{5} = 21 \meuro \cdot \dfrac{5}{3} = 35\meuro\)
 \end{esempio}
 
 \begin{esempio}{}{}
@@ -1663,7 +1717,7 @@ quanto ha a disposizione alla fine?
 \emph{Primo metodo} 
 
 La prima volta Giuseppe spende: \quad 
-\(S_1 = \cdot \dfrac{3}{5} \cdot D_0 = 
+\(S_1 = \dfrac{3}{5} \cdot D_0 =
   \dfrac{3}{5} \cdot 150\meuro = 90\meuro\)\\
 perciò gliene rimangono: \quad 
 \(D_1 = D_0 - S_1 = 150\meuro - 90\meuro = 60\meuro\) \\
@@ -1695,6 +1749,8 @@ pertanto gli rimangono \quad
 \(D_2 = \dfrac{2}{15} D_0 = \dfrac{2}{15} \cdot 150\meuro= 20 \meuro\).
 \end{esempio}
 
+\pagebreak %---------------------------------------------
+
 \begin{esempio}{}{}
 Trova due numeri sapendo che la loro somma è 108 e uno è i 4/5 dell'altro.
 
@@ -1704,8 +1760,10 @@ Sintetizziamo i dati: \\
 \(\sistema{a + b = 108\\ b = \dfrac{4}{5} a}\)
 }{
 \immagine
-{Figura: segmenti a e b disposti uno sopra l'altro, a è composto da 5 parti
-b è composto da 4 parti.}
+{Testo alternativo figura: segmenti a e b disposti uno sopra l'altro,
+a (sopra) è composto da 5 parti,
+b (sotto) è composto da 4 parti.
+Ciascuna parte ha lunghezza pari a x come unità di misura.}
 {\esempiosegmenti{4}{5}}
 }
 \vspace{.5em}
@@ -1728,8 +1786,10 @@ Sintetizziamo i dati: \\
 \(\sistema{a + b = 500\\ b = \dfrac{3}{7} a}\)
 }{
 \immagine
-{Figura: segmenti a e b disposti uno sopra l'altro, a è composto da 7 
-parti b è composto da 3 parti.}
+{Testo alternativo figura: segmenti a e b disposti uno sopra l'altro,
+a (sopra) è composto da 7 parti,
+b (sotto) è composto da 3 parti.
+Ciascuna parte ha lunghezza pari a x come unità di misura.}
 {\esempiosegmenti{3}{7}}
 }
 \vspace{.5em}
@@ -1809,7 +1869,7 @@ sconto, a quanto viene venduto?
 Sconto 
 \(= 70\meuro \cdot 20\% = 
   70\meuro \cdot 0,20 = 
-  \dfrac{20}{100}\cdot70\meuro = 14\meuro\), \qquad 
+  \dfrac{20}{100}\cdot 70\meuro = 14\meuro\), \qquad 
   
 prezzo scontato: 
 \(70\meuro -14\meuro = 
@@ -1899,17 +1959,21 @@ La frazione~\(\dfrac{1}{12}\), per esempio, veniva così rappresentata:
 
 \ifdefined\HCode                          % compilazione htlatex
 \includegraphics
-[alt=Un ovale comn sotto il numero 12 scritto in geroglifico.]
-{img/giero.png}
+[alt=Un ovale con sotto il numero 12 scritto in geroglifico.]
+{\folder img/giero.png}
 \else
 \vspace{-2ex}
 \begin{center}
 \begin{inaccessibleblock}[Figura: 1/12 scritto in geroglifico.]
  \includegraphics
- [scale=0.28, alt=Un ovale comn sotto il numero 12 scritto in geroglifico.]
- {img/giero.png}
+ [scale=0.28, alt=Un ovale con sotto il numero 12 scritto in geroglifico.]
+ {\folder img/giero.png}
 \end{inaccessibleblock}
 \end{center}
+\immagine*{Testo alternativo figura: rappresentazione della frazione 
+\(\frac{1}{12}\) in geroglifico. In dettaglio: un piccolo ovale 
+schiacciato disposto in orizzontale, sotto sulla sinistra, una ``U'' 
+rovesciata e sulla destra, due piccole barre verticali.}{}
 
 \vspace{-2ex}
 \fi
@@ -1928,9 +1992,17 @@ Seth, reo di avergli ucciso il padre, perse un occhio le cui parti vennero
 ritrovate e ricomposte dal dio Toth a meno di una piccola parte.
 }{
 \ifdefined\HCode                          % compilazione htlatex
-  \includegraphics[alt=Figura: L'occhio di Horus.]{img/eyefra.png}
+  \includegraphics[alt=Figura: L'occhio di Horus.]{\folder img/eyefra.png}
 \else
-  \immagine{Figura: L'occhio di Horus.}{\horus}
+  \immagine{Testo alternativo figura: mostra quale frazione indica ogni 
+parte dell'occhio di Horus.
+  Nello specifico:
+  - la parte verso il naso rappresentava la frazione \(\frac{1}{2}\);
+  - la pupilla rappresentava la frazione \(\frac{1}{4}\);
+  - il sopracciglio rappresentava la frazione \(\frac{1}{8}\);
+  - la parte verso l'orecchio rappresentava la frazione \(\frac{1}{16}\);
+  - la coda curva, come un baffo con il ricciolo finale verso l'alto (sotto la pupilla dell'occhio), rappresentava la frazione \(\frac{1}{32}\);
+  - il piede (parte verticale disposta sotto la parte bianca verso il naso) rappresentava la frazione \(\frac{1}{64}\).}{\horus}
 \fi
 }
 

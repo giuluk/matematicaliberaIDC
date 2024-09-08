@@ -1,0 +1,1036 @@
+% (c) 2012 - 2014 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c) 2014 Claudio Carboncini - claudio.carboncini@gmail.com
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+\input{\folder equazionigr1_grafici.tex}
+
+\chapter{Identità, equazioni}
+
+\inicapitolo{
+\begin{itemize}[left=0mm, nosep]
+\item le identità;
+\item le equazioni;
+\item i metodi di soluzione delle equazioni;
+\item le equazioni che non hanno soluzione;
+\item la soluzione di problemi con le equazioni.
+\end{itemize}
+}
+
+\section{Identità ed equazioni}
+\label{sec:eq1_definizioni}
+
+Analizziamo le proposizioni:
+
+\begin{enumeratea}
+\item ``cinque è uguale alla differenza tra sette e due'';
+\item ``la somma di quattro e due è uguale a otto'';
+\item ``il doppio di un numero naturale è uguale alla differenza tra nove e il 
+numero stesso'';
+\item ``la somma di due numeri interi è uguale a dieci''.
+\end{enumeratea}
+
+Notiamo che sono tutte costruite con il predicato
+``essere uguale a''. Riscriviamo in formula ciascuna di esse:
+\begin{htmulticols}{4}
+\begin{enumeratea}
+\item \(5=7-2\)
+\item \(4+2=8\)
+\item \(2x=9-x\)
+\item \(x+y=10\).
+\end{enumeratea}
+\end{htmulticols}
+Notiamo che le prime due contengono solamente numeri, le seconde
+contengono anche variabili.
+
+Le frasi del primo tipo si dicono \emph{chiuse} \ind{frasi chiuse} e
+di esse si può subito stabilire se sono vere o false; così in~\(\N\) la
+formula~\(5 = 7 - 2\) è vera, mentre~\(4 + 2 = 8\) è falsa.
+
+\begin{definizione}{}{}\ind{uguaglianze} \ind{identità}
+Le \emph{frasi chiuse} costruite con il predicato
+<<essere uguale>> si chiamano \textbf{uguaglianze} o \textbf{identità}.
+\end{definizione}
+
+Le identità non contengono variabili libere e si può stabilire se sono 
+\textbf{vere} o \textbf{false}.
+
+% \begin{definizione}{}{}
+% Le \emph{formule chiuse} costruite con il predicato
+% <<essere uguale>> si chiamano \emph{uguaglianze};
+% stabilito l'ambiente in cui vengono enunciate si può
+% immediatamente stabilire il loro valore di verità.
+% \end{definizione}
+% 
+% % \begin{exrig}
+%  \begin{esempio}{}{}
+%  La formula chiusa~\(1 - 6 = -5\) è un'uguaglianza
+% vera se la consideriamo nell'insieme~\(\Z\) degli interi
+% relativi, è falsa se la vediamo come sottrazione tra numeri naturali.
+%  \end{esempio}
+
+Le frasi c) e d) che contengono variabili libere si dicono \emph{aperte}, 
+\ind{frasi aperte}
+in tali frasi il valore di verità dipende dal valore delle variabili.
+Se alle variabili sostituiamo un numero, queste frasi da aperte si 
+trasformano in chiuse e allora possiamo stabilirne il valore di verità.
+
+Il problema che affronteremo sarà quello di trovare per quali valori della 
+variabile la frase aperta diventa vera.
+In questi problemi le variabili libere vengono chiamate \emph{incognite}.
+
+\begin{esempio}{}{}
+Il valore di verità della frase \(2x = 6 - x\) dipende dal valore della 
+
+\affiancati{.49}{.49}
+{
+variabile~\(x\). 
+Possiamo provare con diversi valori: 
+
+\vspace{.5em}
+Abbiamo trovato un valore, \(+2\), che sostituito alla variabile rende vera 
+la frase.
+Ma ce ne saranno altri?
+}{
+\begin{center}
+\begin{tabular}{ccc}
+\(x\) & espressione & verità\\
+\hline
+\(-1\) & \(-2 = 6 +1\) & Falso\\
+\(~~0\) & \(0 = 6~~~~ \) & Falso\\
+\(+1\) & \(+2 = 6 - 1\) & Falso\\
+\(+2\) & \(+4 = 6 - 2\) & Vero\\
+\(+3\) & \(+6 = 6 - 3\) & Falso\\
+\end{tabular}
+\end{center}
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Il valore di verità della frase \(x + 2y = 10\) dipende dal valore 
+
+\affiancati{.44}{.54}
+{
+delle variabili~\(x\) e \(y\). Possiamo provare con diversi valori: 
+
+\vspace{.5em}
+Abbiamo trovato una coppia di valori, \(+6;~ +4\), che, 
+sostituiti alle variabili rende vera la frase.
+Ma ce ne saranno altre?
+}{
+\begin{center}
+\begin{tabular}{cccc}
+\(x\) & \(y\) & espressione & verità\\
+\hline
+\(+4\) & \(+2\) & \(+4 +4 = +10\) & Falso\\
+\(+5\) & \(+2\)& \(+5 +4 = +10\) & Falso\\
+\(+6\) & \(+2\)& \(+6 +4 = +10\) & Vero\\
+\(+7\) & \(+2\)& \(+7 +4 = +10\) & Falso\\
+\(+8\) & \(+2\)& \(+8 +4 = +10\) & Falso\\
+\end{tabular}
+\end{center}
+}
+
+Non serve tanta fantasia per trovarne molte altre\dots
+Quante?
+\end{esempio}
+
+% \begin{esempio}{}{}
+% Nella formula~\(2x = 9 - x\) sostituiamo alla variabile~\(x\) il valore 
+% \(0\) 
+% otteniamo:~\(2\cdot 0=9-0 \Rightarrow~0=9\), falsa.
+% 
+% Sostituiamo ora alla
+% variabile~\(x\) il valore \(3\) otteniamo~\(2\cdot 3=9-3 \Rightarrow~6=6\), 
+% vera.
+% \end{esempio}
+
+% \begin{esempio}{}{}
+% Nella formula~\(x + y = 10\) sostituiamo
+% alle variabili coppie di numeri interi come~\(x = 2\) e~\(y = 5\) 
+% otteniamo~\(2+5=10\Rightarrow~7= 10\), falsa. Se
+% sostituiamo~\(x = 4\) e~\(y = 6\) ci rendiamo subito conto che
+% l'uguaglianza ottenuta è \emph{vera}. Esistono
+% molte altre coppie di numeri interi rendono vera
+% l'uguaglianza.
+% \end{esempio}
+
+\begin{definizione}{}{}
+\ind{equazione} \ind{primo membro} \ind{secondo membro} \ind{soluzioni} 
+\ind{insieme soluzione} 
+Chiamiamo \textbf{equazioni} le frasi aperte costruite con il predicato 
+\emph{essere uguale}. 
+L'espressione che si trova a sinistra del segno di uguaglianza si chiama 
+\textbf{primo membro} e quella che si trova a destra si chiama 
+\textbf{secondo membro}.
+
+I valori che sostituiti alle incognite trasformano l'espressione aperta 
+in un'uguaglianza \emph{Vera} si chiamano \textbf{soluzioni} 
+e tutte assieme costituiscono l'\textbf{insieme soluzione} (\(\IS\)) 
+dell'equazione.
+\end{definizione}
+
+% \begin{definizione}{}{}
+% Le frasi aperte costruite con il predicato essere uguale si chiamano
+% \emph{equazioni}; le due espressioni che compaiono a sinistra e a
+% destra del segno di uguaglianza si chiamano rispettivamente
+% \emph{primo membro} e \emph{secondo membro}.
+% 
+% L'insieme dei valori che sostituiti alle incognite trasformano l'equazione in
+% un'uguaglianza vera costituisce
+% l'\emph{insieme soluzione} (\(\IS\)) o più semplicemente la \emph{soluzione} 
+% dell'equazione.
+% \end{definizione}
+
+Ci sono tanti tipi di equazioni a seconda di quali insiemi numerici sono 
+coinvolti e da quali operazioni sono applicate alle variabili libere.
+
+In questo capitolo affronteremo equazioni a \emph{una sola incognita}, 
+\emph{polinomiali di primo grado}. 
+Se non indicato diversamente, consideriamo variabili che appartengono 
+al più generale insieme numerico che conosciamo (\(\Q\) o \(\R\)).
+
+% Affronteremo per ora equazioni in
+% \emph{una sola incognita} che, dopo aver svolto eventuali calcoli nei due 
+% membri, comparirà a
+% \emph{grado} 1 e i cui \emph{coefficienti} sono \emph{numeri razionali}.
+% Cercheremo la sua soluzione
+% nell'insieme~\(\Q\) dei numeri razionali, salvo esplicita indicazione 
+% differente.
+
+\begin{esempio}{}{}
+Cercare le soluzioni nell'insieme indicato.
+\begin{enumeratea}
+\item \(x^{2} = 1 \text{ con }x\in\N.\)
+Risulta vera solo se a~\(x\) sostituiamo il valore~1; infatti~1 è
+l'unico numero naturale il cui quadrato è~1.
+L'insieme soluzione è~\(\{1\}\).
+\item \(x^{2} = 1 \text{ con }x\in\Z\).
+Risulta vera se a
+\(x\) sostituiamo il valore \(+1\) oppure il valore~\(-1\) infatti sia 
+\(-1\) sia \(+1\) elevati al quadrato danno~1. 
+L'insieme soluzione è\(\{-1;~ +1\}\).
+\item \(x^{2} = 1\text{ con }x\in\R\).
+L'espressione a sinistra è elevata al quadrato e quindi non può essere 
+uguale a un numero negativo pertanto nessun numero reale, messo al posto 
+della \(x\) rende vera l'uguaglianza (per risolvere equazioni di questo 
+tipo sono stati inventati dei nuovi numeri).
+\item \(2x+3=(3+x)+x \text{ con } x\in\Q\).
+Eseguendo il semplice calcolo al secondo membro, ci rendiamo conto che 
+l'uguaglianza risulta vera qualunque sia il valore che viene sostituito 
+all'incognita. 
+L'insieme soluzione è~\(\Q\).
+\end{enumeratea}
+\end{esempio}
+
+In generale un'equazione in una incognita può essere:
+
+\begin{enumeratea}
+\item \emph{determinata}, quando l'insieme soluzione è un sottoinsieme 
+proprio dell'insieme numerico considerato;
+\item \emph{impossibile}, quando l'insieme soluzione è l'insieme 
+vuoto~\(\emptyset\); 
+\item \emph{indeterminata} o \emph{identità}, quando l'insieme soluzione 
+coincide con l'insieme considerato.
+\end{enumeratea}
+
+\begin{esempio}{}{}
+Analizziamo le equazioni:
+\begin{htmulticols}{3}
+\begin{enumeratea}
+\item \(3\cdot x=0\)
+\item \(0\cdot x=5\)
+\item \(0\cdot x=0\).
+\end{enumeratea}
+\end{htmulticols}
+
+Tutte e tre hanno la stessa struttura: il primo membro è il prodotto
+di un coefficiente numerico per un valore incognito, il secondo membro
+è un numero.
+
+\paragraph{a)} Per trovare l'insieme soluzione della prima equazione 
+cerchiamo 
+in~\(\Q\) il
+numero che moltiplicato per~3 dà come prodotto~0. L'unico numero che rende 
+vera
+l'uguaglianza è zero. Quindi l'insieme delle soluzioni è~\(\{0\}\). 
+L'equazione 
+è
+determinata.
+
+\paragraph{b)} Per trovare l'insieme soluzione della seconda equazione 
+cerchiamo 
+in~\(\Q\) il
+numero che moltiplicato per~0 dà come prodotto~5. Per la proprietà
+della moltiplicazione quando moltiplichiamo per~0 il prodotto è~0,
+non otterremo mai~5. Quindi l'insieme soluzione è
+l'insieme vuoto. L'equazione è
+impossibile.
+
+\paragraph{c)} Per trovare l'insieme soluzione della terza equazione 
+cerchiamo 
+in~\(\Q\) il
+numero che moltiplicato per zero dà come prodotto zero. Per la
+proprietà della moltiplicazione quando moltiplichiamo per~0 il
+prodotto è~0 qualunque sia l'altro fattore. Quindi
+l'insieme delle soluzioni è~\(\Q\). L'equazione è
+indeterminata.
+\end{esempio}
+
+
+\subsection{Ricerca dell'insieme soluzione}
+In alcuni casi la soluzione di un'equazione si può
+trovare applicando semplicemente le proprietà delle operazioni.
+
+\begin{esempio}{}{}
+Analizziamo lo schema operativo dell'equazione~\(3x-1=17 \text{ con } 
+x\in\N\).
+
+Si opera sul valore incognito~\(x\) per ottenere~17:
+
+\[\text{\emph{entra} } x,\text{ si moltiplica per tre}\to~3\cdot x%
+\text{ si sottrae } 1\to~3\cdot x-1 \text{ si ottiene } 17.\]
+
+Qual è il valore in ingresso?
+
+Per determinare il valore in ingresso basterà percorrere alla rovescia 
+lo schema effettuando le operazioni inverse:
+\[\text{\emph{da} } 17 \text{ aggiungi } 1\to~18 \text{ dividi per tre 
+}\to~18:3 
+\to x.\]
+
+La soluzione dell'equazione è~\(x = 6\) e~\(\IS\) (insieme
+soluzione) è~\(\{6\}\).
+\end{esempio}
+
+% \ovalbox{\risolvi \ref{ese:13.1}}\vspace{1.10ex}
+
+Per risolvere un'equazione più complessa come
+\(\left(\dfrac{1}{2}x+3\right)\cdot (-5+x)=12x+\dfrac{1}{2}x^{2}\) con
+\(x\in~\Q\), non possiamo applicare il procedimento precedente; potremmo
+procedere per tentativi, sostituendo all'incognita
+alcuni valori scelti a caso e verificando se il valore assunto dal
+primo membro risulta uguale a quello assunto dal secondo membro. È
+evidente però che questo procedimento raramente porterà a trovare
+tutte le soluzioni di un'equazione.
+
+
+\section{Principi di equivalenza}
+\label{sec:eq1_principi} \ind{principi di equivalenza}
+
+Due principi di equivalenza ci permettono di risolvere qualunque equazione 
+in modo meccanico.
+% \begin{osservazione}{}{}
+% Per risolvere un'equazione, cioè per determinare tutte
+% le eventuali soluzioni, si procede applicando i principi
+% d'equivalenza.
+% \end{osservazione}
+
+\begin{definizione}{}{}
+Due equazioni sono \emph{equivalenti} se hanno lo stesso insieme soluzione.
+\end{definizione}
+
+\begin{teorema}{Primo principio di equivalenza}{}
+Aggiungendo o togliendo a entrambi i membri di un'equazione 
+una stessa quantità, 
+si ottiene un'equazione equivalente a quella data.
+\end{teorema}
+
+\begin{teorema}{Secondo principio di equivalenza}{}
+Moltiplicando o dividendo entrambi i membri di un'equazione 
+per una stessa quantità \textbf{diversa da zero}, 
+si ottiene un'equazione equivalente.
+\end{teorema}
+
+I principi sopra enunciati permettono di trasformare qualunque equazione
+nella forma canonica che ha lo stesso insieme soluzione di quella
+assegnata.
+
+\subsection{Risoluzione di equazioni numeriche intere di primo grado}
+
+\begin{definizione}{}{}
+Risolvere un'equazione significa determinare il suo Insieme Soluzione.
+\end{definizione}
+
+In questo paragrafo vedremo come usare i principi
+d'equivalenza prima enunciati per condurre
+un'equazione alla forma canonica e dunque determinarne
+la soluzione.
+
+La forma più semplice di un'equazione di primo grado in
+un'incognita è del tipo:
+\[x = \text{numero}\]
+
+L'insieme soluzione di una
+equazione di questo tipo è semplicemente:
+\[\IS=\{\text{numero}\}.\]
+
+Per esempio, l'insieme delle soluzioni dell'equazione
+\(x = -3\) è: \(\IS =\{-3\}\).
+
+Dato che l'espressione \(\IS=\{\text{numero}\}\) non dà alcuna 
+informazione in più, 
+spesso ci si ferma alla prima: \(x = \text{numero}\).
+
+Il primo principio di equivalenza permette di ottenere equazioni che 
+contengono a primo membro solo monomi con la variabile e a secondo membro 
+solo numeri. 
+
+\begin{esempio}{}{}
+Risolvi l'equazione \(2x -5 = x +3\).
+
+\vspace{.5em}
+\begin{itemize}[left=0mm, nosep]
+\item aggiungiamo \(+5\) a entrambi i membri:
+\(2x -5 +5 = 3 +5 \sRarrow 2x = x +8\);
+\item aggiungiamo \(-x\) a entrambi i membri:
+\(2x-x=x +8 -x \sRarrow x=8\);
+\end{itemize}
+
+\(\IS =\{8\}\).
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:13.2}, \ref{ese:13.3}, \ref{ese:13.4}, 
+% \ref{ese:13.5}}
+
+Il secondo principio di equivalenza permette di trovare la soluzione di 
+un'equazione quando si conosce il valore di un multiplo (o di un 
+sottomultiplo) della variabile.
+
+\begin{esempio}{}{}
+Risolvi l'equazione: \quad \(3x = 12\).
+
+\begin{itemize}[left=0mm, nosep]
+\item dividiamo entrambi i membri per~3: \quad 
+\(\dfrac{3}{3}x = \dfrac{12}{3} \sRarrow x=4\)
+\end{itemize}
+
+\(\IS =\{4\}\)
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvi l'equazione: \quad \(\dfrac{3}{5}x = 9\).
+
+\begin{itemize}[left=0mm, nosep]
+\item dividiamo entrambi i membri per \(\dfrac{3}{5}\): \quad 
+\(\dfrac{3}{5}x \cdot \dfrac{5}{3}=9 \cdot \dfrac{5}{3} \sRarrow x=15\)
+\end{itemize}
+
+\(\IS =\{15\}\)
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:13.6}, \ref{ese:13.7}, \ref{ese:13.8}}
+
+Combinando i due metodi esposti sopra possiamo risolvere qualunque 
+equazione di primo grado.
+
+\begin{esempio}{}{}
+Risolvi l'equazione: \quad \(-2x+1=3x-5\).
+
+\vspace{.5em}
+\begin{itemize}[left=0mm, nosep]
+\item Sottraiamo~1 a entrambi i membri: \\
+\(-2x+1-1=3x-5-1 \sRarrow -2x = 3x  -6\)
+\item Sottraiamo~\(3x\) a entrambi i membri: \\
+\(-2x-3x = 3x-6 -3x \sRarrow -5x = -6\)
+\item Dividiamo entrambi i membri per \(-5\): \\
+\(\dfrac{-5}{-5}x = \dfrac{-6}{-5} \sRarrow x = +\dfrac{6}{5}\)
+\end{itemize}
+
+\(\IS =\graffa{+\dfrac{6}{5}}\)
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:13.9}, \ref{ese:13.10}, \ref{ese:13.11}}
+
+Non è detto che l'equazione si trovi già nella forma dell'uguaglianza 
+di due polinomi, potrebbe essere necessario eseguire dei calcoli e 
+ridurre le espressioni in forma polinomiale.
+
+\begin{esempio}{}{}
+Risolvi l'equazione: \quad \((x +1) +3(4 +x) = 12x -3\)
+
+\vspace{.5em}
+\begin{enumerate}
+\item svolgiamo i calcoli al primo e al secondo membro:\\
+\(x+1+12+3x=12x-3 \sRarrow 4x+13=12x-3\)
+\item dobbiamo togliere \(12x\) dal secondo membro e \(13\) dal primo 
+membro quindi sommiamo ad ambo i membri i monomi \(-12x -13\)
+applicando il primo principio:\\
+\(4x\cancel{+13}-12x\cancel{-13}=\cancel{12x}-3\cancel{-12x}-13 \sRarrow 
+-8x=-16\)
+\item dividiamo ambo i membri per~\(-8\),
+applicando il secondo principio:\\ 
+\(\dfrac{-8}{-8}x = \dfrac{-16}{-8} \sRarrow x = +2\).
+\end{enumerate}
+
+L'equazione assegnata~\((x +1) +3(4 +x) = 12x -3\)
+risulta equivalente all'ultima trovata \(x = +2\), pertanto il
+suo insieme soluzione è~\(\IS = \{+2\}\).
+\end{esempio}
+
+% \vspace{1.10ex}% \ovalbox{\risolvii \ref{ese:13.12}, \ref{ese:13.13}}
+
+\begin{osservazione}{}{} \ind{forma canonica}
+La forma canonica di un'equazione polinomiale è del tipo: \(ax +b = 0\)
+ma spesso è più comodo collocare il termine con l'incognita a sinistra 
+dell'uguale e il termine numerico a destra.
+\end{osservazione}
+
+Enunciamo alcune \emph{regole pratiche} \ind{regole pratiche} 
+che ci possono aiutare nella procedura risolutiva e che discendono 
+direttamente dai principi d'equivalenza.
+
+\paragraph{a)} 
+Si può spostare una funzione da una parte all'altra dell'uguale
+trasformandola nella sua opposta.
+
+\begin{esempio}{}{}
+\qquad \(2x-3=2\)
+
+\(-3\) equivale alla funzione \emph{diminuisci di 3} 
+posso spostarla dall'altra parte dell'uguale e diventa 
+\emph{aumenta di 3}:
+\(2x-3=2 \sLRarrow 2x=2+3\)
+\end{esempio}
+
+\begin{esempio}{}{}
+\qquad \(2x=5\)
+
+Il numero \(2\) moltiplica il primo membro 
+posso spostarlo dall'altra parte dell'uguale e
+\emph{divide} il secondo membro
+\(2x=5 \sLRarrow 2x=\dfrac{5}{2}\)
+\end{esempio}
+
+\paragraph{b)}
+Gli addendi uguali che si trovano nei due membri opposti possono essere 
+tolti.
+
+\begin{esempio}{}{}
+\qquad \(2x-3-5x=2-5x\)
+
+Poiché \(-5x\) è presente e nel primo membro e anche nel secondo, 
+possiamo eliminarli e l'equazione diventa:
+\(2x-3\cancel{-5x}=2-\cancel{5x} \sLRarrow 2x-3=2\)
+\end{esempio}
+
+\paragraph{c)} 
+Possiamo cambiare i segni dei due membri di un'equazione. 
+Questo ci torna comodo quando il coefficiente dell'incognita è negativo.
+
+\begin{esempio}{}{}
+\qquad \(-3x=7\)
+
+Posso cambiare i segni ad entrambi i membri:\\ 
+\(-3x=7 \sLRarrow +3x=-7 \sLRarrow x=\dfrac{-7}{+3}=-\dfrac{7}{3}\)\\
+si ottiene lo stesso risultato spostando \(-3\) che moltiplica il primo 
+membro, dall'altra parte dell'uguale dove dividerà il secondo membro:\\ 
+\(-3x=7 \sLRarrow x=\dfrac{+7}{-3}=-\dfrac{7}{3}\)
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvi la seguente equazione applicando queste regole pratiche: \qquad
+\(5x+2\cdot (3-x)+1=-(4x-1)+2\cdot (6-x)\)
+
+\vspace{.5em}
+\begin{enumerate}
+\item svolgiamo i calcoli:\\
+\central{\(5x+6-2x+1=-4x+1+12-2x\)}
+\item eliminiamo i termini uguali che compaiono nei due membri:\\
+\central{\(5x+6 \cancel{-2x}\cancel{+1}=-4x \cancel{+1}+12\cancel{-2x} 
+\ssRarrow 5x+6=-4x+12\)}
+\item la funzione ``aggiungi \(6\)'', spostata al secondo membro diventa 
+``togli \(6\)'' e il monomio~\(4x\) del secondo membro lo spostiamo al 
+primo membro, di là era tolto, di qua verrà aggiunto.\\
+\central{\(5x +4x = -6 +12 \ssRarrow 9x = +6\)}
+\item Dopo aver sommato i termini simili nei due membri, il 
+\(9\) che moltiplica il primo membro lo sposto dall'altra parte 
+dell'uguale e divide il secondo membro:\\
+\central{\(x=\dfrac{6}{9} = \dfrac{2}{3} \ssrarrow 
+\IS =\graffa{\dfrac{2}{3}}\)}
+\end{enumerate}
+\end{esempio}
+% \end{soluzione}
+% \ovalbox{\risolvii \ref{ese:13.14}, \ref{ese:13.15}, \ref{ese:13.16}, 
+% \ref{ese:13.17}, \ref{ese:13.18}}
+
+\section{Alcune variazioni}
+\label{sec:eq1_varie}
+
+\subsection{Equazioni a coefficienti frazionari}
+\label{sec:13_coefffraz} \ind{Eq. a coefficienti frazionari}
+
+Si può procedere come al solito portando tutti i termini con l'incognita a 
+primo membro e quelli senza a secondo membro lavorando con le frazioni.
+
+\begin{esempio}{}{}
+\(\dfrac{2}{3}x+4-\dfrac{1}{2}+2x=\dfrac{x+2}{3}-\dfrac{5}{2}x+1\)
+
+\vspace{.5em}
+\begin{enumerate}%[nosep]
+\item Separiamo le frazioni con le incognite: \\[1mm]
+\(\dfrac{2}{3}x+4-\dfrac{1}{2}+2x=
+\dfrac{x}{3}+\dfrac{2}{3}-\dfrac{5}{2}x+1\) 
+\item Portiamo a primo membro i termini con le incognite e a secondo quelli 
+senza:\\
+\(\dfrac{2}{3}x+2x-\dfrac{x}{3}+\dfrac{5}{2}x=
++\dfrac{2}{3}+1+\dfrac{1}{2}-4\) 
+\item Sommiamo i termini simili:\\[1mm]
+\(\dfrac{4x+12x-2x+15x}{6} = \dfrac{+4+6+3-24}{6} \sRarrow
+\dfrac{29x}{6} = -\dfrac{11}{6}\)
+\item A questo punto moltiplicando entrambi i membri per 
+\(\dfrac{6}{29}\) otteniamo:\\ 
+\(\dfrac{\cancel{29}x}{\cancel{6}} \cdot \dfrac{\cancel{6}}{\cancel{29}} 
+= 
+\dfrac{-11}{\cancel{6}} \cdot \dfrac{\cancel{6}}{29} \sRarrow
+x = -\dfrac{11}{29}
+\)
+\end{enumerate}
+\end{esempio}
+
+Oppure si possono eliminare tutti i denominatori e procedere poi con 
+coefficienti interi.
+Sappiamo infatti che il secondo principio d'equivalenza ci permette di 
+moltiplicare ambo i membri per uno stesso numero diverso da zero.
+
+\begin{esempio}{}{}
+\(\dfrac{2}{3}x+4-\dfrac{1}{2}+2x=\dfrac{x+2}{3}-\dfrac{5}{2}x+1\)
+
+\vspace{.5em}
+% \affiancati{.49}{.49}{
+\begin{enumerate}%[nosep]
+\item Calcoliamo il~\(\mcm\) tra i denominatori: in questo
+caso: \(\mcm\coppia{2}{3} = 6\)
+\item Moltiplichiamo per~6 entrambi i membri
+dell'equazione: \\[1mm]
+\(6\left(\dfrac{2}{3}x+4-\dfrac{1}{2}+2x\right)=6\left(\dfrac{x+2}{3}-
+\dfrac{5}{2}x+1\right)\)
+\item Eseguiamo i calcoli: \quad \(4x +24 -3 +12x = 2x +4 -15x +6\)
+\item Separiamo, nei due membri, i termini con e senza variabile e 
+eseguiamo i calcoli: \quad
+\(4x +12x -2x +15x = +4 +6 -24 +3 \sRarrow 29x = -11\)
+\item Dividendo per \(29\): \quad 
+\(\dfrac{29x}{29} = \dfrac{-11}{29} \sRarrow x = -\dfrac{11}{29}\)
+\end{enumerate}
+\end{esempio}
+
+% \ovalbox{\risolvi \ref{ese:13.19}}
+
+\subsection{Equazioni in cui l'incognita compare con grado maggiore di~1}
+\ind{Eq. apparentemente di 2° grado}
+A volte l'equazione appare di secondo grado, ma, svolgendo i calcoli, 
+i termini di secondo grado si annullano e diventa una equazione di primo 
+grado che sappiamo risolvere.
+
+\begin{esempio}{}{}
+
+\((2x+1)\cdot (x-2)=2\cdot (x+1)^{2}-5x\).
+
+\vspace{.5em}
+Apparentemente l'equazione è di secondo grado. 
+
+\begin{enumerate}
+\item svolgiamo i calcoli e otteniamo:\\[1mm]
+\(2x^{2}-4x+x-2=2x^{2}+4x+2-5x\Rightarrow~2x^{2}-3x-2=2x^{2}-x+2\)
+\item applichiamo le regole pratiche eliminando i monomi
+uguali che si trovano nelle parti opposte dell'uguale:
+\(-3x+x=+2+2\)
+
+Abbiamo ottenuto un'equazione di primo grado.
+\item \(-2x = +4 \sRarrow x = \dfrac{+4}{-2} = -2\)
+\end{enumerate}
+
+\end{esempio}
+
+
+\subsection{Equazioni in cui l'incognita scompare}
+\ind{Eq. impossibili} \ind{Eq. indeterminate} \ind{Eq. determinate}
+
+A volte, eseguendo i calcoli l'incognita dell'equazione scompare. 
+Come possiamo interpretare queste equazioni?
+
+Prima di procedere, vediamo due esempi.
+
+\begin{esempio}{}{}
+\(\dfrac{4}{5}-\dfrac{x}{2}=\dfrac{2-5x}{10}\).
+
+\begin{enumerate} [nosep]
+\item Calcoliamo il~\(\mcm\) tra i denominatori: in questo
+caso~\(\mcm(5, 2, 10) = 10\).
+\item Moltiplichiamo per~10 ambo i membri
+dell'equazione: \\[1mm]
+\(10\tonda{\dfrac{4}{5} -\dfrac{x}{2}} = 10\tonda{\dfrac{2-5x}{10}}\)
+\item Eseguiamo i calcoli: \quad \(8 -5x = 2 -5x\).
+\item Applichiamo la regola pratica:
+\(-5x +5x = 2 -8\) i monomi in \(x\) si annullano!
+\item Sommando i monomi simili si ottiene: \quad \(0 \cdot x=-6\).
+\end{enumerate}
+
+Il coefficiente dell'incognita è zero; non possiamo
+applicare il secondo principio e dividere ambo i membri per zero.
+D'altra parte non esiste nessun numero che moltiplicato
+per zero dia come prodotto~\(-6\). 
+
+Quindi~\(\IS =\emptyset \), l'equazione risulta \textbf{impossibile}.
+\end{esempio}
+
+\begin{esempio}{}{}
+\(\dfrac{x}{6}-\dfrac{2x}{3}=-{\dfrac{x}{2}}\).
+
+\begin{enumerate} [nosep]
+\item Calcoliamo il~\(\mcm\) tra i denominatori: in questo
+caso~\(\mcm(6, 3, 2) = 6\).
+\item Moltiplichiamo per~6 ambo i membri
+dell'equazione: \\[1mm]
+\(6\left(\dfrac{x}{6}-\dfrac{2x}{3}\right)=6\left(-{\dfrac{x}{2}}\right)\)
+\item Eseguiamo i calcoli: \quad \(x-4x=-3x\).
+\item Applicando il primo principio si ottiene~\(0 \cdot x=0\).
+\end{enumerate}
+
+Il coefficiente dell'incognita è zero; non possiamo
+applicare il secondo principio e dividere ambo i membri per zero.
+D'altra parte per la proprietà della moltiplicazione
+qualunque numero moltiplicato per zero dà come prodotto zero. 
+Quindi \(\IS = \Q\), l'equazione è \textbf{indeterminata}.
+\end{esempio}
+
+\subsubsection{Riassumiamo i 3 casi che possiamo incontrare}
+
+Qualunque sia la situazione di partenza, possiamo sempre scrivere un'equazione 
+di primo grado nella forma: \quad 
+\(A \cdot x = B\) \quad dove \(A\) e \(B\) sono due numeri.
+
+Possono presentarsi i seguenti casi:
+\begin{itemize} [nosep]
+\item se~\(A\neq~0\) possiamo applicare il secondo principio
+d'equivalenza dividendo ambo i membri per~\(A\) quindi
+\(\IS =\left\{\dfrac{B}{A}\right\}\). L'equazione è \textbf{determinata}.
+\item se~\(A=0\) non possiamo applicare il secondo principio
+d'equivalenza e dividere ambo i membri per~\(A\) e si
+presentano due casi:
+\begin{itemize} [nosep]
+\item \(B\neq~0\) allora~\(\IS =\emptyset \). 
+L'equazione è \textbf{impossibile}.
+\item \(B=0\) allora~\(\IS =\Q\). 
+L'equazione è \textbf{indeterminata}.
+\end{itemize}
+\end{itemize}
+
+Lo schema precedente si può rappresentare anche con un grafo ad albero:
+\immagine{Albero che illustra lo schema precedente}
+{\alberoequazioni}
+
+% \ovalbox{\risolvii \ref{ese:13.20}, \ref{ese:13.21}, \ref{ese:13.22}, 
+% \ref{ese:13.23}, \ref{ese:13.24}, \ref{ese:13.25}, \ref{ese:13.26}, 
+% \ref{ese:13.27}, \ref{ese:13.28}, \ref{ese:13.29},
+% \ref{ese:13.30}}
+
+% \ovalbox{\ref{ese:13.31}, \ref{ese:13.32}, \ref{ese:13.33}, 
+% \ref{ese:13.34}, 
+% \ref{ese:13.35}, \ref{ese:13.36}, \ref{ese:13.37}, \ref{ese:13.38}, 
+% \ref{ese:13.39},
+% \ref{ese:13.40}, \ref{ese:13.41}, \ref{ese:13.42}, \ref{ese:13.43}, 
+% \ref{ese:13.44}}
+
+% \ovalbox{\ref{ese:13.45}, \ref{ese:13.46}, \ref{ese:13.47}, 
+% \ref{ese:13.48}, 
+% \ref{ese:13.49},\ref{ese:13.50}}
+
+
+\section{Problemi di I° grado in un'incognita}
+\label{sec:eq1_problemi}
+\ind{problemi risolvibili con equazioni}
+
+\subsection{Un po' di storia e qualche aneddoto}
+\label{subsec:equazioni_problemi_storia}
+
+Sin dall'antichità l'uomo si è trovato di fronte a difficoltà pratiche, 
+legate alla vita quotidiana e ha perciò messo a punto strategie per 
+superarle.
+
+Sembra che nell'antico Egitto le periodiche piene del
+Nilo abbiano spinto l'uomo a sviluppare la capacità
+di tracciare rette parallele, rette perpendicolari, di misurare il
+perimetro e l'area di particolari figure geometriche o
+viceversa di calcolare le misure dei lati di poligoni di dato perimetro
+o data area per poter ridefinire i confini degli appezzamenti di
+terreno.
+
+Il \emph{papiro di Rhind} \ind{papiro di Rhind}
+\footnote{Dal nome dell'inglese A.~H.~Rhind che lo comprò a Luxor nel~1858.}, 
+testo egizio scritto in
+ieratico, risalente al~1700~\aC, si autodefinisce
+``istruzioni per conoscere tutte le cose
+oscure'' contiene più di~85 problemi con relativi
+metodi di soluzione riguardanti il calcolo della capacità di
+recipienti e di magazzini, la ricerca dell'area di
+appezzamenti di terreno e altre questioni aritmetiche.
+
+Nel problema~24 del papiro, ad esempio, viene calcolato il mucchio
+quando esso ed il suo settimo sono uguali a~19. Mucchio è
+l'incognita del problema, indicata con il termine
+\emph{aha} il cui segno è
+% \input{\folder lbr/giero}
+\begin{inaccessibleblock}[Geroglifico]
+\includegraphics[scale=0.28]{\folder img/giero.png}.
+\end{inaccessibleblock}
+                                                              
+Noi traduciamo la richiesta nell'equazione~\(x+\dfrac{1}{7}x=19\).
+
+\ind{Leonardo Pisano} \ind{Fibonacci}
+Nel~1202 Leonardo Pisano, conosciuto col nome paterno di
+`filius Bonacci' o Fibonacci, pubblicò il \emph{Liber Abaci} 
+\ind{Liber Abaci}
+in cui presenta vari metodi algebrici per la risoluzione di problemi di 
+matematica applicata che Leonardo aveva imparato 
+dai musulmani seguendo il padre nei suoi viaggi commerciali. 
+I nuovi ``algoritmi'' presentati da Fibonacci, intendevano facilitare la 
+risoluzione dei problemi di calcolo evitando l'uso dell'abaco. 
+Nel~1223 a Pisa, l'imperatore Federico~II di Svevia, assistette a
+un singolare torneo tra matematici dell'epoca; il problema proposto era 
+il seguente:
+
+\ind{conigli}
+<<Quante coppie di conigli si ottengono in un anno (salvo i
+casi di morte) supponendo che ogni coppia dia alla luce
+un'altra coppia ogni mese e che le coppie più
+giovani siano in grado di riprodursi già al secondo mese di
+vita?>>.
+
+Fibonacci vinse la gara dando al quesito una risposta così rapida da
+far persino sospettare che il torneo fosse truccato. La soluzione fu
+trovata tramite l'individuazione di una particolare
+successione di numeri, nota come successione di Fibonacci.
+
+Secondo la leggenda, il grande matematico Carl Fiedrich Gauss già
+\ind{Gauss}
+all'età di tre anni avrebbe corretto un errore di
+suo padre nel calcolo delle sue finanze. 
+All'età di 10 anni fu autorizzato a seguire le lezioni di aritmetica 
+di un certo Buttner. 
+Un giorno, agli studenti particolarmente turbolenti, Buttner
+diede come compito di punizione il calcolo della somma dei primi~100
+numeri, da~1 a~100. Poco dopo, sorprendendo tutti, il giovanissimo Carl
+diede la risposta esatta, ``5050''.
+Si era accorto che mettendo in riga tutti i numeri da~1 a~100 e nella
+riga sottostante i numeri da~100 a~1, ogni colonna dava come somma~101;
+fece dunque il prodotto~\(100\times~101\) e divise per~2, ottenendo 
+facilmente il risultato: Buttner rimase sgomento.
+
+\subsubsection{Risoluzione dei problemi}
+
+% \epigraph{La risoluzione dei problemi \ldots serve ad acuire
+% l'ingegno e a dargli la facoltà di penetrare
+% l'intera ragione di tutte le cose.}{{\scshape{R. Descartes}}}
+
+I problemi che possono presentarsi nel corso degli studi o
+nell'attività lavorativa sono di diversa natura: di
+tipo economico, scientifico, sociale, possono riguardare insiemi
+numerici o figure geometriche. La matematica ci può aiutare a
+risolvere i problemi quando essi possono essere tradotti in
+``forma matematica'', quando cioè
+è possibile trascrivere in simboli le relazioni che intercorrono
+tra le grandezze del problema.
+
+Analizzeremo problemi di tipo algebrico o geometrico, che potranno
+essere formalizzati attraverso equazioni di primo grado in una sola
+incognita. Prima di buttarci alla risoluzione del problema, procediamo a:
+
+\begin{enumeratea}
+\item una lettura ``attenta'' del
+testo al fine di individuare l'ambiente del problema,
+le parole chiave, i dati e le informazioni implicite,
+l'obiettivo;
+\item la scelta della grandezza incognita e la descrizione
+dell'insieme in cui si ricerca il suo valore,
+ragionando sull'obiettivo del problema (condizioni sull'incognita);
+\item la traduzione in ``forma matematica'' delle relazioni che intercorrono 
+tra i dati e l'obiettivo, cioè l'individuazione dell'equazione risolvente;
+\item la risoluzione dell'equazione trovata;
+\item il confronto tra la soluzione trovata e le condizioni poste su di essa.
+\end{enumeratea}
+
+\begin{problema}{}{}
+Un mattone pesa un chilo più mezzo mattone. Quanto pesa un mattone?
+\end{problema}
+
+\begin{soluzione}{}{}
+\emph{Dati}: peso di un mattone~\(=\) peso di mezzo 
+mattone~\(+ 1\munit{kg}.\)
+
+\emph{Obiettivo}: peso del mattone.
+
+Creiamoci un'immagine della situazione.
+Ora, possiamo pensare di risolvere il problema spezzando, con la nostra 
+immaginazione, il mattone intero in due metà.
+
+\triaffiancati{.34}{.30}{.34}{
+\immagine[.6]{Bilancia a due piatti, su uno c'è un mattone sull'altro 
+mezzo mattone più un kg.}
+{\bilanciaa}
+% \vspace{1mm}
+}{
+Poi togliamo mezzo mattone dal piattello a sinistra e il mezzo mattone dal 
+piattello di destra: se era in equilibrio prima, lo sarà anche dopo.
+}{
+\immagine[.6]{Bilancia a due piatti, su uno c'è un mattone sull'altro 
+mezzo mattone più un kg.}
+{\bilanciab}
+% \vspace{1mm}
+}
+
+Ora raddoppiamo il contenuto dei due piattelli: a sinistra torna ad essere 
+\emph{un} mattone, a destra abbiamo \(2\munit{Kg}\).
+
+Non sempre l'immaginazione ci aiuta, in questo caso possiamo tradurre il 
+problema in un'equazione e risolverla.\\
+Come incognita scegliamo il peso del mattone: lo indichiamo con~\(p\).\\
+Traduciamo il problema in un'equazione: \quad 
+\(p=\dfrac{1}{2}p+1\munit{Kg}\)\\
+Risolviamo l'equazione: \quad 
+\(p-\dfrac{1}{2}p=1\munit{Kg} \sRarrow \) 
+\(\dfrac{1}{2}p=1\munit{Kg} \sRarrow p=2\munit{Kg}\)\\
+La soluzione ottenuta è accettabile.
+\end{soluzione}
+
+\begin{problema}{}{}
+Aggiungendo a un numero naturale i suoi tre quarti, si ottiene il suo
+doppio aumentato di~10. Qual è il numero?
+\end{problema}
+
+\begin{soluzione}{}{}
+L'ambiente del problema è numerico: si cerca un numero naturale. 
+Indichiamo con~\(n\) l'incognita cerchiamo quindi~\(n\in\N\). 
+La lettura attenta del testo mette in luce le operazioni che dobbiamo 
+eseguire sull'incognita e che traduciamo nei dati:
+
+\emph{Dati}:~\(n+\dfrac{3}{4}n=2n+10\).
+
+\emph{Obiettivo}:~\(n\in\N\).
+
+\emph{Procedura risolutiva}:
+
+L'equazione risolvente è già indicata nei dati~\(n+\dfrac{3}{4}n=2n+10\).
+
+Per risolverla moltiplichiamo ambo i membri per~4, otteniamo:
+\[4n+3n-8n=40\Rightarrow -n=40\Rightarrow n=-40.\]
+
+La soluzione non è accettabile per le condizioni poste; il problema
+non ha soluzione.
+\end{soluzione}
+
+\begin{problema}{}{}
+Il~1{\textdegree} gennaio~1990 Anna aveva il doppio
+dell'età di Piero; il~1{\textdegree} gennaio~2000
+Anna aveva vent'anni più di Piero. Quale sarà
+l'età di Anna il~1{\textdegree} gennaio~2010?
+\end{problema}
+
+\begin{soluzione}{}{}
+Leggendo attentamente il problema notiamo che le incognite sono due:
+l'età di Anna e l'età di Piero.
+Indichiamo perciò con~\(a\) l'età di
+Anna al~1990 e con~\(p\) quella di Piero.
+
+Nel~2000 la loro età sarà aumentata di~10 anni. Naturalmente la
+soluzione del problema sarà nell'insieme dei numeri
+naturali. Scriviamo dati e obiettivo usando il formalismo matematico:
+
+\emph{Dati}: nel~1990:~\(a = 2p\), nel~2000:~\(a +10 = (p +10) +20\).
+
+\emph{Obiettivo}: L'età di Anna nel~2010.
+
+\emph{Procedura risolutiva}:
+Osserviamo che una volta determinata l'età di Anna
+nel~1990, basterà aggiungere a questa~20 per ottenere la soluzione,
+pertanto l'età di Anna nel~2010 è~\(a+20\).
+Trasformiamo la seconda relazione riportata nei dati sostituendo
+l'informazione relativa al~1990,
+si ottiene~\(2p+10=p+10+20\Rightarrow~2p-p=20\Rightarrow p=20.\)
+L'età di Piero nel~1990 era~20, quindi~\(a=40\).
+Infine, l'età di Anna nel~2010 è~\(40+20=60\).
+La soluzione è accettabile; il problema è determinato.
+\end{soluzione}
+
+\begin{problema}{}{}
+Calcolare l'area di un rettangolo in cui
+l'altezza supera \(\dfrac{1}{3}\) della base di~8m e il
+perimetro è~\(\dfrac{20}{7}\) della base stessa.
+\end{problema}
+
+\begin{soluzione}{}{}
+Il problema è di tipo geometrico e riguarda un rettangolo. Facendo riferimento 
+alla figura abbiamo:
+\begin{htmulticols}{2}
+\emph{Dati}:~\(AD=\dfrac{1}{3}AB+8\), \quad \(2p=\dfrac{20}{7}AB\)
+
+\emph{Obiettivo}: L'\(\area{ABCD}\)
+
+\emph{Procedura risolutiva}:
+
+\hspace{10mm}
+\(\area{ABCD} = \overline{AB} \cdot \overline{AD}\).
+
+% %  \input{\folder lbr/fig002_ret.pgf}
+% \rettangolo
+\immagine[1]{Un rettangolo.}
+{\disegno{\rettangolo{7}{4}{blue!50!black}{blue!5}}}
+\end{htmulticols}
+
+Dobbiamo dunque determinare queste due misure. I dati del problema
+indicano che la misura dell'altezza dipende da quella
+della base; una volta trovata questa misura basta farne un terzo e
+aggiungere~8 per avere quella dell'altezza; questo
+ragionamento ci fa scegliere come incognita~\(\overline{AB}=x\)
+con~\(x\) numero reale positivo.
+
+Traduciamo con formalismo matematico la prima e la seconda relazione
+contenuta nei dati:
+\(\overline{AD}=\dfrac{1}{3}x+8\sstext{e} 2p=\dfrac{20}{7}x\).
+
+Sappiamo che il perimetro di un rettangolo è il doppio della somma
+della base con l'altezza. 
+Riscriviamo con linguaggio matematico anche questa relazione:\\
+\(2\cdot \left(x+\dfrac{1}{3}x+8\right)=\dfrac{20}{7}x\)\\
+che risulta l'equazione risolvente.
+
+Svolgiamo i calcoli e otteniamo: \quad 
+\(4x=21\cdot 16\Rightarrow x=84\Rightarrow\overline{AB}=84\) \\
+e quindi: \quad \(\overline{AD}=36\).
+
+Ottenute le misure della base e dell'altezza calcoliamo 
+\(\area{ABCD} = 36\cdot 84=3024\munit{{m}^{2}}\).
+\end{soluzione}
+
+\begin{problema}{}{}
+In un triangolo rettangolo il perimetro è~\(120\munit{cm}\) e un cateto 
+è~\(3/5\) dell'ipotenusa. Determinare l'area del triangolo.
+\end{problema}
+
+\begin{soluzione}{}{}
+Rappresentiamo il triangolo:
+
+\affiancati{.54}{.44}{
+
+\emph{Dati}:~\(C\hat{{A}}B=90\grado\), \(2p= 120\), \(AC=\dfrac{3}{5}CB\).
+
+\emph{Obiettivo}: L'\(\area{ABC}\).
+
+\emph{Procedura risolutiva}:
+
+\hspace{10mm}
+\(\area{ABC} =\dfrac{1}{2}\overline{AB} \cdot \overline{AC}\)
+}{
+\immagine[1]{triangolo rettangolo d ipotenusa BC.}{\triangolo}
+}
+
+Il dato \(AC=\dfrac{3}{5}CB\) può essere scritto come: \(AC=3x \wedge CB=5x\).
+L'altro cateto si può calcolare con il teorema di Pitagora:
+\(AB=\sqrt{(5x)^2-(3x)^2}=\sqrt{25x^2-9x^2}=\sqrt{16x2}=4x\).
+
+Il perimetro è: \(2p=4x+5x+3x=12x=120\) e da questa equazione ricaviamo 
+\(x=10\) da cui: \(AB=40, BC=50, CA=30\). 
+
+Da cui si ricava facilmente l'area: 
+\(\area = AB \cdot AC \cdot \dfrac{1}{2} = 
+40 \cdot 30 \cdot \dfrac{1}{2} =600\)
+\end{soluzione}

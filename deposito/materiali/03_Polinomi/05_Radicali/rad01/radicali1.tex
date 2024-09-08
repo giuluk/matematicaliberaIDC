@@ -1,0 +1,2685 @@
+% (c)~2012 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c)~2014 Claudio.carboncinii - claudio.carboncini@gmail.com
+% (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
+
+\input{\folder radicali1_grafici}
+
+\chapter{Radicali}
+
+\section{Dalle potenze alle radici}
+\label{sec:radicali_potenze_radici}
+
+\subsection{Osservazioni sulle potenze}
+
+% \subsubsection{Operazioni inverse}
+
+Quando abbiamo parlato delle operazioni, abbiamo anche accennato all'idea
+delle operazioni inverse. Un'\indt{operazione inversa} rispetto a un'altra 
+(che chiamiamo diretta) permette di ``tornare indietro'' alla situazione 
+iniziale, partendo dall'effetto che l'operazione diretta ha provocato.
+% Ad esempio se a un numero qualunque (per esempio \(142\)) aggiungo~7 
+% (\(+7\), operazione diretta) l'effetto ottenuto è il numero \(149\). Ma se 
+% poi tolgo~7 (\(-7\), operazione inversa) ottengo ancora il numero di 
+% partenza. 
+% Possiamo dire che la sottrazione è l'operazione inversa 
+% dell'addizione. Così pure, se parto da un numero~\(a\) e lo moltiplico 
+% per~\(b\) poi lo divido per~\(b\) (supponiamo \(b\neq 0\)), ottengo ancora il 
+% numero~\(a\):
+% 
+% \(142 + 7 - 7 = 149 -7 = 142\)
+% 
+% \(a * b : b= a\)
+
+L'operazione inversa può anche essere vista come quell'operazione che 
+permette di trovare un operando conoscendo il risultato.
+
+% % \begin{htmulticols}{2}
+% \(\dots + 3 = 7 => \dots = 7 - 3\)
+% 
+% \(5 + \dots = 9 => \dots = 9 - 5\)
+% 
+% \(\dots \times 3 = 6 => \dots = 6 : 3\)
+% 
+% \(15 \times \dots = 5 => \dots = 5 : 15\)
+% % \end{htmulticols}
+% 
+% Le cose si complicano un po' se consideriamo le altre due operazioni 
+% aritmetiche:
+% 
+% % \begin{htmulticols}{2}
+% \(\dots - 3 = 7 => \dots = 7 \overset{?}{\dots} 3\)
+% 
+% % \(5 - \dots = 9 => \dots = 9 \overset{?}{\dots} 5\)
+% \(5 - \dots = 9 => 5 =  9\overset{?}{\dots}\)
+% 
+% \(\dots : 3 = 6 => \dots = 6 \overset{?}{\dots} 3\)
+% 
+% %\(15 : \dots = 5 => \dots = 15 \overset{?}{\dots} 5\)
+% \(15 : \dots = 5 => 15 = 5\overset{?}{\dots} \)
+% % \end{htmulticols}
+% 
+% Perché sottrazione e divisione si comportano in modo diverso da addizione 
+% e moltiplicazione? Come si comporterà la potenza?
+
+La potenza ha due operazioni inverse. 
+\begin{itemize}
+\item 
+Se dobbiamo trovare la base: \quad 
+\(\dots ^3 = 8 \Rightarrow \dots = \sqrt[3]{8} = 2\) (Radice)
+\item 
+mentre per trovare l'esponente: \quad 
+\(2 ^{\dots} = 8 \Rightarrow \dots = \log_{2}{8} = 3\) (Logaritmo)
+\end{itemize}
+
+\begin{definizione}{}{}
+La \textbf{radice}\ind{radice} è l'operazione che permette di calcolare la base
+conoscendo la potenza e l'esponente.
+\end{definizione}
+
+\begin{definizione}{}{}
+Il \textbf{logaritmo}\ind{logaritmo} è l'operazione che permette di calcolare
+l'esponente conoscendo la potenza e la base.
+\end{definizione}
+
+Ne seguito del capitolo ci concentreremo sulle radici rimandando lo studio
+dei logaritmi a tempi migliori. 
+
+\section{Definizioni}
+\label{sec:radicali_definizioni}
+
+Prima di tutto mettiamoci d'accordo su alcuni nomi, nella scrittura,
+{\large
+\[b=\sqrt[n]{a}\]
+}
+{\normalsize
+chiamiamo:}
+{\large 
+\(\sqrt[]{\phantom{a}}\): ~~ \emph{radice}; \quad
+\(n\): ~~ \emph{indice}; \quad
+\(a\): ~~ \emph{radicando}; \quad
+\(b\): ~~ \emph{radice}.
+}\\[.5em]
+\normalsize
+Osserviamo che, come nelle potenze usiamo la stessa parola per indicare 
+l'operazione e il risultato dell'operazione, si deve capire dal contesto il 
+significato della parola ``radice''.
+
+Per quanto detto, potremmo, in prima approssimazione,  dare la seguente 
+definizione: 
+
+\begin{definizione}{}{}
+Dato un numero \(a\) qualunque e un numero naturale \(n > 0\),
+chiamiamo \textbf{radice ennesima} del numero~\(a\) quel numero che 
+elevato alla enne dà come risultato \(a\): \quad 
+\(b=\sqrt[n]{a} \sLRarrow b^n=a\).
+\end{definizione}
+
+Questa definizione rende l'idea di cosa sia la radice, ma, purtroppo, la 
+realtà è un po' più complicata\dots 
+Vediamo alcuni esempi:
+
+\begin{esempio}{}{}
+Usando la definizione precedente calcola le seguenti radici:
+\begin{htmulticols}{4}
+\begin{enumerate}
+  \item \(\sqrt[4]{-16}\);
+  \item \(\sqrt[4]{+16}\);
+  \item \(\sqrt[3]{-64}\);
+  \item \(\sqrt[3]{+64}\);
+\end{enumerate}
+\end{htmulticols}
+Affrontiamo con un po' di giusta pignoleria i quattro problemi:
+\begin{enumerate}
+\item Vogliamo trovare il numero che elevato alla 
+quarta dia come risultato~\(-16\): \(x^4=-16\)
+
+Se ci ricordiamo le riflessioni fatte sulle potenze, dovrebbe tornarci alla 
+mente che una potenza con esponente pari è sempre positiva: nessun numero 
+reale elevato alla quarta può dare un risultato negativo\indc{radici}{C.E. 
+delle radici}.
+
+Quindi: \(\sqrt[4]{-16} \quad \text{Non Ha Risultato Reale}\)  
+
+\item Il secondo esempio apparentemente è più semplice: è facile trovare 
+il numero che elevato alla quarta dia~16: è~2 \dots
+
+Ma ricordandoci l'osservazione sulle potenze, a qualcuno può venire in 
+mente che anche~\(-2\) elevato alla quarta fa~16! 
+Quindi l'operazione di radice darebbe due risultati. 
+Usando i numeri \emph{complessi} accetteremo anche operazioni che danno 
+più risultati ma, per ora, vogliamo operazioni che diano per risultato 
+un solo numero. 
+I matematici hanno deciso di tenere solo il valore positivo.
+
+Quindi \(\sqrt[4]{+16} = +2\)
+\item Nel terzo esempio dovremo trovare quel numero che elevato alla terza 
+faccia~\(-64\) in questo caso il numero esiste ed è solo~\(-4\):
+\(\sqrt[3]{-64} = -4\)
+\item Nel quarto esempio dovremo trovare quel numero che elevato alla 
+terza faccia~\(+64\) in questo caso il numero esiste ed è solo~\(+4\):
+\(\sqrt[3]{+64} = +4\)
+\end{enumerate}
+\end{esempio}
+
+Osservando gli esempi vediamo che è importante distinguere tra radici con 
+indice pari e radici con indice dispari e possiamo così dare la 
+definizione di radice ennesima.
+
+\begin{definizione}{}{}
+% di \textbf{radice}:
+Dati un numero \(a\) qualsiasi e un numero naturale \(n \neq 0\):
+
+\begin{itemize}
+\item Se l'indice \(n\) (enne) è \textbf{dispari} la \textbf{radice} di 
+un qualunque numero~\(a\) è quel numero che elevato alla \(n\) (enne) dà 
+come risultato~\(a\):
+
+\vspace{-1.5em}
+\[b=\sqrt[n]{a} \sLRarrow b^n=a\]
+\item Se l'indice \(n\) (enne) è \textbf{pari} abbiamo due casi:
+\begin{itemize} [nosep]
+  \item se il \textbf{radicando~\(a\) è negativo} la \textbf{radice} 
+          \textbf{Non è Reale};\indc{radici}{C.E. delle radici}
+  \item se il \textbf{radicando~\(a\) è positivo} la radice è quel numero 
+\textbf{positivo} che elevato alla \(n\) (enne) dà come risultato~\(a\):
+
+\vspace{-2em}
+\[\text{se} \quad a \geqslant 0 \quad \text{allora} \quad 
+  b=\sqrt[n]{a} ~\sLRarrow ~ b^n=a \quad \text{con} \quad b \geqslant 0\]
+\end{itemize}
+\end{itemize}
+\end{definizione}
+
+\bigskip
+Vediamo alcuni casi.
+
+% 
+\begin{esempio}{}{}
+Alcune radici di numeri reali:
+\begin{htmulticols}{2}
+\begin{itemize} [left=0mm]
+\item \(\sqrt[1]{7}={7}\) infatti \(7^1=7\)
+\item \(\sqrt 4=2\) infatti \(2^2=4 \text{ e } 2 \geqslant 0\)
+\item \(\sqrt{\dfrac 9{16}}=\dfrac 3 4\) infatti 
+\(\left(\dfrac 3 4\right)^2=\dfrac 9{16}\)
+% \text{ e } \dfrac{3}{4} \geqslant 0\)
+\item \(\sqrt{0,01}=0,1\) infatti \\
+\(0,1^2=0,01 \text{ e } \dots\)
+\item \(\sqrt 1=1\) infatti \(1^2=1 \text{ e } \dots\)
+\item \(\sqrt 0=0\) infatti \(0^2=0 \text{ e } \dots\)
+\item \(\sqrt{-16}\) 
+Non è Reale perché l'indice è pari e il radicando negativo;
+\item \(\sqrt{11}=3,3166247\!\!\dots\) è irrazionale;
+\item \(\sqrt[3]{-8}=-2\) infatti \(\left(-2\right)^3=-8\)
+\item \(\sqrt[3]{125}=5\) infatti \(5^3=125\)
+\item \(\sqrt[3]0=0\) infatti \(0^3=0\)
+\item \(\sqrt[3]{-1000}=-10\) infatti \\
+\(\left(-10\right)^3=-1000\)
+\item \(\sqrt[3]{\dfrac 1 8}=\dfrac 1 2\) infatti 
+\(\left(\dfrac 1 2\right)^3=\dfrac 1 8\)
+\item \(\sqrt[3]{0,125}=0,5\) infatti \\
+\((0,5)^3=0,125\)
+\item \(\sqrt[4]{16}=2\) infatti \(2^4=16 \text{ e } \dots\)
+\item \(\sqrt[4]{-16}\) N.R. infatti \((-2)^4=+16\)
+\item \(\sqrt[5]{32}=2\) infatti \(2^5=16\)
+\item \(\sqrt[4]1=1\) infatti \(1^4=1 \text{ e } \dots\)
+\item \(\sqrt[n]0=0 \text{ infatti } 0^n=0 \text{ e } 0 \geqslant 0\)
+\item \(\sqrt[5]{-1}=-1 \text{ infatti } (-1)^5=-1\)
+\end{itemize}
+\end{htmulticols}
+\end{esempio}
+% 
+
+\begin{comment}
+
+\subsection{Radici quadrate}
+
+\begin{definizione}{}{}
+Si dice \emph{radice quadrata} di un numero reale positivo o nullo quel 
+numero 
+reale positivo o nullo che elevato al quadrato dà come risultato il numero 
+dato.
+In simboli~\(\sqrt a=b \Leftrightarrow b^2=a\) dove \(a,b\in \Rp \cup 
+\{0\}\).
+\end{definizione}
+
+Il simbolo \(\sqrt{\quad}\) è il simbolo della radice quadrata; 
+il numero \(a\) è detto \emph{radicando}, 
+il numero \(b\) è detto \emph{radice quadrata} di \(a\).
+
+Dalla definizione \(\sqrt{a^2}=a\) con \(a\geqslant 0\), quindi: 
+
+\[\sqrt{81}=9 \text{ perché } 9^2=81 \quad 
+\sqrt{\frac {9}{64}}=\frac{3}{8}
+\text{ perché } \left(\frac 3 8\right)^2=\frac 9{64}\]
+
+\osservazione \(\sqrt{81}=\sqrt{(-9)^2}\), ma non è vero che 
+\(\sqrt{(-9)^2}=-9\) perché nella definizione di radice quadrata abbiamo 
+imposto 
+che il risultato dell'operazione di radice quadrata sia sempre un numero 
+positivo o nullo.
+Questa osservazione ci induce a porre molta attenzione quando il radicando è 
+un'espressione letterale: in questo caso \(\sqrt{a^2}=a\) non è del tutto 
+corretto poiché \(a\) può assumere sia valori positivi sia valori negativi
+mentre, nei numeri reali, il risultato della radice quadrata non è mai un 
+numero negativo. 
+Scriveremo correttamente~\(\sqrt{a^2}=\valass{a}\).
+
+% 
+\begin{esempio}{}{}
+Radici quadrate
+\begin{htmulticols}{2}
+\begin{itemize}
+\item \(\sqrt 4=2\) infatti \(2^2=4\)
+\item \(\sqrt{\dfrac 9{16}}=\dfrac 3 4\) infatti \(\left(\dfrac 3 
+4\right)^2=
+\dfrac 9{16}\)
+\item \(\sqrt{0,01}=0,1\) infatti \(0,1^2=0,01\)
+\item \(\sqrt 1=1\) infatti \(1^2=1\)
+\item \(\sqrt 0=0\) infatti \(0^2=0\)
+\item \(\sqrt{-16}\) non esiste, radicando negativo;
+\item \(\sqrt{11}\) esiste ma non è un numero intero né razionale, 
+è un numero irrazionale;
+\item \(\sqrt{x^2}=\left|x\right|\) dobbiamo mettere il valore assoluto 
+al risultato perché non conoscendo il segno di \(x\) dobbiamo imporre che 
+il risultato sia sicuramente positivo;
+\item \(\sqrt{a^2-4a+4}=\sqrt{(a-2)^2}=\left|a-2\right|\) dobbiamo mettere 
+il valore assoluto perché \(a-2\) può anche essere negativo;
+\item \(\sqrt{9(x+1)^2}=3\left|x+1\right|\).
+\end{itemize}
+\end{htmulticols}
+\end{esempio}
+% 
+
+\subsection{Radici cubiche}
+
+\begin{definizione}{}{}
+Si dice \emph{radice cubica} di un numero reale \(a\) quel numero che, 
+elevato al cubo, dà come risultato \(a\). 
+In simboli \(\sqrt[3]a=b \Leftrightarrow b^3=a\) dove \(a,b\in R\).
+\end{definizione}
+
+Puoi notare che la radice cubica di un numero reale esiste sempre sia per 
+i numeri positivi o nulli, sia per i numeri negativi.
+
+% 
+\begin{esempio}{}{}
+Radici cubiche
+\begin{htmulticols}{2}
+\begin{itemize}
+\item \(\sqrt[3]{-8}=-2\) infatti \(\left(-2\right)^3=-8\)
+\item \(\sqrt[3]{125}=5\) infatti \(5^3=125\)
+\item \(\sqrt[3]1=1\) infatti \(1^3=1\)
+\item \(\sqrt[3]0=0\) infatti \(0^3=0\)
+\item \(\sqrt[3]{-1000}=-10\) infatti \(\left(-10\right)^3=-1000\)
+\item \(\sqrt[3]{\dfrac 1 8}=\dfrac 1 2\) infatti 
+\(\left(\dfrac 1 2\right)^3=\dfrac 1 8\)
+\item \(\sqrt[3]{0,125}=0,5\) infatti \((0,5)^3=0,125\)
+\item \(\sqrt[3]{x^3}=x\) per le radici cubiche non si deve mettere 
+il valore assoluto;
+\item \(\sqrt[3]{x^3+3x^2+3x+1}=\sqrt[3]{(x+1)^3}=x+1\) non si deve mettere 
+il valore assoluto.
+\end{itemize}
+\end{htmulticols}
+\end{esempio}
+% 
+
+Osserva che la radice cubica di un numero mantiene sempre lo stesso segno 
+del numero in quanto il cubo di un numero reale conserva sempre il segno 
+della base.
+
+\subsection{Radici n-esime}
+Oltre alle radici quadrate e cubiche si possono considerare radici di indice 
+qualsiasi. 
+Si parla in generale di radice \emph{n-esima} per indicare una radice con un 
+qualsiasi indice \(n\).
+
+\begin{definizione}{}{}
+Si dice \emph{radice n-esima} di un numero reale~\(a\) quel numero~\(b\) che 
+elevato alla~\(n\) dà come risultato~\(a\). Se~\(n\) è pari ~\(b\) è positivo.
+In simboli~\(\sqrt[n]a=b \Leftrightarrow b^n=a\) con \(n\in \N, n > 0\).
+
+\(a\) si dice \emph{radicando}, 
+
+\(n\) si dice \emph{indice}, 
+
+\(b\) si dice \emph{radice}
+
+Non si definisce la radice di indice \(0\) e la scrittura \(\sqrt[0]a\) è 
+priva 
+di significato. Alla scrittura~\(\sqrt[1]a\) si dà il valore \(a\).
+\end{definizione}
+
+Quando si tratta con le radici n-esime di un numero reale, bisogna fare 
+attenzione se l'indice della radice è pari o dispari. 
+Si presentano infatti i seguenti casi:
+\begin{itemize}
+\item se l'indice \(n\) è dispari \(\sqrt[n]a\) è definita per qualsiasi 
+valore 
+di \(a\in R\), inoltre è negativa se~\(a<0\), positiva se \(a>0\) e 
+nulla se \(a=0\)
+\item se l'indice \(n\) è pari \(\sqrt[n]a\) è definita solo per i valori 
+di~\(a\geqslant 0\) e si ha che \(\sqrt[n]a \geqslant 0\).
+\end{itemize}
+
+% 
+\begin{esempio}{}{}
+Radici n-esime
+\begin{htmulticols}{2}
+\begin{itemize}
+\item \(\sqrt[4]{16}=2\) infatti \(2^4=16\)
+\item \(\sqrt[4]{-16}\) non esiste infatti \((-2)^4=+16\)
+\item \(\sqrt[5]{32}=2\) infatti \(2^5=16\)
+\item \(\sqrt[4]1=1\) infatti \(1^4=1\)
+\item \(\sqrt[n]0=0\)
+\item \(\sqrt[5]{-1}=-1\) infatti \((-1)^5=-1\)
+\item \(\sqrt[4]{x^4}=\left|x\right|\) va messo il valore assoluto perché 
+  l'indice della radice è pari;
+\item \(\sqrt[5]{x^5}=x\) non va messo il valore assoluto perché l'indice 
+  della radice è dispari.
+\end{itemize}
+\end{htmulticols}
+\end{esempio}
+% 
+
+% \ovalbox{\risolvii \ref{ese:2.1}, \ref{ese:2.2}, \ref{ese:2.3}, 
+% \ref{ese:2.4},\ref{ese:2.5}, \ref{ese:2.6},\ref{ese:2.7}, 
+% \ref{ese:2.8},\ref{ese:2.9}, \ref{ese:2.10}}
+
+\section{Condizioni di esistenza}
+\label{sec:radicali_condizioni_esistenza}
+
+Riprendendo le conoscenze sulle potenze, ricordiamo che il quadrato di un 
+numero non può essere negativo perché un numero negativo per se stesso dà 
+come 
+risultato un numero positivo. 
+In generale una potenza con esponente pari è sempre positiva.  
+Mentre una potenza con esponente dispari ha lo stesso segno della base.
+
+\newpage
+
+\begin{esempio}{}{}
+Alcune potenze:
+
+\begin{htmulticols}{4}
+\((+5)^2=+25\)
+
+\((-5)^2=+25\)
+
+\((+2)^6=+64\)
+
+\((-2)^6=+64\)
+
+\((+2)^3=+8\)
+
+\((-2)^3=-8\)
+
+\((+2)^7=+128\)
+
+\((-2)^7=-128\)
+\end{htmulticols}
+
+\end{esempio}
+
+Possiamo affermare che nessun numero reale può essere la radice quadrata di 
+un numero negativo, poiché non esiste nessun numero reale che elevato al 
+quadrato dia come risultato un numero negativo. 
+
+E, più in generale, nessun numero reale può essere la radice di indice pari 
+di un numero negativo.
+
+Finché abbiamo a che fare con numeri, le cose risultano abbastanza semplici, 
+ma quando il radicando è un'espressione letterale dobbiamo fare molta 
+attenzione a operare su di esso.
+
+Non è detto che \(sqrt{a}\) esista, perché non possiamo sapere se~\(a\) 
+rappresenta un numero positivo o negativo. 
+Quindi \(sqrt{a}\) è un numero reale solo se~\(a \geqslant 0\).
+
+Le \emph{condizioni di esistenza} (in breve si può scrivere \(\CE\)) 
+di un radicale sono le condizioni cui devono 
+soddisfare le variabili che compaiono nel radicando affinché la radice 
+sia un numero reale.
+
+Supponiamo di avere \(\sqrt[n]{A(x)}\) con \(A(x)\) espressione nella
+variabile~\(x\), dobbiamo distinguere i seguenti casi:
+\begin{itemize*}
+\item se \(n\) è pari la radice è un numero reale solo per i valori 
+di~\(x\) che rendono non negativo il radicando, cioè 
+\(\CE: A(x)\geqslant 0\)
+\item se \(n\) è dispari la radice è un numero reale per qualsiasi valore 
+della variabile~\(x\) che permette di calcolare il radicando.
+\end{itemize*}
+
+% 
+\begin{esempio}{}{}
+Condizioni di esistenza
+\begin{itemize}
+\item \(\sqrt x\):\quad \(\CE x\geqslant 0\)
+\item \(\sqrt[3]x\):\quad \(\CE \forall x\in R\)
+\item \(\sqrt{-x}\):\quad \(\CE x\leqslant 0\)
+\item \(\sqrt[3]{-x}\):\quad \(\CE \forall x\in R\)
+\item \(\sqrt{x-1}\):\quad \(\CE x-1\geqslant 0 \Rightarrow x\geqslant 1\)
+\item \(\sqrt{a^2+1}\):\quad \(\CE \forall a\in R\), infatti \(a^2\) è 
+sempre 
+  positivo pertanto \(a^2+1>0, \forall a\in R\)
+\item \(\sqrt[3]{\frac 1{x+1}}\):\quad la radice cubica è definita per 
+valori 
+  sia positivi sia negativi del radicando, tuttavia bisogna comunque porre 
+la 
+  condizione che il denominatore della frazione non sia nullo, 
+  quindi \(\CE x+1\neq 0 \Rightarrow x\neq -1\)
+\item \(\sqrt[4]{xy}\):\quad \(\CE xy\geqslant 0\)
+\item \(\sqrt[5]{a^2(a-3)}\): poiché la radice ha indice dispari non occorre 
+  porre alcuna condizione di esistenza.
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Determina le condizioni di esistenza della seguente 
+espressione: \(\sqrt x+\sqrt{x+1}\).
+
+C.E. \(\sqrt x\) esiste per \(x\geqslant 0\), \(\sqrt{x+1}\) 
+esiste per \(x+1\geqslant 0\), quindi per individuare le condizioni di 
+esistenza 
+dell'espressione occorre risolvere il sistema 
+\(\left\{\begin{array}{l} x\ge0\\ x+1\ge0\end{array}\right.
+\Rightarrow\left\{\begin{array}{l}x\ge0\\x\ge-1\end{array}\right.\).
+
+\begin{center}
+\input{\folder lbr//fig001_is.pgf}
+\end{center}
+
+In definitiva \(\CE x\geqslant 0\).
+\end{esempio}
+
+\begin{esempio}{}{}
+Determina le condizioni di esistenza della radice 
+\(\sqrt[4]{\dfrac{x-1}{x+1}}\).
+
+C.E. \(\dfrac{x-1}{x+1}\geqslant 0\). 
+Occorre discutere il segno della frazione \(f\), combinando il segno del 
+numeratore \(N\) e del denominatore \(D\):
+
+\begin{center}
+\input{\folder lbr//fig002_seg.pgf}
+\end{center}
+Pertanto C.E. \(x<-1\vee x\geqslant 1\).
+\end{esempio}
+% 
+
+% \vspazio\ovalbox{\risolvii \ref{ese:2.11}, \ref{ese:2.12}, \ref{ese:2.13}, 
+% \ref{ese:2.14},\ref{ese:2.15}}
+
+\end{comment}
+
+\section{Nuovi numeri}
+\label{sec:radicali_reali}
+
+\subsection{I numeri irrazionali}
+% \label{sec:radicali_irrazionali}
+
+Nel capitolo sui numeri razionali abbiamo visto che è possibile descrivere 
+dei numeri che hanno infinite cifre decimali e non sono periodici.
+Abbiamo chiamato questi numeri \emph{numeri irrazionali}.
+I numeri irrazionali sono particolarmente utili quando dobbiamo calcolare 
+le radici.
+
+Con i numeri razionali, infatti, non è sempre possibile eseguire 
+l'estrazione di radice. 
+Consideriamo, ad esempio, \(\sqrt{2}\), cioè il numero che elevato al 
+quadrato dà 2. 
+La radice di \(2\) è un esempio particolarmente importante perché 
+rappresenta la lunghezza della diagonale di un quadrato di lato unitario.
+
+\affiancati{.49}{.49}{
+\immagine{Quadrato con diagonale posto su un asse x.}{\radicediduea}
+}{
+\immagine{Diagonale del quadrato riportata sull'asse x.}{\radicedidueb}
+}
+
+Già nella scuola di Pitagora ci si era accorti che la radice di \(2\) non 
+è un numero razionale, non può essere scritto sotto forma di 
+frazione cioè di rapporto tra due numeri interi. 
+
+\begin{teorema}{}{}
+La radice di 2 non è un numero razionale.
+\end{teorema}
+
+\begin{proof}{}{}
+Supponiamo che la radice di \(2\) sia uguale a un numero razionale 
+scritto come \emph{emme} fratto \emph{enne} con numeratore e denominatore 
+\emph{primi fra di loro}: 
+\[\sqrt{2}=\dfrac{m}{n}\]
+Se questo è vero, allora saranno vere anche le seguenti uguaglianze:
+\[2= \dfrac{m^2}{n^2} \quad \text{ e } \quad 2n^2 = m^2\]
+Questo vuol dire che \(m^2\) è un numero pari ma allora anche \(m\) deve 
+essere pari quindi può essere scritto come il doppio di un altro numero:
+\(m=2k\). sostituendolo nell'uguaglianza precedente otteniamo:
+\[2n^2 = \tonda{2k}^2 \sRarrow 2n^2 = 4k^2 \sRarrow n^2 = 2k^2\]
+Ma allora anche \(n^2\) è un numero pari e quindi anche \(n\).
+Se la radice di \(2\) fosse esprimibile come rapporto tra \(2\) numeri 
+naturali, questi \(2\) numeri sarebbero contemporaneamente primi tra di 
+loro e entrambi pari: supporre che \(\sqrt{2}\) sia un numero razionale 
+porta a una contraddizione.
+\end{proof}
+
+
+
+% \begin{proof}{}{}
+% Si può dimostrare che~\(\sqrt{2}\) non è un numero razionale con una 
+% elegante dimostrazione per assurdo. 
+% 
+% \begin{itemize}
+%  \item 
+% Supponiamo che la radice di \(2\) sia un numero razionale scritto sotto 
+% forma di frazione~\(\sqrt{2}= \frac{a}{b}\), certamente possiamo ridurre 
+% la frazione ai minimi termini.
+%  \item 
+% Se si elevano al quadrato entrambi i membri dell'equazione precedente, si 
+% ottiene:~\(2=\frac{a^{2}}{b^{2}}\).
+%  \item
+% La precedente uguaglianza può anche essere scritta come \(2 \cdot b^2 = 
+% a^2\), 
+% da cui si deduce che \(a^2\) è un numero pari. Ma se \(a^2\) è pari lo 
+% deve essere anche \(a\).
+% quindi \(a\) può essere visto come il doppio di un 
+% numero:~\(a=2 \cdot k\).
+%  \item 
+% L'uguaglianza precedente può essere vista come:~\(2 \cdot b^2 = (2 \cdot 
+% k)^2\).
+% Elevando al quadrato il monomio di destra si 
+% ottiene:~\(2 \cdot b^2 = 4 \cdot k^2\).
+%  \item 
+% Dividendo per 2 entrambi i membri dell'uguaglianza 
+% otteniamo:~\(b^2 = 2 \cdot k^2\). Da questo discende che anche~\(b^2\) 
+% è pari e quindi anche \(b\), ma se sono entrambi pari allora la frazione 
+% di partenza è riducibile contraddicendo che la frazione di partenza fosse 
+% ridotta ai minimi termini.
+% \end{itemize}
+% 
+% Elevare un numero al quadrato significa elevare al quadrato le
+% singole potenze dei fattori primi in cui questo si scompone. 
+% I fattori primi di~\(a^{2}\) e di~\(b^{2}\) sono gli stessi di~\(a\) e 
+% di~\(b\) con gli esponenti raddoppiati, Se~\(a\) e~\(b\) non hanno 
+% fattori in comune, anche~\(a^{2}\) e~\(b^{2}\) non li avranno. 
+% Quindi ~\(a^{2}\) non può essere il doppio di~\(b^{2}\).
+% Perciò~\(2\ne\frac{a^{2}}{b^{2}}\) e~\(\sqrt{2}\ne\frac{a}{b}\).
+% 
+% Oltre a \(\sqrt{2}\) vi sono altri infiniti numeri che non possono 
+% essere scritti come frazione. 
+% Molte radici e alcuni numeri particolari come \(\pi\), 
+% che corrisponde alla misura della circonferenza di diametro \(1\).
+% 
+% Questi numeri sono detti \emph{numeri irrazionali} e costituiscono 
+% l'insieme \(J\) dei numeri irrazionali.
+% L'unione degli insiemi \(\Q\) e \(J\) è l'insieme \(R\) dei 
+% numeri reali.
+% \end{proof}
+
+La radice di \(2\) non è un numero razionale, numeri di questo tipo si 
+dicono \emph{numeri irrazionali}.
+
+Tornando al problema di calcolare la \(\sqrt{2}\) possiamo dire 
+che~\(1<\sqrt{2}<2\). 
+Il valore cercato evidentemente non è un numero intero. 
+Abbiamo dimostrato sopra che non può neppure essere
+numero decimale finito.
+Compiliamo una tabella che contenga nella prima
+riga i numeri con una sola cifra decimale compresi tra~1 e~2 e nella
+seconda riga i rispettivi quadrati:
+
+\begin{center}
+\begin{tabular}{ccccccc}
+\toprule
+\(x\) & 1,1 & 1,2 & 1,3 & 1,4 & 1,5 & 1,6\\
+\(x^{2}\) & 1,21 & 1,44 & 1,69 & 1,96 & 2,25 & 2,89\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Osserviamo che il numero~2 nella seconda riga non c'è: la sua posizione 
+sarebbe tra~\(1,4^{2}\) e~\(1,5^{2}\),
+di conseguenza~\(1,4<\sqrt{2}<1,5\), ma ancora
+non possiamo precisare il suo valore, anche se abbiamo ristretto
+l'intervallo che lo contiene. Diciamo che~1,4 è un valore 
+approssimato per difetto di~\(\sqrt{2}\) mentre~1,5
+è un valore approssimato per eccesso; scrivendo~\(\sqrt{2}=1,4\)
+oppure~\(\sqrt{2}=1,5\) commettiamo un errore minore di~1/10.
+
+Per migliorare l'approssimazione e tentare di ottenere~\(\sqrt{2}\)
+come numero razionale costruiamo la tabella dei numeri
+decimali con due cifre compresi tra~1,4 e~1,5:
+
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+\(x\) &1,41 &1,42 &1,43 &1,44\\
+\(x^{2}\) & 1,9881 & 2,0164 & 2,0049 & 2,0776\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Ora possiamo dire che~1,41 è un valore approssimato per difetto 
+di \(\sqrt{2}\) mentre~1,42 è un valore approssimato per eccesso, con 
+un errore dell'ordine di~1/100. 
+Abbiamo quindi migliorato l'approssimazione e, di conseguenza, abbiamo 
+ristretto l'intervallo in cui cade, ma ancora non abbiamo trovato un 
+numero razionale che sia uguale a~\(\sqrt{2}\).
+
+Continuando con lo stesso procedimento costruiamo due classi di numeri 
+razionali che approssimano, una per difetto e una per eccesso, 
+il numero cercato, restringendo ogni volta l'ampiezza 
+dell'intervallo che contiene~\(\sqrt{2}\).
+Il procedimento può continuare all'infinito e le cifre decimali che 
+troviamo non si ripetono periodicamente.
+
+\begin{center}
+\begin{tabular}{rcll}
+\toprule
+Valore per difetto & Numero &Valore per eccesso & Ordine dell'errore\\
+\midrule
+1 & \(\sqrt{2}\)  & 2  & \(10^{0}\)\\
+1,4 & \(\sqrt{2}\) & 1,5  & \(10^{-1}\)\\
+1,41 & \(\sqrt{2}\) & 1,42 & \(10^{-2}\)\\
+1,414 & \(\sqrt{2}\) &1,415 & \(10^{-3}\)\\
+1,4142 & \(\sqrt{2}\) & 1,4143 & \(10^{-4}\)\\
+\ldots & \(\sqrt{2}\) & \ldots & \ldots\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Procedendo in questo modo possiamo ottenere una differenza piccola quanto 
+si vuole tra l'approssimazione per difetto e l'approssimazione per eccesso.
+Se andiamo avanti all'infinito, l'approssimazione per difetto diverrà 
+infinitamente vicina all'approssimazione per eccesso. 
+Possiamo pensare che tra questi due valori ci sia un numero. 
+Questo è un numero di un nuovo tipo, è un numero \emph{irrazionale}. 
+L'insieme di tutti i numeri che si possono rappresentare in forma 
+decimale con infinite cifre decimali non periodiche, è l'insieme
+dei numeri irrazionali e viene rappresentato con il simbolo \(\J\).
+
+\begin{osservazione}{}{}
+Da notare che nessuno ci vieta di pensare che tra le due classi di 
+approssimazione ci sia più di un numero, in questo caso ognuno di questi 
+numeri può essere usato come rappresentante della radice di \(2\).
+Questi numeri saranno infinitamente vicini tra di loro.
+\end{osservazione}
+
+% \begin{osservazione}{}{}
+% Da notare che tra le due classi di approssimazione possiamo pensare che ci 
+% sia più di un numero, in questo caso ognuno di questi numeri può essere 
+% usato come rappresentante della radice di \(2\).
+% \end{osservazione}
+
+
+\subsection{I numeri reali}
+% \label{sec:radicali_reali}
+
+
+L'insieme dei numeri irrazionali non è chiuso per la moltiplicazione 
+infatti il prodotto di due irrazionali può essere un razionale, ad es. 
+\(\sqrt{2} \cdot \sqrt{2} = 2\) quindi un insieme chiuso per le quattro 
+operazioni aritmetiche che contenga gli irrazionali deve contenere anche 
+i razionali. 
+L'unione dei numeri razionali e dei numeri irrazionali dà l'insieme dei 
+numeri reali: \(\R=\Q \cup \J\).
+
+I numeri reali sono tutti quei numeri che si possono scrivere in forma 
+decimale con un numero finito o infinito di cifre, anche non periodiche.
+Per esempio:
+\begin{itemize} [noitemsep]
+\spazielenx
+\item La frazione \(\frac{17}{16}\) è uguale al numero decimale 
+finito~\(1,0625\).
+\item La frazione \(\frac{16}{17}\) è uguale al numero decimale 
+periodico~\(0,\overline{9411764705882352}\).
+\item Il numero \(\pi\) è invece un numero decimale a infinite cifre non 
+periodico. 
+Riportiamo alcune cifre:
+\(\pi \) = 
+3,\,141\,592\,653\,589\,793\,238\,462\,643\,383\,279\,502\,884\,197\,169\,
+399\,375\,105\,820\,974\,944\,592\,307\,816\,406\,286\,
+208\,998\,628\,034\,825\,342\,117
+% \,067\,982\,148\,086\,513\,282\,306\,
+% 647\,093\,844\,609\,550\,582\,231\,725\,359\,408\,128\,481\,117\,
+% 450\,284\,102\,701\,938\,521\,105\,559\,644\,622\,948\,954\,930\,381\,
+% 964\,428\,810\,975\,665\,933\,446\,128\,475\,648\,233\,786\,783\,165\,
+% 271\,201\,909\,145\,648\,566\,923\,460\,348\,610\,454\,326\,648\,213\,
+% 393\,607\,260 
+\ldots 
+\end{itemize}
+
+Nonostante i numeri irrazionali siano stati scoperti dallo stesso Pitagora 
+o dai suoi allievi nel \(VI\)~secolo~\(\aC\), solo nel \(XIX\)~secolo 
+Augustin-Louis Cauchy e Richard Dedekind sono giunti a una definizione 
+rigorosa di numero reale.
+
+In effetti, assumere che i numeri reali sono tutti quelli che si possono 
+scrivere in forma decimale finita o infinita,  comporta dei problemi. 
+Per esempio, gli algoritmi per addizionare, 
+sottrarre e moltiplicare due numeri richiedono di cominciare dalla cifra 
+più a destra, cosa che non è possibile per i numeri decimali che non 
+finiscono mai. 
+
+\begin{comment}
+È possibile costruire l'insieme dei numeri reali a 
+partire dall'insieme dei numeri razionali dividendoli in due insiemi~\(A\) 
+e~\(B\) 
+con particolari caratteristiche:
+\begin{enumerate*}
+\item \(A \cap B=\emptyset\)
+\item \(A \cup B=\Q\)
+\item \(\forall a \in A, \forall b \in B, a<b\)
+\end{enumerate*}
+
+Una coppia di insiemi con queste caratteristiche venne chiamato da 
+Dedekind~(1831-1916) una \emph{sezione}, o \emph{partizione} di \(\Q\).
+
+Dato che \(A\) e \(B\) devono avere intersezione nulla:
+
+\begin{itemize*}
+\item se \(A\) ha un massimo \(B\) non può avere un minimo;
+\item se \(A\) non ha un massimo \(B\) può avere un minimo;
+\item \(A\) può non avere un massimo \(B\) può non avere un minimo;
+\end{itemize*}
+
+% Nei primi due casi La sezione individua un numero Razionale, nel terzo 
+% caso,
+% individua un numero irrazionale.
+
+
+\begin{esempio}{}{}
+Sezioni
+\begin{itemize}
+\item I due insiemi \(A\) e \(B\) così definiti: 
+\(A=\left\{x\in \Q |\, x<3\right\}\) e
+\(B=\left\{x\in \Q |\, x \geqslant 3\right\}\) 
+definiscono una sezione di \(\Q\), 
+infatti \(A \cap B=\emptyset\) \(A \cup B=\Q\) e ogni elemento di A è 
+minore 
+di ogni elemento di B; 
+inoltre possiamo osservare che \(A\) non ammette massimo,
+non essendoci in esso un numero che sia maggiore di tutti gli altri, 
+mentre \(B\) ammette il minimo che è 3;
+\item siano \(A=\left\{x\in \Q |\, x<-1\right\}\), \(B=\left\{x \in \Q 
+|\, 
+x>0\right\}\) la coppia \((A,B)\) non è una sezione di \(\Q\) perché pur 
+essendo 
+\(A\cap B=\emptyset\) non è \(A\cup B=\Q\)
+\item siano \(A=\left\{x\in \Q |\, x \leqslant \frac{2}{7}\right\}\), 
+\(B=\left\{x 
+\in Q |\, x \geqslant \frac{2}{7}\right\}\), anche in questo caso la coppia 
+\((A,B)\) 
+non 
+è una sezione di \(\Q\) poiché \(A\cap B=\left\{\frac{2}{7}\right\}\)
+\item costruiamo gli insiemi \(A\) e \(B\) nel seguente modo: \(A\) sia 
+l'unione 
+tra 
+l'insieme dei numeri razionali negativi e tutti i razionali il cui quadrato 
+è 
+minore di 2, in \(B\) mettiamo tutti i razionali il cui quadrato è maggiore 
+di 
+2. 
+\(A=\Q^{-} \cup \left\{x \in \Q |\, x^{2}<2\right\}\), \(B=\left\{x \in 
+\Q 
+|\, x^{2}>2\right\}\). Si ha \(A \cap B=\emptyset\) \(A\cup B=\Q\), 
+inoltre 
+ogni 
+elemento di \(A\) è minore di ogni elemento di \(B\), dunque \((A,B)\) è una 
+sezione 
+di \(\Q\), ma \(A\) non possiede il massimo e \(B\) non possiede il minimo, 
+in 
+quanto abbiamo già dimostrato che non esiste un numero razionale che ha \(2\) 
+come 
+quadrato. Questa sezione individua un buco nell'insieme \(\Q\).
+\end{itemize}
+\end{esempio}
+
+
+\begin{definizione}{}{}
+Si chiama \emph{elemento separatore} di una partizione \((A,B)\) di \(\Q\) 
+il 
+massimo di \(A\) o il minimo di \(B\), nel caso in cui almeno uno di questi 
+elementi 
+esista.
+\end{definizione}
+
+Nel primo esempio, poiché esiste il minimo di \(B\), la partizione \((A,B)\) 
+ammette 
+un elemento separatore e identifica il numero razionale \(3\).
+Nel quarto esempio non esiste un numero razionale che fa da elemento 
+separatore, 
+la sezione \((A,B)\) identifica un numero irrazionale.
+
+\begin{definizione}{}{}
+L'insieme \(R\) dei numeri reali è l'insieme di tutte le partizioni di 
+\(\Q\). Chiamiamo
+numero razionale le partizioni che ammettono elemento separatore, chiamiamo 
+\emph{numero irrazionale} le sezioni che non ammettono elemento separatore.
+\end{definizione}
+
+Ogni numero reale è individuato da due insiemi di numeri razionali che 
+contengono, nel primo tutte le approssimazioni per difetto e il secondo
+tutte le approssimazioni per eccesso.
+
+% Ritornando all'esempio precedente, il numero \(\sqrt{2}\) è individuato 
+% dalla 
+% sezione costituita dagli insiemi \(A=\left\{x\in \Q |\, x<0\right\}\) 
+% oppure 
+% \(x^{2}<2\) e \(B=\left\{x\in \Q |\, x^{2}>2\right\}\).
+% Nell'insieme \(A\) ci sono tutti i numeri razionali negativi oltre quelli 
+% che 
+% approssimano \(\sqrt{2}\) per difetto: 
+% \[A=\{1;1,4;1,41;1,414;1,4142;1,414213;\ldots\}.\]
+% Nell'insieme B ci sono tutti i numeri razionali che approssimano 
+% \(\sqrt{2}\) 
+% per eccesso:
+% \[B=\{2;1,5;1,42;1,415;1,4143;1,41422;1,414214;\ldots\}.\]
+
+Questa costruzione dell'insieme dei numeri reali \(R\) a partire 
+dall'insieme dei numeri razionali \(\Q\) è puramente astratta e formale, 
+non serve al calcolo, ma
+permette di collegare i nuovi numeri all'insieme dei numeri naturali 
+\(\N\). 
+
+Nell'insieme delle partizioni di \(\Q\) è possibile definire in modo 
+rigoroso 
+l'ordinamento e le operazioni, nella pratica si usano sempre delle 
+approssimazioni, magari molto elevate.
+
+\begin{definizione}{}{}
+Un insieme \(X\) si dice \emph{continuo} se ogni partizione \((X', X'')\) di 
+\(X\) 
+ammette uno e un solo elemento separatore, cioè se esiste un elemento \(x\) 
+appartenente a \(X\) tale che per ogni \(x'\) di \(X'\) e per ogni \(x''\) 
+di \(X''\) si ha \(x'{\leq}x{\leq}x''\).
+\end{definizione}
+
+\begin{teorema}{di Dedekind}{}
+Ogni partizione dell'insieme \(R\) di numeri reali ammette uno e uno solo 
+elemento separatore.
+\end{teorema}
+
+Da questo teorema segue che il numero reale è definito come l'elemento 
+separatore di una sezione \((A,B)\) di numeri reali.
+
+\end{comment}
+Anche per i numeri reali, la retta può rimanere un comodo modello visuale.
+
+\begin{postulato}{di continuità della retta}{}\ind{continuità della retta}
+Esiste una corrispondenza biunivoca tra l'insieme dei punti della retta 
+(reale) e l'insieme \(\R\) dei numeri reali.
+\end{postulato}
+
+Da questo postulato segue la possibilità di definire sulla retta un sistema 
+di coordinate: ad ogni punto corrisponde un numero reale (la sua ascissa) e 
+viceversa ad ogni numero reale è associato uno e un solo punto sulla retta. 
+Analogamente nel piano il sistema di assi cartesiano permette di 
+realizzare una corrispondenza biunivoca tra coppie ordinate di numeri reali 
+(ascissa e ordinata) e punti. 
+Così nello spazio a tre dimensioni possiamo associare i punti alle terne 
+ordinate di numeri reali, \dots
+
+% \subsection{Confronto fra numeri reali}
+% Per confrontare due numeri reali, osserviamo prima di tutto i segni. Se i 
+% segni dei numeri sono
+% discordi, il numero negativo è minore del numero positivo. Se i segni dei 
+% numeri sono concordi si valuta la parte intera del numero: se sono 
+% positivi è 
+% più grande quello che ha la parte intera maggiore, viceversa se sono 
+% negativi 
+% è più grande quello che ha la parte intera minore. A parità di parte 
+% intera 
+% bisogna confrontare la parte decimale partendo dalle cifre più a sinistra 
+% finché non si 
+% trova la prima cifra decimale diversa: se i numeri sono positivi è 
+% maggiore 
+% quello che ha la cifra maggiore; se sono negativi è maggiore quello che ha 
+% la 
+% cifra minore.
+%
+%  \begin{esempio}{}{}
+%  Confrontare i seguenti numeri reali
+%  \begin{itemize}
+%  \item \(\sqrt{2}<\sqrt{3}\) per verificarlo ci si può aiutare con la 
+% calcolatrice 
+% per calcolare le prime cifre decimali dei due numeri 
+% \(\sqrt{2}=1,4142\ldots\), 
+% \(\sqrt{3}=1,7320\ldots\) oppure ci si arriva osservando che il numero che 
+% elevato 
+% al quadrato dà 2 deve essere minore del numero che elevato al quadrato dà 
+% 3;
+%  \item \(\sqrt{99}<10\) per verificarlo è sufficiente osservare che 
+% \(\sqrt{100}=10\).
+%  \end{itemize}
+%  \end{esempio}
+% 
+% 
+% \ovalbox{\risolvii \ref{ese:1.3}, \ref{ese:1.4}, \ref{ese:1.5}, 
+% \ref{ese:1.6}, 
+% \ref{ese:1.7}}\vspazio
+
+\section{Valore assoluto}\ind{valore assoluto}
+\label{sec:radicali_valass}
+
+Prima di procedere con i radicali affrontiamo un'altra funzione: valore 
+assoluto.
+
+\begin{definizione}{}{}
+Si definisce \textbf{valore assoluto} di un numero reale \(a\), indicato con
+\(\valass{a}\), il numero stesso se \(a\) è positivo o nullo, il suo opposto 
+se \(a\) è negativo.
+\[\valass{a} = \sistema{
++a & \text{ se } & a \geqslant 0\\
+-a & \text{ se } & a < 0}\]
+\end{definizione}
+
+L'espressione \(a\) si dice argomento del valore assoluto.
+
+
+\subsection{Proprietà del valore assoluto}
+\(\valass{x+y}\leqslant \valass{x}+\valass{y}\): il valore assoluto alla 
+somma di due numeri è minore o uguale della somma dei valori assoluti dei 
+due numeri. 
+Si ha l'uguaglianza solo quando i due numeri reali hanno lo stesso segno, 
+oppure quando almeno uno dei due numeri è nullo.
+
+\(\valass{x-y}\leqslant \valass{x}+\valass{y}\): il valore assoluto della 
+differenza di due numeri è minore o uguale alla somma dei valori assoluti 
+dei due numeri.
+
+\(\valass{x\cdot y}=\valass{x}\cdot \valass{y}\): il valore assoluto del 
+prodotto di due numeri è uguale al prodotto dei valori assoluti dei due 
+numeri.
+
+\(\left |{\dfrac{x}{y}}\right|=\dfrac{\valass{x}}{\valass{y}}\): il valore 
+assoluto del rapporto di due numeri è uguale al rapporto dei valori 
+assoluti dei due numeri.
+
+In generale, se l'argomento del valore assoluto è una funzione \(f(x)\) 
+si ha:
+\[\valass{f(x)} = \sistema{
++f(x) & \text{ se } & f(x) \geqslant 0\\
+-f(x) & \text{ se } & f(x) < 0}\]
+
+\begin{esempio}{}{}
+Valore assoluto di numeri reali
+\begin{itemize} [noitemsep]
+\item \(\valass{-3}=+3\)\quad \(\valass{+5}=+5\)\quad \(\valass{0}=0\);
+\item \(\valass{5+3}=\valass{5}+\valass{3}\) in entrambi i casi si ottiene 
+\(8\);
+\item \(\valass{5+(-3)}=2\) mentre \(\valass{5}+\valass{-3}=8\), pertanto 
+\(\valass{5+(-3)}<\valass{5}+\valass{-3}\).
+\end{itemize}
+\end{esempio}
+
+Nelle espressioni contenenti valori assoluti di argomento letterale si deve 
+cercare di eliminare il valore assoluto studiando il segno dell'espressione 
+letterale.
+
+
+\begin{esempio}{}{}
+Valore assoluto di argomento letterale
+\begin{itemize} [left=0mm]
+\item \(\left|{x^{2}}\right|=x^{2}\) infatti \(x^{2}\) è una quantità 
+sempre maggiore o uguale a zero;
+\item \(\left|{a^{2}+1}\right|=a^{2}+1\) infatti \(a^{2}\) è sempre 
+positivo, quindi \(a^{2}+1>0\).
+\item 
+\(\valass{x-1} = \sistema{
++x-1 & \text{ se } & x-1 \geqslant 0 \sLRarrow x \geqslant 1\\
+-x+1 & \text{ se } & x-1 < 0 \sLRarrow x < 1}\) 
+% \item \(f(a)=\valass{a+1}-3a+1\) acquista due significati a seconda che 
+% l'argomento del valore assoluto sia non negativo o negativo. La sua 
+% espressione 
+% algebrica è:
+% \[
+% f(a)=\valass{a+1}-3a+1=\left\{\begin{array}{l}
+% a+1-3a+1=-2a+2 \text{, se }a+1\geqslant~0\Rightarrow a\geqslant-1\\
+% -(a+1)-3a+1=-4a \text{, se }a+1<~0\Rightarrow a<-1\end{array}.\right.
+% \]
+\end{itemize}
+\end{esempio}
+
+Per semplificare espressioni che contengono valori assoluti, per prima cosa 
+dobbiamo studiare il segno di tutti gli argomenti dei valori assoluti, poi 
+distinguere i vari casi.
+
+\begin{esempio}{}{}
+Semplifica l'espressione: \(f(a)=\valass{a+1}-3a+1\).
+\begin{enumerate} [left=0mm]
+\item Segno dell'argomento (studiando l'Equazione Associata e la 
+Funzione Associata):\\%[-.5em]
+\immagine*[.9]{}{\segnoretta{\small a +1 = 0 \sRarrow a = -1}
+           {\small y = a +1 \srarrow}
+           {\segnicre[a]{-1}}} \\[-1em]
+\item Espressione equivalente:
+\vspace{-.5em}
+\[f(a) = \sistema{
+a +1 -3a +1 = -2a +2 & \text{ se } & a +1 \geqslant 0 \Rightarrow 
+  a\geqslant -1\\
+-(a +1) -3a +1 = -4a & \text{ se } & a +1 < 0 \Rightarrow a < -1}\]
+\end{enumerate}
+\end{esempio}
+
+\begin{esempio}{}{}
+ \(f(x)=\valass{x-5}+\valass{x+2}\).\\
+
+La presenza di due valori assoluti ci obbliga a studiare i casi generati 
+dal segno dei singoli argomenti.
+\begin{enumerate} [left=0mm]
+\item Segno degli argomenti: \\[-1em]
+\immagine*[.9]{}{\segnoretta{\small x -5 = 0 \sRarrow x = +5}
+           {\small y = x -5 \srarrow}
+           {\segnicre[x]{+5}}}\\[-1em]
+\immagine*[.9]{}{\segnoretta{\small x +2 = 0 \sRarrow x = -2}
+           {\small y = x +2 \srarrow}
+           {\segnicre[x]{-2}}} \\[-2.5em]
+\immagine{Riunione dei segni precedenti.}{\riunionesegni} 
+~\\[-5em]
+\item Espressione equivalente:\\[.5em]
+\hspace*{-9mm}
+\(f(a) = \sistema{
+-\tonda{x-5}-\tonda{x+2} = -x+5-x-2 = -2x+3 & \text{ se } & x < -2\\
+-\tonda{x-5}+\tonda{x+2} = -x+5+x+2 = +7 & \text{ se } & 
+-2 \leqslant x < +5\\
++\tonda{x-5}+\tonda{x+2} = +x-5+x+2 = +2x-3 & \text{ se } & 
++5 \leqslant x\\
+}\)
+\end{enumerate}
+% Pertanto poiché l'argomento del primo valore assoluto è non negativo per 
+% \(x\geqslant 5\) e l'argomento del secondo valore assoluto è non negativo
+% per \(x\geqslant -2\), possiamo porre la reciproca situazione nel seguente 
+% grafico:
+% % \begin{center}
+% % \input{\folder lbr//fig002_rad2.pgf}
+% % \end{center}
+% 
+% \begin{enumerate}[label={(\Alph*)}]
+% \item \(x<-2\): in questo intervallo entrambi gli argomenti sono negativi, 
+% pertanto 
+% \[f(x)=\valass{x-5}+\valass{x+2}=-x+5-x-2=-2x+3.\]
+% Se \(x=-2\) si ha \(f(-2)=\valass{-2-5}+0=7\)
+% \item \(-2<x<5\) il primo argomento è negativo e il secondo è positivo, 
+% pertanto 
+% \[f(x)=\valass{x-5}+\valass{x+2}=-x+5+x+2=7.\]
+% Se \(x=5\) si ha \(f(5)=0+\valass{5+2}=7\)
+% \item \(x>5\) entrambi gli argomenti positivi, pertanto 
+% \[f(x)=\valass{x-5}+\valass{x+2}=x-5+x+2=2x-3.\]
+% \end{enumerate}
+% Possiamo allora sintetizzare in questo modo
+% \[
+% \valass{x-5}+\valass{x+2}=\left\{\begin{array}{l}
+% -2x+3 \text{, se }x<-2\\
+% 7 \text{, se }-2\leqslant x<5\\
+% 2x-3 \text{, se }x\geqslant 5\end{array}.\right.
+% \]
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:1.7}, \ref{ese:1.8}, \ref{ese:1.9}, 
+% \ref{ese:1.10}, \ref{ese:1.11}}
+
+\section{Potenze a esponente razionale}
+\label{sec:radicali_esp_razionale}
+
+Ritorniamo al problema di partenza, vogliamo trovare l'operazione che, data 
+una potenza e un esponente dia come risultato la base, cioè dati \(b^n\) e 
+\(n\), dia come risultato \(b\).
+
+Per ottenere questo non avevamo bisogno di creare una nuova operazione, la 
+radice, bastava la potenza:
+
+\central{\(\tonda{b^\frac{1}{n}}^n=b^{\frac{1}{n} \cdot n} = b\) \quad in 
+generale: \quad 
+\(\sqrt[n]{a^m}=a^\frac{m}{n}\)}
+
+\begin{osservazioni}{}{}
+\begin{enumerate}
+\item Se l'esponente è negativo, 
+la base deve essere diversa da zero\indc{radici}{C.E. delle radici}.
+\item Dato che abbiamo visto che se l'indice è pari il radicando deve 
+essere\indc{radici}{C.E. delle radici}
+maggiore di zero, in generale la potenza che ha per esponente un numero 
+razionale è definita solo se la base è maggiore di zero.
+\end{enumerate}
+\end{osservazioni}
+
+\begin{definizione}{}{}
+Si dice \textbf{potenza a esponente razionale}
+\ind{potenza a esponente razionale} 
+\(\frac m n\) di un numero reale 
+positivo \(a\) l'espressione:
+\(a^{\frac m n}=\sqrt[n]{a^m}=\left(\sqrt[n]a\right)^m\) con 
+\(\frac m n\in \Q\).
+\end{definizione}
+
+\begin{esempio}{}{}
+Calcola le seguenti radici usando le potenze a esponente razionale.
+\begin{itemize}
+\item \(\tonda{\sqrt[3]{12}}^2=12^{\frac{2}{3}}\)
+\item \(\tonda{\sqrt[3]{8}}^2=\tonda{2^3}^{\frac{2}{3}}=2^{3\frac{2}{3}}=4\)
+\item \(\tonda{\sqrt{25}}^3=\tonda{5^2}^{\frac{3}{2}}=5^3=125\)
+\item \(\sqrt[3]{125^{-2}}=\sqrt[3]{(5^3)^{-2}}=
+      \tonda{5^3}^{-\frac{2}{3}}=5^{-2}=\dfrac 1{25}\)
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcola le seguenti potenze a esponente razionale.
+\begin{itemize}
+\item \(64^{\frac{2}{3}}=\tonda{4^3}^{\frac{2}{3}}=4^2=16\)
+\item \(64^{-\frac{2}{3}}=\dfrac{1}{\tonda{4^3}^{\frac{2}{3}}}=
+  \dfrac{1}{4^2}=\dfrac{1}{16}\)
+\item \(\left(\dfrac 1{49}\right)^{-\frac{1}{2}}=
+      \tonda{49}^{\frac{1}{2}}=\tonda{7^2}^{\frac{1}{2}}=7\)
+\item \(\left(\dfrac{1}{8}\right)^{-\frac{3}{2}}=
+  \tonda{2^3}^{\frac{3}{2}}=
+  \tonda{2^9}^\frac{1}{2}=
+  \tonda{2 \cdot 2^8}^\frac{1}{2}=
+  \tonda{2^8}^{\frac{1}{2}}2^{\frac{1}{2}}=2^4 \sqrt{2}\)
+\end{itemize}
+\end{esempio}
+
+Se la base è negativa le cose sono un po' più complicate perché 
+se \(a < 0 \) allora non è detto che \(\tonda{\sqrt[n]{a}}^m\)
+sia uguale a \(\sqrt[n]{a^m}\) mentre è sempre vero che 
+\(\dfrac{m}{n} = m \dfrac{1}{n} = \dfrac{1}{n}m\).
+
+\begin{esempio}{}{}
+Valuta \(\tonda{-3}^{\frac{2}{4}}\).\\
+
+La frazione \(\dfrac{2}{4}\) può essere interpretata in vari modi:
+\begin{itemize} [left=0mm, noitemsep]
+\item primo modo: \(\dfrac{1}{4} 2\) in questo caso:
+\(\tonda{\sqrt[4]{-3}}^2=\) non ha risultato reale.
+\item secondo modo: \(2 \dfrac{1}{4}\), in questo caso:
+\(\sqrt[4]{\tonda{-3}^2}= \sqrt[4]{\tonda{+3}^2}= \sqrt{3}\).
+\item terzo modo: \(\dfrac{1}{2}\), in questo caso:
+\(\sqrt{-3}=\) non ha risultato reale.
+\end{itemize}
+\end{esempio}
+
+\begin{comment}
+
+In questo paragrafo ci proponiamo di scrivere la radice n-esima di un 
+numero 
+reale \(a \geqslant 0\) sotto forma di potenza di \(a\), vogliamo cioè 
+che sia: \(\sqrt[n]a=a^x\).
+
+\paragraph {Caso con esponente positivo}
+Elevando ambo i membri dell'uguaglianza alla potenza~\(n\) otteniamo: 
+\(\left(\sqrt[n]a\right)^n=\left(a^x\right)^n\) da cui si ottiene 
+\(a=a^{n\cdot x}\).
+Trattandosi di due potenze con base~\(a{\geqslant}0\), l'uguaglianza è 
+resa possibile solo se sono uguali gli esponenti. 
+In altre parole, deve essere: \(1=n\cdot x \Rightarrow x=\dfrac 1 n\), 
+quindi: \(\sqrt[n]a=a^{\frac 1 n}\).
+
+Vediamo ora di generalizzare la formula. Sia \(m\) un numero intero 
+positivo, possiamo scrivere \(a^{\frac m n}=\left(a^{\frac 1 n}\right)^m\) 
+e quindi \(a^{\frac m n}=\left(\sqrt[n]a\right)^m\).
+
+% 
+\begin{esempio}{}{}
+Calcola le seguenti potenze a esponente razionale positivo.
+\begin{itemize*}
+\item~\(27^{\frac{2}{3}}\): si ha che 
+  \(27^{\frac{2}{3}}=\left(\sqrt[3]{27}\right)^2=3^2=9\)
+\item~\(25^{\frac 3 2}\): si ha che 
+  \(25^{\frac 3 2}=\left(\sqrt[2]{25}\right)^3=5^3=125\).
+\end{itemize*}
+\end{esempio}
+% 
+
+\paragraph{Caso con esponente negativo}
+Per definire la potenza ad esponente razionale negativo è necessario 
+imporre 
+la restrizione \(a{\neq}0\), infatti risulta:
+\(a^{-\frac m n}=\dfrac 1{a^{\frac m n}}=\left(\dfrac 1 a\right)^{\frac m n}\)
+
+% 
+\begin{esempio}{}{}
+Calcola le seguenti potenze a esponente razionale negativo.
+\begin{itemize*}
+\item \(27^{-\frac{2}{3}}=\dfrac 1{\left(\sqrt[3]{27}\right)^2}=
+  \dfrac 1{3^2}=\dfrac 1 9\)
+\item \(125^{-\frac{2}{3}}=\sqrt[3]{125^{-2}}=\sqrt[3]{(5^3)^{-2}}=
+  \sqrt[3]{(5^{-2})^3}=5^{-2}=\dfrac 1{25}\)
+\item \(\left(\dfrac 1 8\right)^{-\frac 3 2}=
+  \sqrt{\left(\dfrac 1 8\right)^{-3}}=\sqrt{8^3}=\sqrt{(2^3)^3}=\sqrt{2^9}\)
+\item \(\left(\dfrac 1{49}\right)^{-\frac 1 2}=(49)^{\frac 1 2}=\sqrt{49}=7\)
+\end{itemize*}
+\end{esempio}
+% 
+
+In generale si dà la seguente
+\begin{definizione}{}{}
+Si dice \textbf{potenza a esponente razionale} \(\frac m n\) di un numero reale
+positivo \(a\) l'espressione:
+\(a^{\frac m n}=\sqrt[n]{a^m}=\left(\sqrt[n]a\right)^m\) con 
+\(\frac m n\in \Q\).
+\end{definizione}
+
+Perché abbiamo dovuto imporre la condizione che~\(a\) sia un numero positivo?
+Partiamo dall'espressione \(a^{\frac 1 n}\) con \(n\in \N-\{0\}\), 
+se \(n\) è dispari la potenza \(a^{\frac 1 n}\) è sempre definita per ogni 
+valore 
+della base \(a\), mentre se è pari \(a^{\frac 1 n}\) è definita solo 
+per \(a{\geqslant}0\).
+
+Nel caso generale \(a^{\frac m n}\) con \(\frac m n\in \Q\) 
+la formula \(a^{\frac m n}=\left(\sqrt[n]a\right)^m\) è falsa se \(a<0\).
+
+Consideriamo il seguente esempio:
+\((-2)^{\frac 6 6}=\left[(-2)^{\frac 1 
+6}\right]^6=\left(\sqrt[6]{-2}\right)^6\) 
+non è definita nei numeri reali perché non esiste la radice sesta di un 
+numero 
+negativo.
+Tuttavia possiamo anche scrivere 
+
+\[(-2)^{\frac 6 6}=\left[(-2)^6\right]^{\frac 1 6}=(64)^{\frac 1 6}=
+\sqrt[6]{64}=2.\]
+
+Arriviamo pertanto a due risultati differenti.
+
+Per estendere la definizione al caso di basi negative sarebbe necessario 
+stabilire un ordine di priorità delle operazioni ma ciò andrebbe contro la 
+proprietà commutativa del prodotto degli esponenti di una potenza di 
+potenza.
+
+% \vspazio\ovalbox{\risolvii \ref{ese:2.16}, \ref{ese:2.17}, 
+\ref{ese:2.18}, 
+% \ref{ese:2.19},\ref{ese:2.20}}
+
+\end{comment}
+
+\section{Operare con i radicali}
+\label{sec:radicali_operare}
+
+\subsection{Semplificazione di radici}
+% \label{sec:radicali_semplificazione}
+
+\begin{teorema}{}{}
+Il valore di una radice di un numero \(a \geqslant 0\) non cambia se 
+moltiplichiamo o dividiamo l'indice della radice e l'esponente del 
+radicando per uno stesso numero non nullo.\ind{semplificare radicali} 
+In simboli: 
+\[\sqrt[n]{a^m}=a^{\frac{m}{n}}=a^{\frac{mt}{nt}}=\sqrt[nt]{a^{mt}} \qquad
+  \sqrt[nt]{a^{mt}}=a^{\frac{mt}{nt}}=\sqrt[n]{a^m}=a^{\frac{m}{n}}\]
+con \(a\geqslant 0\) ~~e~~ \(m,~n,~t \neq 0\).
+\end{teorema}
+
+% \newpage
+% % 
+%  \begin{esempio}{}{}
+%  Radici equivalenti.
+%  \begin{itemize}
+%  \item \(\sqrt{2}=\sqrt[4]{2^2}\) abbiamo moltiplicato per \(2\) indice 
+% della radice ed esponente del radicando;
+%  \item \(\sqrt[3]a=\sqrt[9]{a^3}\) abbiamo moltiplicato per \(3\) indice 
+% della radice ed esponente del radicando.
+% \end{itemize}
+%  \end{esempio}
+% % 
+% 
+% \begin{teorema}{}{}
+% Il valore di una radice in \(Rp \cup \{0\}\) non cambia se dividiamo 
+% l'indice della radice e l'esponente del radicando per un loro divisore 
+% comune. 
+% In simboli \(\sqrt[nt]{a^{mt}}=\sqrt[n]{a^m}\) con \(a\geqslant 0\) e 
+% \(m,n,t\in \N-\{0\}\).
+% \end{teorema}
+
+% 
+\begin{esempio}{}{}
+Semplificazione di radici
+\begin{itemize} [left=0mm]
+\item \(\sqrt[4]{5^2}=5^{\frac{2}{4}}=5^{\frac{1}{2}}=\sqrt 5\): 
+abbiamo semplificato per \(2\) indice della radice ed esponente del 
+radicando;
+\item \(\sqrt[10]{4^{15}}=4^{\frac{15}{10}}=4^{\frac{3}{2}}=\sqrt{4^3}\): 
+abbiamo semplificato per \(5\)
+\item \(\sqrt[7]{3^9}=3^{\frac{9}{7}}\): 
+non è riducibile perché indice della radice ed esponente non hanno 
+divisori comuni;
+\item \(\sqrt[8]{2^6}=2^{\frac{6}{8}}=2^{\frac{3}{4}}=\sqrt[4]{2^3}\)
+\item \(\sqrt[6]{\left(\dfrac{1}{5}\right)^{-9}}=\sqrt[6]{5^9}=
+      5^{\frac{9}{6}}=5^{\frac{3}{2}}=\sqrt[2]{5^3}\)
+\item \(\sqrt{10^{-4}}=10^{-\frac{4}{2}}=10^{-2}=\frac 1{100}\)
+\item \(\sqrt{30\cdot 27\cdot 10}\): scomponendo in fattori primi otteniamo 
+\[\sqrt{30\cdot 27\cdot 10}=
+  \sqrt{2\cdot 3\cdot 5\cdot 3^3\cdot 2\cdot 5}=
+  \sqrt{2^2\cdot 3^4\cdot 5^2}.\] 
+Osserviamo che l'indice della radice divide di tutti gli 
+esponenti del radicando: 
+  \(\sqrt{2^2\cdot 3^4\cdot 5^2}=
+    2^{\frac{2}{2}} \cdot 3^{\frac{4}{2}} \cdot 5^{\frac{2}{2}}=
+    2\cdot 3^2\cdot 5=90\)
+\end{itemize}
+\end{esempio}
+
+La proprietà invariantiva si può applicare per semplificare i radicali se 
+la base del radicando è positiva o nulla, se fosse negativa si potrebbe 
+perdere la concordanza del segno. 
+Per esempio~\(\sqrt[10]{(-2)^6}\neq \sqrt[5]{(-2)^3}\), infatti il primo 
+radicando è positivo mentre il secondo è negativo.
+
+Invece \(\sqrt[9]{(-2)^3}=\sqrt[3]{-2}\) perché in questo caso la 
+concordanza del segno è conservata, infatti pur essendo la base negativa, 
+l'esponente resta dispari, conservando il segno della base.
+
+Se il radicando\ind{segno del radicando} ha base negativa e nella 
+semplificazione il suo esponente 
+passa da pari a dispari è necessario mettere il radicando in valore 
+assoluto: 
+\(\sqrt[10]{(-2)^6}=\sqrt[5]{\left|-2^3\right|}\).
+
+Se il radicando è letterale si segue la stessa procedura: ogni volta che 
+studiando il segno del radicando si trova che la base può essere 
+negativa, se l'esponente del radicando passa da pari a dispari, si mette il 
+modulo per garantire la concordanza del segno\indc{radici}{modulo del 
+radicando}:
+\(\sqrt[10]{x^6}=\sqrt[5]{\left|x^3\right|}\), \(\CE \forall x \in \R\).
+
+\subsection{Moltiplicazione e divisione di radici}
+% \label{sec:radicali_moltiplicazione}
+
+Le seguenti regole si riducono all'applicazione delle proprietà delle 
+potenze dopo aver tradotto le radici in potenze con esponente razionale.
+
+\paragraph{Moltiplicazione e divisione di radici con lo stesso radicando}
+
+Il prodotto\indc{radici}{prodotto tra radici} di due radici che hanno lo stesso 
+radicando lo si ottiene applicando le proprietà delle potenze:
+\[\sqrt[m]a \cdot \sqrt[n]a=a^\frac{1}{m} \cdot a^\frac{1}{n} =
+a^{\tonda{\frac{1}{m} + \frac{1}{n}}}=
+a^\frac{n+m}{mn} = \sqrt[mn]{a^{n+m}}\]
+
+Analogamente per il quoziente:\indc{radici}{quoziente di radici} 
+\[\sqrt[m]a : \sqrt[n]a=a^\frac{1}{m} : a^\frac{1}{n} =
+a^{\tonda{\frac{1}{m} -\frac{1}{n}}}=
+a^\frac{n-m}{mn} = \sqrt[mn]{a^{n-m}}\]
+
+% 
+\begin{esempio}{}{}
+Moltiplicazione e divisione di radici con lo stesso radicando.
+\begin{itemize}
+\item \(\sqrt[4]6 \cdot \sqrt[3]6=6^{\frac 1 4}\cdot 6^{\frac 1 3}=
+      6^{\frac 1 4+\frac 1 3}=6^{\frac 7{12}}=\sqrt[12]{6^7}\)
+\item \(\sqrt[4]6:\sqrt[3]6=6^{\frac 1 4}:6^{\frac 1 3}=
+      6^{\frac 1 4-\frac 1 3}=6^{-\frac 1{12}}=\frac 1{\sqrt[12]6}\).
+\end{itemize}
+\end{esempio}
+% 
+
+\paragraph{Moltiplicazione e divisione di radici con lo stesso indice}
+
+Il prodotto di due radici che hanno lo stesso indice è una radice che ha 
+per indice lo stesso indice e per radicando il prodotto dei radicandi:
+\[\sqrt[n]a \cdot \sqrt[n]b=
+a^\frac{1}{n} \cdot b^\frac{1}{n} =
+\tonda{ab}^\frac{1}{n} =
+\sqrt[n]{ab}\]
+
+Allo stesso modo, il quoziente di due radici che hanno lo stesso indice è 
+una radice che ha per indice lo stesso indice e per radicando il 
+quoziente dei radicandi:
+\[\frac{\sqrt[n]a}{\sqrt[n]b}=
+\frac{a^\frac{1}{n}}{b^\frac{1}{n}} =
+\tonda{\frac{a}{b}}^\frac{1}{n} =
+\sqrt[n]{\frac{a}{b}}\]
+
+\emph{Nota}: 
+Se \(a\) e \(b\) sono entrambi negativi e l'indice è pari, l'espressione
+\(\sqrt[n]a \cdot \sqrt[n]b\) (o \(\sqrt[n]a : \sqrt[n]b\)) non ha valori 
+reali mentre \(\sqrt[n]{ab}\) (o \(\sqrt[n]{a : b}\)) ha il
+radicando positivo (meno per meno) e quindi ha valori reali. 
+Moltiplicando in questo modo  possiamo ottenere un risultato reale che 
+l'espressione di partenza non ha\indc{radici}{C.E. delle radici}.
+
+Il prodotto di due numeri non reali può essere un numero reale?
+
+% Per rendersi conto di questa proprietà si possono trasformare le radici 
+% in 
+% potenze ad esponenti razionali e applicare le proprietà delle potenze:
+%  \[\sqrt[n]a\cdot \sqrt[n]b=a^{\frac 1 n}\cdot b^{\frac 1 n}=(ab)^{\frac 
+% 1 
+% n}=
+%    \sqrt[n]{ab},\quad \sqrt[n]a:\sqrt[n]b=a^{\frac 1 n}:b^{\frac 1 n}=
+%    \left(\dfrac a b\right)^{\frac 1 n}=\sqrt[n]{\dfrac a b}.\]
+
+% 
+\begin{esempio}{}{}
+Moltiplicazione e divisione di radici con lo stesso indice.
+\begin{itemize}
+\item \(\sqrt{2} \cdot \sqrt{3}=\sqrt{2 \cdot 3}=\sqrt 6\)
+\item \(\sqrt{2} \cdot \sqrt{3}=
+      2^{\frac{1}{2}} \cdot 3^{\frac{1}{2}}=(2  \cdot 3)^{\frac{1}{2}}=
+      6^{\frac{1}{2}}=\sqrt 6\)
+\item \(\frac{\sqrt[3]9}{\sqrt[3]{72}}=\sqrt[3]{\frac 9{72}}=
+      \sqrt[3]{\frac 1 8}=\frac 1 2\)
+\end{itemize}
+\end{esempio}
+% 
+
+\paragraph{Moltiplicazione e divisione di radici con indici diversi}
+
+Nel caso siano diversi sia i radicandi, sia gli indici, possiamo:
+\begin{procedura}{}{}
+\begin{enumeratea}
+\item scomporre in fattori irriducibili tutti i radicandi;
+%  \item porre le condizioni di esistenza;
+\item scrivere le radici sotto forma di potenza;
+\item applicare le proprietà delle potenze.
+\end{enumeratea}
+\end{procedura}
+
+% 
+\begin{esempio}{}{}
+Moltiplicazione e divisione di radici con indice diverso.
+\begin{itemize}
+\item \(\sqrt{2}\cdot \sqrt[3]2=
+      2^\frac{1}{2} \cdot 2^\frac{1}{3} = 2^{\frac{1}{2} + \frac{1}{3}} =
+      2^{\frac{3+2}{6}} = 2^{\frac{5}{6}} =\sqrt[6]{2^5}\)
+\item 
+\(\sqrt[3]{\frac{3}{2}} \cdot \sqrt[4]{\frac{8}{27}} : 
+\sqrt[6]{\frac{2}{3}}=
+  \left(\frac{3}{2}\right)^{\frac{1}{3}} \cdot 
+  \left(\frac{2^3}{3^3}\right)^{\frac{1}{4}} : 
+  \left(\frac{2}{3}\right)^{\frac{1}{6}}=
+  \left(\frac{3}{2}\right)^{\frac{4}{12}} \cdot 
+  \left(\frac{2^3}{3^3}\right)^{\frac{3}{12}} : 
+  \left(\frac{2}{3}\right)^{\frac{2}{12}}=
+  \left(\frac{3^4}{2^4} \cdot 
+  \frac{2^9}{3^9} \cdot 
+  \frac{3^2}{2^2}\right)^{\frac{1}{12}}=
+  \left(\frac{2^3}{3^3}\right)^{\frac{1}{12}}=
+  \left(\frac{2}{3}\right)^{\frac{3}{12}}=
+  \left(\frac{2}{3}\right)^{\frac{1}{4}}=\sqrt[4]{\frac{2}{3}}\)
+\end{itemize}
+\end{esempio}
+
+\subsection{Portare un fattore sotto il segno di radice}
+\indc{radici}{fattori di radici}
+% \label{sec:radicali_portare_dentro}
+
+Per portare un fattore dentro il segno di radice bisogna elevarlo 
+all'indice della radice ma si deve tener conto dell'indice della radice e 
+del segno del fattore:
+\begin{itemize} [noitemsep]
+\item \(a\sqrt[n]b=\sqrt[n]{a^n\cdot b}\) se \(n\) è pari e \(a\geqslant 0\)
+\item \(a\sqrt[n]b=-\sqrt[n]{a^n\cdot b}\) se \(n\) è pari e \(a<0\)
+\item \(a\sqrt[n]b=\sqrt[n]{a^n\cdot b}\) se \(n\) è dispari.
+\end{itemize}
+Ricordando che abbiamo posto \(\sqrt[1]a=a\), portare un fattore sotto 
+radice equivale a svolgere la moltiplicazione tra una radice di indice 
+\(1\) e una radice di indice qualsiasi.
+
+Osserviamo che se l'indice è pari, non possiamo portare sotto radice 
+fattori negativi quindi il segno rimane fuori dalla radice.
+
+% 
+\begin{esempio}{}{}
+Portare un numero reale dentro il segno di radice.
+\begin{itemize}
+\item \(2\cdot \sqrt[3]7=\sqrt[3]{2^3\cdot 7}=\sqrt[3]{56}\)
+\item \(3\cdot \sqrt{\frac 2{21}}= \sqrt{3^2 \cdot \frac 2{21}}=
+      \sqrt{9 \cdot \frac 2{21}}= \sqrt{\frac 6 7}\)
+%  \item \(3\cdot \sqrt{\dfrac 2{21}}=\sqrt{3^2\cdot \dfrac 2{21}}=
+%         \sqrt{9\cdot \dfrac 2{21}}=\sqrt{\dfrac 6 7}\)
+\item \(-\frac 1 2\sqrt{3}\)\, lasciamo fuori dalla radice il segno meno 
+      \(-\frac 1 2\sqrt{3}=-\sqrt{\left(\frac 1 2\right)^2\cdot 3}=
+      -\sqrt{\frac 3 4}\)
+\item \((1-\sqrt{2})\cdot \sqrt{3}=-(\sqrt{2}-1)\cdot \sqrt{3}=
+      -\sqrt{(\sqrt{2}-1)^2\cdot 3}\)
+\item \(-2\sqrt[3]5=\sqrt[3]{(-2)^3\cdot 5}=\sqrt[3]{-40}\).
+\end{itemize}
+\end{esempio}
+
+\subsection{Portare un fattore fuori dal segno di radice}
+% \label{sec:radicali_portare_fuori}
+
+È possibile portare fuori dal segno di radice quei fattori che hanno come 
+esponente un numero che sia maggiore o uguale all'indice della radice. 
+In generale si inizia scomponendo il radicando in fattori irriducibili, 
+ottenendo un radicale del tipo \(\sqrt[n]{a^m}\) con \(m \geqslant n\).
+
+% \paragraph{I° modo:} si esegue la divisione intera \(m:n\) ottenendo un 
+% quoziente \(q\) e un resto \(r\). Per la proprietà della divisione si 
+% ha \(m=n\cdot q+r\) quindi \(\sqrt[n]{a^m}=\sqrt[n]{a^{n\cdot q+r}}\) 
+% e per le proprietà delle potenze 
+% \(\sqrt[n]{a^{n\cdot q+r}}=\sqrt[n]{(a^q)^n\cdot a^r}\) 
+% e per la regola del prodotto di due radici con medesimo indice si ottiene:
+% 
+% \[\sqrt[n]{a^{n\cdot q+r}}= \sqrt[n]{(a^q)^n\cdot a^r}=
+%   \sqrt[n]{(a^q)^n}\cdot \sqrt[n]{a^r}=
+%   a^q\cdot \sqrt[n]{a^r}\text{ con } r<n.\]
+% Notiamo che il fattore ``fuori`` dalla radice ha per esponente il quoziente 
+% della divisione intera, mentre il fattore che rimane ``dentro`` ha per 
+% esponente il resto della divisione stessa.
+% 
+%  \(\sqrt[3]{a^8}=\ldots \) eseguiamo la divisione \(8:3\) con \(q=2\) e 
+% \(r=2\), 
+%  otteniamo \(\sqrt[3]{a^8}=a^2\cdot \sqrt[3]{a^2}\).
+
+% \paragraph{II° modo:} 
+Si può trasformare la potenza del radicando nel 
+prodotto di due potenze con la stessa base; una avente esponente multiplo 
+dell'indice della radice e l'altra avente per esponente la differenza tra 
+l'esponente iniziale e il multiplo trovato. Consideriamo il seguente 
+esempio:
+
+\(\sqrt[3]{a^8}=\ldots \) il multiplo di \(3\) più vicino a \(8\) è \(6\) 
+quindi, otteniamo
+\[\sqrt[3]{a^8}=\sqrt[3]{a^6\cdot a^2}=\sqrt[3]{a^6}\cdot \sqrt[3]{a^2}=
+a^2\cdot \sqrt[3]{a^2}.\]
+
+% \begin{osservazione}{}{}
+% Quanto scritto sopra sembra filare, ma c'è un problema: \emph{il segno}:
+% % .
+% % Osserviamo i seguenti passaggi:
+% \[\tonda{-3} \cdot \sqrt{5} = \sqrt{\tonda{-3}^2 \cdot 5} = 
+%   \sqrt{9 \cdot 5} = +3 \cdot \sqrt{5}\]
+% Se dividiamo la prima e l'ultima espressione 
+% per \(\sqrt{5}\) otteniamo: \(-3 = +3\) e questo non è accettabile.
+% Questo problema sorge quando l'indice della radice è un numero pari.
+% \end{osservazione}
+
+Anche per portare un fattore fuori dal segno di radice, dobbiamo distinguere 
+le radici con indice pari e dispari.
+\begin{definizione}{}{}
+Dobbiamo distinguere due casi:
+
+Nei radicali con indice \(n\) dispari: \quad
+\(\sqrt[n]{a^n \cdot b} = a \cdot \sqrt[n]{b}\)
+
+Nei radicali con indice \(n\) pari: \quad
+\(\sqrt[n]{a^n \cdot b} = \valass{a} \cdot \sqrt[n]{b}\)
+\end{definizione}
+
+
+% 
+\begin{esempio}{}{}
+Portare un numero reale fuori dal segno di radice.
+\begin{itemize}
+\item \(\sqrt{1200}\) Si scompone in fattori primi il radicando 
+      \(1200=2^4\cdot 5^2\cdot 3\) ne segue allora che 
+      \(\sqrt{1200}=\sqrt{2^4\cdot 5^2\cdot 3}=2^2\cdot 
+5\sqrt{3}=20\sqrt{3}\)
+\item \(\sqrt{75}=\sqrt{5^2\cdot 3}=5\sqrt{3}\)
+\item \(\sqrt{720}=\sqrt{2^4\cdot 3^2\cdot 5}=
+      2^2\cdot 3\cdot \sqrt 5=12\sqrt 5\)
+\item \(\sqrt{a^4\cdot \tonda{b-3}^2\cdot c}=
+      a^2 \cdot \valass{b-3} \cdot \sqrt c\)
+% \item \(-\dfrac 1 3\cdot \sqrt{12} =
+%         -\sqrt{\left(\dfrac 1 3\right)^2\cdot 12} =
+%       -\sqrt{\dfrac 1 9\cdot 12} = -\sqrt{\dfrac 4 3} =
+%       -2 \sqrt{\dfrac{1}{3}} = -\dfrac{2}{\sqrt{3}}\)
+\end{itemize}
+\end{esempio}
+% 
+
+\subsection{Potenza di radice e radice di radice}
+\indc{radici}{potenza/radice di radice}
+% \label{sec:radicali_potenza}
+
+Per elevare a potenza una radice si può elevare a quella potenza il 
+radicando: \(\left(\sqrt[n]a\right)^m=\sqrt[n]{a^m}\)
+Si capisce il perché di questa proprietà trasformando, come negli altri 
+casi, la radice in potenza con esponente frazionario:
+\(\left(\sqrt[n]a\right)^m=\left(a^{\frac 1 n}\right)^m=a^{\frac m n}=
+\sqrt[n]{a^m}\).
+\begin{osservazione}{}{}
+Da notare che se l'indice della radice è pari il radicando deve essere 
+positivo.
+\end{osservazione}
+
+% % \newpage
+% % 
+%  \begin{esempio}{}{}
+%  Potenza di radice.
+%  \begin{htmulticols}{2}
+%  \begin{itemize}
+%  \item \(\left(\sqrt{2}\right)^2=\sqrt{2^2}=2\)
+%  \item \(\left(\sqrt[3]{2ab^2c^3}\right)^2=\sqrt[3]{4a^2b^4c^6}\).
+%  \end{itemize}
+%  \end{htmulticols}
+%  \end{esempio}
+% % 
+
+La radice di un'altra radice è uguale a una radice con lo stesso radicando 
+che ha per indice il prodotto degli indici delle radici: 
+\(\sqrt[m]{\sqrt[n]a}=\sqrt[m\cdot n]a\). 
+Anche questa proprietà si può spiegare con le proprietà delle potenze 
+trasformando la radice in potenza con esponente frazionario: 
+\(\sqrt[m]{\sqrt[n]a}=\left(a^{\frac 1 n}\right)^{\frac 1 m}=
+a^{\frac 1{mn}}=\sqrt[m\cdot n]a\)
+
+\vspace{-.5em}
+% 
+\begin{esempio}{}{}
+Potenza di radice e radice di radice.
+\begin{htmulticols}{2}
+\begin{itemize}
+\item \(\left(\sqrt{2}\right)^2=\sqrt{2^2}=2\)
+\item \(\sqrt{\sqrt{2}}=\sqrt[2\cdot 2]2=\sqrt[4]2\)
+\end{itemize}
+\end{htmulticols}
+\end{esempio}
+
+\begin{esempio}{}{}
+Data l'espressione \(E=\sqrt[5]{3\cdot\sqrt{2}}\) ridurla a unico radicale.
+
+In questo caso non possiamo subito applicare la regola annunciata, ma 
+dobbiamo  portare il fattore esterno dentro la radice più interna ottenendo 
+\(\sqrt[5]{\sqrt{3^2 \cdot 2}}=\sqrt[10]{18}\).
+
+Osserviamo che l'espressione \(E=\sqrt[5]{3+\sqrt{2}}\) non si può ridurre 
+ad unico radicale, se non sotto determinate condizioni.
+% che analizzeremo in seguito.
+\end{esempio}
+% 
+% \vspazio\ovalbox{\risolvii \ref{ese:2.46}, \ref{ese:2.47}, 
+% \ref{ese:2.48}, 
+% \ref{ese:2.49}}
+
+\subsection{Somma di radicali}\indc{radici}{somma di radicali}
+% \label{sec:radicali_somma}
+
+Si dice \emph{radicale} un'espressione del tipo \(a\sqrt[n]b\) con \(a\) e 
+\(b\) numeri reali, \(b \geqslant 0\) ed \(n\in \N\). 
+Il numero \(a\) prende il nome di \emph{coefficiente} del radicale.
+
+Operare con i radicali è simile al modo di operare con i monomi. Infatti è 
+possibile effettuare somme algebriche soltanto se i radicali hanno lo 
+stesso 
+indice e lo stesso radicando, mentre si possono sempre effettuare 
+moltiplicazioni e divisioni dopo averli ridotti allo stesso indice.
+\begin{definizione}{}{}
+Due radicali si dicono \textbf{simili} se hanno lo stesso indice e lo stesso
+radicando.
+\end{definizione}
+
+È possibile effettuare somme algebriche soltanto se i radicali sono simili, 
+si eseguono le somme allo stesso modo in cui si eseguono le somme 
+algebriche 
+dei monomi.
+
+Attenzione l'operazione \(\sqrt{2}+\sqrt{3}=\sqrt 5\)\, è errata in quanto i 
+radicali addendi non sono simili.
+
+% \newpage %-----------------------------------------------
+
+% 
+\begin{esempio}{}{}
+Esegui le seguenti somme di radicali.
+\begin{itemize} [left=0mm]
+\item \(\sqrt 8+\sqrt{2}=\sqrt{2^3}+\sqrt{2}=2\sqrt{2}+\sqrt{2}=3\sqrt{2}\)
+\item \(2\sqrt{45}-\sqrt{80}=2\sqrt{3^2\cdot 5}-\sqrt{2^4\cdot 5}=
+      2\cdot 3\cdot \sqrt 5-2^2\sqrt 5=6\sqrt 5-4\sqrt 5=2\sqrt 5\)
+\item \(\sqrt{2}+\sqrt{3}\)
+non si può eseguire perché i radicali non sono simili;
+\item \(\sqrt[3]2+\sqrt{2}\)
+non si può eseguire perché i radicali non sono simili;
+\item \(\sqrt{3}+\sqrt{3}=2\sqrt{3}\)
+\item \(2\sqrt 5-\sqrt 5=\sqrt 5\)
+\item \(\frac 1 2\sqrt 7-\frac 4 3\sqrt 7=
+      \left(\frac 1 2-\frac 4 3\right)\sqrt 7=\frac{3-8} 6\sqrt 7=
+      -\frac 5 6\sqrt 7\)
+\item \(3\sqrt{2}+2\sqrt{3}-2\sqrt{2}+3\sqrt{3}=(3-2)\sqrt{2}+(2+3)\sqrt{3}=
+      \sqrt{2}+5\sqrt{3}\)\\
+si possono sommare solo i radicali simili.
+%  \item \(2\sqrt a+3\sqrt a=5\sqrt a,\,\CE a \geqslant 0\)
+%  \item \(\sqrt[4]{a^5}+\sqrt[4]{a^3}\cdot \sqrt 
+% a+\sqrt[4]{a^6}:\sqrt[4]a\). 
+%   Poniamo le condizioni di esistenza \(a>0\) e svolgiamo i calcoli: 
+%   \(\sqrt[4]{a^5}+\sqrt[4]{a^3\cdot a^2}+\sqrt[4]{a^6:a}=
+%    \sqrt[4]{a^5}+\sqrt[4]{a^5}+\sqrt[4]{a^5}=3\sqrt[4]{a^5}=
+%    3\sqrt[4]{a^4\cdot a}=3a\sqrt[4]a\).
+\end{itemize}
+\end{esempio}
+% 
+
+Per semplificare le espressioni che seguono, useremo le procedure di 
+calcolo dei polinomi.
+
+% \newpage
+
+% 
+\begin{esempio}{}{}
+Esegui le seguenti operazioni con i radicali.
+\begin{itemize} [left=0mm]
+\item \((1+\sqrt{2})(3\sqrt{2}-1)=3\sqrt{2}-1+3\sqrt {2^2}-\sqrt{2}=
+      3\sqrt{2}-1+3\cdot 2-\sqrt{2}=2\sqrt{2}+5\)
+\item \((\sqrt{3}+1)^2=(\sqrt{3})^2+(1)^2+2\cdot \sqrt{3}\cdot 1=
+      3+1+2\sqrt{3}=4+2\sqrt{3}\)
+\item \((\sqrt{3}-\sqrt{2})^2=(\sqrt{3})^2+(\sqrt{2})^2+2 \sqrt{3} 
+(-\sqrt{2})=
+      3+2-2\sqrt 6=5-2\sqrt 6\)
+\item \((3+\sqrt{2}+\sqrt{3})^2=
+      (3)^2+(\sqrt{2})^2+(\sqrt{3})^2+6 \sqrt{2}+6 \sqrt{3}+2 \sqrt{2} 
+\sqrt{3}=
+      14+6\sqrt{2}+6\sqrt{3}+2\sqrt 6\)
+\item \((\sqrt{2}+4)(3-\sqrt{2})=3\sqrt{2} 
++\sqrt{2}(-\sqrt{2})+12+4(-\sqrt{2})=
+      3\sqrt{2}-2+12-4\sqrt{2}=10-\sqrt{2}\)
+\item \((\sqrt{2}-3)^3=(\sqrt{2})^3-9(\sqrt{2})^2+27\sqrt{2}+(-3)^3=
+      2\sqrt{2}-18+27\sqrt{2}-27=29\sqrt{2}-45\).
+\end{itemize}
+\end{esempio}
+% 
+
+% Le espressioni con radicali possono essere trasformate in potenze con 
+% esponente frazionario per poi applicare le proprietà delle potenze:
+% 
+% % 
+% Trasforma i radicali in potenze con esponente frazionario applicando le 
+% proprietà delle potenze.
+%  \begin{esempio}{}{}
+% % \begin{itemize}
+% %  \item
+%   \[\dfrac{\sqrt a\cdot \sqrt[3]{a^2\cdot b}}{\sqrt[6]{a^5\cdot b}}=
+%    \dfrac{a^{\frac 1 2}\cdot a^{\frac{2}{3}}\cdot 
+%           b^{\frac 1 3}}{a^{\frac 5 6}\cdot b^{\frac 1 6}}=
+%    a^{\frac 1 2+\frac{2}{3}-\frac 5 6}\cdot b^{\frac 1 3-\frac 1 6}=
+%    a^{\frac 2 6}\cdot b^{\frac 1 6}=\sqrt[6]{a^2b}\]
+%  \end{esempio}
+%  \begin{esempio}{}{}
+% %  \item
+% %   \(\sqrt{\dfrac{\sqrt[3]{a^2}\cdot \sqrt b}{\sqrt[5]{a^2}}}\cdot 
+% %    \sqrt[3]{\dfrac{\sqrt[4]{a^6b}}{a\sqrt[3]b}}\).
+%  \begin{align*}
+%  \sqrt{\frac{\sqrt[3]{a^2}\cdot \sqrt b}{\sqrt[5]{a^2}}}\cdot
+%  \sqrt[3]{\frac{\sqrt[4]{a^6b}}{a\sqrt[3]b}}&=
+%  \left(\frac{a^{\frac{2}{3}}\cdot b^{\frac 1 2}}
+%  {a^{\frac 2 5}}\right)^{\frac 1 2}\left(\frac{a^{\frac 3 2}\cdot 
+%   b^{\frac 1 4}}{ab^{\frac 1 3}}\right)^{\frac 1 3}\\ &=
+%   \frac{a^{\frac 1 3}\cdot b^{\frac 1 4}}{a^{\frac 1 5}}\cdot 
+%   \frac{a^{\frac 1 2}\cdot b^{\frac 1{12}}}{a^{\frac 1 3}\cdot b^{\frac 1 
+% 9}}\\
+%  &=a^{\frac 1 3-\frac 1 5\;+\frac 1 2-\frac 1 3}\cdot 
+%    b^{\frac 1 4+\frac 1{12}-\frac 1 9}\\
+%  &=a^{\frac 3{10}}\cdot b^{\frac 2 9}\\
+%  &=\sqrt[10]{a^3}\cdot \sqrt[9]{b^2};
+%  \end{align*}
+%  \end{esempio}
+% %  \begin{esempio}{}{}
+% % %  \item 
+% % %    \(\sqrt[6]{\dfrac{x^3\cdot \sqrt[3]{xy^2}}{x^2-\sqrt{xy}}}\)
+% %  \begin{align*}
+% %  \sqrt[6]{\frac{x^3\cdot \sqrt[3]{xy^2}}{x^2-\sqrt{xy}}}&=
+% %  \left(\frac{x^3\cdot (xy^2)^{\frac 1 3}}{x^2-(xy)^{\frac 1 2}}\right)^
+% %    {\frac 1 6}\\
+% %  &=\left(\frac{x^3\cdot x^{\frac 1 3}\cdot y^{\frac{2}{3}}}
+% %               {x^2-x^{\frac 1 2}\cdot y^{\frac 1 2}}\right)^{\frac 1 
+% 6}\\
+% %  &=\left(\frac{x^{\frac{10} 3}\cdot y^{\frac{2}{3}}}
+% %               {x^{\frac 1 2}\cdot \left(x^{\frac 3 2}-y^{\frac 1 
+% 2}\right)}
+% %               \right)^{\frac 1 6}\\
+% %  &=\left[x^{\frac{17} 6}\cdot y^{\frac{2}{3}}\cdot
+% %    \left(x^{\frac 3 2}-y^{\frac 1 2}\right)^{-1}\right]^{\frac 1 6}\\
+% %  &=x^{\frac{17}{36}}\cdot y^{\frac 1 9}\cdot 
+% %       \left(x^{\frac 3 2}-y^{\frac 1 2}\right)^{-\frac 1 6}.
+% %  \end{align*}
+% % % \end{itemize}
+% %  \end{esempio}
+% % 
+% \vspazio\ovalbox{\risolvii \ref{ese:2.50}, \ref{ese:2.51}, 
+% \ref{ese:2.52}, 
+% \ref{ese:2.53}, \ref{ese:2.54}, \ref{ese:2.55}, \ref{ese:2.56}, 
+% \ref{ese:2.57}, \ref{ese:2.58}, \ref{ese:2.59}, \ref{ese:2.60}, 
+% \ref{ese:2.61}, \ref{ese:2.62},}
+% 
+% \vspazio\ovalbox{\ref{ese:2.63}, \ref{ese:2.64}, \ref{ese:2.65}, 
+% \ref{ese:2.66}, \ref{ese:2.67}}
+
+\section{Razionalizzazione di una frazione}
+\label{sec:radicali_razionalizzazione}\indc{radici}{razionalizzazione}
+
+Nel calcolo di espressioni che contengono radicali può capitare che al 
+denominatore (o al numeratore) compaiano dei radicali. 
+% Per migliorare l'approssimazione si cerca di evitare questa situazione e 
+% operare affinché non compaiano radicali al denominatore. 
+A volte può essere scomodo avere una radice al denominatore (o al 
+numeratore) e in certi casi è possibile eliminare queste radici.
+% Questa operazione prende il nome di \emph{razionalizzazione del 
+% denominatore}.
+
+\begin{definizione}{}{}
+\textbf{Razionalizzare} il denominatore (o il numeratore) di una
+frazione vuol dire trasformare una frazione in una frazione equivalente
+dove non compaiono radici al denominatore (o al numeratore).
+\end{definizione}
+
+
+
+\paragraph{I° Caso:} la frazione è del tipo 
+\(\dfrac {a}{\sqrt{b}}\) con \(b > 0\) \quad o \quad 
+\(\dfrac {\sqrt{a}}{b}\) con \(a \geqslant 0 \stext{e} b \neq 0\).
+
+Per razionalizzare il denominatore di una frazione di questo tipo basta 
+moltiplicare numeratore e denominatore per \(\sqrt b\), che prende il 
+nome di fattore razionalizzante e in modo analogo si può razionalizzare il 
+numeratore: 
+
+\[\dfrac{a}{\sqrt b} = \dfrac{a}{\sqrt b} \cdot 1 = 
+\dfrac{a}{\sqrt b} \cdot \dfrac{\sqrt b}{\sqrt b} = 
+\dfrac{a\sqrt b}b \quad \sstext{o} \quad 
+\dfrac {\sqrt{a}}{b} = \dfrac {\sqrt{a}}{b} \cdot 1 = 
+\dfrac {\sqrt{a}}{b} \cdot \dfrac{\sqrt a}{\sqrt a}= 
+\dfrac{a}{b\sqrt{a}}\]
+
+% \newpage %-----------------------------------------------
+
+\begin{esempio}{}{}
+Razionalizza il denominatore delle seguenti espressioni.
+
+\begin{itemize*} [left=0mm]
+\item 
+\(\dfrac{1}{\sqrt{2}} = 
+\dfrac{1}{\sqrt{2}} \cdot \dfrac{\sqrt{2}}{\sqrt{2}}=
+\dfrac{\sqrt{2}}{2} \hspace{20mm}\)
+\item 
+\(\dfrac{3}{2\sqrt{3}} = 
+\dfrac{3}{2\sqrt{3}} \cdot \dfrac{\sqrt{3}}{\sqrt{3}} =
+\dfrac{3\sqrt{3}}{2\cdot 3} =\dfrac{\sqrt{3}}{2}\)
+%  \item \(\dfrac{a^2-1}{\sqrt{a-1}}=
+%         \dfrac{(a^2-1)\sqrt{a-1}}{\sqrt{a-1}\sqrt{a-1}}=
+%         \dfrac{(a^2-1)\sqrt{a-1}}{a-1}=
+%         \dfrac{(a-1)(a+1)\sqrt{a-1}}{a-1}=(a+1)\sqrt{a-1}\).
+\end{itemize*}
+\end{esempio}
+
+\begin{esempio}{}{}
+Razionalizza il numeratore delle seguenti espressioni.
+
+\begin{itemize*} [left=0mm]
+\item 
+\(\dfrac{\sqrt{5}}{10} = 
+\dfrac{\sqrt{5}}{10} \cdot \dfrac{\sqrt{5}}{\sqrt{5}}=
+\dfrac{5}{10\sqrt{5}}=
+\dfrac{1}{2\sqrt{5}} \hspace{5mm}\)
+\item 
+\(\dfrac{2\sqrt{7}}{7} = 
+\dfrac{2\sqrt{7}}{7} \cdot \dfrac{\sqrt{7}}{\sqrt{7}} =
+\dfrac{14}{7 \sqrt{7}} =\dfrac{2}{\sqrt{7}}\)
+%  \item \(\dfrac{a^2-1}{\sqrt{a-1}}=
+%         \dfrac{(a^2-1)\sqrt{a-1}}{\sqrt{a-1}\sqrt{a-1}}=
+%         \dfrac{(a^2-1)\sqrt{a-1}}{a-1}=
+%         \dfrac{(a-1)(a+1)\sqrt{a-1}}{a-1}=(a+1)\sqrt{a-1}\).
+\end{itemize*}
+\end{esempio}
+
+\paragraph{II° Caso:}
+la frazione è del tipo \(\dfrac a{\sqrt[n]{b^m}}\) con \(b>0 \wedge n>m\).
+
+In questo caso il fattore razionalizzante è \(\sqrt[n]{b^{n-m}}\). Infatti 
+si ha:
+\begin{equation*}
+\dfrac a{\sqrt[n]{b^m}}=
+\dfrac{a\sqrt[n]{b^{n-m}}}{\sqrt[n]{b^m}\cdot \sqrt[n]{b^{(n-m)}}}=
+\dfrac{a\sqrt[n]{b^{n-m}}}{\sqrt[n]{b^m\cdot b^{n-m}}}=
+\dfrac{a\sqrt[n]{b^{n-m}}}{\sqrt[n]{b^n}}=\dfrac{a\sqrt[n]{b^{n-m}}} b
+\end{equation*}
+In modo analogo si può razionalizzare il numeratore. 
+
+\begin{esempio}{}{}
+Razionalizza il denominatore delle seguenti espressioni.
+\begin{itemize} [left=0mm]
+\item \(\dfrac 1{\sqrt[3]2}\): il fattore razionalizzante è 
+\(\sqrt[3]{2^2}\): \quad 
+\(\dfrac{1}{\sqrt[3]2} =
+\dfrac{1}{\sqrt[3]2} \cdot  \dfrac{\sqrt[3]{2^2}}{\sqrt[3]{2^2}} =
+\dfrac{\sqrt[3]4}{\sqrt[3]{2^3}} = \dfrac{\sqrt[3]4} 2\)
+%  \item \(\dfrac{ab}{\sqrt[4]{xa^2b^3}}\):
+%  il fattore razionalizzante è \(\sqrt[4]{x^3a^2b}\)
+%  quindi: 
+%  \[\dfrac{ab}{\sqrt[4]{xa^2b^3}}=
+%  \dfrac{ab\cdot \sqrt[4]{x^3a^2b}}{\sqrt[4]{xa^2b^3}\cdot 
+% \sqrt[4]{x^3a^2b}}=
+%  \dfrac{ab\sqrt[4]{x^3a^2b}}{\sqrt[4]{x^4a^4b^4}}=
+%  \dfrac{ab\sqrt[4]{x^3a^2b}}{xab}=\dfrac{\sqrt[4]{x^3a^2b}} x;\]
+%  \item \(\dfrac 1{\sqrt[3]{b^5}}=\dfrac 1{b\sqrt[3]{b^2}}=
+%         \dfrac{1\cdot \sqrt[3]b}{b\sqrt[3]{b^2}\cdot \sqrt[3]b}=
+%         \dfrac{\sqrt[3]b}{b^2}\).
+\end{itemize}
+\end{esempio}
+
+Se abbiamo un'espressione in cui l'esponente del radicando è maggiore o 
+uguale all'indice della radice, prima di razionalizzare, possiamo portare 
+fuori dalla radice un fattore.
+
+
+\paragraph{III° Caso:} 
+la frazione è del tipo \(\dfrac x{\sqrt a+\sqrt b}\) 
+oppure \(\dfrac x{\sqrt a-\sqrt b}\) con \(a>0 \wedge b>0\).
+
+Per questo tipo di frazione occorre sfruttare il prodotto notevole 
+\((a+b)(a-b)=a^2-b^2\). Il fattore razionalizzante nel primo caso è \(\sqrt 
+a-\sqrt b\), nel secondo è \(\sqrt a+\sqrt b\).
+Sviluppiamo solo il primo caso, poiché il secondo è del tutto analogo:
+\begin{equation*}
+\dfrac x{\sqrt a+\sqrt b}=
+\dfrac{x\cdot (\sqrt a-\sqrt b)}{(\sqrt a+\sqrt b)\cdot (\sqrt a-\sqrt b)}=
+\dfrac{x(\sqrt a-\sqrt b)}{\sqrt{a^2}-\sqrt{b^2}}=
+\dfrac{x(\sqrt a-\sqrt b)}{a-b}
+\end{equation*}
+In modo analogo si può razionalizzare il numeratore. 
+
+% 
+\begin{esempio}{}{}
+Razionalizza il denominatore delle seguenti espressioni.
+\begin{itemize} [left=0mm]
+\item {\small\(\dfrac 2{\sqrt{3}-\sqrt 5}=
+\dfrac{2\tonda{\sqrt{3}+\sqrt{5}}}
+      {\tonda{\sqrt{3}\!-\!\sqrt 5}\tonda{\sqrt{3}\!+\!\sqrt{5}}}=
+\dfrac{2(\sqrt{3}\!+\!\sqrt 5)}{\sqrt{3^2}\!-\!\sqrt{5^2}}=
+\dfrac{2(\sqrt{3}\!+\!\sqrt 5)}{-2}=-(\sqrt{3}\!+\!\sqrt 5)\)}
+\item {\small\(\dfrac{\sqrt{2}}{3+\sqrt{2}}=
+\dfrac{\sqrt{2}}{3+\sqrt{2}} \cdot \dfrac{(3-\sqrt{2})}{(3-\sqrt{2})}=
+\dfrac{\sqrt{2}(3-\sqrt{2})}{3^2-\sqrt{2^2}}=
+\dfrac{\sqrt{2}(3-\sqrt{2})}{9-2}= \dfrac{\sqrt{2}(3-\sqrt{2})} 7\)}
+%  \item \(\dfrac{1+\sqrt a}{1-\sqrt a}=
+%  \dfrac{(1+\sqrt a)\cdot (1+\sqrt a)}{(1-\sqrt a)(1+\sqrt a)}=
+%  \dfrac{(1+\sqrt a)^2}{1-\sqrt{a^2}}=\dfrac{1+2\sqrt a+a}{1-a}\) 
+%  con \(a \geqslant 0\wedge a\neq 1\).
+\end{itemize}
+\end{esempio}
+% 
+
+% \paragraph{IV° Caso:}
+% la frazione è del tipo \(\dfrac x{\sqrt a+\sqrt b+\sqrt c}\)
+% 
+% Anche in questo caso si utilizza il prodotto notevole della differenza di 
+% quadrati, solo che va ripetuto più volte.
+% 
+% % 
+%  \begin{esempio}{}{}
+% Razionalizza \(\dfrac 1{\sqrt{2}+\sqrt{3}+\sqrt 5}\).
+% 
+% Il fattore di razionalizzazione è in questo caso \(\sqrt{2}+\sqrt{3}-\sqrt 
+% 5\) 
+% quindi:
+%  \[\dfrac 1{\sqrt{2}+\sqrt{3}+\sqrt 5}\cdot 
+%    \dfrac{\sqrt{2}+\sqrt{3}-\sqrt 5}{\sqrt{2}+\sqrt{3}-\sqrt 5}=
+%    \dfrac{\sqrt{2}+\sqrt{3}-\sqrt 5}{(\sqrt{2}+\sqrt{3})^2-5}=
+%    \dfrac{\sqrt{2}+\sqrt{3}-\sqrt 5}{2+3+2\sqrt 6-5}=
+%    \dfrac{\sqrt{2}+\sqrt{3}-\sqrt 5}{2\sqrt 6};\]
+%  ora il fattore razionalizzante di questa frazione è \(\sqrt 6\):
+%  \[\dfrac{\sqrt{2}+\sqrt{3}-\sqrt 5}{2\sqrt 6}\cdot \dfrac{\sqrt 6}{\sqrt 
+% 6}=
+%  \dfrac{\sqrt{12}+\sqrt{18}-\sqrt{30}}{2\cdot 6}=
+%  \dfrac{2\sqrt{3}+3\sqrt{2}-\sqrt{30}}{12}.\]
+%  \end{esempio}
+% % 
+% 
+% \paragraph{V° Caso:} 
+% la frazione è del tipo \(\dfrac x{\sqrt[3]a+\sqrt[3]b}\).
+% 
+% In questo caso si utilizza il prodotto notevole 
+% \((a+b)(a^2-ab+b^2)=a^3+b^3\) e quello analogo~\((a-b)(a^2+ab+b^2)=a^3-
+% b^3\).
+% \begin{align*}
+% \frac x{\sqrt[3]a+\sqrt[3]b}=
+% \frac x{\sqrt[3]a+\sqrt[3]b}\cdot 
+% \frac{\sqrt[3]{a^2}-\sqrt[3]{ab}+\sqrt[3]{b^2}}
+%      {\sqrt[3]{a^2}-\sqrt[3]{ab}+\sqrt[3]{b^2}}=&
+%      \frac{x\left(\sqrt[3]{a^2}-\sqrt[3]{ab}+\sqrt[3]{b^2}\right)}
+%           {(\sqrt[3]a)^3+(\sqrt[3]b)^3}\\
+% &=\frac{x\left(\sqrt[3]{a^2}-\sqrt[3]{ab}+\sqrt[3]{b^2}\right)}{a+b}.
+% \end{align*}
+% 
+% % 
+%  \begin{esempio}{}{}
+% Razionalizza \(\dfrac 1{\sqrt[3]{2}-\sqrt[3]{3}}\).
+% 
+% Il fattore di razionalizzazione è in questo caso 
+% \(\sqrt[3]{2^2}+\sqrt[3]{2\cdot 3}+\sqrt[3]{3^2}\) quindi:
+%  \[\dfrac{1\cdot \left(\sqrt[3]{2^2}+\sqrt[3]{2\cdot 
+% 3}+\sqrt[3]{3^2}\right)}
+%          {\left(\sqrt[3]2-\sqrt[3]3\right)\cdot \left(\sqrt[3]{2^2}+
+%           \sqrt[3]{2\cdot 3}+\sqrt[3]{3^2}\right)}=
+%    \dfrac{\sqrt[3]{2^2}+\sqrt[3]{2\cdot 3}+\sqrt[3]{3^2}}{2-3}=
+%    -\left(\sqrt[3]4+\sqrt[3]6+\sqrt[3]9\right).\]
+%  \end{esempio}
+% % 
+% \vspazio\ovalbox{\risolvii \ref{ese:2.68}, \ref{ese:2.69}, 
+% \ref{ese:2.70}, 
+% \ref{ese:2.71}, \ref{ese:2.72}, \ref{ese:2.73}, \ref{ese:2.74}, 
+% \ref{ese:2.75}, \ref{ese:2.76}}
+
+% \section{Radicali doppi}
+% \label{sec:radicali_radicali_doppi}
+% 
+% Si dice radicale doppio un'espressione del tipo \(\sqrt{a+\sqrt b}\) 
+% oppure \(\sqrt{a-\sqrt b}\).
+% 
+% I radicali doppi possono essere trasformati nella somma algebrica di due 
+% radicali semplici se l'espressione \(a^2-b\) è un quadrato perfetto. 
+% La formula per ottenere la trasformazione in radicali semplici è:
+% 
+% \begin{equation*}
+% \sqrt{a\pm \sqrt b}=
+% \sqrt{\dfrac{a+\sqrt{a^2-b}} 2}\pm \sqrt{\dfrac{a-\sqrt{a^2-b}} 2}
+% \end{equation*}
+% 
+% % 
+%  \begin{esempio}{}{}
+% Trasforma, se possibile, i seguenti radicali doppi in radicali semplici.
+% \begin{itemize}
+%  \item \(\sqrt{7-\sqrt{40}}=
+%  \sqrt{\dfrac{7+\sqrt{49-40}} 2}-\sqrt{\dfrac{7-\sqrt{49-40}} 2}=
+%  \sqrt{\dfrac{7+3} 2}-\sqrt{\dfrac{7-3} 2}=\sqrt 5-\sqrt{2}\)
+%  \item \(\sqrt{2-\sqrt{3}}=
+%  \sqrt{\dfrac{2+\sqrt{2^2-3}} 2}-\sqrt{\dfrac{2-\sqrt{2^2-3}} 2}=
+%  \sqrt{\dfrac 3 2}-\sqrt{\dfrac 1 
+% 2}=\dfrac{\sqrt{3}-\sqrt{2}}{\sqrt{2}}\), 
+%  razionalizzando il denominatore si ottiene: 
+%  \(\dfrac{\sqrt{3}-\sqrt{2}}{\sqrt{2}}=
+%  \dfrac{(\sqrt{3}-\sqrt{2})\cdot \sqrt{2}}{\sqrt{2}\cdot \sqrt{2}}=
+%  \dfrac{\sqrt 6-\sqrt{2}} 2\)
+%  \item \(\sqrt{7+2\sqrt 6}=\sqrt{7+\sqrt{24}}\)
+%  per applicare la formula abbiamo portato il fattore \(2\) dentro la 
+% radice: 
+%  \(\sqrt{7+\sqrt{24}}=
+%  \sqrt{\dfrac{7-\sqrt{49-24}} 2}+\sqrt{\dfrac{7-\sqrt{49-24}} 2}=
+%  \sqrt{\dfrac{7+5} 2}+\sqrt{\dfrac{7-5} 2}=\sqrt 6+1\)
+%  \item \(\sqrt{5+\sqrt{3}}=
+%  \sqrt{\dfrac{5+\sqrt{25-3}} 2}+\sqrt{\dfrac{5-\sqrt{25-3}} 2}=
+%  \sqrt{\dfrac{5+\sqrt{22}} 2}+\sqrt{\dfrac{5-\sqrt{22}} 2}\)
+%  la formula non è stata di alcuna utilità in quanto il radicale doppio 
+% non 
+%  è stato eliminato.
+% \end{itemize}
+%  \end{esempio}
+% % 
+% % \vspazio\ovalbox{\risolvii \ref{ese:2.77}, \ref{ese:2.78}, 
+% \ref{ese:2.79}}
+
+\section{Equazioni, disequazioni e sistemi a coefficienti irrazionali}
+\label{sec:radicali_equazioni}
+
+Avendo imparato come operare con i radicali puoi risolvere equazioni, 
+sistemi e disequazioni con coefficienti irrazionali.
+
+\paragraph{Equazioni di primo grado}~
+
+\begin{esempio}{}{}
+Risolvi le seguenti equazioni.
+\begin{itemize} [left=0mm]
+\item 
+\(\sqrt{3}x=9\Rightarrow \ x=\dfrac 9{\sqrt{3}} \Rightarrow 
+x=\dfrac 9{\sqrt{3}}\cdot \dfrac{\sqrt{3}}{\sqrt{3}}=
+  \dfrac{9\sqrt{3}} 3=3\sqrt{3}\)
+\item
+\((\sqrt{3}-1)x-\sqrt 6=2x-\sqrt{2}(3\sqrt{2}+1)+1\).
+\begin{align*}
+(\sqrt{3}-1)x-\sqrt 6 &= 2x-\sqrt{2}(3\sqrt{2}+1)+1\\
+\sqrt{3}x-x-\sqrt 6 &= 2x-3\cdot 2-\sqrt{2}+1\\
+\sqrt{3}x-3x &= \sqrt 6-\sqrt{2}-5\\
+x(\sqrt{3}-3) &= \sqrt 6-\sqrt{2}-5\\
+x &= \dfrac{\sqrt 6-\sqrt{2}-5}{\sqrt{3}-3}.
+\end{align*}
+Razionalizziamo ora il denominatore:
+\begin{align*}
+x &= \dfrac{\sqrt 6-\sqrt{2}-5}{\sqrt{3}-3}\cdot 
+     \dfrac{\sqrt{3}+3}{\sqrt{3}+3} =
+     \dfrac{3\sqrt{2}+3\sqrt{6}-\sqrt{6}-3\sqrt{2}-5\sqrt{3}-15}{3-9} = \\
+&= \dfrac{2\sqrt 6-5\sqrt{3}-15}{-6}
+\end{align*}
+%  -\dfrac{\sqrt 6} 3+\dfrac{5\sqrt{3}} 6+\dfrac 5 2\]
+\end{itemize}
+\end{esempio}
+% 
+
+\paragraph{Disequazioni di primo grado}~
+
+\begin{esempio}{}{}
+Risolvi le seguenti disequazioni.
+\begin{itemize}
+\item \((\sqrt{3}-1)x \leqslant \sqrt{3}\) il coefficiente dell'incognita è 
+positivo quindi la retta è crescente: 
+\(x\leqslant \dfrac{\sqrt{3}}{\sqrt{3}-1}\) e, razionalizzando, 
+\(x \leqslant \dfrac{3+\sqrt{3}} 2\)
+\item \(2x\cdot(1-\sqrt{2}) \geqslant -3\sqrt{2}\) il coefficiente 
+dell'incognita è negativo quindi la retta è decrescente: 
+\(x \leqslant \dfrac{-3\sqrt{2}}{2(1-\sqrt{2})}\) e, 
+razionalizzando, \(x\leqslant 3+\dfrac 3 2\sqrt{2}\).
+\end{itemize}
+
+\end{esempio}
+% 
+
+\paragraph{Sistemi di primo grado}~
+
+\begin{esempio}{}{}
+Risolvi \(\left\{\begin{array}{l}
+{x(2+\sqrt{2})+y=\sqrt{2}(2+x)}\\
+{x-(\sqrt{2}+1)y=-\dfrac{\sqrt{2}} 2(1+2y)}
+\end{array}
+\right..\)
+
+Eseguiamo i calcoli per ottenere la forma canonica:
+
+\[\left\{\begin{array}{l}
+{2x+x\sqrt{2}+y=2\sqrt{2}+x\sqrt{2}}\\
+{x-y\sqrt{2}-y=-\dfrac{\sqrt{2}} 2-y\sqrt{2}}
+\end{array}
+\right.\Rightarrow
+\left\{\begin{array}{l}
+{2x+y=2\sqrt{2}}\\
+{x-y=-\dfrac{\sqrt{2}} 2}
+\end{array}
+\right.\]
+e con il metodo di riduzione, sommando le due equazioni otteniamo:
+\[\left\{\begin{array}{l}
+{3x = 2\sqrt{2}-\dfrac{\sqrt{2}} 2}\\
+{y = x +\dfrac{\sqrt{2}}{2}}
+\end{array}
+\right.\Rightarrow
+\left\{\begin{array}{l}
+{x=\dfrac{\sqrt{2}} 2}\\
+{y=\dfrac{\sqrt{2}}{2} + \dfrac{\sqrt{2}}{2}}
+\end{array}
+\right.\Rightarrow
+\left\{\begin{array}{l}
+{x=\dfrac{\sqrt{2}} 2}\\
+{y=\sqrt{2}}
+\end{array}
+\right..\]
+\end{esempio}
+% 
+% \vspazio\ovalbox{\risolvii \ref{ese:2.80}, \ref{ese:2.81}, 
+% \ref{ese:2.82}, 
+% \ref{ese:2.83}, \ref{ese:2.84}, \ref{ese:2.85}, \ref{ese:2.86}, 
+% \ref{ese:2.87}, \ref{ese:2.88}, \ref{ese:2.89}}
+
+\section{Radicandi letterali}
+\label{sec:radicali_letterali}
+
+\subsection{Condizioni di esistenza}
+\label{subsec:radicali_condizioni_esistenza}
+
+Le stesse regole che valgono per le radici con radicali numerici valgono 
+anche se il radicando contiene delle lettere, ma qui abbiamo una 
+complicazione.
+Osserviamo i seguenti esempi:
+
+\begin{htmulticols}{4}
+\begin{enumerate}
+\item \(\sqrt{-7}=\dots\)
+\item \(\sqrt{+7}=\dots\) 
+\item \(\sqrt[3]{-7}=\dots\)
+\item \(\sqrt[3]{+7}=\dots\)
+\item \(\sqrt{-a}=\dots\)
+\item \(\sqrt{+a}=\dots\)
+\item \(\sqrt[3]{-a}=\dots\)
+\item \(\sqrt[3]{+a}=\dots\)
+\end{enumerate}
+\end{htmulticols}
+
+Discutiamo i diversi casi presentati:
+
+\begin{enumerate}
+\item Questa operazione Non Ha Risultato Reale.
+\item Questa operazione ha per risultato il numero reale che elevato al 
+quadrato dà come risultato 7, un numero reale che è maggiore 
+di~2,6457513 e minore di~2,6457514
+\item Questa operazione ha per risultato il numero reale che elevato al 
+cubo dà come risultato \(-7\), un numero reale che è maggiore 
+di~\(-1,912931183\) e minore di~\(-1,912931182\)
+\item Questa operazione ha per risultato il numero reale che elevato al 
+cubo dà come risultato \(+7\), un numero reale che è maggiore 
+di~\(+1,912931182\) e minore di~\(+1,912931183\)
+\item Questo caso assomiglia al primo solo superficialmente. Siamo sicuri 
+che \(-a\) sia un numero negativo? No! Dipende da qual è il numero 
+rappresentato da \(a\). 
+Se \(a\) rappresenta un numero negativo allora \(-a\) rappresenta un 
+numero positivo. 
+Quindi non possiamo dire che \(\sqrt{-a}\) non dia un risultato reale, 
+\(\sqrt{-a}\) rappresenta un numero reale se \(a\) è 
+minore o uguale a zero.
+\item Per le considerazioni precedenti in questo caso~\(\sqrt{+a}\) 
+rappresenta un numero reale solo se \(a\) è maggiore o uguale a zero.
+\item In questo caso e nel seguente l'espressione rappresenta sempre un 
+numero reale.
+\end{enumerate}
+
+Conclusioni:
+\begin{itemize} [noitemsep]
+\item Se l'indice della frazione è dispari non sorge alcun problema.
+\item Se l'indice della frazione è pari:
+\begin{itemize} [noitemsep]
+\item Se il radicando è un'espressione numerica, basta svolgerla per 
+vedere se la radice dà un risultato reale;
+\item Se il radicando è un'espressione letterale bisogna studiare il segno 
+di questa espressione per capire quando la radice dà un risultato reale.
+\end{itemize}
+\end{itemize}
+
+Vediamo alcuni esempi.
+
+% 
+\begin{esempio}{}{}
+Condizioni di esistenza
+\begin{itemize}
+\item \(\sqrt x\) \quad ha per \(\CE\!: x\geqslant 0\)
+\item \(\sqrt[3]x\) \quad ha per \(\CE \forall x\in R\)
+\item \(\sqrt{-x}\) \quad ha per \(\CE x\leqslant 0\)
+\item \(\sqrt[3]{-x}\) \quad ha per \(\CE \forall x\in R\)
+\item \(\sqrt{x-1}\) \quad ha per \(\CE x-1\geqslant 0 \Rightarrow 
+x\geqslant 1\)
+\item \(\sqrt{a^2+1}\) \quad ha per \(\CE \forall a\in R\), infatti 
+\(a^2\) è sempre positivo pertanto \(a^2+1>0, \forall a\in R\)
+\item \(\sqrt[3]{\frac 1{x+1}}\) \quad ha per la radice cubica è definita 
+per valori sia positivi sia negativi del radicando, tuttavia bisogna 
+comunque porre la condizione che il denominatore della frazione non sia 
+nullo, quindi \(\CE x+1\neq 0 \Rightarrow x\neq -1\)
+\item \(\sqrt[4]{xy}\) \quad ha per \(\CE xy\geqslant 0\)
+\item \(\sqrt[5]{a^2(a-3)}\): poiché la radice ha indice dispari non occorre 
+  porre alcuna condizione di esistenza.
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Determina le condizioni di esistenza della seguente 
+espressione: \(\sqrt x+\sqrt{x-1}\).\\
+
+C.E. \(\sqrt x\) esiste per \(x \geqslant 0\), \(\sqrt{x-1}\) 
+esiste per \(x-1 \geqslant 0\), quindi per individuare le condizioni di 
+esistenza dell'espressione occorre risolvere il sistema: 
+\[\sistema{x \geqslant 0\\ x-1\geqslant 0}
+  \Rightarrow
+  \sistema{x\geqslant 0\\x\geqslant +1}\]
+
+\affiancati{.49}{.49}{
+\immagine{Sistema di disequazioni rappresentato su assi cartesiani.}
+% {\input{\folder lbr//fig001_is.pgf}}
+{\condradicalia}
+}{
+\vspace{8mm}
+In definitiva \(\CE x \geqslant +1\).
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Determina le condizioni di esistenza della radice 
+\(\sqrt[4]{\dfrac{x-1}{x+1}}\).\\
+
+C.E. \(\dfrac{x-1}{x+1} \geqslant 0\). 
+Occorre discutere il segno della frazione \(f\), combinando il segno del 
+numeratore \(N\) e del denominatore \(D\):
+
+\affiancati{.49}{.49}{
+\immagine{Sistema di disequazioni rappresentato su assi cartesiani.}
+% {\input{\folder lbr//fig001_is.pgf}}
+{\condradicalib}
+}{
+\vspace{8mm}
+In definitiva C.E. \(x<-1\vee x \geqslant 1\).
+}
+\end{esempio}
+
+
+\subsection{Operazioni con radicali letterali}
+\label{subsec:radicali_operazioni_rad_lett}
+
+Di seguito vengono presentati, sotto forma di esercizi svolti, alcuni 
+argomenti già presentati per i radicandi aritmetici.
+
+\paragraph{Semplificazione di radici}~
+
+Nella semplificazione di radici dobbiamo prestare una certa attenzione.
+\begin{esempio}{}{}
+Se abbiamo la radice:~\(\sqrt[4]{a^2}\) potremmo pensare di semplificarla 
+in:
+% 
+% \vspace{-1em}
+\[\sqrt[4]{a^2}=a^{\frac{2}{4}}=a^{\frac{1}{2}}=\sqrt{a}\]
+Ora, se \(a=+5\) ci ritroviamo esattamente come nel primo degli esempi 
+precedenti, ma se \(a=-5\) lo svolgimento precedente ci darebbe: 
+\(\sqrt {-5}\) 
+che non è un numero reale perché la radice ha indice pari e il radicando 
+è negativo, mentre l'espressione iniziale equivale a un numero reale dato 
+che il radicando, essendo elevato alla seconda, è senz'altro positivo.
+
+Possiamo risolvere questo errore utilizzando il valore assoluto:
+% 
+% \vspace{-1em}
+\[\sqrt[4]{a^2}=\sqrt{\valass{a}}\]
+\end{esempio}
+
+Nel caso di radicandi letterali la regola della semplificazione delle 
+radici diventa:
+
+\begin{teorema}{}{}
+\[\sqrt[nt]{a^{mt}}=\left\{\begin{array}{l}
+  \sqrt[n]{a^m} \text{ se }t \text{ è dispari}\\
+  \sqrt[n]{\left|a^m\right|}\text{, se }t\text{ è pari}
+\end{array}\right.\]
+\end{teorema}
+
+% 
+\begin{esempio}{}{}
+Semplificazione di radici con espressione letterale come radicando.
+\begin{itemize} [left=0mm]
+\item 
+\(\sqrt{4x^4y^2a^6}=\sqrt{2^2x^4y^2a^6}=2x^2\left|ya^3\right|\): 
+abbiamo semplificato per \(2\) sia l'indice della radice che gli 
+esponenti del radicando;
+\item 
+\(\sqrt[12]{a^2+2a+1}=\sqrt[12]{(a+1)^2}=\sqrt[6]{\left|a+1\right|}\): 
+dopo aver riconosciuto che il radicando è il quadrato del binomio, 
+abbiamo semplificato per \(2\) indice ed esponente;
+\item 
+\(\sqrt{x^2y^2}=\valass{xy}\)
+\item 
+\(\sqrt{x^2+2xy+y^2}=\sqrt{(x+y)^2}=\valass{x+y}\)
+\item 
+\(\sqrt{x^2+y^2}\) non è semplificabile perché il radicando non può 
+essere espresso sotto forma di un'unica potenza;
+\item \(\sqrt[6]{(x-1)^2}=\sqrt[3]{\valass{x-1}}\)
+\end{itemize}
+\end{esempio}
+% 
+
+\paragraph{Moltiplicazione e divisione di radici}~
+
+Se abbiamo radicali letterali, prima di operare, è necessario determinare 
+le condizioni di esistenza: il prodotto di due radicali esiste là dove sono 
+soddisfatte le condizioni di esistenza di tutti i fattori; 
+il quoziente esiste là dove sono soddisfatte le condizioni di esistenza di 
+dividendo e divisore, con il divisore diverso da zero.
+
+Una volta verificate le condizioni di esistenza, possiamo trasformare le
+radici in potenze con esponente frazionario, operare su queste espressioni 
+utilizzando le proprietà delle potenze e ritrasformare il risultato in 
+radici.
+
+\begin{esempio}{}{}
+
+\(\sqrt{2a}\cdot \sqrt{\dfrac a b}\!:\!\sqrt{\dfrac {2b} 9}=
+  \sqrt{2a\cdot \dfrac a b\cdot \dfrac 9{2b}}=\sqrt{\dfrac{9a^2}{b^2}}=
+  \dfrac {3a} b \stext{con} 
+  \CE a \geqslant 0 \wedge b > 0\)
+\end{esempio}
+
+\begin{esempio}{}{}
+Prodotto di radici con radicandi letterali.
+\(\dfrac{\sqrt[3]{x^2y}\cdot \sqrt{xy}}{\sqrt[6]{x^2y^3}}\)
+
+La condizione di esistenza è: \(\CE x > 0 \sand y > 0\).
+
+\begin{align*}
+\dfrac{\sqrt[3]{x^2y}\cdot \sqrt{xy}}{\sqrt[6]{x^2y^3}} &=
+\frac{{x^\frac{2}{3} \cdot y^\frac{1}{3}} \cdot 
+      x^\frac{1}{2} \cdot y^\frac{1}{2}}
+    {x^\frac{2}{6} \cdot y^\frac{3}{6}} =
+        & \mbox{scrittura sotto forma di potenze}\\
+  &=x^\frac{2}{3} \cdot x^\frac{1}{2} : x^\frac{2}{6} \cdot 
+    y^\frac{1}{3} \cdot y^\frac{1}{2} : y^\frac{3}{6}=
+        & \mbox{proprietà commutativa} \\
+  &=x^{\frac{2}{3} + \frac{1}{2} - \frac{2}{6}} \cdot 
+    y^{\frac{1}{3} + \frac{1}{2} - \frac{3}{6}}= 
+        & \mbox{proprietà delle potenze}\\
+  &=x^{\frac{4+3-2}{6}} \cdot y^{\frac{2+3-3}{6}}=
+        & \mbox{calcolo degli esponenti} \\
+  &=x^{\frac{5}{6}} \cdot y^{\frac{2}{6}}=
+  \sqrt[6]{x^5y^2}
+        & \mbox{e scrittura con le radici.} 
+\end{align*}
+
+% \[\frac{\sqrt[3]{x^2y}\cdot \sqrt{\mathit{xy}}}{\sqrt[6]{x^2y^3}}=
+%         \sqrt[6]{\frac{\left(x^2y\right)^2\cdot (xy)^3}{x^2y^3}}=
+%         \sqrt[6]{\frac{x^4y^2x^3y^3}{x^2y^3}}=
+%         \sqrt[6]{\frac{x^7y^5}{x^2y^3}}=
+%         \sqrt[6]{x^5y^2}.
+% \]
+\end{esempio}
+
+% \begin{esempio}{}{}
+%  \(\sqrt[3]{\dfrac{ax+a}{x^2+2x+1}}\cdot \sqrt{\dfrac{x^2-2x+1}{ax-a}}\)
+%  
+% \begin{enumeratea}
+% \item Scomponiamo in fattori i radicandi 
+%  \(\sqrt[3]{\dfrac{a(x+1)}{(x+1)^2}}\cdot \sqrt{\dfrac{(x-1)^2}{a(x-1)}}\)
+% \item \(\CE\)\, \(x+1\neq 0\wedge a(x-1)>0\Rightarrow x\neq -1\wedge 
+%  ((a>0\wedge x>1)\vee (a<0\wedge x<1))\)
+% \item Semplifichiamo le frazioni di ciascun radicando 
+%  \(\sqrt[3]{\dfrac a{x+1}}\cdot \sqrt{\dfrac{x-1} a}\)
+% \item Trasformiamo nello stesso indice: il~\(\mcm\) degli indici è~\(6\), 
+% quindi:
+% \[
+% \sqrt[6]{\left(\dfrac a{x+1}\right)^2}\cdot 
+% \sqrt[6]{\left(\dfrac{x-1} a\right)^3}=
+%  \sqrt[6]{\dfrac{a^2}{(x+1)^2}\cdot \dfrac{(x-1)^3}{a^3}}=
+%  \sqrt[6]{\dfrac{(x-1)^3}{a(x+1)^2}}
+% \]
+% \end{enumeratea}
+% \end{esempio}
+% 
+% \begin{esempio}{}{}
+%  \(\sqrt[3]{\dfrac{x^2}{x^2-2x+1}}:\sqrt[4]{\dfrac{x^4-2x^2+1}{x^2-1}}\).
+% 
+%  \begin{enumeratea}
+% \item Scomponiamo in fattori i radicandi
+%  \(\sqrt[3]{\dfrac{x^2}{(x-1)^2}}:
+%  \sqrt[4]{\dfrac{(x-1)^2\cdot (x+1)^2}{(x+1)(x-1)}}\)
+% \item \(\CE\)\, \((x-1)(x+1)>0\Rightarrow x<-1\vee x>1\). 
+%  L'operazione che dobbiamo eseguire è una divisione e dunque il divisore 
+% deve 
+%  essere diverso da zero, quindi \(x\neq -1\wedge x\neq 1\), comunque già 
+%  implicite nelle C.E. trovate;
+%  
+% \begin{center}
+%  \input{\folder lbr//fig003_seg.pgf}
+% \end{center}
+% \item Semplifichiamo i radicandi 
+%  \(\sqrt[3]{\dfrac{x^2}{(x-1)^2}}:\sqrt[4]{(x-1)\cdot (x+1)}\)
+% \item Riduciamo allo stesso indice: il \(\mcm\) degli indici è \(12\), 
+% quindi:
+% 
+% \(\sqrt[12]{\left[\frac{x^2}{(x-1)^2}\right]^4}:\sqrt[12]{(x-1)^3 (x+1)^3}
+% \Rightarrow 
+% \sqrt[12]{\frac{x^8}{(x-1)^8}\cdot \frac 1{(x-1)^3 (x+1)^3}}=
+% \sqrt[12]{\frac{x^8}{(x-1)^{11}(x+1)^3}}\).
+% \end{enumeratea}
+% \end{esempio}
+% 
+
+\paragraph{Portare un fattore sotto il segno di radice}~
+
+\begin{esempi}{}{}
+Portare una espressione letterale dentro il segno di radice.
+\begin{itemize}
+\item \(a\cdot \sqrt[3]b=\sqrt[3]{a^3b}\)\, l'indice della radice è dispari 
+pertanto si porta sotto radice senza alcuna condizione;
+\item \((x-1)\cdot \sqrt[3]x=\sqrt[3]{(x-1)^3\cdot x}\)\, l'indice della 
+radice è dispari, non sono necessarie condizioni sulla \(x\);
+\item \((x-2)\sqrt y\)\, osserviamo che il radicale esiste per 
+\(y \geqslant 0\).
+Per portare dentro il segno di radice il coefficiente \((x-2)\) bisogna 
+fare la distinzione:
+
+\vspace{-1em}
+\[
+(x-2)\sqrt y=\left\{\begin{array}{l}\sqrt{(x-2)^2y}\text{, se }
+x \geqslant 2\\
+-(2-x)\sqrt y=-\sqrt{(2-x)^2y}\text{, se }x < 2;\end{array}\right.
+\]
+\item \((x-1)\sqrt{x-2}\). 
+Il radicale esiste per \(x-2 \geqslant 0\ \to \ x \geqslant 2\), 
+per questi valori il coefficiente esterno \((x-1)\) è positivo e può essere 
+portato dentro la radice: 
+
+\vspace{-1em}
+\[(x-1)\sqrt{x-2}=\sqrt{(x-1)^2(x-2)};\]
+\item \(\dfrac{a-1}{a+3}\cdot \sqrt{\dfrac{a+2}{(a-1)^2}}\). Determiniamo 
+le condizioni di esistenza del radicale: per l'esistenza della frazione 
+\(\dfrac{a+2}{(a-1)^2}\) deve essere \((a-1)^2\neq 0\), ovvero \(a\neq +1\). 
+Affinché il radicando sia positivo o nullo, essendo il denominatore 
+sempre positivo (ovviamente per \(a\neq +1\)) è sufficiente che sia 
+\(a+2 \geqslant 0\) ovvero \(a \geqslant -2\). 
+Pertanto le condizioni di esistenza sono \(a \geqslant -2\) e \(a \neq +1\).
+
+Studiamo ora il segno della frazione algebrica da portare sotto radice: 
+tale frazione è positiva o nulla per \(a < -3\vee a \geqslant +1\), 
+è negativa per \(-3 < a\leqslant +1\).
+
+Se \(a < -2\) l'espressione non ha un risultato reale..
+
+Se \(a = -2\) l'espressione da calcolare vale zero.
+
+Se \(-2 < a < +1\) il fattore da portare sotto radice è negativo, quindi:
+
+\vspace{-1em}
+\[-\left(-\dfrac{a-1}{a+3}\right)\cdot \sqrt{\dfrac{a+2}{(a-1)^2}}=
+  -\sqrt{\dfrac{[-(a-1)]^2}{(a+3)^2}\cdot \dfrac{a+2}{(a-1)^2}}=
+  -\sqrt{\dfrac{a+2}{(a+3)^2}}\]
+
+Se \(a=+1\) la funzione non è definita (divisione per zero).
+
+Se \(a>+1\) il fattore da portare sotto radice è positivo, quindi:
+
+\vspace{-1em}
+\[\dfrac{a-1}{a+3}\cdot \sqrt{\dfrac{a+2}{(a-1)^2}}=
+\sqrt{\dfrac{(a-1)^2}{(a+3)^2}\cdot \dfrac{a+2}{(a-1)^2}}=
+\sqrt{\dfrac{a+2}{(a+3)^2}}\]
+
+\end{itemize}
+\end{esempi}
+
+
+\paragraph{Portare un fattore fuori dal segno di radice}~
+
+Quando portiamo fuori dalla radice un termine letterale dobbiamo verificare 
+se l'indice della radice è pari o dispari:
+\[\sqrt[n]{a^nb} = 
+\sistema{a\sqrt[n]b & \text{ se } & n\text{ dispari;}\\
+         \valass a\sqrt[n]b & \text{ se } & n\text{ pari.}}\]
+
+% 
+\begin{esempio}{}{}
+Portare i fattori letterali fuori dal segno di radice.
+\begin{itemize} [left=0mm]
+\item \(\sqrt{2a^2}=\valass a\sqrt{2}\) bisogna mettere \(a\) in valore 
+assoluto perché sotto radice poteva essere sia negativo che positivo, la 
+radice invece deve essere sempre positiva; se \(a<0\) la 
+relazione~\(\sqrt{2a^2}=a\sqrt{2}\) è  errata.
+\item \(\sqrt[3]{a^5b^7cd^3} = \sqrt[3]{a^3 a^2 b^6 b c d^3} = 
+\sqrt[3]{a^3b^6d^3}\cdot \sqrt[3]{a^2bc}=ab^2d^3\sqrt[3]{a^2bc}\)\\
+In questo caso non c'è da usare il valore assoluto perché l'indice della 
+radice è dispari.
+% \item \(\sqrt[3]{a^5b^7cd^3}\) occorre eseguire le divisioni intere tra gli 
+% esponenti e l'indice della radice. Cominciamo da \(a^5\) risulta \(5:3 = 1\) 
+% con resto uguale a \(2\) per \(b^7\) si ha \(7:3\) con quoziente~\(2\) e 
+% resto~\(1\) 
+% l'esponente di \(c\) è minore dell'indice; per \(d^3\) si ha \(3:3\) con 
+% quoziente  \(1\) e resto~\(0\). In definitiva 
+% \(\sqrt[3]{a^5b^7cd^3}={ab}^2 d\sqrt[3]{a^2{bc}}\), o anche:
+% \[\sqrt[3]{a^5b^7cd^3}=\sqrt[3]{(a^3a^2)(b^6b)cd^3}=
+% \sqrt[3]{a^3b^6d^3}\cdot \sqrt[3]{a^2bc}=ab^2d^3\sqrt[3]{a^2bc}\]
+% In questo caso non c'è da mettere il valore assoluto perché l'indice della 
+% radice è dispari;
+\item \(\sqrt[3]{\dfrac{3^3x^3y}{z^6}}= 
+\sqrt[3]{\dfrac{3^3x^3y}{z^6}}=3\dfrac x{z^2}\sqrt[3]y\)
+% \item \({\small \sqrt[4]{4x^4-4x^5}=\sqrt[4]{4x^4(1-x)}=
+% \valass x\sqrt[4]{4(1-x)}=
+% \sistema{
+%   \!-x\sqrt[4]{4(1-x)} & \text{se} & x < 0\\
+%   \!+x\sqrt[4]{4(1-x)} & \text{se} & x \geqslant 0}}\)
+\item \(\sqrt[4]{4x^4\!-\!4x^5}\!=\!\sqrt[4]{4x^4(1\!-\!x)}\!=\!
+\valass x\sqrt[4]{4(1\!-\!x)}\!=\!
+\sistema{
+  \!-x\sqrt[4]{4(1\!-\!x)} & \!\text{se}\! &\! x < 0\\
+  \!+x\sqrt[4]{4(1\!-\!x)} & \!\text{se}\! &\! x \geqslant 0}\)
+\item 
+% {\small
+\(\sqrt{3a^2 -6a +3} \!=\! \sqrt{3(a-1)^2} \!=\! \valass{a-1}\sqrt{3} \!=\! 
+% \newline =
+\sistema{
+  \!-(a-1)\sqrt{3} & \text{se} & a < 1 \\
+  \!+(a-1)\sqrt{3} & \text{se} & a \geqslant 1}\)
+% }
+\end{itemize}
+\end{esempio}
+
+
+\paragraph{Potenza di radice e radice di radice}~
+
+\begin{esempio}{}{}
+Potenza di radice e radice di radice.
+% \begin{htmulticols}{2}
+\begin{itemize}
+\item \(\left(\sqrt[3]{2ab^2c^3}\right)^2=\sqrt[3]{4a^2b^4c^6}
+\stext{con} \CE a \geqslant 0 \stext{e} c \geqslant 0\)
+\item \(\sqrt[3]{\sqrt[4]{2x}}=\sqrt[12]{2x}\)
+\end{itemize}
+% \end{htmulticols}
+\end{esempio}
+
+\pagebreak %------------------------------------------------
+
+\paragraph{Somma di radicali}~
+
+\begin{esempio}{}{}
+Esegui le seguenti somme di radicali.
+\begin{itemize} [left=0mm]
+\item \(2\sqrt a+3\sqrt a=5\sqrt a,\,\CE a \geqslant 0\);
+dato che il risultato ha le stesse \(\CE\) dell'espressione iniziale, 
+non è necessario esplicitarle.
+\item 
+\(\sqrt[4]{a^5}+\sqrt[4]{a^3}\cdot \sqrt{a} + \sqrt[4]{a^6}:\sqrt[4]{a} = 
+\sqrt[4]{a^5}+\sqrt[4]{a^3\cdot a^2}+\sqrt[4]{a^6:a}=\)\\
+\(\sqrt[4]{a^5}+\sqrt[4]{a^5}+\sqrt[4]{a^5}=3\sqrt[4]{a^5}=
+  3\sqrt[4]{a^4\cdot a}=3 \valass{a}\sqrt[4]{a}\), 
+anche in questo caso non cambiano le \(\CE\) 
+\item 
+\(\sqrt[4]{x^6}+\sqrt[4]{x^4}\cdot \sqrt{x} + \sqrt[4]{x^7}:\sqrt[4]{x} = 
+\sqrt[4]{x^6}+\sqrt[4]{x^4\cdot x^2}+\sqrt[4]{x^7:x}=\)\\
+\(\sqrt[4]{x^6}+\sqrt[4]{x^6}+\sqrt[4]{x^6} =3\sqrt[4]{x^6}=
+  3\sqrt[4]{x^4\cdot x^2} = 3 \valass{x}\sqrt[4]{x^2}
+  \stext{con} x \geqslant 0\). 
+\end{itemize}
+\end{esempio}
+% 
+
+\paragraph{Razionalizzazione del denominatore di una frazione}~
+
+\begin{esempi}{}{}
+Razionalizza il denominatore delle seguenti espressioni.
+\begin{itemize} [left=0mm]
+\item 
+\(\dfrac{a^2-1}{\sqrt{a-1}} =
+  \dfrac{(a^2-1)\sqrt{a-1}}{\sqrt{a-1}\sqrt{a-1}} =
+  \dfrac{(a-1)(a+1)\sqrt{a-1}}{a-1} = (a+1)\sqrt{a-1}\)
+con \(a \neq +1\).
+\item 
+% \(\dfrac{ab}{\sqrt[4]{xa^2b^3}}\):
+% il fattore razionalizzante è \(\sqrt[4]{x^3a^2b}\)
+% quindi: 
+\(\dfrac{ab}{\sqrt[4]{xa^2b^3}}=
+\dfrac{ab\cdot \sqrt[4]{x^3a^2b}}{\sqrt[4]{xa^2b^3}\cdot 
+\sqrt[4]{x^3a^2b}}=
+\dfrac{ab\sqrt[4]{x^3a^2b}}{\sqrt[4]{x^4a^4b^4}}=
+\dfrac{ab\sqrt[4]{x^3a^2b}}{xab} = \dfrac{\sqrt[4]{x^3a^2b}} x\)
+con \(a \neq 0 \stext{e} b \neq 0\).
+\item \(\dfrac 1{\sqrt[3]{b^5}} = \dfrac 1{b\sqrt[3]{b^2}} =
+      \dfrac{1\cdot \sqrt[3]b}{b\sqrt[3]{b^2}\cdot \sqrt[3]b} =
+      \dfrac{\sqrt[3]b}{b\sqrt[3]{b^3}} =
+      \dfrac{\sqrt[3]b}{b^2}\).
+\end{itemize}
+\end{esempi}
+
+\begin{esempio}{}{}
+Razionalizza il denominatore della seguente espressione.
+
+\(\dfrac{1+\sqrt a}{1-\sqrt a}=
+\dfrac{(1+\sqrt a)\cdot (1+\sqrt a)}{(1-\sqrt a)(1+\sqrt a)}=
+\dfrac{(1+\sqrt a)^2}{1-\sqrt{a^2}}=\dfrac{1+2\sqrt a+a}{1-\valass{a}}\) 
+% \\ con \(a \geqslant 0 \sand a \neq 1\)
+\end{esempio}
+% 

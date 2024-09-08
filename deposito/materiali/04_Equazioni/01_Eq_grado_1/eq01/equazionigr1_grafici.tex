@@ -15,7 +15,7 @@
 \newcommand{\alberoequazioni}{% Retta con numeri messi a caso.
   \def \xo{0}
   \def \yo{0}
-  \def \dx{6}
+  \def \dx{5}
   \def \dy{2}
   \def \xa{\xo+\dx}
   \def \ya{\yo+\dy}
@@ -34,7 +34,8 @@
       (\xo, \yo) .. controls (\xo+\xco, \yo+\yco) and (\xa-\xco, \ya-\yco) .. 
       (\xa, \ya)
       node [midway, above, rotate=\angle, black] {\(A \ne 0\)}
-      node [right=+2mm, black] {\(\IS=\graffa{\dfrac{B}{A}}\)};
+      node [right=+2mm, black] 
+      {\(\IS=\graffa{\dfrac{B}{A}}\) (\textbf{determinata})};
     \draw [ultra thick, orange!50!black] 
       (\xo, \yo) .. controls (\xo+\xco, \yo-\yco) and (\xb-\xco, \yb+\yco) .. 
       (\xb, \yb) 
@@ -43,12 +44,12 @@
       (\xb, \yb) .. controls (\xb+\xco, \yb+\yco) and (\xc-\xco, \yc-\yco) .. 
       (\xc, \yc) 
       node [midway, above, rotate=\angle, black] {\(B \ne 0\)}
-      node [right=+2mm, black] {\(\IS=\emptyset\)};
+      node [right=+2mm, black] {\(\IS=\emptyset\) (\textbf{impossibile})};
     \draw [ultra thick, orange!50!black] 
       (\xb, \yb) .. controls (\xb+\xco, \yb-\yco) and (\xd-\xco, \yd+\yco) .. 
       (\xd, \yd) 
       node [midway, above, rotate=-\angle, black] {\(B = 0\)}
-      node [right=+2mm, black] {\(\IS=\Q\)};
+      node [right=+2mm, black] {\(\IS=\Q\) (\textbf{indeterminata})};
     \foreach \x/\y in {\xo/\yo, \xa/\ya, \xb/\yb, \xc/\yc, \xd/\yd}
       {\filldraw (\x, \y) [fill=blue] circle (2pt);}
   }
@@ -96,7 +97,7 @@
     \filldraw[fill=brown, draw=brown](-5.5, 2.65) rectangle (-2.5, 3.6);
     \filldraw[fill=brown, draw=brown](6.5,2.65) rectangle (8, 3.6);
     \peso{8.3}
-    \node () at (2,-1) {Figura 1};
+%     \node () at (2,-1) {Figura 1};
   }
 }
 
@@ -105,7 +106,7 @@
     \bilancia
     \filldraw[fill=brown, draw=brown](-4.75, 2.65) rectangle (-3.25, 3.6);
     \peso{7.3}
-    \node () at (2,-1) {Figura 2};
+%     \node () at (2,-1) {Figura 2};
   }
 }
 

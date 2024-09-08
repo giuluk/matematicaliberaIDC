@@ -10,7 +10,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[[2018/01/01]
 \ProvidesPackage{matliberamat}[%
-    2023/06/13 v0.9.60
+    2023/09/20 v0.9.63
     Macro matematiche usate nel libro Matematica Libera]
 \DeclareRobustCommand{\N}{\mathbb{N}}
 
@@ -34,6 +34,8 @@
 
 \DeclareRobustCommand{\Rp}{\mathbb{R}^+}
 
+\DeclareRobustCommand{\Rn}{\mathbb{R}^-}
+
 \DeclareRobustCommand{\C}{\mathbb{C}}
 
 \DeclareRobustCommand{\IR}{{}^*\hspace{-.12em}\mathbb{R}}
@@ -53,6 +55,8 @@
 \newcommand{\Pari}{\mathbb{P}}
 
 \newcommand{\Pol}{\mathbb{P}}
+
+\newcommand{\U}{\mathbb{U}}
 
 \AtBeginDocument{%
 \let \epsilon \varepsilon
@@ -224,6 +228,12 @@
 \newcommand{\card}[1]{\textrm{card} \tonda{#1}}   % cardinalità
 
 \newcommand{\duep}{\!:~}
+
+\newcommand{\opred}{\mathrm{p}}
+
+\newcommand{\true}{\mathrm{V}}
+
+\newcommand{\false}{\mathrm{F}}
 
 \DeclareMathOperator{\vari}{Var}
 

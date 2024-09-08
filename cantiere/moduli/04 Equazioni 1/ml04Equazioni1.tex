@@ -1,7 +1,21 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %        Matematica Libera
 %
 % Copyright 2022-26 Daniele Zambelli
+%
+%------------------------------
+% Modulo: Insiemi Numerici
+%
+% Compilation:
+% $> lualatex --shell-escape ml01InsiemiNumerici.tex
+% $> make4ht ml01InsiemiNumerici.tex -f html5-common_domfilters 
+%    -c ml_make4ht -l -u -s -d ./html/mathjax 
+%    "mathjax, 3, sec-filename, fn-in, blind" 
+% or
+% $> ../../../compila.py -l ml01InsiemiNumerici.tex
+% $> ../../../compila.py -j ml01InsiemiNumerici.tex
+% 
+%------------------------------
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -52,23 +66,27 @@
 
 \newcommand{\editore}{}
 \newcommand{\tipo}{Modulo}
-\newcommand{\numero}{5}
-\newcommand{\titolo}{Disequazioni 1}
+\newcommand{\numero}{4}
+\newcommand{\titolo}{Equazioni 1}
 % \newcommand{\titolodritto}{\tipo \numero: \titolo}
 % \newcommand{\pdftitolo}{Insiemi numerici}
-\newcommand{\docvers}{\texttt{1.0.0}}
+\newcommand{\docvers}{\texttt{2.0.0}}
 % \newcommand{\edizione}{2023}
 % \newcommand{\Edizione}{Edizione}
 %\newcommand{\inclusivita}{}%
 % {versione accessibile}{versione ciechi}
-\newcommand{\anno}{2023}
+\newcommand{\anno}{2024}
 \newcommand{\mese}{settembre}
 \newcommand{\oggi}{\mese\ \anno}
 \newcommand{\mcisbn}{}
 
 %------------------------
 % Con o senza soluzioni nelle tabelle
-
+% Non tutte le soluzioni sono stampate, ad esempio gli esercizi formati da 
+% una tabella da riempire hanno le celle vuote.
+% Dove è previsto, è possibile stampare tutte le soluzioni 
+% (nel caso precedente le tabelle già completate) commentando la linea con 
+% \verb |solallfalse| e decommentando la linea con \verb|solalltrue|.
 \newif\ifsolall % va messo nella classe???
 \solallfalse    % Non tutte le soluzioni (tabelle vuote)
 % \solalltrue     % tutte le soluzioni (tabelle gia compilate)
@@ -90,19 +108,27 @@
 % Decommentare per la prefazione
 \input{\matdir 00_intestazioni/les/prefazione}
 %\newpage
-% \input{\matdir 00_intestazioni/les/01PrefInsNumerici}
-% \cleardoublepage
+%\input{ml01InsiemiNumerici_pref}
+%\cleardoublepage
+% \newpage
+% \newpage
 
 % --------------------------------
 % Capitoli
 % --------------------------------
 \mainmatter
 % ..................................................
-% Modulo 5: Disequazioni 1
-\capitolo{\matdir 04_Equazioni/02_Diseq_grado_1/dis01/}
-         {disequazioni}
+% Modulo 4: Equazioni 1
+\capitolo{\matdir 04_Equazioni/01_Eq_grado_1/eq01/}
+         {equazioni}
+\capitolo{\matdir 04_Equazioni/01_Eq_grado_1/compl01/}
+         {compl_alg_1gra}
+%\capitolo{\matdir 04_Equazioni/01_Eq_grado_1/probl01/}
+%         {problemi}
+\capitolo{\matdir 04_Equazioni/03_Sistemi_lineari/sist01/}
+         {sistemi}
 
-%..................................................
+% %..................................................
 % Azzeramento numerazione capitoli
 \renewcommand{\thechapter}{\Alph{chapter}}
 \setcounter{chapter}{0}
@@ -117,4 +143,3 @@
  \printindex
 \fi
 \end{document}
-

@@ -10,7 +10,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[[2018/01/01]
 \ProvidesPackage{matliberagraf}[%
-    2023/06/13 v0.9.60
+    2024/05/31 v0.9.66
    Macro grafiche usate nel libro Matematica Libera]
 
 \newcommand{\disegno}[2][5]{% Inizializza un disegno
@@ -21,6 +21,70 @@
 \begin{tikzpicture}[x=#1 mm, y=#1 mm, smooth, line cap=round]
   #2
 \end{tikzpicture}
+}
+
+\newcommand{\nodouna}[6][]{% Nodo di un'espressione numerica unaria.
+  % Sintassi:
+  % \nodouna[rdim]{popa}{xris}{yris}{nop}{nris}
+  % esempio di chiamata:
+  % \nodouna{(-5, -1)}{-4.5}{-3}{\times}{12}
+  \def \rdim{#1}
+  \def \popa{#2}
+  \def \xris{#3}
+  \def \yris{#4}
+  \def \nop{#5}
+  \def \nris{#6}
+  \def \ndim{1.0}
+  \def \dimalf{\ndim/2}
+  \def \ddim{\ndim/10}
+  \def \xtopl{\xris-\dimalf}
+  \def \xtopr{\xris+\dimalf}
+  \def \ytop{\yris+2*\ndim}
+  \def \ym{\yris+3*\dimalf}
+  \draw \popa to [out=270, in=90] (\xris, \ytop);
+  \draw (\xtopl, \ytop) -- (\xtopr, \ytop) -- (\xtopr, \ym)
+        arc (0:-180:\dimalf) -- cycle;
+  \draw (\xris, \ym) node {\rdim$\nop$}
+        (\xris, \yris) node[draw, above, rectangle,rounded corners=1pt]
+                           {\rdim$\nris$};
+}
+
+\newcommand{\nodobin}[7][]{% Nodo di un'espressione numerica binaria.
+  % Sintassi:
+  % \nodouna[rdim]{popa}{popb}{xris}{yris}{nop}{nris}
+  % esempio di chiamata:
+  % \nodobin{(-5, -1)}{(-4, -1)}{-4.5}{-3}{\times}{12}
+  \def \rdim{#1}
+  \def \popa{#2}
+  \def \popb{#3}
+  \def \xris{#4}
+  \def \yris{#5}
+  \def \nop{#6}
+  \def \nris{#7}
+  \def \ndim{1.0}
+  \def \dimalf{\ndim/2}
+  \def \ddim{\ndim/10}
+  \def \xtopl{\xris-\dimalf}
+  \def \xtopr{\xris+\dimalf}
+  \def \ytop{\yris+2*\ndim}
+  \def \ym{\yris+3*\dimalf}
+  \draw \popa to [out=270, in=90] (\xris-3*\ddim, \ytop);
+  \draw \popb to [out=270, in=90] (\xris+3*\ddim, \ytop);
+  \draw (\xtopl, \ytop) -- (\xtopr, \ytop) -- (\xtopr, \ym)
+        arc (0:-180:\dimalf) -- cycle;
+  \draw (\xris, \ym) node {\rdim$\nop$}
+        (\xris, \yris) node[draw, above, rectangle,rounded corners=1pt]
+                           {\rdim$\nris$};
+}
+
+\newcommand{\parentesi}[5]{
+  \def \posx{#1}
+  \def \posy{#2}
+  \def \inter{#3}
+  \def \pa{#4}
+  \def \pb{#5}
+  \draw (\posx-\inter, \posy) node [above=-2pt] {$\pa$}
+        (\posx+\inter, \posy) node [above=-2pt] {$\pb$};
 }
 
 \newcommand{\vettored}[3][black]{% Disegna un vettore.
@@ -146,6 +210,32 @@
   \IfBooleanTF{#1}
     {\rcomvar*[#2]{#3}{#4}{#5}{#6}{x}{y}}
     {\rcomvar[#2]{#3}{#4}{#5}{#6}{x}{y}}
+}
+
+\newcommand{\disegnapunti}[2][gray]{%
+  % Sintassi: \disegnapunti[colore]{listapunti}
+  % punti di una funzione.
+  % esempio di chiamata:
+  % \disegno{
+  %   \rcom{-3}{+8}{-4}{+12}
+  %   \disegnapunti[blue!50!black]
+  %     {-1/.2, 0/.2, +1/.2, -1/-.7, 0/-.7, +1/-.7}
+  % }
+    \foreach \x/\y in {#2}{
+      \filldraw [fill=#1, draw=black] (\x, \y) circle (2pt);}
+}
+
+\newcommand{\disegnaetichette}[2][gray]{%
+  % Sintassi: \disegnapunti[colore]{listapunti}
+  % punti di una funzione.
+  % esempio di chiamata:
+  % \disegno{
+  %   \rcom{-3}{+8}{-4}{+12}
+  %   \disegnaetichette[blue!50!black]
+  %     {-1/.2/a, 0/.2/b, +1/.2/c, -1/-.7/d, 0/-.7/e, +1/-.7/f}
+  % }
+    \foreach \x/\y/\lab in {#2}{
+      \draw [#1](\x, \y) node {\small$\lab$};}
 }
 
 \newcommand{\xbar}[7]{
@@ -325,42 +415,29 @@
   }
 }
 
-\NewDocumentCommand{\eulerovenne}{s O{gray} m m m m m m}{
-  % Grafo di eulero-venn con etichette
-  % Sintassi: \eulerovenne{pos}{a}{b}{poslab}{lab}{x1/y1/l1, x2/y2/l2, ...}
-  % La versione con l'asterisco produce un rettangolo arrotondato
-  % Esempi:
-  % \disegno[10]{
-  %   \eulerovenne{(0, 0)}{2}{1}{(1, 1)}{A}
-  %               {-1/.2/0, 0/.2/1, +1/.2/2, -1/-.7/3, 0/-.7/4, +1/-.7/5}
-  % }
-  \IfBooleanTF{#1}
-    {\draw [#2, very thick, rounded corners] #3 rectangle (#4, #5)
-     #6 node{$#7$};}
-    {\draw [#2, very thick] #3 ellipse(#4 and #5) #6 node{$#7$};}
-    \foreach \x/\y/\lab in {#8}{
-      \filldraw [fill=CornflowerBlue, draw=black]
-        (\x, \y) node {\small$\lab$};
-  }
+\NewDocumentCommand \eulerovenn{s O{gray} m m m m m}{
+  % Grafo di Eulero-Venn.
+  % Sintassi: \eulerovenn[*][colore]{centro}{dimx}{dimy}{poslabel}{label}
+  % Esempio di chiamata:
+  %% \disegno{\eulerovenn{(0, 0)}{4}{3}{(-3.5, 2.5)}{A}}
+  %% \disegno{\eulerovenn*{(0, 0)}{3}{3}{(-3, -3)}{B}}
+  %% \disegno{\eulerovenn*[red!60!black]{(0, 0)}{2}{3}{(-2, 3)}{C}}
+  \IfBooleanT{#1}
+    {\fill[#2, opacity=.3] #3 ellipse (#4 and #5);}
+  \draw[#2, very thick] #3 ellipse (#4 and #5) #6 node[black]{$#7$};
 }
 
-\NewDocumentCommand{\eulerovennp}{s O{gray} m m m m m m}{
-  % Grafo di eulero-venn con etichette
-  % Sintassi: \eulerovennp{pos}{a}{b}{poslab}{lab}{x1/y1/l1, x2/y2/l2, ...}
-  % La versione con l'asterisco produce un rettangolo arrotondato
-  % Esempi:
-  % \disegno[10]{
-  %   \eulerovennp{(0, 0)}{2}{1}{(1, 1)}{A}
-  %               {-1/.2/0, 0/.2/1, +1/.2/2, -1/-.7/3, 0/-.7/4, +1/-.7/5}
-  % }
-  \IfBooleanTF{#1}
-    {\draw [#2, very thick, rounded corners] #3 rectangle (#4, #5)
-     #6 node{$#7$};}
-    {\draw [#2, very thick] #3 ellipse(#4 and #5) #6 node{$#7$};}
-    \foreach \x/\y in {#8}{
-    \filldraw [fill=CornflowerBlue, draw=black]
-      (\x, \y) circle (2pt);
-  }
+\NewDocumentCommand \eulerovennr{s O{gray} m m m m m}{
+  % Grafo di Eulero-Venn.
+  % Sintassi: \eulerovennr[*][colore]{centro}{dimx}{dimy}{poslabel}{label}
+  % Esempio di chiamata:
+  %% \disegno{\eulerovennr{(0, 0)}{4}{3}{(-3.5, 2.5)}{A}}
+  %% \disegno{\eulerovennr*{(0, 0)}{3}{3}{(-3, -3)}{B}}
+  %% \disegno{\eulerovennr*[red!60!black]{(0, 0)}{2}{3}{(-2, 3)}{C}}
+  \IfBooleanT{#1}
+    {\fill[#2, opacity=.3, rounded corners] #3 rectangle (#4, #5);}
+  \draw [#2, very thick, rounded corners] #3 rectangle (#4, #5)
+     #6 node{$#7$};
 }
 
 \newcommand{\collega}[5][dotted, very thick, green!70!black, opacity=50]{%
@@ -604,10 +681,10 @@
   \draw [#1, fill=#5] #3 circle (3pt);
 }
 
-\newcommand{\punti}[3]{% Evidenzia alcuni punti
-  % Sintassi: \punti{posy}{lista xpunto/etichetta}{colore}
+\newcommand{\evidenziapunti}[3]{% Evidenzia alcuni punti
+  % Sintassi: \evidenziapunti{posy}{lista xpunto/etichetta}{colore}
   % Esempio di chiamata:
-  % \disegno{\punti{0}{1/+2, 5/+5}{blue}}}
+  % \disegno{\evidenziapunti{0}{1/+2, 5/+5}{blue}}}
   \foreach \xp/\lab in {#2}{
     \draw [fill=#3] (\xp, #1) circle (3pt) node [above] {$\lab$};}
 }

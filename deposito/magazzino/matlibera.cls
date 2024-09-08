@@ -10,7 +10,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[[2018/01/01]
 \ProvidesClass{matlibera}[%
-    2023/06/13 v0.9.60
+    2024/05/31 v0.9.66
     Classe per il libro di Matematica Libera]
 
 \LoadClassWithOptions{memoir}[2011/03/06]
@@ -636,7 +636,7 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
 
 \newenvironment{alternativetext}[1]{}{}
 
-\NewDocumentCommand \immagine{s O{1} m m}{
+\NewDocumentCommand \immagine{s O{1} m m}{%
   % Macro for placing image with:
   % - Alternative text,
   % - scale (default value: 1),
@@ -647,13 +647,23 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
   %% \immagine[.5]{Alternative text}{\miaimmagine}
   %% \immagine*[.5]{Alternative text}{\miaimmagine}
   %
-  \begin{alternativetext}{#3}
-  \IfBooleanF{#1}
-    {\begin{center}}
+  \begin{alternativetext}{#3}%
+  \IfBooleanF{#1}    {\begin{center}}%
   \scalebox{#2}{#4}
-  \IfBooleanF{#1}
-    {\end{center}}
-  \end{alternativetext}
+  \IfBooleanF{#1}    {\end{center}}%
+  \end{alternativetext}%
+}
+
+
+\NewPitonEnvironment{sPiton}{}{%
+  \vspace{.5em}
+}{
+}
+
+
+\newcommand{\sPitonInputFile}[2][]{
+  \vspace{.3em}
+  \PitonInputFile[#1]{#2}
 }
 
 \newcommand{\central}[1]{% Centra un testo in una riga.

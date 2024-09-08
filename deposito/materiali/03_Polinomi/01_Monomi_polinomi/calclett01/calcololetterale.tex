@@ -7,7 +7,7 @@
 \chapter{Calcolo letterale}
 
 \inicapitolo{
-\begin{itemize}
+\begin{itemize}[left=0mm, nosep]
 \item espressioni letterali;
 \item modello di un problema;
 \item monomi;
@@ -40,7 +40,7 @@ da un rettangolo di cartoncino delle dimensioni di
 \(2\munit{dm} \times 3\munit{dm}\).
 
 Le scatole si ottengono operando quattro tagli tutti della stessa 
-lunghezza paralleli ai lati corti del rettangolo e alla stessa distanza 
+lunghezza paralleli ai lati lunghi del rettangolo e alla stessa distanza 
 dai lati corti. 
 Fatto questo, con qualche piegatura e quattro punti di colla si ottiene 
 la scatola.
@@ -52,6 +52,8 @@ il taglio per ottenere la scatola di volume massimo. \\[.5em]
 % \hspace*{\fill} \scatola \hspace*{\fill} 
 \scatola 
 \end{problema}
+
+\pagebreak %-------------------------------------
 
 Prima di affrontare il problema generale, possiamo provare a risolvere 
 alcuni casi particolari.
@@ -140,9 +142,9 @@ Ma ha senso operare tagli di \(2\munit{dm}\) su un cartoncino di
 Qual è il massimo valore che posso dare alla variabile \(x\) per questo 
 particolare modello?
 
-È evidente che non è possibile costruire scatole operando tagli 
-superiori a \(1\munit{dm}\). E non è neppure possibile operare tagli 
-negativi. 
+È evidente che, in questo problema, non è possibile costruire scatole 
+operando tagli superiori a \(1\munit{dm}\), e non è neppure possibile 
+operare tagli negativi. 
 Il modello del problema precedente deve tener conto di questi due limiti 
 e quindi diventa:
 \[\sistema{0 \leqslant x < 1,0 \\ 
@@ -179,7 +181,7 @@ due, o più variabili (con uno, due o più parametri).
 
 Il risultato di una funzione rappresentata da un'espressione letterale è 
 anche detto \indt{valore numerico dell'espressione} e si ottiene 
-sostituendo le variabili con il loro valore numerico.
+sostituendo le variabili con un loro valore numerico.
 
 \begin{esempio}{}{}
 Un trapezio ha basi di \(38\munit{cm}\) e \(42\munit{cm}\) e ha l'altezza 
@@ -532,7 +534,7 @@ A questo punto, per poter fare pratica con il calcolo letterale,
 è importante:
 \begin{itemize} [nosep]
 \item imparare alcuni termini tecnici e definizioni,
-\item abituarci a alcune convenzioni.
+\item abituarci ad alcune convenzioni.
 \end{itemize}
 
 
@@ -597,9 +599,9 @@ Applicando le proprietà delle operazioni scrivi i seguenti monomi in
 forma normale.
 
 \begin{enumerate*} 
-\item 
+\item \quad
 \(5 \cdot 2a^{2} \dfrac{3}{8}ab2b^{2} = \dfrac{15}{2}a^3b^3\) \qquad~
-\item 
+\item \quad
 \(5 x a^{4}\dfrac{3}{20}ab6b^{2} = \dfrac{9}{2}a^{5}b^{3}x\).
 \end{enumerate*}
 \end{esempio}
@@ -627,11 +629,11 @@ lettere\indc{monomio/monomi}{parte letterale}.
 \end{definizione}
 
 Se nel monomio non appare il coefficiente, è sottinteso \(1\), 
-cioè \(a\) vuol dire \textbf{un} \(\mathbf{a}\):~~ \(a = 1a\).
+cioè \(\textbf{a}\) vuol dire \textbf{un} \(\mathbf{a}\):~~ \(a = 1a\).
 
 \begin{esempio}{}{}
-Nella tabella seguente sono segnati alcuni monomi e i rispettivi 
-coefficienti.
+Nella tabella seguente sono segnati alcuni monomi e i loro coefficienti 
+e le loro parti letterali.
 
 \vspace{-1em}
 \begin{center}
@@ -791,7 +793,7 @@ coefficienti.
 
 \begin{esempio}{}{}
 il numero \(7,2\) può essere visto come:\\ 
-\labelitemi~ monomio di grado zero che di coefficiente \(7,2\) 
+\labelitemi~ monomio di grado zero di coefficiente \(7,2\) 
 \quad o \quad 
 \labelitemi~ numero \(7,2\).
 \end{esempio}
@@ -987,15 +989,16 @@ il divisore dà come risultato il dividendo: \\
 \hspace*{39mm}\(n : d = q \sLRarrow q \cdot d = n\)\\
 Con i numeri razionali la divisione si trasforma nella moltiplicazione 
 tra il dividendo e il reciproco del divisore: \quad
-\(n : d = n \cdot \dfrac{1}{d}\)
+\(n : d = n \cdot \dfrac{1}{d}\) \quad
+se questo reciproco esiste.
 
 Possiamo usare la stessa regola anche per i monomi se prima definiamo 
 cosa è il reciproco di un monomio:
 
 \begin{definizione}{}{}
-Il \textbf{reciproco} di un monomio è il monomio che si ottiene
-moltiplicando il reciproco del coefficiente con il reciproco della parte 
-letterale\indc{monomio/monomi}{monomio reciproco}.
+Il \textbf{reciproco} di un monomio è il monomio che ha per coefficiente 
+il reciproco del coefficiente e per parte letterale il reciproco della 
+parte letterale\indc{monomio/monomi}{monomio reciproco}.
 \end{definizione}
 
 \begin{esempio}{}{}
@@ -1004,6 +1007,10 @@ letterale\indc{monomio/monomi}{monomio reciproco}.
 \(\dfrac{4}{3a^3bc^2}\) \quad o anche \quad
 \(\dfrac{4}{3}a^{-3}b^{-1}c^{-2}\)
 \end{esempio}
+
+Dobbiamo tenere presente che il reciproco di \(0\) non è definito, 
+quindi possiamo calcolare il reciproco di un monomio solo se il suo 
+coefficiente e ogni sua lettera sono \textbf{diversi da zero}.
 
 Usando il reciproco, definire la divisione è facile.
 
@@ -1171,7 +1178,7 @@ Analizziamo il caso dell'addizione:\\
 \(7a^{3}b^{2}-5a^{2}b^{3}+a^{3}b^{2}\), si vuole determinarne la somma. 
 I monomi addendi non sono tutti tra loro simili; 
 lo sono però il primo e il terzo. 
-Le proprietà associativa e commutativa ci consentono di riscrivere
+Le proprietà commutativa e associativa ci consentono di riscrivere
 l'addizione precedente ``avvicinando'' i monomi simili e
 sostituendo ad essi la loro somma:
 \[7a^{3}b^{2}-5a^{2}b^{3}+a^{3}b^{2}=(7a^{3}b^{2}+a^{3}b^{2})-5a^{2}b^{3}
@@ -1286,16 +1293,33 @@ Trasformiamo la divisione in moltiplicazione, poi
 \subsection{Massimo Comune Divisore e minimo comune multiplo tra monomi}
 \label{subsec:monomi_mcdemcm}
 
-In questa sezione considereremo solo monomi interi.
-
-\begin{definizione}{}{}
-Un monomio~\(A\) si dice \textbf{multiplo} di un monomio~\(B\) se esiste
-un monomio~\(C\) per il quale~\(A=B\cdot C\). 
-In questo caso diremo anche che~\(B\) è \textbf{divisore} del monomio~\(A\).
-\end{definizione}
+Attenzione: in questa sezione considereremo solo monomi interi.
 
 \subsubsection{Massimo Comune Divisore}
 \indc{monomio/monomi}{MCD di monomi}
+
+\begin{definizione}{}{}
+Si dice che il monomio \(B\) è \textbf{divisore} del monomio \(A\) se 
+\(B\) non ha lettere diverse da quelle presenti in \(A\) e ogni 
+lettera di \(B\) è elevata a un esponente minore o uguale a quello della 
+lettera corrispondente in \(A\). 
+\end{definizione}
+
+\begin{esempio}{}{}
+Quale dei seguenti è un divisore di: \({8a^{2}b^{3}c}\): 
+
+\begin{enumerate*}
+\item \({7b^{3}c}\); \qquad~
+\item \({8a^{2}b^{4}c}\); \qquad~
+\item \({a^{2}b^{3}c^{2}}\); \qquad~
+\item \({4a^{2}b^{3}x}\).
+\end{enumerate*}
+
+Il primo monomio ha tutte le caratteristiche richieste.
+Il secondo ha l'esponente della lettera \(b\) troppo grande.
+Il terzo ha l'esponente della lettera \(c\) troppo grande.
+Il quarto ha una lettera, \(x\) non presente nel monomio dell'esercizio. 
+\end{esempio}
 
 \begin{definizione}{}{}
  Il \textbf{massimo comune divisore} tra due o più monomi è il
@@ -1381,7 +1405,34 @@ Due monomi si dicono \textbf{primi tra loro}
 \end{definizione}
 
 \subsubsection{Minimo comune multiplo}
-\indc{monomio/monomi}{mcm di monomi}.
+\indc{monomio/monomi}{mcm di monomi}
+
+\begin{definizione}{}{}
+Si dice che il monomio \(B\) è \textbf{multiplo} del monomio \(A\) se in 
+\(B\) sono presenti tutte le lettere presenti in \(A\) e ogni 
+lettera di \(B\) è elevata a un esponente maggiore o uguale a quello della 
+lettera corrispondente in \(A\). 
+\end{definizione}
+
+\begin{esempio}{}{}
+Quale dei seguenti non è un multiplo di: \({8a^{2}b^{3}c}\): 
+
+\begin{enumerate*}
+\item \({7a^{2}b^{3}c}\); \qquad~
+\item \({3a^{2}b^{4}cz^{3}}\); \qquad~
+\item \({a^{2}b^{2}c}\); \qquad~
+\item \({4a^{2}b^{3}c^{2}x}\).
+\end{enumerate*}
+
+Il terzo non è un multiplo perché l'esponente della lettera \(b\) è 
+troppo piccolo. 
+\end{esempio}
+
+% \begin{definizione}{}{}
+% Un monomio~\(A\) si dice \textbf{multiplo} di un monomio~\(B\) se esiste
+% un monomio~\(C\) per il quale~\(A=B\cdot C\). 
+% In questo caso diremo anche che~\(B\) è \textbf{divisore} del monomio~\(A\).
+% \end{definizione}
 
 \begin{definizione}{}{}
 Il \textbf{minimo comune multiplo di due o più monomi}
@@ -1544,7 +1595,7 @@ Due polinomi, ridotti in forma normale, formati da termini uguali si dicono
 Se due polinomi sono formati da termini opposti, allora si dicono 
 \textbf{polinomi opposti}.
 
-Definiamo, inoltre, un \textbf{polinomio nullo} quando i suoi termini sono
+Definiamo, inoltre, un \textbf{polinomio nullo} se i suoi termini sono
 a coefficienti nulli. 
 Il polinomio nullo coincide con il monomio nullo e quindi con il numero~0.
 \end{definizione}
@@ -1599,10 +1650,9 @@ Il polinomio~\(a^3-b^3+ab^2\) è un polinomio omogeneo di grado~\(3\).
 \begin{definizione}{}{}
 Un polinomio si dice \textbf{ordinato secondo le potenze decrescenti
 (crescenti) di una lettera}\indc{polinomio/polinomi}{polinomio ordinato}, 
-quando i suoi
-termini sono ordinati in maniera tale che gli esponenti di tale lettera 
-decrescono (crescono), leggendo il
-polinomio da sinistra verso destra.
+se i suoi termini sono ordinati in maniera tale che gli esponenti di tale 
+lettera decrescono (crescono), leggendo il polinomio da sinistra verso 
+destra.
 \end{definizione}
 
 L'essere ordinato non è una caratteristica del polinomio, ma di come 
@@ -1743,7 +1793,7 @@ Quoziente tra un polinomio e un monomio.\\ [.5em]
 \end{esempio}
 
 \begin{osservazione}{}{}
-\begin{enumeratea}
+\begin{enumerate}[nosep, label=\alph*)]
 \item Poiché ogni monomio è divisibile per qualsiasi numero diverso
 da zero, allora anche ogni polinomio è divisibile per un qualsiasi
 numero diverso da zero;
@@ -1753,7 +1803,7 @@ con grado uguale o maggiore;
 \item la divisione tra un polinomio e un qualsiasi monomio non nullo è
 sempre possibile, tuttavia il risultato è un polinomio solo nel caso
 in cui il monomio sia divisore di tutti i termini del polinomio.
-\end{enumeratea}
+\end{enumerate}
 \end{osservazione}
 
 \begin{esempio}{}{}
@@ -1779,7 +1829,8 @@ Il risultato non è un polinomio, ma un
 Il \textbf{prodotto di due polinomi} è il
 polinomio\indc{polinomio/polinomi}{prodotto tra due polinomi} che si 
 ottiene moltiplicando ogni termine del primo polinomio per ciascun 
-termine del secondo polinomio.
+termine del secondo polinomio 
+(e poi riducendo i termini simili).
 \end{definizione}
 
 % \newpage
@@ -1934,6 +1985,8 @@ trinomio:\\
 \label{subsec:prodnot_quadratopolinomio}
 
 \affiancati{.69}{.29}{
+Possiamo estendere la definizione al quadrato di un polinomio qualunque.
+
 Si consideri il trinomio~\(A+B+C\), il suo quadrato sarà:
 
 \vspace{-1.5em}
@@ -2115,6 +2168,7 @@ la somma sia \(+3\) e il prodotto \(-40\):\\[-1em]
 \begin{center}\(x^2+3x-40 = \tonda{x-5} \tonda{x+8}\)\end{center}
 \end{esempio}
 
+\pagebreak %---------------------------------------
 \subsection{Cubo di un binomio}
 \label{subsec:prodnot_cubo}
 

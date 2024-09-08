@@ -7,7 +7,7 @@
 \chapter{Numeri naturali}
 
 \inicapitolo{
-\begin{itemize}
+\begin{itemize}[left=0mm, nosep]
 \item i numeri naturali;
 \item l'importante strumento matematico costituito dalle funzioni;
 \item i grafi ad albero;
@@ -49,7 +49,7 @@ un bastone.
 }{
 \immagine[.30]{Testo alternativo figura: osso con incise alcune tacche 
 regolari.}
-{\includegraphics{img/fig001.png}}
+{\includegraphics{\folder img/fig001.png}}
 }
 
 \vspace{.25em}
@@ -77,7 +77,7 @@ superiore leggermente inclinata verso destra di colore nero;
 100000 come una specie di pappagallo e 
 infine 1000000 come un egiziano inginocchiato con una gamba ed entrambe 
 le braccia aperte ed alzate verso il cielo.}
-{\includegraphics{img/hieropotdieci.png}}
+{\includegraphics{\folder img/hieropotdieci.png}}
 
 \vspace{-2ex}
 Ripetendo questi simboli è possibile scrivere, per esempio, il numero~3673 
@@ -89,7 +89,7 @@ così:
 usando i simboli descritti sopra e quindi n. 3 simboli della
 ``mezzaluna'', n. 6 simboli del ``ricciolo'', n. 7 simboli con la 
 U rovesciata ed infine n. 3 barrette verticali.}
-{\includegraphics{img/hiero3673.png}}
+{\includegraphics{\folder img/hiero3673.png}}
 \vspace{-2ex}
 
 I Romani per rappresentare i numeri usavano sette lettere maiuscole: 
@@ -261,8 +261,9 @@ Partendo dall'origine, a ogni passo si va al numero successivo.
 
 % \vspace{-.5em}
 \immagine[.8]
-{Testo alternativo figura: semiretta orientata (orizzontale) con freccia 
-verso destra con origine 0 e con unità pari ad 1.}
+{Testo alternativo figura: semiretta orientata (orizzontale) verso destra 
+con origine 0, con unità pari a 1 (corrispondente al segmento con estremi 
+0 e 1) e con rappresentati i primi 11 numeri numeri naturali.}
 {\natrappgeo}
 
 \vspace{-.5em}
@@ -292,14 +293,14 @@ al successore del successore del successore \dots.
 
 Tra i numeri naturali possiamo individuare una relazione di 
 equivalenza\indc{relazione}{equivalenza}: 
-`\emph{essere uguale} indicata dal simbolo ``\(=\)''. 
+\emph{essere uguale} indicata dal simbolo ``\(=\)''. 
 Questa relazione ha le seguenti proprietà:
 \begin{enumerate} [nosep]
 \item \emph{riflessiva}: \(a = a\);\indc{proprietà}{riflessiva}
 \item \emph{simmetrica}: se \(a = b\) allora 
 \(b = a\);\indc{proprietà}{simmetrica}
 \item \emph{transitiva}: se \(a = b\) e \(b = c\) allora 
-\(a = c\);\indc{proprietà}{transitiva}
+\(a = c\).\indc{proprietà}{transitiva}
 \end{enumerate}
 
 % \bigskip
@@ -313,7 +314,7 @@ Questa relazione ha le seguenti proprietà:
 \(b \nleqslant a\);
 \indc{proprietà}{antisimmetrica}
 \item \emph{transitiva}: se \(a \leqslant b\) e \(b \leqslant c\) 
-allora \(a \leqslant c\);\indc{proprietà}{transitiva}
+allora \(a \leqslant c\).\indc{proprietà}{transitiva}
 \end{enumerate}
 
 \bigskip
@@ -394,6 +395,7 @@ Di seguito ne vediamo alcuni, relativi al caso dell'addizione.
 % \vspace{-1em}
 % \[somma: \coppia{addendo_1}{addendo_2} \mapsto addendo_1 + addendo_2\]
 
+\pagebreak
 Possono essere usate anche delle rappresentazioni grafiche:
 
 \affiancati{.48}{.48}{
@@ -433,6 +435,8 @@ la funzione di addizione.}
 {\grafoportad[1.1]{add}{7}{5}{12}}
 }
 
+% Piton dà errore in make4ht, accidenti!!!!!!!!!!!!!!!!
+
 \vspace{1em}
 Una funzione può anche essere definita in un linguaggio di programmazione 
 (nel caso seguente usiamo Python):\ind{programmare una funzione}
@@ -451,6 +455,8 @@ funzione;
 linguaggio
 Python.
 \end{description}
+\immagine*{Testo alternativo: si evidenzia che i numeri davanti alle 
+istruzioni rappresentano il numero di riga corrispondente.}{}
 
 Il risultato della funzione può essere visualizzato con la seguente 
 istruzione:
@@ -1321,16 +1327,18 @@ Poiché le operazioni aritmetiche sono funzioni binarie, dobbiamo
 considerare 2 operazioni inverse, una per trovare il primo operando e 
 una per trovare il secondo.
 
-\immagine*{Si evidenzia che, se non diversamente specificato, 
-all'interno dell'ambiente matematico al posto dei ``puntini'' per 
-indicare una parte vuota (che dovrà essere riempita), è inserita la 
-lettera ``p'' come abbreviazione di ``puntini''. 
-Ciò viene fatto in quanto quando si converte da HTML a LAMBDA, i 
-``puntini'' non vengono rappresentati e al loro posto non 
+\immagine*{Testo alternativo: si evidenzia che, se non diversamente 
+specificato, all'interno dell'ambiente matematico al posto dei 
+``puntini'' per indicare una parte vuota (e che dovrà successivamente 
+essere riempita), è inserita la lettera ``p'' come abbreviazione di 
+``puntini''.
+Ciò viene fatto in quanto quando si converte da HTML a LAMBDA, i
+``puntini'' non vengono rappresentati e al loro posto non
 compare nulla.}{}
-\immagine*{Testo alternativo: tabella formata da 4 colonne (la prima 
-rappresenta l’elenco numerico dei 5 esercizi) e 6
-righe (compresa quella di intestazione). 
+
+\immagine*{Testo alternativo: tabella 6
+righe (compresa quella di intestazione) per 4 colonne (la prima
+rappresenta l'elenco numerico dei 5 esercizi).
 La riga di intestazione è la seguente: "Operazione"; 
 "Operazione inversa 1"; "Operazione inversa 2".}{}
 \immagine*{Testo alternativo: 
@@ -1553,7 +1561,7 @@ Useremo grafi ad albero per risolvere le
 espressioni:\indc{espressione}{albero di un'espressione}
 gli operandi sono le foglie dell'albero, il risultato è la radice. 
 Il movimento, in questo caso, va dalle foglie alla radice (come la linfa 
-discendente.
+discendente).
 
 \begin{procedura}{}{}
  Per risolvere un'espressione usando un grafo:
@@ -1598,16 +1606,19 @@ Si precisa che questo metodo non è adatto per studenti non vedenti.}
 \(8^9 \times 8^5 : (8^3)^4 : [4^{12} : (4^2)^5] + 27^2 : 9^2 =\)
 
 \vspace{.5em}
+\affiancati{.24}{.74}{
 Se per risolvere un'espressione dobbiamo utilizzare le proprietà delle 
 potenze, al posto del simbolo di operazione scriveremo le 
-sigle~``p1'',~``p2'',~\dots 
-% per indicare l'uso della prima, seconda,~\dots quinta proprietà.
-
-\immagine
+sigle~``p1'',~``p2'',~\dots, ``p5'', 
+per indicare l'uso della prima, seconda,~\dots, quinta proprietà.
+\vspace{10mm}
+}{
+\immagine*
 {Testo alternativo figura: soluzione di un'espressione con le proprietà 
 delle potenze con un grafo ad albero. 
 Si precisa che questo metodo non è adatto per studenti non vedenti.} 
-\espalberob
+{\hspace{-18mm}\espalberob}
+}
 \end{esempio}
 
 \subsection{Metodo sequenziale}
@@ -1617,7 +1628,7 @@ albero per risolvere espressioni.
 Vediamo allora il metodo sequenziale\indc{espressione}{svolgimento in 
 sequenza} che prevede di copiare tutta o in 
 parte l'espressione rendendola via via più semplice. 
-Possiamo applicare le seguenti indicazioni:
+% Possiamo applicare le seguenti indicazioni:
 
 \begin{procedura}{}{}
  Per risolvere un'espressione in modo sequenziale:
@@ -1863,7 +1874,7 @@ e risaliamo dalla soluzione al dato mancante.
 \begin{esempio}{}{}
 \quad \(\left[ 4 \times 5 + 16 : 2 -
   \left(13 - 2^{\dots} \right) \times 2 \right] : 2 = 9\)
-\immagine*{Testo alternativo: testo espressione con il buco
+\immagine*{Testo alternativo: testo espressione con un buco
 \(\left[ 4 \times 5 + 16 : 2 -
   \left(13 - 2^p \right) \times 2 \right] : 2 = 9\).}{}
 
@@ -1879,12 +1890,12 @@ sottolineo o comunque metto in evidenza le operazioni \(20 + 8\),
 \(13 - p\) e poi le eseguo all'interno dell'espressione tranne
 \(13 - p\) che la sostituisco interamente con puntini al
 passaggio successivo; sottolineo o comunque metto in evidenza l'operazione 
-\(p times 2\) e poi la sostituisco interamente con puntini
+\(p \times 2\) e poi la sostituisco interamente con puntini
 al passaggio successivo; sottolineo o comunque metto in evidenza 
 l'operazione \(28 - p\) e poi la sostituisco interamente con
 puntini al passaggio successivo; sottolineo o comunque metto in
 evidenza l'operazione \(p : 2\) che dovrà essere uguale a 9.
-Infine si svolgerà all'indietro quanto di seguito indicato.}{} 
+Infine si svolgerà all'indietro quanto indicato.}{}
 
 \affiancati{.44}{.51}{
 
@@ -2113,7 +2124,7 @@ In definitiva, nel~1523 il~7 è contenuto~217 volte con il resto di~4.:\\
 Infatti: \(217 \cdot 7 + 4 = 1519 + 4 = 1523\)
 e: \(4 \leqslant 7\)
 
-\pagebreak %---------------------------------------------
+% \pagebreak %---------------------------------------------
 Alcuni altri esempi:
 
 \vspace{-1.5em}
@@ -2326,7 +2337,7 @@ e un numero è divisibile per~8 se e solo se il numero formato dalle sue
 ultime~3 cifre, è divisibile per~8.
 \item[\textbf{9}:~] 0,~9 sono divisibili per~9,
 e un numero è divisibile per~9 se e solo se la somma delle sue cifre è un 
-numero è divisibile per~9.
+numero divisibile per~9.
 \item[\textbf{10}:~] 0 è divisibile per~10 
 e un numero è divisibile per~10 se e solo se il numero formato dalla sua 
 ultima cifra è divisibile per~10.
@@ -2353,6 +2364,7 @@ Poiché~24 non è divisibile per~17 non lo sarà neppure~1894.
 
 % \ovalbox{\risolvii \ref{ese:1.18}, \ref{ese:1.19}}
 
+\pagebreak %---------------------------------------------
 
 \section{Scomposizione in fattori primi}
 \label{sec:nat_scomposizione}
@@ -2441,10 +2453,10 @@ e si indica con~\(\mcd(a,b)\).
 \end{definizione}
 
 \begin{esempio}{}{}
-Applicando la definizione, calcola il~\(\mcd(18,~12) = 6\).
+Applicando la definizione, calcola il~\(\mcd(18,~12)\).
 
 I divisori di 18: \qquad 1,~2,~3,~6,~9,~18\\
-I divisori di 12: \qquad 1,~2,~4,~6,~12
+I divisori di 12: \qquad 1,~2,~4,~6,~12\\
 I divisori comuni:~1,~2,~6, \\
 il più grande è~6, quindi: \quad \(\mcd(18,~12) = 6\). 
 \end{esempio}
@@ -2483,7 +2495,7 @@ Si scompongono in fattori i numeri:\\
 \(60 = 2^2 \cdot 3 \cdot 5; 
   \quad 120 = 2^3 \cdot 3 \cdot 5; 
   \quad 90 = 2 \cdot 3^2 \cdot 5\)\\
-Fattori comuni con esponente minimo: \quad 2,~3,~5:\\ 
+Fattori comuni con esponente minimo: \quad 2,~3,~5\\
 Massimo comune divisore: \quad
 \(\mcd(60,~120,~90)=~2 \cdot3 \cdot 5 = 30\)
 \end{esempio}
@@ -2496,7 +2508,7 @@ se~\(\mcd(a,~b) =~1\).\ind{numeri coprimi}
 \begin{esempio}{}{}
 Numeri primi tra loro:
 \begin{itemize}  [leftmargin=0cm, itemindent=.5cm, noitemsep]
-\item 12 e~25 sono primi tra loro. Infatti il~\(\mcd(12,~25)=1\) dato che 
+\item 12 e~25 sono primi tra loro, infatti il~\(\mcd(12,~25)=1\) dato che
 nelle loro scomposizioni in fattori non si hanno fattori 
 comuni:~\(12 =2^2\cdot3\) e~\(25=5^2\);
 % \item 35 e~16 sono primi tra loro. Infatti~\(35=5\cdot~7\),~\(16=2^4\).

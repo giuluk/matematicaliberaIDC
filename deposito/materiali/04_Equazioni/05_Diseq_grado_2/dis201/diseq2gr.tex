@@ -1,0 +1,858 @@
+% (c)~2014 Dimitrios Vrettos - d.vrettos@gmail.com
+% (c)~2014 Claudio Carboncini - claudio.carboncini@gmail.com
+% (c)~2015 Daniele Zambelli daniele.zambelli@gmail.com
+% (c)~2015 Maria Antonietta Pollini
+
+\input{\folder diseq2gr_grafici.tex}
+
+\chapter{Disequazioni}
+
+\section{Risoluzione delle disequazioni di secondo grado}
+\label{sec:diseq_secondo_grado}
+
+Una disequazione di secondo grado si presenta in una delle seguenti forme:
+\[ax^2+bx+c < 0;\quad ax^2+bx+c \leqslant 0;
+  \quad ax^2+bx+c\geqslant0; \quad ax^2+bx+c > 0\]
+
+Ricordiamo che risolvere una disequazione in un'incognita significa 
+determinare l'insieme dei valori da attribuire all'incognita affinché la 
+disequazione sia verificata.
+Come per le disequazioni di primo grado anche per quelle di secondo grado
+dobbiamo studiare il segno del trinomio e poi individuare l'insieme soluzione.
+
+\subsection{Studio del segno di un trinomio di secondo grado}
+\label{subsec:diseq_trinomio}
+
+Per studiare il segno di un polinomio di secondo grado seguiamo un 
+procedimento in due passi:
+
+\begin{enumerate}
+ \item Equazione associata
+Risolvendo l'equazione associata al polinomio troviamo gli zeri della 
+funzione cioè i punti in cui il grafico della funzione incontra l'asse~x. 
+
+A seconda del valore del discriminante l'equazione può avere 
+nessuna soluzione reale (\(\Delta<0\)), 
+soluzioni reali coincidenti (\(\Delta=0\)), 
+soluzioni reali distinte (\(\Delta>0\)).
+
+ \item Grafico della funzione associata
+Disegnando il grafico della funzione associata al polinomio si individuano 
+gli intervalli in cui il polinomio è positivo, il grafico è sopra l'asse~x 
+o negativo, il grafico è sotto l'asse~x.
+
+Se il coefficiente del termine di secondo grado è minore di zero (\(a<0\)) 
+la parabola ha la concavità rivolta verso il basso, se è maggiore di zero 
+(\(a>0\)) la parabola ha la concavità rivolta verso l'alto. 
+\end{enumerate}
+
+\begin{esempio}{}{}
+Studiare i segno del polinomio: \(x^2-2x-3\)
+
+\begin{enumerate}
+\item
+Equazione Associata:~~
+\(x^2-2x-3=0 \sRarrow 
+  \left(x-3 \right)\left(x+1\right)=0 \sRarrow 
+  x_1=-1;~x_2=+3\)
+\item 
+\funzioneassociata{\(y = x^2-2x-3 \quad \rightarrow\)}
+                  {\parabolaamadma{-1}{+3}}
+\end{enumerate}
+
+\end{esempio}
+
+Una volta studiato il segno del polinomio, risolvere una disequazione nella 
+forma \(f(x) \lessgtr 0\) consiste nell'aggiungere un ulteriore passo 
+piuttosto banale: individuare l'insieme soluzione.
+
+% % \newpage %-----------------------------------------
+
+% TODO: Suddividere nei vari esempi!
+\begin{esempio}{}{}
+Risolvi le seguente disequazioni utilizzando lo studio del segno del trinomio 
+di secondo grado.
+
+\begin{enumerate}
+\item \(x^2+x-2>0\)
+
+\begin{enumerate}
+ \item
+  Equazione Associata:~~\(x^2+x-2=0 \sRarrow 
+\left(x-1 \right)\left(x+2\right)=0 \sRarrow 
+x_1=-2;~x_2=+1\)
+ \item 
+ \funzioneassociata{\(y = x^2+x-2 \quad \rightarrow\)}
+                   {\parabolaamadma{-2}{+1}}
+ \item 
+Insieme soluzione: \\
+ \insiemesoluzione{\inteaa{4}{-1.5}{+1.5}{-2}{+1}}
+                  {\(x<-2 \sor x>+1\)}
+                  {\(\intervaa{-\infty}{-2}~\cup~\intervaa{1}{-\infty}\)}
+\end{enumerate}
+
+\item \(x^2-4x+4\leqslant0\)
+
+\begin{enumerate}
+ \item
+  Equazione Associata:~\(x^2-4x+4=0 \sRarrow 
+                        \left(x-2 \right)^2=0 \sRarrow 
+                        x_{1,2}=+2\)
+ \item 
+ \funzioneassociata{\(y = x^2-4x+4 \quad \rightarrow\)}
+                   {\parabolaamadz{+2}}
+ \item 
+Insieme soluzione: \\
+ \insiemesoluzione{\intpunto{4}{0}{+2}{blue}}
+                  {\(x=2\)}
+                  {\(\lbrace +2 \rbrace\)}
+\end{enumerate}
+
+\item \(-x^2+2x-7>0\)
+
+\begin{enumerate}
+ \item
+  Equazione Associata:~\(-x^2+2x-7=0 \sRarrow 
+                        \dfrac{\Delta}{4} = -6 \sRarrow 
+                        \text{N.H.S.R.}\)
+ \item 
+ \funzioneassociata{\(y = -x^2+2x-7 \quad \rightarrow\)}
+                   {\parabolaamidmi}
+ \item 
+Insieme soluzione: \\
+ \insiemesoluzione{\intv{8}}
+                  {\(\nexists x \in \R\)}
+                  {\(\emptyset\)}
+\end{enumerate}
+
+% \newpage %------------------------------------------------------
+\item \(2x^2-5 \leqslant 0\)
+
+\begin{enumerate}
+ \item
+  Equazione Associata:~\(2x^2-5=0 \sRarrow 
+                        x_{1, 2}= \mp \sqrt{\dfrac{5}{2}}\)
+ \item 
+ \funzioneassociata{\(y = 2x^2-5 \quad \rightarrow\)}
+  {\parabolaamadma{-\sqrt{\dfrac{5}{2}}}{+\sqrt{\dfrac{5}{2}}}}
+ \item
+Insieme soluzione: \\
+\insiemesoluzione
+  {\inticc{4}{-1.5}{+1.5}{-\sqrt{\frac{5}{2}}}{+\sqrt{\frac{5}{2}}}}
+  {\(-\sqrt{\dfrac{5}{2}} \leqslant x \leqslant +\sqrt{\dfrac{5}{2}}\)}
+  {\(\intervcc{-\sqrt{\dfrac{5}{2}}}{+\sqrt{\dfrac{5}{2}}}\)}
+\end{enumerate}
+
+\item \(-3x^2 + 2x > 0\)
+
+\begin{enumerate}
+ \item
+  Equazione Associata:~\(-3x^2 + 2x=0 \sRarrow 
+                        x_{1}= 0 \sand x_{2}= \dfrac{2}{3}\)
+ \item 
+ \funzioneassociata
+   {\(y = -3x^2 + 2x \quad \rightarrow\)}
+   {\parabolaamidma{0}{+\dfrac{2}{3}}}
+ \item 
+Insieme soluzione: \\
+ \insiemesoluzione
+   {\intiaa{4}{-1.5}{+1.5}{0}{+\frac{2}{3}}}
+   {\(0 < x < +\dfrac{2}{3}\)}
+   {\(\intervaa{0}{+\dfrac{2}{3}}\)}
+\end{enumerate}
+
+\end{enumerate}
+\end{esempio}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Segno del trinomio a coefficienti letterali}
+% Consideriamo il trinomio \(t=kx^2+3x-7\) di secondo grado avente il primo 
+% coefficiente dipendente dal parametro \(k\). Come possiamo stabilire il 
+% segno 
+% di 
+% questo trinomio, al variare di \(k\(?
+% Sappiamo che stabilire il segno di un trinomio significa determinare i 
+% valori 
+% reali che attribuiti alla variabile indipendente \(x\) rendono il trinomio 
+% positivo, nullo o negativo. Evidentemente per valori reali diversi di \(k\) 
+% avremo 
+% una diversa disequazione da risolvere; dobbiamo dunque cercare di 
+% analizzare 
+% come varia il trinomio a seconda dei valori di \(k\) e in seguito studiare 
+% il 
+% segno del trinomio ottenuto. Questa analisi di situazioni diverse è la 
+% \textit{discussione del trinomio a coefficienti parametrici}.
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \conclusione Una disequazione di secondo grado si presenta sempre in una 
+% delle 
+% seguenti forme: \({ax}^2+{bx}+c>0\), \({ax}^2+{bx}+c\geqslant 0\), 
+% \({ax}^2+{bx}+c<0\), 
+% \({ax}^2+{bx}+c\leqslant 0\) possiamo sempre supporre positivo il primo 
+% coefficiente 
+% e, 
+% anche se incompleta, per l'equazione associata possiamo sempre pensare ai 
+% tre 
+% casi generati dal segno del discriminante \(\Delta =b^2-4{ac}\). Pertanto 
+% avremo:
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{esempio}{}{}
+% Stabilire il segno di \(t=kx^2+3x-7\) al variare di \) k \).
+% 
+% Prendiamo in considerazione il segno del primo coefficiente e il segno 
+% del 
+% discriminante dell'equazione associata \(kx^2+3x-7=0\). Il primo 
+% coefficiente è 
+% maggiore di zero per \(k>0\). Il discriminante \(\Delta =9+28k\) è 
+% maggiore 
+% di 
+% zero 
+% per \(k>-\frac 9{28}\). Rappresentiamo la loro reciproca situazione:
+% \begin{center}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{threeparttable}
+% \begin{tabular}{lllll}
+% \toprule
+% Delta & \(ax^2+bx+c>0\)& \(ax^2+bx+c\geqslant0\(& \(ax^2+bx+c<0\) & 
+% \(ax^2+bx+c\leqslant0\)\\
+% \midrule
+%  \(\Delta >0^{*}\(& \) x<x_1\vee x>x_2 \) & \) x\leqslant x_1\vee 
+% x\geqslant % x_2 % \(& \) 
+% x_1<x<x_2 
+% \(&\) x_1\leqslant x\leqslant x_2 \(\\
+% \(\Delta =0^{**}\)& \(\forall x\in \insR-\{x_1\} \) & \) \forall x\in 
+% \insR 
+% \(& \) 
+% \IS=\emptyset \(&\) x=x_1=x_2 \(\\
+% \(\Delta <0^{***}\(&\) \forall x\in \insR \) & \) \forall x\in \insR \(& 
+% \) 
+% \IS=\emptyset \(&\) \IS=\emptyset \(\\
+% \bottomrule
+% \end{tabular}
+% \begin{tablenotes}
+% \item [*] L'equazione associata ha 2 soluzioni reali distinte: 
+% \(x=x_1\vee 
+% x=x_2\).
+% \item [**] L'equazione associata ha 2 soluzioni reali coincidenti: 
+% \(x=x_1=x_2\).
+% \item [***] L'equazione associata non ha soluzioni reali.
+% \end{tablenotes}
+% \end{threeparttable}
+% \end{center}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  \input{\folder lbr/fig019_seg.pgf}
+% % \end{center}
+% \vspazio\ovalbox{\risolvii \ref{ese:4.1}, \ref{ese:4.2}, \ref{ese:4.3}, 
+% \ref{ese:4.4}, \ref{ese:4.5}, \ref{ese:4.6}}
+% 
+% \end{esempio}
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Disequazioni polinomiali di grado superiore}
+\label{sec:diseq_grado_superiore}
+
+\begin{procedura}{}{}
+Risolvere le disequazioni di grado superiore:
+\begin{enumeratea}
+\item scomponi il polinomio di grado \(n\) in fattori di primo e secondo 
+grado;
+\item studia il segno dei singoli fattori;
+\item costruisci la tabella dei segni;
+\item applica la regola dei segni per calcolare il segno della funzione 
+polinomiale;
+\item cerca gli intervalli in cui il polinomio dato assume il segno 
+richiesto.
+\item rappresenta, con i diversi metodi visti, gli intervalli che 
+ risolvono la disequazione.
+\end{enumeratea}
+\end{procedura}
+
+Applichiamo la procedura ai seguenti esempi.
+
+% \newpage %----------------------------------------------
+
+\begin{esempio}{}{}
+ \[p(x)=-2x^3+3x^2+8x-12 \leqslant 0\]
+
+In questo caso dobbiamo risolvere una disequazione di terzo grado. 
+Possiamo ridurre la difficoltà scomponendo in fattori il polinomio in modo da 
+ottenere il prodotto di più polinomi di primo grado:
+\begin{align*} \small
+p(x) = -2x^3+3x^2+8x-12 &= x^2(-2x+3)-4(-2x+3) = (x^2-4)(-2x+3)
+\end{align*}
+A questo punto possiamo studiare il segno dei fattori e, applicando la regola 
+dei segni di un prodotto, trovare il segno del polinomio iniziale e risolvere 
+la disequazione.
+
+Studiamo il segno di ogni singolo fattore:
+\begin{itemize}
+
+ \item segno di \(x^2-4\)\\
+ \segnofatt
+   {\(x^2-4=0 \sRarrow x=\mp 2\)}
+   {\(y=x^2-4\)}
+   {parabola concavità verso l'alto, interseca l'asse~x in -2 e +2}
+   {\parabolaamadma{-2}{+2}}
+ \item  segno di \(-2x+3\)\\
+ \segnofatt
+   {\(-2x+3=0 \sRarrow x=\dfrac{3}{2}\)}
+   {\(y=-2x+3\)}
+   {retta decrescente con zero in~3/2}
+   {\segnidec{\dfrac{3}{2}}}
+ \item 
+ \vspace{-1em} 
+ Con la regola dei segni calcolo il segno del prodotto:
+ \vspace{-1em}
+
+\begin{inaccessibleblock}[Grafo con i segni]
+  \begin{center}
+  \grrsegnoprodottoa
+  \end{center}
+\end{inaccessibleblock}
+
+ \item 
+ \vspace{-1em}
+ Quindi i valori di~\(x\) che rendono vera la disequazione, cioè i 
+valori che rendono~\(f(x)\) non positivo, sono quelli 
+che si trovano a sinistra di~\(-2\) oppure che si trovano a destra 
+di~\(+3\).\\
+Insieme soluzione: \\
+ \insiemesoluzione
+   {\solprodottoa}
+   {\(-2 \leqslant x \leqslant +\dfrac{3}{2} \sor x \geqslant +2\)}
+   {\(\intervcc{-2}{+\dfrac{3}{2}}~\cup~\intervca{+2}{+\infty}\)}
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Data la disequazione 
+\[-2x(3-2x)-3x^2\left(2-\dfrac{3}{2}x\right) \geqslant 
+  5\left(2x^2-\dfrac{3}{10}x\right)\] 
+determina il suo \(\IS\)
+
+Osserviamo che la disequazione proposta è polinomiale di terzo grado; 
+esegui i calcoli per portarla alla forma \(p(x)\geqslant 0\): 
+\vspace{3em}
+
+Scomponendo in fattori si ottiene: \(x\cdot (3x^2-8x-3)\geqslant 0\). 
+
+A questo punto possiamo studiare il segno dei fattori e, applicando la regola 
+dei segni di un prodotto, trovare il segno del polinomio iniziale e risolvere 
+la disequazione.
+
+Studiamo il segno di ogni singolo fattore:
+\begin{itemize}
+
+ \item segno di \(3x^2-8x-3\)\\
+ \segnofatt
+   {\(3x^2-8x-3=0\)}
+   {\(y=3x^2-8x-3\)}
+   {parabola concavità verso l'alto, interseca l'asse~x in \dots}
+   {\parabolaamadma{}{}}
+ \item  segno di \(x\)\\
+ \segnofatt
+   {\(x=0\)}
+   {\(y=x\)}
+   {retta crescente con zero in\dots}
+   {\segnicre{0}}
+ \item 
+ \vspace{-1em}
+ Con la regola dei segni calcolo il segno del prodotto:
+
+\begin{inaccessibleblock}[Grafo con i segni]
+  \begin{center}
+  \grrsegnoprodottob
+  \end{center}
+\end{inaccessibleblock}
+
+ \item 
+ \vspace{-1em}
+ Quindi i'\(\IS\) è:\\
+ \insiemesoluzione{\intv{8}}{}{}
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Un numero è tale che aggiungendo al suo cubo il suo quadruplo si ottiene 
+un numero maggiore del triplo del suo quadrato aumentato di~\(12\). Determina 
+l'insieme soluzione del problema.
+
+La richiesta del problema implica la ricerca dell'Insieme Soluzione della 
+disequazione \(x^3+4x>3x^2+12\), di terzo grado nella variabile~\(x\). 
+Scriviamo la disequazione in forma canonica, applicando i principi di 
+equivalenza: 
+\[x^3-3x^2+4x-12>0\] 
+Si tratta di una disequazione polinomiale di terzo grado.
+
+Procediamo nella scomposizione in fattori del polinomio:
+\[p(x)=x^3-3x^2+4x-12 = x^2 \left(x-3\right)+4 \left(x-3\right) =
+      \left(x^2+4\right) \left(x-3\right)\]
+Ora possiamo determinare il segno dei vari fattori, ma se siamo 
+sufficientemente acuti e pigri possiamo osservare che il primo fattore sarà 
+sempre positivo (perché?) quindi il segno del polinomio è equivalente al 
+segno del secondo fattore che si determina molto rapidamente\dots
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvi la disequazione: \(1-81x^4<0\)
+
+Il binomio a primo membro può essere scomposto in fattori irriducibili in due 
+passi:
+\[1-81x^4 = \left(1-9x^2\right)\left(1+9x^2\right)=
+  \left(-9x^2+1\right)\left(9x^2+1\right)\]
+Anche qui possiamo usare un po' di furbizia e calcolare la soluzione molto 
+rapidamente.
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere la disequazione: \(x^4-4x^2-45 \geqslant 0\)
+
+Il trinomio al primo membro è di quarto grado, ma applicando la 
+sostituzione: 
+\(x^2=z\)
+
+può essere ricondotto al trinomio di secondo grado:
+\(z^2-4z-45 \geqslant 0\)
+
+la cui scomposizione in fattori risulta:
+\(\left(z-9\right)\left(z+5\right)\)
+
+quindi la disequazione assegnata diventa: 
+\((x^2-9)(x^2+5) \geqslant 0\)
+
+Completa la soluzione della disequazione.
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:4.32}, \ref{ese:4.33}, \ref{ese:4.34}, 
+% \ref{ese:4.35}, \ref{ese:4.36}, \ref{ese:4.37}, \ref{ese:4.38}, 
+% \ref{ese:4.39}, 
+% \ref{ese:4.40}, \ref{ese:4.41}, \ref{ese:4.42}, \ref{ese:4.43}, \ref 
+% {ese:4.44},}
+% 
+% \vspazio\ovalbox{\ref{ese:4.45}, \ref{ese:4.46}, \ref{ese:4.47}, 
+% \ref{ese:4.48}, 
+% \ref{ese:4.49}, \ref{ese:4.50}, \ref{ese:4.51}, \ref{ese:4.52}, 
+% \ref{ese:4.53}, 
+% \ref{ese:4.54}, \ref{ese:4.55}, \ref{ese:4.56}, \ref{ese:4.57}}
+
+% % \newpage %----------------------------------------------
+
+\section{Disequazioni fratte}
+\label{sec:diseq_fratte}
+
+Ricordiamo che una disequazione è \emph{frazionaria} o \emph{fratta} quando 
+il suo denominatore contiene l'incognita. 
+
+\begin{osservazione}{}{}
+ \begin{itemize} [nosep]
+\item studiare il segno di una espressione letterale significa stabilire in 
+quale insieme si trovano i valori della variabile che rendono 
+l'espressione negativa, nulla o positiva;
+\item ogni espressione contenente operazioni tra frazioni algebriche ha in 
+generale come risultato una frazione algebrica;
+\item nello studiare il segno terremo conto anche del campo di esistenza 
+della funzione.
+\end{itemize}
+\end{osservazione}
+
+Per risolvere una disequazione fratta si può applicare la seguente procedura 
+quasi identica a quella che si utilizza per le funzioni scomponibili in 
+fattori.
+
+\begin{procedura}{}{}
+Soluzione di una disequazione frazionaria:
+\begin{enumeratea}
+\item trasporta tutti i termini al primo membro e scrivilo sotto forma di 
+ un'unica frazione:\\
+\[\frac{N(x)}{D(x)} \lessgtr 0\]
+\item scomponi in fattori numeratore e denominatore;
+\item studia il segno di ogni fattore;
+\item costruisci la tabella dei segni, 
+\emph{ricordandosi di indicare con una crocetta gli zeri del denominatore};
+\item applica la regola dei segni per calcolare il segno della funzione 
+razionale;
+\item individua gli intervalli in cui la frazione assume il segno richiesto;
+\item rappresenta, con i diversi metodi visti, gli intervalli che 
+ risolvono la disequazione.
+\end{enumeratea}
+\end{procedura}
+
+Vediamo attraverso alcuni esempi come procedere.
+
+\begin{esempio}{}{}
+ \[\frac{2}{x-7} \geqslant \frac{3}{x+4}\]
+Per prima cosa dobbiamo scrivere la disequazione in forma normale:
+ \[\frac{2}{x-7} - \frac{3}{x+4} \geqslant 0 \Rightarrow 
+   \frac{2(x+4) - 3(x-7)}{(x-7)(x+4)} = 
+   \frac{2 x +8 -3x +21}{(x-7)(x+4)} =
+   \frac{-x +29}{x^2-3x-28} \geqslant 0\]
+A questo punto possiamo studiare il segno dei fattori e, applicando la regola 
+dei segni di un prodotto, trovare il segno della disequazione fratta.
+
+\begin{itemize}
+ \item Studiamo il segno di ogni singolo fattore:
+
+\begin{itemize}
+
+ \item  segno di \(-x +29\)\\
+ \segnofatt
+   {\(-x +29=0 \sRarrow x=29\)}
+   {\(y=-x +29\)}
+   {retta decrescente con zero in~29}
+   {\segnidec{29}}
+ \item segno di \(x^2-3x-28\)\\
+ \segnofatt
+   {\(x^2-3x-28=0 \sRarrow \) \\
+  \(x_1=-4 \sor x_2=7\)}
+   {\(y=x^2-3x-28\)}
+   {parabola concavità verso l'alto, interseca l'asse~x in -4 e +7}
+   {\parabolaamadma{-4}{+7}}
+\end{itemize}
+ \item Con la regola dei segni calcoliamo il segno del prodotto:
+\begin{inaccessibleblock}[Grafo con i segni]
+  \begin{center}
+  \segnofrazionea
+  \end{center}
+\end{inaccessibleblock}
+ \item 
+ Quindi i valori di~\(x\) che rendono vera la disequazione, cioè 
+i valori  che rendono~\(f(x)\) non negativo, sono quelli 
+  che si trovano a sinistra di~\(-4\) oppure che sono compresi 
+  tra~\(+7\).\\
+ \insiemesoluzione
+   {\solfrazionea}
+   {\(x < -4 \sor 7 < x \leqslant 29\)}
+   {\(\intervaa{-\infty}{-4}~\cup~\intervac{7}{29}\)}
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Data l'espressione 
+\[E=\dfrac{4}{4x^2-1}+\dfrac {1}{2x+1}+\dfrac{x}{1-2x}\]
+determinarne il segno, al variare di \(x\) in \(\R\).
+
+% % \newpage %----------------------------
+
+% \emph{Strategia risolutiva}
+\begin{itemize}
+
+\item Dopo aver osservato che il denominatore comune è:
+\(4x^2-1 =\tonda{2x-1}\tonda{2x+1}\), scriviamo 
+l'espressione sotto forma di un'unica frazione:
+\[E=\dfrac{4+2x-1 - x \tonda{2x+1}}{\tonda{2x-1}\tonda{2x+1}} =
+\dfrac{-2x^2+x+3}{4x^2-1}\]
+
+A questo punto possiamo studiarne il segno.
+
+ \item Studiamo il segno di ogni singolo fattore:
+
+\begin{itemize}
+
+ \item  segno di \(-2x^2+x+3\)\\
+ \segnofatt
+   {\(-2x^2+x+3=0 \sRarrow\)\\
+  \(x_1=-1 \sor x_1=\dfrac{3}{2}\)}
+   {\(y=-2x^2+x+3\)}
+   {parabola concavità verso il basso, interseca l'asse~x in -1 e 3/2}
+   {\parabolaamidma{-1}{\frac{3}{2}}}
+ \item segno di \(4x^2-1\)\\
+ \segnofatt
+   {\(4x^2-1=0 \sRarrow \) \\
+  \(x_{1,2}=\mp\dfrac{1}{2}\)}
+   {\(y=4x^2-1\)}
+   {parabola concavità verso l'alto, interseca l'asse~x in -1/2 e +1/2}
+   {\parabolaamadma{-\frac{1}{2}}{+\frac{1}{2}}}
+\end{itemize}
+ \item Riporta i segni del numeratore e del denominatore e calcola
+il segno della frazione:
+
+\begin{inaccessibleblock}[Grafo con i segni]
+  \begin{center}
+  \segnofrazioneb
+  \end{center}
+\end{inaccessibleblock}
+\item 
+ \insiemesoluzione{\intv{8}}{}{}
+\end{itemize}
+\end{esempio}
+
+\begin{esempio}{}{}
+Determina l'Insieme Soluzione della disequazione fratta:\quad 
+\(3-\dfrac{1}{2x+1} \geqslant \dfrac{1}{1-x}\)
+
+\begin{itemize}
+
+\item Dopo aver osservato che il denominatore comune è:
+\[\tonda{2x+1}\tonda{-x+1} = -2x^2 +2x -x +1 = -2x^2 +x +1\]
+scrivi l'espressione sotto forma di un'unica frazione:
+\[3-\dfrac{1}{2x+1} - \dfrac{1}{1-x} =
+  \dfrac{3 \tonda{-2x^2 +x +1} - \tonda{-x+1} - \tonda{2x+1}}
+        {\tonda{2x+1}\tonda{-x+1}} =\]
+\[\dfrac{-6x^2 +3x +3 +x-1 -2x-1}
+        {\tonda{2x+1}\tonda{-x+1}} = 
+  \dfrac{-6x^2 +2x +1}
+        {-2x^2 +x +1} \geqslant 0\]
+A questo punto possiamo studiarne il segno.
+
+ \item Studia il segno di ogni singolo fattore:
+
+\begin{itemize}
+
+ \item  segno di \(-6x^2 +2x +1\)\\
+ \segnofatt
+   {\(-6x^2 +2x +1=0 \sRarrow\)}
+   {\(y=-6x^2 +2x +1\)}
+   {[parabola concavità verso il basso, }
+   {\parabolaamidma{\frac{1-\sqrt 7}{6}}{\frac{1+\sqrt 7}{6}}}
+ \item segno di \(-2x^2 +x +1\)\\
+ \segnofatt
+   {\(-2x^2 +x +1=0 \sRarrow \) \\
+  \(x_{1,2}=\mp\dfrac{1}{2}\)}
+   {\(y=-2x^2 +x +1\)}
+   {parabola concavità verso il basso}
+   {\parabolaamidma{}{}}
+\end{itemize}
+
+ \item Riporta i segni del numeratore e del denominatore e calcola
+il segno della frazione:
+
+\begin{inaccessibleblock}[Grafo con i segni]
+\vspace{2em}
+  \begin{center}
+  \segnofrazionec
+  \end{center}
+\end{inaccessibleblock}
+
+ \item 
+ \insiemesoluzione{\intv{8}}{}{}
+\end{itemize}
+\end{esempio}
+
+% \vspazio\ovalbox{\risolvii \ref{ese:4.58}, \ref{ese:4.59}, \ref{ese:4.60}, 
+% \ref{ese:4.61}, \ref{ese:4.62}, \ref{ese:4.63}, \ref{ese:4.64}, 
+% \ref{ese:4.65}, 
+% \ref{ese:4.66}, \ref{ese:4.67}, \ref{ese:4.68}, \ref{ese:4.69}, \ref 
+% {ese:4.70},}
+% 
+% \vspazio\ovalbox{\ref{ese:4.71}, \ref{ese:4.72}, \ref{ese:4.47}, 
+% \ref{ese:4.73}, 
+% \ref{ese:4.74}}
+
+\section{Sistemi di disequazioni}
+\label{sec:diseq_sistemi}
+
+Ricordiamo che risolvere un sistema di disequazioni significa trovare 
+l'insieme dei numeri reali che sono le soluzioni comuni alle disequazioni che 
+lo compongono, cioè l'intersezione delle soluzioni delle singole 
+disequazioni. 
+Indicate con \(d_{1}, d_{2}, \ldots, d_n\) le disequazioni che formano 
+il sistema e \(\IS_{1}, \IS_{2}, \ldots,\IS_n\) i rispettivi insieme 
+soluzione, la soluzione del sistema indicata con \(\IS\) è data da 
+\[\IS=\IS_1 \cap \IS_2 \cap \ldots \cap \IS_n\]
+
+Per risolvere un sistema di disequazioni, bisogna quindi risolvere ogni 
+singola disequazione e poi operare l'intersezione fra questi insiemi, cioè 
+trovare i valori che hanno in comune.
+
+\begin{osservazione}{}{}
+ Nelle singole disequazioni non occorre scrivere le soluzioni nei diversi 
+metodi, basta scriverla in forma grafica.
+\end{osservazione}
+
+% % \newpage %---------------------------------
+
+\begin{esempio}{}{}
+ 
+Risolvi il seguente sistema di disequazioni:
+\[\sistema{
+    2x^3+3x^2-18x-27 > 0 & D_1\\
+    \dfrac{-x^2 -2x+15}{4x^2-9} \leqslant 0 & D_2
+  }
+\]
+Se scomponiamo in fattori i diversi polinomi ci risulterà più facile 
+risolvere le equazioni associate.
+\[\sistema{
+    \tonda{x^2-9} \tonda{2x+3} > 0 & D_1\\
+    \dfrac{-\tonda{x-3}\tonda{x+5}}{\tonda{2x-3}\tonda{2x+3}} \leqslant 0 & 
+D_2
+  }
+\]
+Risolviamo una disequazione alla volta studiando i segni dei polinomi:
+
+\begin{itemize}
+ \item \(D_1: \tonda{2x+3} \tonda{x^2-9}>0\)
+
+\begin{minipage}{.44\textwidth}
+Tenendo conto degli zeri dei polinomi, della pendenza della retta associata 
+e della concavità della parabola associata possiamo risolvere la disequazione 
+usando il seguente grafo:
+\end{minipage}
+\hfill
+\begin{minipage}{.54\textwidth}
+\begin{center} \segnosistemaaa \end{center}
+\end{minipage}
+
+ \item \(D_2: \dfrac{-x^2 -2x+15}{4x^2-9} \leqslant 0\)
+
+Anche in questo caso, dato che abbiamo già scomposto in fattori possiamo 
+riconoscere che gli zeri del numeratore sono:
+\(\graffa{-5;~3}\) 
+e gli zeri del denominatore sono:
+\(\graffa{-\frac{3}{2};~+\frac{3}{2}}\) 
+
+\affiancati{.29}{.69}{
+La concavità della prima parabola è verso il basso, 
+la concavità della seconda è verso l'alto otteniamo così il grafo:
+}{
+\begin{center} \segnosistemaab \end{center}
+}
+\end{itemize}
+
+% \begin{minipage}{.49\textwidth}
+Ora riportiamo su un grafo le soluzioni delle due disequazioni.Il grafo deve 
+anche avere un asse~x sul quale indicare l'intersezione dei due insiemi 
+soluzione:
+% \end{minipage}
+% \hfill
+% \begin{minipage}{.49\textwidth}
+\begin{center} \grrsistemaa \end{center}
+% \end{minipage}
+% 
+% Anche in questo caso, dato che abbiamo già scomposto in fattori possiamo 
+% riconoscere che gli zeri del numeratore sono:
+% \(\graffa{-5;~3}\) 
+% e gli zeri del denominatore sono:
+% \(\graffa{-\dfrac{3}{2};~+\dfrac{3}{2}}\) 
+% 
+% La concavità della prima parabola è verso il basso, 
+% la concavità della seconda è verso l'alto otteniamo così il grafo:
+% 
+% \begin{center} \segnosistemaab \end{center}
+% 
+% \end{itemize}
+% 
+% \begin{minipage}{.49\textwidth}
+% Ora riportiamo su un grafo le soluzioni delle due disequazioni. 
+% Il grafo deve 
+% anche avere un asse~x sul quale indicare l'intersezione dei due insiemi 
+% soluzione:
+% \end{minipage}
+% \hfill
+% \begin{minipage}{.49\textwidth}
+% \begin{center} \sistemaa \end{center}
+% \end{minipage}
+
+Possiamo ora rappresentare l'insieme soluzione con gli altri metodi che 
+conosciamo:
+
+\begin{minipage}{.49 \linewidth}
+\[x \leqslant -5 \sor -\dfrac{3}{2} < x < +\dfrac{3}{2}\]
+\end{minipage}
+\hfill
+\begin{minipage}{.49 \linewidth}
+\[\intervac{-\infty}{-5}~\cup~\intervaa{-\dfrac{3}{2}}{+\dfrac{3}{2}}\]
+\end{minipage}
+\end{esempio}
+
+% % \newpage %---------------------------------
+
+\begin{esempio}{}{}
+ 
+In quest'altro esempio vogliamo calcolare l'insieme di esistenza della 
+seguente funzione:
+
+\[y = \sqrt{\dfrac{-x^2 +3x +21}{x-7}} + \sqrt{\dfrac{-x -5}{-x^2 +16}}
+\]
+
+Per poter calcolare una radice quadrata nei numeri reali, il radicando deve 
+essere non negativo. Ci sono due radici quindi abbiamo due condizioni:
+
+\begin{minipage}{.49 \linewidth}
+Le due condizioni:
+ \[\sistema{
+    \dfrac{-x^2 +3x +21}{x-7} \geqslant 0 & C_1\\
+    \dfrac{-x -5}{-x^2 +16} \geqslant 0 & C_2
+  }
+\]
+\end{minipage}
+\begin{minipage}{.49 \linewidth}
+Lo stesso sistema con i polinomi scomposti in fattori:
+\[\sistema{
+    \dfrac{-\tonda{x+4} \tonda{x-7}}{x-7} \geqslant 0 \\
+    \dfrac{-x -5}{-\tonda{x -4} \tonda{x+4}} \geqslant 0
+  }
+\]
+\end{minipage}
+
+% \newpage %---------------------------------
+
+% \bigskip
+% \vspace{.5em}
+Risolviamo una disequazione alla volta studiando i segni dei polinomi:
+
+\begin{itemize}
+ \item \(C_1: \dfrac{-x^2 +3x +21}{x-7} \geqslant 0\)
+
+Osservando i vari polinomi scomposti in fattori possiamo ricavare gli zeri 
+del numeratore: \(\graffa{-4:~+7}\) e del denominatore: \(\graffa{+7}\)
+
+\begin{minipage}{.49\textwidth}
+Osservando il trinomio e il binomio possiamo vedere che la concavità della 
+parabola al numeratore è verso il basso e la retta al 
+denominatore è crescente. Possiamo così ricavare il grafo a fianco.
+\end{minipage}
+\hfill
+\begin{minipage}{.49\textwidth}
+\begin{center} \segnosistemaba \end{center}
+\end{minipage}
+
+% \vspace{-.5em}
+% \vspace{-.5em}
+
+ \item \(C_2: \dfrac{-x -5}{-x^2 +16} \geqslant 0\)
+
+\begin{minipage}{.49\textwidth}
+Anche in questo caso, dato che abbiamo già scomposto in fattori possiamo 
+riconoscere che gli zeri del numeratore sono:
+\(\graffa{-5}\) 
+e gli zeri del denominatore sono:
+\(\graffa{-4;~+4}\) 
+
+La retta, al numeratore, è decrescente e 
+la concavità della parabola, al denominatore, è verso il basso, quindi 
+otteniamo il grafo:
+\end{minipage}
+\hfill
+\begin{minipage}{.49\textwidth}
+\begin{center} \segnosistemabb \end{center}
+\end{minipage}
+% \vspace{-.5em}
+% \vspace{-.5em}
+
+\end{itemize}
+
+\begin{minipage}{.49\textwidth}
+Ora riportiamo su un grafo le soluzioni delle due disequazioni.Il grafo deve 
+anche avere un asse~x sul quale indicare l'intersezione dei due insiemi 
+soluzione:
+\end{minipage}
+\hfill
+\begin{minipage}{.49\textwidth}
+\begin{center} \grrsistemab \end{center}
+\end{minipage}
+% \vspace{-.5em}
+% \vspace{-.5em}
+L'espressione precedente dà risultati reali solo per valori di~x compresi 
+tra~\(-5\) e \(-4\):
+
+\begin{minipage}{.49 \linewidth}
+\[-5 \leqslant x < -4\]
+\end{minipage}
+\hfill
+\begin{minipage}{.49 \linewidth}
+\[\intervca{-5}{-4}\]
+\end{minipage}
+
+\end{esempio}

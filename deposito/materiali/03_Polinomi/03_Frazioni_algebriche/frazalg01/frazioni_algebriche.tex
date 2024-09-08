@@ -7,7 +7,7 @@
 \chapter{Frazioni algebriche}
 
 % \begin{wrapfloat}{figure}{r}{0pt}
-% \includegraphics[scale=0.35]{img/fig000_.png}
+% \includegraphics[scale=0.35]{\folder img/fig000_.png}
 % \caption{...}
 % \label{fig:...}
 % \end{wrapfloat}
@@ -30,7 +30,7 @@ prima di tutto scomporli in fattori
 irriducibili\indc{polinomio/polinomi}{fattori irriducibili di un polinomio}.
 
 \begin{osservazione}{}{} 
-La cosa non è semplice poiché non si può essere sicuri di aver 
+La cosa non è semplice poiché non sempre si può essere sicuri di aver 
 trovato il massimo comune divisore o il minimo comune multiplo
 per la difficoltà di decidere se un polinomio è irriducibile: 
 prudentemente si dovrebbe parlare di divisore comune e di multiplo comune.
@@ -41,9 +41,24 @@ polinomio~\(B\)\indc{polinomio/polinomi}{polinomio multiplo di polinomio} se
 esiste un polinomio~\(C\) per il quale~\(A=B\cdot C\) in questo caso diremo
 anche che~\(B\) è divisore del polinomio~\(A\).
 
-\subsection{Massimo Comun Divisore}\indc{polinomio/polinomi}{MCD di polinomi}
-Dati due o più polinomi, il massimo comune divisore il più grande polinomio 
-che è divisore di tutti.
+\subsection{Massimo Comun Divisore}
+\indc{polinomio/polinomi}{MCD di polinomi}
+
+\begin{definizione}{}{}
+Dati due o più polinomi, il massimo comune divisore è il polinomio 
+di grado maggiore che è divisore di tutti.
+\end{definizione}
+
+% \begin{definizione}{}{}
+% Dati due o più polinomi, il massimo comune divisore è il più grande 
+% polinomio che è divisore di tutti.
+% \end{definizione}
+% 
+% \begin{osservazione}{}{}
+% Con ``più grande'' (o ``più piccolo'') si intende ``di grado maggiore'' 
+% (o ``di grado minore'').
+% \end{osservazione}
+
 
 \begin{teorema}{}{}
 Dopo aver scomposto ciascun polinomio in fattori irriducibili, il massimo 
@@ -93,9 +108,13 @@ sono: \\
 \end{esempio}
 % \end{exrig}
 
-\subsection{Minimo comune multiplo}\indc{polinomio/polinomi}{mcm di polinomi}
-Dati due o più polinomi, il minimo comune multiplo il più piccolo polinomio 
-che è multiplo di tutti.
+\subsection{Minimo comune multiplo}
+\indc{polinomio/polinomi}{mcm di polinomi}
+
+\begin{definizione}{}{}
+Dati due o più polinomi, il minimo comune multiplo è il polinomio 
+di grado minore che è multiplo di tutti.
+\end{definizione}
 
 \begin{teorema}{}{}
 Dopo aver scomposto ciascun polinomio in fattori, il minimo comune multiplo 
@@ -168,7 +187,7 @@ una \indt{frazione algebrica}, cioè una frazione che ha un polinomio al
 numeratore e uno al denominatore.
 
 % \begin{wrapfloat}{figure}{r}{0pt}
-% \includegraphics[scale=0.35]{img/fig000_.png}
+% \includegraphics[scale=0.35]{\folder img/fig000_.png}
 % \caption{...}
 % \label{fig:...}
 % \end{wrapfloat}
@@ -274,17 +293,20 @@ Scomponendo in fattori il polinomio a primo membro:
 \(2 \tonda{\tonda{x+4}\tonda{x-2}}=0\),
 vediamo che il denominatore si annulla quando \(x=-4\) o \(x=+2\).
 Per questi due valori la funzione non è definita.
-% \begin{exrig}
+L'insieme di definizione della funzione precedente è quindi: 
+
+\central{\(\graffa{\forall x \in \R | x \ne -4 \sand x \ne +2}\)}
+
 \begin{esempio}{}{}
 Determinare le condizioni di esistenza di esistenza delle seguenti funzioni, 
 cioè studiare per quali valori delle variabili il denominatore è diverso da 
 zero.
 
 \begin{enumerate} [left=0mm]
-\item \(f(x)=\dfrac{1+x}{x} \srarrow \CE:~ x\neq~0\)
-\item \(f(x)=\dfrac{x}{x+3} \srarrow \CE:~ x+3 \neq 0 \sRarrow x \neq -3\)
 \item \(f(x)=\dfrac{3a+5b-7}{ab} \srarrow 
 \CE:~ ab \neq 0 \sRarrow a\neq~0 \stext{e} b\neq~0\)
+\item \(f(x)=\dfrac{1+x}{x} \srarrow \CE:~ x\neq~0\)
+% \item \(f(x)=\dfrac{x}{x+3} \srarrow \CE:~ x+3 \neq 0 \sRarrow x \neq -3\)
 \item \(f(x)=\dfrac{-6}{2x+5} \srarrow 
 \CE:~ 2x+5\neq~0 \sRarrow 2x \neq -5 \sRarrow x\neq -\dfrac{5}{2}\)
 \item \(f(x)=\dfrac{-x^{3}-8x}{x^{2}+2} \srarrow 
@@ -297,15 +319,15 @@ zero.
 \end{enumerate}
 \end{esempio}
 
-Ci sono dei casi più laboriosi da risolvere, quando il denominatore si 
-presenta nella forma di un polinomio non lineare.
+% Ci sono dei casi più laboriosi da risolvere, quando il denominatore si 
+% presenta nella forma di un polinomio non lineare.
 
 Ricordiamoci che negli insiemi numerici che stiamo usando, il risultato 
-di una moltiplicazione è zero se almeno uno dei fattori è zero:
+di una moltiplicazione è zero se almeno uno dei fattori è zero.
 
 \begin{teorema}{Legge di annullamento del prodotto}{}
-Nei numeri reali, il prodotto di più fattori è nullo se almeno uno dei 
-fattori è nullo\ind{annullamento del prodotto}.
+Nell'insieme dei numeri reali, il prodotto di più fattori è nullo se almeno 
+uno dei fattori è nullo\ind{annullamento del prodotto}.
 \end{teorema}
 
 Quando è possibile, dobbiamo scomporre in fattori il denominatore e studiare 
@@ -329,16 +351,16 @@ con l'espressione: \(x \neq \mp 2\).
 
 \begin{procedura}{}{}
 Determinare la condizione di esistenza di una frazione algebrica:
-\begin{enumeratea}
+\begin{enumerate}[nosep, label=\alph*)]
 \item scomporre in fattori il denominatore;
 \item calcolare gli zeri del denominatore;
 \item escludere i valori che annullano il denominatore.
-\end{enumeratea}
+\end{enumerate}
 \end{procedura}
 
-Nel proporre i prossimi esempi ed esercizi daremo per scontata la condizione 
-di esistenza delle frazioni proposte, a meno che non diventi necessario 
-discuterne.
+% Nel proporre i prossimi esempi ed esercizi daremo per scontata la 
+% condizione di esistenza delle frazioni proposte, a meno che non diventi 
+% necessario discuterne.
 % \ovalbox{\risolvii \ref{ese:19.1}, \ref{ese:19.2}, \ref{ese:19.3}, 
 % \ref{ese:19.4}}
 
@@ -361,6 +383,8 @@ rendono nullo il~\(\mcd\).
 % \begin{exrig}
 \begin{esempio}{}{}
 Semplificare~\(\dfrac{16x^{3}y^{2}z}{10xy^{2}}\)
+
+\vspace{-.5em}
 \[%\text{ con } x \ne 0 \stext{e} y \ne 0: \quad 
 \dfrac{\cancel{16}x^{\cancel{3}}\cancel{y^{2}}z}
       {\cancel{10}\cancel{x}\cancel{y^{2}}}=
@@ -447,6 +471,9 @@ Il tutto può essere scritto in un'unica espressione:
         {\cancel{(a-3)}\cdot (a+3)\cdot \tonda{a^{2}+9}}\stackrel{2}{=} 
   \dfrac{a-3}{ \tonda{a+3)(a^{2}+9}} \stackrel{3}{\stext{con}} 
   a \neq +3\]
+Dove nel passaggio 1 si scompone in fattori, nel passaggio 2 si semplifica, 
+nel passaggio 3 si dichiara per quali valori la funzione ottenuta è 
+effettivamente uguale a quella di partenza.
 \end{esempio}
 
 \begin{esempio}{}{}
@@ -741,7 +768,7 @@ Se~\(n\) è intero negativo la potenza con base diversa da zero è uguale alla
 potenza che ha per base il reciproco della base e per esponente l'opposto
 dell'esponente. 
 \( \tonda{\dfrac{A}{B}} ^{-n}=
-\tonda{\dfrac{B}{A}} ^{+n}\) con~\(A\neq~0\) e~\(B\neq~0\).
+\tonda{\dfrac{B}{A}} ^{+n} \sstext{con} A\neq~0\) e~\(B\neq~0\).
 
 Quindi deve esistere sia la frazione di partenza, sia il suo reciproco, cioè 
 dovranno essere diversi da zero sia il denominatore sia il numeratore.
@@ -761,7 +788,7 @@ Determinare~\(f = \tonda{\dfrac{x^{2}+5x+6}{x^{3}+x}} ^{-2}\)
 Quindi:
 \(\tonda{\dfrac{(x+2)\cdot (x+3)}{x\cdot  \tonda{x^2+1} }}^{-2}=
 \dfrac{x^2 \cdot \tonda{x^2+1}^2}{\tonda{x+2}^{2} \cdot \tonda{x+3}^2}
-\text{con} \sistema{x \neq 0 \\ x \neq -2 \\ x\neq-3}\).
+\sstext{con} \sistema{x \neq 0 \\ x \neq -2 \\ x\neq-3}\)
 \end{esempio}
 % \end{exrig}
 

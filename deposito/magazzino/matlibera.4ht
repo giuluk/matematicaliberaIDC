@@ -1,0 +1,71 @@
+\renewcommand\sol[1]{\space[Sol.: \(#1\)]}
+\renewcommand{\solt}[1]{\space[Sol.: #1]}
+\renewcommand{\solop}[1]{\space[Sol.: \(\ifsolall #1\else\phantom{#1}\fi\)]}
+\renewcommand{\solno}[1]{Sol.: \space\(\phantom{#1}\)}
+
+\renewcommand{\solfun}[3]{
+\par
+\footnotesize
+\(\bigg[Sol.: #1\bigg.\); \\
+\(f'(x)=#2\); \\
+\(\bigg.f''(x)=#3\bigg]\)
+\normalsize
+}
+
+\renewenvironment{htmulticols}[1]{}{}
+
+\renewcommand{\tab}{~~}
+
+\tcbset{
+esemstyle/.style={
+fonttitle=\bfseries\upshape, fontupper=\slshape,
+arc=0mm, colback=\coloresem!5!white, colframe=\coloresem!50!black,
+theorem style=plain, coltitle=\coloresem!30!black}
+}
+
+\AddToHook{env/enumeratees/before}{\normalfont}
+
+\NewConfigure{alternativetext}{4}
+% this will insert tags around the image environment and the alt text
+% \a:alternativetext - start of environment
+% \b:alternativetext - end of environment
+% \c:alternativetext - start of alttext
+% \d:alternativetext - end of alttext
+
+\renewenvironment{alternativetext}[1]
+{\a:alternativetext\c:alternativetext#1\d:alternativetext}
+{\b:alternativetext}
+
+% now we need to support hidding of the alt text
+% we can use TeX4ht options to decide whether we should hide it, or not
+\:CheckOption{blind}
+\if:Option
+% with this option, we will print the alt text
+% usage: $ make4ht filename.tex "mathjax,blind,<other options>"
+
+% we need to use a counter for unique id for each alt text
+\HAssign\alttext:count=0
+
+\Configure{alternativetext}
+{\ifvmode\IgnorePar\fi\EndP% close previous paragraph
+\gHAdvance\alttext:count by 1% update alt text id
+% see https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/img_role
+% we use the aria role to declare the environment as an image that is described by the alt text
+\HCode{<div class="alternativetext" role="img" aria-labelledby="alttext-\alttext:count"> }}
+{\ifvmode\IgnorePar\fi\EndP\HCode{</div>}}%  close the main environment
+{\HCode{<div class="description" id="alttext-\alttext:count">}}% this prints the alt text
+{\HCode{</div>}}
+
+% declare some styling for the alt text
+\Css{.alternativetext .description{
+font-size: 0.9rem;
+color: DarkGreen;
+}}
+\else
+% this will hide alt text using temporary box. it's contents will be newer shown
+\Configure{alternativetext}{}{}{\setbox0=\hbox\bgroup}{\egroup}
+\fi
+
+
+\Hinput{matliberagraf}
+\endinput

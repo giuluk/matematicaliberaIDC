@@ -54,7 +54,6 @@
         (A) -- (B) -- (OB) -- (OA)  -- cycle;
       \draw (A) -- (B) -- (OB) -- (OA)  -- cycle;
     \end{scope}
-
   }
 }
 
@@ -156,7 +155,6 @@
       \node [above, rotate=90] at (0, \a/2+\b/2) {$a-b$};
       \node at (\a/2+\b/2, \a/2+\b/2) {$a^2-b^2$};
     \end{scope}
-
   }
 }
 
@@ -273,9 +271,17 @@
   }
 }
 
+
+\newcommand{\cubobina}{% Cubo composto
+  \cubobin{3}{1}{0}
+}
+
+\newcommand{\cubobinb}{% Cubo scomposto
+  \cubobin{3}{1}{1.4}
+}
+
 \newcommand{\tartaglia}{
 \begin{tikzpicture}[x=9mm,y=5mm] % fig002_tart
-
   \tikzset{box/.style={
       minimum height=5mm,
       inner sep=.7mm,
@@ -303,7 +309,6 @@
     }
   }
 \end{tikzpicture}
-
 }
 
 \newcommand{\tartaglib}{
@@ -321,7 +326,6 @@
     link/.style={->,blue,line width=.3mm},
     plus/.style={text=red,font=\small\ttfamily}
   }
- 
   \node[box=odd] (p-0-0) at (0,0) {1};
   \foreach \linea in {1,...,4} {
     \node[box=odd] (p-\linea-0) at (-\linea/2,-\linea) {1};
@@ -362,8 +366,9 @@
 
 \newcommand{\funzpol}{
   \disegno[10]{
-    \rcomfpunti{-1}{+3}{-2}{+4}
-      {4*\x*\x*\x -10*\x*\x +6*\x}{blue!50!black}{-0.2, -0.1, ...,2}
+    \rcom{-1}{+3}{-2}{+4}
+    \fpunti{4*\x*\x*\x -10*\x*\x +6*\x}
+      {blue!50!black}{-0.2, -0.1, ...,2}
   }
 }
 
@@ -376,8 +381,8 @@
   \def \mima{7}
   \disegno[\dimdis]{
     \tkzInit[xmin=\mima-0.3,xmax=\mima+0.3,ymin=\mima-0.3,ymax=\mima+0.3]
-    \rcomfpunti{-\mima}{+\mima}{-\mima}{+\mima}{\fun}
-      {blue!50!black}{#2, ...,#3}
+    \rcom{-\mima}{+\mima}{-\mima}{+\mima}
+    \fpunti{\fun}{blue!50!black}{#2, ...,#3}
   }
 }
 
@@ -407,7 +412,6 @@
     \draw[fill=\frontcolor] (0,0) rectangle ++(\a, \b); 
     \draw[fill=\upcolor]
       (0, \b) -- (\cp, \b+\cp)-- (\a+\cp, \b+\cp)--(\a, \b);
-
 %     \node[below] at (\a/2,0) {a};
 %     \node[left] at (\a,5) {b};
 %     \node[below] at (8, 1) {c};

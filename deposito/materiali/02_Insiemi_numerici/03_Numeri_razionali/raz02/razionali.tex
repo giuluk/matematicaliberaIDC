@@ -601,7 +601,7 @@ Che espresso con la filastrocca è:
 
 ``3 per~20 fa~60,~73 meno~60 fa~13 il risultato è: tredici ventesimi''.
 
-Dove il passaggio tra parentesi, di solito viene fatto a mente.
+Che permette di saltare il passaggio posto tra parentesi.
 \end{esempio}
 
 \begin{esempio}{}{}
@@ -731,10 +731,9 @@ Calcola: \(\dfrac{560}{55} : \dfrac{24}{275}\)
 \subsubsection{Potenza e radice}
 
 \begin{definizione}{}{}
-La \emph{potenza}\indc{frazione}{potenza di frazione} di una frazione, cioè 
-una frazione elevata a un certo 
-esponente, è uguale alla frazione che ha numeratore e denominatore elevati 
-a quell'esponente.
+La \emph{potenza}\indc{frazione}{potenza di frazione} di una frazione, 
+cioè una frazione elevata a un certo esponente, è uguale alla frazione 
+che ha numeratore e denominatore elevati a quell'esponente.
 \[\tonda{\dfrac{a}{b}}^e = 
  1 \underbrace{\cdot \dfrac{a}{b} \cdot \dfrac{a}{b} \ldots \cdot 
                \dfrac{a}{b}}_{e \text{ volte}} = 
@@ -756,32 +755,7 @@ Ovviamente, vale anche per le frazioni quanto già visto per gli interi:
   \tonda{\dfrac{a}{b}}^{-1} = \tonda{\dfrac{b}{a}}^{+1}\]
 \end{osservazione}
 
-E fin qui facilmente abbiamo ampliato la definizione di potenza al caso di 
-potenze che hanno per base una frazione\dots Ma che dire per potenze che 
-hanno per esponente una frazione\indc{frazione}{potenza a esponente 
-frazionario}? La faccenda si complica e si fa interessante!
-
-Quale significato dare a una scrittura del genere: 
-\(\tonda{\dfrac{a}{b}}^{\frac{m}{n}}\)?
-
-Semplifichiamo un po' la scrittura, e il problema, cercando di capire come 
-risolvere questo calcolo:
-\[a^{\frac{1}{n}}\]
-Ricordando la terza proprietà delle potenze guardiamo cosa succede se 
-eleviamo alla enne la precedente espressione:
-\[\tonda{a^{\frac{1}{n}}}^n = a^{\frac{1}{n} \cdot n} = a\]
-Quindi elevare alla \(\dfrac{1}{n}\) è l'operazione inversa di elevare alla 
-\(n\) perché se elevo un numero alla \(\dfrac{1}{n}\) e poi alla \(n\) o se 
-elevo alla \(n\) e poi alla \(\dfrac{1}{n}\) ottengo il numero di partenza.
-
-Questo vuol dire che elevare alla \(\dfrac{1}{n}\) è l'operazione inversa, 
-rispetto alla base, di elevare alla \(n\). 
-L'operazione inversa della potenza, rispetto alla base, viene 
-chiamata\indc{frazione}{radice di frazione} 
-radice e indicata con: \(\sqrt[n]{a}\) quindi:
-\[a^{\frac{1}{n}} = \sqrt[n]{a}\]
-e in generale:
-\[\tonda{\frac{a}{b}}^{\frac{m}{n}} = \sqrt[n]{\tonda{\frac{a}{b}}^m}\]
+La radice di una frazione è definita in modo analogo:
 
 \begin{definizione}{}{}
 La \emph{radice} di una frazione è una frazione che ha per numeratore la 
@@ -820,6 +794,47 @@ Esegui le seguenti radici:
 % \end{htmulticols}
 \end{esempio}
 
+E fin qui facilmente abbiamo ampliato la definizione di potenza al caso 
+di potenze che hanno per base una frazione, ma che dire per potenze 
+che hanno per esponente una frazione\indc{frazione}{potenza a esponente 
+frazionario}? La faccenda si complica e si fa interessante!
+
+\begin{osservazione}{}{}
+Importante: i seguenti ragionamenti valgono solo se la base è un numero 
+positivo!
+
+Infatti solo se \(a \geqslant 0\) abbiamo che 
+\(\sqrt[n]{a^m} \stext{è sempre uguale a} \tonda{\sqrt[n]{a}}^m\)
+\end{osservazione}
+
+Quale significato dare a una scrittura del genere: 
+\(\tonda{\dfrac{a}{b}}^{\frac{m}{n}}\)?
+
+Semplifichiamo un po' la scrittura, e il problema, cercando di capire 
+come risolvere questo calcolo:
+\[a^{\frac{1}{n}}\]
+Ricordando la terza proprietà delle potenze guardiamo cosa succede se 
+eleviamo alla enne la precedente espressione:
+\[\tonda{a^{\frac{1}{n}}}^n = a^{\frac{1}{n} \cdot n} = a\]
+Quindi elevare alla \(\dfrac{1}{n}\) è l'operazione inversa di elevare 
+alla \(n\) perché se elevo un numero alla \(\dfrac{1}{n}\) e poi alla 
+\(n\) o se elevo alla \(n\) e poi alla \(\dfrac{1}{n}\) ottengo il 
+numero di partenza.
+
+Questo vuol dire che elevare alla \(\dfrac{1}{n}\) è l'operazione 
+inversa, rispetto alla base, di elevare alla \(n\). 
+L'operazione inversa della potenza, rispetto alla base, viene 
+chiamata\indc{frazione}{radice di frazione} 
+radice e indicata con: \(\sqrt[n]{a}\) quindi:
+\[a^{\frac{1}{n}} = \sqrt[n]{a}\]
+e in generale:
+\[\stext{se} \frac{a}{b} \geqslant 0 \stext{allora}
+\tonda{\frac{a}{b}}^{\frac{m}{n}} = \sqrt[n]{\tonda{\frac{a}{b}}^m}
+\]
+
+Se invece \(\frac{a}{b} < 0\) l'espressione 
+\(\tonda{\frac{a}{b}}^{\frac{m}{n}}\) può essere ambigua.
+
 \section{Decimali contro frazioni}
 \label{sec:razionali_decimali_frazioni}
 
@@ -831,9 +846,12 @@ rappresentare numeri approssimati;
 numeri razionali esatti.
 \end{enumerate}
 
-Ma per il resto, le due notazioni sono equivalenti? Cioè tutti i numeri che 
-possiamo rappresentare con le frazioni li possiamo anche rappresentare con 
-i numeri decimali e viceversa?
+Ma per il resto, le due notazioni sono equivalenti? Cioè tutti i numeri 
+che possiamo rappresentare con le frazioni li possiamo anche 
+rappresentare con i numeri decimali e viceversa?
+
+
+\pagebreak %---------------------------------------------
 
 \subsection{Da frazione a decimale}
 
@@ -938,7 +956,7 @@ numero~\(3,\overline{9}\).
 \(3,\overline{9} = \dfrac{39 - 3}{9} = \dfrac{36}{9} = 4\)
 \end{osservazione}
 
-\noindent È un po' sorprendente! È solo un caso?
+\noindent È un po' sorprendente! È solo un caso?\\
 Prova con altri numeri decimali di periodo \(\overline{9}\).
 
 \subsection{Numeri decimali illimitati non periodici}
@@ -1328,32 +1346,31 @@ ottiene una nuova grandezza:
 
 \subsection{Proporzioni}
 
-Quando abbiamo due rapporti uguali: \(\dfrac{a}{b} = \dfrac{c}{d}\) diremo 
-che i quattro numeri \(a,~b,~c,~d\) sono in proporzione. 
-Altra notazione 
-per le proporzioni è quella che indica le divisioni con i duepunti: ``:'', 
-cioè: \quad \(a:b=c:d\), \quad e si legge: \quad 
+Quando abbiamo due rapporti uguali: \(\dfrac{a}{b} = \dfrac{c}{d}\) 
+diremo che i quattro numeri \(a,~b,~c,~d\) sono in proporzione. 
+Altra notazione per le proporzioni è quella che indica le divisioni con 
+i duepunti: ``:'', cioè: \quad \(a:b=c:d\), \quad e si legge: \quad 
 ``\(a\) sta a \(b\) come \(c\) sta a \(d\)''.
 
-I due numeri che si trovano al centro si chiamano \emph{medi} e gli altri 
-due si dicono \emph{estremi}.
+I due numeri che si trovano al centro si chiamano \emph{medi} e gli 
+altri due si dicono \emph{estremi}.
 
-La \indtc{proporzioni}{proprietà fondamentale delle proporzioni}:
+La \indtc{proporzioni}{proprietà fondamentale delle proporzioni} è:
 
 \begin{teorema}{}{}
- In una proporzione, il prodotto dei \emph{medi} è uguale al prodotto 
+In una proporzione, il prodotto dei \emph{medi} è uguale al prodotto 
 degli \emph{estremi} (detto anche \emph{prodotto incrociato}):
 \[a:b=c:d \sLRarrow \dfrac{a}{b} = \dfrac{c}{d} \sLRarrow 
 a \cdot d = b \cdot c\]
 \end{teorema}
 
-Da questa proprietà possiamo ricavare le formule per calcolare un medio o 
-un estremo:
+Da questa proprietà possiamo ricavare le formule per calcolare un medio 
+o un estremo:
 \[a = \frac{b \cdot c}{d} \quad \text{ e } \quad 
   b = \frac{a \cdot d}{c}\]
 
-Un problema che ha collegamenti in altri ambiti della matematica riguarda 
-le \indtc{proporzioni}{proporzioni continue}.
+Un problema che ha collegamenti in altri ambiti della matematica 
+riguarda le \indtc{proporzioni}{proporzioni continue}.
 
 \begin{definizione}{}{}
  Si dice \emph{continua} una proporzione che ha i medi uguali:
@@ -1368,12 +1385,12 @@ da cui si ricava: \qquad
 
 \subsection{Percentuale}
 
-Il rapporto è, di solito, un numero con la virgola e, 
-quando è realizzato tra una parte e il tutto ha un valore compreso tra 
+Il rapporto è, di solito, un numero con la virgola e, quando è 
+realizzato tra una parte e il tutto ha un valore compreso tra 
 zero e uno. 
-Dato che le persone normali provano un certo fastidio per i numeri con la 
-virgola sono state inventate le percentuali che sono date dal rapporto 
-moltiplicato per 100 e seguito dal simbolo ``\%''. 
+Dato che le persone normali provano un certo fastidio per i numeri con 
+la virgola sono state inventate le percentuali che sono date dal 
+rapporto moltiplicato per 100 e seguito dal simbolo ``\%''. 
 Sempre riferendoci all'esempio precedente:
 \[\frac{1}{3} \approx 0,33 = 33\% \qquad 
   \frac{2}{3} \approx 0,66 = 67\%\]
@@ -1396,7 +1413,7 @@ dividere per~100 il numero che esprime la percentuale:
 12,5\% = \frac{12,5}{100} = 0,125\]
 
 Per passare dalla scrittura decimale alla scrittura in percentuale basta 
-moltiplicare numeratore e denominatore per~100:
+moltiplicare il numero per~100:
 
 \vspace{-.5em}
 \[
@@ -1494,7 +1511,8 @@ Eseguo l'addizione nella parentesi graffa e poi la moltiplicazione che rimane.
 \end{enumerate}
 
 \end{esempio}
-% % \newpage
+
+\pagebreak %-----------------------------------
 
 % Quando si deve addizionare un numero intero a una frazione si può evitare 
 % di usare un passaggio per scrivere esplicitamente il denominatore comune: 
@@ -1520,8 +1538,8 @@ Eseguo l'addizione nella parentesi graffa e poi la moltiplicazione che rimane.
 % 
 % \end{esempio}
 
-Nel prossimo esempio viene usato il metodo rapido per sommare un intero ad 
-una frazione.
+Nel prossimo esempio viene usato il metodo rapido per sommare un 
+intero a una frazione.
 
 \begin{esempio}{}{}
 %\begin{problema}{}{}
@@ -1624,12 +1642,14 @@ Calcola il valore della seguente espressione.
 
 Se nell'espressione, oltre alle frazioni, ci sono anche numeri decimali 
 limitati o periodici, conviene in un primo passaggio trasformare ogni 
-numero razionale in frazione e poi calcolare
-\indc{espressione}{espressione con numeri razionali}.
+numero razionale in frazione e poi eseguire i calcoli tra frazioni.
+\indc{espressione}{espressione con numeri periodici}
+
+\pagebreak %-------------------------------------------
 
 \begin{esempio}{}{}
 Calcola il valore della seguente espressione.
-   
+
 \begin{align*}
 &3,5 \cdot 0,4-1,2-0,8\bar{6} \cdot \tonda{
    1,\bar{6}+5,8\bar{3}-5,5-\frac{23}{13}
@@ -1749,7 +1769,7 @@ pertanto gli rimangono \quad
 \(D_2 = \dfrac{2}{15} D_0 = \dfrac{2}{15} \cdot 150\meuro= 20 \meuro\).
 \end{esempio}
 
-\pagebreak %---------------------------------------------
+% \pagebreak %---------------------------------------------
 
 \begin{esempio}{}{}
 Trova due numeri sapendo che la loro somma è 108 e uno è i 4/5 dell'altro.
@@ -1856,6 +1876,8 @@ A quanto ammonta l'intera popolazione?
 \[totale = \frac{parte}{perc} = \frac{47}{.03} = 1566,\overline 6 
 \approx 1567\]
 \end{esempio}
+
+ \pagebreak %---------------------------------------------
 
 \subsection{Problemi con gli sconti}
 

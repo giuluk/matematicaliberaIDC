@@ -6,6 +6,15 @@
 
 \chapter{Frazioni algebriche}
 
+\inicapitolo{
+\begin{itemize}[left=0mm, nosep]
+\item mcm e MCD fra polinomi;
+\item le frazioni algebriche rappresentano la divisione fra due polinomi;
+\item in alcuni casi una frazione algebrica è un'espressione senza significato;
+\item le operazioni fra le frazioni algebriche seguono le regole apprese
+nel calcolo con le frazioni numeriche.
+\end{itemize}
+}
 % \begin{wrapfloat}{figure}{r}{0pt}
 % \includegraphics[scale=0.35]{\folder img/fig000_.png}
 % \caption{...}
@@ -14,9 +23,10 @@
 % 
 % \begin{center} \input{\folder lbr/fig000_.pgf} \end{center}
 
-I polinomi, rispetto alle operazioni si comportano come i numeri interi, 
+I polinomi, rispetto alle operazioni, si comportano come i numeri interi:
 in particolare la divisione tra due polinomi spesso dà un resto. 
-Così, proprio come abbiamo fatto con i numeri interi, anche con i polinomi 
+Così, proprio come abbiamo fatto con i numeri interi, anche con i 
+polinomi 
 dovremo utilizzare le frazioni per poter eseguire sempre le divisioni. 
 Per poter operare con le frazioni dovremo imparare a calcolare il minimo 
 comune multiplo tra polinomi.
@@ -26,20 +36,21 @@ comune multiplo tra polinomi.
 
 Per determinare~\(\mcd\) (\emph{massimo comune divisore}) 
 e~\(\mcm\) (\emph{minimo comune multiplo}) di due o più polinomi occorre 
-prima di tutto scomporli in fattori 
-irriducibili\indc{polinomio/polinomi}{fattori irriducibili di un polinomio}.
+prima di tutto scomporli in fattori irriducibili\indc{polinomio/polinomi}
+{fattori irriducibili di un polinomio}.
 
 \begin{osservazione}{}{} 
 La cosa non è semplice poiché non sempre si può essere sicuri di aver 
 trovato il massimo comune divisore o il minimo comune multiplo
 per la difficoltà di decidere se un polinomio è irriducibile: 
-prudentemente si dovrebbe parlare di divisore comune e di multiplo comune.
+prudentemente si dovrebbe parlare di divisore comune e di multiplo 
+comune.
 \end{osservazione}
 
 Un polinomio~\(A\) si dice multiplo di un 
-polinomio~\(B\)\indc{polinomio/polinomi}{polinomio multiplo di polinomio} se 
-esiste un polinomio~\(C\) per il quale~\(A=B\cdot C\) in questo caso diremo
-anche che~\(B\) è divisore del polinomio~\(A\).
+polinomio~\(B\)\indc{polinomio/polinomi}{polinomio multiplo di polinomio} 
+se esiste un polinomio~\(C\) per il quale~\(A=B\cdot C\) in questo caso 
+diremo anche che~\(B\) è divisore del polinomio~\(A\).
 
 \subsection{Massimo Comun Divisore}
 \indc{polinomio/polinomi}{MCD di polinomi}
@@ -63,7 +74,8 @@ di grado maggiore che è divisore di tutti.
 \begin{teorema}{}{}
 Dopo aver scomposto ciascun polinomio in fattori irriducibili, il massimo 
 comune divisore tra due o più polinomi è il prodotto di tutti i fattori 
-comuni ai polinomi, presi ciascuno una sola volta, con il minimo esponente.
+comuni ai polinomi, presi ciascuno una sola volta, con il minimo 
+esponente.
 \end{teorema}
 
 % Sia i coefficienti numerici, sia i monomi possono essere considerati 
@@ -93,8 +105,8 @@ Determina:\\
 \item \(12a^{2}b^{2}-24ab^{2}+12b^{2}=12b^{2} \tonda{a^{2}-2a+1} =
         12b^{2}(a-1)^{2}\).
 \end{itemize}
-\item i fattori comuni a tutti i polinomi presi con l'esponente più piccolo 
-sono: \\
+\item i fattori comuni a tutti i polinomi presi con l'esponente più 
+piccolo sono: \\
 \textcolor{Salmon}{\ding{224}} ~~ tra i numeri il~\(3\) \hfill
 \textcolor{Salmon}{\ding{224}} ~~ tra i monomi~\(b^{2}\) \hfill
 \textcolor{Salmon}{\ding{224}} ~~ tra i polinomi~\(a-1\).
@@ -117,9 +129,10 @@ di grado minore che è multiplo di tutti.
 \end{definizione}
 
 \begin{teorema}{}{}
-Dopo aver scomposto ciascun polinomio in fattori, il minimo comune multiplo 
-tra due o più polinomi è il prodotto dei fattori comuni e non comuni di tutti 
-i polinomi, presi una sola volta, con il massimo esponente.
+Dopo aver scomposto ciascun polinomio in fattori, il minimo comune 
+multiplo tra due o più polinomi è il prodotto dei fattori comuni e non 
+comuni di tutti i polinomi, presi una sola volta, con il massimo 
+esponente.
 \end{teorema}
 
 % \begin{procedura}{}{}
@@ -162,8 +175,9 @@ Determina:\\
 \begin{osservazione}{}{}
 Se viene chiesto di calcolare il \(\mcd\) o il \(\mcm\) di 
 oggetti di tipo diverso (singoli numeri, monomi, polinomi) le procedure  
-non cambiano. Infatti sia i numeri che i monomi possono essere visti come 
-particolari polinomi.
+non cambiano. 
+Infatti sia i numeri che i monomi possono essere visti come particolari 
+polinomi.
 \end{osservazione}
 
 \begin{esempio}{}{}
@@ -181,10 +195,11 @@ Calcolare \(\mcd\) e \(\mcm\) di:\quad \(\tonda{3a^2b;\quad 12;\quad
 \label{sec:frazalg_definizione}
 
 Abbiamo visto, nel capitolo sui polinomi che, a volte il quoziente di 
-due polinomi è un polinomio, altre volte la divisione tra polinomi dà un resto.
-In questo caso il quoziente esatto dei due polinomi non è un polinomio, ma 
-una \indt{frazione algebrica}, cioè una frazione che ha un polinomio al 
-numeratore e uno al denominatore.
+due polinomi è un polinomio, altre volte la divisione tra polinomi dà 
+un resto.
+In questo caso il quoziente esatto dei due polinomi non è un polinomio, 
+ma una \indt{frazione algebrica}, cioè una frazione che ha un polinomio 
+al numeratore e uno al denominatore.
 
 % \begin{wrapfloat}{figure}{r}{0pt}
 % \includegraphics[scale=0.35]{\folder img/fig000_.png}
@@ -207,9 +222,9 @@ I valori delle variabili sono gli argomenti della funzione, il valore
 assunto dalla frazione algebrica è il risultato della funzione.
 
 \affiancati{.58}{.38}{
-Quando l'espressione contiene una sola variabile, può essere vista come una 
-funzione ``reale'' cioè una funzione che associa ad ogni numero reale al 
-massimo un altro numero reale.
+Quando l'espressione contiene una sola variabile, può essere vista come 
+una funzione ``reale'' cioè una funzione che associa ad ogni numero 
+reale al massimo un altro numero reale.
 In questo caso può essere rappresentata su un piano cartesiano.
 
 Ad esempio la funzione:\\ \(f(x) = \dfrac{x^2 -3x -4}{2x^2 +4x -16}\)\\
@@ -280,15 +295,16 @@ Si può osservare che la funzione presenta due zeri per i valori:
 \section{Condizioni di esistenza per una frazione algebrica}
 \label{sec:frazalg_condizioniesistenza}
 
-Poiché non è mai possibile dividere per~\(0\), una frazione algebrica perde 
-di significato per quei valori che attribuiti alle variabili rendono il 
-denominatore uguale a zero. 
+Poiché non è mai possibile dividere per~\(0\), una frazione algebrica 
+perde di significato per quei valori che attribuiti alle variabili 
+rendono il denominatore uguale a zero. 
 Per ``discussione di una frazione algebrica'' intendiamo la ricerca dei 
 valori che, attribuiti alle variabili, la rendano calcolabile. 
 Una frazione algebrica del tipo~\(\dfrac{A}{B}\) ha come 
 \indtc{f.algebrica}{condizione di esistenza} (\(\CE\)):~\(B\neq~0\).
 
-La funzione precedente non dà quindi un risultato quando: \(2x^2 +4x -16=0\).
+La funzione precedente non dà quindi un risultato quando: 
+\(2x^2 +4x -16=0\).
 Scomponendo in fattori il polinomio a primo membro: 
 \(2 \tonda{\tonda{x+4}\tonda{x-2}}=0\),
 vediamo che il denominatore si annulla quando \(x=-4\) o \(x=+2\).
@@ -298,9 +314,9 @@ L'insieme di definizione della funzione precedente è quindi:
 \central{\(\graffa{\forall x \in \R | x \ne -4 \sand x \ne +2}\)}
 
 \begin{esempio}{}{}
-Determinare le condizioni di esistenza di esistenza delle seguenti funzioni, 
-cioè studiare per quali valori delle variabili il denominatore è diverso da 
-zero.
+Determinare le condizioni di esistenza di esistenza delle seguenti 
+funzioni, cioè studiare per quali valori delle variabili il denominatore 
+è diverso da zero.
 
 \begin{enumerate} [left=0mm]
 \item \(f(x)=\dfrac{3a+5b-7}{ab} \srarrow 
@@ -326,12 +342,12 @@ Ricordiamoci che negli insiemi numerici che stiamo usando, il risultato
 di una moltiplicazione è zero se almeno uno dei fattori è zero.
 
 \begin{teorema}{Legge di annullamento del prodotto}{}
-Nell'insieme dei numeri reali, il prodotto di più fattori è nullo se almeno 
-uno dei fattori è nullo\ind{annullamento del prodotto}.
+Nell'insieme dei numeri reali, il prodotto di più fattori è nullo se 
+almeno uno dei fattori è nullo\ind{annullamento del prodotto}.
 \end{teorema}
 
-Quando è possibile, dobbiamo scomporre in fattori il denominatore e studiare 
-ogni singolo fattore ponendolo diverso da zero.
+Quando è possibile, dobbiamo scomporre in fattori il denominatore e 
+studiare ogni singolo fattore ponendolo diverso da zero.
 
 \begin{esempio}{}{}
 Determinare le condizioni di esistenza di~\(\dfrac{2x}{x^{2}-4}\).
@@ -344,8 +360,8 @@ e per la legge di annullamento del prodotto ricaviamo:
 \tonda{x-2} \neq 0 \stext{e} \tonda{x+2} \neq 0\\
 \sRarrow x \neq -2 \stext{e} x \neq +2\)
 
-La condizione \(x \neq -2 \stext{e} x \neq +2\) può anche essere sintetizzata 
-con l'espressione: \(x \neq \mp 2\).
+La condizione \(x \neq -2 \stext{e} x \neq +2\) può anche essere 
+sintetizzata con l'espressione: \(x \neq \mp 2\).
 \end{esempio}
 % \end{exrig}
 
@@ -369,9 +385,9 @@ algebrica}\indc{f.algebriche}{semplificazione}
 \label{sec:frazalg_semplificazione}
 
 Semplificare una frazione algebrica significa dividere numeratore e 
-denominatore per uno stesso fattore diverso da zero, in questo modo infatti 
-la proprietà invariantiva della divisione garantisce che la frazione non 
-cambia di valore.
+denominatore per uno stesso fattore diverso da zero, in questo modo 
+infatti la proprietà invariantiva della divisione garantisce che la 
+frazione non cambia di valore.
 Quando riduciamo ai minimi termini una frazione numerica, dividiamo il 
 numeratore e il denominatore per il loro~\(\mcd\) che è sempre un numero
 diverso da zero, ottenendo una frazione equivalente a quella assegnata.
@@ -409,10 +425,10 @@ semplificare il \(2\) con il \(2\) e il \(6\) con il
 \(\dfrac{\cancel{2} +\cancel{6}}{\cancel{2} +\cancel{12}}=
 \dfrac{1+1}{1+2}=\dfrac{2}{3}\)
 
-È chiaro che quest'ultimo calcolo non è accettabile: infatti semplificare una 
-frazione significa ottenerne un'altra con numeri più piccoli, ma equivalente 
-alla prima e \(\dfrac{4}{7}\) è equivalente a \(\dfrac{8}{14}\) mentre 
-\(\dfrac{2}{3}\) non lo è.
+È chiaro che quest'ultimo calcolo non è accettabile: infatti 
+semplificare una frazione significa ottenerne un'altra con numeri più 
+piccoli, ma equivalente alla prima e \(\dfrac{4}{7}\) è equivalente a 
+\(\dfrac{8}{14}\) mentre \(\dfrac{2}{3}\) non lo è.
 
 % \newpage % ------------------------------------------------
 
@@ -430,8 +446,8 @@ Di seguito possiamo vedere alcuni esempi di ``semplificazioni'' errate:
 \end{itemize}
 \end{htmulticols}
 
-La semplificazione di una funzione razionale produce un'altra funzione che si 
-comporta \emph{quasi} sempre come la funzione di partenza.
+La semplificazione di una funzione razionale produce un'altra funzione 
+che si comporta \emph{quasi} sempre come la funzione di partenza.
 
 \affiancati{.48}{.48}{
 \immagine[.8]{Grafico di ((x-3)(x-1))/((x-3)(x+2))}{\graficofrazioneb}
@@ -439,20 +455,23 @@ comporta \emph{quasi} sempre come la funzione di partenza.
 \immagine[.8]{Grafico di (x-1)/(x+2)}{\graficofrazionec}
 }
 
-Le funzioni \(f_1\) e \(f_2\) sono uguali dappertutto tranne che in \(x=+3\) 
-dove \(f_1\) non è definita mentre \(f_2\) vale \(\dfrac{2}{5}\).
+Le funzioni \(f_1\) e \(f_2\) sono uguali dappertutto tranne che in 
+\(x=+3\) dove \(f_1\) non è definita mentre \(f_2\) vale 
+\(\dfrac{2}{5}\).
 % : 
 % \(f_1\) non è definita in \(-2\) e \(+3\) (zeri del denominatore), 
 % \(f_2\) non è definita in solo in \(-2\). 
 
 \begin{esempio}{}{}
-Ridurre ai minimi termini la frazione:\quad \(\dfrac{a^{2}-6a+9}{a^{4}-81}\).
+Ridurre ai minimi termini la frazione:\quad 
+\(\dfrac{a^{2}-6a+9}{a^{4}-81}\).
 \begin{enumerate} [left=0mm]
 \item Scomponiamo in fattori
 \begin{itemize}[left=0mm, nosep]
 \item il numeratore:~\(a^2 - 6a +9 = (a - 3 )^2\)
-\item il denominatore:~\(a^4 - 81 = \tonda{a^2 - 9} \tonda{a^2 + 9} = 
-                         \tonda{a\!-\!3}\tonda{a\!+\!3} \tonda{a^2\!+\!9} \)
+\item il denominatore:
+\(a^4 - 81 = \tonda{a^2 - 9} \tonda{a^2 + 9} = 
+             \tonda{a\!-\!3}\tonda{a\!+\!3} \tonda{a^2\!+\!9} \)
 \end{itemize}
 % \[\dfrac{a^{2}-6a+9}{a^{4}-81} = 
 %   \dfrac{\tonda{a-3}^2}
@@ -471,9 +490,9 @@ Il tutto può essere scritto in un'unica espressione:
         {\cancel{(a-3)}\cdot (a+3)\cdot \tonda{a^{2}+9}}\stackrel{2}{=} 
   \dfrac{a-3}{ \tonda{a+3)(a^{2}+9}} \stackrel{3}{\stext{con}} 
   a \neq +3\]
-Dove nel passaggio 1 si scompone in fattori, nel passaggio 2 si semplifica, 
-nel passaggio 3 si dichiara per quali valori la funzione ottenuta è 
-effettivamente uguale a quella di partenza.
+Dove nel passaggio 1 si scompone in fattori, nel passaggio 2 si 
+semplifica, nel passaggio 3 si dichiara per quali valori la funzione 
+ottenuta è effettivamente uguale a quella di partenza.
 \end{esempio}
 
 \begin{esempio}{}{}
@@ -539,8 +558,8 @@ Calcola il prodotto delle frazioni algebriche:\\
 \(f_{1}=-\dfrac{3a^{2}}{10b^{3}c^{4}}\) ~~e~~ 
 \(f_{2}=\dfrac{25bc^{7}}{9}\)}\\ [-.5em]
 
-Il prodotto si ottiene semplificando e ponendo le condizioni per ogni fattore 
-semplificato: 
+Il prodotto si ottiene semplificando e ponendo le condizioni per ogni 
+fattore semplificato: 
 
 \vspace{-1em}
 \[f_1 \cdot f_2 =
@@ -554,10 +573,10 @@ semplificato:
 \begin{esempio}{}{}
 Calcola il prodotto delle frazioni algebriche:\\
 \central{
-\(f_{1}=-{\dfrac{3a}{2b+1}}\) ~~e~~ \(f_{2}=\dfrac{10b}{a-3}\)}\\ [-.5em]
-
-In questo caso non è possibile alcuna semplificazione, il prodotto si ottiene 
-moltiplicando fra loro i numeratori e i denominatori:
+\(f_{1}=-{\dfrac{3a}{2b+1}}\) ~~e~~ \(f_{2}=\dfrac{10b}{a-3}\)}
+\\ [-.5em]
+In questo caso non è possibile alcuna semplificazione, il prodotto si 
+ottiene moltiplicando fra loro i numeratori e i denominatori:
 
 \vspace{-.5em}
 \[f_1 \cdot f_2 = 
@@ -598,8 +617,8 @@ semplificazioni:
 
 \vspace{-2.0em}
 \[f_1 \cdot f_2 = 
-\dfrac{\cancel{x} \cdot \cancel{(2x-1)}}{\cancel{(x-1)} \cdot {(x-2)}} \cdot 
-\dfrac{5\cdot\cancel{(x-1)}}{\cancel{x}\cdot(2x-1)^{\cancel{2}}}=
+\dfrac{\cancel{x} \cdot \cancel{(2x-1)}}{\cancel{(x-1)} \cdot {(x-2)}} 
+\cdot \dfrac{5\cdot\cancel{(x-1)}}{\cancel{x}\cdot(2x-1)^{\cancel{2}}}=
 \dfrac{5}{(x-2)(2x-1)} \text{ con }
 \sistema{x \neq 0 \\ x \neq +1 \\ x \neq +\dfrac{1}{2}}
 \]
@@ -630,15 +649,15 @@ semplificazioni:
 \label{sec:frazalg_divisione}
 
 L'introduzione delle frazioni algebriche permette di trasformare ogni 
-divisione in una moltiplicazione quindi si può sempre eseguire la divisione, 
-a patto che il divisore sia diverso da zero\indc{f.algebriche}{divisione di 
-f.algebriche}.
+divisione in una moltiplicazione quindi si può sempre eseguire la 
+divisione, a patto che il divisore sia diverso da 
+zero\indc{f.algebriche}{divisione di f.algebriche}.
 L'insieme delle frazioni algebriche è chiuso anche per la divisione.
 
-Il quoziente di due frazioni è la frazione che si ottiene moltiplicando la 
-prima per il reciproco della seconda.
-Lo schema di calcolo può essere illustrato nel modo seguente, come del resto 
-abbiamo visto nell'insieme dei numeri razionali:
+Il quoziente di due frazioni è la frazione che si ottiene moltiplicando 
+la prima per il reciproco della seconda.
+Lo schema di calcolo può essere illustrato nel modo seguente, come del 
+resto abbiamo visto nell'insieme dei numeri razionali:
 
 \[\dfrac{m}{n}:\dfrac{p}{q}=\dfrac{m}{n} \cdot \dfrac{q}{p}=
 \dfrac{m \cdot q}{n \cdot p}\]
@@ -715,8 +734,8 @@ In un'unica espressione:\\
 
 % \ovalbox{\risolvii \ref{ese:19.19}, \ref{ese:19.20}, \ref{ese:19.21}}
 
-\section{Potenza di una frazione algebrica}\indc{f.algebriche}{potenza di una 
-f.algebrica}
+\section{Potenza di una frazione algebrica}
+\indc{f.algebriche}{potenza di una f.algebrica}
 \label{sec:frazalg_potenza}
 
 La potenza di esponente~\(n\), naturale diverso da zero, della frazione 
@@ -738,8 +757,8 @@ Calcola  \( \tonda{\dfrac{x-2}{x^{2}-1}} ^{3}\)
 \subsection{Casi particolari dell'esponente}
 
 \subsubsection{Esponente nullo}
-Se~\(n = 0\) sappiamo che qualsiasi numero \emph{diverso da zero}, elevato a 
-zero è uguale a~\(1\). 
+Se~\(n = 0\) sappiamo che qualsiasi numero \emph{diverso da zero}, 
+elevato a zero è uguale a~\(1\). 
 Lo stesso si può dire se la base è una frazione algebrica.
 \(\tonda{\dfrac{A}{B}}^0=1\) se la frazione è definita: 
 \(B\neq~0\) e è diversa da zero: \(A\neq~0\).
@@ -759,19 +778,21 @@ da cui, \(\CE a\neq~0 \stext{e} a\neq -2\).
 quindi:
 \(3a-2 \neq 0 \sRarrow a\neq \dfrac{2}{3}\)
 \end{itemize}
-In definitiva: \(a\neq -2 \stext{e} a\neq~0 \stext{e} a\neq \dfrac{2}{3}\).
+In definitiva: 
+\(a\neq -2 \stext{e} a\neq~0 \stext{e} a\neq \dfrac{2}{3}\).
 \end{esempio}
 % \end{exrig}
 
 \subsubsection{Esponente negativo}
-Se~\(n\) è intero negativo la potenza con base diversa da zero è uguale alla 
-potenza che ha per base il reciproco della base e per esponente l'opposto
-dell'esponente. 
+Se~\(n\) è intero negativo la potenza con base diversa da zero è uguale 
+alla potenza che ha per base il reciproco della base e per esponente 
+l'opposto dell'esponente. 
 \( \tonda{\dfrac{A}{B}} ^{-n}=
 \tonda{\dfrac{B}{A}} ^{+n} \sstext{con} A\neq~0\) e~\(B\neq~0\).
 
-Quindi deve esistere sia la frazione di partenza, sia il suo reciproco, cioè 
-dovranno essere diversi da zero sia il denominatore sia il numeratore.
+Quindi deve esistere sia la frazione di partenza, sia il suo reciproco, 
+cioè dovranno essere diversi da zero sia il denominatore sia il 
+numeratore.
 
 % \begin{exrig}
 \begin{esempio}{}{}
@@ -819,18 +840,19 @@ f.algebriche}
 % Come per i numeri relativi, quando si parlerà di somma di frazioni si 
 % intenderà ``somma algebrica''.
 
-Come per le frazioni numeriche, anche nelle frazioni algebriche l'addizione
-è l'operazione più complicata. Infatti per addizionare due frazioni 
-algebriche bisogna:
+Come per le frazioni numeriche, anche nelle frazioni algebriche 
+l'addizione è l'operazione più complicata. Infatti per addizionare due 
+frazioni algebriche bisogna:
 
 \begin{procedura}{}{}
 Per addizionare frazioni algebriche:
-\begin{enumerate} [label=\alpha), noitemsep]
+\begin{enumerate} [label=\alph*), noitemsep]
 \item scomporre in fattori i denominatori;
 \item determinare il \(\mcm\);
 \item riscrivere le frazioni in modo che abbiano lo stesso denominatore;
 \item addizionare i numeratori;
-\item semplificare il risultato ottenuto ponendo le condizioni di esistenza.
+\item semplificare il risultato ottenuto ponendo le condizioni di 
+esistenza.
 \end{enumerate}
 \end{procedura}
 
@@ -861,7 +883,8 @@ quoziente ottenuto per il relativo numeratore:
 
 \vspace{-1.2em}
 \[\dfrac{(x+2)^{2}-(x-2)^{2}-4x^{2}}{x\cdot(x+2)\cdot(x-2)}\]
-\item \emph{addizionare i numeratori} eseguiamo le operazioni al numeratore:
+\item \emph{addizionare i numeratori} eseguiamo le operazioni al 
+numeratore:
 
 \vspace{-1.2em}
   \begin{equation*}
@@ -874,11 +897,10 @@ esistenza}
 per semplificare la frazione dobbiamo scomporre il numeratore:
 
 \vspace{-1.2em}
-  \begin{equation*}
-  \dfrac{-4\cancel{x}\cdot\cancel{(x-2)}}
-        {\cancel{x}\cdot(x+2)\cdot\cancel{(x-2)}}=
-  \dfrac{-4}{x+2} \quad  \stext{con} \quad x \neq 0 \quad  \stext{e} \quad x 
-\neq 2.
+\begin{equation*}
+\dfrac{-4\cancel{x}\cdot\cancel{(x-2)}}
+      {\cancel{x}\cdot(x+2)\cdot\cancel{(x-2)}}=
+\dfrac{-4}{x+2} \sstext{con} x \neq 0 \quad  \stext{e} \quad x \neq 2
   \end{equation*}
 \end{enumeratea}
 \end{esempio}
@@ -909,7 +931,8 @@ quoziente ottenuto per il relativo numeratore:
 \item eseguiamo le operazioni al numeratore:
 
 \vspace{-2em}
-\[=\dfrac{x(x^2-1)-2x(x^2-3x+2)+x(x^2-x-2)-(5x^{2}-7)}{(x-2)(x+1)(x-1)} = \]
+\[=\dfrac{x(x^2-1)-2x(x^2-3x+2)+x(x^2-x-2)-(5x^{2}-7)}{(x-2)(x+1)(x-1)} 
+= \]
 \[=\dfrac{\cancel{x^3}-x~\cancel{-2x^3}~\cancel{+6x^2}-4x~\cancel{+x^3}
         ~\cancel{-x^2}-2x~\cancel{-5x^2}+7}
         {(x-2)(x+1)(x-1)}=\]

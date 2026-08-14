@@ -6,22 +6,32 @@
 
 \chapter{Complementi di algebra di primo grado}
 
-\section{Equazioni di grado superiore al primo riducibili al primo grado}
+\inicapitolo{
+\begin{itemize}[left=0mm, nosep]
+\item alcuni tipi di equazioni di grado superiore al primo;
+\item equazioni numeriche frazionarie;
+\item equazioni letterali e le formule inverse;
+\item sistemi riconducibili a sistemi di primo grado.
+\end{itemize}
+}
+
+\section{Equazioni di grado superiore al primo riducibili al primo 
+grado}
 \label{sec:compl1_eqgradosup}
 
 Le equazioni di grado superiore al primo possono, in certi casi, essere 
-ricondotte ad equazioni di primo grado, utilizzando la legge di annullamento 
-del prodotto.
+ricondotte ad equazioni di primo grado, utilizzando la legge di 
+annullamento del prodotto.
 
 \begin{definizione}{}{}
- Nei numeri reali, un prodotto di più fattori è uguale a zero se e solo se 
- almeno uno dei fattori è uguale a zero.
+Nei numeri reali, un prodotto di più fattori è uguale a zero se e solo 
+se almeno uno dei fattori è uguale a zero.
 \end{definizione}
 
 Questa legge può essere usata per risolvere equazioni di questo tipo:
 \[(x-4)(x+2)(3x-1)=0\]
-Per ottenere gli zeri della funzione basta uguagliare a zero uno alla volta 
-ogni fattore:
+Per ottenere gli zeri della funzione basta uguagliare a zero uno alla 
+volta ogni fattore:
 \begin{center} 
 \zeriprodotto{(x-4)(x+2)(3x-1)=0}
                  {+1.6/{3x-1=0~ \sRarrow ~x_1=+\dfrac{1}{3}},
@@ -29,8 +39,8 @@ ogni fattore:
                   -2.9/{~~x-4=0~ \sRarrow ~x_3=+4}}
                  {-1.3}
 \end{center} 
-Infatti il prodotto precedente vale zero se almeno uno dei fattori è zero; 
-la verifica delle soluzioni è immediata.
+Infatti il prodotto precedente vale zero se almeno uno dei fattori è 
+zero; la verifica delle soluzioni è immediata.
 
 % \begin{itemize} [nosep]
 %  \item \(x-4=0\) cioè \(x=4\);
@@ -51,12 +61,13 @@ la verifica delle soluzioni è immediata.
 
 È abbastanza facile convincersi che l'equazione non ha altre soluzioni, 
 infatti qualunque altro numero messo al posto della \(x\) trasforma 
-l'espressione a primo membro nel prodotto di tre numeri diversi da zero e nei
-numeri reali il prodotto di numeri tutti diversi da zero non può essere zero.
+l'espressione a primo membro nel prodotto di tre numeri diversi da zero 
+e nei numeri reali il prodotto di numeri tutti diversi da zero non può 
+essere zero.
 
 In generale, se si ha un'equazione di grado~\(n\) scritta in forma 
-normale~\(P(x)=0\) e se il polinomio~\(P(x)\) è fattorizzabile nel prodotto 
-di~\(n\) fattori di primo grado, le soluzioni dell'equazione 
+normale~\(P(x)=0\) e se il polinomio~\(P(x)\) è fattorizzabile nel 
+prodotto di~\(n\) fattori di primo grado, le soluzioni dell'equazione 
 sono le soluzioni delle~\(n\) equazioni di primo grado che si ottengono 
 uguagliando a zero ogni singolo fattore:
 \begin{center} 
@@ -72,7 +83,7 @@ La legge di annullamento del prodotto può essere utilizzata anche per
 equazioni che, apparentemente, non presentano un prodotto posto uguale a 
 zero, vediamo un esempio.
 
-\pagebreak %--------------------------------------
+% \pagebreak %--------------------------------------
 
  \begin{esempio}{}{}
 Risolvere~\(x^{2}-4=0\)
@@ -98,9 +109,10 @@ Risolvere~\(x^2-x-2=0\)
  \begin{esempio}{}{}
 Risolvere~\(x^4-10x^2+9=0\)
 
-Scomponendo in fattori il polinomio a primo membro, utilizzando la regola 
-della scomposizione del particolare trinomio di secondo grado, si 
-ottiene:~\((x^2-1)(x^2-9)=0\). Scomponendo ulteriormente in fattori si ha:
+Scomponendo in fattori il polinomio a primo membro, utilizzando la 
+regola della scomposizione del particolare trinomio di secondo grado, 
+si ottiene:~\((x^2-1)(x^2-9)=0\). 
+Scomponendo ulteriormente in fattori si ha:
 \((x-1)(x+1)(x-3)(x+3)=0\), da cui:
 \begin{center} 
 \zeriprodotto{(x-1)(x+1)(x-3)(x+3)=0}
@@ -123,14 +135,14 @@ ottiene:~\((x^2-1)(x^2-9)=0\). Scomponendo ulteriormente in fattori si ha:
 \section{Equazioni numeriche frazionarie}
 \label{sec:compl1_eqfratte}
 
-Nelle equazioni affrontate fin'ora abbiamo incontrato delle frazioni, ma 
+Nelle equazioni affrontate finora abbiamo incontrato delle frazioni, ma
 l'incognita non è mai comparsa a denominatore. Una equazione in cui 
 l'incognita si trova a denominatore si dice \emph{equazione fratta} o
-\emph{equazione frazionaria}. Per essere risolte le equazioni fratte hanno 
-bisogno di particolare attenzione infatti finché non abbiamo risolto 
-l'equazione non possiamo dire se il denominatore è uguale o diverso da zero, 
-ma noi sappiamo che in ogni frazione il denominatore \emph{deve} essere 
-diverso da zero. 
+\emph{equazione frazionaria}. Per essere risolte le equazioni fratte 
+hanno bisogno di particolare attenzione infatti finché non abbiamo 
+risolto l'equazione non possiamo dire se il denominatore è uguale o 
+diverso da zero, ma noi sappiamo che in ogni frazione il denominatore 
+\emph{deve} essere diverso da zero. 
 % Perciò solo dopo aver risolto l'equazione possiamo dire se l'equazione 
 % stessa aveva senso perciò se la soluzione trovata è accettabile o no.
 
@@ -140,11 +152,12 @@ al denominatore.
 \end{definizione}
 
 \begin{procedura}{}{}
-Per risolvere una equazione fratta dobbiamo:
+Per risolvere una equazione fratta, che contiene più frazioni, dobbiamo:
 \begin{enumerate}[nosep]
 \item scomporre in fattori i denominatori;
 \item eseguire il denominatore comune su tutta l'equazione;
-\item scrivere le condizioni di accettabilità e eliminare i denominatori;
+\item scrivere le condizioni di accettabilità e eliminare i 
+denominatori;
 \item risolvere l'equazione intera così ottenuta;
 \item controllare se le soluzioni trovate sono accettabili.
 \end{enumerate}
@@ -153,18 +166,20 @@ Per risolvere una equazione fratta dobbiamo:
 % \newpage %------------------------------------------------------------
 
 % \begin{exrig}
- \begin{esempio}{}{}
+\begin{esempio}{}{}
 Risolvere~\(\dfrac{x^{2}+x-2}{x^{2}-x}=1-\dfrac{5}{2x}\)
 
-\begin{enumerate}[nosep]
+\begin{enumerate}[left=0mm, nosep]
 \item scomporre in fattori i denominatori:~
 \(\dfrac{x^{2}+x-2}{x(x-1)}=1-\dfrac{5}{2x}\)
 
 \item eseguire il denominatore comune su tutta l'equazione
-\[\frac{2(x^{2}+x-2)}{2x(x-1)}=\frac{2x(x-1)-5(x-1)}{2x(x-1)} \sRarrow
+\[\hspace*{-7mm}
+\frac{2(x^{2}+x-2)}{2x(x-1)}=\frac{2x(x-1)-5(x-1)}{2x(x-1)} \sRarrow
 \frac{2x^{2}+2x-4}{2x(x-1)}=\frac{2x^2-2x-5x+5}{2x(x-1)}\]
 
-\item scrivere le condizioni di accettabilità e eliminare i denominatori:
+\item scrivere le condizioni di accettabilità e eliminare i 
+denominatori:
 \[\sistema{x \neq 0 \\ 
            x \neq 1 \\ 
            \cancel{+2x^2}~\cancel{-2x^2} +2x +2x +5x = +4 +5 \sRarrow
@@ -174,10 +189,10 @@ Risolvere~\(\dfrac{x^{2}+x-2}{x^{2}-x}=1-\dfrac{5}{2x}\)
 % \(9x = 9 \sRarrow x=1\)
 
 \item controllare se le soluzioni trovate sono accettabili:\\
-il valore~\(1\) è la soluzione dell'equazione intera ottenuta eliminando i 
-denominatori, ma non è soluzione dell'equazione di partenza.
+il valore~\(1\) è la soluzione dell'equazione intera ottenuta eliminando 
+i denominatori, ma non è soluzione dell'equazione di partenza.
 \end{enumerate}
- \end{esempio}
+\end{esempio}
  
 %  \begin{esempio}{}{}
 % Risolvere~.
@@ -201,8 +216,7 @@ denominatori, ma non è soluzione dell'equazione di partenza.
 %  \item riduciamo i monomi simili per portare l'equazione alla forma 
 % canonica:~\(9x=11\)
 %  \item dividiamo ambo i membri per~\(9\), otteniamo:~\(x=\frac{11}{9}\)
-%  \item confrontando con le~\(\CE\), la soluzione appartiene 
-all'insieme~\(\ID\), 
+%  \item confrontando con le~\(\CE\), la soluzione appartiene all'insieme~\(\ID\),
 % dunque è accettabile e l'insieme soluzione è:
 %     \(\IS=\left\{\frac{11}{9}\right\}\).
 % \end{enumeratea}
@@ -217,22 +231,22 @@ all'insieme~\(\ID\),
 % % \begin{exrig}
  \begin{esempio}{}{}
 Risolvere~\(\dfrac{3x-2}{1+x}=\dfrac{3x}{x-2}\)
- 
-\begin{enumerate}[nosep]
-\item scomporre in fattori i denominatori e eseguire il  denominatore comune 
-su tutta l'equazione
+
+\begin{enumerate}[left=0mm, nosep]
+\item scomporre in fattori i denominatori e eseguire il  denominatore 
+comune su tutta l'equazione
 \[\frac{(x-2)(3x-2)}{(1+x)(x-2)}=\frac{3x(x+1)}{(x+1)(x-2)}\Rightarrow
 \frac{3x^{2}-2x-6x+4}{(1+x)(x-2)}=\frac{3x^2+3x}{(x+1)(x-2)}\]
-\item scrivere le condizioni di accettabilità e eliminare i denominatori,
-risolvere l'equazione intera così ottenuta e verificare che la soluzione sia 
-accettabile:
+\item scrivere le condizioni di accettabilità e eliminare i 
+denominatori, risolvere l'equazione intera così ottenuta e verificare 
+che la soluzione sia accettabile:
 \[\sistema{x \neq -1 \\ 
            x \neq +2 \\ 
            -11x = -4 \sRarrow x=\dfrac{4}{11} \quad 
              \text{Soluzione Accettabile.}}\]
 \end{enumerate}
-\(\dfrac{4}{11}\) è soluzione dell'equazione intera ottenuta eliminando i 
-denominatori, e è anche soluzione dell'equazione di partenza.
+\(\dfrac{4}{11}\) è soluzione dell'equazione intera ottenuta eliminando 
+i denominatori, e è anche soluzione dell'equazione di partenza.
  \end{esempio}
 
 % Per risolvere un'equazione frazionaria, prima di tutto dobbiamo renderla 
@@ -243,8 +257,7 @@ denominatori, e è anche soluzione dell'equazione di partenza.
 % 
 % \begin{enumeratea}
 %  \item Determiniamo il~\(\mcm\) dei denominatori, \(\mcm=(1+x)\cdot (x-2)\).
-%     Osserviamo che per~\(x = -1\) oppure per~\(x = 2\) le frazioni perdono 
-di 
+%     Osserviamo che per~\(x = -1\) oppure per~\(x = 2\) le frazioni perdono di
 % significato, in quanto si annulla il denominatore;
 %  \item imponiamo le condizioni di esistenza:~\(1+x\neq~0\) e~\(x-2\neq~0\) 
 % cioè~\(\CE x\neq -1\wedge x\neq~2\). La ricerca dei valori
@@ -282,23 +295,23 @@ di
 
 \section{Equazioni letterali}
 \label{sec:compl1_eqletterali}
-Quando si risolvono problemi, ci si ritrova a dover tradurre nel linguaggio 
-simbolico delle proposizioni del tipo:
+Quando si risolvono problemi, ci si ritrova a dover tradurre nel 
+linguaggio simbolico delle proposizioni del tipo:
 <<Un lato di un triangolo scaleno ha lunghezza pari a~\(k\) volte la 
-lunghezza 
-dell'altro e la loro somma è pari a~\(2k\)>>.
-Poiché la lunghezza del lato del triangolo non è nota, ad essa si attribuisce 
-il valore incognito~\(x\) e quindi la proposizione
-viene tradotta dalla seguente equazione:~\(x+kx=2k\).
+lunghezza dell'altro e la loro somma è pari a~\(2k\)>>.
+Vorremmo conoscere i due lati ma, poiché nessuno di loro è noto, alla 
+lunghezza di uno dei due si attribuisce il valore incognito~\(x\). 
+Quindi la proposizione viene tradotta dalla seguente equazione:
+\(x+kx=2k\).
 
 È possibile notare che i coefficienti dell'equazione non sono solamente 
 numerici, ma contengono una lettera dell'alfabeto diversa
 dall'incognita. Qual è il ruolo della lettera~\(k\)?
-Essa prende il nome di \emph{parametro} ed è una costante che rappresenta dei 
-numeri fissi, quindi, può assumere dei valori prefissati.
+Essa prende il nome di \emph{parametro} ed è una costante che 
+rappresenta dei numeri fissi, quindi, può assumere dei valori 
+prefissati.
 Ogni volta che viene fissato un valore di~\(k\), l'equazione precedente 
-assume 
-una diversa forma. Infatti si ha:
+assume una diversa forma. Infatti si ha:
 \begin{center}
 \begin{tabular}{ll}
 \toprule
@@ -311,35 +324,35 @@ Valore di~\(K\) & Equazione corrispondente\\
 \end{tabular}
 \end{center}
 Si può quindi dedurre che il parametro diventa una costante, all'interno 
-dell'equazione nell'incognita~\(x\), ogni volta che se ne sceglie il valore.
+dell'equazione nell'incognita~\(x\), ogni volta che se ne sceglie il 
+valore.
 
-Si supponga che il parametro~\(k\) assuma valori all'interno dell'insieme dei 
+Si supponga che il parametro~\(k\) assuma valori all'interno 
+dell'insieme dei 
 numeri reali. Lo scopo è quello di risolvere l'equazione,
 facendo attenzione a rispettare le condizioni che permettono l'uso dei 
 principi d'equivalenza e che permettono di ridurla in forma normale.
 
-Riprendiamo l'equazione  \(x+kx=2k\), raccogliamo a fattore comune la~\(x\) si 
-ha:
+Riprendiamo l'equazione  \(x+kx=2k\), raccogliamo a fattore comune la
+\(x\):
 \begin{equation*}
  (k+1)x=2k.
 \end{equation*}
-Per determinare la soluzione di questa equazione di primo grado, è necessario 
-utilizzare il secondo principio d'equivalenza e
+Per determinare la soluzione di questa equazione di primo grado, è 
+necessario utilizzare il secondo principio d'equivalenza e
 dividere ambo i membri per il coefficiente~\(k+1\).
 Si ricordi però che il secondo principio ci permette di moltiplicare o 
 dividere i due membri dell'equazione per una stessa espressione,
 purché questa sia diversa da zero.
 Per questa ragione, nella risoluzione dell'equazione~\((k+1)x=2k\) è 
-necessario 
-distinguere i due casi:
+necessario distinguere i due casi:
 \begin{itemize}[nosep]
 \item se~\(k+1\neq~0\), cioè se~\(k\neq -1\), è possibile dividere 
 per~\(k+1\) e si 
 ha~\(x=\frac{2k}{k+1}\)
-\item se~\(k+1=0\), cioè se~\(k=-1\), sostituendo tale valore all'equazione 
-si 
-ottiene l'equazione~\((-1+1)x=2\cdot (-1)\),
-   cioè~\(0\cdot x=-2\) che risulta impossibile.
+\item se~\(k+1=0\), cioè se~\(k=-1\), sostituendo tale valore 
+all'equazione si ottiene l'equazione~\((-1+1)x=2\cdot (-1)\), 
+cioè~\(0\cdot x=-2\) che risulta impossibile.
 \end{itemize}
 Riassumendo si ha:
 \begin{center}
@@ -353,31 +366,30 @@ Condizioni sul parametro & Soluzione & Equazione\\
 \bottomrule
 \end{tabular}
 \end{center}
-Ritorniamo ora al problema sul triangolo, spesso nell'enunciato del problema 
+Ritornando al problema sul triangolo, spesso nell'enunciato del problema
 sono presenti delle limitazioni implicite
-che bisogna trovare. Infatti, dovendo essere~\(x\) un lato del triangolo esso 
-sarà un numero reale positivo.
-Di conseguenza, dovendo essere l'altro lato uguale a~\(k\) volte~\(x\), il 
-valore 
-di~\(k\) deve necessariamente essere anch'esso positivo, ovvero~\(k>0\).
-Di conseguenza il parametro~\(k\) non può mai assumere il valore~\(-1\) e 
-quindi 
-il problema geometrico ammette sempre una soluzione.
+che bisogna trovare. Infatti, dovendo essere~\(x\) un lato del triangolo 
+esso sarà un numero reale positivo.
+Di conseguenza, dovendo essere l'altro lato uguale a~\(k\) volte~\(x\), 
+il valore di~\(k\) deve necessariamente essere anch'esso positivo, 
+ovvero~\(k>0\).
+Di conseguenza il parametro~\(k\) non può mai assumere il valore~\(-1\) 
+e quindi il problema geometrico ammette sempre una soluzione.
 
-Questa analisi effettuata sui valori che può assumere il parametro~\(k\), 
-prende 
-il nome di \emph{discussione dell'equazione}.
+Questa analisi effettuata sui valori che può assumere il parametro 
+\(k\), prende il nome di \emph{discussione dell'equazione}.
 
 \begin{procedura}{}{}
-Stabilire quando una equazione è determinata, indeterminata, impossibile.
+Stabilire quando una equazione è determinata, indeterminata, 
+impossibile.
 
 In generale, data l'equazione~\(ax+b=0\) si ha~\(ax=-b\) e quindi:
 \begin{enumeratea}
 \item se~\(a\neq~0\), l'equazione è determinata e ammette l'unica 
 soluzione~\(x=-\frac{b}{a}\)
 \item se~\(a=0\) e~\(b\neq~0\), l'equazione è impossibile;
-\item se~\(a=0\) e~\(b=0\), l'equazione è soddisfatta da tutti i valori reali 
-di~\(x\), ovvero è indeterminata.
+\item se~\(a=0\) e~\(b=0\), l'equazione è soddisfatta da tutti i valori 
+reali di~\(x\), ovvero è indeterminata.
 \end{enumeratea}
 \end{procedura}
 
@@ -387,63 +399,64 @@ di~\(x\), ovvero è indeterminata.
  \begin{esempio}{}{}
 Risolvere e discutere~\(1+x+m=(x+1)^{2}-x(x+m)\).
 
-Dopo aver fatto i calcoli si ottiene l'equazione~\((m-1)\cdot x=-m\) e quindi 
-si ha:
+Dopo aver fatto i calcoli si ottiene l'equazione~\((m-1)\cdot x=-m\) e 
+quindi si ha:
 \begin{itemize}[nosep]
- \item Se~\(m-1\neq~0\), cioè se~\(m\neq~1\), è possibile dividere ambo i 
-membri 
- per~\(m-1\) e si ottiene l'unica soluzione~\(x=-{\frac{m}{m-1}}\)
- \item se~\(m-1=0\), cioè se~\(m=1\), sostituendo nell'equazione il 
-valore~\(1\) si 
- ottiene~\(0\cdot x=-1\), che risulta impossibile.
+\item Se~\(m-1\neq~0\), cioè se~\(m\neq~1\), è possibile dividere ambo 
+i membri per~\(m-1\) e si ottiene l'unica soluzione 
+\(x=-{\frac{m}{m-1}}\)
+\item se~\(m-1=0\), cioè se~\(m=1\), sostituendo nell'equazione il 
+valore~\(1\) si ottiene~\(0\cdot x=-1\), che risulta impossibile.
 \end{itemize}
- \end{esempio}
+\end{esempio}
 
- \begin{esempio}{}{}
+\begin{esempio}{}{}
 Risolvere e discutere~\((k+3)x=k+4x(k+1)\).
 
-Effettuando i prodotti si ottiene l'equazione:~\((3k+1)x=-k\) e quindi si ha:
+Effettuando i prodotti si ottiene l'equazione:~\((3k+1)x=-k\) e quindi 
+si ha:
 \begin{itemize}[nosep]
- \item Se~\(3k+1\neq~0\), cioè se~\(k\neq -{\frac{1}{3}}\), è possibile 
-dividere 
- ambo i membri per~\(3k+1\) e si ottiene l'unica 
-soluzione~\(x=\frac{-k}{3k+1}\)
- \item se~\(k=-{\frac{1}{3}}\), sostituendo questo valore di~\(k\) 
-nell'equazione 
- si ottiene~\(0\cdot x=\frac{1}{3}\), che risulta un'equazione impossibile.
+\item Se~\(3k+1\neq~0\), cioè se~\(k\neq -{\frac{1}{3}}\), è possibile 
+dividere ambo i membri per~\(3k+1\) e si ottiene l'unica 
+soluzione \(x=\frac{-k}{3k+1}\)
+\item se \(k=-{\frac{1}{3}}\), sostituendo questo valore di~\(k\) 
+nell'equazione si ottiene~\(0\cdot x=\frac{1}{3}\), che risulta 
+un'equazione impossibile.
 \end{itemize}
- \end{esempio}
+\end{esempio}
 
- \begin{esempio}{}{}
+\begin{esempio}{}{}
 Risolvere e discutere~\(a^{2}\cdot x=a+1+x\).
 
 Portiamo al primo membro tutti i monomi che contengono 
 l'incognita~\(a^{2}\cdot x-x=a+1\).
-Raccogliamo a fattore comune l'incognita~\(x\cdot \left(a^{2}-1\right)=a+1\).
+Raccogliamo a fattore comune l'incognita 
+\(x\cdot \left(a^{2}-1\right)=a+1\).
 Scomponendo in fattori si ha 
 l'equazione~\(x\cdot \left(a-1\right)\left(a+1\right)=a+1\).
 
 I valori di~\(a\) che annullano il coefficiente dell'incognita 
 sono~\(a=1\) e~\(a=-1\).
 \begin{itemize}[nosep]
- \item Se nell'equazione sostituisco~\(a=1\), ottengo l'equazione~\(0x=2\) 
-che è 
- impossibile;
- \item se sostituisco~\(a=-1\), ottengo l'equazione~\(0x=0\) che è 
+\item Se nell'equazione sostituisco~\(a=1\), ottengo 
+l'equazione~\(0x=2\) che è impossibile;
+\item se sostituisco~\(a=-1\), ottengo l'equazione~\(0x=0\) che è 
 indeterminata;
- \item escludendo i casi~\(a=1\) e~\(a=-1\), che annullano il coefficiente 
-  della~\(x\) posso applicare il secondo principio
-  di equivalenza delle equazione e dividere primo e secondo membro 
-  per~\(a+1\), 
-  ottengo~\(x=\frac{a+1}{\left(a+1\right)\cdot 
+\item escludendo i casi~\(a=1\) e~\(a=-1\), che annullano il 
+coefficiente della~\(x\) posso applicare il secondo principio
+di equivalenza delle equazione e dividere primo e secondo membro 
+per~\(a+1\):\quad \(x=\frac{a+1}{\left(a+1\right)\cdot
 \left(a-1\right)}=\frac{1}{a-1}\).
 \end{itemize}
- \end{esempio}
 Ricapitolando:
-se~\(a=1\), 
-allora~\(\IS=\emptyset\) se~\(a=-1\), allora~\(\IS=\R\) 
-se~\(a\neq +1\wedge a\neq -1\), 
-allora~\(\IS=\left\{\frac{1}{a-1}\right\}\).\vspace*{1.05ex}
+\begin{itemize}[nosep]
+\item se~\(a=1\), allora~\(\IS=\emptyset\);
+\item se~\(a=-1\), allora~\(\IS=\R\);
+\item se~\(a\neq +1\wedge a\neq -1\),
+    allora~\(\IS=\left\{\frac{1}{a-1}\right\}.\)
+\end{itemize}
+\end{esempio}
+%.\vspace*{1.05ex}
 % \end{exrig}
 
 % \ovalbox{\risolvii \ref{ese:20.34}, \ref{ese:20.35}, \ref{ese:20.36}, 
@@ -734,10 +747,10 @@ Questa equazione è stata risolta rispetto all'incognita~\(A\), ossia se
 sono note le misure della base~\(b\) e dell'altezza~\(h\)
 è possibile ottenere il valore dell'area~\(A\).
 
-È possibile risolvere l'equazione rispetto a un'altra lettera pensata come 
-incognita.
-Note le misure di~\(A\) e di~\(b\) ricaviamo~\(h\). Per il primo principio 
-di equivalenza moltiplichiamo per~\(2\)
+È possibile risolvere l'equazione rispetto a un'altra lettera pensata 
+come incognita.
+Note le misure di~\(A\) e di~\(b\) ricaviamo~\(h\). 
+Per il primo principio di equivalenza moltiplichiamo per~\(2\)
 entrambi i membri dell'equazione
 \[A=\frac{b\cdot h}{2}\Rightarrow~2A=b\cdot h,\]
 dividiamo per~\(b\) entrambi i membri~\(\frac{2A}{b}=h\).
@@ -747,10 +760,8 @@ Ora basta invertire primo e secondo membro: \[h=\frac{2A}{b}.\]
 \begin{esempio}{}{}
 Formula del montante~\(M=C(1+it)\).
 
-Depositando un capitale~\(C\) per un periodo di tempo~\(t\) in anni, a un 
-tasso di 
-interesse annuo~\(i\),
-si ha diritto al montante~\(M\).
+Depositando un capitale~\(C\) per un periodo di tempo~\(t\) in anni, a 
+un tasso di interesse annuo~\(i\), si ha diritto al montante~\(M\).
 
 Risolviamo l'equazione rispetto al tasso di interesse~\(i\), ossia 
 supponiamo di conoscere il capitale depositato~\(C\), il montante~\(M\)
@@ -770,8 +781,8 @@ i=\frac{M-C}{t\cdot C}.\]
 \begin{esempio}{}{}
 Formula del moto rettilineo uniforme~\(s=s_{0}+v\cdot t\).
 
-Un corpo in una posizione~\(s_0\), viaggiando alla velocità costante~\(v\), 
-raggiunge dopo un intervallo di tempo~\(t\) la posizione~\(s\).
+Un corpo in una posizione~\(s_0\), viaggiando alla velocità costante 
+\(v\), raggiunge dopo un intervallo di tempo~\(t\) la posizione~\(s\).
 
 Calcoliamo~\(v\) supponendo note le altre misure.
 Partendo dalla formula~\(s=s_{0}+v\cdot t\) 
@@ -1238,14 +1249,16 @@ sostituzioni nelle variabili.
 
 % \begin{exrig}
  \begin{esempio}{}{}
-\[\arraystretch{2}\left\{\begin{array}{l}
+\[%\arraystretch{2} %scrive 12 accanto al segno di sistema???
+  \left\{\begin{array}{l}
   \dfrac{1}{x}+\dfrac{2}{y}=3\\
   \dfrac{2}{x}-\dfrac{4}{y}=-1 
 \end{array}\right.\]
 % \begin{multicolumn}{2}
 Con la seguente sostituzione di variabili
 \label{eq:compl1.sosti}
-\[\arraystretch{2}\left\{\begin{array}{l}
+\[%\arraystretch{2} %scrive 12 accanto al segno di sistema???
+\left\{\begin{array}{l}
   u=\dfrac{1}{x}\\
   v=\dfrac{1}{y}
 \end{array}\right.
@@ -1256,7 +1269,7 @@ Con la seguente sostituzione di variabili
 \end{array}\right.\]
 % \end{multicolumn}
 Possiamo risolvere quest'ultimo con il metodo di riduzione, 
-per ricavare l'inognita~\(u\):
+per ricavare l'incognita~\(u\):
 \[\left\{\begin{array}{l}
 2u+4v=6 \\
 2u-4v=-1
@@ -1264,7 +1277,8 @@ per ricavare l'inognita~\(u\):
 Per ricavare l'incognita~\(v\):
 \[\left\{\begin{array}{l}
 -2u-4v=-6 \\
-2u-4v=-1 \end{array}\right. \Rightarrow -8v=-7 \Rightarrow v=\frac{7}{8}\]
+2u-4v=-1 \end{array}\right. \Rightarrow 
+-8v=-7 \Rightarrow v=\frac{7}{8}\]
 Avendo trovato i valori delle incognite~\(u\) e~\(v\) possiamo 
 ricavare~\(x\) 
 e~\(y\) sostituendo con i valori trovati nella~\ref{eq:compl1.sosti}:

@@ -10,7 +10,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[[2018/01/01]
 \ProvidesClass{matlibera}[%
-    2024/05/31 v0.9.66
+    2026/02/26 v0.9.92
     Classe per il libro di Matematica Libera]
 
 \LoadClassWithOptions{memoir}[2011/03/06]
@@ -22,6 +22,7 @@
 \setlrmargins{30mm}{*}{*}              % default spine: 35.9mm
 \setulmargins{34.1mm}{*}{*}            % default upper: 44.1mm
 \setmarginnotes{2.5mm}{37.5mm}{5mm}
+\setlength{\marginparsep}{12pt}
 \checkandfixthelayout
 
 \setsecnumdepth{subsection}
@@ -34,7 +35,9 @@
 \RequirePackage{mathtools} % da approfondire
 
 \RequirePackage[greek, italian]{babel}
-\usepackage{iftex}
+\RequirePackage{xstring}
+
+\RequirePackage{iftex}
 
 \ifpdftex\typeout{************* PDFTeX*****************}
   \RequirePackage[T1]{fontenc}
@@ -44,7 +47,13 @@
 \else
   \ifluatex\typeout{************* LuaLaTeX *****************}
     \usepackage{fontspec}
-    \setmainfont{STIX}[Ligatures=TeX]
+    \setmainfont{STIX Two Text}[
+        Ligatures=TeX,
+        UprightFont = *-Regular,
+        BoldFont = *-Bold,
+        ItalicFont = *-Italic,
+        BoldItalicFont = *-BoldItalic
+    ]
     \usepackage[math-style=ISO]{unicode-math}
     \setmathfont{STIX Two Math}
   \fi
@@ -59,15 +68,30 @@
 
 \RequirePackage{eurosym} % simbolo dell'euro
 \RequirePackage{pifont} % simboli unicode
+
 \RequirePackage[inline]{enumitem} % elenchi
+\setlistdepth{9}
+\newlist{longitemize}{itemize}{6}
+\setlist[longitemize]{topsep= 0pt }
+\setlist[longitemize,1]{label=\labelitemi}
+\setlist[longitemize,2]{label=\labelitemii}
+\setlist[longitemize,3]{label=\labelitemiii}
+\setlist[longitemize,4]{label=\labelitemiv}
+\setlist[longitemize,5]{label=\labelitemv}
+\setlist[longitemize,6]{label=\labelitemvi}
+
 \RequirePackage{multicol} % testo su più colonne
 \RequirePackage{multirow} % tabelle con celle su più righe
 \RequirePackage{quoting} % per le citazioni
 \quotingsetup{font=small}
 \RequirePackage{tabto} % per punti di tabulazione
 \RequirePackage{microtype} % per la composizione fine
+\usepackage{eso-pic} % Per la filigrana su ogni pagina.
 \RequirePackage[usenames, dvipsnames]{xcolor}   % gestione colori
 \RequirePackage{pgfplots} % per axis
+\usepgfplotslibrary{statistics}
+\pgfplotsset{compat=newest}
+\RequirePackage{pgfplotstable} % Per boxplot
 \RequirePackage{tikz}
 \RequirePackage{tkz-fct} % per il disegno di funzioni
 \RequirePackage{tikz-qtree} % per alberi
@@ -84,6 +108,7 @@
   decorations.text,%
   decorations.pathreplacing,%
   fit,%
+  math,%
   matrix,%
   mindmap,%
   patterns,%
@@ -105,6 +130,10 @@
 \RequirePackage{imakeidx}   % Indice analitico
 \makeindex[options={-s matlibera.ist}, title=Indice analitico, intoc,
            columns=2]
+
+\RequirePackage{needspace}   % Controllo per nuovapagina
+
+\RequirePackage{marginnote} % per le note a margine
 
 \newcommand{\colormd}{Mahogany}
 \newcommand{\colortcblist}{BlueGreen}
@@ -167,6 +196,22 @@ title={#1}}
   \textcolor{Salmon}{\ding{223}}%
 }
 
+\renewcommand{\labelitemiii}{%
+  \textcolor{Salmon}{\ding{223}}%
+}
+
+\renewcommand{\labelitemiv}{%
+  \textcolor{Salmon}{\ding{222}}%
+}
+
+\newcommand{\labelitemv}{%
+  \textcolor{Salmon}{\ding{221}}%
+}
+
+\newcommand{\labelitemvi}{%
+  \textcolor{Salmon}{\ding{219}}%
+}
+
 \newenvironment{enumeratea}{%
   \begin{enumerate}[left=0mm, label=\alph*\,), nosep]%
   \spazielenx
@@ -194,25 +239,32 @@ title={#3},#2}
 \theoremstyle{plain}
 \tcbset{
 ossstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-arc=0mm, colback=\coloross!5!white, colframe=\coloross!50!black,
-theorem style=plain, coltitle=\coloross!30!black},
+  arc=0mm, breakable,
+  colback=\coloross!5!white, colframe=\coloross!50!black,
+  theorem style=plain, coltitle=\coloross!30!black},
 procstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-arc=0mm, colback=\colorproc!5!white, colframe=\colorproc!50!black,
-theorem style=plain, coltitle=\colortit!30!black},
+  arc=0mm, breakable,
+  colback=\colorproc!5!white, colframe=\colorproc!50!black,
+  theorem style=plain, coltitle=\colortit!30!black},
 defstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-colback=\colordef!5!white, colframe=\colordef!50!black,
-theorem style=plain, coltitle=\colortit!30!black},
+  colback=\colordef!5!white, colframe=\colordef!50!black,
+  theorem style=plain, coltitle=\colortit!30!black},
 poststyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-colback=\colortheo!10!white, colframe=\colortheo!75!black,
-theorem style=plain, coltitle=\colortit!30!black},
+  colback=\colortheo!10!white, colframe=\colortheo!75!black,
+  theorem style=plain, coltitle=\colortit!30!black},
 theostyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-colback=\colortheo!5!white, colframe=\colortheo!50!black,
-theorem style=plain, coltitle=\colortit!30!black},
+  colback=\colortheo!5!white, colframe=\colortheo!50!black,
+  theorem style=plain, coltitle=\colortit!30!black},
 esemstyle/.style={
-fonttitle=\bfseries\upshape, fontupper=\slshape,
-enhanced jigsaw, breakable,
-arc=0mm, colback=\coloresem!5!white, colframe=\coloresem!50!black,
-theorem style=plain, coltitle=\coloresem!30!black}
+  fonttitle=\bfseries\upshape, fontupper=\slshape,
+  enhanced jigsaw, breakable,
+  arc=0mm, colback=\coloresem!5!white, colframe=\coloresem!50!black,
+  theorem style=plain, coltitle=\coloresem!30!black},
+pystyle/.style={
+  fonttitle=\bfseries\upshape, fontupper=\slshape,
+  enhanced jigsaw, breakable,
+  arc=0mm, colback=green!15, colframe=green!15,
+  theorem style=plain, coltitle=green!30!black}
 }
 
 \tcolorboxenvironment{proof}{% `proof' from `amsthm'
@@ -220,16 +272,25 @@ blanker, breakable, left=5mm, oversize,
 before skip=10pt, after skip=10pt,
 borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
 
-\newenvironment{dimostrazione}{%
-  \begin{proof}[Dimostrazione]%
-}{%
-  \end{proof}%
+\newenvironment{dimostrazione}{
+  \begin{proof}[Dimostrazione]~
+
+}{
+  \end{proof}
 }
 
-\newenvironment{soluzione}{%
-  \begin{proof}[Soluzione]%
-}{%
-  \end{proof}%
+\newenvironment{soluzione}{
+  \begin{proof}[Soluzione]~
+
+}{
+  \end{proof}
+}
+
+\newenvironment{costruzione}{
+  \begin{proof}[Costruzione]~
+
+}{
+  \end{proof}
 }
 
 \newtcbtheorem[number within=chapter]{osservazione}{Osservazione}
@@ -264,6 +325,9 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
 
 \newtcbtheorem[use counter from=teorema]{corollario}{Corollario}
               {theostyle}{th}
+
+\newtcbtheorem[]{parametri}{Parametri}
+              {pystyle}{par}
 
 \makeatletter
 \AtEndPreamble{\ifcsstring{languagename}{english}{\relax}{%
@@ -595,6 +659,15 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
  \end{minipage}
 }
 
+\newcommand{\segnopara}[4][0]{% Segno di una parabola
+  % Sintassi: \segnopara{Equazione ass.}{funzione ass.}{grafico}
+  % Esempio di chiamata:
+  % \segnopara{x - 4 = 0 \quad \Rightarrow \quad x = 4}
+  %            {y = x - 4 \quad \rightarrow}
+  %            {\segnicre{4}}
+  \hspace*{#1mm}Z:~~\(#2\) \qquad F:~~\(#3\) ~~ \raisebox{-5mm}{#4}
+}
+
 \newcommand{\insiemesoluzione}[3]{% Insieme soluzione di una disequazione
   % Sintassi: \insiemesoluzione{s. grafica}{s. predicati}{s. parentesi}
   % Esempio di chiamata:
@@ -622,7 +695,7 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
   \end{minipage}
 }
 
-\newcommand{\elenconumerato}[2]{% Elenco numeato
+\newcommand{\elenconumerato}[2]{% Elenco numerato
   % Sintassi: \elenconumerato{items}{spazio verticale}
   % Esempio di chiamata:
   % \elenconumerato{{$3+2$, $4 \cdot 5$, {con, VIRGOLE, $5^3$}}
@@ -654,12 +727,10 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
   \end{alternativetext}%
 }
 
-
 \NewPitonEnvironment{sPiton}{}{%
   \vspace{.5em}
 }{
 }
-
 
 \newcommand{\sPitonInputFile}[2][]{
   \vspace{.3em}
@@ -672,11 +743,104 @@ borderline west={1mm}{0pt}{\colorproof!60!black!20!white}}
 
 \newcommand{\centrat}[1]{\begin{center}#1\end{center}}
 
-\newcommand{\video}[2]{
-\marginpar{
-\includegraphics[scale=.25]{\folder link/#1}
+\newcommand{\video}[1]{%
+  \marginpar{%
+  \includegraphics[scale=.20]{\folder qrcode/#1.png}\\
+  {\footnotesize\href{https://www.matematicalibera.it/rd/#1}
+                    {matematicalibera.it/rd/#1}}}
+}
 
-\href{https://#2}{#2}}
+\newcommand{\crL}{\textbf{\textit{(L)}}:~}
+
+\newcommand{\crA}{\textbf{\textit{(A)}}:~}
+
+\newcommand{\proposit}[1]{% Proposizione per i titoli
+\textit{Proposizione}~#1:~
+}
+
+\NewDocumentCommand{\hproposir}{s m}{% Proposizione per i riferimenti
+  \IfBooleanTF{#1}
+  {\hyperref[Prop#2]{\textbf{#2}}}%
+  {\hyperref[Prop#2]{\textbf{(\textit{prop.}~#2)}}}%
+}
+
+\newcommand{\hypref}[2]{% riferimenti
+  % Sintassi:
+  % \hypref{ref}{label}
+  % Esempio:
+  % \hypref{CrRLL}{RLL}
+  \hyperref[#1]{\textbf{(\textit{#2})}}%
+}
+
+\newcommand{\htermr}[1]{% Termini per i riferimenti
+  \hyperref[Term#1]{\textbf{(\textit{T~#1})}}%
+}
+
+\newcommand{\hassr}[1]{% Assioma per i riferimenti
+  \hyperref[Ass#1]{\textbf{(\textit{A#1})}}%
+}
+
+\newcommand{\hassCr}[1]{% Assioma congruenza per i riferimenti
+  \hyperref[AssC#1]{\textbf{(\textit{AC#1})}}%
+}
+
+\newcommand{\hassDr}[1]{% Assioma diversità per i riferimenti
+  \hyperref[AssD#1]{\textbf{(\textit{AD#1})}}%
+}
+
+\newcommand{\hCrLALr}{% Criterio LAL per i riferimenti
+\hyperref[CrLAL]{\textbf{(\textit{CrLAL})}}
+}
+
+\newcommand{\hCrLLLr}{% Criterio LLL per i riferimenti
+\hyperref[CrLLL]{\textbf{(\textit{CrLLL})}}
+}
+
+\newcommand{\hcrALAr}{% Criterio ALA per i riferimenti
+\hyperref[CrALA]{\textbf{(\textit{CrALA})}}
+}
+
+\NewDocumentCommand{\marginrefterm}{s  m}{%
+  % Riferimenti nei margini per i termini.
+  % La starred scrive un solo elemento.
+  \marginpar{%
+    \IfBooleanTF{#1}{
+      Usato nella prop.: \hproposir*{#2}
+    }{
+      Usato nelle prop.:\\
+      \foreach \riga in {#2} {
+        \foreach \num in \riga {\hproposir*{\num}~~}\\}%
+    }%
+  }%
+}
+
+\NewDocumentCommand{\marginrefass}{s  m}{%
+  % Riferimenti nei margini per gli assiomi.
+  % La starred scrive un solo elemento.
+  \marginpar{%
+    \IfBooleanTF{#1}{
+      Usato nella prop.: \hproposir*{#2}
+    }{
+      Usato nelle prop.:\\
+      \foreach \riga in {#2} {
+        \foreach \num in \riga {\hproposir*{\num}~~}\\}%
+    }%
+  }%
+}
+
+
+\NewDocumentCommand{\marginrefprop}{s  m}{%
+  % Riferimenti nei margini per le proposizioni.
+  % La starred scrive un solo elemento.
+  \marginpar{%
+    \IfBooleanTF{#1}{
+      Usata nella prop.: \hproposir*{#2}
+    }{
+      Usata nelle prop.:\\
+      \foreach \riga in {#2} {
+        \foreach \num in \riga {\hproposir*{\num}~~}\\}%
+    }%
+  }%
 }
 
 

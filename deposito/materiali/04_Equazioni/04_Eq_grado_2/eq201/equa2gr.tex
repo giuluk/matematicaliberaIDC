@@ -2,110 +2,53 @@
 % (c)~2014 Claudio.carboncinii -claudio.carboncini@gmail.com
 % (c) 2015 Daniele Zambelli daniele.zambelli@gmail.com
 
-\newcommand{\eqdue}[3]{% equazione di secondo grado
-% \eqdue{\dfrac{+5 \mp \sqrt{25 -24}}{+6} = 
-%        \dfrac{+5 \mp \sqrt{1}}{6} = 
-%        \dfrac{5 \mp 1}{6}}
-%       {\dfrac{2}{3}}{1}
-\begin{align*}
-x_{1,2} = \dfrac{-b \mp \sqrt{b^2 -4ac}}{2a} = #1
- \begin{array}{l}
-  \nearrow\\
-  \searrow
- \end{array}
- \begin{array}{l}
-  x_1 = #2\\[.8em]
-  x_2 = #3
- \end{array}
-\end{align*}
-}
-
-\newcommand{\eqduerid}[3]{% equazione di secondo grado ridotta
-% \eqdue{\dfrac{+5 \mp \sqrt{25 -24}}{+6} = 
-%        \dfrac{+5 \mp \sqrt{1}}{6} = 
-%        \dfrac{5 \mp 1}{6}}
-%       {\dfrac{2}{3}}{1}
-\begin{align*}
-x_{1,2} = \dfrac{-\beta \mp \sqrt{\beta^2 -ac}}{a} = #1
- \begin{array}{l}
-  \nearrow\\
-  \searrow
- \end{array}
- \begin{array}{l}
-  x_1 = #2\\[.8em]
-  x_2 = #3
- \end{array}
-\end{align*}
-}
-
-\newcommand{\eqdeltazero}[2]{% equazione di secondo grado \Delta = 0
-% \eqdeltazero{\dfrac{+12 \mp \sqrt{144 -144}}{8} = \dfrac{12}{8}}
-%             {\dfrac{3}{2}}
-\[
-x_{1,2} = \dfrac{-b \mp \sqrt{b^2 -4ac}}{2a} = #1 = #2
-\]
-}
+\input{\folder equa2gr_grafici.tex}
 
 \chapter{Equazioni di secondo grado}
 
-% \begin{inaccessibleblock}[Parabola di equazione \(y=x^2\).]
-% \centering
-%   \input{\folder lbr/009_parabolatangenti.pgf}
-%   \caption{Tangenti a una parabola.} \label{fig:parabola_tangenti}
-% \end{inaccessibleblock}
-
-% \begin{figure}[h]
-% \begin{minipage}{.40\textwidth}
-% \begin{enumerate}
-%  \item il punto è esterno alla parabola: 2 tangenti reali distinte;
-%  \item il punto appartiene alla parabola: due tangenti reali coincidenti
-%   (una tangente?);
-%  \item il punto è interno alla parabola: nessuna tangente reale.
-% \end{enumerate}
-% Vediamo i tre casi con un esempio \ref{fig:parabola_tangenti}.
-% \end{minipage}
-% \begin{minipage}{.60\textwidth}
-% \begin{inaccessibleblock}[Parabola di equazione \(y=x^2\).]
-% \centering
-%   \input{\folder lbr/009_parabolatangenti.pgf}
-%   \caption{Tangenti a una parabola.} \label{fig:parabola_tangenti}
-% \end{inaccessibleblock}
-% \end{minipage}
-% \end{figure}
-
-% \begin{wrapfloat}{figure}{r}{0pt}
-% \includegraphics[scale=0.35]{\folder img/fig000_.png}
-% \caption{...}
-% \label{fig:...}
-% \end{wrapfloat}
-% 
-% \begin{center} \input{\folder lbr/fig000_.pgf} \end{center}
+\inicapitolo{%
+\begin{itemize}[left=0mm, nosep]
+\item le equazioni di secondo grado in un'incognita;
+\item metodi di soluzione;
+\item il discriminante;
+\item le relazioni tra i coefficienti e le soluzioni;
+\item applicazione alla scomposizione in fattori;
+\item equazioni parametriche;
+\item problemi di secondo grado;
+%\TODO  I 3 punti seguenti?
+% \item equazioni di terzo grado;
+% \item sistemi di secondo grado;
+% \item sistemi simmetrici.
+\end{itemize}
+}
 
 \section{Le equazioni di secondo grado in una incognita}
 \label{sec:eq2gr_definizione}
 
-% Nel capitolo precedente abbiamo già risolto alcune equazioni di secondo 
-% grado e anche di gradi superiori.
 In questo capitolo ci concentreremo sulle equazioni di secondo grado 
 arrivando a una soluzione generale e illustrando alcune interessanti 
 caratteristiche di queste equazioni.
+Partiamo da un problema: 
 
-\affiancati{.59}{.39}
-{Partiamo da un problema: 
+\begin{problema}{}{}
 ``In un triangolo rettangolo l'ipotenusa è 
 più lunga del cateto minore di 4 cm, mentre l'altro cateto è più lungo del 
 cateto minore di 2 cm. Si vogliono trovare le misure dei tre lati''.
+\end{problema}
 
-Si può formalizzare il problema indicando con \(x\) la misura incognita del 
-cateto minore. 
+\begin{soluzione}{}{}~
+
+\affiancati{.59}{.39}
+{Si può formalizzare il problema indicando con \(x\) la misura incognita 
+del cateto minore. 
 La lunghezza dell'ipotenusa sarà \(x +4\), mentre quella dell'altro 
 cateto \(x +2\). 
 Applicando il teorema di Pitagora si ha: 
-\(x^2 +(x +2 )^2 = ( x +4 )^2\). }
-{
-\begin{center}
-\input{\folder lbr/fig000_tria.pgf}
-\end{center}
+\(x^2 +(x +2 )^2 = ( x +4 )^2\). 
+}{
+\immagine{Triangolo rettangolo con un cateto lungo x l'altro cateto lungo 
+x+2 e l'ipotenusa lunga x+4.}
+{\triaa}
 }
 Dopo aver effettuato i calcoli e aver portato tutti i 
 termini a sinistra del predicato uguale abbiamo: \(x^2-4x-12=0\).
@@ -113,12 +56,15 @@ termini a sinistra del predicato uguale abbiamo: \(x^2-4x-12=0\).
 La soluzione di questa equazione potrebbe fornire la soluzione al problema.
 Questa è una equazione di secondo grado in una incognita poiché il trinomio 
 è di secondo grado.
+\end{soluzione}
+
 \begin{definizione}{}{}
 Si dice \emph{equazione di secondo grado}, un'equazione del tipo: 
 \(ax^2 +bx +c = 0\) con \(a, b, c \in \R\) e \(a \neq 0\). 
 I valori \(a\), \(b\), \(c\) prendono il nome di \emph{coefficienti} e, in 
 particolare, \(c\) viene detto \emph{termine noto}.
 \end{definizione}
+\ind{equazione di secondo grado}
 
 % Un'equazione di secondo grado si definisce:
 % \begin{description*}
@@ -133,10 +79,22 @@ particolare, \(c\) viene detto \emph{termine noto}.
 %  \(a x ^{2 } +b x +c = 0\).
 % \end{description*}
 
-Prima di affrontare il caso generale, vediamo alcune situazioni particolari 
-che possiamo risolvere con metodi già visti.
+% Prima di affrontare il caso generale, illustrato nella definizione precedente,
+% vediamo alcune situazioni particolari che possiamo risolvere anche senza
+% imparare regole nuove. Per esempio è di secondo grado un'equazione
+% elementare come la seguente:
+% \[x^2 - 144 = 0\]
+% L'equazione si trasforma facilmente in \(x^2=144\), che corrisponde al problema ``\emph{trovare quel numero il cui quadrato vale 144}''. Ognuno sa che quel numero
+% è 12, ma subito deve aggiungere che potrebbe anche essere \(-12\), così da scrivere
+% \(x=\mp 12\).
+%
+% Oppure, se ci si ricordasse di come scomporre un binomio, si potrebbe scrivere
+% \[x^2-144=0\ \Rightarrow\ (x-12)(x+12)=0\]
+% e, grazie alla legge di annullamento del prodotto, anche così si otterrebbe \dots
+% ma vediamo di procedere per gradi.
 
 \subsection{Equazioni del tipo: \(x^2 +c = 0\)~~ (equazione pura)}
+\ind{equazione pura}
 Il coefficiente della \(x\) è nullo e l'equazione si presenta nella forma: 
 \(ax^2 +c = 0\).
 Si risolve isolando l'incognita:
@@ -144,23 +102,22 @@ Si risolve isolando l'incognita:
 x_{1,2}=\mp \sqrt{-\dfrac{c}{a}}\]
 ricordandoci che elevando al quadrato due numeri opposti si ottiene lo 
 tesso risultato. 
-Perciò se  \(+\sqrt{-\dfrac{c}{a}}\) anche \(-\sqrt{-\dfrac{c}{a}}\) sarà 
-soluzione dell'equazione.
+Perciò se  \(+\sqrt{-\dfrac{c}{a}}\) è una soluzione, anche 
+\(-\sqrt{-\dfrac{c}{a}}\) sarà una soluzione dell'equazione.
 
-% se \(x\) alla seconda è uguale a un certo numero, anche 
-% \(-x\) elevato alla seconda dà lo stesso risultato, avremo:
-% \[\]
-Ricordandoci inoltre che la funzione radice quadrata dà soluzione reale solo 
-se il suo argomento è positivo, quindi se \quad \(-\dfrac{c}{a} < 0 \) \quad 
+Ricordandoci inoltre che la funzione radice quadrata dà soluzione reale 
+solo se il suo argomento è positivo, quindi se 
+\quad \(-\dfrac{c}{a} < 0 \) \quad 
 diremo che l'equazione \emph{non ha soluzioni reali}.
+\ind{eq. senza soluzioni reali}
 
 \begin{esempio}{}{}
  Risoluzione di equazioni pure.
 \begin{itemize} [nosep]
 \item \(4 x ^{2} -9 =0\) risoluzione
 \(4x^2 = +9 \Rightarrow x^2 = \dfrac{9}{4}
-\Rightarrow x_{1,2 } = \mp \sqrt{\dfrac{9}{4}} \Rightarrow 
-x_1 = -\dfrac{3}{2} \vee x _2 = +\dfrac{3}{2}\)
+\Rightarrow x_{1,2 } = \mp \sqrt{\dfrac{9}{4}} \Rightarrow \)\\
+\(\Rightarrow x_1 = -\dfrac{3}{2} \vee x _2 = +\dfrac{3}{2}\)
 \item \(4 x ^{2 } +9 = 0\) risoluzione \(4x^2 +9 = 0 \Rightarrow 
 x^{2 } = -\dfrac{9}{4}\). 
 L'equazione non ammette soluzioni reali in quanto il quadrato di un numero 
@@ -169,12 +126,14 @@ reale non è mai negativo.
 \end{esempio}
 
 \subsection{Equazioni risolvibili per scomposizione}
+\ind{risolvere per scomposizione}
 
 Se riusciamo a scomporre il polinomio di secondo grado nel prodotto di due 
 fattori di primo grado, possiamo usare i metodi visti nel capitolo 
 precedente.
 
 \subsubsection{Equazioni del tipo: \(ax^2 +bx = 0\)~~ (equazione spuria)}
+\ind{equazione spuria}
 
 Raccoglimento a fattore comune e poi legge di annullamento del prodotto 
 portano rapidamente alla soluzione:
@@ -191,7 +150,7 @@ Qualche esempio risolto.
              {-0.8}
 \item ~
 
-\vspace{-1.7em}
+\vspace{-2em}
 \zeriprodotto{x^2 +x = 0 \sRarrow x(x+1)=0}
              {+1.8/{x+1=0~ \sRarrow ~x_1=-1},
               +0.6/{~~~x=0~ \sRarrow ~x_2=0}}
@@ -199,13 +158,12 @@ Qualche esempio risolto.
 
 \end{itemize}
 \end{esempio}
-% \end{exrig}
 
 \subsubsection{Zeri del trinomio notevole: \(x^2 +sx +p = 0\)}
-
+\ind{trinomio notevole}
 Abbiamo imparato a scomporre il trinomio notevole, questo ci permette di 
-risolvere facilmente molte equazioni usando la scomposizione in fattori e la 
-legge di annullamento del prodotto.
+risolvere facilmente molte equazioni usando la scomposizione in fattori e 
+la legge di annullamento del prodotto.
 
 \begin{esempio}{}{}
 Qualche esempio risolto.
@@ -226,27 +184,21 @@ Qualche esempio risolto.
              {-0.8}
 \end{itemize}
 \end{esempio}
-% \vspazio
-% \ovalbox{\risolvii \ref{ese:3.5}, \ref{ese:3.6}, \ref{ese:3.7}, 
-%          \ref{ese:3.8}, \ref{ese:3.9}, \ref{ese:3.10}, 
-%          \ref{ese:3.11}}
 
 \section{Risoluzione di un'equazione completa: \(ax^2+bx+c=0\)}
 \label{sec:eq2gr_completa}
+\ind{risolvere un'eq. di 2° grado completa}
 
-% Non sempre risulta facile scomporre in fattori un polinomio di secondo 
-% grado, 
-% qualche volta è addirittura impossibile! 
 Come fare per risolvere un'equazione di secondo grado anche quando non 
 riusciamo a scomporre in fattori il polinomio?
 I matematici hanno trovato due formule che forniscono le due soluzioni 
 dell'equazione combinando fra loro i coefficienti del polinomio:
-\[\sistema{x_1 = \dfrac{-b -\sqrt{b^2 -4ac}}{2a}\\
+\[\sistema{x_1 = \dfrac{-b -\sqrt{b^2 -4ac}}{2a}\\[3mm]
            x_2 = \dfrac{-b +\sqrt{b^2 -4ac}}{2a}} \quad 
   \text{che si può riassumere in:} \quad 
   x_{1,2} = \dfrac{-b \mp \sqrt{b^2 -4ac}}{2a}\]
 
-\newpage %-----------------------------------------------
+% \newpage %-----------------------------------------------
 
 La formula risolutiva delle equazioni di secondo grado deriva dai seguenti 
 ragionamenti:
@@ -265,9 +217,9 @@ soluzione di equazioni del tipo:
 \begin{center}
 \begin{tabular}{ll}
 consideriamo \((2ax +b)\) come un blocco unico:~~ & 
-    \(2ax_{1,2}+b=\pm \sqrt{b^2 -4ac}\) \quad ~~~\\
+    \(2ax_{1,2}+b=\mp \sqrt{b^2 -4ac}\) \quad ~~~\\
 aggiungiamo ad entrambi i membri \(-b\): & 
-    \(2ax_{1,2}=-b \pm \sqrt{b^2 -4ac}\)\\
+    \(2ax_{1,2}=-b \mp \sqrt{b^2 -4ac}\)\\
 dividiamo tutto per \(2a\) ottenendo: & 
     \(x_{1,2} = \dfrac{-b \mp \sqrt{b^2 -4ac}}{2a}\)
 \end{tabular}
@@ -302,6 +254,8 @@ Scomporre in fattori risulta comunque più rapido che usare la formula
 generale.
 
 \subsection{Il discriminante}
+\ind{discriminante}
+
 Nel calcolo è coinvolta l'estrazione di radice quadrata: l'espressione 
 scritta sotto la radice quadrata, il radicando, prende il nome di 
 \emph{discriminante} e si è soliti indicare con ``Delta'': 
@@ -339,7 +293,7 @@ x_2 = \dfrac{-b +\sqrt{\Delta}}{2 a}\)\\
 \bottomrule
 \end{tabular}
 \end{center}
-
+\ind{eq. senza soluzioni reali}
 % \newcommand{\eqdue}[3]{% equazione di secondo grado
 % % \eqdue{\dfrac{+5 \mp \sqrt{25 -24}}{+6} = 
 % %        \dfrac{+5 \mp \sqrt{1}}{6} = 
@@ -358,12 +312,11 @@ x_2 = \dfrac{-b +\sqrt{\Delta}}{2 a}\)\\
 % \]
 % }
 
-% \begin{exrig}
 \begin{esempio}{}{}
 Risoluzione di equazioni complete.
-\begin{enumerate}
+\begin{enumerate}[left=0mm]
 \item \(3x^2 -5x +2 = 0\) \quad \((a = +3,~b = -5,~c = +2)\) 
-\eqdue{\dfrac{+5 \mp \sqrt{25 -24}}{+6} = 
+\eqdue[-5]{\dfrac{+5 \mp \sqrt{25 -24}}{+6} = 
        \dfrac{+5 \mp \sqrt{1}}{6} = 
        \dfrac{5 \mp 1}{6}}
       {\dfrac{2}{3}}{1}
@@ -373,7 +326,7 @@ Risoluzione di equazioni complete.
 \item \(x^2 -x +3=0\) \quad \(a = +1,~b = -1,~c = +3\)
 \eqdeltazero{\dfrac{+1 \mp \sqrt{1 -12}}{2}}
             {\stext{Non Ha Soluzioni Reali}}
-Dato che il discriminante è minore di zero.
+dato che il discriminante è minore di zero.
 \item \(x^2 -4x +2 = 0\) \quad \((a = +1,~b = -4,~c = +2)\) 
 \eqdue{&\dfrac{+4 \mp \sqrt{16 -8}}{2} = 
        \dfrac{4 \mp \sqrt{8}}{2} = 
@@ -384,7 +337,7 @@ Dato che il discriminante è minore di zero.
 \end{enumerate}
 \end{esempio}
 
-% \end{exrig}
+
 
 % \vspazio
 % \ovalbox{\risolvii \ref{ese:3.12}, \ref{ese:3.13}, \ref{ese:3.14}, 
@@ -393,6 +346,8 @@ Dato che il discriminante è minore di zero.
 % \vspazio
 
 \subsection{Formula ridotta per equazioni di secondo grado}
+\ind{risolvere con formula ridotta}
+
 Se nell'equazione
 \(a x^2 +b x +c=0\) il coefficiente \(b\) è un numero pari, conviene 
 applicare una formula, detta \emph{formula ridotta}, che semplifica i 
@@ -401,52 +356,43 @@ calcoli.
 Supponiamo \(b=2 \beta\), l'equazione \(a x^2 +b x +c=0\) diventa 
 \(a x^2 +2 \beta x +c=0\) 
 e nella formula risolutiva dell'equazione si ottiene:
-\[x_{1,2}=\dfrac{-2 \beta \pm \sqrt{( 2 \beta )^2 -4ac}}{2a}=
-\dfrac{-2 \beta \pm \sqrt{4\beta^{2} -4ac}}{2a}=
-\dfrac{-2 \beta \pm 2 \sqrt{\beta^{2} -ac}}{2 a}=
-\dfrac{-\beta \pm \sqrt{\beta^2 -ac}}{a}\]
+{\small
+\[x_{1,2}=\dfrac{-2 \beta \mp \sqrt{( 2 \beta )^2 -4ac}}{2a}=
+\dfrac{-2 \beta \mp \sqrt{4\beta^{2} -4ac}}{2a}=
+\dfrac{-2 \beta \mp 2 \sqrt{\beta^{2} -ac}}{2 a}=
+\dfrac{-\beta \mp \sqrt{\beta^2 -ac}}{a}\]
+} %end small
 La quantità sotto radice 
 \(\dfrac{\Delta}{4} = \beta^{2} -a c\), 
 è detta anche \emph{discriminante ridotto}.
 
-Quando \(b\) è pari e \(a = 1\), la formula si dice \emph{ridottissima}: 
-\(x_{1,2}=-\beta \pm \sqrt{\beta^2 -c}\).
+Quando \(b\) è pari e \(a = 1\), la formula diventa: 
+\(x_{1,2}=-\beta \mp \sqrt{\beta^2 -c}\).
 
-% \begin{exrig}
 \begin{esempio}{}{}
-Riprendiamo l'ultimo esempio della sezione precedente: 
+Riprendiamo l'ultimo esempio della sezione precedente: \\
 \(x^2 -4 x +2=0\)
-\eqduerid{\dfrac{+2 \mp \sqrt{4 -2}}{1} = 2 \mp \sqrt{2}}
+\eqduefr{\dfrac{+2 \mp \sqrt{4 -2}}{1} =\\
+= 2 \mp \sqrt{2}}
          {2 -\sqrt{2}}{2 +\sqrt{2}}
 \end{esempio}
+
 \begin{esempio}{}{}
- Applicazione della formula ridotta nella risoluzione di equazioni complete.
-\begin{enumerate}
+Applicazione della formula ridotta nella risoluzione di equazioni complete.
+\begin{enumerate}[left=0mm]
 \item \(x^2 -4x +3=0\)
-\eqduerid{2 \mp \sqrt{4 -3} = 2 \mp 1}
+\eqduefr{2 \mp \sqrt{4 -3} = 2 \mp 1}
          {1}{3}
-% \[x_{1,2} = \dfrac{-\beta \pm \sqrt{\beta^{2} -a c}}{a} =
-% \dfrac{-(-2 ) \pm \sqrt{(-2)^{2}-1 \cdot 3}}{1}=2 \pm 
-% \sqrt{1}\Rightarrow  x_1 = 1 \vee x_2 = 3;\]
 \item \(-x^2 -2x +24 = 0\)
-\eqduerid{\dfrac{1 \mp \sqrt{1 +24}}{-1} = \dfrac{1 \mp 5}{-1}}
+\eqduefr{\dfrac{1 \mp \sqrt{1 +24}}{-1} = \dfrac{1 \mp 5}{-1}}
          {+4}{-6}
-% \[x_{1,2} = \dfrac{-\beta \pm \sqrt{\beta^{2} -a c}}{a} =
-% \dfrac{-( -1 ) \pm \sqrt{( -1 )^{2} -( -1 ) ( 24 )}}{-1}=-1 \pm 
-% \sqrt{25}\Rightarrow x_1 = -6 \vee x_2 = 4;\]
-\item \(-3 x^2 -6 x +12=0\). Per prima cosa dividiamo l'equazione per 
-\(-3\), 
-per il secondo principio di equivalenza, si ha l'equazione equivalente~
+\item \(-3 x^2 -6 x +12=0\). Dividendo entrambi i membri l'equazione per 
+\(-3\), si ha l'equazione equivalente
 \(x^2 +2x -4 = 0\). 
-\eqduerid{-1 \mp \sqrt{1 +4} = -1 \mp \sqrt{5}}
+\eqduefr{-1 \mp \sqrt{1 +4} = -1 \mp \sqrt{5}}
          {-1 -\sqrt{5}}{-1 +\sqrt{5}}
-% Poiché il coefficiente della~\(x\) è pari si può applicare la formula 
-% ridotta: 
-% \[x_{1,2}=-1 \pm \sqrt{1 +4} = -1\pm \sqrt{5}\Rightarrow x_1 = -1 +
-% \sqrt{5} \vee x_2 = -1 -\sqrt{5}.\]
 \end{enumerate}
 \end{esempio}
-% \end{exrig}
 
 % % \begin{exrig}
 % \begin{esempio}{}{}
@@ -455,12 +401,12 @@ per il secondo principio di equivalenza, si ha l'equazione equivalente~
 % \begin{itemize}
 % \item \(x^2 -6 x +8 = 0\). Il coefficiente \(b\) è pari e il coefficiente 
 % \(a=1\), 
-% quindi possiamo applicare la formula ridottissima \(x_{1,2} = 3 \pm 
+% quindi possiamo applicare la formula ridottissima \(x_{1,2} = 3 \mp 
 % \sqrt{9 -
 % 8}\), quindi \(x_1=2 \vee x_2 = 4\).
 % \end{itemize}
 % \end{esempio}
-% % \end{exrig}
+% 
 % \vspazio
 % \ovalbox{\risolvii \ref{ese:3.20}, \ref{ese:3.21}, 
 %                    \ref{ese:3.22}, \ref{ese:3.23}, 
@@ -479,7 +425,7 @@ per il secondo principio di equivalenza, si ha l'equazione equivalente~
 % \(b = 0, c \neq 0\) & Pura & \(a x^2 +c=0\) & \(\IS=\emptyset\) se~\(a 
 % \cdot 
 % c>0\)\\
-% & & & \(x_{1,2} = \pm \sqrt{-\dfrac{c}{a}}\) se~\(a \cdot c<0\)\\
+% & & & \(x_{1,2} = \mp \sqrt{-\dfrac{c}{a}}\) se~\(a \cdot c<0\)\\
 % \(b \neq 0, c = 0\) & Spuria & \(a x^2 +b x=0\) & \(x_1 = 0 \vee x_2 = -
 % \dfrac{b}{a}\) \vspace{1.1ex}\\
 % \toprule
@@ -488,7 +434,7 @@ per il secondo principio di equivalenza, si ha l'equazione equivalente~
 % Discriminante & \multicolumn{2}{l} {Numero soluzioni} & Soluzioni\\
 % \midrule
 % \(\Delta > 0\) & \multicolumn{2}{l} {Due soluzioni reali e distinte}& 
-% \(x_{1,2}=\dfrac{-b\pm{\sqrt {b^{2}-4ac}}}{2a}\)\\
+% \(x_{1,2}=\dfrac{-b\mp{\sqrt {b^{2}-4ac}}}{2a}\)\\
 % \(\Delta = 0\) & \multicolumn{2}{l} {Due soluzioni reali e coincidenti} & 
 % \(x_1=x_2=-\dfrac{b}{2a}\)\\
 % \(\Delta < 0\) & \multicolumn{2}{l} {Nessuna soluzione reale}& 
@@ -503,7 +449,8 @@ per il secondo principio di equivalenza, si ha l'equazione equivalente~
 %          \ref{ese:3.32}, \ref{ese:3.33}, \ref{ese:3.34}, \ref{ese:3.35}}
 % \vspazio
 % 
-% \subsection{Equazioni che si possono risolvere con opportune sostituzioni}
+% \subsection{Equazioni che si possono risolvere con opportune 
+% sostituzioni}
 % 
 % % \begin{exrig}
 % \begin{esempio}{}{}
@@ -525,20 +472,23 @@ per il secondo principio di equivalenza, si ha l'equazione equivalente~
 % l'equazione 
 % diventa \(t^{2} +2t = 0\) le cui soluzioni sono \(t ( t +2 ) = 0 
 % \Rightarrow 
-% t_{1} = 0 \vee t +2 = 0 \Rightarrow t_{2} = -2\). Sostituendo \(x -1 = t\) 
+% t_{1} = 0 \vee t +2 = 0 \Rightarrow t_{2} = -2\). 
+% Sostituendo \(x -1 = t\) 
 % si 
 % ha 
 % \(x -1 = 0 \vee x -1 = -2\) quindi l'equazione assegnata ammette le due 
 % soluzioni~\(x_1 = -1 \vee x_2 = 1\).
 % \end{itemize}
 % \end{esempio}
-% % \end{exrig}
-% \vspazio\ovalbox{\risolvii \ref{ese:3.36}, \ref{ese:3.37}, \ref{ese:3.38}}
+% 
+% \vspazio\ovalbox{\risolvii \ref{ese:3.36}, \ref{ese:3.37}, \ref{ese:
+% 3.38}}
 
 \section{Complementi alle equazioni di secondo grado}
 
 \subsection{Equazioni numeriche frazionarie}
 \label{sec:eq2gr_frazionarie}
+\ind{eq. frazionaria (fratta)}
 
 Un'equazione in cui compare l'incognita al denominatore si chiama 
 \emph{frazionaria o fratta}.
@@ -548,7 +498,7 @@ nel capitolo precedente.
 \begin{esempio}{}{}
 Risolvere la seguente equazione 
 \(\dfrac{3x +2}{1 +x}=\dfrac{2x +3}{x -2}\)
-\begin{enumerate} [noitemsep]
+\begin{enumerate} [noitemsep, left=0mm]
 \item I denominatori sono già scomposti in fattori irriducibili.
 \item Portiamo al primo membro tutti i termini e li sommiamo:
 \[\dfrac{3x +2}{1 +x} -\dfrac{2x +3}{x -2} = 0 \sRarrow  
@@ -559,17 +509,19 @@ indicando le condizioni di esistenza:
 \[\CE: \quad x \neq -1 \stext{e} x \neq +2\]
 \item Risolviamo l'equazione e confrontiamo i risultati con 
 le condizioni di esistenza:
-\eqdue{\dfrac{+9 \mp \sqrt{81 +28}}{2} = 
+{\small
+\eqdue[-5]{\dfrac{+9 \mp \sqrt{81 +28}}{2} = 
        \dfrac{9 \mp \sqrt{109}}{2}}
       {\dfrac{9 -\sqrt{109}}{2} ~ \stext{S. A.}}
       {\dfrac{9 +\sqrt{109}}{2} ~ \stext{S. A.}}
+} %end small
 \end{enumerate}
 \end{esempio}
 
 \begin{esempio}{}{}
 Risolvere la seguente equazione 
 \(\dfrac{x^2}{x^2 -3 x +2}=\dfrac{x -2}{x -1} +\dfrac{1}{x +2}\)
-\begin{enumerate} [noitemsep]
+\begin{enumerate} [noitemsep, left=0mm]
 \item Scomponiamo in fattori i denominatori:
 \[\dfrac{x^2}{(x -2)(x -1)}=\dfrac{x -2}{x -1} +\dfrac{1}{x +2}\]
 \item Portiamo al primo membro tutti i termini e li sommiamo:
@@ -577,37 +529,45 @@ Risolvere la seguente equazione
        {( x -2 ) ( x -1 ) ( x +2 )}~=~0\]
 \item Moltiplichiamo ambo i membri per il denominatore 
 indicando le condizioni di esistenza: 
-\[x^3 +2x^2 -(x -2)(x^2 -4) -x^2 +3x -2 = 0 \sRarrow
+{\small
+\[\hspace*{-3mm}x^3 +2x^2 -(x -2)(x^2 -4) -x^2 +3x -2 = 0 \sRarrow
 x^3 +2x^2 -x^3 +4x +2x^2 -8 -x^2 +3x -2 = 0
 \]
+}
 \[\sRarrow 3x^2 +7x -10 = 0 \qquad
 \CE: \quad x \neq -2 \stext{e} x \neq +1 \stext{e} x \neq +2\]
 \item Risolviamo l'equazione e confrontiamo i risultati con 
 le condizioni di esistenza:
-\eqdue{\dfrac{-7 \mp \sqrt{49 +120}}{6} = 
-       \dfrac{-7 \mp \sqrt{169}}{6} = \dfrac{-7 \mp 13}{6}}
+% {\small
+% \eqdue[-5]{\dfrac{-7 \mp \sqrt{49 +120}}{6} = 
+%        \dfrac{-7 \mp \sqrt{169}}{6} = \dfrac{-7 \mp 13}{6}}
+%       {-\dfrac{10}{3} ~ \stext{S. A.}}
+%       {1 ~ \stext{S. N. A.}}
+% } % end small
+{\small
+\eqdue[-5]{\dfrac{-7 \mp \sqrt{49 +120}}{6} = \dfrac{-7 \mp 13}{6}}
       {-\dfrac{10}{3} ~ \stext{S. A.}}
       {1 ~ \stext{S. N. A.}}
+} % end small
 Il valore \(1\) è soluzione dell'equazione intera ottenuta eliminando i 
 denominatori, ma non è soluzione dell'equazione di partenza.
 \end{enumerate}
 \end{esempio}
 
-% \begin{exrig}
- \begin{esempio}{}{}
+\begin{esempio}{}{}
 Risolvere: \quad \(\dfrac{1}{x^2 -2x} = -\dfrac{1}{2x} -\dfrac{1}{x^2-4}\)
 
-\begin{enumerate}[nosep]
-\item Scomponiamo in fattori i denominatori:~
-\(\dfrac{1}{x \tonda{x -2}} = -\dfrac{1}{2x} 
-                              -\dfrac{1}{\tonda{x -2}\tonda{x +2}}\)
+\begin{enumerate}[nosep, left=0mm]
+\item Scomponiamo in fattori i denominatori:
+\[\dfrac{1}{x \tonda{x -2}} = -\dfrac{1}{2x} 
+                              -\dfrac{1}{\tonda{x -2}\tonda{x +2}}\]
 \item Eseguiamo il denominatore comune su tutta l'equazione:
 \[\dfrac{2x +4}{2x \tonda{x -2}\tonda{x +2}} = 
   \dfrac{-x^2 +4 -2x}{2x \tonda{x -2}\tonda{x +2}}\]
-\item Scriviamo le condizioni di accettabilità, eliminare i denominatori, 
-risolvere l'equazione intera ottenuta e confrontare le radici con le 
-condizioni di esistenza:
-\[\sistema{x \neq -2 \\ 
+\item Scriviamo le condizioni di accettabilità, eliminiamo i denominatori,
+risolviamo l'equazione intera ottenuta e confrontiamo le radici con le condizioni di esistenza:
+{\small
+\[\hspace*{-5mm}\sistema{x \neq -2 \\ 
            x \neq 0 \\ 
            x \neq +2 \\ 
            2x~\cancel{+4}+x^2~\cancel{-4} +2x = 0 \sRarrow
@@ -621,13 +581,15 @@ condizioni di esistenza:
   x_2 = -4 \stext{S. A.}
  \end{array}
           }\]
+} % end small
 \end{enumerate}
 Il valore~\(0\) è soluzione dell'equazione intera ottenuta eliminando i 
 denominatori, ma non è soluzione dell'equazione di partenza.
- \end{esempio}
- 
+\end{esempio}
+
 \subsection{Equazioni riconducibili al prodotto di due o più fattori}
 \label{sec:eq2gr_scomponibili}
+\ind{equazione come prodotto nullo}
 
 In questo capitolo ci proponiamo di descrivere uno dei metodi algebrici per 
 determinare l'Insieme Soluzione di equazioni algebriche di grado superiore 
@@ -638,8 +600,8 @@ dove \(p(x)\) è un polinomio nella variabile \(x\), di grado \(n\), a
 coefficienti reali: 
 \[a_nx^n+a_{n-1}x^{n-1}+\ldots +a_2x^2+a_1x+a_0=0.\]
 
-% \begin{exrig}
 \begin{esempio}{}{}
+\ind{zero di un polinomio}
 Determinare gli zeri del polinomio: \(p(x)=12x^3 +3x^2 -20x -5\).
 
 Scomponiamo in fattori il polinomio al primo membro mediante raccoglimento 
@@ -660,8 +622,9 @@ Gli zeri del polinomio sono quindi:
 \(\sqrt{-\dfrac{5}{3}};~-\dfrac{1}{4};~+\sqrt{\dfrac{5}{3}}\).
 \end{esempio}
 
-% \end{exrig}
-% \vspazio\ovalbox{\risolvii \ref{ese:3.39}, \ref{ese:3.40}, \ref{ese:3.41}, 
+
+% \vspazio\ovalbox{\risolvii \ref{ese:3.39}, \ref{ese:3.40}, 
+% \ref{ese:3.41}, 
 % \ref{ese:3.42}, \ref{ese:3.43}, \ref{ese:3.44}, \ref{ese:3.45}, 
 % \ref{ese:3.46}, 
 % \ref{ese:3.47}, \ref{ese:3.48}, \ref{ese:3.49}, \ref{ese:3.50}, 
@@ -675,8 +638,10 @@ Gli zeri del polinomio sono quindi:
 % Ricordiamo la seguente definizione:
 % \begin{definizione}{}{}
 % Una equazione è \emph{letterale} se i coefficienti dell'incognita sono 
-% espressioni letterali, cioè se oltre all'incognita (in genere indicata con
-% la lettera \(x\)) compare un'altra lettera (in genere \(a, b, k, \ldots\)) 
+% espressioni letterali, cioè se oltre all'incognita (in genere indicata 
+% con
+% la lettera \(x\)) compare un'altra lettera (in genere \(a, b, k, 
+% \ldots\)) 
 % detta 
 % parametro.
 % \end{definizione}
@@ -706,7 +671,7 @@ Gli zeri del polinomio sono quindi:
 % analizzare 
 % come varia il suo insieme delle soluzioni al variare del parametro.
 % 
-% Ricordando la formula \(x_{1,2}=\dfrac{-b \pm \sqrt{b^{2} -4 a c}}{2 a}\) 
+% Ricordando la formula \(x_{1,2}=\dfrac{-b \mp \sqrt{b^{2} -4 a c}}{2 a}\) 
 % in 
 % cui 
 % compaiono i tre coefficienti \(a, b, c\) possiamo dire che:
@@ -741,7 +706,7 @@ Gli zeri del polinomio sono quindi:
 % \( 
 % k>-\dfrac{1}{8} \) l'equazione ammette due soluzioni reali distinte 
 % \(x_{1,2} = 
-% \dfrac{\tonda{2 k -1 } \pm \sqrt{8 k +1}}{2 k}\), se \( k=-
+% \dfrac{\tonda{2 k -1 } \mp \sqrt{8 k +1}}{2 k}\), se \( k=-
 % \dfrac{1}{8} \) 
 % coincidenti \( x_1 = x_2=5\).
 % \end{itemize}
@@ -761,7 +726,7 @@ Gli zeri del polinomio sono quindi:
 % \(k < -\dfrac{1}{8}\) & \(\Delta < 0\) non esistono soluzioni reali 
 % \(I.S. = 
 % \emptyset\)& \\
-% \(k \geq -\dfrac{1}{8}\) & \(\Delta \geq 0\) esistono soluzioni reali & \\
+% \(k \geq -\dfrac{1}{8}\) & \(\Delta \geq 0\) esistono soluzioni reali &\\
 % \(k > -\dfrac{1}{8}\) & \(x_1=\dfrac{\tonda{2 k -1 } -\sqrt{8 k +
 % 1}}{2k}\vee x_2=\dfrac{\tonda{2 k -1 } +\sqrt{8 k +1}}{2 k}\) & \\
 % \(k = -\dfrac{1}{8}\) & \(x_1 = x_2=5\) &\\
@@ -782,8 +747,8 @@ Gli zeri del polinomio sono quindi:
 % spuria con due radici reali \(x_1 = 0 \vee x_2 = 3\). Per tutti i valori 
 % di 
 % \(k\) dell'insieme \(\R -\{1\}\) l'equazione è completa, l'esistenza di 
-% soluzioni reali dipende dal discriminante \(\Delta = 9 -4 ( 1 -k ) = 4 k +
-% 5\), 
+% soluzioni reali dipende dal discriminante 
+% \(\Delta = 9 -4 ( 1 -k ) = 4 k +5\), 
 % quindi se:
 % \begin{itemize}[nosep]
 %  \item \(k < -\dfrac{5}{4}\) l'equazione non ammette soluzioni reali e 
@@ -791,7 +756,7 @@ Gli zeri del polinomio sono quindi:
 %  \item \(k \geq -\dfrac{5}{4}\) l'equazione ammette due radici reali 
 % distinte 
 % se 
-% \(k >-\dfrac{5}{4}\Rightarrow x_{1,2} =\dfrac{3 \pm\sqrt{4 k +5}}{2}\), 
+% \(k >-\dfrac{5}{4}\Rightarrow x_{1,2} =\dfrac{3 \mp\sqrt{4 k +5}}{2}\), 
 % coincidenti 
 % se \(k=-\dfrac{5}{4} \Rightarrow x_1 = x_2 = \dfrac{3}{2}\).
 % \end{itemize}
@@ -805,10 +770,9 @@ Gli zeri del polinomio sono quindi:
 % \midrule
 % \(k = 1\) & \(x_1 = 0 \vee x_2 = 3\) & spuria\\
 % \(k \in \R -\{1\}\) & & completa, \(\Delta = 4 k +5\)\\
-% \(k < -\dfrac{5}{4}\) & \(\Delta < 0\) non esistono soluzioni reali \(I.S. 
-= 
-% \emptyset\)& \\
-% \(k \geq -\dfrac{5}{4}\) & \(\Delta \geq 0\) esistono soluzioni reali & \\
+% \(k < -\dfrac{5}{4}\) & \(\Delta < 0\) non esistono soluzioni reali 
+% \(I.S. = \emptyset\)& \\
+% \(k \geq -\dfrac{5}{4}\) & \(\Delta \geq 0\) esistono soluzioni reali &\\
 % \(k > -\dfrac{5}{4}\) & \(x_1=\dfrac{3 -\sqrt{4 k +5}}{2} \vee 
 % x_2=\dfrac{3 
 % +
@@ -824,8 +788,8 @@ Gli zeri del polinomio sono quindi:
 % m=\dfrac{2 
 % m x}{m -1} \tonda{1 +\dfrac{1}{m} }\).
 % 
-% L'equazione pur presentando delle frazioni è intera, in quanto l'incognita 
-% \(x\) 
+% L'equazione pur presentando delle frazioni è intera, in quanto 
+% l'incognita \(x\) 
 % non compare al denominatore. Se~\(m = 0\) oppure~\(m = 1\) l'equazione è 
 % priva 
 % di 
@@ -864,8 +828,8 @@ Gli zeri del polinomio sono quindi:
 % 2 
 % \vee x_2 = 2\)
 % \item il terzo coefficiente è \(m^{2} +2 m -3\): se \(m^{2} +2 m -3 = 0 
-% \Rightarrow m = 1 \vee m = -3\) (non consideriamo il caso \(m = 1\) per le 
-% \(\CE\)) 
+% \Rightarrow m = 1 \vee m = -3\) (non consideriamo il caso \(m = 1\) 
+% per le \(\CE\)) 
 % l'equazione diventa \(x^2 +4 x = 0\), equazione spuria con due soluzioni 
 % reali 
 % \(x_1 = 0 \vee x_2 = -4\).
@@ -918,10 +882,8 @@ Gli zeri del polinomio sono quindi:
 % x^2}{x 
 % ( k 
 % -x )} -k -\dfrac{2 k}{x ( k -x )} +1=0\)
-% Riduciamo allo stesso denominatore ed eliminiamo il denominatore \(k x^2 +
-% k 
-% x 
-% \cdot ( 1 -k ) +k \cdot ( k -2 )=0\)
+% Riduciamo allo stesso denominatore ed eliminiamo il denominatore 
+% \(k x^2 + k x \cdot ( 1 -k ) +k \cdot ( k -2 )=0\)
 % 
 % \emph{Discussione}
 % \begin{itemize}
@@ -935,10 +897,10 @@ Gli zeri del polinomio sono quindi:
 % supporre \(k \neq 0\), dividiamo tutti i coefficienti per \(k\), 
 % l'equazione diventa 
 % \(x^2 +x \cdot ( 1 -k ) +( k -2 )=0\)
-%  \item il secondo coefficiente è \(1-k\), se \(k = 1\) le \(\CE\) sono \(x 
-% \neq 0 
-% \wedge x \neq 1 \wedge x \neq -1\) e l'equazione diventa \(x^2 -1 = 0\), 
-% le 
+%  \item il secondo coefficiente è \(1-k\), se \(k = 1\) le \(\CE\) sono 
+% \(x \neq 0 \wedge x \neq 1 \wedge x \neq -1\) e 
+% l'equazione diventa \(x^2 -1 = 0\), 
+% le
 % soluzioni sono \(x_1 = -1 \vee x_2 = 1\) che non sono accettabili per le 
 % \(\CE\)
 %  \item il terzo coefficiente è \(k-2\), se \(k = 2\) le \(\CE\) sono 
@@ -1006,8 +968,9 @@ Gli zeri del polinomio sono quindi:
 % \end{center}
 % \end{esempio}
 % % >8
-% % \end{exrig}
-% \vspazio\ovalbox{\risolvii \ref{ese:3.54}, \ref{ese:3.55}, \ref{ese:3.56}, 
+% 
+% \vspazio\ovalbox{\risolvii \ref{ese:3.54}, \ref{ese:3.55}, 
+% \ref{ese:3.56}, 
 % \ref{ese:3.57}, \ref{ese:3.58}, \ref{ese:3.59}, \ref{ese:3.60}, 
 % \ref{ese:3.61}, 
 % \ref{ese:3.62}, \ref{ese:3.63}, \ref{ese:3.64}, \ref{ese:3.65}, 
@@ -1017,6 +980,7 @@ Gli zeri del polinomio sono quindi:
 \label{sec:eq2gr_coefficienti}
 
 \subsection{Somma e prodotto delle radici}
+\ind{somma e prodotto delle radici}
 Consideriamo una generica equazione di secondo grado 
 \(a x^2 +bx +c = 0\) 
 nell'ipotesi in cui ammetta soluzioni reali (cioè \(\Delta \geq 0\)), 
@@ -1036,7 +1000,6 @@ prodotto delle radici è \(x_1 \cdot x_2 = \dfrac{c}{a}\).
 Osserviamo che queste relazioni tra radici e coefficienti dell'equazione 
 valgono anche nel caso in cui le radici non siano reali (\(\Delta<0\)).
 
-% \begin{exrig}
 \begin{esempio}{}{}
 Determinare se le seguenti equazioni hanno soluzioni reali e calcolare la 
 somma e il prodotto delle soluzioni.
@@ -1075,34 +1038,38 @@ coefficienti \(a\), \(b\), \(c\) dell'equazione. Osserviamo in via
 preliminare che tale somma è possibile con la condizione 
 \(x_1 \neq 0 \wedge x_2 \neq 0\) 
 che implica \(c \neq 0\). Si ha: 
-\[\dfrac{1}{x_1} +\dfrac{1}{x_2} = \dfrac{x_2 +x_1}{x
-_{1} \cdot x_2} = \dfrac{-\dfrac{b}{a}}{\dfrac{c}{a}} = -\dfrac{b}{c}\]
+\[\dfrac{1}{x_1} +\dfrac{1}{x_2} = 
+\dfrac{x_2 +x_1}{x_{1} \cdot x_2} = 
+\dfrac{-\dfrac{b}{a}}{\dfrac{c}{a}} = 
+-\dfrac{b}{a} \cdot \dfrac{a}{c} = 
+-\dfrac{b}{c}\]
 
 Si determini la relazione che lega i coefficienti della generica 
 equazione di secondo grado alla differenza delle radici
 
-Poiché non abbiamo informazioni a priori su quale delle due soluzioni sia la 
-maggiore, calcoliamo il valore assoluto della differenza richiesta. Il 
-calcolo diventa: 
+Poiché non abbiamo informazioni a priori su quale delle due soluzioni sia 
+la maggiore, calcoliamo il valore assoluto della differenza richiesta. 
+Il calcolo diventa: 
 \[
-\left\lvert x_1 -x_2 \right\rvert = \left\lvert \dfrac{-b 
--\sqrt{\Delta}}{2 
-a} -\dfrac{-b +\sqrt{\Delta}}{2 a} \right\rvert =\left\lvert -\dfrac{2 
-\sqrt{\Delta}}{2 a} \right\rvert = \left\lvert -\dfrac{\sqrt{\Delta}}{a} 
-\right\rvert.
+\valass{x_1 -x_2} = 
+\valass{\dfrac{-b -\sqrt{\Delta}}{2 a} -\dfrac{-b +\sqrt{\Delta}}{2 a}} = 
+\valass{-\dfrac{2 \sqrt{\Delta}}{2 a}} = 
+\valass{-\dfrac{\sqrt{\Delta}}{a}}
 \]
-% \vspazio\ovalbox{\risolvii \ref{ese:3.67}, \ref{ese:3.68}, \ref{ese:3.69}, 
+% \vspazio\ovalbox{\risolvii \ref{ese:3.67}, \ref{ese:3.68}, 
+% \ref{ese:3.69}, 
 % \ref{ese:3.70}, \ref{ese:3.71}, \ref{ese:3.72}, \ref{ese:3.73}, 
 % \ref{ese:3.74}, 
 % \ref{ese:3.75}, \ref{ese:3.76}.}
 
 \subsection{Determinare due numeri conoscendone la somma e il prodotto}
-
-Abbiamo già visto nel capitolo sulla scomposizione in fattori come calcolare 
-gli zeri di un trinomio particolare di secondo grado. In questo capitolo 
-abbiamo capito meglio la relazione tra i coefficienti del polinomio e le 
-radici. 
+\ind{somma e prodotto delle radici}
+Abbiamo già visto nel capitolo sulla scomposizione in fattori come 
+calcolare gli zeri di un trinomio particolare di secondo grado. 
+In questo capitolo abbiamo capito meglio la relazione tra i coefficienti 
+del polinomio e le radici. 
 Vediamo un esempio.
+
 \begin{esempio}{}{}
 Determina le radici dell'equazione \(x^2 +2 x -15 = 0\) senza applicare la 
 formula risolutiva, ma sfruttando la somma e il prodotto delle radici 
@@ -1112,10 +1079,12 @@ Calcolo il discriminante \(\Delta = 64\), le radici sono reali.
 Esse hanno come 
 somma~\(-\dfrac{b}{a} = -2\) e come prodotto \(\dfrac{c}{a} = -15\).
 
-Le coppie di interi che hanno per prodotto \(-15\) sono \((-3;~5),(3;~-5), 
-(15;~-1),(-15;~1)\). Tra tutte queste coppie l'unica che ha per somma \(-2\) 
-è la coppia \((-5;~3)\).
-Pertanto le soluzioni dell'equazione sono \(x_1 = -5 \stext{e} x_2 = 3\).
+Le coppie di interi che hanno per prodotto \(-15\) sono 
+\(\coppia{-3}{+5}\), \(\coppia{+3}{-5}\), 
+\(\coppia{+15}{-1}\), \(\coppia{-15}{+1}\).
+Tra tutte queste coppie l'unica che ha per somma \(-2\) è la coppia 
+\((-5;~+3)\).\\
+Pertanto le soluzioni dell'equazione sono \(x_1 = -5 \stext{e} x_2 = +3\).
 \end{esempio}
 
 Ora vogliamo risolvere un problema simile, dove però trovare i due numeri 
@@ -1139,31 +1108,35 @@ reali se e solo se
 ovvero se il quadrato della somma è maggiore o uguale al quadruplo del loro 
 prodotto.
 
-% \begin{exrig}
 \begin{esempio}{}{}
 Determinare due numeri che sommati danno \(450\) e moltiplicati danno 
 \(45000\).
 
 L'equazione che risolve il problema è: \(x^2 -450 x +45000 = 0\). 
-\eqduerid{+225 \mp \sqrt{50625-45000} = 225 \mp \sqrt{5625} = 225 \mp 75}
-         {150}{300}
+% {\small
+% \eqduefr{+225 \mp \sqrt{50625-45000} = 225 \mp \sqrt{5625} = 225 \mp 75}
+%          {150}{300}
+% }
+\[
+x_{1,2} = \dfrac{-\beta \mp \sqrt{\beta^2 -ac}}{a} = 
++225 \mp \sqrt{50625-45000} = 225 \mp \sqrt{5625} = 225 \mp 75\]
 I due numeri cercati sono: \(150 \stext{e} 300\).
 \end{esempio}
 
 \begin{esempio}{}{}
 Determinare due numeri che sommati danno \(5\) e moltiplicati danno \(9\).
 
-L'equazione che risolve il problema è: \(x^2 -5x +9 = 0\). 
+L'equazione che risolve il problema è: \(x^2 -5x +9 = 0\). \\
 Poiché \(\Delta = s^{2} -4 p = 25 -36 = -11\), l'equazione non ammette 
 soluzioni reali e, di conseguenza, non esistono due numeri reali aventi la 
 somma e il prodotto richiesti.
 \end{esempio}
-% \vspazio\ovalbox{\risolvii \ref{ese:3.77}, \ref{ese:3.78}, \ref{ese:3.79}, 
-% \ref{ese:3.80}.}
+% \vspazio\ovalbox{\risolvii \ref{ese:3.77}, \ref{ese:3.78}, 
+% \ref{ese:3.79}, \ref{ese:3.80}.}
 
 \section{Scomposizione del trinomio di secondo grado}
 \label{sec:eq2gr_scomposizione_trinomio}
-
+\ind{risolvere per scomposizione}
 Si consideri il trinomio di secondo grado: \(a x^2 +b x +c\) e sia 
 \(a x^2 + b x +c = 0\) l'equazione associata a tale trinomio e 
 \(x_1 \stext{e} x_2\) le soluzioni di tale equazione. 
@@ -1183,12 +1156,12 @@ a x^2 +b x +c &=
 {Oppure, sapendo che \(x_1\) è uno zero del polinomio, possiamo usare il 
 teorema e la regola di Ruffini:}
 {\begin{center}
-  \begin{tikzpicture}[x=8mm, y=5mm]
+  \disegno[7]{
     \ruffini{~, +1, -x_1-x_2, ~~x_1 x_2}
             {+x_1, ~, +x_1\quad\quad, -x_1 x_2}
             {~, +1, \quad \quad -x_2, ~~~0}
             {4}
-  \end{tikzpicture}
+  }
 \end{center}}
 Da cui: \(a \quadra{x^2 -(x_1 +x_2) x +x_1 \cdot x_2}=
           a \tonda{x -x_1} \tonda{x -x_2}\)
@@ -1235,10 +1208,9 @@ fattori.
 % \end{tabular*}
 % \end{center}
 
-% \begin{exrig}
 \begin{esempio}{}{}
-Scomporre in fattori seguenti trinomi.
-\begin{itemize}
+Scomporre in fattori i seguenti trinomi.
+\begin{enumerate}[left=0mm]
 \item \(x^2 -5 x +6\) \quad equazione associata: \(x^2 -5x +6 = 0\)
 
 Calcolo le soluzioni dell'equazione e le uso per scomporre: 
@@ -1252,7 +1224,8 @@ Calcolo le soluzioni dell'equazione e le uso per scomporre:
       {\dfrac{3}{4}}{5}
 \[4x^2 -23x +15 = 4\tonda{x -\dfrac{3}{4}} (x -5) = (4x -3)(x -5)\]
 
-\item \(9x^2 +114x +361\) \quad equazione associata: \(9x^2 +114x +361 = 0\)
+\item \(9x^2 +114x +361\) \quad equazione associata: 
+\(9x^2 +114x +361 = 0\)
 
 Calcolo le soluzioni dell'equazione e le uso per scomporre: 
 \eqdue{\dfrac{-57 \mp \sqrt{3249-3249}}{9}=-\dfrac{57}{9}}
@@ -1268,12 +1241,11 @@ Poiché il discriminante dell'equazione associata è minore di zero il
 trinomio è irriducibile
 
 \item \(-5x^2 +2x +1\) \quad equazione associata: \(-5x^2 +2x +1 = 0\) 
-\eqdue{\dfrac{-1 \mp \sqrt{1+5}}{-5}=-\dfrac{-1 \mp \sqrt{6}}{-5}}
+\eqdue[-5]{\dfrac{-1 \mp \sqrt{1+5}}{-5}=-\dfrac{-1 \mp \sqrt{6}}{-5}}
       {\dfrac{1 + \sqrt{6}}{5}}{\dfrac{1 - \sqrt{6}}{5}}
 \[-5x^2 +2x +1 = 
 -5 \tonda{x -\dfrac{1 + \sqrt{6}}{5}} \tonda{x -\dfrac{1 - \sqrt{6}}{5}}\]
-
-\end{itemize}
+\end{enumerate}
 \end{esempio}
 % 
 % % \begin{exrig}
@@ -1283,7 +1255,7 @@ trinomio è irriducibile
 % \item \(x^2 -5 x +6\)
 % 
 % Calcolo le soluzioni dell'equazione \(x^2 -5 x +6 = 0\), con soluzioni 
-% \(x_{1,2} = \dfrac{5 \pm \sqrt{25 -24}}{2}\) cioè \(x_1 = 2 \vee x_2 = 
+% \(x_{1,2} = \dfrac{5 \mp \sqrt{25 -24}}{2}\) cioè \(x_1 = 2 \vee x_2 = 
 % 3\). 
 % Applicando la formula ottenuta nel I caso si ha: \[x^2 -5 x +6=( x -2 ) ( 
 % x 
@@ -1291,9 +1263,8 @@ trinomio è irriducibile
 % \item \(x^2 -12 x +36\).
 % 
 % Poiché \(\Delta = 144 -144 = 0\) il trinomio è un quadrato del binomio e 
-% applicando la formula ottenuta nel secondo caso si ha: \(x^2 -12 x +36=( x 
-% -
-% 6 )^{2}\).
+% applicando la formula ottenuta nel secondo caso si ha: 
+% \(x^2 -12 x +36=( x -6 )^{2}\).
 % \item \(2 x^2 +3 x +5\).
 % 
 % Essendo il discriminante dell'equazione associata \(\Delta=9 -40= -31\), 
@@ -1303,7 +1274,8 @@ trinomio è irriducibile
 % Calcolo le radici dell'equazione associata \(-5 x^2 +2 x +1 = 0\): 
 % \(x_{1,2} 
 % = 
-% \dfrac{-2 \pm \sqrt{24}}{-10} = \dfrac{1 \pm \sqrt{6}}{5}\) quindi \(x_1 = 
+% \dfrac{-2 \mp \sqrt{24}}{-10} = \dfrac{1 \mp \sqrt{6}}{5}\) quindi 
+% \(x_1 = 
 % \dfrac{1 -\sqrt{6}}{5} \vee x_2 = \dfrac{1 +\sqrt{6}}{5}\) e scrivo la 
 % scomposizione: \[-5 x^2 +2 x +1=-5 \tonda{x -\dfrac{1 -\sqrt{6}}{5} 
 % } \tonda{x -\dfrac{1 +\sqrt{6}}{5} }.\]
@@ -1315,32 +1287,31 @@ valori come radici.
 
 \begin{esempio}{}{}
 Scrivere un'equazione di secondo grado che ammetta le seguenti soluzioni 
-\(x_1 = \dfrac{1}{2}\) e \(x_2 = 3\).
+\(x_1 = \dfrac{1}{2}\) \quad e \quad \(x_2 = 3\).
 
 Per quanto visto nel paragrafo, si ha: 
 \(\tonda{x-\dfrac{1}{2} } \tonda{x +3 }=0\) da cui: 
 \[x^2 +3 x-\dfrac{1}{2} x -\dfrac{3}{2} = 
 x^2 +\dfrac{5}{2} x -\dfrac{3}{2} = 0 \sRarrow 2x^2 +5x -3 = 0\]
 \end{esempio}
-% \end{exrig}
+
 
 \begin{osservazione}{}{}
 Si vuole scomporre in fattori il trinomio \(m = 4 x^2 +2 x -6\), avente 
 tutti 
 i coefficienti pari. Anche se osserviamo che tutti i suoi coefficienti sono 
-pari, \emph{non possiamo dividere per due}, non essendo una equazione. Il 
-polinomio \(m = 2 x^2 +x -3\) è diverso da quello assegnato, mentre le 
-equazioni associate all'uno e all'altro sono equivalenti. Nel procedere alla 
-scomposizione possiamo usare l'equazione \(2 x^2 +x -3 = 0\) le cui radici 
-sono:
-\(x_1 = -\dfrac{3}{2} \vee x_2 = 1\) e operare la scomposizione del 
-trinomio 
-assegnato: \(p = 4 x^2 +2 x -6 = 4 \tonda{x +\dfrac{3}{2} } ( x -
-1)\).
+pari, \emph{non possiamo dividere per due}, non essendo una equazione. 
+Il polinomio \(2 x^2 +x -3\) è diverso da quello assegnato, mentre le
+equazioni associate all'uno e all'altro sono equivalenti. 
+Nel procedere alla scomposizione possiamo usare l'equazione 
+\(2 x^2 +x -3 = 0\) le cui radici sono:\\
+\(x_1 = -\dfrac{3}{2} \sor x_2 = 1\) \\
+e operare la scomposizione del trinomio assegnato: \\
+\(p = 4 x^2 +2 x -6 = 4 \tonda{x +\dfrac{3}{2} } ( x -1)\).
 \end{osservazione}
 
-% \vspazio\ovalbox{\risolvii \ref{ese:3.84}, \ref{ese:3.85}, \ref{ese:3.86}, 
-% \ref{ese:3.87}.}
+% \vspazio\ovalbox{\risolvii \ref{ese:3.84}, \ref{ese:3.85}, 
+% \ref{ese:3.86}, \ref{ese:3.87}.}
 % % 8<
 % \section{Regola di Cartesio}
 % \label{sec:eq2gr_cartesio}
@@ -1379,7 +1350,7 @@ assegnato: \(p = 4 x^2 +2 x -6 = 4 \tonda{x +\dfrac{3}{2} } ( x -
 % \end{center}
 % 
 % \end{esempio}
-% % \end{exrig}
+% 
 % 
 % \begin{teorema}{di Cartesio}{} 
 % In un'equazione di secondo grado \(a x^2 +b x +c = 0\) con \(a, b, c \neq 
@@ -1412,7 +1383,8 @@ assegnato: \(p = 4 x^2 +2 x -6 = 4 \tonda{x +\dfrac{3}{2} } ( x -
 % \(x_1 +x_2 = -2\) e \(x_1 \cdot x_2 = -3\) dunque prodotto 
 % negativo 
 % e 
-% somma negativa. Il prodotto di due numeri è negativo quando i fattori sono 
+% somma negativa. Il prodotto di due numeri è negativo quando i fattori 
+% sono 
 % discordi, quindi una soluzione è positiva e una è negativa. 
 % Chiamiamo \(x_1\) la soluzione negativa e \(x_2\) la soluzione positiva, 
 % poiché \(x_1 +x_2 = - 2 < 0\)
@@ -1441,18 +1413,20 @@ assegnato: \(p = 4 x^2 +2 x -6 = 4 \tonda{x +\dfrac{3}{2} } ( x -
 % sono positive.
 % \end{itemize}
 % \end{esempio}
-% % \end{exrig}
+% 
 % \vspazio\ovalbox{\risolvii \ref{ese:3.88}, \ref{ese:3.89}, \ref{ese:
 % 3.90}.}
 % % >8
+
 \section{Equazioni parametriche}
 \label{sec:eq2gr_parametriche}
+\ind{equazione parametrica}
 
 \begin{definizione}{}{}
-Si definisce \emph{parametrica} un'equazione i cui coefficienti dipendono da 
-un 
-parametro.
+Si definisce \emph{parametrica} un'equazione i cui coefficienti dipendono 
+da un parametro.
 \end{definizione}
+
 Consideriamo l'equazione \(\tonda{k +1}x^2 +\tonda{2k +1}x +1 = 0\) è 
 parametrica di secondo grado nell'incognita \(x\) infatti i suoi 
 coefficienti dipendono dal valore del parametro \(k\) e quindi la natura 
@@ -1473,23 +1447,26 @@ possono determinare alcune relazioni tra le sue soluzioni:
 \item la somma delle soluzioni è \(x_1 +x_2 = -\dfrac{b}{a}\);
 \item il prodotto delle soluzioni è \(x_1 \cdot x_2 = \dfrac{c}{a}\).
 \end{enumerate}
-Nel caso dell'equazione di inizio paragrafo: \quad
+
+\begin{esempio}{}{}
+Riprendiamo l'equazione di inizio paragrafo: \\
 \(\tonda{k +1}x^2 +\tonda{2k +1}x +1 = 0\)
 \begin{enumerate} [noitemsep]
 \item l'equazione è di secondo grado solo se 
 \(k +1 \neq 0 \sRarrow k \neq -1\);
-\item ha soluzioni reali se 
+\item ha soluzioni reali se: \\
 \(\Delta = \tonda{2k +1}^{2} -4 \tonda{k +1} \cdot 1 = 
            4k^2 +4k +1 -4k -4 = 4k^2 -3 \geq 0\):
- \subitem reali coincidenti se 
+ \subitem reali coincidenti se: \quad 
  \(4k^2-3 = 0 \sRarrow k = \mp \dfrac{\sqrt{3}}{2}\), 
- \subitem reali distinte se 
+ \subitem reali distinte se: \quad 
  \(k < -\dfrac{\sqrt{3}}{2} \sor k > +\dfrac{\sqrt{3}}{2}\);
 \item la somma delle soluzioni è 
 \(x_1 +x_2 = -\dfrac{2k +1}{k+1}\);
 \item il prodotto delle soluzioni è 
 \(x_1 \cdot x_2 = \dfrac{1}{k+1}\).
 \end{enumerate}
+\end{esempio}
 % }
 
 % Nell'equazione precedente si ha \(\Delta = ( k -1 
@@ -1502,19 +1479,19 @@ Nel caso dell'equazione di inizio paragrafo: \quad
 % caratteristiche 
 % delle soluzioni.
 
-% \begin{exrig}
 \begin{esempio}{}{}
 Assegnata l'equazione \(( k +1 ) x^2 +( 2 k +3 ) x +k = 0\), per 
 quale valore di \(k\):
-\begin{enumeratea}
+\begin{enumerate}[nosep, left=0mm]
 \item l'equazione si riduce al primo grado;
 \item l'equazione ammette soluzioni reali distinguendo i casi ``soluzioni 
 coincidenti'' e ``soluzioni distinte'';
 \item la somma delle soluzioni sia nulla determinando in tal caso le 
 soluzioni.
-\end{enumeratea}
-\emph{Svolgimento guidato}
-\begin{enumeratea}
+\end{enumerate}
+
+\medskip
+\begin{enumerate}[left=0mm]
 \item l'equazione è di primo grado se il coefficiente \(a\) si annulla 
 cioè \(k +1 = 0\) quindi \(k = -1\). 
 
@@ -1525,26 +1502,31 @@ e ha la soluzione \(x = 1\)
 \[\Delta = (2k +3)^2 -4 k (k +1) = 4 k^2 +12 k +9 -4 k^2 -4 k = 8 k +9\] 
 Lo studio del segno dà:
 
+\vspace{-5mm} \hspace*{-5mm} \scalebox{.9}{
 \segnoretta{8 k +9 = 0 \quad \Rightarrow \quad k = -\dfrac{9}{8}}
            {y = 8 k +9 \quad \rightarrow}
            {\segnicre[k]{-\frac{9}{8}}} 
-
+}
+\vspace{-5mm} 
 \begin{itemize}
 \item Se \(k = -\frac{9}{8}\) le soluzioni sono coincidenti,
 \item se \(k > -\frac{9}{8}\) le soluzioni sono reali distinte, 
 \item se \(k < -\frac{9}{8}\) non ci sono soluzioni reali.
 \end{itemize}
 
-\item dalla formula ricaviamo \(x_1 +x_2 = -\frac{(2k +3 )}{(k +1)}\) 
-e quindi ponendo \(2 k +3 = 0\) si ha somma nulla se \(k = -\frac{3}{2}\). 
+\item \(x_1 +x_2 = -\dfrac{b}{a}-\dfrac{(2k +3 )}{(k +1)}\) 
+quindi si ha somma nulla se: \\
+\(2 k +3 = 0 \sRarrow k = -\frac{3}{2}\). 
 
 Ma il valore \(k = -\frac{3}{2}\) è minore di \(k = -\frac{9}{8}\), 
-pertanto non ci sono soluzioni reali, infatti sostituendo \(k\) con 
-\(-\frac{3}{2}\) l'equazione diventa \(x^2 +3 = 0 \to x^2 = -3\) che non può 
-avere soluzioni reali.
-\end{enumeratea}
+pertanto non ci sono soluzioni reali, infatti con 
+\(k = -\frac{3}{2}\) l'equazione diventa \(x^2 +3 = 0 \sRarrow x^2 = -3\) 
+che non ha soluzioni reali.
+\end{enumerate}
 \end{esempio}
-% \vspazio\ovalbox{\risolvii \ref{ese:3.91}, \ref{ese:3.92}, \ref{ese:3.93}, 
+
+% \vspazio\ovalbox{\risolvii \ref{ese:3.91}, \ref{ese:3.92}, 
+% \ref{ese:3.93}, 
 % \ref{ese:3.94}, \ref{ese:3.95}, \ref{ese:3.96}, \ref{ese:3.97}, 
 % \ref{ese:3.98}, 
 % \ref{ese:3.99}, \ref{ese:3.100}, \ref{ese:3.101}, \ref{ese:3.102},}
@@ -1555,27 +1537,31 @@ avere soluzioni reali.
 
 \section{Problemi di secondo grado in una incognita}
 \label{sec:eq2gr_problemi}
+\ind{problemi di 2° grado}
 
- \epigraph{La risoluzione dei problemi \ldots serve ad acuire l'ingegno e a 
-dargli la facoltà di penetrare
- l'intera ragione di tutte le cose.}{{\scshape{R. Descartes}}}
+\epigraph{La risoluzione dei problemi\dots \\
+serve ad acuire l'ingegno \\
+e a dargli la facoltà di penetrare\\
+l'intera ragione di tutte le cose.}{{\scshape{R. Descartes}}}
 
 Sappiamo che nel corso degli studi o nell'attività lavorativa possono 
 presentarsi problemi di diversa natura: di tipo economico, scientifico, 
 sociale; possono riguardare insiemi numerici o figure geometriche. La 
 matematica ci può aiutare a risolvere i problemi quando essi possono essere 
 tradotti in ``forma matematica'', quando cioè è possibile trascrivere in 
-simboli le relazioni che intercorrono tra le grandezze presenti nel problema 
-e quando si può costruire, tramite queste relazioni, un modello matematico 
-che ci permetta di raggiungere la soluzione al quesito.
+simboli le relazioni che intercorrono tra le grandezze presenti nel 
+problema e quando si può costruire, tramite queste relazioni, un modello 
+matematico che ci permetta di raggiungere la soluzione al quesito.
 
 Affronteremo problemi di tipo algebrico o geometrico, che potranno essere 
 formalizzati attraverso equazioni di secondo grado in una sola incognita.
 Teniamo presente, prima di buttarci nella risoluzione del problema, alcuni 
 passi che ci aiuteranno a costruire il modello matematico:
+
 \begin{itemize}[nosep]
-\item la lettura ``attenta'' del testo al fine di individuare l'ambiente del 
-problema, le parole chiave, i dati e le informazioni implicite, l'obiettivo;
+\item la lettura ``attenta'' del testo al fine di individuare l'ambiente 
+del problema, le parole chiave, i dati e le informazioni implicite, 
+l'obiettivo;
 \item la scelta della grandezza incognita del problema, la descrizione 
 dell'insieme in cui si ricerca il suo valore, le condizioni che devono 
 essere soddisfatte dall'incognita;
@@ -1590,39 +1576,38 @@ con le condizioni poste dal problema.
 Determinate la misura della diagonale di un rettangolo avente il 
 perimetro di 
 \(80\munit{m}\). e l'area di \(375\munit{m^2}\).
-\end{problema}
 
-\affiancati{.49}{.49}
-{
+\affiancati{.49}{.49}{
 \emph{Dati}: \(2 p = 80 \munit{m}\), \(\oarea = 375\munit{m^2}\).
 
 \emph{Obiettivo}: \(\overline {AC}\).
+}{
+\immagine{Rettangolo ABCD con la diagonale AC}{\retta}
 }
-{\begin{center}
- \input{\folder lbr/fig001_rett.pgf}
-\end{center}}
+\end{problema}
 
 \begin{soluzione}
+Per semplificarci la scrittura chiamiamo \(\overline {AB} = x\) e 
+\(\overline {BC} = y\) (vedi il disegno).
 
-\(\overline {AC} = \sqrt{\overline {AB}^{2} +\overline {BC}^{2}}\) per il 
-teorema 
-di Pitagora sul triangolo \(ABC\).
+Il nostro obiettivo si ottiene quindi applicando il teorema di Pitagora 
+al triangolo rettangolo \(ABC\): 
+\(\overline {AC} = \sqrt{x^{2} +y^{2}}\).
 
 Sono incognite le misura dei lati, quindi poniamo \(\overline {AB} = x\) e 
 \(\overline {BC} = y \) con \(x > 0\) e \(y > 0\).
 
 Il problema si formalizza con il sistema:
-\(\left\{ \begin{array}{l} x +y = 40 \\x \cdot y = 375 \end{array}\right.\)
+\(\sistema{x +y = 40 \\x \cdot y = 375}\)
 che esprime la ricerca di due numeri nota la loro somma \(40\) e il loro 
-prodotto 
-\(375\). I numeri richiesti sono le soluzioni reali positive dell'equazione 
-\(t^{2} 
--40 t +375 = 0\) e precisamente \(t_{1} = 15 \vee t_{2} = 25\).
+prodotto \(375\). 
+I numeri richiesti sono le soluzioni reali positive dell'equazione 
+\(t^{2} -40 t +375 = 0\) e precisamente \(t_{1} = 15 \vee t_{2} = 25\).
 
 Per come abbiamo disegnato la figura abbiamo quindi: 
-\(AB = 25\munit{m};~BC = 15\munit{m}\) da cui \(\overline {AC} = 
-\sqrt{\overline {AB}^{2} +\overline 
-{BC}^{2}} =\sqrt{850} = 5 \sqrt{34}\munit{m}\).
+\(AB = 25\munit{m};~BC = 15\munit{m}\) da cui 
+\(\overline {AC} = \sqrt{x^{2} +y^{2}} =
+\sqrt{850} = 5 \sqrt{34}\munit{m}\).
 \end{soluzione}
 % \vspazio\ovalbox{\risolvii \ref{ese:3.81}, \ref{ese:3.82}, 
 % \ref{ese:3.83}.}
@@ -1644,7 +1629,7 @@ Determinare la misura del perimetro e l'area di \(ABC\).
 \(A \widehat {C} B = \text{ retto}\)\\
 \end{tabular}
 }{
- \input{\folder lbr/fig004_tria.pgf}
+ \immagine{Triangolo rettangolo con angolo retto in C.}{\triab}
 }
 
 \begin{soluzione}
@@ -1658,16 +1643,17 @@ x >23 \text{ poiché } \overline {AC} \text{ deve essere positiva}
 \end{array}\right.\).
 
 Essendo il triangolo rettangolo, i lati sono legati dal teorema di Pitagora
-quindi si deve verificare: \(\overline {AB}^{2}= \overline {AC}^{2} 
-+\overline 
-{BC}^{2}\rightarrow ( x +2 )^{2} = ( x -23 )^{2} +x^2\). Sviluppando i 
-calcoli si ottiene l'equazione risolvente di secondo grado, in forma 
-canonica: 
-\(x^2 -50 x +525 = 0 \text{ con } \Delta = 400\). L'equazione è determinata 
-con il discriminante positivo, quindi esistono due soluzioni reali distinte: 
-\(x_1 = 15 \vee x_2 = 35\) entrambe positive. Ai fini del problema \(x_1 
-= 
-15\) non è accettabile, quindi il problema ha una sola soluzione e 
+quindi si deve verificare: 
+\(\overline {AB}^{2}= \overline {AC}^{2} +\overline 
+{BC}^{2}\rightarrow ( x +2 )^{2} = ( x -23 )^{2} +x^2\). 
+Sviluppando i calcoli si ottiene l'equazione risolvente di secondo grado, 
+in forma canonica: 
+\(x^2 -50 x +525 = 0 \text{ con } \Delta = 400\). 
+L'equazione è determinata con il discriminante positivo, quindi esistono 
+due soluzioni reali distinte: 
+\(x_1 = 15 \vee x_2 = 35\) entrambe positive. 
+Ai fini del problema \(x_1 = 15\) non è accettabile, quindi il problema ha 
+una sola soluzione e 
 \(\overline 
 {BC} = 35\) \(\overline {AB} = 37\) \(\overline {AC} = 12\). 
 Conclusione: 
@@ -1717,7 +1703,7 @@ Per le condizioni poste la soluzione del problema è
 % 
 % \(\overline {DC}\) \( \overline {CB}\).
 % 
-%  \input{\folder lbr/fig005_trap.pgf}
+%  \immagine{Trapezio}{\trapa}
 % \end{htmulticols}
 % 
 % \begin{soluzione}
@@ -1735,7 +1721,8 @@ Per le condizioni poste la soluzione del problema è
 % e per il 1° teorema di Euclide sul triangolo~\(ACB\), 
 % rettangolo 
 % in
-% \(C\), \(\overline {HB}: \overline {CB} = \overline {CB} : \overline{AB}\) 
+% \(C\), \(\overline {HB}: \overline {CB} = \overline {CB} : 
+% \overline{AB}\) 
 % determiniamo quindi la misura di \(HB\) in funzione dell'incognita 
 % fissata:
 % \(\overline {HB} = \dfrac{x^2}{25}\) da cui \(\overline {DC} = 25 -
@@ -1749,7 +1736,7 @@ Per le condizioni poste la soluzione del problema è
 % risolvono 
 % il problema.
 % \begin{center}
-%  \input{\folder lbr/fig006_trap.pgf}
+%  \immagine{}{006_trap.pgf}
 % \end{center}
 % \end{soluzione}
 % % >8
@@ -1771,17 +1758,20 @@ Alla fine del primo anno in banca rimane tra capitale e interessi \[25000 +
 25000 \cdot c = 25000 ( 1 +c ).\] Nel secondo anno il tasso praticato è 
 \(c+0,005\) che va applicato alla somma \(25000(1+c)\). Si~ottiene quindi 
 l'equazione \[25000 ( 1 +c ) ( 1 +c +0,005 ) = 26291,10.\]
-Moltiplicando le parentesi tonde si ha \(25000 ( 1,005 +c +1,005 c +c^{2} ) 
-= 
-26291,10\) e poi dividendo per \(25000\) e ordinando otteniamo
+Moltiplicando le parentesi tonde si ha 
+\(25000 ( 1,005 +c +1,005 c +c^{2} ) = 26291,10\) 
+e poi dividendo per \(25000\) e ordinando otteniamo
 \(c^{2} +2,005 c -0,046644=0\) con soluzioni
-\[c_{1,2}~=~\dfrac{-2,005 \pm \sqrt{4,020025 +0,186576}}{2} = \dfrac{-2,005 
-\pm 2,051}{2}\Rightarrow c_{1} = -2,028 \vee c_{2} = 0,023.\]
-La soluzione \(c_1\) è negativa e non accettabile. La risposta al problema è 
-\(0,023\) cioè \(2,3\%\) il primo anno e \(2,8\%\) il secondo anno.
+{\small
+\[c_{1,2}~=~\dfrac{-2,005 \mp \sqrt{4,020025 +0,186576}}{2} = \dfrac{-2,005 
+\mp 2,051}{2}\Rightarrow c_{1} = -2,028 \vee c_{2} = 0,023.\]
+}
+La soluzione \(c_1\) è negativa e non accettabile. 
+La risposta al problema è \(0,023\) cioè \(2,3\%\) il primo anno e 
+\(2,8\%\) il secondo anno.
 \end{soluzione}
 % \vspazio\ovalbox{\risolvii \ref{ese:3.112}, \ref{ese:3.113}, 
-\ref{ese:3.114}, 
+% \ref{ese:3.114}, 
 % \ref{ese:3.115}, \ref{ese:3.116}, \ref{ese:3.117}, \ref{ese:3.118}, 
 % \ref{ese:3.119}, \ref{ese:3.120}, \ref{ese:3.121}, \ref{ese:3.122},}
 % 
@@ -1834,7 +1824,7 @@ La soluzione \(c_1\) è negativa e non accettabile. La risposta al problema è
 % 
 % \(P \in b \text{ tale che } \dfrac{PB}{PA} = 2\).
 % \begin{center}
-%  \input{\folder lbr/fig010_ango.pgf}
+%  \immagine{}{\ango}
 % \end{center}
 % 
 % \end{htmulticols}
@@ -1881,8 +1871,8 @@ La soluzione \(c_1\) è negativa e non accettabile. La risposta al problema è
 % \( 60\grado \) si ha
 % \(\overline {AN} = \dfrac{1}{2} \overline {AV} \cdot \sqrt{3} = k \cdot 
 % \sqrt{3}\) 
-% \( \overline {VN} = \dfrac{1}{2} \overline {AV} = k\) e \(\overline {PN} = 
-% \overline 
+% \( \overline {VN} = \dfrac{1}{2} \overline {AV} = k\) e 
+% \(\overline {PN} = \overline 
 % {VP} -\overline {VN} = x -k\) sostituendo in (**) si ottiene \(\overline 
 % {PA}^{2} = 3 k^{2} +( x -k )^{2}\).
 % 
@@ -1908,106 +1898,13 @@ La soluzione \(c_1\) è negativa e non accettabile. La risposta al problema è
 % \vspazio
 % \ovalbox{\risolvii \ref{ese:3.151}, \ref{ese:3.152}, \ref{ese:3.153}, 
 %          \ref{ese:3.154}, \ref{ese:3.155}, \ref{ese:3.156}, 
-\ref{ese:3.157}, 
+% \ref{ese:3.157}, 
 %          \ref{ese:3.158}, \ref{ese:3.159}}
 % \vspazio
 % 
 % % >8
 % 
 % HO TOLTO LA SEZIONE CON PROBLEMI PARAMETRICI
-
-
-\section{L'equazione di terzo grado, un po' di storia}
-\label{sec:eq2gr_gradosup}
-
-Problema: ``Trovare un numero il cui cubo, insieme con due suoi quadrati e 
-dieci 
-volte il numero stesso, dia come somma 20''.
-
-Il problema enunciato venne posto da Giovanni Panormita, astronomo e 
-filosofo alla corte di Federico II, a Leonardo Pisano, detto Fibonacci, 
-che ne tentò la soluzione nella sua opera Flos.
-
-Con il linguaggio matematico attuale il problema si formalizza 
-nell'equazione di terzo grado \(x^3+2x^2+10x=20\) Fibonacci pervenne al 
-valore approssimato \(x=1,3688\) come soluzione al problema, senza 
-indicare la via seguita per la sua determinazione. 
-Pur tuttavia egli riuscì a dimostrare che le soluzioni di 
-un'equazione di terzo grado non possono mai esprimersi mediante radicali 
-quadratici neanche se sovrapposti.
-
-Solo tra il 1540 e il 1545, ad opera dei matematici italiani Niccolò 
-Fontana, detto Tartaglia, e Gerolamo Cardano, fu scoperta la formula 
-risolutiva dell'equazione generale di terzo grado.
-
-Cardano dimostra che ogni equazione di terzo grado \(ax^3+bx^2+cx+d=0\) è 
-riconducibile alla forma \(y^3+{py}+q=0\). Operando con la sostituzione 
-\(x=y-\dfrac 
-b{3a}\) si ricava la formula risolutiva: 
-\[y=\sqrt[3]{-\dfrac q 2+\sqrt{\tonda{\dfrac p 3}^3+\tonda{\dfrac q 
-2}^2}}+\sqrt[3]{-\dfrac q 2-\sqrt{\tonda{\dfrac p 
-3}^3+\tonda{\dfrac 
-q 
-2}^2}}\] 
-da cui poi si risale alla soluzione dell'equazione assegnata.
-
-\begin{esempio}{}{}
-Risolvere l'equazione: \(x^3+3x^2+6x+5=0\).
-
-Operiamo la sostituzione \(x=y-\dfrac b{3a}\) che in questo caso è 
-\(x=y-1\) l'equazione diventa \((y-1)^3+3(y-1)^2+6(y-1)+5=0\) e 
-eseguendo i calcoli si ha 
-\(y^3+3y+1=0\) con \(p=3\) e~\(q=1\).
-Applicando la formula risolutiva si ha 
-\[y=\sqrt[3]{-\dfrac 1 2+\sqrt{\dfrac 1 4+1}}+\sqrt[3]{-\dfrac 1 
-2-\sqrt{\dfrac 1 4+1}}=\sqrt[3]{\dfrac{\sqrt 5-1} 2}+
-\sqrt[3]{\dfrac{-\sqrt 5-1} 2}\] 
-e quindi 
-\(x=\sqrt[3]{\dfrac{\sqrt 5-1} 2}+\sqrt[3]{\dfrac{-\sqrt 5-1} 2}-1\).
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere l'equazione \(x^3=15x+4\) applicando la formula di Cardano.
-
-Notiamo che è \(p=-15\) e \(q=-4\) e dunque sotto la radice quadrata della 
-formula 
-si ha \(\tonda{\dfrac p 3}^3+\tonda{\dfrac q 
-2}^2=(-5)^3+(-2)^2=-121\) 
-pertanto non un numero reale, mentre è evidente la soluzione reale \(x=4\). 
-Questa circostanza ha spinto il matematico Raffaele Bombelli, ad elaborare 
-nella sua opera ``Algebra'' del 1572, calcoli con radici quadrate di numeri 
-negativi (numeri) che troveranno una sistemazione coerente nella teoria dei 
-numeri complessi sviluppata da Fiedrich Gauss.
-
-Vediamo come possiamo determinare l'I.S. dell'equazione di Bombelli con le 
-nostre conoscenze. Scriviamo l'equazione nella forma canonica 
-\(p(x)=0\Rightarrow 
-x^3-15x-4=0\) sappiamo che uno zero intero è \(x=4\) dunque scomponiamo 
-dividendo 
-\(p(x)=x^3-15x-4\) per il binomio \(x-4\). Potete verificare che si ottiene 
-\(x^3-15x-4=(x-4)\cdot (x^2+4x+1)=0\) da cui, per la legge di annullamento 
-del 
-prodotto, 
-\[x-4=0\Rightarrow x=4\vee x^2+4x+1=0\Rightarrow x_{1,2}=-2\pm \sqrt 3.\]
-
-Poco dopo la scoperta della formula risolutiva per le equazioni di terzo 
-grado 
-il matematico italiano Ferrari trovò anche la formula per risolvere le 
-equazioni di quarto grado. 
-Le ricerche per trovare la formula che risolvesse l'equazione di quinto 
-grado furono invece vane, non perché i matematici non furono abbastanza 
-``ingegnosi'' bensì per il fatto che, come dimostrò Galois non esistono 
-formule che per mezzo di radici ed altre operazioni algebriche possano 
-risolvere le equazioni dal quinto grado in poi. In altre parole esistono 
-solo formule per le equazioni di secondo, terzo e quarto grado.
-
-Oggigiorno, tuttavia, si preferisce non approfondire le applicazioni di 
-queste formule. 
-Si usa applicare solo la formula risolutiva per le equazioni di secondo 
-grado e per quelle di grado superiore al secondo si applicano altri metodi 
-che vedremo solo parzialmente in questo capitolo oppure si preferiscono
-metodi di calcolo numerico che danno soluzioni approssimate.
-\end{esempio}
 
 % \begin{esempio}{}{}
 % Determinare le radici reali dell'equazione fratta 
@@ -2023,7 +1920,8 @@ metodi di calcolo numerico che danno soluzioni approssimate.
 % grado \(8x^3+18x^2+9x=0\). Scomponiamo in fattori il polinomio \(x\cdot 
 % \tonda{8x^2+18x+9}=0\). Per la legge di annullamento \(x=0\vee 
 % x^2+18x+9=0\). 
-% Risolvendo anche l'equazione di secondo grado con la formula risolutiva si 
+% Risolvendo anche l'equazione di secondo grado con la formula risolutiva 
+% si 
 % ottengono le soluzioni \(x_1=0\vee x_2=-\dfrac 3 4\vee x_3=-\dfrac 3 2\).
 % \end{esempio}
 % 
@@ -2041,1211 +1939,31 @@ metodi di calcolo numerico che danno soluzioni approssimate.
 % Trovare gli zeri del seguente polinomio di terzo grado 
 % \(p(x)=x^3-7x^2+4x+12\).
 % 
-% Scriviamo l'equazione \(x^3-7x^2+4x+12=0\) e cerchiamo di scomporre con il 
-% metodo 
-% di Ruffini. Sostituendo \(x=-1\) si ottiene 
+% Scriviamo l'equazione \(x^3-7x^2+4x+12=0\) e cerchiamo di scomporre con 
+% il metodo di Ruffini. Sostituendo \(x=-1\) si ottiene 
 % \((-1)^3-7(-1)^2+4(-1)+12=-1-7-4+12=0\). 
 % Possiamo allora dividere il polinomio \(x^3-7x^2+4x+12=0\) per il binomio 
 % \(x+1\). 
 % Applicando la regola di Ruffini si ha:
 % \begin{center}
-% \input{\folder lbr/fig051_rufi.pgf}
+% \immagine{Ruffini.}{\rufi}
 % \end{center}
 % Il polinomio si scompone in \((x+1)(x^2-8x+12)\). 
 % Per la legge di annullamento del prodotto \(x+1=0\vee x^2-8x+12=0\). 
 % L'equazione \(x+1=0\) dà come soluzione \(x=-1\). 
 % L'equazione \(x^2-8x+12=0\) si può risolvere con la formula risolutiva 
 % ridotta 
-% \(x_{1,2}=4\pm \sqrt{16-12}=4\pm 2\). Il polinomio assegnato ha tre zeri 
+% \(x_{1,2}=4\mp \sqrt{16-12}=4\mp 2\). Il polinomio assegnato ha tre zeri 
 % distinti 
 % \(x_1=-1\vee x_2=2\vee x_3=6\).
 % \end{esempio}
 
 % \ovalbox{\risolvii \ref{ese:5.1}, \ref{ese:5.2}, \ref{ese:5.3}, 
 % \ref{ese:5.4}, 
-% \ref{ese:5.5}, \ref{ese:5.6}, \ref{ese:5.7}, \ref{ese:5.8}, \ref{ese:5.9}, 
+% \ref{ese:5.5}, \ref{ese:5.6}, \ref{ese:5.7}, \ref{ese:5.8}, 
+% \ref{ese:5.9}, 
 % \ref{ese:5.10}, \ref{ese:5.11}}
 
 % Altre tipologie di equazioni di grado superiore al II saranno trattate il 
 % prossimo anno.
 
-\section{Sistemi di secondo grado}
-\label{sec:eq2gr_sistemi}
-
-Ricordiamo che un sistema di equazioni non è altro che l'insieme di più 
-equazioni con le stesse incognite. L'insieme delle soluzioni è dato 
-dall'intersezione degli insiemi delle soluzioni delle singole equazioni.
-
-\begin{definizione}{}{}
-Il \emph{grado di un sistema di equazioni}, se le equazioni che formano il 
-sistema sono costituite da polinomi, è dato dal prodotto dei gradi delle 
-equazioni che lo compongono.
-\end{definizione}
-
-\begin{esempio}{}{}
-Determinare il grado dei seguenti sistemi di equazioni
-
-\begin{itemize}
-\item \(\left\{\begin{array}{l}-2x+3y=4 \\3x+5y-2=0\end{array}\right.\) 
-entrambe 
-le equazioni sono di primo grado; il sistema è di primo grado;
-\item \(\left\{\begin{array}{l}2x-y=0 \\x^2+6y^2-9=0\end{array}\right.\) la 
-prima 
-equazione è di primo grado, la seconda di secondo grado; il sistema è di 
-secondo 
-grado;
-\item \(\left\{\begin{array}{l}x^2+y^2=0 \\y=3x^2-2x+6=0\end{array}\right.\) 
-entrambe le equazioni sono di secondo grado; il sistema è di quarto grado.
-\end{itemize}
-\end{esempio}
-
-I sistemi di secondo grado sono dunque composti da un'equazione di secondo 
-grado 
-e da una di primo grado.
-
-\subsection{Sistemi di secondo grado numerici}
-% \begin{exrig}
-\begin{esempio}{}{}
-Risolvere il seguente sistema 
-\(\left\{\begin{array}{l}{2x-y=0}\\{x^2+6y^2-9=0}\end{array}\right..\)
-
-Utilizziamo il metodo di sostituzione che abbiamo già visto per i sistemi di 
-primo grado.
-\begin{itemize}[nosep]
-\item Ricaviamo una delle due incognite dall'equazione di primo grado e 
-sostituiamo nell'equazione di secondo grado:
-\[\left\{\begin{array}{l}y=2x \\
-x^2+6\cdot (2x)^2-9=0\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}y=2x \\
-x^2+24x^2-9=0\end{array}\right. 
-\Rightarrow \left\{\begin{array}{l}y=2x \\
-25x^2-9=0\end{array}\right.;\]
-\item risolviamo l'equazione di secondo grado in una sola incognita. Questa 
-equazione è detta equazione risolvente del sistema:
- \(25x^2-9=0\Rightarrow x_1=-\dfrac 3 5\vee x_2=\dfrac 3 5\)
-\item Si sostituiscono i valori trovati per la \( x \) nella equazione di 
-primo 
-grado per trovare i valori corrispondenti della \( y \). Le coppie 
-\((x_1;~y_1)\) 
-e 
-\((x_2;~y_2)\) se ci sono, si dicono soluzioni del sistema.
-\[\left\{\begin{array}{l}{y=2x}\\
-{25x^2-9=0}\end{array}\right. 
-\Rightarrow \left\{\begin{array}{l}x_1=-\dfrac 3 5 \\
-y_1=2\cdot \tonda{-\dfrac 3 5}=-\dfrac 6 5\end{array}\right.\vee 
-\left\{\begin{array}{l}x_2=+\dfrac 3 5 \\
-y_2=2\cdot \tonda{\dfrac 3 5}=+\dfrac 6 5 \end{array}\right.\] 
-quindi con soluzioni 
-\[\tonda{-\dfrac 3 5;~-\dfrac 6 5}\vee \tonda{\dfrac 3 5;~\dfrac 6 
-5}.\]
-\end{itemize}
-
-\begin{htmulticols}{2}
-Le soluzioni del sistema possono essere interpretate geometricamente come 
-i punti di intersezione tra la retta rappresentata dall'equazione \(y=2x\) 
-e la curva rappresentata dall'equazione \(x^2+6y^2=9\). 
-Con qualsiasi software che disegni grafici inseriamo le due equazioni e 
-otteniamo la seguente figura.
-La curva rappresentata dalla seconda equazione è una ellisse; 
-i punti \(A\) e \(B\), intersezione tra retta ed ellisse, corrispondono alle 
-soluzioni del sistema.
-\begin{center}
-\input{\folder lbr/fig021_ells.pgf}
-\end{center}
- \end{htmulticols}
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere il seguente sistema: \(\left\{\begin{array}{l}x-y=-2 
-\\x^2+y-3x-1=0\end{array}\right..\)
-
-Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo nell'equazione 
-di 
-secondo grado 
-\[\left\{\begin{array}{l}y=x+2 \\
-x^2+\tonda{x+2}-3x-1=0\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}y=x+2 \\
-x^2-2x+1=0\end{array}\right.\]
-
-L' \emph{equazione risolvente del sistema}. \(x^2-2x+1=0\) ha il 
-discriminante 
-uguale a zero e due soluzioni reali coincidenti: \(x_1=x_2=1\).
-
-Il sistema ha due soluzioni reali coincidenti, 
-\[\left\{\begin{array}{l}y=x+2 \\x^2-2x+1=0\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}x=1 \\
-y=1+2=3\end{array}\right.\] 
-quindi con soluzione \((1;~3)\).
-
-\affiancati{.59}{.39}
-{Con qualsiasi software che disegni grafici inseriamo le due equazioni e 
-otteniamo la seguente figura.
-La curva rappresentata dalla seconda equazione è una parabola. Le soluzioni 
-del sistema possono allora essere interpretate geometricamente come i punti 
-di incontro tra la retta rappresentata dall'equazione \(y=x+2\) e la 
-parabola rappresentata dall'equazione \(y=-x^2+3x+1\). 
-La soluzioni saranno due punti reali coincidenti. 
-
-Questo punto è detto punto di tangenza tra retta e parabola.}
-{\begin{center}
-\scalebox{0.9}{\input{\folder lbr/fig022_prbl.pgf}}
-\end{center}}
-
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere il seguente sistema: \(\left\{\begin{array}{l}x^2+y^2=4 
-\\3x+4y=12\end{array}\right..\)
-
-Isoliamo \(y\) nell'equazione di primo grado e sostituiamola nell'equazione 
-di secondo grado 
-\[\left\{\begin{array}{l}y=-\dfrac 3 4x+3 \\
-x^2+\tonda{-\dfrac 3 4x+3}^2-4=0\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}y=-\dfrac 3 4x+3 \\
-x^2+\dfrac 9{16}x^2-\dfrac 9 2x+9-4=0\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}y=-\dfrac 3 4x+3 \\
-\dfrac{25}{16}x^2-\dfrac{9}{2}x+5=0\end{array}\right..\]
-
-Risolviamo l'equazione di secondo grado in una sola incognita 
-\(\dfrac{25}{16}x^2-\dfrac 9 2x+5=0\) e verifichiamo che 
-\(\Delta =\dfrac{81} 4-\dfrac{125} 4\) è negativo, quindi l'equazione 
-non ha soluzioni reali e \(\IS=\emptyset \). 
-Il sistema non ha soluzioni reali e si dice 
-\emph{impossibile}.
-
-\affiancati{.59}{.39}
-{Le soluzioni del sistema possono essere interpretate geometricamente come i 
-punti di incontro tra la retta rappresentata dall'equazione 
-\(y=-\dfrac 3 4x+3\) e la curva rappresentata dall'equazione \(x^2+y^2=4\). 
-Nella rappresentazione grafica ottenuta con un software che disegna grafici 
-le figure geometriche ottenute non hanno punti d'incontro.
-
-La curva rappresentata dalla prima equazione è una circonferenza; retta e 
-circonferenza non hanno punti di intersezione.}
-{\begin{center}
-\scalebox{0.9}{\input{\folder lbr/fig023_crch.pgf}}
-\end{center}}
-\end{esempio}
-% \end{exrig}
-
-\conclusione
-Un sistema di secondo grado, con equazione risolvente di secondo grado, 
-rappresenta sempre l'intersezione tra una retta e una curva di secondo grado 
-(circonferenza, parabola, ellisse o iperbole). Le soluzioni del sistema 
-rappresentano i punti di incontro tra retta e curva. In base al segno del 
-discriminante dell'equazione risolvente abbiamo:
-\begin{itemize}[nosep]
-\item \(\Delta >0\) le soluzioni del sistema sono le coordinate di due punti 
-distinti;
-\item \(\Delta =0\) le soluzioni del sistema sono le coordinate di due punti 
-coincidenti;
-\item \(\Delta <0\) il sistema non ha soluzioni reali. Retta e curva non 
-hanno 
-punti in comune.
-\end{itemize}
-\begin{center}
-\input{\folder lbr/fig024_tutte.pgf}
-\end{center}
-
-Se l'equazione risolvente risulta essere una equazione di \emph{primo grado} 
-o una \emph{uguaglianza} vera o falsa, allora:
-\begin{itemize}[nosep]
-\item se si ottiene una uguaglianza vera, il sistema è indeterminato;
-\item se si ottiene una uguaglianza falsa il sistema è impossibile;
-\item se l'equazione risolvente è di primo grado determinata, da essa si 
-ricava il valore dell'incognita e si sostituisce tale valore nell'altra 
-equazione. 
-Il sistema ha una sola soluzione (in questo caso non si parla di due 
-soluzioni coincidenti, come nel caso precedente di \(\Delta =0\)).
-\end{itemize}
-% \begin{exrig}
-\begin{esempio}{}{}
-Risolvere il sistema 
-\(\left\{\begin{array}{l}x^2-y^2=0\\x+y=0\end{array}\right.\).
-
-Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo nell'equazione 
-di 
-secondo grado. 
-\[\left\{\begin{array}{l}y=-x \\
-x^2-(-x)^2=0\end{array}\right.\ 
-\Rightarrow\left\{\begin{array}{l}y=-x \\
-x^2-x^2=0\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}y=-x\\
-0=0\end{array}\right..\]
-
-L'\emph{equazione risolvente del sistema} in questo caso è una 
-\emph{identità} 
-(uguaglianza vera) e tutte le coppie formate da numeri opposti (la prima 
-equazione ci vincola ad avere \(y=-x\) ) sono soluzioni del sistema: 
-\(\forall 
-k\in 
-\mathbb{R}\Rightarrow {I.S.}=(k;~-k)\). Il sistema ha infinite coppie di 
-numeri 
-reali che lo soddisfano e si dice \emph{indeterminato}.
-\begin{htmulticols}{2}
-La figura è quella che otteniamo se inseriamo le due equazioni in un 
-software che disegna funzioni. 
-La curva di secondo grado è formata dalle due rette \(x+y=0\) e \(x-y=0\) 
-e la seconda equazione rappresenta la retta a che si sovrappone alla 
-precedente.
-\begin{center}
-\input{\folder lbr/fig025_iprb.pgf}
-\end{center}
-\end{htmulticols}
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere il sistema \(\left\{\begin{array}{l}\dfrac 3 
-2x+y=0\\x^2-y^2=4\end{array}\right..\)
-
-Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo nell'equazione 
-di 
-secondo grado 
-\[\left\{\begin{array}{l}y=-\dfrac 3 2x \\
-x^2-\tonda{-\dfrac 3 2x}^2=4\end{array}\right.
-\Rightarrow \left\{\begin{array}{l}y=-\dfrac 3 2x \\
-x^2-\dfrac 9 4x^2=4\end{array}\right.
-\Rightarrow \left\{\begin{array}{l}y=-\dfrac 3 2x\\
--\dfrac 5 4x^2=4\end{array}\right..\]
-
-L'equazione risolvente del sistema \(-\dfrac 5 4x^2=4\) non ha soluzioni, 
-quindi 
-il 
-sistema è \emph{impossibile}.
-\begin{htmulticols}{2}
-La figura è quella che otteniamo se inseriamo le due equazioni in un 
-software che disegna il grafico delle funzioni. 
-L'equazione di secondo grado rappresenta una curva detta iperbole e la 
-seconda equazione rappresenta la retta; vediamo che curva e retta non hanno 
-punti di intersezione.
-\begin{center}
-\input{\folder lbr/fig026_iprb.pgf}
-\end{center}
-\end{htmulticols}
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere il sistema 
-\(\left\{\begin{array}{l}x^2-y^2=4\\-x+y=-1\end{array}\right.\).
-
-Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo nell'equazione 
-di 
-secondo grado 
-\[\left\{\begin{array}{l}y=x-1 \\
-x^2-(x-1)^2-4=0\end{array}\right.
-\Rightarrow \left\{\begin{array}{l}y=x-1 \\
-x^2-x^2+2x-1-4=0\end{array}\right.
-\Rightarrow \left\{\begin{array}{l}y=x-1\\2x=5\end{array}\right.\]
-
-L'\emph{equazione risolvente del sistema} in questo caso è l'equazione di 
-primo grado \(2x-5=0\), la cui soluzione è \(x=\dfrac 5 2\). Si sostituisce 
-il valore trovato nell'altra equazione e troviamo la soluzione del sistema 
-che in questo caso è unica: 
-\[\left\{\begin{array}{l}y=x-1 \\2x=5\end{array}\right. 
-\Rightarrow\left\{\begin{array}{l}x=\dfrac 5 2 \\
-y=\dfrac 5 2-1=\dfrac 3 2\end{array}\right.\] 
-% quindi con soluzione \[\tonda{\dfrac 5 2;~\dfrac 3 2}.\]
-
-\begin{htmulticols}{2}
-La figura è quella che otteniamo se inseriamo le due equazioni in un 
-applicativo 
-che disegna il grafico di funzioni. L'equazione di secondo grado rappresenta 
-una curva detta iperbole e la seconda equazione rappresenta una retta; 
-vediamo che curva e retta hanno un solo punto di intersezione.
-\begin{center}
-\input{\folder lbr/fig027_iprb.pgf}
-\end{center}
-\end{htmulticols}
-\end{esempio}
-% \end{exrig}
-% \ovalbox{\risolvii \ref{ese:6.1}, \ref{ese:6.2}, \ref{ese:6.3}, 
-% \ref{ese:6.4}, 
-% \ref{ese:6.5}, \ref{ese:6.6}, \ref{ese:6.7}.}
-% % 8<
-% \subsection{Sistemi di secondo grado letterali}
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Discutere e risolvere il seguente sistema: 
-% \(\left\{\begin{array}{l}y-kx=-2\\y-x^2=2\end{array}\right.\).
-% 
-% Si risolve come nel caso degli analoghi sistemi numerici. Bisognerà, 
-% nell'equazione risolvente, discutere per quali valore del parametro si 
-% otterranno soluzioni reali. Ricaviamo la y dalla prima equazione e 
-% sostituiamo 
-% nella seconda equazione:
-% \[ \left\{\begin{array}{l}y=kx-2\\kx-2-x^2=2\end{array}\right.\ 
-% \Rightarrow\left\{\begin{array}{l}y=kx-2\\-x^2+kx-4=0\end{array}\right.\ 
-% \Rightarrow\left\{\begin{array}{l}y=kx-2\\x^2-kx+4=0\end{array}\right.. \]
-% 
-% Discutiamo e risolviamo l'equazione di secondo grado 
-% \[ \Delta =k^2-16 \Rightarrow
-% \begin{array}{l}\Delta >0\Rightarrow k<-4\vee k>4\Rightarrow 
-% x_1=\dfrac{k-\sqrt{k^2-16}} 2\vee x_2=\dfrac{k+\sqrt{k^2-16}} 2\\
-% \Delta =0\Rightarrow k=-4\vee k=4\Rightarrow x_1=x_2=\dfrac k 2 \\
-% \Delta <0\Rightarrow -4<k<4\Rightarrow \IS=\emptyset \end{array}. \]
-% 
-% Ricaviamo i valori della x che sostituiamo nella prima equazione: \[ 
-% \left\{\begin{array}{l}y-kx=-2\\y-x^2=2\end{array}\right.\text{ se }k\le 
-% -4\vee 
-% k\ge 4\Rightarrow \left\{\begin{array}{l}x_1=\dfrac{k-\sqrt{k^2-16}} 2 
-% \\y_1=\dfrac{k^2-4-k\sqrt{k^2-16}} 2\end{array}\right.\vee 
-% \left\{\begin{array}{l}x_2=\dfrac{k+\sqrt{k^2-16}} 2 
-% \\y_2=\dfrac{k^2-4+k\sqrt{k^2-16}} 2\end{array}\right.. \]
-% \end{esempio}
-% % \end{exrig}
-% \ovalbox{\risolvii \ref{ese:6.8}, \ref{ese:6.9}.}
-% % >8
-% \subsection{Sistemi frazionari}
-% Si dice frazionario un sistema in cui almeno una delle equazioni che lo 
-% compongono è frazionaria; per questo motivo occorre procedere alla 
-% definizione 
-% del Dominio in cui si ricercano le soluzioni del sistema.
-% 
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il seguente sistema \(\left\{\begin{array}{l}2x-y=2 \\\dfrac 
-% x{y+2}=\dfrac x{2y+5}\end{array}\right.\).
-% 
-% Determiniamo le condizioni di esistenza di \( \dfrac x{y+2}=\dfrac x{2y+5} 
-% \):\; 
-% \(\CE y\neq -2\wedge y\neq -\dfrac 5 2\).
-% 
-% Trasformiamo l'equazione frazionaria nella sua forma canonica di equazione 
-% intera:
-% \begin{align*}
-%  &\dfrac x{y+2}=\dfrac x{2y+5}\\
-% \Rightarrow & x\cdot (2y+5)-x\cdot (y+2)=0\\
-% \Rightarrow & 2{xy}+5x-{xy}-2x=0\\
-% \Rightarrow & xy+3x=0.
-% \end{align*}
-% 
-% Il sistema diventa: 
-% \[\left\{\begin{array}{l}y=2x-2\\
-% xy+3x=0\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}y=2x-2\\
-% x(2x-2)+3x=0\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}y=2x-2\\
-% 2x^2+x=0\end{array}\right..\]
-% 
-%  \(2x^2+x=0\) è l'equazione risolvente; ha soluzioni \(x_1=0\vee x_2=-
-% \dfrac 1 2\).
-% 
-% Sostituiamo le soluzioni trovate nell'equazione di primo grado e otteniamo 
-% le soluzioni del sistema: 
-% \[\left\{\begin{array}{l}x_1=0 \\
-% y_1=-2\end{array}\right.\vee 
-% \left\{\begin{array}{l}x_2=-\dfrac 1 2\\
-% y_2=-3\end{array}\right. 
-% \Rightarrow\tonda{0;~-2}\vee \tonda{-\dfrac 1 2;~-3}.\]
-% 
-% La soluzione \((0;-2)\) non soddisfa le \(\CE\) Il sistema ha soluzione 
-% \(\tonda{-\dfrac 1 2;~-3}\).
-% \end{esempio}
-% % \end{exrig}
-% % \ovalbox{\risolvii \ref{ese:6.10}, \ref{ese:6.11}}
-% 
-% \subsubsection{Sistemi di secondo grado in tre incognite}
-% Quanto detto si può estendere ai sistemi di secondo grado di tre o più 
-% equazioni 
-% con altrettante incognite. Per risolvere uno di tali sistemi si cercherà, 
-% operando successive sostituzioni a partire dalle equazioni di primo grado, 
-% di ottenere un'equazione di secondo grado in una sola incognita (equazione 
-% risolvente del sistema).
-% 
-% A partire dalle eventuali soluzioni di tale equazione, si determineranno 
-% poi le soluzioni del sistema.
-% 
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% 
-% 
-% \(\left\{\begin{array}{l}2x+y-z=0\\3x+4y-2z=1\\xy-y^2+z-5y=0\end{array}
-% \right.\).
-% 
-% Isoliamo \( z \) dalla prima equazione, che è di primo grado, e 
-% sostituiamo 
-% nelle 
-% altre equazioni: 
-% \[ \left\{\begin{array}{l}z=2x+y\\
-% 3x+4y-2(2x+y)=1\\
-% {xy}-y^2+(2x+y)-5y=0\end{array}\right. 
-% \Rightarrow\left\{\begin{array}{l}z=2x+y\\
-% 3x+4y-4x-2y=1\\
-% xy-y^2+2x-4y=0\end{array}\right. \Rightarrow
-% \left\{\begin{array}{l}z=2x+y\\
-% -x+2y-1=0\\
-% xy-y^2+2x-4y=0\end{array}\right..\]
-% 
-% Ricaviamo \( x \) dalla seconda equazione e la sostituiamo nelle altre 
-% equazioni: 
-% \[ \left\{\begin{array}{l}z=2(2y-1)+y\\
-% x=2y-1\\
-% 2y^2-y-y^2+4y-2-4y=0\end{array}\right. 
-% \Rightarrow\left\{\begin{array}{l}z=5y-2\\
-% x=2y-1\\
-% y^2-y-2=0\end{array}\right..\]
-% 
-% L'equazione \(y^2-y-2=0\) è l'equazione risolvente del sistema, le sue 
-% soluzioni 
-% sono \(y_1=2\vee y_2=-1\).
-% 
-% Sostituiamo i valori trovati per la \( y \) nelle altre equazioni per 
-% trovare i 
-% valori corrispondenti della \( x \) e della \( z \): \[ 
-% \left\{\begin{array}{l}z=5(2)-2=8 \\
-% x=2(2)-1=3 \\y=2 \end{array}\right.\vee 
-% \left\{\begin{array}{l}z=5(-1)-2=-7 \\x=2(-1)-1=-3 \\y=-1 
-% \end{array}\right.\Rightarrow (3;~2;~8)\vee (-3;~-1;~-7). \]
-% \end{esempio}
-% % \end{exrig}
-% % \ovalbox{\risolvii \ref{ese:6.12}, \ref{ese:6.13}}
-
-\section{Sistemi simmetrici}
-\label{sec:eq2gr_sistemi_simmetrici}
-
-Un sistema di due equazioni in due incognite si dice \emph{simmetrico} se 
-non cambia scambiando le incognite.
-Per esempio, nel sistema 
-\[\sistema{x+y=1\\x^2+y^2+3xy+5=0}
-\stext{ scambiando } x \stext{ con } y \stext{ si ottiene: } \quad 
-\sistema{y+x=1\\y^2+x^2+3yx+5=0}\] 
-che è identico al precedente.
-
-Le soluzioni del sistema sono:  
-\(\sistema{x_1=-2\\y_1=3} \stext{ e } \sistema{x_2=3\\y_2=-2}\) \\
-e come si può notare \(x\) e \(y\) vengono scambiate anche nella soluzione.
-
-In generale se il sistema è simmetrico trovata una coppia soluzione 
-\((a;~b)\) 
-l'altra è \((b;~a)\).
-
-\subsection{Sistema simmetrico fondamentale}
-Il sistema simmetrico fondamentale è del tipo 
-\(\left\{\begin{array}{l}{x+y=s}\\{xy=p}\end{array}\right.\) esso risolve il 
-problema di trovare due numeri, nota la loro somma e il loro prodotto.
-
-Ricordiamo che nell'equazione di secondo grado \(x^2+bx+c=0\), la somma 
-delle radici è \(-b\), mentre il prodotto è \(c\). 
-Pertanto, basta risolvere la seguente equazione, \emph{detta equazione 
-risolvente: } \(t^2-st+p=0\) con \(s=-b\) e \(p=c\).
-
-In base al segno del discriminante abbiamo:
-\begin{itemize}[nosep]
-\item \(\Delta >0\) l'equazione risolvente ha due soluzioni distinte \(t_1\) 
-e \(t_2\), le soluzioni del sistema sono: 
-\(\left\{\begin{array}{l}{x_1=t_1}\\{y_1=t_2}\end{array}\right.\vee 
-\left\{\begin{array}{l}{x_2=t_2}\\{y_2=t_1}\end{array}\right.\)
-\item \(\Delta =0\) l'equazione risolvente ha radici coincidenti 
-\(t_1=t_2\), le soluzioni del sistema sono: 
-\(\left\{\begin{array}{l}{x_1=t_1}\\{y_1=t_1}\end{array}\right.\vee 
-\left\{\begin{array}{l}{x_2=t_1}\\{y_2=t_1}\end{array}\right.\)
-\item \(\Delta <0\) l'equazione non ammette soluzioni reali. Il sistema è 
-impossibile.
-\end{itemize}
-
-\begin{esempio}{}{}
-Risolvere il seguente sistema 
-\(\left\{\begin{array}{l}{x+y=5}\\{xy=4}\end{array}\right.\).
-\begin{htmulticols}{2}
-L'equazione risolvente è \(t^2-5t+4=0\) le cui soluzioni sono: \(t_1=1\vee 
-t_2=4\).
-
-Le soluzioni del sistema sono le seguenti: \[ 
-\left\{\begin{array}{l}{x_1=1}\\{y_1=4}\end{array}\right.\vee 
-\left\{\begin{array}{l}{x_2=4}\\{y_2=1}\end{array}\right.. \]
-
-Possiamo interpretare i risultati ottenuti nel piano cartesiano: la retta di 
-equazione \(x+y=5\) interseca l'iperbole equilatera \({xy}=4\) nei due punti 
-\(A(1;~4)\) e \(B(4;~1)\).
-\begin{center}
-\input{\folder lbr/fig028_iprb.pgf}
-\end{center}
-\end{htmulticols}
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere il seguente sistema 
-\(\left\{\begin{array}{l}{x+y=1}\\{xy=4}\end{array}\right.\).
-\begin{htmulticols}{2}
-L'equazione risolvente è \[ t^2-t+4=0 \] con il discriminante negativo e 
-dunque 
-senza soluzioni reali. Il sistema è impossibile.
-
-Possiamo interpretare i risultati ottenuti nel piano cartesiano: la retta di 
-equazione \(x+y=1\) non interseca l'iperbole equilatera \({xy}=4\).
-\begin{center}
-\input{\folder lbr/fig029_iprb.pgf}
-\end{center}
-\end{htmulticols}
-\end{esempio}
-
-\begin{esempio}{}{}
-Risolvere il seguente sistema 
-\(\left\{\begin{array}{l}{x+y=2}\\{xy=1}\end{array}\right.\).
-\begin{htmulticols}{2}
-L'equazione risolvente è \(t^2-2t+1=0\) le cui soluzioni sono: 
-\(t_1=t_2=1\).
-
-Il sistema ha due soluzioni coincidenti: 
-\[\left\{\begin{array}{l}{x_1=1}\\{y_1=1}\end{array}\right.\vee 
- \left\{\begin{array}{l}{x_2=1}\\{y_2=1}\end{array}\right.. \]
-
-Possiamo interpretare i risultati ottenuti nel piano cartesiano: la retta di 
-equazione \(x+y=2\) è tangente all'iperbole equilatera \(xy=1\) nel punto 
-\((1;~1)\).
-\begin{center}
-\input{\folder lbr/fig030_iprb.pgf}
-\end{center}
-\end{htmulticols}
-\end{esempio}
-% \end{exrig}
-% \ovalbox{\risolvii \ref{ese:6.14}, \ref{ese:6.15}, \ref{ese:6.16}, 
-% \ref{ese:6.17}, \ref{ese:6.18}, \ref{ese:6.19}}
-% 
-% \subsection{Sistemi simmetrici riconducibili al sistema simmetrico 
-% fondamentale}
-% In questa categoria rientrano i sistemi simmetrici che, mediante artifici, 
-% possono essere trasformati in sistemi simmetrici del tipo precedente.
-% 
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% \(\left\{\begin{array}{l}{x+y=a}\\
-% {x^2+y^2+{bx}+{by}=c}\end{array}\right.\).
-% 
-% È possibile trasformare il sistema in un sistema simmetrico fondamentale.
-% 
-% Ricordando l'identità \(x^2+y^2=(x+y)^2-2{xy}\), il sistema può essere 
-% riscritto 
-% così: 
-% \[ \left\{\begin{array}{l}{x+y=a}\\
-% {(x+y)^2-2{xy}+b(x+y)=c}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=a}\\
-% {a^2-2{xy}+{ba}=c}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=a}\\
-% {{xy}=\dfrac{a^2+{ab}-c} 2}\end{array}\right..\]
-% 
-% Posto \(a=s\) e \(p=\dfrac{a^2+{ab}-c} 2\) il sistema diventa 
-% \[\left\{\begin{array}{l}{x+y=s}\\{{xy}=p}\end{array}\right..\]
-% \end{esempio}
-% 
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% \(\left\{\begin{array}{l}{x+y=7}\\{x^2+y^2=25}\end{array}\right.\)
-% 
-% Ricordando l'identità \(x^2+y^2=(x+y)^2-2{xy}\), il sistema può essere 
-% riscritto 
-% così: 
-% \[\left\{\begin{array}{l}{x+y=7}\\
-% {(x+y)^2-2{xy}=25}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=7}\\
-% {(7)^2-2{xy}=25}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=7}\\
-% {-2{xy}=25-49}\end{array}\right.\Rightarrow 
-% \left\{\begin{array}{l}{x+y=7}\\{{xy}=12}\end{array}\right..\]
-% 
-% L'equazione risolvente è \(t^2-7t+12=0\) le cui soluzioni sono \(t_1=3\vee 
-% t_2=4\).
-% 
-% Le soluzioni del sistema sono: 
-% \[\left\{\begin{array}{l}{x_1=3}\\
-% {y_1=4}\end{array}\right.\vee \left\{\begin{array}{l}{x_2=4}\\
-% {y_2=3}\end{array}\right..\]
-% \end{esempio}
-% 
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% \(\left\{\begin{array}{l}{-3x-3y=-5}\\{2x^2+2y^2=10}\end{array}\right.\)
-% 
-% Dividendo per \(-3\) la prima equazione, per \(2\) la seconda e ricordando 
-% l'identità 
-% \[x^2+y^2=(x+y)^2-2{xy}\] 
-% si ha: 
-% \[ \left\{\begin{array}{l}{x+y=\dfrac 5 3}\\
-% {x^2+y^2=5}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=\dfrac 5 3}\\
-% {(x+y)^2-2{xy}=5}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=\dfrac 5 3}\\
-% {\tonda{\dfrac 5 3}^2-2{xy}=5}\end{array}\right.
-% \Rightarrow \left\{\begin{array}{l}{x+y=\dfrac 5 3}\\
-% {{xy}=-\dfrac{10} 9}\end{array}\right..\]
-% 
-% L'equazione risolvente è \(t^2-\dfrac 5 3t-\dfrac{10} 9=0\) le cui 
-% soluzioni sono: 
-% \(t_1=\dfrac{5-\sqrt{65}} 6\vee t_2=\dfrac{5+\sqrt{65}} 6\).
-% 
-% Le soluzioni del sistema sono le seguenti: 
-% \[\left\{\begin{array}{l}{x_1=\dfrac{5-\sqrt{65}} 
-% 6}\\{y_1=\dfrac{5+\sqrt{65}} 
-% 6}\end{array}\right.\vee \left\{\begin{array}{l}{x_2=\dfrac{5+\sqrt{65}} 
-% 6}\\{y_2=\dfrac{5-\sqrt{65}} 6}\end{array}\right..\]
-% \end{esempio}
-% % \end{exrig}
-% \ovalbox{\risolvii \ref{ese:6.20}, \ref{ese:6.21}, \ref{ese:6.22}, 
-% \ref{ese:6.23}, \ref{ese:6.24}}
-% % 8<
-% \subsection{Sistemi non simmetrici riconducibili a sistemi simmetrici}
-% Rientrano in questa classe i sistemi che, pur non essendo simmetrici, 
-% possono 
-% essere trasformati, mediante opportune sostituzioni, in sistemi 
-% simmetrici. 
-% Naturalmente questi sistemi si possono risolvere anche con la procedura 
-% solita 
-% di sostituzione per i sistemi di secondo grado.
-% 
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% \(\left\{\begin{array}{l}{x-y=8}\\{{xy}=-15}\end{array}\right.\).
-% 
-% Mediante la sostituzione \(y'=-y\) otteniamo 
-% \(\left\{\begin{array}{l}{x+y'=8}\\{xy'=15}\end{array}\right.\) che è un 
-% sistema 
-% simmetrico fondamentale.
-% 
-% L'equazione risolvente è \(t^2-8t+15=0\) le cui soluzioni sono \(t_1=3\vee 
-% t_2=5\), 
-% pertanto il sistema ha le soluzioni 
-% \[\left\{\begin{array}{l}{x_1=3}\\
-% {{y_1}'=5}\end{array}\right.\vee 
-% \left\{\begin{array}{l}{x_2=5}\\
-% {{y_2}'=3}\end{array}\right..\] 
-% Dall'uguaglianza \(y'=-y\Rightarrow y=-y'\) otteniamo le soluzioni del 
-% sistema dato 
-% \[\left\{\begin{array}{l}{x_1=3}\\
-% {y_1=-5}\end{array}\right.\vee 
-% \left\{\begin{array}{l}{x_2=5}\\
-% {y_2=-3}\end{array}\right..\]
-% \end{esempio}
-% 
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% \(\left\{\begin{array}{l}{2x-3y=8}\\{{xy}=2}\end{array}\right.\).
-% 
-% Mediante la sostituzione \(x'=2x\) e \(y'=-3y\) da cui \(x=\dfrac{x'} 2\) 
-% e 
-% \(y=-\dfrac{y'} 3\) otteniamo 
-% \[\left\{\begin{array}{l}{x'+y'=8}\\
-% {\dfrac{x'} 2\cdot \tonda{-\dfrac{y'} 3}=2}\end{array}\right.
-% \Rightarrow\left\{\begin{array}{l}{x'+y'=8}\\
-% {x'y'=-12}\end{array}\right.\] che è un sistema simmetrico fondamentale.
-% 
-% Risolviamo il sistema simmetrico 
-% \(\left\{\begin{array}{l}{x'+y'=8}\\{x'y'=-12}\end{array}\right.\) con la 
-% procedura nota. L'equazione risolvente è \(t^2-8t-12=0\) le cui soluzioni 
-% sono 
-% \(t_{1,2}=4\pm 2\sqrt 3\) pertanto il sistema ha le soluzioni: 
-% \[\left\{\begin{array}{l}{x_1'=4-2\sqrt 7}\\
-% {y_1'=4+2\sqrt 7}\end{array}\right.\vee 
-% \left\{\begin{array}{l}{x_2'=4+2\sqrt 7}\\
-% {y_2'=4-2\sqrt 7}\end{array}\right..\] 
-% Dalle sostituzioni \(x=\dfrac{x'} 2\) e \(y=-\dfrac{y'} 3\) otteniamo le 
-% soluzioni 
-% del 
-% sistema iniziale 
-% \[\left\{\begin{array}{l}{x_1=\dfrac{4-2\sqrt 7} 2=2-\sqrt 7}\\
-% {y_1=\dfrac{-4-2\sqrt 7} 3}\end{array}\right.\vee 
-% \left\{\begin{array}{l}{x_2=\dfrac{4+2\sqrt 7} 2=2+\sqrt 7}\\
-% {y_2=\dfrac{-4+2\sqrt 7} 3}\end{array}\right..\]
-% \paragraph{Procedura di sostituzione}
-% Ricaviamo una delle due incognite dall'equazione di primo grado e 
-% sostituiamola 
-% nell'altra equazione \[ \left\{\begin{array}{l}{2x-3y=8}\\
-% {{xy}=2}\end{array}\right.\Rightarrow
-% \left\{\begin{array}{l}{y=\dfrac{2x-8} 
-% 3}\\{{xy}=2}\end{array}\right.\Rightarrow 
-% \left\{\begin{array}{l}{y=\dfrac{2x-8} 
-% 3}\\{x\tonda{\dfrac{2x-8} 3}=2}\end{array}\right.\Rightarrow 
-% \left\{\begin{array}{l}{y=\dfrac{2x-8} 3}\\{2x^2-8x-6=0}\end{array}
-% \right.\]
-% 
-% Risolviamo l'equazione \(2x^2-8x-6=0\) avente come soluzioni \(x_1=2-\sqrt 
-% 7\vee x_2=2+\sqrt 7\). 
-% Applicando la formula ridotta otteniamo: 
-% \(x_1=2-\sqrt 7\vee x_2=2+\sqrt 7\).
-% Sostituiamo i valori trovati e ricaviamo i valori della \(y\): \[ 
-% \left\{\begin{array}{l}{x_1=2-\sqrt 7}\\{y_1=\dfrac{-4-2\sqrt 7} 
-% 3}\end{array}\right.\vee \left\{\begin{array}{l}{x_2=2+\sqrt 
-% 7}\\{y_2=\dfrac{-4+2\sqrt 7} 3}\end{array}\right.. \]
-% \end{esempio}
-% % \end{exrig}
-% \ovalbox{\risolvi \ref{ese:6.25}}
-% 
-% \subsection{Sistemi simmetrici di grado superiore al secondo}
-% Introduciamo le seguenti trasformazioni dette formule di Waring, dal 
-% nome del matematico che le ha formulate per primo. 
-% Con tali formule, si possono trasformare le potenze di un binomio in 
-% relazioni tra somme e prodotti delle due variabili che lo compongono. 
-% Indicate come \(s\) somma delle variabili e \
-% (p\) il 
-% loro prodotto queste sono le prime formule fino alla potenza quinta.
-% \begin{itemize}[nosep]
-% \item \( a^2+b^2=(a+b)^2-2{ab}=s^2-2p \)
-% \item \( a^3+b^3=(a+b)^3-3a^2b-3ab^2=(a+b)^3-3{ab}(a+b)=s^3-3{ps} \)
-% \item \( a^4+b^4=s^4-4{ps}^2+2p^2 \)
-% \item \( a^5+b^5=s^5-5{ps}^3+5p^2s \).
-% \end{itemize}
-% 
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il sistema 
-% \(\left\{\begin{array}{l}{x+y=1}\\{x^3+y^3-2{xy}=3}\end{array}\right.\).
-% 
-% Applicando l'identità \(x^3+y^3=(x+y)^3-3{xy}(x+y)\), il sistema può 
-% essere 
-% riscritto così: \[ 
-% \left\{\begin{array}{l}{x+y=1}\\{(x+y)^3-3{xy}(x+y)-2{xy}=3}\end{array}
-% \right.\Rightarrow 
-% \left\{\begin{array}{l}{x+y=1}\\{1-5{xy}=3}\end{array}\right.\Rightarrow 
-% \left\{\begin{array}{l}{x+y=1}\\{{xy}=-\dfrac 2 5}\end{array}\right..\]
-% 
-% Da cui l'equazione risolvente \(t^2-t-\dfrac 2 5=0\Rightarrow 
-% 5t^2-5t-2=0\) 
-% con 
-% \(t_1=\dfrac{5-\sqrt{65}}{10}\) e \(t_2=\dfrac{5+\sqrt{65}}{10}\).
-% Le soluzioni del sistema sono: 
-% 
-% 
-% \(\tonda{\dfrac{5-\sqrt{65}}{10};
-% \dfrac{5+\sqrt{65}}{10}},\tonda{\dfrac{5+\sqrt{
-% 65}}{10};~\dfrac{5-\sqrt{65}}{10}}\).
-% \end{esempio}
-% 
-% \begin{esempio}{}{}
-% Risolvere il sistema \(\left\{\begin{array}{l}{x+y=-1}\\{x^4+y^4=\dfrac 7 
-% 2}\end{array}\right.\).
-% 
-% Ricordando l'identità \(x^4+y^4=(x+y)^4-4{xy}(x+y)^2+2x^2y^2\), il sistema 
-% può 
-% essere riscritto così: 
-% \[\left\{\begin{array}{l}{x+y=-1}\\{(x+y)^4-4{xy}(x+y)^2+2x^2y^2=\dfrac 7 
-% 2}\end{array}\right. \Rightarrow 
-% \left\{\begin{array}{l}{x+y=-1}\\{2x^2y^2-4{xy}-\dfrac 5 
-% 2=0}\end{array}\right..\]
-% 
-% Introduciamo l'incognita ausiliaria \(u=xy\). L'equazione 
-% \(2x^2y^2-4{xy}-\dfrac 
-% 5 
-% 2=0\) diventa \(2u^2-4u-\dfrac 5 2=0\) che ha come soluzioni \(u_1=-\dfrac 
-% 1 2\vee 
-% u_2=\dfrac 5 2\Rightarrow {xy}=-\dfrac 1 2\vee {xy}=\dfrac 5 2\).
-% 
-% Il sistema assegnato è equivalente a due insiemi 
-% \[\left\{\begin{array}{l}{x+y=-1}\\{{xy}=-\dfrac 1 2}\end{array}\right.
-% \vee 
-% \left\{\begin{array}{l}{x+y=-1}\\{{xy}=\dfrac 5 2}\end{array}\right.\] 
-% e dunque il suo insieme soluzione \(S\) si ottiene dall'unione 
-% dell'insieme soluzione dei due sistemi~\(S=S_1\cup S_2\).
-% 
-% Il primo sistema 
-% \[\left\{\begin{array}{l}{x+y=-1}\\{{xy}=-\dfrac 1 2}\end{array}\right.\] 
-% ha equazione risolvente \(t^2+t-\dfrac 1 2=0\) con 
-% \[t_1=\dfrac{-1-\sqrt 3} 2\text{ e }t_2=\dfrac{-1+\sqrt 3} 2.\] 
-% Il sistema ha soluzioni 
-% \[\tonda{\dfrac{-1-\sqrt 3} 2;~\dfrac{-1+\sqrt 3} 
-% 2},\tonda{\dfrac{-1+\sqrt 
-% 3} 
-% 2;~\dfrac{-1-\sqrt 3} 2}\] e quindi \[S_1=\left\{\tonda{\dfrac{-1-\sqrt 
-% 3} 
-% 2;~\dfrac{-1+\sqrt 3} 2},\tonda{\dfrac{-1+\sqrt 3} 2;~\dfrac{-1-\sqrt 3} 
-% 2}\right\}.\]
-% 
-% Il secondo sistema \(\left\{\begin{array}{l}{x+y=-1}\\{{xy}=\dfrac 5 
-% 2}\end{array}\right.\) ha equazione risolvente \(t^2+t+\dfrac 5 2=0\), che 
-% ha \(\Delta <0\), l'insieme soluzione è vuoto. Anche il sistema non ha 
-% soluzioni 
-% reali, quindi \(S_2=\emptyset \). L'insieme soluzione del sistema 
-% assegnato 
-% \(\left\{\begin{array}{l}{x+y=-1}\\
-% {x^4+y^4=\dfrac 7 2}\end{array}\right.\) è 
-% \(S=S_1\cup \emptyset =S_1\).
-% \end{esempio}
-% % \end{exrig}
-% \ovalbox{\risolvii \ref{ese:6.26}, \ref{ese:6.27}, \ref{ese:6.28}, 
-% \ref{ese:6.29}, \ref{ese:6.30}, \ref{ese:6.31}, \ref{ese:6.32}, 
-% \ref{ese:6.33}, 
-% \ref{ese:6.34}, \ref{ese:6.35}}
-% 
-% \section{Sistemi omogenei di quarto grado}
-% Un sistema si dice omogeneo se le equazioni, con l'eccezione dei termini 
-% noti, 
-% hanno tutti i termini con lo stesso grado. I sistemi omogenei di quarto 
-% grado 
-% sono quindi nella forma:
-% \begin{equation*}
-% \left\{\begin{array}{l}{{ax}^2+{bxy}+{cy}^2=d}\\
-% {a'x^2+b'{xy}+c'y^2=d'}\end{array}\right.
-% \end{equation*}
-% \paragraph{Primo caso} \(d=0 \wedge d'=0\).
-% 
-% Il sistema si presenta nella forma 
-% \(\left\{\begin{array}{l}{{ax}^2+{bxy}+{cy}^2=0}\\{a'x^2+b'{xy}+c'y^2=0}
-% \end{array}\right.\). 
-% Un sistema di questo tipo ha sempre almeno la soluzione 
-% nulla 
-% \( 
-% (0;~ 0) \).
-% 
-% Per trovare le soluzioni del sistema poniamo \(y={tx}\) sostituendo 
-% abbiamo: 
-% \[ 
-% 
-% 
-% \left\{\begin{array}{l}{{ax}^2+{btx}^2+{ct}^2x^2=0}\\
-% {a'x^2+b'{tx}^2+c't^2x^2=0}
-% \end{array}\right. \text{ da cui } 
-% 
-% 
-% \left\{\begin{array}{l}{x^2(a+{bt}+{ct}^2)=0}\\
-% {x^2(a'+b't+c't^2)=0}\end{array}
-% \right.. \]
-% 
-% Supponendo \(x\neq 0\) e che quindi che può assumere tutti i valori \(k\in 
-% \R_0\) 
-% possiamo dividere le due equazioni per \(x^2\), otteniamo così due 
-% equazioni 
-% nell'incognita \(t\) che possiamo risolvere. Se le due equazioni ammettono 
-% qualche 
-% soluzione comune allora il sistema ammette infinite soluzioni. Le 
-% soluzioni 
-% sono 
-% del tipo \(x=k\) e \(y={kt}\), dove \(t\) è la soluzione comune di cui 
-% si è detto prima.
-% 
-% \begin{esempio}{}{}
-% Risolvere il seguente sistema \(\left\{\begin{array}{l}x^2-3{xy}+2y^2=0 
-% \\-x^2+5{xy}-6y^2=0 \end{array}\right.\).
-% 
-% Applichiamo la sostituzione \(y={tx}\), il sistema diventa 
-% \(\left\{\begin{array}{l}x^2-3{tx}^2+2t^2x^2=0 \\-x^2+5{tx}^2-6t^2x^2=0 
-% \end{array}\right.\).
-% 
-% Dividendo per \(x^2\) otteniamo \(\left\{\begin{array}{l}1-3t+2t^2=0 
-% \\1-5t+6t^2=0 
-% \end{array}\right.\).
-% 
-% La prima equazione è risolta per \(t_1=1\vee t_2=\dfrac 1 2\), mentre la 
-% seconda 
-% equazione è risolta per \(t_3=\dfrac 1 2\vee t_4=\dfrac 1 3\). Le due 
-% equazioni 
-% hanno una radice in comune \(t=\dfrac 1 2\).
-% 
-% Pertanto oltre alla soluzione \((0;~0)\) il sistema ammette infinite 
-% soluzioni 
-% che 
-% possono essere scritte nella forma \(\left\{\begin{array}{l}x=k \\y=\dfrac 
-% 1 2k 
-% \end{array}\right.\).
-% \end{esempio}
-% % \end{exrig}
-% 
-% \paragraph{Secondo caso}\(d=0 \wedge d'\neq 0\).
-% 
-% Il sistema si presenta nella forma 
-% 
-% \(\left\{\begin{array}{l}{{ax}^2+{bxy}+{cy}^2=0}\\
-% {a'x^2+b'{xy}+c'y^2=d'}\end{array}\right.\).
-% 
-% Ponendo \(y={tx}\) si ha 
-% \(\left\{\begin{array}{l}{{ax}^2+{btx}^2+{ct}^2x^2=0}\\{a'x^2+b'{tx}
-% ^2+c't^2x^2=d'}\end{array}\right.\).
-% 
-% Dividendo per \(x^2\) la prima equazione si ha 
-% 
-% \(\left\{\begin{array}{l}{a+{bt}+{ct}^2=0}\\{x^2(a'+b't+c't^2)=d'}
-% \end{array} \right.\).
-% 
-% Si risolve la prima equazione nell'incognita \(t\) si sostituiscono i 
-% valori 
-% trovati nella seconda equazione e si ricavano i valori di \(x\) e di 
-% seguito i valori di \(y\) con \(y={tx}\).
-% \newpage
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il sistema \(\left\{\begin{array}{l}x^2-{xy}-6y^2=0 
-% \\-x^2+2{xy}-3y^2=-6 \end{array}\right.\).
-% 
-% Sostituendo \(y={tx}\) il sistema diventa 
-% \[\left\{\begin{array}{l}1-t-6t^2=0 \\x^2(-1+2t-3t^2)=-6 
-% \end{array}\right..\]
-% 
-% La prima equazione ha per soluzioni \(t_1=\dfrac 1 3\) e 
-% \(t_2=-\dfrac 1 2\).
-% 
-% Sostituendo \(t=\dfrac 1 3\) nella seconda equazione si ha 
-% \(x_{1,2}=\pm 3\) 
-% e 
-% sapendo che \(y={tx}\) si ottengono le coppie 
-% 
-% 
-% \[\left\{\begin{array}{l}x_1=3\\y_1=
-% 1\end{array}\right.\vee\left\{\begin{array}{
-% l}x_2=-3\\y_2=-1\end{array}\right..\]
-% 
-% Sostituendo \(t=-\dfrac 1 2\) si ha \(x_3=-\dfrac{2\sqrt 6}{11}\vee 
-% x_4=\dfrac{2\sqrt 
-% 6}{11}\) e sapendo che \(y={tx}\) si ottengono le coppie 
-% \[\left\{\begin{array}{l}x_3=-\dfrac{2\sqrt 6}{11}\\y_3=\dfrac{\sqrt 
-% 6}{11}\end{array}\right.\vee\left\{\begin{array}{l}x_4=-2\dfrac{\sqrt 
-% 6}{11}\\y_4=-\dfrac{\sqrt 6}{11}\end{array}\right..\]
-% 
-% L'insieme soluzione del sistema è 
-% \[\IS=\left\{(x_1;~y_1),(x_2;~y_2),(x_3;~y_3),(x_4;~y_4)\right\}.\]
-% \end{esempio}
-% % \end{exrig}
-% 
-% \paragraph{Terzo caso} \(d\neq 0 \wedge d'\neq 0\).
-% 
-% Il sistema si presenta nella forma 
-% 
-% \(\left\{\begin{array}{l}{{ax}^2+{bxy}+{cy}^2=d}\\
-% {a'x^2+b'{xy}+c'y^2=d'} \end{array}\right.\).
-% 
-% Ponendo \(y=tx\) si ha 
-% \[\left\{\begin{array}{l}{x^2(a+{bt}+{ct}^2)=d}\\
-% {x^2(a'+b't+c't^2)=d'}\end{array}\right.\]
-% Dividendo membro a membro le due equazioni, sotto la condizione \(x\neq 
-% 0\wedge 
-% a'+b't+c't^2\neq 0\) otteniamo 
-% \begin{align*}
-% &\dfrac{a+{bt}+{ct}^2}{a'+b't+c't^2}=\dfrac d{d'}\\
-% \Rightarrow & d'(a+{bt}+{ct}^2)=d(a'+b't+c't^2)\\
-% \Rightarrow & ({cd}'-c'd)t^2+({bd}'-b'd)t+{ad}'-a'd=0 
-% \end{align*}
-% che è una equazione di secondo grado nell'incognita \(t\).
-% 
-% Se l'equazione ha come soluzioni \(t_1\) e \(t_2\) dobbiamo poi 
-% risolvere i sistemi 
-% \[ \left\{\begin{array}{l}y=t_1x \\a'x^2+b'{xy}+c'y^2=d' 
-% \end{array}\right.\vee\left\{\begin{array}{l}y=t_2x \\
-% a'x^2+b'{xy}+c'y^2=d' \end{array}\right.\]
-% \newpage
-% % \begin{exrig}
-% \begin{esempio}{}{}
-% Risolvere il sistema \(\left\{\begin{array}{l}x^2+3{xy}-y^2=-68 
-% \\-2x^2+{xy}+3y^2=88 \end{array}\right.\).
-% 
-% Sostituendo \(y={tx}\) il sistema diventa 
-% \(\left\{\begin{array}{l}x^2(1+3t-t^2)=-68 \\x^2(-2+t+3t^2)=88 
-% \end{array}\right.\).
-% 
-% Dividendo membro a membro con la condizione 
-% \(x\neq 0\wedge 3t^2+t-2\neq 0\) 
-% cioè 
-% \(x\neq 0\), \(t\neq -1\) e \(t\neq \dfrac 2 3\) si ha 
-% \(\dfrac{1+3t-t^2}{-2+t+3t^2}=-\dfrac{68}{88}\), da cui l'equazione 
-% \(29t^2+83t-12=0\) 
-% con soluzioni \(t_1=\dfrac 4{29}\vee t_2=-3\).
-% 
-% A questo punto dobbiamo risolvere i due sistemi:\[ 
-% \left\{\begin{array}{l}y=\dfrac 4{29}x \\-2x^2+{xy}+3y^2=88 
-% \end{array}\right.\vee\left\{\begin{array}{l}y=-3x \\-2x^2+{xy}+3y^2=88 
-% \end{array}\right.. \]
-% 
-% Il primo sistema è impossibile, il secondo ha soluzioni 
-% 
-% 
-% \[\left\{\begin{array}{l}x_1=-2\\y_1=6\end{array}\right.
-% \vee\left\{\begin{array}
-% {l}x_2=2\\y_2=-6\end{array}\right..\] 
-% L'insieme soluzione del sistema è \(\IS=\{(-2;~6),(2;~-6)\}\).
-% \end{esempio}
-% % \end{exrig}
-% \ovalbox{\risolvii \ref{ese:6.36}, \ref{ese:6.37}, \ref{ese:6.38}, 
-% \ref{ese:6.39}, \ref{ese:6.40}, \ref{ese:6.41}, \ref{ese:6.42}, 
-% \ref{ese:6.43}, 
-% \ref{ese:6.44}, \ref{ese:6.45}, \ref{ese:6.46}, \ref{ese:6.47}, 
-% \ref{ese:6.48}.}
-% 
-% \section{Problemi che si risolvono con sistemi di grado superiore al 
-% primo}
-% Riprendiamo un problema già discusso. Considerare più variabili ci 
-% permette di facilitare il processo di traduzione in linguaggio 
-% matematico.
-% 
-% \begin{problema}{}{}
-% Il trapezio isoscele \({ABCD}\) è inscritto in una semicirconferenza di 
-% diametro 
-% \({AB}\) di misura \(25\munit{cm}\) determinare le misure dei lati del 
-% trapezio 
-% sapendo che il perimetro è \(62\munit{cm}\).
-% \end{problema}
-% \begin{htmulticols}{2}
-% \emph{Dati}: \(\begin{array}{l}\overline{AB}=25;~2p=62;~\\{AB}\parallel 
-% {DC};~{AD}\equiv {CB}\end{array}\).
-% 
-% \emph{Obiettivo}: \(\overline{CB}\) \(\overline{DC}\).
-% 
-% \emph{Dati impliciti}: \(\begin{array}{l}
-% \overline{{KO}}=\overline{{CH}};~ \overline{{CO}}=\dfrac{25} 2;\\ 
-% \overline{{KC}}=\dfrac{\overline{{DC}}} 2;~\overline{{HB}}=\dfrac{25-y} 
-% 2;\\ 
-% \widehat {{CKO}}=90\grado; \widehat {{CHB}}=90\grado.\end{array}\)
-% 
-% \emph{Incognite}: \(\overline{{CB}}=x\) \(\overline{{DC}}=y\).
-% 
-% \emph{Vincoli: } \(\left\{\begin{array}{l}0<x<\dfrac{25} 2\sqrt 2\\0<y<25 
-% \end{array}\right.\).
-% \begin{center}
-% \input{\folder lbr/fig031_trap.pgf}
-% \end{center}
-% \end{htmulticols}
-% 
-% \emph{Relazioni tra dati e incognite}:
-% \(\left\{\begin{array}{l}{y+2x+25=62}\\{\tonda{\dfrac{25} 
-% 2}^2-\tonda{\dfrac 
-% y 
-% 2}^2=x^2-\tonda{\dfrac{25-y} 2}^2}\end{array}\right. \Rightarrow 
-% \left\{\begin{array}{l}{y=-2x+37}\\{x^2-25x+150=0}\end{array}\right.. \)
-% 
-% \emph{Soluzioni: } 
-% \(\left\{\begin{array}{l}{x_1=15}\\{y_1=7}\end{array}\right.\vee 
-% \left\{\begin{array}{l}{x_2=10}\\{y_2=17}\end{array}\right.\).
-% 
-% \emph{Verifica: }Entrambe le soluzioni sono accettabili.
-% 
-% La risoluzione del problema si basa sulla equazione di primo grado 
-% \(y+2x+25=62\) 
-% che definisce il perimetro, sulla congruenza dei segmenti 
-% \(\overline{{KO}}\) 
-% e 
-% \(\overline{{CH}}\) facilmente dimostrabile in quanto stessa distanza tra 
-% due 
-% rette parallele, l'applicazione del teorema di Pitagora ai triangoli 
-% \({CKB}\) 
-% e 
-% \({CHB}\) rettangoli per costruzione. Naturalmente tutte le informazioni 
-% ausiliare 
-% vanno dimostrate, ma data la loro facilità le lasciamo al lettore.
-% 
-% Importante è impostare le condizioni sulle incognite che devono essere 
-% maggiori 
-% di \(0\) ma anche \(x<\dfrac{25} 2\sqrt 2\) perché il trapezio non diventi 
-% un 
-% triangolo e \(y<25\) perché la base minore sia realmente minore. L'ultimo 
-% passo 
-% consiste nella verifica delle soluzioni, che nel nostro caso sono entrambe 
-% accettabili. Si hanno dunque due trapezi inscritti in quella 
-% semicirconferenza 
-% che avranno il perimetro di 62 cm.
-% 
-% \begin{problema}{}{}
-% L'azienda Profit intende fare una ristrutturazione riducendo il numero 
-% degli operai. 
-% Oggi spende per gli operai (tutti con lo stesso stipendio) 800 € al 
-% giorno. 
-% Se si licenziassero 5 dipendenti e si riducesse lo stipendio di 2 € 
-% al % giorno si avrebbe un risparmio giornaliero di 200 €. 
-% Quanti sono gli operai attualmente occupati nell'azienda?
-% \end{problema}
-% 
-% \emph{Dati}:\( \begin{array}{l}
-% \text{spesa per salari al giorno}= 800\munit{\text{€}};\\
-% \text{riduzione salario giornaliero}= 2\munit{\text{€}};\\
-% \text{riduzione numero operai}= 5\text{ unità};\\
-% \text{risparmio dopo il licenziamento e la riduzione di stipendio}= 
-% 200\munit{\text{€}}.
-% \end{array}\)
-% 
-% \emph{Obiettivo}: numero operai occupati prima della ristrutturazione
-% 
-% \emph{Incognite}:\( \begin{array}{l}
-% x = \text{numero operai prima della ristrutturazione};\\
-% y = \text{salario percepito da ogni operaio prima della ristrutturazione}.
-% \end{array}\)
-% 
-% \emph{Vincoli}: \(\left\{\begin{array}{l}x\in \N\\y\in 
-% \R^+\end{array}\right.\)
-% 
-% \emph{Altre Informazioni}: \( \begin{array}{l}
-% \text{Numero operai dopo la ristrutturazione} = x-5;\\
-% \text{salario dopo la ristrutturazione} =y-2;\\
-% \text{spesa per stipendi dopo la ristrutturazione} 
-% =800-200=600\munit{\text{€}}.\end{array}\)
-% 
-% \emph{Relazioni tra dati e incognite}:
-% \begin{equation*}
-% 
-% \left\{\begin{array}{l}{{xy}=800}\\{(x-5)(y-2)=600}\end{array}
-% \right.\Rightarrow 
-% \left\{\begin{array}{l}{{xy}=800}\\{{xy}-2x-5y+10=600}\end{array}
-% \right.\Rightarrow 
-% \left\{\begin{array}{l}{{xy}=800}\\{2x+5y=210}\end{array}\right.
-% \end{equation*}
-% 
-% \emph{Soluzioni}: 
-% \(\left\{\begin{array}{l}{x_1=25}\\{y_1=32}\end{array}\right.\vee 
-% \left\{\begin{array}{l}{x_2=80}\\{y_2=10}\end{array}\right.\)
-% 
-% \emph{Verifica}: Entrambe le soluzioni sono accettabili.
-% 
-% Naturalmente c'è una grande differenza tra percepire 
-% \(32\munit{\text{€/giorno}}\) 
-% di salario o \( 10\munit{\text{€/giorno}} \), come avere impiegati 
-% \( 25 \) o \( 80 \) operai. 
-% Il problema va meglio definito. Basterebbe per questo un vincolo che 
-% ci dice qual è la paga minima giornaliera di un operaio.
-% 
-% \begin{problema}{}{}
-% Un numero \(k\in \N\) è composto da tre cifre. Il prodotto delle tre 
-% cifre è \(42\). 
-% Se si scambia la cifra delle decine con quella delle centinaia si 
-% ottiene 
-% un numero che supera \(k\) di \(360\). 
-% Se si scambia la cifra della unità con quella 
-% delle centinaia si ottiene un numero minore di \(99\) rispetto al 
-% numero \(k\). 
-% Trovare \(k\).
-% \end{problema}
-% 
-% \emph{Dati}: \(\begin{array}{l}
-% \text{il numero } k \text{ è composto da tre cifre};\\
-% \text{prodotto delle tre cifre } = 42;\\
-% \text{scambiando la cifra delle decine con quella delle centinaia 
-% otteniamo}l=k+360; \\
-% \text{scambiando la cifra delle unità con quella delle centinaia 
-% otteniamo} m=k-99.\\
-% \end{array}\)
-% 
-% \emph{Obiettivo}: trovare il numero \(k\).
-% 
-% \emph{Incognite}: \(\begin{array}{l}
-% x =\text{ cifra che rappresenta il numero delle centinaia;}\\
-% y=\text{ cifra che rappresenta il numero delle decine;}\\
-% z=\text{ cifra che rappresenta il numero delle unità.}
-% \end{array}\)
-% 
-% \emph{Vincoli}: 
-% \(\left\{\begin{array}{l}x\in \{1,2,3,4,5,6,7,8,9\} \\
-% y,z\in \{0,1,2,3,4,5,6,7,8,9\}\end{array}\right.\).
-% 
-% \emph{Altre Informazioni}: \(\begin{array}{l}
-% k=100x+10y+z;\\
-% l=100y+10x+z;\\
-% m=100z+10y+x.
-% \end{array}\)
-% 
-% \emph{Relazioni tra dati e incognite}: \[ \left\{\begin{array}{l}x\cdot 
-% y\cdot 
-% z=42 \\100y+10x+z=100x+10y+z+360\\100z+10y+x=100x+10y+z-99 
-% \end{array}\right.\Rightarrow \left\{\begin{array}{l}x\cdot y\cdot z=42 
-% \\x-y=-4\\x-z=1\end{array}\right.. \]
-% 
-% \emph{Soluzioni}: 
-% \(\left\{\begin{array}{l}x_1=3\\y_1=7\\z_1=2\end{array}\right.\).
-% 
-% \emph{Verifica}: La soluzione soddisfa le condizioni il numero cercato è 
-% \(372\).
-% 
-% \vspazio
-% \ovalbox{\risolvii \ref{ese:6.49}, \ref{ese:6.50}, \ref{ese:6.51}, 
-%          \ref{ese:6.52}, \ref{ese:6.53}, \ref{ese:6.54}, \ref{ese:6.55}, 
-%          \ref{ese:6.56}, \ref{ese:6.47}, \ref{ese:6.58}, \ref{ese:6.59}, 
-%          \ref{ese:6.60}, \ref{ese:6.61}}
-% 
-% \vspazio
-% \ovalbox{\ref{ese:6.62}, \ref{ese:6.63}, \ref{ese:6.64}, \ref{ese:6.65}, 
-%          \ref{ese:6.66}, \ref{ese:6.67}, \ref{ese:6.68}, \ref{ese:6.69}, 
-%          \ref{ese:6.70}, \ref{ese:6.71}}
-% % >8

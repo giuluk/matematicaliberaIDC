@@ -10,7 +10,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[[2018/01/01]
 \ProvidesPackage{matliberamat}[%
-    2023/09/20 v0.9.63
+    2026/02/26 v0.9.92
     Macro matematiche usate nel libro Matematica Libera]
 \DeclareRobustCommand{\N}{\mathbb{N}}
 
@@ -37,6 +37,8 @@
 \DeclareRobustCommand{\Rn}{\mathbb{R}^-}
 
 \DeclareRobustCommand{\C}{\mathbb{C}}
+
+\DeclareRobustCommand{\V}{\mathbb{V}} % TODO: da aggiungere nel .dtx.
 
 \DeclareRobustCommand{\IR}{{}^*\hspace{-.12em}\mathbb{R}}
 
@@ -83,6 +85,55 @@
 
 \newcommand{\escluso}[1]{~]#1[~} % estremo escluso.
 
+\NewDocumentCommand \eqdue{s O{0} m m m}{%
+  % Esprime su una riga la soluzione di un'equazione di secondo grado.
+  % La versione STARRED non scrive la formula risolutiva.
+  % Il parametro opzionale indica uno spostamento orizzontale.
+  % Sintassi:
+  % \eqdue[hspace]{espressione}{x_1}{x_2}
+  % \eqdue{\dfrac{+5 \mp \sqrt{25 -24}}{+6} =
+  %        \dfrac{+5 \mp \sqrt{1}}{6} =
+  %        \dfrac{5 \mp 1}{6}}
+  %       {\dfrac{2}{3}}{1}
+  \begin{align*}
+    \hspace*{#2mm}x_{1,\,2} =
+    \IfBooleanF{#1} {\dfrac{-b \mp \sqrt{b^2 -4ac}}{2a} =}
+    #3
+  \begin{array}{l}
+    \nearrow\\
+    \searrow
+  \end{array}
+  \begin{array}{l}
+    x_1 = #4\\[.8em]
+    x_2 = #5
+  \end{array}
+  \end{align*}
+}
+
+\NewDocumentCommand \eqduefr{s O{0} m m m}{%
+  % Esprime su una riga la soluzione di un'equazione di secondo grado
+  % usando la formula ridotta.
+  % La versione STARRED non scrive la formula risolutiva.
+  % Il parametro opzionale indica uno spostamento orizzontale.
+  % Sintassi:
+  % \eqduefr[hspace]{espressione}{x_1}{x_2}
+  % \eqduefr{\dfrac{+5 \mp \sqrt{25 -24}}{+6} =
+  %          \dfrac{+5 \mp \sqrt{1}}{6} =
+  %          \dfrac{5 \mp 1}{6}}
+  %         {\dfrac{2}{3}}{1}
+  \(\hspace*{#2mm}x_{1,\,2} =
+    \IfBooleanF{#1} {\dfrac{-\beta \mp \sqrt{\beta^2 -ac}}{a} =}
+    #3
+  \begin{array}{l}
+    \nearrow\\
+    \searrow
+  \end{array}
+  \begin{array}{l}
+    x_1 = #4\\[.8em]
+    x_2 = #5
+  \end{array}\)
+}
+
 \newcommand{\sistema}[1]{\left\{\begin{array}{lcl}#1\end{array}\right.}
 
 \newcommand{\fatratti}[1]{\left\{\begin{array}{rclcl}#1\end{array}\right.}
@@ -121,6 +172,17 @@
   }
 }
 
+\newcommand{\triangolo}[1]{%
+  % Circolo di raggio 1.2 con un'etichetta.
+  % Sintassi:
+  % \triangolo{vertici}
+  % Esempio:
+  % \(\triangolo{ABC}\)
+  \settowidth{\dimen0}{#1}% Calcola la larghezza dell'argomento
+  \makebox[0pt][l]{\raisebox{1.8ex}%
+    {\resizebox{\dimen0}{0.4ex}{\(\triangle\)}}}#1
+}
+
 \newcommand{\intervcc}[2]{\left[#1;~#2\right]}
 
 \newcommand{\intervac}[2]{\left]#1;~#2\right]}
@@ -131,7 +193,11 @@
 
 \newcommand{\sand}{~ \wedge ~}
 
+\newcommand{\ssand}{\quad \wedge \quad}
+
 \newcommand{\sor}{~ \vee ~}
+
+\newcommand{\ssor}{\quad \vee \quad}
 
 \newcommand{\scap}{~ \cap ~}
 
@@ -181,7 +247,7 @@
 
 \DeclareMathOperator{\IS}{I.S.}
 
-\DeclareMathOperator{\dd}{d}
+\DeclareMathOperator{\dd}{d\!}
 
 \newcommand{\dx}{\dd{x}}
 
@@ -251,6 +317,11 @@
 \newcommand{\grado}{{}^{\circ}}
 \def \meuro{\, \text{\euro }}
 \newcommand{\munit}[1]{\, \mathrm{#1}}
+\newcommand\scalemath[2]{%
+  % Cambia la dimensione all'interno dell'ambiente math.
+  \scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}
+}
+
 %% 
 %%  This file may be distributed and/or modified under the
 %%  conditions of the LaTeX Project Public Licence, either

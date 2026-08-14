@@ -83,7 +83,8 @@ DDIR = 'dist'
 SAFEDIR = [DDIR, 'copertina', 'copertine', '_ignore', 'html', 'html2', 'html3']
 EXTCLEAR = ('.4ct', '.4tc', '.aux', '.css', '.dvi', '.gnuplot',
             '.html', '.idv', '.lg', '.log', '.svg', '.ps', '.listing',
-            '.nav', '.out', '.snm', '.table', '.tmp', '.toc', '.xref', '.old')
+            '.nav', '.out', '.snm', '.table', '.tmp', '.toc', '.xref', '.old',
+            '-.png')
 T_TIKZP = ', tikz+'
 ##T_MATHML = ji.Template('make4ht {{nfile}}.tex '
 ##                       '-c ml_make4ht '

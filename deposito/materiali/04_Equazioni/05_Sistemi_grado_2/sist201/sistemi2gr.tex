@@ -1,0 +1,1275 @@
+% (c)~2012 Dimitrios Vrettos -d.vrettos@gmail.com
+% (c)~2014 Claudio.carboncinii -claudio.carboncini@gmail.com
+% (c) 2015 Daniele Zambelli daniele.zambelli@gmail.com
+
+\input{\folder sistemi2gr_grafici.tex}
+
+\chapter{Sistemi di secondo grado}
+
+\inicapitolo{%
+\begin{itemize}[left=0mm, nosep]
+\item sistemi di secondo grado;
+\item sistemi simmetrici;
+\item problemi.
+\end{itemize}
+}
+
+\section{Sistemi di secondo grado numerici}
+\label{sec:sist2gr_sisteminumerci}
+
+Ricordiamo che un sistema di equazioni non è altro che l'insieme di più 
+equazioni con le stesse incognite. L'insieme delle soluzioni è dato 
+dall'intersezione degli insiemi delle soluzioni delle singole equazioni.
+
+\begin{definizione}{}{}
+\ind{grado di un sistema}
+Il \emph{grado di un sistema di equazioni}, se le equazioni che formano il 
+sistema sono costituite da polinomi, è dato dal prodotto dei gradi delle 
+equazioni che lo compongono.
+\end{definizione}
+
+\begin{esempio}{}{}
+Determinare il grado dei seguenti sistemi di equazioni
+
+\begin{itemize}
+\item \(\sistema{-2x+3y=4 \\3x+5y-2=0}\) 
+entrambe le equazioni sono di primo grado; il sistema è di primo grado;
+\item \(\sistema{2x-y=0 \\x^2+6y^2-9=0}\) la prima equazione è di primo grado,
+la seconda di secondo grado; il sistema è di secondo grado;
+\item 
+\(\sistema{x^2+y^2=0 \\y=3x^2-2x+6=0}\) 
+entrambe le equazioni sono di secondo grado; il sistema è di quarto grado.
+\end{itemize}
+\end{esempio}
+
+I sistemi di secondo grado sono dunque composti da un'equazione di secondo 
+grado e da una di primo grado.
+Il modo più semplice per risolverli, è la sostituzione:
+\ind{metodo di sostituzione}
+dall'equazione di primo grado esplicitiamo il valore di un'incognita e lo 
+sostituiamo a quell'incognita nell'altra equazione.
+Incontriamo questi sistemi in particolare quando vogliamo trovare le
+intersezioni tra una retta e una conica: la retta infatti viene 
+rappresentata da un'equazione di primo grado e la conica da un'equazione 
+di secondo grado.
+Ne seguito vedremo alcuni esempi.
+
+\begin{esempio}{}{}
+Risolvere il seguente sistema: \quad 
+\(\sistema{{2x-y=0}\\{x^2+6y^2-9=0}}\)
+
+Utilizziamo il metodo di sostituzione che abbiamo già visto per i sistemi 
+di primo grado.
+\begin{itemize}[nosep, left=0mm]
+\item Ricaviamo una delle due incognite dall'equazione di primo grado e 
+sostituiamo nell'equazione di secondo grado:
+\[\sistema{y=2x \\ x^2 +6 \cdot (2x)^2 -9 = 0} 
+\Rightarrow\sistema{y=2x \\ x^2+24x^2-9=0} 
+\Rightarrow \sistema{y=2x \\ 25x^2-9=0}\]
+\item risolviamo l'equazione di secondo grado in una sola incognita. Questa 
+equazione è detta equazione risolvente del sistema:
+\(25x^2-9=0 \Rightarrow x_1 = -\dfrac 3 5 \sor x_2 = \dfrac 3 5\)
+\item Si sostituiscono i valori trovati per la \( x \) nella equazione di 
+primo grado per trovare i valori corrispondenti della \( y \). 
+Le coppie 
+\(\coppia{x_1}{y_1}\) e 
+\(\coppia{x_2}{y_2}\) se ci sono, si dicono soluzioni del sistema.
+\[\sistema{{y=2x} \\ {25x^2-9=0}} 
+\Rightarrow \sistema{x_1=-\dfrac 3 5 \\
+y_1=2\cdot \tonda{-\dfrac 3 5}=-\dfrac 6 5} \sor 
+\sistema{x_2=+\dfrac 3 5 \\
+y_2=2\cdot \tonda{\dfrac 3 5}=+\dfrac 6 5 }\] 
+quindi con soluzioni: \quad 
+\(\coppia{-\dfrac 3 5}{-\dfrac 6 5}  \sor \coppia{\dfrac 3 5}{\dfrac 6 5}\)
+\end{itemize}
+
+\affiancati{.52}{.46}{
+Le soluzioni del sistema possono essere interpretate geometricamente come 
+i punti di intersezione tra la retta rappresentata dall'equazione \(y=2x\) 
+e la curva rappresentata dall'equazione \(x^2+6y^2=9\). 
+Con qualsiasi software che disegni grafici inseriamo le due equazioni e 
+otteniamo la seguente figura.
+La curva rappresentata dalla seconda equazione è una ellisse; 
+i punti \(A\) e \(B\), intersezione tra retta ed ellisse, corrispondono 
+alle soluzioni del sistema.
+}{
+\immagine[.8]{Ellisse e una retta che la interseca.}{\ells}
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Calcola le intersezioni tra la retta di equazione \(x -y +2 = 0\) e la 
+conica di equazione \(x^2 +y -3x -1 = 0\).
+
+\medskip
+I punti di intersezione sono rappresentati da coppie di valori che sono 
+soluzioni sia della prima equazione sia della seconda.
+Si ottengono quindi risolvendo il seguente sistema: 
+\(\sistema{x -y +2 = 0 \\x^2 +y -3x -1 = 0}.\)
+
+Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo 
+nell'equazione di secondo grado 
+\[\sistema{y = x + 2 \\
+x^2 +\tonda{x +2} -3x -1 = 0} 
+\Rightarrow\sistema{y = x +2 \\
+x^2 -2x +1 = 0}\]
+
+\affiancati{.60}{.38}{
+L' \emph{equazione risolvente del sistema} è:\\
+\(x^2 -2x +1 = 0\) e ha il discriminante uguale a zero presenta quindi due 
+soluzioni reali coincidenti: \(x_1 = x_2 = 1\) da cui si possono ricavare i 
+corrispondenti valori di \(y\) ovviamente anche loro coincidenti: 
+\[\sistema{x_{1,~2} = 1 \\ y_{1,~2} = 1 +2 = 3}\] 
+Quindi possiamo dire che la retta e la parabola si intersecano in due punti 
+coincidenti (o che hanno un'intersezione doppia): \quad
+\(\punto{A}{1}{3}\).
+
+Questo punto è detto punto di tangenza tra retta e parabola.
+}{
+\immagine[.8]{Parabola e retta tangente in A.}{\prbl}
+}
+
+\end{esempio}
+
+\begin{esempio}{}{}
+Trova le intersezioni tra la retta di equazione \(3x +4y = 12\) e la 
+circonferenza di equazione \(x^2 +y^2 = 4\).
+\medskip 
+Le intersezioni avranno per coordinate le coppie di numeri soluzioni del 
+sistema:  \(\sistema{3x +4y = 12 \\ x^2 +y^2 = 4}.\)
+
+Isoliamo \(y\) nell'equazione di primo grado e sostituiamola nell'equazione 
+di secondo grado 
+\[\sistema{y=-\dfrac 3 4x+3 \\
+x^2+\tonda{-\dfrac 3 4x+3}^2-4=0} 
+\Rightarrow\sistema{y=-\dfrac 3 4x+3 \\
+x^2+\dfrac 9{16}x^2-\dfrac 9 2x+9-4=0} 
+% \Rightarrow\sistema{y=-\dfrac 3 4x+3 \\
+% \dfrac{25}{16}x^2-\dfrac{9}{2}x+5=0}
+\]
+
+\affiancati{.51}{.47}{
+Otteniamo l'equazione risolvente:\\ 
+\(\dfrac{25}{16}x^2 -\dfrac{9}{2}x +5 = 0 \sRarrow
+25x^2 -36x +80\) Studiamo il discriminante della formula ridotta: 
+\(\dfrac{\Delta}{4} =256 -2000 = -1744\) osserviamo che è negativo, 
+l'equazione non ha soluzioni reali e quindi anche il sistema di 
+equazioni non ha soluzioni reali e si dice \emph{impossibile}.
+}{
+\immagine[.8]{Circonferenza e retta esterna.}{\crch}
+}
+\end{esempio}
+
+
+\conclusione
+Un sistema di secondo grado, con equazione risolvente di secondo grado, 
+rappresenta sempre l'intersezione tra una retta e una curva di secondo 
+grado (circonferenza, parabola, ellisse o iperbole). 
+Le soluzioni del sistema rappresentano i punti di incontro tra retta e 
+curva. 
+In base al segno del discriminante dell'equazione risolvente abbiamo:
+\begin{itemize}[nosep]
+\item \(\Delta < 0\) il sistema non ha soluzioni reali, 
+retta e curva non hanno punti in comune;
+\item \(\Delta = 0\) le soluzioni del sistema sono le coordinate di due 
+punti coincidenti;
+\item \(\Delta > 0\) le soluzioni del sistema sono le coordinate di due 
+punti distinti.
+\end{itemize}
+\immagine[.6]{Retta e ellisse secanti, retta e parabola tangenti, retta e 
+circonferenza esterne.}
+{\rettaconica}
+
+\subsection{Alcuni casi particolari}
+\label{subsec:sistemi2gr_casi_particolari}
+\ind{sistema indeterminato}  \ind{sistema impossibile}
+Ci sono alcune situazioni particolari: sistemi indeterminati, 
+impossibili o con una sola soluzione.
+Li affrontiamo partendo da alcuni esempi.
+
+\begin{esempio}{}{}
+Risolvere il sistema 
+\(\sistema{x^2-y^2=0\\x+y=0}\).
+
+\medskip
+Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo 
+nell'equazione di secondo grado. 
+\[\sistema{y=-x \\
+x^2-(-x)^2=0}\ 
+\Rightarrow\sistema{y=-x \\
+x^2-x^2=0} 
+\Rightarrow\sistema{y=-x\\
+0=0}.\]
+
+\affiancati{.51}{.47}{
+L'\emph{equazione risolvente del sistema} in questo caso è una 
+\emph{identità} 
+(uguaglianza vera) e tutte le coppie formate da numeri opposti (la prima 
+equazione ci vincola ad avere \(y=-x\) ) sono soluzioni del sistema: 
+\(\forall k\in \mathbb{R}\Rightarrow {I.S.}=\coppia{k}{-k}\).
+Il sistema ha infinite coppie di numeri reali che lo soddisfano e si dice 
+\emph{indeterminato}.
+
+% La curva di secondo grado è formata dalle due rette \(x+y=0\) e \(x-y=0\)
+% e la seconda equazione rappresenta la retta che si sovrappone alla
+% precedente. %\TODO vorrei chiarire ma non so se riesco
+Il sistema di partenza è dato da una curva di secondo grado, che corrisponde al
+prodotto delle due diagonali \(x+y=0\) e \(x-y=0\), e da un'equazione lineare,
+che corrisponde alla diagonale discendente.
+}{
+\immagine[.8]{Le due diagonali del primo e del secondo quadrante e la retta 
+y=-x.}
+{\iprba}
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere il sistema \(\sistema{\dfrac 3 
+2x+y=0\\x^2-y^2=4}.\)
+
+\medskip
+Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo 
+nell'equazione di secondo grado 
+\[\sistema{y=-\dfrac 3 2x \\
+x^2-\tonda{-\dfrac 3 2x}^2=4}
+\Rightarrow \sistema{y=-\dfrac 3 2x \\ x^2-\dfrac 9 4x^2=4}
+\Rightarrow \sistema{y=-\dfrac 3 2x \\ -\dfrac 5 4x^2=4}
+\Rightarrow \sistema{y=-\dfrac 3 2x \\ x^2 = -\dfrac{16}{5}}\]
+
+\affiancati{.51}{.47}{
+L'equazione risolvente del sistema: \\
+\(x^2 = -\dfrac{16}{5}\) \\
+non ha soluzioni, quindi il sistema è \emph{impossibile}.
+
+L'equazione di secondo grado rappresenta una curva formata da due tratti:
+sono i due rami di un'iperbole. La seconda equazione rappresenta una retta.
+Vediamo che curva e retta non hanno punti di intersezione.
+}{
+\immagine[.8]{Retta che non interseca un'iperbole.}{\iprbb}
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere il sistema 
+\(\sistema{x^2-y^2=4\\-x+y=-1}\).
+
+\medskip
+Isoliamo la \(y\) dell'equazione di primo grado e sostituiamo 
+nell'equazione di secondo grado 
+\[\sistema{y=x-1 \\
+x^2-(x-1)^2-4=0}
+\Rightarrow \sistema{y=x-1 \\
+x^2-x^2+2x-1-4=0}
+\Rightarrow \sistema{y=x-1\\2x=5}\]
+
+L'\emph{equazione risolvente del sistema} in questo caso è l'equazione di 
+primo grado \(2x-5=0\), la cui soluzione è \(x=\dfrac 5 2\). Si sostituisce 
+il valore trovato nell'altra equazione e troviamo la soluzione del sistema 
+che in questo caso è unica: 
+\affiancati{.51}{.47}{
+\[\sistema{y=x-1 \\2x=5} 
+\Rightarrow\sistema{x=\dfrac 5 2 \\[3mm]
+y=\dfrac 5 2-1=\dfrac 3 2}\] 
+
+L'equazione di secondo grado rappresenta una iperbole e 
+l'altra equazione rappresenta una retta; 
+vediamo che curva e retta hanno un solo punto di intersezione.
+}{
+\immagine[.8]{Retta tangente a un'iperbole.}{\iprbc}
+}
+\end{esempio}
+%TODO non è meglio tracciare anche l'iperbole?
+% \pagebreak %----------------------------------
+
+\conclusione
+Se l'equazione risolvente non è un'equazione di secondo grado:
+\begin{itemize}[nosep]
+\item se l'equazione risolvente è una uguaglianza vera, il sistema è 
+indeterminato;
+\item se l'equazione risolvente è una uguaglianza falsa il sistema è 
+impossibile;
+% \item se l'equazione risolvente è di primo grado determinata, da essa si 
+% ricava il valore dell'incognita e si sostituisce tale valore nell'altra 
+% equazione. 
+% Il sistema ha una sola soluzione (in questo caso non si parla di due 
+% soluzioni coincidenti, come nel caso precedente di \(\Delta =0\)).
+\item se l'equazione risolvente è di primo grado il sistema ha una sola 
+soluzione (in questo caso non si parla di due soluzioni coincidenti, 
+come nel caso precedente di \(\Delta =0\)).
+\end{itemize}
+\ind{equazione risolvente di un sistema}
+
+% \ovalbox{\risolvii \ref{ese:6.1}, \ref{ese:6.2}, \ref{ese:6.3}, 
+% \ref{ese:6.4}, 
+% \ref{ese:6.5}, \ref{ese:6.6}, \ref{ese:6.7}.}
+
+% TODO: Da verificare, portare nelle disequazioni di secondo grado e poi 
+% in matliberagraf.sty!!!
+
+\newcommand{\parabolau}[3][x]{% Retta crescente
+  \asseo{-3}{+3}{0}{#1}
+  \tkzInit[xmin=-3,xmax=+3,ymin=-2,ymax=+2]
+  \tkzFct[domain=-3.3:-1, ultra thick, blue!50!black]{.15*(x**2 -1)}
+  \tkzFct[domain=-1:+1, ultra thick, red!50!black]{.15*(x**2 -1)}
+  \tkzFct[domain=+1:+3.3, ultra thick, blue!50!black]{.15*(x**2 -1)}
+  \draw [black] (-1, -.3) -- (-1, +.8) node [above] {$#2$};
+  \draw [black] (+1, -.3) -- (+1, +.8) node [above] {$#3$};
+}
+
+% \NewDocumentCommand \tresegni{m s m s m}{
+%   % Segno di un polinomio di primo grado.
+%   % Se c'è l'asterisco lo zero viene reso con una crocetta.
+%   % Sintassi: \segni[*]{primosegno}{secondosegno}
+%   % Esempio di chiamata:
+%   % \disegno{\tresegni*{-}{+}
+%   % \disegno{\tresegni{-}{+}
+%   % \disegno{\tresegni{-}*{+}
+%   \node at (-2.5, .4) {$#1$};
+%   \node at (0, .4) {$#3$};
+%   \node at (+2.5, .4) {$#5$};
+%   {\IfBooleanTF{#2}
+%       {\crocetta{-1}{.4}}
+%       {\cerchietto{-1}{.4}}}
+%   {\IfBooleanTF{#4}
+%       {\crocetta{+1}{.4}}
+%       {\cerchietto{+1}{.4}}}
+% }
+
+\NewDocumentCommand{\segniparu}{O{x} s m s m}{% Retta crescente
+  \disegno{
+    \parabolau[#1]{#3}{#5}
+  {\IfBooleanTF{#2}
+      {{\IfBooleanTF{#4}
+      {\tresegni{+}*{-}*{+}}
+      {\tresegni{+}*{-}{+}}}}
+      {{\IfBooleanTF{#4}
+      {\tresegni{+}{-}*{+}}
+      {\tresegni{+}{-}{+}}}}}
+  }
+}
+
+\section{Sistemi di secondo grado letterali}
+\label{sec:sist2gr_sistemiletterali}
+\ind{sistema letterale di secondo grado}
+
+Un sistema letterale si risolve come nel caso degli analoghi sistemi numerici.
+Bisognerà, nell'equazione risolvente, discutere per quali valore del 
+parametro si otterranno soluzioni reali. 
+Vediamo un esempio.
+
+\begin{esempio}{}{}
+Discutere e risolvere il seguente sistema: 
+\(\sistema{y -kx = -2\\y -x^2 = 2}\).
+
+\medskip
+Ricaviamo y dalla prima equazione e sostituiamo nella seconda equazione:
+\[ \sistema{y = kx -2 \\ kx -2 -x^2 = 2}\ 
+\Rightarrow\sistema{y = kx -2 \\ -x^2 +kx - 4 = 0}\ 
+\Rightarrow\sistema{y = kx -2 \\ x^2 -kx +4 = 0}\]
+
+Risolviamo l'equazione risolvente di secondo grado: \\[-.5em]
+\[x^2 -kx +4 = 0 \sRarrow x_{1,~2} = \dfrac{+k \mp \sqrt{k^2-16}}{2}\]
+Dobbiamo studiare il segno del discriminante 
+calcolando gli zeri del polinomio con l'equazione \(k^2 -16 = 0\) e 
+tracciando il grafico della parabola \(y = k^2 -16\):
+
+\segnopara{k_{1} = -4;~k_{2} = +4}
+           {y = k^2 -16}
+           {\segniparu[k]{-4}{+4}} 
+
+Quindi:
+\begin{itemize}
+\item se \(\Delta > 0\) cioè se \(-4 < k < +4\) il sistema non ha soluzioni 
+reali;
+\item se \(\Delta = 0\) il sistema ha due soluzioni reali e 
+coincidenti:
+\subitem per \(k = -4\): \quad \(s_{1,~2} = \coppia{-2}{+6}\) 
+\subitem per \(k = +4\): \quad \(s_{1,~2} = \coppia{+2}{+6}\)
+\item se \(\Delta > 0\) cioè se \(k<-4 \sor k>4\) il sistema avrà due 
+soluzioni diverse: 
+
+\medskip
+\(
+\sistema{x_1 = \dfrac{k-\sqrt{k^2-16}}{2} \\ [3mm]
+         y_1 = kx_1 -2}
+\sor 
+\sistema{x_2 = \dfrac{k+\sqrt{k^2-16}}{2} \\ [3mm]
+         y_2 = kx_2 -2}
+\)
+\end{itemize}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:6.8}, \ref{ese:6.9}.}
+
+\section{Sistemi frazionari}
+\label{sec:sist2gr_sistemifrazionari}
+\ind{sistema frazionario}
+
+Si dice frazionario un sistema in cui almeno una delle equazioni che lo 
+compongono presenta l'incognita al denominatore.
+In questo caso, prima di affrontare la soluzione del sistema, bisogna 
+studiare l'insieme di definizione delle frazioni.
+
+\begin{esempio}{}{}
+Risolvere il seguente sistema 
+\(\sistema{2x-y=2 \\ \dfrac{x}{y+2}=\dfrac{x}{2y+5}}\).
+
+\pagebreak %--------------------------------
+\medskip
+Determiniamo le condizioni di esistenza delle frazioni:\\ [-.5em]
+\[\dfrac{x}{y+2}=\dfrac{x}{2y+5} \sRarrow 
+\CE y \neq -2 \sand y \neq -\dfrac{5}{2}\]
+
+Ora possiamo affrontare la soluzione del sistema. 
+Trasformiamo l'equazione frazionaria nella corrispondente equazione intera:
+\begin{align*}
+\dfrac{x}{y+2}=\dfrac{x}{2y+5} \sRarrow & x \cdot (2y+5) = x \cdot (y+2)\\
+ & 2{xy}+5x-{xy}-2x=0 \sRarrow xy+3x=0.
+\end{align*}
+
+Possiamo risolvere questo sistema con il metodo di sostituzione: 
+\[\sistema{y = 2x -2 \\ xy +3x = 0}
+\sRarrow \sistema{y = 2x -2 \\ x(2x -2) +3x = 0}
+\sRarrow \sistema{y = 2x -2 \\ 2x^2 +x = 0}\]
+
+\(2x^2 +x = 0\) è l'equazione risolvente e ha soluzioni: 
+\(x_1 = 0 \sor x_2 = -\dfrac{1}{2}\).
+
+\medskip
+Calcoliamo i corrispondenti valori di \(y\): \quad 
+\(\sistema{x_1=0 \\ y_1=-2} \sor 
+\sistema{x_2=-\dfrac{1}{2} \\[3mm] y_2=-3}\)
+
+\medskip
+Confrontiamo ora i risultati ottenuti con le condizioni di esistenza:
+\begin{itemize}
+\item \(\coppia{0}{-2}\) è una Soluzione Non Accettabile;
+\item \(\coppia{-\dfrac{1}{2}}{-3}\) è una Soluzione Accettabile.
+\end{itemize}
+\ind{soluzione accettabile o non accettabile}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:6.10}, \ref{ese:6.11}}
+
+\section{Sistemi di secondo grado in tre incognite}
+\label{sec:sist2gr_sistemitrei}
+\ind{sistema di 2° grado con più equazioni}
+
+Quanto detto si può estendere ai sistemi di secondo grado di tre o più 
+equazioni 
+con altrettante incognite. Per risolvere uno di tali sistemi si cercherà, 
+operando successive sostituzioni a partire dalle equazioni di primo 
+grado, di ottenere un'equazione di secondo grado in una sola incognita 
+(equazione risolvente del sistema).
+
+A partire dalle eventuali soluzioni di tale equazione, si determineranno 
+poi le soluzioni del sistema.
+
+\begin{esempio}{}{}
+Risolvere il sistema: \quad 
+\(\sistema{2x +y -z = 0 \\ 3x +4y -2z = 1 \\ xy -y^2 +z -5y = 0}\).
+
+\medskip
+Isoliamo \(z\) dalla prima equazione, che è di primo grado, e 
+sostituiamo il suo valore nelle altre due equazioni: 
+{\small
+\[\sistema{z=2x+y\\
+3x+4y-2(2x+y)=1\\
+{xy}-y^2+(2x+y)-5y=0} \Rightarrow
+% \sistema{z=2x+y\\
+% 3x+4y-4x-2y=1\\
+% xy-y^2+2x-4y=0} \Rightarrow
+\sistema{z=2x+y\\
+-x+2y-1=0\\
+xy-y^2+2x-4y=0}\]
+} % end small
+
+Ricaviamo \(x\) dalla seconda equazione e la sostituiamo nelle altre 
+equazioni: 
+\[ \sistema{x=2y-1\\z=2(2y-1)+y\\2y^2-y-y^2+4y-2-4y=0} 
+\Rightarrow\sistema{x=2y-1\\z=5y-2\\y^2-y-2=0}\]
+
+L'equazione \(y^2-y-2 = 0 \sRarrow \tonda{x-2} \tonda{x+1} = 0\) è 
+l'equazione risolvente del sistema, le sue soluzioni sono 
+\(y_1 = +2 \sor y_2 = -1\).
+
+Sostituiamo i valori trovati per la \(y\) nelle altre equazioni per 
+trovare i valori corrispondenti della \(x\) e della \(z\): 
+\[ \sistema{x=2(2)-1 = 3 \\ y = 2 \\ z=5(2)-2 = 8} \sor 
+\sistema{x=2(-1)-1 = -3 \\ y = -1 \\ z=5(-1)-2 = -7}\Rightarrow 
+\terna{3}{2}{8} \sor \terna{-3}{-1}{-7}\]
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:6.12}, \ref{ese:6.13}}
+
+\section{Sistemi simmetrici}
+\label{sec:sistemi2gr_simmetrici}
+\ind{sistema di 2° grado simmetrico}
+
+Un sistema di due equazioni in due incognite si dice \emph{simmetrico} se 
+non cambia scambiando le incognite.
+Per esempio, nel sistema 
+\[\sistema{x+y=1\\x^2+y^2+3xy+5=0}
+\sstext{scambiando} x \sstext{con} y \srarrow 
+\sistema{y+x = 1 \\ y^2+x^2+3yx+5 = 0}\] 
+che è identico al precedente.
+
+Le soluzioni del sistema sono:  
+\(\sistema{x_1=-2\\y_1=3} \stext{ e } \sistema{x_2=3\\y_2=-2}\) \\
+e come si può notare \(x\) e \(y\) vengono scambiate anche nella soluzione.
+
+In generale se il sistema è simmetrico trovata una coppia soluzione 
+\(\coppia{a}{b}\) 
+l'altra è \(\coppia{b}{a}\).
+
+\subsection{Sistema simmetrico fondamentale}
+Il sistema simmetrico fondamentale è del tipo 
+\(\sistema{{x+y=s}\\{xy=p}}\) esso risolve 
+il problema di trovare due numeri, nota la loro somma e il loro prodotto.
+
+Ricordiamo che nell'equazione di secondo grado \(x^2+bx+c=0\), la somma 
+delle radici è \(-b\), mentre il prodotto è \(c\). 
+Pertanto, basta risolvere la seguente equazione, \emph{detta equazione 
+risolvente: } \(t^2-st+p=0\) con \(s=-b\) e \(p=c\).
+\ind{sistema simmetrico fondamentale}
+
+In base al segno del discriminante abbiamo:
+\begin{itemize}[nosep]
+\item \(\Delta >0\) l'equazione risolvente ha due soluzioni distinte 
+\(t_1\) e \(t_2\), le soluzioni del sistema sono: 
+\(\sistema{{x_1=t_1}\\{y_1=t_2}} \sor 
+\sistema{{x_2=t_2}\\{y_2=t_1}}\)
+\item \(\Delta =0\) l'equazione risolvente ha radici coincidenti 
+\(t_1=t_2\), le soluzioni del sistema sono: 
+\(\sistema{{x_1=t_1}\\{y_1=t_1}} \sor 
+\sistema{{x_2=t_1}\\{y_2=t_1}}\)
+\item \(\Delta <0\) l'equazione non ammette soluzioni reali. Il sistema è 
+impossibile.
+\end{itemize}
+
+\begin{esempio}{}{}
+Risolvere il seguente sistema 
+\(\sistema{{x+y=5}\\{xy=4}}\).
+
+\affiancati{.51}{.47}{
+L'equazione risolvente è \(t^2-5t+4=0\) le cui soluzioni sono: \(t_1=1 \sor 
+t_2=4\).
+
+Le soluzioni del sistema sono le seguenti: \[ 
+\sistema{{x_1=1}\\{y_1=4}} \sor 
+\sistema{{x_2=4}\\{y_2=1}}. \]
+
+Possiamo interpretare i risultati ottenuti nel piano cartesiano: la retta 
+di equazione \(x+y=5\) interseca l'iperbole equilatera \({xy}=4\) nei due 
+punti \(\punto{A}{1}{4}\) e \(\punto{B}{4}{1}\).
+}{
+\immagine[.8]{Retta che interseca un'iperbole in due punti distinti.}
+{\iprbd}
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere il seguente sistema 
+\(\sistema{{x+y=1}\\{xy=2}}\).
+
+\affiancati{.51}{.47}{
+L'equazione risolvente è \[ t^2-t+2=0 \] che ha il discriminante negativo 
+e dunque non ha soluzioni reali. 
+Il sistema è impossibile.
+
+Possiamo interpretare i risultati ottenuti nel piano cartesiano: la retta 
+di equazione \(x+y=1\) non interseca l'iperbole equilatera \({xy}=4\).
+}{
+\immagine[.8]{Retta esterna a un'iperbole.}{\iprbe}
+}
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere il seguente sistema 
+\(\sistema{{x+y=2}\\{xy=1}}\).
+
+\affiancati{.51}{.47}{
+L'equazione risolvente è \(t^2-2t+1=0\) le cui soluzioni sono: 
+\(t_1=t_2=1\).
+
+Il sistema ha due soluzioni coincidenti: 
+\[\sistema{{x_1=1}\\{y_1=1}} \sor 
+ \sistema{{x_2=1}\\{y_2=1}}. \]
+
+Possiamo interpretare i risultati ottenuti nel piano cartesiano: la retta 
+di equazione \(x+y=2\) è tangente all'iperbole equilatera \(xy=1\) nel 
+punto \(\coppia{1}{1}\).
+}{
+\immagine[.8]{Retta tangente a un'iperbole.}{\iprbf}
+}
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:6.14}, \ref{ese:6.15}, \ref{ese:6.16}, 
+% \ref{ese:6.17}, \ref{ese:6.18}, \ref{ese:6.19}}
+% 
+\subsection{Sistemi simmetrici riconducibili al sistema simmetrico 
+fondamentale}
+In questa categoria rientrano i sistemi simmetrici che, mediante artifici, 
+possono essere trasformati in sistemi simmetrici del tipo precedente.
+\ind{sistema simmetrico fondamentale}
+
+\begin{esempio}{}{}
+Risolvere il sistema: \quad 
+\(\sistema{{x+y=a}\\
+{x^2+y^2+{bx}+{by}=c}}\)
+
+\medskip
+È possibile trasformare il sistema in un sistema simmetrico fondamentale.
+
+Ricordando lo sviluppo del quadrato del binomio, 
+\((x +y)^2 = x^2 +2xy +y^2\) possiamo ricavare l'identità: \quad 
+\(x^2+y^2=(x+y)^2-2{xy}\). \\[1mm]
+Il sistema può essere riscritto così: \quad
+\(\sistema{{x+y=a}\\
+{(x+y)^2-2{xy}+b(x+y)=c}}\)
+
+Ma osservando la prima equazione, possiamo sostituire, nella seconda, 
+tutte le occorrenze di \(x +y\) con \(a\):
+\[\sistema{x+y = a \\ a^2-2{xy}+{ba} = c} \Rightarrow 
+  \sistema{x+y = a \\ xy = \dfrac{a^2+{ab}-c} 2}\]
+Che è un sistema equivalente a quello di partenza, ma scritto nella forma 
+fondamentale.
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere il sistema: \quad 
+\(\sistema{{x+y=7}\\{x^2+y^2=25}}\)
+
+Utilizzando l'identità \(x^2+y^2 = (x+y)^2-2{xy}\), e poi sostituendo 
+\(x +y\) con \(7\), il sistema può essere riscritto così: 
+\[\sistema{x+y=7 \\ (x+y)^2-2{xy}=25} \Rightarrow 
+  \sistema{x+y=7 \\ 49-2{xy}=25}
+% \Rightarrow \sistema{{x+y=7}\\
+% {-2{xy}=25-49}}\Rightarrow 
+\sistema{x+y=7 \\ {xy}=12}\]
+
+L'equazione risolvente è \(t^2-7t+12=0\) le cui soluzioni sono 
+\(t_1=3 \sor t_2=4\).
+
+Le soluzioni del sistema sono: \quad
+\(\sistema{{x_1=3}\\
+{y_1=4}} \sor \sistema{{x_2=4}\\
+{y_2=3}}\)
+\end{esempio}
+
+\begin{esempio}{}{}
+Risolvere il sistema \quad 
+\(\sistema{-3x-3y=-5 \\ 2x^2+2y^2=10}\)
+
+Dividendo per \(-3\) la prima equazione, per \(2\) la seconda e 
+utilizzando l'identità \(x^2+y^2=(x+y)^2-2{xy}\) 
+si ha: \quad 
+\(\sistema{{x+y=\dfrac 5 3}\\
+{x^2+y^2=5}}
+\Rightarrow \sistema{{x+y=\dfrac 5 3}\\
+{(x+y)^2-2{xy}=5}}
+\Rightarrow \sistema{{x+y=\dfrac 5 3}\\
+{\tonda{\dfrac 5 3}^2-2{xy}=5}}\)
+
+Da cui si ottiene il sistema simmetrico: \quad 
+\(\sistema{x+y = \dfrac{5}{3} \\ xy = -\dfrac{10}{9}}\)
+
+L'equazione risolvente è \(t^2-\dfrac{5}{3}t-\dfrac{10}{9} = 0\) le cui 
+soluzioni sono:\\ 
+\(t_1 = \dfrac{5-\sqrt{65}}{6} \sor t_2 = \dfrac{5+\sqrt{65}}{6}\).
+
+Le soluzioni del sistema sono: 
+\(\sistema{{x_1=\dfrac{5-\sqrt{65}} 
+6}\\{y_1=\dfrac{5+\sqrt{65}} 
+6}} \sor \sistema{{x_2=\dfrac{5+\sqrt{65}} 
+6}\\{y_2=\dfrac{5-\sqrt{65}} 6}}\)
+\end{esempio}
+
+% \ovalbox{\risolvii \ref{ese:6.20}, \ref{ese:6.21}, \ref{ese:6.22}, 
+% \ref{ese:6.23}, \ref{ese:6.24}}
+
+% \subsection{Sistemi non simmetrici riconducibili a sistemi simmetrici}
+% Rientrano in questa classe i sistemi che, pur non essendo simmetrici, 
+% possono 
+% essere trasformati, mediante opportune sostituzioni, in sistemi 
+% simmetrici. 
+% Naturalmente questi sistemi si possono risolvere anche con la procedura 
+% solita 
+% di sostituzione per i sistemi di secondo grado.
+% 
+% \begin{esempio}{}{}
+% Risolvere il sistema 
+% \(\sistema{{x-y=8}\\{{xy}=-15}}\).
+% 
+% Mediante la sostituzione \(y'=-y\) otteniamo 
+% \(\sistema{{x+y'=8}\\{xy'=15}}\) che è un 
+% sistema 
+% simmetrico fondamentale.
+% 
+% L'equazione risolvente è \(t^2-8t+15=0\) le cui soluzioni sono 
+% \(t_1=3 \sor t_2=5\), 
+% pertanto il sistema ha le soluzioni 
+% \[\sistema{{x_1=3}\\
+% {{y_1}'=5}} \sor 
+% \sistema{{x_2=5}\\
+% {{y_2}'=3}}.\] 
+% Dall'uguaglianza \(y'=-y\Rightarrow y=-y'\) otteniamo le soluzioni del 
+% sistema dato 
+% \[\sistema{{x_1=3}\\
+% {y_1=-5}} \sor 
+% \sistema{{x_2=5}\\
+% {y_2=-3}}.\]
+% \end{esempio}
+% 
+% \begin{esempio}{}{}
+% Risolvere il sistema 
+% \(\sistema{{2x-3y=8}\\{{xy}=2}}\).
+% 
+% Mediante la sostituzione \(x'=2x\) e \(y'=-3y\) da cui \(x=\dfrac{x'} 2\) 
+% e 
+% \(y=-\dfrac{y'} 3\) otteniamo 
+% \[\sistema{{x'+y'=8}\\
+% {\dfrac{x'} 2\cdot \tonda{-\dfrac{y'} 3}=2}}
+% \Rightarrow\sistema{{x'+y'=8}\\
+% {x'y'=-12}}\] che è un sistema simmetrico fondamentale.
+% 
+% Risolviamo il sistema simmetrico 
+% \(\sistema{{x'+y'=8}\\{x'y'=-12}}\) con la 
+% procedura nota. L'equazione risolvente è \(t^2-8t-12=0\) le cui soluzioni 
+% sono 
+% \(t_{1,2}=4\mp 2\sqrt 3\) pertanto il sistema ha le soluzioni: 
+% \[\sistema{{x_1'=4-2\sqrt 7}\\
+% {y_1'=4+2\sqrt 7}} \sor 
+% \sistema{{x_2'=4+2\sqrt 7}\\
+% {y_2'=4-2\sqrt 7}}.\] 
+% Dalle sostituzioni \(x=\dfrac{x'} 2\) e \(y=-\dfrac{y'} 3\) otteniamo le 
+% soluzioni 
+% del 
+% sistema iniziale 
+% \[\sistema{{x_1=\dfrac{4-2\sqrt 7} 2=2-\sqrt 7}\\
+% {y_1=\dfrac{-4-2\sqrt 7} 3}} \sor 
+% \sistema{{x_2=\dfrac{4+2\sqrt 7} 2=2+\sqrt 7}\\
+% {y_2=\dfrac{-4+2\sqrt 7} 3}}.\]
+% \paragraph{Procedura di sostituzione}
+% Ricaviamo una delle due incognite dall'equazione di primo grado e 
+% sostituiamola 
+% nell'altra equazione \[ \sistema{{2x-3y=8}\\
+% {{xy}=2}}\Rightarrow
+% \sistema{{y=\dfrac{2x-8} 
+% 3}\\{{xy}=2}}\Rightarrow 
+% \sistema{{y=\dfrac{2x-8} 
+% 3}\\{x\tonda{\dfrac{2x-8} 3}=2}}\Rightarrow 
+% \sistema{{y=\dfrac{2x-8} 3}\\{2x^2-8x-6=0}}\]
+% 
+% Risolviamo l'equazione \(2x^2-8x-6=0\) avente come soluzioni 
+% \(x_1=2-\sqrt 7 \sor x_2=2+\sqrt 7\). 
+% Applicando la formula ridotta otteniamo: 
+% \(x_1=2-\sqrt 7 \sor x_2=2+\sqrt 7\).
+% Sostituiamo i valori trovati e ricaviamo i valori della \(y\): \[ 
+% \sistema{{x_1=2-\sqrt 7}\\{y_1=\dfrac{-4-2\sqrt 7} 
+% 3}} \sor \sistema{{x_2=2+\sqrt 
+% 7}\\{y_2=\dfrac{-4+2\sqrt 7} 3}}. \]
+% \end{esempio}
+% 
+% % \ovalbox{\risolvi \ref{ese:6.25}}
+
+% \subsection{Sistemi simmetrici di grado superiore al secondo}
+% Introduciamo le seguenti trasformazioni dette formule di Waring, dal 
+% nome del matematico che le ha formulate per primo. 
+% Con tali formule, si possono trasformare le potenze di un binomio in 
+% relazioni tra somme e prodotti delle due variabili che lo compongono. 
+% Indicate come \(s\) somma delle variabili e \
+% (p\) il 
+% loro prodotto queste sono le prime formule fino alla potenza quinta.
+% \begin{itemize}[nosep]
+% \item \( a^2+b^2=(a+b)^2-2{ab}=s^2-2p \)
+% \item \( a^3+b^3=(a+b)^3-3a^2b-3ab^2=(a+b)^3-3{ab}(a+b)=s^3-3{ps} \)
+% \item \( a^4+b^4=s^4-4{ps}^2+2p^2 \)
+% \item \( a^5+b^5=s^5-5{ps}^3+5p^2s \).
+% \end{itemize}
+% 
+% \begin{esempio}{}{}
+% Risolvere il sistema 
+% \(\sistema{{x+y=1}\\{x^3+y^3-2{xy}=3}}\).
+% 
+% Applicando l'identità \(x^3+y^3=(x+y)^3-3{xy}(x+y)\), il sistema può 
+% essere 
+% riscritto così: \[ 
+% \sistema{{x+y=1}\\{(x+y)^3-3{xy}(x+y)-2{xy}=3}}\Rightarrow 
+% \sistema{{x+y=1}\\{1-5{xy}=3}}\Rightarrow 
+% \sistema{{x+y=1}\\{{xy}=-\dfrac 2 5}}.\]
+% 
+% Da cui l'equazione risolvente \(t^2-t-\dfrac 2 5=0\Rightarrow 
+% 5t^2-5t-2=0\) 
+% con 
+% \(t_1=\dfrac{5-\sqrt{65}}{10}\) e \(t_2=\dfrac{5+\sqrt{65}}{10}\).
+% Le soluzioni del sistema sono: 
+% 
+% 
+% \(\tonda{\dfrac{5-\sqrt{65}}{10};
+% \dfrac{5+\sqrt{65}}{10}},\tonda{\dfrac{5+\sqrt{
+% 65}}{10}}{\dfrac{5-\sqrt{65}}{10}}\).
+% \end{esempio}
+% 
+% \begin{esempio}{}{}
+% Risolvere il sistema \(\sistema{{x+y=-1}\\{x^4+y^4=\dfrac 7 
+% 2}}\).
+% 
+% Ricordando l'identità \(x^4+y^4=(x+y)^4-4{xy}(x+y)^2+2x^2y^2\), 
+% il sistema può essere riscritto così: 
+% \[\sistema{{x+y=-1}\\{(x+y)^4-4{xy}(x+y)^2+2x^2y^2=\dfrac 7 
+% 2}} \Rightarrow 
+% \sistema{{x+y=-1}\\{2x^2y^2-4{xy}-\dfrac 5 
+% 2=0}}.\]
+% 
+% Introduciamo l'incognita ausiliaria \(u=xy\). 
+% L'equazione \(2x^2y^2-4{xy}-\dfrac 5 2=0\) diventa 
+% \(2u^2-4u-\dfrac 5 2=0\) che ha come soluzioni 
+% \(u_1=-\dfrac 1 2 \sor u_2=\dfrac 5 2\Rightarrow {xy}=-\dfrac 1 2 \sor 
+% {xy}=\dfrac 5 2\).
+% 
+% Il sistema assegnato è equivalente a due insiemi 
+% \[\sistema{{x+y=-1}\\{{xy}=-\dfrac 1 2}}
+%  \sor 
+% \sistema{{x+y=-1}\\{{xy}=\dfrac 5 2}}\] 
+% e dunque il suo insieme soluzione \(S\) si ottiene dall'unione 
+% dell'insieme soluzione dei due sistemi~\(S=S_1\cup S_2\).
+% 
+% Il primo sistema 
+% \[\sistema{{x+y=-1}\\{{xy}=-\dfrac 1 2}}\] 
+% ha equazione risolvente \(t^2+t-\dfrac 1 2=0\) con 
+% \[t_1=\dfrac{-1-\sqrt 3} 2\text{ e }t_2=\dfrac{-1+\sqrt 3} 2.\] 
+% Il sistema ha soluzioni 
+% \[\coppia{\dfrac{-1-\sqrt 3} 2}{\dfrac{-1+\sqrt 3} 
+% 2},\coppia{\dfrac{-1+\sqrt 
+% 3} 
+% 2}{\dfrac{-1-\sqrt 3} 2}\] e quindi \[S_1=\left\{\coppia{\dfrac{-1-\sqrt 
+% 3} 
+% 2}{\dfrac{-1+\sqrt 3} 2},\coppia{\dfrac{-1+\sqrt 3} 2}{\dfrac{-1-\sqrt 3} 
+% 2}\right\}\]
+% 
+% Il secondo sistema \(\sistema{{x+y=-1}\\{{xy}=\dfrac 5 
+% 2}}\) ha equazione risolvente \(t^2+t+\dfrac 5 2=0\), 
+% che 
+% ha \(\Delta <0\), l'insieme soluzione è vuoto. Anche il sistema non ha 
+% soluzioni 
+% reali, quindi \(S_2=\emptyset \). L'insieme soluzione del sistema 
+% assegnato 
+% \(\sistema{{x+y=-1}\\
+% {x^4+y^4=\dfrac 7 2}}\) è 
+% \(S=S_1\cup \emptyset =S_1\).
+% \end{esempio}
+% 
+% \ovalbox{\risolvii \ref{ese:6.26}, \ref{ese:6.27}, \ref{ese:6.28}, 
+% \ref{ese:6.29}, \ref{ese:6.30}, \ref{ese:6.31}, \ref{ese:6.32}, 
+% \ref{ese:6.33}, 
+% \ref{ese:6.34}, \ref{ese:6.35}}
+% 
+% \section{Sistemi omogenei di quarto grado}
+% Un sistema si dice omogeneo se le equazioni, con l'eccezione dei termini 
+% noti, 
+% hanno tutti i termini con lo stesso grado. I sistemi omogenei di quarto 
+% grado 
+% sono quindi nella forma:
+% \begin{equation*}
+% \sistema{{{ax}^2+{bxy}+{cy}^2=d}\\
+% {a'x^2+b'{xy}+c'y^2=d'}}
+% \end{equation*}
+% \paragraph{Primo caso} \(d=0 \wedge d'=0\).
+% 
+% Il sistema si presenta nella forma 
+% \(\sistema{{{ax}^2+{bxy}+{cy}^2=0}\\{a'x^2+b'{xy}+c'y^2=0}
+% }\). 
+% Un sistema di questo tipo ha sempre almeno la soluzione 
+% nulla 
+% \(\coppia{0}{0}\).
+% 
+% Per trovare le soluzioni del sistema poniamo \(y={tx}\) sostituendo 
+% abbiamo: 
+% \[ 
+% 
+% 
+% \sistema{{{ax}^2+{btx}^2+{ct}^2x^2=0}\\
+% {a'x^2+b'{tx}^2+c't^2x^2=0}
+% } \text{ da cui } 
+% 
+% 
+% \sistema{{x^2(a+{bt}+{ct}^2)=0}\\
+% {x^2(a'+b't+c't^2)=0}}. \]
+% 
+% Supponendo \(x\neq 0\) e che quindi che può assumere tutti i valori 
+% \(k\in \R_0\) 
+% possiamo dividere le due equazioni per \(x^2\), otteniamo così due 
+% equazioni 
+% nell'incognita \(t\) che possiamo risolvere. 
+% Se le due equazioni ammettono qualche 
+% soluzione comune allora il sistema ammette infinite soluzioni. Le 
+% soluzioni 
+% sono 
+% del tipo \(x=k\) e \(y={kt}\), dove \(t\) è la soluzione comune di cui 
+% si è detto prima.
+% 
+% \begin{esempio}{}{}
+% Risolvere il seguente sistema \(\sistema{x^2-3{xy}+2y^2=0 
+% \\-x^2+5{xy}-6y^2=0 }\).
+% 
+% Applichiamo la sostituzione \(y={tx}\), il sistema diventa 
+% \(\sistema{x^2-3{tx}^2+2t^2x^2=0 \\-x^2+5{tx}^2-6t^2x^2=0 
+% }\).
+% 
+% Dividendo per \(x^2\) otteniamo \(\sistema{1-3t+2t^2=0 
+% \\1-5t+6t^2=0 
+% }\).
+% 
+% La prima equazione è risolta per \(t_1=1 \sor t_2=\dfrac 1 2\), mentre la 
+% seconda 
+% equazione è risolta per \(t_3=\dfrac 1 2 \sor t_4=\dfrac 1 3\). Le due 
+% equazioni 
+% hanno una radice in comune \(t=\dfrac 1 2\).
+% 
+% Pertanto oltre alla soluzione \(\coppia{0}{0}\) il sistema ammette infinite 
+% soluzioni 
+% che 
+% possono essere scritte nella forma 
+% \(\sistema{x=k \\y=\dfrac 1 2k }\).
+% \end{esempio}
+% 
+% 
+% \paragraph{Secondo caso}\(d=0 \wedge d'\neq 0\).
+% 
+% Il sistema si presenta nella forma 
+% 
+% \(\sistema{{{ax}^2+{bxy}+{cy}^2=0}\\
+% {a'x^2+b'{xy}+c'y^2=d'}}\).
+% 
+% Ponendo \(y={tx}\) si ha 
+% \(\sistema{{{ax}^2+{btx}^2+{ct}^2x^2=0}\\{a'x^2+b'{tx}
+% ^2+c't^2x^2=d'}}\).
+% 
+% Dividendo per \(x^2\) la prima equazione si ha 
+% 
+% \(\sistema{{a+{bt}+{ct}^2=0}\\{x^2(a'+b't+c't^2)=d'}}\).
+% 
+% Si risolve la prima equazione nell'incognita \(t\) si sostituiscono i 
+% valori 
+% trovati nella seconda equazione e si ricavano i valori di \(x\) e di 
+% seguito i valori di \(y\) con \(y={tx}\).
+% % \newpage
+% \begin{esempio}{}{}
+% Risolvere il sistema \(\sistema{x^2-{xy}-6y^2=0 
+% \\-x^2+2{xy}-3y^2=-6 }\).
+% 
+% Sostituendo \(y={tx}\) il sistema diventa 
+% \[\sistema{1-t-6t^2=0 \\x^2(-1+2t-3t^2)=-6 
+% }.\]
+% 
+% La prima equazione ha per soluzioni \(t_1=\dfrac 1 3\) e 
+% \(t_2=-\dfrac 1 2\).
+% 
+% Sostituendo \(t=\dfrac 1 3\) nella seconda equazione si ha 
+% \(x_{1,2}=\mp 3\) 
+% e 
+% sapendo che \(y={tx}\) si ottengono le coppie 
+% 
+% 
+% \[\sistema{x_1=3\\y_1=
+% 1} \sor\left\{\begin{array}{
+% l}x_2=-3\\y_2=-1}.\]
+% 
+% Sostituendo \(t=-\dfrac 1 2\) si ha \(x_3=-\dfrac{2\sqrt 6}{11} \sor 
+% x_4=\dfrac{2\sqrt 
+% 6}{11}\) e sapendo che \(y={tx}\) si ottengono le coppie 
+% \[\sistema{x_3=-\dfrac{2\sqrt 6}{11}\\y_3=\dfrac{\sqrt 
+% 6}{11}} \sor\sistema{x_4=-2\dfrac{\sqrt 
+% 6}{11}\\y_4=-\dfrac{\sqrt 6}{11}}.\]
+% 
+% L'insieme soluzione del sistema è 
+% \[\IS=\left\{(x_1}{y_1),(x_2}{y_2),(x_3}{y_3),(x_4}{y_4)\right\}.\]
+% \end{esempio}
+% 
+% 
+% \paragraph{Terzo caso} \(d\neq 0 \wedge d'\neq 0\).
+% 
+% Il sistema si presenta nella forma 
+% 
+% \(\sistema{{{ax}^2+{bxy}+{cy}^2=d}\\
+% {a'x^2+b'{xy}+c'y^2=d'} }\).
+% 
+% Ponendo \(y=tx\) si ha 
+% \[\sistema{{x^2(a+{bt}+{ct}^2)=d}\\
+% {x^2(a'+b't+c't^2)=d'}}\]
+% Dividendo membro a membro le due equazioni, sotto la condizione \(x\neq 
+% 0\wedge 
+% a'+b't+c't^2\neq 0\) otteniamo 
+% \begin{align*}
+% &\dfrac{a+{bt}+{ct}^2}{a'+b't+c't^2}=\dfrac d{d'}\\
+% \Rightarrow & d'(a+{bt}+{ct}^2)=d(a'+b't+c't^2)\\
+% \Rightarrow & ({cd}'-c'd)t^2+({bd}'-b'd)t+{ad}'-a'd=0 
+% \end{align*}
+% che è una equazione di secondo grado nell'incognita \(t\).
+% 
+% Se l'equazione ha come soluzioni \(t_1\) e \(t_2\) dobbiamo poi 
+% risolvere i sistemi 
+% \[ \sistema{y=t_1x \\a'x^2+b'{xy}+c'y^2=d' 
+% } \sor\sistema{y=t_2x \\
+% a'x^2+b'{xy}+c'y^2=d' }\]
+% % \newpage
+% \begin{esempio}{}{}
+% Risolvere il sistema \(\sistema{x^2+3{xy}-y^2=-68 
+% \\-2x^2+{xy}+3y^2=88 }\).
+% 
+% Sostituendo \(y={tx}\) il sistema diventa 
+% \(\sistema{x^2(1+3t-t^2)=-68 \\x^2(-2+t+3t^2)=88 
+% }\).
+% 
+% Dividendo membro a membro con la condizione 
+% \(x\neq 0\wedge 3t^2+t-2\neq 0\) 
+% cioè 
+% \(x\neq 0\), \(t\neq -1\) e \(t\neq \dfrac 2 3\) si ha 
+% \(\dfrac{1+3t-t^2}{-2+t+3t^2}=-\dfrac{68}{88}\), da cui l'equazione 
+% \(29t^2+83t-12=0\) 
+% con soluzioni \(t_1=\dfrac 4{29} \sor t_2=-3\).
+% 
+% A questo punto dobbiamo risolvere i due sistemi:\[ 
+% \sistema{y=\dfrac 4{29}x \\-2x^2+{xy}+3y^2=88 
+% } \sor\sistema{y=-3x \\-2x^2+{xy}+3y^2=88 
+% }. \]
+% 
+% Il primo sistema è impossibile, il secondo ha soluzioni 
+% 
+% 
+% \[\sistema{x_1=-2\\y_1=6}
+%  \sor\left\{\begin{array}
+% {l}x_2=2\\y_2=-6}.\] 
+% L'insieme soluzione del sistema è \(\IS=\{(-2}{6),(2}{-6)\}\).
+% \end{esempio}
+% 
+% \ovalbox{\risolvii \ref{ese:6.36}, \ref{ese:6.37}, \ref{ese:6.38}, 
+% \ref{ese:6.39}, \ref{ese:6.40}, \ref{ese:6.41}, \ref{ese:6.42}, 
+% \ref{ese:6.43}, 
+% \ref{ese:6.44}, \ref{ese:6.45}, \ref{ese:6.46}, \ref{ese:6.47}, 
+% \ref{ese:6.48}.}
+% 
+\section{Problemi che si risolvono con sistemi di grado superiore al 
+primo}
+\ind{problemi e sistemi di grado superiore}
+Considerare più variabili ci permette di facilitare il processo di 
+traduzione in linguaggio matematico.
+
+\begin{problema}{}{}
+Il trapezio isoscele \({ABCD}\) è inscritto in una semicirconferenza di 
+diametro \({AB}\) di misura \(25\munit{cm}\) determinare le misure dei 
+lati del trapezio sapendo che il perimetro è \(62\munit{cm}\).
+\end{problema}
+
+\needspace{3\baselineskip}
+\begin{soluzione}~
+
+\vspace{-.5em}
+\affiancati{.51}{.47}{
+\emph{Dati}: 
+
+% \(\begin{array}{l}\overline{AB}=25;~2p=62;~\\
+% {AB}\parallel {DC};~{AD}\equiv {CB}\end{array}\)
+
+\hspace{10mm}
+\(\overline{AB}=25;\quad 2p=62;\) 
+
+\hspace{10mm}
+\({AB}\parallel {DC};\quad {AD}\equiv {CB}\)
+
+\emph{Obiettivo}: 
+
+% \(\begin{array}{l}\overline{CB}\) \(\overline{DC}\end{array}\)
+
+\hspace{10mm}
+\(\overline{CB};\quad \overline{DC}\)
+
+\medskip
+\emph{Dati impliciti}: 
+
+\hspace{10mm}
+\(\overline{{KO}}=\overline{CH};\quad \overline{CO}=\dfrac{25}{2};\) 
+
+\hspace{10mm}
+\(\overline{KC} = \dfrac{\overline{DC}}{2};\quad
+\overline{HB} = \dfrac{25-y}{2};\) 
+
+\hspace{10mm}
+\(\widehat{CKO} = 90\grado;\quad \widehat{CHB} = 90\grado\)
+
+}{
+\immagine{Il trapezio isoscele iscritto in una semicirconferenza.}
+{\trapd}
+}
+
+\emph{Incognite}: 
+
+\hspace{10mm}
+\(\overline{{CB}}=x\) \(\overline{{DC}}=y\)
+
+\emph{Vincoli: } 
+
+\hspace{10mm}
+\(\sistema{0<x<\dfrac{25}{2}\sqrt{2}\\0<y<25}\)
+
+\emph{Relazioni tra dati e incognite}:
+
+\hspace{10mm}
+\(\sistema{{y+2x+25=62}\\
+{\tonda{\dfrac{25}{2}}^2-\tonda{\dfrac{y}{2}}^2=x^2-
+\tonda{\dfrac{25-y}{2}}^2}} \Rightarrow 
+\sistema{{y=-2x+37}\\{x^2-25x+150=0}}\)
+
+\emph{Soluzioni: } 
+
+\hspace{10mm}
+\(\sistema{{x_1=15}\\{y_1=7}} \sor 
+\sistema{{x_2=10}\\{y_2=17}}\)
+
+\emph{Verifica: }
+Entrambe le soluzioni sono accettabili.
+\end{soluzione}
+
+La soluzione si basa sulla equazione di primo grado 
+\(y+2x+25=62\) 
+che definisce il perimetro, sulla congruenza dei segmenti 
+\(\overline{{KO}}\) 
+e 
+\(\overline{{CH}}\) 
+facilmente in quanto entrambe sono distanza tra due 
+rette parallele e l'applicazione del teorema di Pitagora ai triangoli 
+\({CKB}\) e \({CHB}\) 
+rettangoli per costruzione. Naturalmente tutte le informazioni ausiliare 
+vanno dimostrate ma, data la loro facilità, le lasciamo al lettore.
+
+Importante è impostare le condizioni sulle incognite che devono essere 
+maggiori di \(0\) ma anche \(x<\dfrac{25}{2}\sqrt{2}\) perché il 
+trapezio non diventi un triangolo e \(y<25\) perché la base minore sia 
+realmente minore. 
+L'ultimo passo consiste nella verifica delle soluzioni, che nel nostro 
+caso sono entrambe accettabili. 
+Si hanno dunque due trapezi inscritti in quella semicirconferenza 
+che avranno il perimetro di \(62\munit{cm}\).
+
+\begin{problema}{}{}
+L'azienda Profit intende fare una ristrutturazione riducendo il numero 
+degli operai. 
+Oggi spende per gli operai (tutti con lo stesso stipendio) \(800€\) al 
+giorno. 
+Se si licenziassero \(5\) dipendenti e si riducesse lo stipendio di 
+\(2€\) al giorno si avrebbe un risparmio giornaliero di \(200€\). 
+Quanti sono gli operai attualmente occupati nell'azienda?
+\end{problema}
+
+\begin{soluzione}~
+
+\vspace{-.5em}
+\emph{Dati}:\( \begin{array}{l}
+\text{spesa per salari al giorno}= 800\munit{\text{€}};\\
+\text{riduzione salario giornaliero}= 2\munit{\text{€}};\\
+\text{riduzione numero operai}= 5\text{ unità};\\
+\text{risparmio dopo il licenziamento e la riduzione di stipendio}= 
+200\munit{\text{€}}.
+\end{array}\)
+
+\emph{Obiettivo}: numero operai occupati prima della ristrutturazione
+
+\emph{Incognite}:\( \begin{array}{l}
+x = \text{numero operai prima della ristrutturazione};\\
+y = \text{salario percepito da ogni operaio prima della 
+ristrutturazione}.
+\end{array}\)
+
+\emph{Vincoli}: \(\sistema{x\in \N\\y\in \R^+}\)
+
+\emph{Altre Informazioni}: \( \begin{array}{l}
+\text{Numero operai dopo la ristrutturazione} = x-5;\\
+\text{salario dopo la ristrutturazione} =y-2;\\
+\text{spesa per stipendi dopo la ristrutturazione} 
+=800-200=600\munit{\text{€}}.\end{array}\)
+
+\emph{Relazioni tra dati e incognite}:\\[-1em]
+\begin{equation*}
+\sistema{{{xy}=800}\\{(x-5)(y-2)=600}}\Rightarrow 
+\sistema{{{xy}=800}\\{{xy}-2x-5y+10=600}}\Rightarrow 
+\sistema{{{xy}=800}\\{2x+5y=210}}
+\end{equation*}
+
+\emph{Soluzioni}: 
+\(\sistema{{x_1=25}\\{y_1=32}} \sor 
+\sistema{{x_2=80}\\{y_2=10}}\)
+
+\emph{Verifica}: Entrambe le soluzioni sono accettabili.
+\end{soluzione}
+
+Naturalmente c'è una grande differenza tra percepire 
+\(32\munit{\text{€/giorno}}\) 
+di salario o \( 10\munit{\text{€/giorno}} \), come avere impiegati 
+\( 25 \) o \( 80 \) operai. 
+Il problema va meglio definito. Basterebbe per questo un vincolo che 
+ci dice qual è la paga minima giornaliera di un operaio.
+
+\begin{problema}{}{}
+Un numero \(k\in \N\) è composto da tre cifre. Il prodotto delle tre 
+cifre è \(42\). 
+Se si scambia la cifra delle decine con quella delle centinaia si 
+ottiene un numero che supera \(k\) di \(360\). 
+Se si scambia la cifra della unità con quella delle centinaia si ottiene 
+un numero minore di \(99\) rispetto al numero \(k\). 
+Trovare \(k\).
+\end{problema}
+
+\begin{soluzione}~
+
+\vspace{-.5em}
+\emph{Dati}: \(\begin{array}{l}
+\text{il numero } k \text{ è composto da tre cifre};\\
+\text{prodotto delle tre cifre } = 42;\\
+\text{scambiando la cifra delle decine con quella delle centinaia 
+otteniamo}l=k+360; \\
+\text{scambiando la cifra delle unità con quella delle centinaia 
+otteniamo} m=k-99.\\
+\end{array}\)
+
+\emph{Obiettivo}: trovare il numero \(k\).
+
+\emph{Incognite}: \(\begin{array}{l}
+x =\text{ cifra che rappresenta il numero delle centinaia;}\\
+y=\text{ cifra che rappresenta il numero delle decine;}\\
+z=\text{ cifra che rappresenta il numero delle unità.}
+\end{array}\)
+
+\emph{Vincoli}: 
+\(\sistema{x\in \{1,2,3,4,5,6,7,8,9\} \\
+y,z\in \{0,1,2,3,4,5,6,7,8,9\}}\).
+
+\emph{Altre Informazioni}: \(\begin{array}{l}
+k=100x+10y+z;\\
+l=100y+10x+z;\\
+m=100z+10y+x.
+\end{array}\)
+
+\emph{Relazioni tra dati e incognite}: 
+\[ \sistema{x\cdot y\cdot z=42 \\
+100y+10x+z=100x+10y+z+360\\100z+10y+x=100x+10y+z-99}\Rightarrow 
+\sistema{x \cdot y \cdot z = 42 \\ x-y = -4\\x-z = 1}\]
+
+\emph{Soluzioni}: 
+\(\sistema{x_1=3\\y_1=7\\z_1=2}\).
+
+\emph{Verifica}: La soluzione soddisfa le condizioni il numero cercato è 
+\(372\).
+\end{soluzione}
+
+% \vspazio
+% \ovalbox{\risolvii \ref{ese:6.49}, \ref{ese:6.50}, \ref{ese:6.51}, 
+%          \ref{ese:6.52}, \ref{ese:6.53}, \ref{ese:6.54}, \ref{ese:6.55}, 
+%          \ref{ese:6.56}, \ref{ese:6.47}, \ref{ese:6.58}, \ref{ese:6.59}, 
+%          \ref{ese:6.60}, \ref{ese:6.61}}
+% 
+% \vspazio
+% \ovalbox{\ref{ese:6.62}, \ref{ese:6.63}, \ref{ese:6.64}, \ref{ese:6.65}, 
+%          \ref{ese:6.66}, \ref{ese:6.67}, \ref{ese:6.68}, \ref{ese:6.69}, 
+%          \ref{ese:6.70}, \ref{ese:6.71}}
+% % >8

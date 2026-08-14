@@ -341,13 +341,12 @@ relazioni\indc{principio}{tricotomia}:
 \section{Operazioni con i numeri naturali}
 \label{sec:nat_operazioni}
 
-Possiamo vedere le operazioni matematiche\ind{operazione matematica} come 
-dei meccanismi, delle regole, 
+Possiamo vedere le operazioni matematiche\ind{operazione matematica} 
+come dei meccanismi, delle regole, 
 che associano ad alcuni oggetti matematici, detti \emph{operandi}, 
 un altro oggetto matematico, che è unico, il \emph{risultato}.
-
-Di seguito riprendiamo rapidamente le prime cinque operazioni aritmetiche 
-nei numeri naturali. 
+% Di seguito riprendiamo rapidamente le prime cinque operazioni 
+% aritmetiche nei numeri naturali. 
 
 \subsection{Funzioni}
 
@@ -379,8 +378,8 @@ Sono delle funzioni \emph{binarie}\indc{funzione}{binaria} perché
 ricevono due argomenti (due numeri) e producono al massimo un risultato 
 (un numero).
 
-Data l'importanza delle funzioni e il loro uso in molti contesti diversi, 
-vengono anche usati molti modi diversi per 
+Data l'importanza delle funzioni e il loro uso in molti contesti 
+diversi, vengono anche usati molti modi diversi per 
 rappresentarle.\indc{funzione}{rappresentare una funzione} 
 Di seguito ne vediamo alcuni, relativi al caso dell'addizione.
 
@@ -395,7 +394,7 @@ Di seguito ne vediamo alcuni, relativi al caso dell'addizione.
 % \vspace{-1em}
 % \[somma: \coppia{addendo_1}{addendo_2} \mapsto addendo_1 + addendo_2\]
 
-\pagebreak
+% \pagebreak
 Possono essere usate anche delle rappresentazioni grafiche:
 
 \affiancati{.48}{.48}{
@@ -896,14 +895,11 @@ Non sempre si può effettuare la divisione nei numeri naturali ad
 esempio:~\(10 : 4\) non è un numero naturale.
 Se esiste il quoziente esatto tra i numeri \(m\) e \(n\), si dice che:
 
-% \vspace{-.5em}
-\begin{htmulticols}{3}
-\begin{itemize} [noitemsep]
- \item \(n\) è \emph{divisore} di~\(m\);
- \item \(m\) è \emph{divisibile} per~\(n\);
+\begin{itemize*}
+ \item \(n\) è \emph{divisore} di~\(m\);\qquad~
+ \item \(m\) è \emph{divisibile} per~\(n\);\qquad~
  \item \(m\) è \emph{multiplo} di~\(n\)
-\end{itemize}
-\end{htmulticols}
+\end{itemize*}
 
 \begin{esempio}{}{}
 Alcuni esempi:
@@ -996,11 +992,12 @@ riguarda due operazioni contemporaneamente, è la proprietà
 
 \subsubsection{Proprietà distributiva della moltiplicazione}
 
-\paragraph{Rispetto all'addizione}
-Moltiplicare il risultato dell'addizione di più numeri per un altro numero 
-dà lo stesso risultato che moltiplicare ogni addendo per il fattore e 
-addizionare i prodotti ottenuti. Questa proprietà vale sia se la somma è a 
-destra sia se è a sinistra.\indc{proprietà}{distributiva}
+\paragraph{Rispetto all'addizione e alla sottrazione}
+Moltiplicare il risultato dell'addizione di più numeri per un altro 
+numero dà lo stesso risultato che moltiplicare ogni addendo per il 
+fattore e addizionare i prodotti ottenuti. 
+% Vale sia se l'addizione è a destra sia se è a sinistra.
+\indc{proprietà}{distributiva}
 
 \affiancati{.28}{.68}{
  \(a \cdot (b+c) = a \cdot b + a \cdot c\)
@@ -1014,8 +1011,7 @@ destra sia se è a sinistra.\indc{proprietà}{distributiva}
   (3+5) \cdot 4 = 3 \cdot 4 + 5 \cdot 4 = 12 + 20 = 32\)
 }
 
-\paragraph{Rispetto alla sottrazione}
-In maniera analoga:\indc{proprietà}{distributiva}
+Analogamente per la sottrazione:\indc{proprietà}{distributiva}
 
 \affiancati{.28}{.68}{
  \(a\cdot (b-c) = a\cdot b - a\cdot c\)
@@ -1037,8 +1033,10 @@ viene chiamata \emph{semianello commutativo} (o \emph{abeliano}).
 
 \subsubsection{Proprietà distributiva della divisione}
 
-\paragraph{Rispetto all'addizione}
-Solo se le somme sono a sinistra:
+\paragraph{Rispetto all'addizione e alla sottrazione}
+\indc{proprietà}{distributiva}
+
+Valgono solo se le addizioni o sottrazioni sono a sinistra:
 
 % \vspace{.5em}
 \affiancati{.30}{.66}{
@@ -1048,16 +1046,11 @@ Solo se le somme sono a sinistra:
 \((20 + 10) : 5 = 20 : 5 + 10 : 5 = 4 + 2 = 6\)
 }
 
-Verifichiamo con un esempio che non vale la proprietà distributiva se le 
-somme si trovano a destra:~\(120 : (3 + 5)\).
-Infatti eseguendo prima l'operazione tra parentesi si ottiene 
-correttamente~\(120 : 8 = 15\). Se si prova ad applicare
-la proprietà distributiva\indc{proprietà}{distributiva}
-si ottiene~\(120 : 3 + 120 : 5 = 40 + 24 = 64\). 
-Il risultato corretto è solo il \emph{primo}.
+La proprietà non vale se le somme si trovano a destra:\\
+\(120 : (3 + 5) = 120 : 8 = 15 ~\neq~ 
+  120 : 3 + 120 : 5 = 40 + 24 = 64\).
 
-\paragraph{Rispetto alla sottrazione}
-Solo se la sottrazione è a sinistra:\indc{proprietà}{distributiva}
+Analogamente per la sottrazione:
 
 % \vspace{.5em}
 \affiancati{.30}{.66}{
@@ -1073,9 +1066,9 @@ Se, però, la sottrazione è a destra:\\
   120 : 5 - 120 : 3 = 24 - 40\)
 
 \begin{osservazione}{}{}
-Nonostante la grande utilità dei numeri naturali e il fascino dei problemi 
-presenti nei naturali che non sono ancora risolti, una struttura a 
-semianello è piuttosto debole:
+Nonostante la grande utilità dei numeri naturali e il fascino dei 
+problemi non ancora risolti presenti nei naturali, 
+una struttura a semianello è debole:
 non permette di risolvere neppure equazioni del tipo \(ax + b = 0\).
 % Nei prossimi capitoli introdurremo altri insiemi numerici che permettono 
 % di risolvere problemi sempre più complessi, ma, per ora, approfondiamo
@@ -1099,8 +1092,8 @@ non permette di risolvere neppure equazioni del tipo \(ax + b = 0\).
 \indc{\(\N\)}{\(\coppia{\N}{\uparrow}\)}
 \label{subsec:nat_potenza}
 
-La \emph{potenza} di un numero naturale è una moltiplicazione che ha tutti 
-i fattori uguali.
+La \emph{potenza} di un numero naturale è una moltiplicazione che ha 
+tutti i fattori uguali.
 
 \begin{definizione}{Potenza}{}
 Dati due numeri naturali~~\(b\)~~e~~\(e\),~~\emph{non entrambi nulli}, 
@@ -1152,23 +1145,25 @@ funzione, in particolare 2 è la base, 3 è l'esponente e 8 la potenza.}
 % di 1 e 2 per tre volte, ottenendo come potenza 8.}
 % {\defpot}
 
-\subsubsection{Funzione potenza}
+\subsubsection{Funzione potenza in \texorpdfstring{$\N$}{N}} 
+\indc{\(\N\)}{\(\coppia{\N}{\uparrow}\)}
 
-La potenza è una funzione che ha come \emph{argomenti due numeri naturali} 
+La potenza in \(\N\) è una funzione che ha come 
+\emph{argomenti due numeri naturali} 
 e dà come \emph{risultato} un \emph{numero naturale}:
 
-\vspace{.5em}
-\affiancati{.49}{.49}{
-\immagine{Testo alternativo figura: potenza rappresentata come porta 
-logica, ossia in input si ha base ed esponente ed in output la potenza 
-tramite la funzione ``pow''.}
-{\grafoportad[1.1]{pow}{base}{esponente}{potenza}}
-}{
-\immagine{Testo alternativo figura: rappresentazione di una particolare 
-potenza, in input i numeri naturali 2 e 5, la funzione ``pow'' ed in 
-output il numero naturale 32.}
-{\grafoportad[1.1]{pow}{2}{5}{32}}
-}
+% \vspace{.5em}
+% \affiancati{.49}{.49}{
+% \immagine{Testo alternativo figura: potenza rappresentata come porta 
+% logica, ossia in input si ha base ed esponente ed in output la potenza 
+% tramite la funzione ``pow''.}
+% {\grafoportad[1.1]{pow}{base}{esponente}{potenza}}
+% }{
+% \immagine{Testo alternativo figura: rappresentazione di una particolare 
+% potenza, in input i numeri naturali 2 e 5, la funzione ``pow'' ed in 
+% output il numero naturale 32.}
+% {\grafoportad[1.1]{pow}{2}{5}{32}}
+% }
 
 
 \subsubsection{Proprietà delle potenze}
@@ -1192,14 +1187,16 @@ degli esponenti.
 }{
 infatti:
 }
-\[a^m \cdot a^n = 
+\begin{align*}
+a^m \cdot a^n \cdot a^p &= 
   (1 \underbrace{\cdot a \cdot \ldots \cdot a}_{m \text{ volte}}) 
 \cdot 
   (1 \underbrace{\cdot a \cdot \ldots \cdot a}_{n \text{ volte}}) 
 \cdot 
-  (1 \underbrace{\cdot a \cdot \ldots \cdot a}_{p \text{ volte}}) =
-  (1 \underbrace{\cdot a \cdot a \cdot \ldots 
-  \cdot a}_{m+n+p\text{ volte}}) = a^{m+n+p}\]
+  (1 \underbrace{\cdot a \cdot \ldots \cdot a}_{p \text{ volte}}) =\\
+&= (1 \underbrace{\cdot a \cdot a \cdot \ldots 
+    \cdot a}_{m+n+p\text{ volte}}) = a^{m+n+p}
+\end{align*}
 
 \vspace{-1.5em}
 \paragraph{2. Il quoziente di due potenze con la stessa base} 
@@ -1256,7 +1253,7 @@ lo stesso esponente.
 infatti:
 }
 \begin{align*}
-a^n \cdot b^n &=
+a^n \cdot b^n \cdot c^n &=
   (1 \underbrace{\cdot a \cdot \ldots \cdot a}_{n\text{ volte}}) \cdot
   (1 \underbrace{\cdot b \cdot \ldots \cdot b}_{n\text{ volte}}) \cdot
   (1 \underbrace{\cdot c \cdot \ldots \cdot c}_{n\text{ volte}}) =\\
@@ -1511,6 +1508,7 @@ destra;
 parentesi più interne. 
 \end{enumerate}
 
+\needspace{5\baselineskip}
 \begin{osservazione}{}{} 
 Alcune calcolatrici, quelle ``aritmetiche''\ind{calcolatrice 
 aritmetica}svolgono le 
@@ -1551,8 +1549,9 @@ i nodi \emph{n2}, \emph{n3}, \emph{n5}, \emph{n6} e \emph{n7}
 sono le foglie, 
 \emph{n1} e \emph{n4} sono nodi intermedi o semplicemente nodi. 
 }{
-\immagine{Testo alternativo figura: grafo ad albero con nodi collegati tra 
-loro da rami, in particolare dal basso all'alto, n0 è collegato a n1 e n2; 
+\immagine{Testo alternativo figura: grafo ad albero con nodi collegati 
+tra loro da rami, in particolare dal basso all'alto, n0 è collegato a 
+n1 e n2; 
 n1 è collegato a n3 e n4; n4 infine è collegato ai nodi n5, n6 e n7.}
 {\albero}
 }
@@ -1564,20 +1563,19 @@ Il movimento, in questo caso, va dalle foglie alla radice (come la linfa
 discendente).
 
 \begin{procedura}{}{}
- Per risolvere un'espressione usando un grafo:
+Per risolvere un'espressione usando un grafo:
 \begin{enumerate} [noitemsep]
- \item in ogni nodo viene riportata l'operazione eseguita e il risultato;
- \item costruiamo l'albero disegnando ogni nodo esattamente sotto
-  l'operazione corrispondente;
- \item disegniamo le parentesi attorno al nodo che contiene il
-  risultato di tutta un'espressione racchiusa tra parentesi.
+\item in ogni nodo viene riportata l'operazione eseguita e il risultato;
+\item costruiamo l'albero disegnando ogni nodo esattamente sotto
+l'operazione corrispondente;
+\item disegniamo le parentesi attorno al nodo che contiene il
+risultato di tutta un'espressione racchiusa tra parentesi.
 \end{enumerate}
 \end{procedura}
 
 Applichiamo questa procedura a un esempio.
 
-\bigskip
-
+\needspace{9\baselineskip}
 \begin{esempio}{}{}
 \(49 - [2^4 \times (14 : 7) + 10]=\)
 
@@ -1587,23 +1585,25 @@ Prima realizziamo il grafo ad albero vuoto, ponendo attenzione alla
 precedenza delle operazioni.
 
 \hspace{-16mm}
-\immagine*{Testo alternativo figura: grafo ad albero, vuoto per la 
+\immagine*[.9]{Testo alternativo figura: grafo ad albero, vuoto per la 
 soluzione di un'espressione. Si precisa che questo metodo non è adatto 
 per studenti non vedenti.}
-{\espalberoav}
+{\espalberoav} \vspace{-1em}
 }{
-Poi eseguiamo le operazioni e scriviamo i risultati negli appositi spazi.
+Poi eseguiamo le operazioni e scriviamo i risultati negli appositi 
+spazi.
 
 \vspace{1em}
 \hspace{-16mm}
-\immagine*{Testo alternativo figura: riempimento del grafo ad albero. 
+\immagine*[.9]{Testo alternativo figura: riempimento del grafo ad 
+albero. 
 Si precisa che questo metodo non è adatto per studenti non vedenti.}
-{\espalberoa}
+{\espalberoa} \vspace{-1em}%
 }
 \end{esempio}
 
 \begin{esempio}{}{}
-\(8^9 \times 8^5 : (8^3)^4 : [4^{12} : (4^2)^5] + 27^2 : 9^2 =\)
+\quad \(8^9 \times 8^5 : (8^3)^4 : [4^{12} : (4^2)^5] + 27^2 : 9^2 =\)
 
 \vspace{.5em}
 \affiancati{.24}{.74}{
@@ -1613,18 +1613,18 @@ sigle~``p1'',~``p2'',~\dots, ``p5'',
 per indicare l'uso della prima, seconda,~\dots, quinta proprietà.
 \vspace{10mm}
 }{
-\immagine*
+\immagine*[.9]
 {Testo alternativo figura: soluzione di un'espressione con le proprietà 
 delle potenze con un grafo ad albero. 
 Si precisa che questo metodo non è adatto per studenti non vedenti.} 
-{\hspace{-18mm}\espalberob}
+{\vspace*{-20mm}\hspace{-12mm} \espalberob}
 }
 \end{esempio}
 
 \subsection{Metodo sequenziale}
 
-In alcuni casi può non essere comodo, o praticabile, l'uso di un grafo ad 
-albero per risolvere espressioni. 
+In alcuni casi può non essere comodo, o praticabile, l'uso di un grafo 
+ad albero per risolvere espressioni. 
 Vediamo allora il metodo sequenziale\indc{espressione}{svolgimento in 
 sequenza} che prevede di copiare tutta o in 
 parte l'espressione rendendola via via più semplice. 

@@ -5,9 +5,22 @@
 
 \chapter{Disequazioni}
 
+\inicapitolo{
+\begin{itemize}[left=0mm, nosep]
+\item le disuguaglianze;
+\item gli intervalli;
+\item il segno di un polinomio lineare;
+\item il segno di un prodotto e di un quoziente;
+\item le disequazioni numeriche;
+\item i sistemi di disequazioni;
+\item le disequazioni letterali;
+\item alcuni problemi.
+\end{itemize}
+}
+
 \section{Disuguaglianze chiuse e aperte}
 \label{sec:dis_disguagianze}
-
+\ind{disuguaglianze}
 Consideriamo le seguenti proposizioni:
 
 \begin{enumeratea}
@@ -30,7 +43,7 @@ Esse possono essere tradotte in linguaggio matematico usando i simboli
 \item \(x+\dfrac{1}{2}x\le~1\).
  \end{enumeratea}
 \end{htmulticols}
-
+\ind{formule chiuse e formule aperte}
 Le formule che contengono variabili si dicono aperte; quelle che
 contengono solo numeri si dicono chiuse. Quindi a) e b) sono formule
 chiuse; c) e d) sono formule aperte.
@@ -46,6 +59,7 @@ Di essa sappiamo subito stabilire il valore di verità, quando è
 stabilito l'ambiente in cui vengono enunciate.
 
 \begin{definizione}{}{}
+\ind{disequazione}
 Chiamiamo \emph{disequazione} una formula aperta,
 definita in~\(\R\) e costruita con uno dei seguenti predicati:~\(<\)
 (essere minore); \(>\) (essere maggiore); \({\leq}\)
@@ -57,7 +71,7 @@ Analogamente a quanto detto per le equazioni, chiamiamo
 \emph{incognite} le variabili che compaiono nella disequazione,
 \emph{primo membro} e \emph{secondo membro} le due espressioni che
 compaiono a sinistra e a destra del segno di disuguaglianza.
-
+\ind{primo membro, secondo membro}
  \begin{esempio}{}{}
  Disuguaglianze vere e false.
 
@@ -77,7 +91,8 @@ sostituiamo zero o un numero negativo.
 % \ovalbox{\risolvi \ref{ese:21.8}}
 
 \begin{definizione}{}{}
-Chiamiamo \emph{Insieme Soluzione} (\(IS\)) di una disequazione, l'insieme 
+\ind{insieme soluzione \(\IS\)}
+Chiamiamo \emph{Insieme Soluzione} (\(\IS\)) di una disequazione, l'insieme
 dei valori che, sostituiti all'incognita, rendono vera la disuguaglianza.
 \end{definizione}
 
@@ -93,31 +108,31 @@ gli intervalli.
 
 \section{Intervalli sulla retta}
 \label{sec:dis_intervalli}
-
+\ind{intervallo numerico}
 I \emph{numeri} possono essere rappresentati come \emph{punti} di una 
 retta: ogni numero ha per immagine un punto della retta e viceversa ogni 
 punto della retta è immagine di un numero. 
 Un \emph{intervallo} di numeri può essere messo in corrispondenza con una 
 \emph{semiretta} o un \emph{segmento}.
-\begin{htmulticols}{2}
+
+\affiancati{.45}{.45}{
 Un \emph{segmento} della retta \\
 è l'insieme di \emph{tutti i punti compresi} tra due punti detti 
-\emph{estremi} del segmento. 
-\begin{center}
-\disegno{\inticonasse{0}{5}{1}{4}{-7}{+2}{blue}{blue}{x}}
-\end{center}
-
+\emph{estremi} del segmento.
+\ind{estremi di un intervallo}
+\vspace{-2mm}
+\immagine
+{Asse cartesiano con evidenziato un pezzo delimitato da due punti pieni.}
+{\disegno{\inticonasse{0}{5}{1}{4}{-7}{+2}{blue}{blue}{x}}}
+}{
 Un \emph{intervallo} numerico \\
 è l'insieme di \emph{tutti i numeri compresi} tra due numeri 
 detti \emph{estremi} dell'intervallo. 
 
-\vspace{1em}
+\vspace{3mm}
 \hspace{20mm} \(\quadra{-7;~+2}\)
-% \vspace{-1.5em}
-% \begin{center}
-% \(\intervcc{-7}{+2}\)
-% \end{center}
-\end{htmulticols}
+\vspace{4mm}
+}
 
 \begin{osservazione}{}{} 
 Quando rappresentiamo un intervallo poniamo 
@@ -125,9 +140,9 @@ attenzione di
 scrivere prima il numero minore poi il maggiore.
 \end{osservazione}
 
-``Tutti i numeri compresi tra~\(-7\) e~\(-2\)'' è una frase ambigua. 
+``Tutti i numeri compresi tra~\(-7\) e~\(-2\)'' è una frase ambigua.\\ 
 È chiaro che:~\(-5;~-4;~-3; \dots\), 
-ma anche:~\(-5,2;~-4,37;~-2,001; \dots\) 
+e anche:~\(-5,2;~-4,37;~-2,001; \dots\) 
 appartengono all'intervallo, ma cosa dire di~\(-7\) e di~\(-2\)? 
 A seconda dei gusti possiamo sostenere che gli estremi appartengono 
 oppure no all'intervallo, non c'è una ragione logica per preferire una 
@@ -138,7 +153,7 @@ Quindi i matematici parlano di due tipi di intervalli:
  \item Intervalli \emph{chiusi}: quelli che comprendono anche gli estremi;
  \item Intervalli \emph{aperti}: quelli che non comprendono gli estremi.
 \end{itemize}
-
+\ind{intervallo chiuso o aperto}
 Possiamo distinguere gli intervalli anche in base a un'altra 
 caratteristica:
 
@@ -148,7 +163,7 @@ numeri;
 \item Intervalli \emph{illimitati}: formati dai numeri minori (o maggiori) 
 di un dato numero.
 \end{itemize}
-
+\ind{intervallo limitato o illimitato}
 % Possiamo dare la seguente definizione:
 % 
 % \begin{definizione}{}{}
@@ -162,54 +177,51 @@ La situazione non è semplice, perché in un intervallo potrebbe essere
 compreso un estremo e non l'altro quindi possiamo avere intervalli 
 aperti/chiusi a destra o a sinistra. 
 Non solo, ma un intervallo potrebbe avere un inizio e poi continuare 
-all'infinito vedi~\ref{tab:intervalli}.
+all'infinito.
 
-% \begin{table}[h!]
-% \caption{Intervalli}
-% \center
+{\small
 \label{tab:intervalli}
-  \centering\begin{tabular}{>{\centering\arraybackslash}m{35mm}|
-                            >{\centering\arraybackslash}m{25mm}|
-                            >{\centering\arraybackslash}m{30mm}|
-                            >{\centering\arraybackslash}m{35mm}} 
+\centering\begin{tabular}{>{\centering\arraybackslash}m{28mm}|
+                          >{\centering\arraybackslash}m{18mm}|
+                          >{\centering\arraybackslash}m{25mm}|
+                          >{\centering\arraybackslash}m{30mm}} 
 %  \begin{tabular}{p{4cm}|c|c|c}
-  a parole   & con i predicati & con le parentesi & sulla retta \\
-  \hline
-  i numeri compresi tra \(a\) e~\(b\) estremi esclusi & 
-  \(a < x < b\) & \((a;~b)\) o \(]a;~b[\) & 
-  \disegno{\inticonasse{0}{5}{1}{4}{a}{b}{white}{white}
-  x}\\
-  \hline
-  i numeri compresi tra \(a\) e~\(b\) estremi inclusi & 
-  \(a \le x \le b\) & \([a;~b]\) &  
-  \disegno{\inticonasse{0}{5}{1}{4}{a}{b}{blue}{blue}{x}} \\
-  \hline
-  i numeri compresi tra \(a\) e~\(b\), a~incluso, b~escluso & 
-  \(a \le x < b\) & \([a;~b)\) o \([a;~b[\) &  
-  \disegno{\inticonasse{0}{5}{1}{4}{a}{b}{blue}{white}{x}} \\
-  \hline
-  i numeri compresi tra \(a\) e~\(b\), a~escluso, b~incluso & 
-  \(a < x \le b\) & \((a;~b]\) o \(]a;~b]\) &  
-  \disegno{\inticonasse{0}{5}{1}{4}{a}{b}{white}{blue}{x}} \\
-  \hline
-  i numeri fino ad \(a\), \(a\)~escluso & 
-  \(x < a\) & \((-\infty;~a)\) o \(]-\infty;~a[\) & 
-  \disegno{\raylconasse{0}{5}{2.5}{a}{white}{x}} \\
-  \hline
-  i numeri fino ad \(a\), \(a\)~incluso & 
-  \(x \le a\) & \((-\infty;~a]\) o \(]-\infty;~a]\) &  
-  \disegno{\raylconasse{0}{5}{2.5}{a}{blue}{x}} \\
-  \hline
-  i numeri da \(a\) in poi, \(a\)~escluso & 
-  \(x > a\) o \(a < x\) & \((a;~-\infty)\) o \(]a;~-\infty[\) & 
-  \disegno{\rayrconasse{0}{5}{2.5}{a}{white}{x}} \\
-  \hline
-  i numeri da \(a\) in poi, \(a\)~incluso & 
-  \(x \ge a\) o \(a \le x\) & \([a;~-\infty)\) o \([a;~-\infty[\) & 
-  \disegno{\rayrconasse{0}{5}{2.5}{a}{blue}{x}} \\
-  \hline
- \end{tabular}
-% \end{table}
+a parole   & con i predicati & con le parentesi & sulla retta \\
+\hline
+i numeri compresi tra \(a\) e~\(b\) estremi esclusi & 
+\(a < x < b\) & \((a;~b)\) o \(]a;~b[\) & 
+\disegno{\inticonasse{0}{5}{1}{4}{a}{b}{white}{white}{x}}\\
+\hline
+i numeri compresi tra \(a\) e~\(b\) estremi inclusi & 
+\(a \leqslant x \leqslant b\) & \([a;~b]\) &  
+\disegno{\inticonasse{0}{5}{1}{4}{a}{b}{blue}{blue}{x}} \\
+\hline
+i numeri compresi tra \(a\) e~\(b\), a~incl., b~escl. & 
+\(a \leqslant x < b\) & \([a;~b)\) o \([a;~b[\) &  
+\disegno{\inticonasse{0}{5}{1}{4}{a}{b}{blue}{white}{x}} \\
+\hline
+i numeri compresi tra \(a\) e~\(b\), a~escl., b~incl. & 
+\(a < x \leqslant b\) & \((a;~b]\) o \(]a;~b]\) &  
+\disegno{\inticonasse{0}{5}{1}{4}{a}{b}{white}{blue}{x}} \\
+\hline
+i numeri fino ad \(a\), \(a\)~escluso & 
+\(x < a\) & \((-\infty;~a)\) o \(]-\infty;~a[\) & 
+\disegno{\raylconasse{0}{5}{2.5}{a}{white}{x}} \\
+\hline
+i numeri fino ad \(a\), \(a\)~incluso & 
+\(x \leqslant a\) & \((-\infty;~a]\) o \(]-\infty;~a]\) &  
+\disegno{\raylconasse{0}{5}{2.5}{a}{blue}{x}} \\
+\hline
+i numeri da \(a\) in poi, \(a\)~escluso & 
+\(x > a\) o \(a < x\) & \((a;~-\infty)\) o \(]a;~-\infty[\) & 
+\disegno{\rayrconasse{0}{5}{2.5}{a}{white}{x}} \\
+\hline
+i numeri da \(a\) in poi, \(a\)~incluso & 
+\(x \geqslant a\) o \(a \leqslant x\) & \([a;~-\infty)\) o \([a;~-\infty[\) & 
+\disegno{\rayrconasse{0}{5}{2.5}{a}{blue}{x}} \\
+\hline
+\end{tabular}
+} % end \small
 
 \begin{esempio}{}{}
 \(H=\{x\in \R/x<3\}\) intervallo illimitato 
@@ -226,8 +238,8 @@ semiretta non appartiene all'insieme abbiamo usato un pallino vuoto.
 \end{esempio}
 
 \begin{esempio}{}{}
-\(\P=\{x\in \R/x\ge -5\}\) intervallo illimitato superiormente chiuso 
-a sinistra~\(\P = [-5;~+\infty[ = [-5;~+\infty)\).
+\(\P=\{x \in \R/x \geqslant -5\}\) intervallo illimitato superiormente 
+chiuso a sinistra~\(\P = [-5;~+\infty[ = [-5;~+\infty)\).
 
 Segniamo sulla retta~\(r\) il punto immagine di~\(-5\)
 l'insieme~\(\P\) è rappresentato dalla semiretta di tutti
@@ -256,25 +268,25 @@ esclusi, pertanto su ciascuno di essi abbiamo messo un pallino vuoto.
 \end{center}
 \end{esempio}
 
-\begin{esempio}{}{}
-\(T=\{x\in \R/-2<x\le~6\}\) intervallo limitato chiuso a 
-destra~\(T = ]-2;~6] = (-2;~6]\).
+% \begin{esempio}{}{}
+% \(T=\{x\in \R/-2<x\le~6\}\) intervallo limitato chiuso a 
+% destra~\(T = ]-2;~6] = (-2;~6]\).
+% 
+% Rispetto al caso precedente, il segmento che rappresenta
+% l'insieme~\(T\) è chiuso a destra, ossia è incluso
+% nell'intervallo anche il~6, è escluso invece il
+% punto~\(-2\).
+% \vspace{-.5em}
+% \begin{center}
+%  \disegno{\inticonasse{0}{10}{1}{9}{-2}{6}{white}{blue}{x}}
+% \end{center}
+% \end{esempio}
 
-Rispetto al caso precedente, il segmento che rappresenta
-l'insieme~\(T\) è chiuso a destra, ossia è incluso
-nell'intervallo anche il~6, è escluso invece il
-punto~\(-2\).
-\vspace{-.5em}
-\begin{center}
- \disegno{\inticonasse{0}{10}{1}{9}{-2}{6}{white}{blue}{x}}
-\end{center}
-\end{esempio}
-
 \begin{esempio}{}{}
-\(S=\{x\in \R/-2\le x\le~6\}\) intervallo chiuso e 
+\(S=\{x\in \R/-2 \leqslant x \leqslant 6\}\) intervallo chiuso e 
 limitato~\(S = [2;~6]\).
 
-Il segmento che rappresenta l'insieme~\(S\) contiene tutti e
+Il segmento che rappresenta l'insieme\(S\) contiene tutti e
 due i suoi estremi:
 \vspace{-.5em}
 \begin{center}
@@ -285,7 +297,7 @@ due i suoi estremi:
 \begin{esempio}{}{}
 Due particolari sottoinsiemi dei numeri reali sono:
 
-\begin{itemize} [noitemsep]
+\begin{itemize} %[noitemsep]
 \item \(\R^{+}=\{x\in \R/x>0\} = ]0;~\infty[\) \hspace{15mm}
 \raisebox{-9pt}[0pt][0pt]{\disegno{\rayrconasse{0}{5}{2.5}{0}{white}{x}}} 
 \item \(\R^{-}=\{x\in \R/x<0\} = ]- \infty;~0[\) \hspace{11mm}
@@ -298,25 +310,23 @@ Due particolari sottoinsiemi dei numeri reali sono:
 
 \section{Segno di una funzione lineare}
 \label{sec:dis_binomio}
-
+\ind{studio del segno}
 % Prima di affrontare lo studio delle disequazioni è importante capire come 
 % studiare il segno di un'espressione contenente una variabile. 
 % In questo modo, le disequazioni si ridurranno a una applicazione dello 
 % studio del segno.
 Studiare il segno di un'espressione che contiene la variabile~\(x\), vuol 
-dire stabilire per quali valori della variabile l'espressione è negativa, per 
-quali è nulla  e per quali è positiva.
+dire stabilire per quali valori della variabile l'espressione è negativa, 
+per quali è nulla  e per quali è positiva.
 Come esempio possiamo studiare i valori che assumono i due 
-binomi~\(f(x) = -4 x +4\) e~\(g(x) = \dfrac{3}{2} x +3\) al variare di~\(x\).
+binomi~\(f(x) = -4 x +4\) e~\(g(x) = \dfrac{3}{2} x +3\) al variare di 
+\(x\).
 
 Per farlo costruiamo una tabella con alcuni valori e disegniamo il grafico 
 delle rette: \quad \(y=f(x)\) e \(y=g(x)\).
 
-% \begin{inaccessibleblock}[Figura: TODO]
-%  \begin{figure}[h]
- \begin{minipage}[]{.45\textwidth}
-%   \centering\input{\folder lbr/fig016_retta01.pgf}
-\begin{center}
+\triaffiancati{.48}{.25}{.25}{
+{\small
  \begin{tabular}{c|c|c}
   \(x\) & \(f(x) = -4 x +4\) & \(g(x) = \dfrac{3}{2} x +6\) \\
   \hline
@@ -327,31 +337,23 @@ delle rette: \quad \(y=f(x)\) e \(y=g(x)\).
   \( 0\) & \(+4\) & \(+3\) \\
   \( 1\) & \(0\) & \(+4,5\) \\
   \( 2\) & \(-4\) & \(+6\) \\
-  \( 3\) & \(-8\) & \(+7,5\) %\\
-%   \( 4\) & \(-12\) & \(+9\) \\
-%   \( 5\) & \(-16\) & \(+21\)
+  \( 3\) & \(-8\) & \(+7,5\) \\
+  \( 4\) & \(-12\) & \(+9\) \\
+  \( 5\) & \(-16\) & \(+21\)
  \end{tabular}
-\end{center}
- \end{minipage}
- \hfill
- \begin{minipage}[]{.25\textwidth}
-%   \centering\input{\folder lbr/fig016_retta01.pgf}
-\begin{center} 
-\disrettaa 
-\vspace{3mm}
-\(y = -4 x +4\)
-\end{center}
- \end{minipage}
- \hfill
- \begin{minipage}[]{.25\textwidth}
-%   \centering\input{\folder lbr/fig017_retta02.pgf}
-\begin{center} 
-\disrettab 
-\(y = \dfrac{3}{2} x +3\)
-\end{center}
- \end{minipage}
-% \end{figure}
-% \end{inaccessibleblock}
+\vspace{7mm}
+} % end \small
+}{
+\immagine[.8]{Retta decrescente la parte sopra l'asse x è colorata in blu, 
+quella sotto in rosso.} 
+{\disrettaa} 
+\(\qquad y = -4 x +4\)
+}{
+\immagine[.8]{Retta crescente la parte sotto l'asse x è colorata in rosso, 
+quella sopra in blu.} 
+{\disrettab} 
+\(\qquad y = \dfrac{3}{2} x +3\)
+}
 
 Si può osservare che il primo binomio è sempre positivo finché~\(x\) è più 
 piccolo di~1, quando~\(x\) vale proprio 1 il binomio vale~0, quando~\(x\) è 
@@ -366,101 +368,80 @@ rimangono immutati anche per valori molto diversi da quelli testati.
 
 I grafici delle funzioni \(y=f(x)\) e \(y=g(x)\) sono due rette. 
 In corrispondenza dei valori positivi del polinomio, le rette si trovano al 
-di sopra dell'asse~\(x\)% (tratto blu)
-, quando invece il polinomio assume valori negativi, le rette si trovano 
-sotto all'asse~\(x\)% (tratto rosso)
-.
-
+di sopra dell'asse~\(x\), % (tratto blu)
+quando invece il polinomio assume valori negativi, le rette si trovano 
+sotto all'asse~\(x\). % (tratto rosso)
+\ind{polinomio positivo o negativo}
 Disegnare una retta nel piano cartesiano è un'abilità molto utile da 
 possedere, ma per il nostro problema si può tracciare il grafico in modo 
-molto approssimato: sono due gli aspetti che dobbiamo riportare nel grafico:
+molto approssimato: sono due gli aspetti che dobbiamo riportare nel 
+grafico:
 
-\begin{enumerate} [noitemsep]
- \item 
-  lo zero del polinomio, cioè il punto in cui la retta interseca 
-  l'asse~\(x\);
- \item
-  l'andamento della retta: cioè se la retta è crescente o decrescente.
+\medskip
+\begin{enumerate} [nosep]
+\item lo zero del polinomio, cioè il punto in cui la retta interseca 
+l'asse~\(x\);
+\item l'andamento della retta: cioè se la retta è crescente o decrescente.
 \end{enumerate}
-
-Si capisce facilmente se la retta è crescente o decrescente guardando la sua 
-equazione infatti le rette \emph{crescenti} hanno il coefficiente della~\(x\) 
-\emph{positivo}, mentre le rette \emph{decrescenti} hanno il coefficiente 
-della~\(x\) \emph{negativo}.
+\ind{zero di un polinomio} \ind{retta crescente o decrescente}
+\medskip
+Si capisce facilmente se la retta è crescente o decrescente guardando la 
+sua equazione infatti le rette \emph{crescenti} hanno il coefficiente 
+della~\(x\) \emph{positivo}, mentre le rette \emph{decrescenti} hanno il 
+coefficiente della~\(x\) \emph{negativo}.
 Quindi i grafici possono essere tracciati semplicemente in questo modo:
 
-% \begin{inaccessibleblock}[Figura: TODO]
-%  \begin{figure}[h]
- \centering
- \begin{minipage}[]{.45\textwidth}
-  \centering\rettadec{+1}
-%   \caption{Retta~\(y = f(x) = -4 x +4\)}
- \end{minipage}
- \begin{minipage}[]{.45\textwidth}
-  \centering\rettacre{-2}
-%   \caption{Retta~\(y = g(x) = \frac{3}{2} x +3\)}
- \end{minipage}
-% \end{figure}
-% \end{inaccessibleblock}
-
+\affiancati{.49}{.49}{
+\immagine{Retta decrescente.}{\rettadec{+1}}
+}{
+\immagine{Retta decrescente.}{\rettacre{-2}}
+}
 Su questi ultimi grafici si possono aggiungere le informazioni che 
 interessano lo studio del segno:
 
-\begin{itemize} [noitemsep]
- \item il valore della~\(x\) che rende uguale a 0 il polinomio;
- \item l'intervallo dell'asse~\(x\) per il quale il polinomio è positivo;
- \item l'intervallo dell'asse~\(x\) per il quale il polinomio è negativo.
+\medskip
+\begin{itemize} [nosep]
+\item il valore della~\(x\) che rende uguale a 0 il polinomio;
+\item l'intervallo dell'asse~\(x\) per il quale il polinomio è positivo;
+\item l'intervallo dell'asse~\(x\) per il quale il polinomio è negativo.
 \end{itemize}
 
-% \begin{inaccessibleblock}[Figura: TODO]
-%  \begin{figure}[h]
- \centering
- \begin{minipage}[]{.45\textwidth}
-  \centering\segnidec{+1}
-%   \caption{Segno di~\(y = f(x) = -4 x +4\)}
- \end{minipage}
- \begin{minipage}[]{.45\textwidth}
-  \centering\segnicre{-2}
-%   \caption{Segno di~\(y = g(x) = \frac{3}{2} x +3\)}
- \end{minipage}
-% \end{figure}
-% \end{inaccessibleblock}
+\affiancati{.49}{.49}{
+\immagine{Retta decrescente con indicati i segni: + 0 -.}{\segnidec{+1}}
+}{
+\immagine{Retta crescente con indicati i segni: - 0 +.}{\segnicre{-2}}
+}
 
 Riassumendo, per studiare il segno di un binomio di primo grado dobbiamo: 
 
 \begin{procedura}{}{}
- Studio del segno di un binomio di primo grado:
+Studio del segno di un binomio di primo grado:
 \begin{enumeratea}
 \item calcolare lo zero del polinomio risolvendo un'equazione associata al 
- polinomio;
+polinomio;
 \item disegnare il grafico della funzione associata al polinomio, 
- tenendo conto se la retta è crescente o decrescente.
+tenendo conto se la retta è crescente o decrescente.
 \item riportare su questo grafico lo zero del polinomio e segnare con un 
- "+" i tratti positivi (quelli sopra l'asse delle~\(x\)) e con un "-" i 
- tratti  negativi (quelli nei quali la retta è tracciata sotto l'asse 
-delle~\(x\)).
+``+'' i tratti positivi (quelli sopra l'asse delle~\(x\)) e con un ``-'' i 
+tratti  negativi (quelli nei quali la retta è tracciata sotto l'asse 
+delle \(x\)).
 \end{enumeratea}
 \end{procedura}
-
+\ind{segno di un binomio di 1° grado}
 Riassumendo, lo studio del segno del binomio di primo 
 grado:~\(f(x) = -4 x +4\), si riduce a svolgere questi due passi:
 
 \begin{enumerate}
- \item
-  Equazione Associata:~\(-4 x +4 = 0 \quad \Rightarrow \quad x = 1\)
- \item 
-  \begin{minipage}{.45\textwidth}
-  Funzione Associata: \(y = -4 x +4 \quad \rightarrow\)
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-  \segnidec{+1}
-  \end{minipage}
+\item Equazione Associata: \quad \(-4 x +4 = 0 \ssRarrow x = +1\) \\[-8mm]
+\item Funzione Associata: \quad \(y = -4 x +4 \ssrarrow\)
+\raisebox{-5mm}{
+\immagine*{Retta decrescente con indicati i segni: + 0 -.}{\segnidec{+1}}}
 \end{enumerate}
 
 \section{Segno di un prodotto}
 \label{sec:dis_prodotto}
-
-Imparato come studiare il segno di un binomio di primo grado possiamo 
+\ind{segno di un prodotto}
+Una volta esperti sullo studio del segno di un binomio di primo grado, possiamo
 incominciare a complicare le cose\dots
 Se dobbiamo studiare il segno del prodotto tra polinomi, possiamo 
 seguire un procedimento formato da questi 2 passi:
@@ -482,20 +463,20 @@ Il secondo lo si risolve con un grafo con
 \end{itemize}
 
 Intestiamo ogni riga verticale con il valore di uno zero del polinomio
-stando ben attenti di riportarli in \emph{ordine crescente} e intestiamo ogni 
-\emph{spazio orizzontale} con l'indicazione del fattore di cui vogliamo 
-riportare il segno. 
+stando ben attenti di riportarli in \emph{ordine crescente} e intestiamo 
+ogni \emph{spazio orizzontale} con l'indicazione del fattore di cui 
+vogliamo riportare il segno. 
 
 Preparato questo schema, tracciamo un tondino in corrispondenza degli zeri 
 dei polinomi e riportiamo i segni già studiati precedentemente. 
 
-Sopra al terzo asse~\(x\) riportiamo il segno del prodotto ottenuto 
+Sopra al terzo asse~ \(x\) riportiamo il segno del prodotto ottenuto 
 seguendo la solita regola: 
 \begin{itemize} [noitemsep]
 \item è \emph{negativo} se i fattori negativi sono in numero dispari, 
-\item è \emph{nullo} se almeno un fattore è nullo.
+\item è \emph{nullo} se almeno un fattore è nullo,
 \item un prodotto è \emph{positivo} se i fattori negativi sono in numero 
-pari, 
+pari. 
 \end{itemize}
 
 \begin{esempio}{}{}
@@ -505,33 +486,19 @@ prodotto: \\
 
 Chiamiamo \(f_1(x)=\tonda{x-4}\) \quad e \quad \(f_2(x)=\tonda{x+2}\)
 
-\begin{itemize} [noitemsep]
+\begin{itemize} [noitemsep, left=0mm]
 \item Studio del segno del primo fattore~\(f_1\):\\
-
+\hspace*{-5mm} \scalebox{.9}{
 \segnoretta{x - 4 = 0 \quad \Rightarrow \quad x = 4}
            {y = x - 4 \quad \rightarrow}
            {\segnicre{4}}
-%  \begin{minipage}{.45\textwidth}
-%   E.A.:~\(x - 4 = 0 \quad \Rightarrow \quad x = 4\)
-%  \end{minipage}
-%  \begin{minipage}{.25\textwidth}
-%   F.A.:~\(y = x - 4 \quad \rightarrow\)
-%  \end{minipage}
-%  \begin{minipage}{.3\textwidth}
-% %   \input{\folder lbr/fig022_retta03.pgf}
-%   \segnicre{4}
-%  \end{minipage}
+}
 \item Studio del segno del secondo fattore~\(f_2\):\\
-\begin{minipage}{.45\textwidth}
-E.A.:~\(x + 2 = 0 \quad \Rightarrow \quad x=-2\)
-\end{minipage}
-\begin{minipage}{.25\textwidth}
-F.A.:~\(y = x + 2 \quad \rightarrow\)
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig023_retta04.pgf}
-\segnicre{-2}
-\end{minipage}
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x + 2 = 0 \quad \Rightarrow \quad x=-2}
+           {y = x + 2 \quad \rightarrow}
+           {\segnicre{-2}}
+}
 \item Grafo dei segni:
 
 \segnoprodottoa
@@ -539,28 +506,27 @@ F.A.:~\(y = x + 2 \quad \rightarrow\)
 Oppure, usando il nome dato ai fattori: 
 
 \segnoprodottoas
-\item Possiamo concludere che il prodotto 
-\(f(x) = f_1(x) \cdot f_2(x)=(x -4)(x +2)\) è:
-\begin{itemize} [noitemsep]
-\begin{minipage}{.4\textwidth}
+
+\item Quindi il prodotto 
+\(f(x) = f_1(x) \cdot f_2(x)=(x -4)(x +2)\) è:\\[.2em]
+\begin{itemize} [noitemsep, left=0mm]
+\affiancati{.48}{.48}{
 \item positivo per~\(x < -2\) o per~\(x > +4\)
 \item nullo per~\(x = -2\) o per~\(x = +4\)
 \item negativo per~\(x > -2\) e~\(x < +4\)
-\end{minipage}
-\hfill
-\begin{minipage}{.48\textwidth}
+}{
 \begin{center}
 \emph{Che possiamo sintetizzare con l'espressione}:\\
 \(++\quadra{-2}--\quadra{+4}++\)
 \end{center}
-\end{minipage}
+}
 \end{itemize}
 \end{itemize}
 \end{esempio}
 
 \section{Segno di un quoziente}
 \label{sec:dis_quoziente}
-
+\ind{segno di un quoziente}
 Dato che la regola del segno del quoziente è uguale alla regola del 
 segno del prodotto,
 si può utilizzare un metodo simile a quello presentato sopra anche 
@@ -580,178 +546,136 @@ Applichiamo questo procedimento allo studio del segno del quoziente: \\
 
 Chiamiamo \(num(x)=-3x-4\) \quad e \quad \(den(x)=2x+7\)
 
-\begin{itemize} [noitemsep]
- \item Studio del segno del numeratore~\(num(x)\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(-3x-4 = 0 \quad \Rightarrow \quad x = -\dfrac{4}{3}\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y = -3x-4 \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnidec{-\dfrac{4}{3}}
- \end{minipage}
- \item Studio del segno del denominatore~\(den(x)\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(2x+7 = 0 \quad \Rightarrow \quad x=-\dfrac{7}{2}\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y = 2x+7 \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnicre{-\dfrac{7}{2}}
- \end{minipage}
- \item Grafo dei segni \(\tonda{-\frac{7}{2} < -\frac{4}{3}\quad 
- \text{ dato che} \quad -7 \cdot 3 < -4 \cdot 2}\):
- 
- \segnoquozientea
- 
- Oppure, usando il nome dato ai fattori: 
- 
- \segnoquozienteas
- \item Possiamo concludere che il quoziente 
- \(f(x) = \dfrac{num(x)}{den(x)}=\dfrac{-3x-4}{2x+7}\) è:
-\begin{itemize} [noitemsep]
-\begin{minipage}{.4\textwidth}
- \item negativo per \(x\) minore di \(-\dfrac{7}{2}\) o maggiore 
- di \(-\dfrac{4}{3}\)
- \item nullo per \(x\) uguale a \(-\dfrac{4}{3}\)
- \item non definito per \(x\) uguale a \(-\dfrac{7}{2}\)
- \item positivo per \(x\) compreso tra \(-\dfrac{7}{2}\) e \(-\dfrac{4}{3}\)
-%  \item negativo per~\(x < -\dfrac{7}{2}\)~o~\(x > -\dfrac{4}{3}\)
-%  \item nullo per~\(x = -\dfrac{4}{3}\)
-%  \item non è definito per~\(x = -\dfrac{7}{2}\)
-%  \item positivo per~\(-\dfrac{7}{2} < x < -\dfrac{4}{3}\)
-\end{minipage}
-\hfill
-\begin{minipage}{.48\textwidth}
+\begin{itemize} [noitemsep, left=0mm]
+\item Studio del segno del numeratore~\(N\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{-3x-4 = 0 \quad \Rightarrow \quad x = -\dfrac{4}{3}}
+           {y = -3x-4 \quad \rightarrow}
+           {\segnidec{-\dfrac{4}{3}}}
+}
+\item Studio del segno del denominatore~\(D\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{2x+7 = 0 \quad \Rightarrow \quad x=-\dfrac{7}{2}}
+           {y = 2x+7 \quad \rightarrow}
+           {\segnicre{-\dfrac{7}{2}}}
+}
+\item Grafo dei segni \(\tonda{-\frac{7}{2} < -\frac{4}{3}\quad 
+\text{ dato che} \quad -7 \cdot 3 < -4 \cdot 2}\):
+
+\immagine{}{\segnoquozientea}
+
+Oppure, usando il nome dato ai fattori: 
+
+\immagine{}{\segnoquozienteas}
+
+\item Possiamo concludere che il quoziente 
+\(f(x) = \dfrac{-3x-4}{2x+7}\) è:\\[.2em]
+\begin{itemize} [noitemsep, left=0mm]
+\affiancati{.48}{.48}{
+\item negativo per \(x\) minore di \(-\dfrac{7}{2}\) o maggiore 
+di \(-\dfrac{4}{3}\)
+\item nullo per \(x\) uguale a \(-\dfrac{4}{3}\)
+\item non definito per \(x\) uguale a \(-\dfrac{7}{2}\)
+\item positivo per \(x\) compreso tra \(-\dfrac{7}{2}\) e \(-\dfrac{4}{3}\)
+}{
 \begin{center}
 \emph{Che possiamo sintetizzare con l'espressione}:\\ [1em]
 \(--\rquadra{-\dfrac{7}{2}}++\quadra{-\dfrac{4}{3}}--\)\\ [1em]
 (Notare il verso delle parentesi quadre!)
 \end{center}
-\end{minipage}
+}
 \end{itemize}
 \end{itemize}
 \end{esempio}
 
 \section{Combinazione dei metodi}
-\label{sec:dis_quoziente}
+\label{sec:dis_combinazione}
 
  \begin{esempio}{}{}
 Applichiamo questo procedimento allo studio del segno della frazione:
-
 \[f(x)=\frac{x(1 -2 x)(1 + 2 x)}{(x -2)(x +5)}\]
 
-Chiamiamo:~\(n_1\),~\(n_2\)~e~\(n_3\) i fattori che si trovano al numeratore 
+Chiamiamo:~\(n_1\),~\(n_2\)~e~\(n_3\) i fattori che si trovano al 
+numeratore 
 e:~\(d_1\)~e~\(d_2\) i fattori che si trovano al denominatore.
 
-\begin{itemize} [noitemsep]
- \item Studio del segno del fattore~\(n_1\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(x=0 \Rightarrow x=0\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y = x \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig025_retta05.pgf}
-  \segnicre{0}
- \end{minipage}
- \item Studio del segno del fattore~\(n_2\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(-2 x +1=0 \Rightarrow x=\frac{1}{2}\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y = -2 x +1 \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig026_retta06.pgf}
-  \segnidec{\frac{1}{2}}
- \end{minipage}
- \item Studio del segno del fattore~\(n_3\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(2 x +1=0 \Rightarrow x=- \frac{1}{2}\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=2 x +1 \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig027_retta07.pgf}
-  \segnicre{-\frac{1}{2}}
- \end{minipage}
- \item Studio del segno del fattore~\(d_1\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(x-2=0 \Rightarrow x=2\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=x-2 \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig028_retta08.pgf}
-  \segnicre{+2}
- \end{minipage}
- \item Studio del segno del fattore~\(d_2\):\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(x+5=0 \Rightarrow x=-5\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=x+5 \quad \rightarrow\)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig029_retta09.pgf}
-  \segnicre{+5}
- \end{minipage}
- \item Applichiamo la regola dei segni ricordandoci di segnare con una 
- \disegno{\crocetta{0}{0}} %``X''
-  gli zeri del denominatore:
+\begin{itemize} [noitemsep, left=0mm]
+\item Studio del segno del numeratore~\(n_1\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x = 0}
+           {y = x \quad \rightarrow}
+           {\segnicre{0}}
+}
+\item Studio del segno del numeratore~\(n_2\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{-2x +1 = 0 \quad \Rightarrow \quad x = +\dfrac{1}{2}}
+           {y = -2x +1 \quad \rightarrow}
+           {\segnidec{+\dfrac{1}{2}}}
+}
+\item Studio del segno del numeratore~\(n_3\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{2x +1 = 0 \quad \Rightarrow \quad x = -\dfrac{1}{2}}
+           {y = x -2 \quad \rightarrow}
+           {\segnicre{-\dfrac{1}{2}}}
+}
+\item Studio del segno del denominatore~\(d_1\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x -2 = 0 \quad \Rightarrow \quad x = +2}
+           {y = x -2 \quad \rightarrow}
+           {\segnicre{+2}}
+}
+\item Studio del segno del denominatore~\(d_2\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x +5 = 0 \quad \Rightarrow \quad x=-5}
+           {y = x +5 \quad \rightarrow}
+           {\segnicre{-5}}
+}
+\item Applichiamo la regola dei segni ricordandoci di segnare con una 
+\disegno{\crocetta{0}{0}} %``X''
+gli zeri del denominatore:
 
-  \segnomista
- \item Possiamo concludere che la funzione
- \(f(x)=\dfrac{x(1 -2 x)(1 + 2 x)}{(x -2)(x +5)}\) è:
+\segnomista
+\item Possiamo concludere che la funzione
+\(f(x)=\dfrac{x(1 -2 x)(1 + 2 x)}{(x -2)(x +5)}\) è:
 \begin{itemize} [noitemsep]
- \item positiva per tutti i valori di~\(x\) minori di~\(-5\)
- \item non definita per~\(x=-5\)
- \item negativa per tutti i valori di~\(x\) compresi tra~\(-5\) 
+\item positiva per tutti i valori di~\(x\) minori di~\(-5\)
+\item non definita per~\(x=-5\)
+\item negativa per tutti i valori di~\(x\) compresi tra~\(-5\) 
 e~\(-\frac{1}{2}\)
- \item zero per~\(x=-\frac{1}{2}\)
- \item positiva per tutti i valori di~\(x\) compresi tra~\(-\frac{1}{2}\) 
+\item zero per~\(x=-\frac{1}{2}\)
+\item positiva per tutti i valori di~\(x\) compresi tra~\(-\frac{1}{2}\) 
 e~\(0\)
- \item zero per~\(x=0\)
- \item negativa per tutti i valori di~\(x\) compresi tra~\(0\) 
+\item zero per~\(x=0\)
+\item negativa per tutti i valori di~\(x\) compresi tra~\(0\) 
 e~\(\frac{1}{2}\)
- \item zero per~\(x=\frac{1}{2}\)
- \item positiva per tutti i valori di~\(x\) compresi tra~\(\frac{1}{2}\) 
+\item zero per~\(x=\frac{1}{2}\)
+\item positiva per tutti i valori di~\(x\) compresi tra~\(\frac{1}{2}\) 
 e~\(2\)
- \item non definita per~\(x=2\)
- \item negativa per tutti i valori di~\(x\) maggiori di~\(2\).
+\item non definita per~\(x=2\)
+\item negativa per tutti i valori di~\(x\) maggiori di~\(2\).
 \end{itemize}
-\end{itemize}
- \end{esempio}
-
-O in simboli:
-
-\(x \in \mathbb{R} - \{ -5;~2 \}\) (insieme di esistenza)
-
-\(\begin{array}{cccccccccc}
-f(x) & > & 0 & \Leftrightarrow &
- x < -5 & \lor & -\frac{1}{2} < x < 0 & \lor & \frac{1}{2} < x < 2 \\
-f(x) & = & 0 & \Leftrightarrow &
- x = -\frac{1}{2} & \lor & x = 0 & \lor & x = \frac{1}{2} \\
-f(x) & < & 0 & \Leftrightarrow &
- -5 < x < -\frac{1}{2} & \lor & 0 < x < \frac{1}{2} & \lor & x > 2 \\
-\end{array}\)
-
-\vspace{1em}
 O con un'espressione:
 \[++\rquadra{-5}--\quadra{-\dfrac{1}{2}}++\quadra{0}
   --\quadra{+\dfrac{1}{2}}--\rquadra{+2}--\]
+\end{itemize}
+\end{esempio}
+
+% O in simboli:
+% 
+% \(\begin{array}{cccccccccc}
+% f(x) & > & 0 & \Leftrightarrow &
+%  x < -5 & \lor & -\frac{1}{2} < x < 0 & \lor & \frac{1}{2} < x < 2 \\
+% f(x) & = & 0 & \Leftrightarrow &
+%  x = -\frac{1}{2} & \lor & x = 0 & \lor & x = \frac{1}{2} \\
+% f(x) & < & 0 & \Leftrightarrow &
+%  -5 < x < -\frac{1}{2} & \lor & 0 < x < \frac{1}{2} & \lor & x > 2 \\
+% \end{array}\)
 
 \section{Disequazioni numeriche}
 \label{sec:dis_numeriche}
 
 \subsection{Principi di equivalenza delle disequazioni}
-
+\ind{principi di equivalenza}
 Per lavorare sulle disequazioni si ricorre a due principi, che derivano 
 direttamente dalle proprietà delle disuguaglianze.
 
@@ -791,73 +715,59 @@ e cambiando il verso della disuguaglianza,
 si ottiene una disequazione equivalente alla data.
 \end{teorema}
 
-Ora si può osservare che il primo principio è semplice e esattamente uguale a 
-quello delle equazioni, il secondo invece è insidioso... 
+Ora si può osservare che il primo principio è semplice e esattamente 
+uguale a quello delle equazioni, il secondo invece è insidioso\dots 
 % Per fortuna per risolvere le disequazioni basta usare il primo 
 % ed al massimo la prima parte del secondo. ???
 
 \subsection{Soluzione di una disequazione lineare}
-
+\ind{risolvere disequazioni lineari}
 Usando il primo principio si può sempre scrivere una qualunque disequazione 
 in modo che sia confrontata a zero: \(f(x) \lessgtr 0\). 
 
 Chiamiamo disequazione scritta in forma \emph{normale} (o \emph{canonica})
-la disequazione trasformata in modo da avere il secondo membro uguale a zero.
-
+la disequazione trasformata in modo da avere il secondo membro uguale a 
+zero.
+\ind{disequazione in forma canonica}
 A questo punto studiamo il segno del polinomio che si trova a primo 
 membro e quindi risolviamo la disequazione.
 
- \begin{esempio}{}{}
+\begin{esempio}{}{}
 Consideriamo la disequazione:~\(3x + 2 > 5 x -4\).
-\begin{itemize} [noitemsep]
- \item sommiamo ad entrambi i membri l'espressione:~\(-5 x +4\). 
-La disequazione di diventa:~\(-2 x +6 > 0\) e il primo principio ci assicura 
-che le soluzioni di questa disequazione sono tutte e sole le soluzioni della 
-disequazione di partenza.
-% \end{itemize}
-%  \end{esempio}
-% % \end{exrig}
+\begin{itemize} [noitemsep, left=0mm]
+\item sommiamo ad entrambi i membri l'espressione:~\(-5 x +4\). 
+La disequazione di diventa:~\(-2 x +6 > 0\) e il primo principio ci 
+assicura che le soluzioni di questa disequazione sono tutte e sole le 
+soluzioni della disequazione di partenza.
+\item Studio del segno del polinomio: \\
+\item Studio del segno del secondo fattore~\(f_2\):\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{-2 x +6 = 0 \Rightarrow  x=3}
+           {y = -2x +6 \rightarrow }
+           {\segnidec{+3}}
+}
 
-% % \begin{exrig}
-%  \begin{esempio}{}{}
-% Riprendiamo la disequazione precedente:~\(-2 x +6 > 0\).
-% \begin{itemize} [noitemsep]
- \item Studio del segno del polinomio: \\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(-2 x +6=0 \Rightarrow  x=3\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=-2 x +6 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig031_retta10.pgf}
-  \segnidec{+3}
- \end{minipage}
- \item Quindi i valori di~\(x\) che rendono positivo il binomio sono quelli 
- che si trovano a sinistra di~3 cioè quelli minori di~3. 
- \subitem 
-  \begin{minipage}{.35\textwidth}
-   rappresentazione grafica: 
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-%    \input{\folder lbr/fig032_diseq01.pgf}
-  \disegno{\raylconasse{0}{5}{2.5}{+3}{white}{x}}
-  \end{minipage}
- \subitem rappresentazione con i predicati: \quad \(x < 3\) 
- \subitem rappresentazione con le parentesi: 
-\quad \(\intervaa{-\infty}{+3}\). 
+\vspace{-4mm}
+\item Quindi i valori di~\(x\) che rendono positivo il binomio sono quelli 
+che si trovano a sinistra di~3 cioè quelli minori di~3. 
+\subitem 
+rappresentazione grafica: \quad
+\raisebox{-3mm}{\disegno{\raylconasse{0}{5}{2.5}{+3}{white}{x}}}
+\subitem rappresentazione con i predicati: \quad \(x < 3\) 
+\subitem rappresentazione con le parentesi: \quad 
+\(\intervaa{-\infty}{+3}\). 
 \end{itemize}
- \end{esempio}
+\end{esempio}
 
 Riassumendo:
 
 \begin{procedura}{}{}
- Per risolvere una disequazione:
+Per risolvere una disequazione:
 \begin{enumeratea}
- \item scrivere la disequazione in forma normale;
- \item studiare il segno dell'espressione a sinistra del predicato;
- \item rappresentare, con i diversi metodi visti, 
-  gli intervalli che risolvono la disequazione.
+\item scrivere la disequazione in forma normale;
+\item studiare il segno dell'espressione a sinistra del predicato;
+\item rappresentare, con i diversi metodi visti, 
+gli intervalli che risolvono la disequazione.
 \end{enumeratea}
 \end{procedura}
 
@@ -868,44 +778,34 @@ Associata impossibile.
 La prima reazione istintiva è quella di pensare che se l'E.A. è 
 impossibile lo sarà anche la disequazione, ma non è così! 
 Se l'E.A. è impossibile ciò significa che la retta non interseca 
-l'asse~\(x\), 
-cioè è parallela all'asse~\(x\). In questo caso tutti i valori della funzione 
-staranno dalla stessa parte dell'asse cioè saranno \emph{tutti positivi} o 
-\emph{tutti negativi}. 
+l'asse~\(x\), cioè è parallela all'asse~\(x\). 
+In questo caso tutti i valori della funzione staranno dalla stessa parte 
+dell'asse cioè saranno \emph{tutti positivi} o \emph{tutti negativi}. 
 Vediamo qualche esempio.
-
 
 \begin{esempio}{}{}
 \(\dfrac{1}{2} (x+5)-x>\dfrac{1}{2} (3-x).\)
 Il~\(\mcm\) è~2, positivo; moltiplichiamo ambo i membri per~2; svolgiamo
 i calcoli:
 
+\vspace{-1.5em}
 \[2 \left[\frac{1}{2}(x+5)-x\right]>2
 \left[\frac{1}{2}(3-x)\right]\Rightarrow x+5-2x>3-x\Rightarrow -x+5>3-x.\]
 
-La forma canonica è~\(0 x + 2 > 0\) che si riduce alla disuguaglianza~\(0>-2\)
-vera per qualunque~\(x\) reale:~\(\IS=\R\).
-\begin{itemize} [noitemsep]
+La forma canonica è~\(0 x + 2 > 0\) che si riduce alla disuguaglianza 
+\(0>-2\), che è vera per qualunque~\(x\) reale:~\(\IS=\R\).
+\begin{itemize} [noitemsep, left=0mm]
  \item Studio del segno del polinomio:\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(0 x + 2 = 0  \rightarrow \quad \) eq. impossibile;
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=0 x + 2 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnipos
- \end{minipage}
- \item Quindi per ogni valore di~\(x\) il polinomio è sempre positivo. 
- \subitem 
-  \begin{minipage}{.35\textwidth}
-   rappresentazione grafica: 
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-   \disegno{\allx{0}{6}{x}}
-  \end{minipage}
- \subitem rappresentazione con i predicati: \quad \(\mathbb{R}\) 
- \subitem rappresentazione con le parentesi: 
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{0 x + 2 = 0 \Rightarrow  Impossibile}
+           {y=0 x + 2 \rightarrow }
+           {\segnipos}
+}
+\item Quindi per ogni valore di~\(x\) il polinomio è sempre positivo. 
+\subitem rappresentazione grafica: 
+\raisebox{-3mm}{\disegno{\allx{0}{6}{x}}}
+\subitem rappresentazione con i predicati: \quad \(\mathbb{R}\) 
+\subitem rappresentazione con le parentesi: 
 \quad \(\intervaa{-\infty}{+\infty}\). 
 \end{itemize}
 \end{esempio}
@@ -915,171 +815,132 @@ vera per qualunque~\(x\) reale:~\(\IS=\R\).
 \((x+2)^2-4(x+1)<x^{2}-1.\)
 Svolgiamo i calcoli ed eliminiamo i monomi simili:
 \[x^{2}+4x+4-4x-4<x^{2}-1\Rightarrow~0 x + 1 < 0,\]
-che è la disuguaglianza~\(0<-1\) falsa per qualunque~\(x\) 
+che è la disuguaglianza~\(0<-1\), falsa per qualunque~\(x\)
 reale:~\(\IS=\emptyset \).
 %\vspace*{1.05ex}
 \begin{itemize} [noitemsep]
  \item Studio del segno del polinomio:\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(0 x + 1 = 0  \rightarrow \quad \) eq. impossibile;
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=0 x + 1 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-%   \input{\folder lbr/fig051_retta19.pgf}
-  \segnipos
- \end{minipage}
- \item Quindi per ogni valore di~\(x\) il polinomio è sempre positivo. 
-  Ma a noi servono i valori di~\(x\) che rendono il polinomio negativo 
-  quindi\dots
- \subitem 
-  \begin{minipage}{.35\textwidth}
-   rappresentazione grafica: 
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-%    \input{\folder lbr/fig053_diseq06.pgf}
-   \disegno{\emptyx{0}{6}{x}}
-  \end{minipage}
- \subitem rappresentazione con i simboli: \quad \(\emptyset\). 
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{0 x +1 = 0 \Rightarrow  Impossibile}
+           {y=0 x +1 \rightarrow }
+           {\segnipos}
+}
+\item Quindi per ogni valore di~\(x\) il polinomio è sempre positivo. 
+Ma a noi servono i valori di~\(x\) che rendono il polinomio negativo 
+quindi\dots
+\subitem rappresentazione grafica: 
+\raisebox{-3mm}{\disegno{\emptyx{0}{6}{x}}}
+\subitem rappresentazione con i simboli: \quad \(\emptyset\). 
 \end{itemize}
 \end{esempio}
 
 \subsection{Prodotto o quoziente di polinomi}
 \label{sec:dis_prod_quo}
-
+\ind{segno di un prodotto} \ind{segno di un quoziente}
 Se una disequazione è formata dal prodotto o dal quoziente di polinomi, 
 una volta scritta in forma normale,
-dobbiamo studiare il segno di tutto il prodotto o il quoziente e poi risolvere
-la disequazione.
+dobbiamo studiare il segno di tutto il prodotto o il quoziente e poi 
+risolvere la disequazione.
 Vediamo un esempio.
 
  \begin{esempio}{}{}
-Consideriamo:~\(\frac{(x-2)(-2x+1)}{x+3} \ge 0\).
+Consideriamo:~\(\frac{(x-2)(-2x+1)}{x+3} \geqslant 0\).
 
 Dobbiamo studiare il segno di ogni singolo fattore:
-\begin{itemize} [noitemsep]
- \item segno di \((x-2)\)\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(x-2=0 \Rightarrow x=2\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=x-2 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnicre{+2}
- \end{minipage}
- \item segno di \((-2x+1)\)\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(-2x+1=0 \Rightarrow x=\frac{1}{2}\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=-2x+1 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnidec{+\dfrac{1}{2}}
- \end{minipage}
+\begin{itemize} [noitemsep, left=0mm]
+\item segno di \((x-2)\)\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x -2 = 0 \Rightarrow x = +2}
+           {y = x -2 \rightarrow }
+           {\segnicre{+2}}
+}
+\item segno di \((-2x+1)\)\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{-2x +1 = 0 \Rightarrow  x = +\dfrac{1}{2}}
+           {y=-2x +1 \rightarrow }
+           {\segnidec{+\dfrac{1}{2}}}
+}
  \item Segno del denominatore:\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(x + 3=0 \Rightarrow x=-3\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=x +3 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnicre{-3}
- \end{minipage}
- \item Con la regola dei segni calcolo il segno della frazione 
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x +3 = 0 \Rightarrow  x = -3}
+           {y = x +3 \rightarrow }
+           {\segnicre{-3}}
+}
+\item Con la regola dei segni calcolo il segno della frazione 
 
-   \segnomistadisa
- \item Quindi i valori di~\(x\) che rendono vera la disequazione, cioè i 
-valori
-  che rendono~\(f(x)\) non negativo, sono quelli 
-  che si trovano a sinistra di~\(-3\) oppure che si trovano 
-  tra~\(\dfrac{1}{2}\) e~\(+2\) estremi compresi. 
- \subitem 
-  \begin{minipage}{.35\textwidth}
-   rappresentazione grafica: 
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-   \disegno{\raylconasse{0}{6}{2}{-3}{white}{x}
-            \inti{0}{3.5}{5}{+\frac{1}{2}}{+2}{blue}{blue}}
-  \end{minipage}
- \subitem rappresentazione con i 
-   predicati: \quad \(x < -3 \quad \vee \quad 
-                      +\dfrac{1}{2} \le x \le +2\) 
- \subitem rappresentazione con le 
-  parentesi:\quad \(\intervaa{-\infty}{-3} \quad \cup \quad 
-                    \intervcc{+\dfrac{1}{2}}{+2}\). 
+\segnomistadisa
+\item Quindi i valori di \(x\) che rendono vera la disequazione, cioè i 
+valori che rendono \(f(x)\) non negativo, sono quelli 
+che si trovano a sinistra di \(-3\) oppure che si trovano 
+tra \(\dfrac{1}{2}\) e \(+2\), estremi compresi.
+\subitem 
+rappresentazione grafica: \quad \raisebox{-3mm}
+{\disegno{\raylconasse{0}{6}{2}{-3}{white}{x}
+      \inti{0}{3.5}{5}{+\frac{1}{2}}{+2}{blue}{blue}}}
+\subitem rappresentazione con i 
+predicati: \quad \(x < -3 \quad \vee \quad 
+                +\dfrac{1}{2} \leqslant x \leqslant +2\) 
+\subitem rappresentazione con le 
+parentesi:\quad \(\intervaa{-\infty}{-3} \quad \cup \quad 
+              \intervcc{+\dfrac{1}{2}}{+2}\). 
 \end{itemize}
- \end{esempio}
+\end{esempio}
 
 \subsubsection{Soluzione di disequazioni fratte}
-
-Quando una disequazione contiene la variabile al denominatore ma non è 
-composta da un'unica frazione, dobbiamo seguire la procedura:
+\ind{risolvere disequazioni fratte}
+% Quando una disequazione contiene la variabile al denominatore ma non è
+%composta da un'unica frazione, dobbiamo seguire la procedura:
 
 \begin{procedura}{}{}
- Per risolvere una disequazione fratta:
+Per risolvere una disequazione fratta:
 \begin{enumeratea}
- \item spostare tutti i termini a primo membro e sommarli in modo da ottenere 
- una sola frazione e lasciare a secondo membro solo lo zero;
- \item studiare il segno della frazione;
- \item rappresentare, con i diversi metodi visti, 
-  gli intervalli che risolvono la disequazione.
+\item spostare tutti i termini a primo membro e sommarli in modo da 
+ottenere una sola frazione e lasciare a secondo membro solo lo zero;
+\item studiare il segno della frazione;
+\item rappresentare, con i diversi metodi visti, 
+gli intervalli che risolvono la disequazione.
 \end{enumeratea}
 \end{procedura}
 
- \begin{esempio}{}{}
-Consideriamo:~\(\dfrac{-3 x +4}{x+2} \le -1\).
-\begin{itemize} [noitemsep]
- \item scrivere la disequazione in forma normale:\\ [.5em]
- \(\dfrac{-3 x +4}{x+2} \le -1 \sRarrow \dfrac{-3 x +4}{x+2} +1 \le 0 
-\sRarrow
- \dfrac{-3 x +4 + x +2}{x+2} \le 0 \sRarrow \dfrac{-2 x +6}{x+2} \le 0\)\\
- \item Segno del numeratore:\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(-2 x +6=0 \Rightarrow x=3\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=-2 x +6 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnidec{+3}
- \end{minipage}
- \item Segno del denominatore:\\
- \begin{minipage}{.45\textwidth}
-  E.A.:~\(x + 2=0 \Rightarrow x=-2\)
- \end{minipage}
- \begin{minipage}{.25\textwidth}
-  F.A.:~\(y=x +2 \rightarrow \)
- \end{minipage}
- \begin{minipage}{.3\textwidth}
-  \segnicre{-2}
- \end{minipage}
- \item Con la regola dei segni calcolo il segno della funzione 
- \(f(x) = \dfrac{-2 x +6}{x+2}\) 
+\begin{esempio}{}{}
+Consideriamo:~\(\dfrac{-3 x +4}{x+2} \leqslant-1\).
+\begin{itemize} [noitemsep, left=0mm]
+\item scrivere la disequazione in forma normale:\\ [.5em]
+\(\dfrac{-3 x +4}{x+2} \leqslant -1 \sRarrow 
+\dfrac{-3 x +4}{x+2} +1 \leqslant 0 \sRarrow
+\dfrac{-3 x +4 + x +2}{x+2} \leqslant 0 \sRarrow \)
+\(\dfrac{-2 x +6}{x+2} \leqslant0\)\\
+\item Segno del numeratore:\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{-2x +6 = 0 \Rightarrow  +3}
+           {y = -2x +6 \rightarrow }
+           {\segnidec{+3}}
+}
+\item Segno del denominatore:\\
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x +2 = 0 \Rightarrow  -2}
+           {y = x +2 \rightarrow }
+           {\segnicre{-2}}
+}
+\item Con la regola dei segni calcolo il segno della funzione 
+\(f(x) = \dfrac{-2 x +6}{x+2}\) 
 
-  \segnofratta
- \item Quindi i valori di~\(x\) che rendono vera la disequazione, cioè i 
+\segnofratta
+\item Quindi i valori di~\(x\) che rendono vera la disequazione, cioè i 
 valori
-  che rendono~\(f(x)\) negativo, sono quelli 
-  che si trovano a sinistra di~\(-2\) oppure \(+3\) i tutti quelli che si 
+che rendono~\(f(x)\) negativo, sono quelli 
+che si trovano a sinistra di~\(-2\) oppure \(+3\) i tutti quelli che si 
 trovano alla sua destra. 
- \subitem 
-  \begin{minipage}{.35\textwidth}
-   rappresentazione grafica: 
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-   \disegno{\raylconasse{0}{6}{2}{-2}{white}{x}
-            \ray{0}{6}{4}{+3}{blue}}
-  \end{minipage}
- \subitem rappresentazione con i predicati: \quad \(x < -2 \sor x \ge +3\) \\
- \subitem rappresentazione con le 
-  parentesi: \quad \(\intervaa{-\infty}{-2} \quad \cup \quad 
-                     \intervca{+3}{+\infty}\) 
+\subitem rappresentazione grafica: \raisebox{-3mm}{
+\disegno{\raylconasse{0}{6}{2}{-2}{white}{x}
+      \ray{0}{6}{4}{+3}{blue}}
+}
+\subitem rappresentazione con i predicati: \quad \(x < -2 \sor x 
+\geqslant +3\) 
+\subitem rappresentazione con le parentesi: \quad 
+\(\intervaa{-\infty}{-2} \quad \cup \quad \intervca{+3}{+\infty}\) 
 \end{itemize}
- \end{esempio}
+\end{esempio}
 
 \begin{osservazione}{}{} 
 Per comodità (o per pigrizia), d'ora in poi riuniremo in un unico grafo 
@@ -1117,13 +978,14 @@ hanno significati completamente diversi.
 
 \subsection{Sistema di disequazioni}
 \label{sec:dis_sistemi}
-
+\ind{sistema di disequazioni}
 In alcune situazioni occorre risolvere contemporaneamente più disequazioni.
 In questo caso si riuniscono tutte le disequazioni in un \emph{sistema}. 
 % Vediamo un problema.
 
 \emph{Risolvere un sistema di disequazioni} significa trovare
-l'insieme dei numeri che sono soluzioni comuni alle disequazioni del sistema.
+l'insieme dei numeri che sono soluzioni comuni alle disequazioni del 
+sistema.
 
 L'insieme soluzione di un sistema, che si abbrevia con \(IS\), è 
 il risultato dell'intersezione tra le soluzioni di tutte le disequazioni:
@@ -1131,8 +993,10 @@ il risultato dell'intersezione tra le soluzioni di tutte le disequazioni:
 Quindi per risolvere un sistema di disequazioni prima si risolvono una alla 
 volta tutte le disequazioni che lo compongono, 
 poi si opera l'\emph{intersezione} tra tutte le soluzioni trovate. 
+\ind{intersezione delle soluzioni}
 
 Iniziamo con un esempio semplice:
+\ind{risolvere un sistema di disequazioni}
 
 \begin{problema}{}{}
 Il doppio di un numero positivo diminuito di~1 non supera la sua
@@ -1141,27 +1005,22 @@ metà aumentata di~2. Qual è il numero?
 
 Incognita del problema è il numero che indichiamo con~\(x\). Di esso
 sappiamo che deve essere positivo, quindi~\(x > 0\) e che deve verificare
-la condizione~\(2x -1 \le \dfrac{1}{2}x +2\)
+la condizione~\(2x -1 \leqslant\dfrac{1}{2}x +2\)
 
 Le due disequazioni devono verificarsi entrambe quindi 
 il problema può essere formalizzato con un \emph{sistema di disequazioni}:
-\[\sistema{x > 0\\ 2x -1 \le \dfrac{1}{2}x +2} \quad \sRarrow
-  \sistema{x > 0\\ 3x -6 \le 0}\]
-  \begin{minipage}{.65\textwidth}
-   La prima disequazione è banale, l'insieme soluzione \(IS_1\) è:
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-  \sisdisa
-  \end{minipage}
+\[\sistema{x > 0\\ 2x -1 \leqslant\dfrac{1}{2}x +2} \quad \sRarrow
+  \sistema{x > 0\\ 3x -6 \leqslant0}\]
+% \begin{minipage}{.65\textwidth}
+La prima disequazione è banale, l'insieme soluzione \(IS_1\) è: \quad 
+\raisebox{-3mm}{\immagine*{Asse con evidenziata la semiretta da 0 in 
+poi.}{\sisdisa}}
 
 Nella seconda, la soluzione dell'E.A. è~\(+2\); 
 il grafico della F.A. è una retta crescente quindi:
-  \begin{minipage}{.65\textwidth}
-   \(IS_2\) è l'insieme di numeri minori o uguali a~\(+2\):
-  \end{minipage}
-  \begin{minipage}{.30\textwidth}
-  \sisdisb
-  \end{minipage}
+\(IS_2\) è l'insieme di numeri minori o uguali a~\(+2\): \quad
+\raisebox{-3mm}{\immagine*{Asse con evidenziata la semiretta fino a 
+2.}{\sisdisb}}
 
 Dobbiamo ora determinare i valori che rendono vere entrambe le disequazioni 
 ovvero ottenere l'intersezione delle due soluzioni: 
@@ -1169,7 +1028,9 @@ ovvero ottenere l'intersezione delle due soluzioni:
 
 Lo possiamo fare con i metodi visti nel calcolo con gli insiemi:
 
-\sistemaa
+\immagine{Grafico di 2 assi con evidenziati gli insiemi S1 e S2 e un 
+terzo asse con l'intersezione di questi due intervalli.}
+{\sistemaa}
 
 \begin{osservazione}{}{}
 Lo schema usato per la soluzione di un sistema, assomiglia a quello usato 
@@ -1205,51 +1066,58 @@ si usa la regola sei segni & si usa un'operazione tra insiemi\\
   \begin{center} #4 \end{center}
 }
 
- \begin{esempio}{}{}
+\begin{esempio}{}{}
 
 Risolviamo il seguente sistema:
-\(\left\{\begin{array}{l}
-  2 (x -5) \le 3 + 4 x \\
-  6 x -4 < -3 x -2 \\
-\end{array}\right.\)
-\begin{itemize} %[noitemsep]
+\(\sistema{2 (x -5) \leqslant 3 + 4 x \\
+6 x -4 < -3 x -2}\)
+\begin{itemize} [left=0mm]%[noitemsep]
 \item Primo passo: scrivere il sistema in forma normale:
- 
-\(\left\{\begin{array}{l}
-  2 x -10 -3 - 4 x \le 0 \\
-  6 x -4 +3 x +2 < 0
-\end{array}\right.\)
-\(\left\{\begin{array}{ll}
-  -2 x -13 \le 0 & \quad \mbox{(1)} \\
-   9 x -2 < 0 & \quad \mbox{(2)}
-\end{array}\right.\)
+
+\(\sistema{2 x -10 -3 - 4 x \leqslant 0 \\
+6 x -4 +3 x +2 < 0} \ssRarrow\)
+\(\sistema{-2 x -13 \leqslant 0 & \quad \mbox{(1)} \\
+  9 x -2 < 0 & \quad \mbox{(2)}}\)
 
 \item Secondo passo: risolvere le singole disequazioni
 
-\begin{enumerate} [label=({\arabic*})]
+\begin{enumerate} [left=0mm, label=({\arabic*})]
 \item 
-Soluzione della prima disequazione:~\(-2 x -13 \le 0\)
+Soluzione della prima disequazione:~\(-2 x -13 \leqslant 0\)
 
-\hspace{-17mm}
-\soldis{-2 x -13}{x = -\dfrac{13}{2}}
-       {\segnidec{-\frac{13}{2}}}
-       {\disegno{\rayrconasse{0}{6}{3}{-\frac{13}{2}}{blue}{x}}}
+\hspace*{-10mm} \scalebox{.9}{
+\segnoretta{-2x -13 = 0 \Rightarrow -\dfrac{13}{2}}
+           {y = -2x -13 \rightarrow }
+           {\segnidec{-\dfrac{13}{2}}}
+}
+\vspace{-10mm}
+\immagine{Asse con evidenziato il punto -13/2 e i punti seguenti.}
+{\disegno{\rayrconasse{0}{6}{3}{-\frac{13}{2}}{blue}{x}}}
 
 \item Soluzione della seconda disequazione:~\(9 x -2 < 0\)
 
-\hspace{-17mm}
-\soldis{9 x -2}{x = +\dfrac{2}{9}}
-       {\segnicre{+\frac{2}{9}}}
-       {\disegno{\raylconasse{0}{6}{3}{+\frac{2}{9}}{white}{x}}}
+\hspace*{-10mm} \scalebox{.9}{
+\segnoretta{9 x -2 = 0 \Rightarrow +\dfrac{2}{9}}
+           {y = 9 x -2 \rightarrow }
+           {\segnicre{+\dfrac{2}{9}}}
+}
+\vspace{-10mm}
+\immagine{Asse con evidenziati i punti fino a +2/9 escluso.}
+{\disegno{\raylconasse{0}{6}{3}{+\frac{2}{9}}{white}{x}}}
 \end{enumerate}
 
- \item Terzo passo: intersezione degli intervalli precedenti:\\
-  \sistemab
+\item Terzo passo: intersezione degli intervalli precedenti:\\
+\vspace{-8mm}\hspace*{-5mm}
+\immagine*[1]{Grafo del sistema con le soluzioni scritte nei tre 
+modi.}
+{\sistemab}
+\vspace{3mm}
 \end{itemize}
- \end{esempio}
+\end{esempio}
 
 \subsection{Soluzione di disequazioni letterali}
 \label{sec:dis_tetterali}
+\ind{risolvere disequazioni letterali}
 
 Qualunque sia una disequazione letterale di primo grado nella 
 variabile~\(x\) può sempre essere scritta, utilizzando il primo 
@@ -1261,18 +1129,19 @@ Alcune osservazioni sulla formula precedente:
 
 \begin{itemize} [noitemsep]
  \item il predicato può essere uno di questi:~\(>, \; <, \; \le, \; \ge\).
- \item A e B sono espressioni letterali contenenti cioè dei parametri.
+ \item A e B sono espressioni letterali, contenenti cioè dei parametri.
 \end{itemize}
 
 Partiamo da un  esempio e cerchiamo di seguire il metodo già usato:
 
-\(k \left( x -1 \right )\le k \left ( k - x \right ) + x\)
+\(k \left( x -1 \right )\leqslant k \left ( k - x \right ) + x\)
 
 Innanzitutto la scriviamo in forma normale:
-\[k x - k \le k^2 - k x + x \sRarrow k x - k - k^2 + k x - x \le 0 \sRarrow
-2 k x - x - k^2 - k \le 0 \]
+\[k x - k \leqslant k^2 - k x + x \sRarrow k x - k - k^2 + k x - x \leqslant0 
+\sRarrow
+2 k x - x - k^2 - k \leqslant 0\]
 Raccogliendo il fattore \(x\): \quad 
-\(\left (2 k - 1 \right ) x - k^2 - k \le 0\)
+\(\left (2 k - 1 \right ) x - k^2 - k \leqslant 0\)
 
 A questo punto si può vedere che il metodo utilizzato fin qui non può più 
 essere seguito pedissequamente; infatti se non conosciamo il valore 
@@ -1294,9 +1163,11 @@ Dobbiamo sospendere la soluzione della disequazione per studiare il segno
 del coefficiente angolare: \(m = 2k -1\). 
 Applicando la solita tecnica otteniamo:
 
-\soldis{2 k -1}{k=\frac{1}{2}}
-       {\segnicre[k]{\frac{1}{2}}}
-       {}
+\hspace*{-5mm} \scalebox{.9}{
+\segnoretta{2k -1 = 0 \Rightarrow k = +\dfrac{1}{2}}
+           {y = 2k -1 \rightarrow }
+           {\segnicre{+\dfrac{1}{2}}}
+}
 
 Ora possiamo studiare i 3 casi che si ottengono a seconda che il 
 parametro~\(k\) renda il coefficiente angolare negativo, uguale a zero 
@@ -1306,29 +1177,36 @@ o positivo:
 \item Se~\(k < \dfrac{1}{2} \Rightarrow 2 k - 1 < 0\)
 coefficiente angolare negativo, retta decrescente:
 
-\soldis{f(x)}{x=\dfrac{k^2 - k}{2 k - 1}}
-       {\segnidec{\frac{k^2 - k}{2 k - 1}}}
-       {}
+\vspace{-.5em} \hspace*{-5mm} \scalebox{.9}{
+\segnoretta{x = \dfrac{k^2 - k}{2 k - 1}}
+           {y = \dfrac{k^2 - k}{2 k - 1} \rightarrow }
+           {\segnidec{\dfrac{k^2 - k}{2 k - 1}}}
+}
 
 \vspace{-2em}
 \begin{itemize} [nosep]
 \item 
-Se \quad \(k < \dfrac{1}{2}\) \qquad 
-\raisebox{-9pt}[0pt][0pt]{
+Quindi se \quad \(k < \dfrac{1}{2}\) \qquad 
+\raisebox{-9pt}{
 \disegno{\rayrconasse{0}{6}{3}{\frac{k^2 - k}{2 k - 1}}{blue}{x}}
 }
-\qquad \(x \le \dfrac{k^2 - k}{2 k - 1}\)
+\qquad \(x \leqslant \dfrac{k^2 - k}{2 k - 1}\)
 \end{itemize}
 
-\soldis{f(x)}{Impossibile}
-       {\segnineg}
-       {}
+\item Se~\(k = \dfrac{1}{2} \Rightarrow 2 k - 1 = 0\)
+coefficiente angolare zero, retta orizzontale:
 
-\vspace{-2em}
+\vspace{-.5em} \hspace*{-5mm} \scalebox{.9}{
+\segnoretta{f(x) = 0 \Rightarrow Impossibile}
+           {y = f(x) \rightarrow }
+           {\segnineg}
+}
+
+\vspace{-1em}
 \begin{itemize} [nosep]
 \item 
-Se \quad \(k = \dfrac{1}{2}\) \qquad 
-\raisebox{-20pt}[0pt][0pt]{
+Quindi se \quad \(k = \dfrac{1}{2}\) \qquad 
+\raisebox{-20pt}{
 \disegno{\disegno{\allx{0}{6}{x}}}
 }
 \qquad \(\forall x \in \mathbb{R}\)
@@ -1337,31 +1215,38 @@ Se \quad \(k = \dfrac{1}{2}\) \qquad
 \item Se~\(k > \dfrac{1}{2} \Rightarrow 2 k - 1 > 0\)
 coefficiente angolare positivo, retta crescente:
 
-\soldis{f(x)}{x=\dfrac{k^2 - k}{2 k - 1}}
-       {\segnicre{\frac{k^2 - k}{2 k - 1}}}
-       {}
+\vspace{-.5em} \hspace*{-5mm} \scalebox{.9}{
+\segnoretta{f(x) = 0 \Rightarrow x=\dfrac{k^2 - k}{2 k - 1}}
+           {y = f(x) \rightarrow }
+           {\segnicre{\frac{k^2 - k}{2 k - 1}}}
+}
 
-\vspace{-2em}
+\vspace{-1.5em}
 \begin{itemize} [nosep]
 \item 
-Se \quad \(k > \dfrac{1}{2}\) \qquad 
+Quindi se \quad \(k > \dfrac{1}{2}\) \qquad 
 \raisebox{-9pt}[0pt][0pt]{
 \disegno{\raylconasse{0}{6}{3}{\frac{k^2 - k}{2 k - 1}}{blue}{x}}
 }
-\qquad \(x \le \dfrac{k^2 - k}{2 k - 1}\)
+\qquad \(x \leqslant\dfrac{k^2 - k}{2 k - 1}\)
 \end{itemize}
 
 \end{enumerate}
 
-% La soluzione della disequazione letterale è:
-%
-% \begin{htmulticols}{3}
-% \begin{itemize} [noitemsep]
-%  \item Se~\(k < \dfrac{1}{2} \rightarrow x \ge \dfrac{k^2 - k}{2 k - 1}\)
-%  \item Se~\(k = \dfrac{1}{2} \rightarrow \forall x \in \mathbb{R}\)
-%  \item Se~\(k > \dfrac{1}{2} \rightarrow x \le \dfrac{k^2 - k}{2 k - 1}\)
-% \end{itemize}
-% \end{htmulticols}
+La soluzione della disequazione letterale è:
+
+\begin{htmulticols}{3}
+\begin{itemize} [noitemsep]
+\item 
+Se \(k < \dfrac{1}{2} \rightarrow\)\\
+\(\rightarrow x \geqslant \dfrac{k^2 - k}{2 k - 1}\)
+\item Se \(k = \dfrac{1}{2} \rightarrow\)\\[3mm]
+\(\rightarrow \forall x \in \mathbb{R}\)
+\item 
+Se \(k > \dfrac{1}{2} \rightarrow\)\\
+\(\rightarrow x \leqslant\dfrac{k^2 - k}{2 k - 1}\)
+\end{itemize}
+\end{htmulticols}
 
 Riassumendo possiamo seguire questo metodo:
 
@@ -1435,6 +1320,7 @@ della~\(x\));
 
 \subsection{Problemi con le disequazioni}
 \label{sec:dis_problemi}
+\ind{problemi risolvibili con disequazioni}
 
 \begin{problema}{Tariffe telefoniche}{}
 Sto analizzando due proposte di compagnie telefoniche per poi stipulare

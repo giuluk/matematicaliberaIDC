@@ -10,17 +10,38 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[[2018/01/01]
 \ProvidesPackage{matliberagraf}[%
-    2024/05/31 v0.9.66
+    2026/02/26 v0.9.92
    Macro grafiche usate nel libro Matematica Libera]
 
-\newcommand{\disegno}[2][5]{% Inizializza un disegno
-  % Sintassi: \disegno[dimensione unità]{comandi grafici}
-  % Esempi di chiamata:
-  % \disegno{\draw (0, 0) -- (4, 6);}
-  % \disegno[3]{\draw (0, 0) -- (4, 6);}
-\begin{tikzpicture}[x=#1 mm, y=#1 mm, smooth, line cap=round]
-  #2
-\end{tikzpicture}
+\def \colorfun{blue!50!black}     % colore della funzione
+\def \colorder{green!50!black}    % colore della derivata
+\def \colordersec{red!50!black}   % colore della derivata
+\def \colortan{violet!50!black}   % colore della tangente
+\def \colornorm{orange!50!black}  % colore della normale
+\def \fillpunto{yellow!80!red}    % colore riempimento di un punto
+\def \fillpos{blue!20}            % riempimento positivo
+\def \fillneg{red!20}             % riempimento negativo
+\def \dimfun{very thick}          % spessore del grafico
+
+
+
+\NewDocumentCommand{\disegno}{O{5} O{} m}{%
+  % Realizza il grafico passato come argomento obbligatorio.
+  % Inizializza Tikz passando gli argomenti:
+  % #1, #2, smooth, line cap=round.
+  % Come effetto secondario inizializza l'unità di misura
+  % orizzontale e verticale: \scalex e \scaley.
+  % Sintassi:
+  % \disegno[<unitàx> = 5mm][<unitày> = unitàx]{<disegno>}
+  % Esempi:
+  % \disegno[12][6]{\draw (2, 2) circle(1);}
+  % \disegno[12]{\draw (2, 2) circle(1);}
+  % \disegno{\draw (2, 2) circle(1);}
+  \edef\scalex{#1}
+  \edef\scaley{\if\relax\detokenize{#2}\relax#1\else#2\fi}
+  \begin{tikzpicture}[x=\scalex mm, y=\scaley mm, smooth, line cap=round]
+    #3
+  \end{tikzpicture}
 }
 
 \newcommand{\nodouna}[6][]{% Nodo di un'espressione numerica unaria.
@@ -51,7 +72,7 @@
 
 \newcommand{\nodobin}[7][]{% Nodo di un'espressione numerica binaria.
   % Sintassi:
-  % \nodouna[rdim]{popa}{popb}{xris}{yris}{nop}{nris}
+  % \nodobin[rdim]{popa}{popb}{xris}{yris}{nop}{nris}
   % esempio di chiamata:
   % \nodobin{(-5, -1)}{(-4, -1)}{-4.5}{-3}{\times}{12}
   \def \rdim{#1}
@@ -78,6 +99,10 @@
 }
 
 \newcommand{\parentesi}[5]{
+  % Sintassi:
+  % \parentesi{posx}\posy}{inter}{pa}{pb}
+  % esempio di chiamata:
+  % \parentesi{\xh}{\lb}{.8}{(}{)}
   \def \posx{#1}
   \def \posy{#2}
   \def \inter{#3}
@@ -91,14 +116,15 @@
   % Sintassi: \vettored[parametri]{pi}{pf}
   % Esempio di chiamata:
   % \disegno{\vettored[red]{(0, 0)}{(4, 6)}}
-  \draw [->] [#1] #2 -- #3;
+  \draw [-{Straight Barb[length=5pt,width=4pt]}] [#1] #2 -- #3;
 }
 
-\newcommand{\vettorenome}[4][black]{% Vettore con un nome.
-  % Sintassi: \vettorenome[parametri]{pi}{pf}{nome}
+\newcommand{\vettorenome}[5][black]{% Vettore con un nome.
+  % Sintassi: \vettorenome[parametri]{pi}{pf}{posizione}{nome}
   % Esempio di chiamata:
-  % \disegno{\vettorenome[red]{(0, 0)}{(4, 6)}{vettore}}
-  \draw [->, #1] #2 -- node {$\vect{#4}$} #3;
+  % \disegno{\vettorenome[\colortan]{(0, 0)}{(2, 2)}{above}{r}}
+  \draw [-{Straight Barb[length=5pt,width=3pt, line cap=round]}, #1]
+         #2 -- node[#4] {$\vect{#5}$} #3;
 }
 
 \newcommand{\vettoreAB}[7][black]{% Vettore con etichette agli estremi.
@@ -107,7 +133,8 @@
   % \disegno{
   %   \vettoreAB[green]{(8, 0)}{(12, 6)}{below left}{A}{above left}{B}
   % }
-  \draw [->, #1] #2 node [#4]{$#5$} -- #3 node [#6]{$#7$};
+  \draw [-{Straight Barb[length=5pt,width=3pt, line cap=round]}, #1]
+         #2 node [#4]{$#5$} -- #3 node [#6]{$#7$};
 }
 
 \newcommand{\freccia}[5][black]{% Freccia che punta a un testo.
@@ -129,7 +156,7 @@
   % Asse: aggiunge una variabile al segmento orientato.
   % Sintassi: \asse[parametri]{pi}{pf}{posizione var}{var}
   % Esempio di chiamata:
-  %% \disegno{\asse{(-7, -2}{(+7, 5}{below right}}{t}
+  %% \disegno{\asse{(-7, -2)}{(+7, 5)}{below right}}{t}
   \segorientato[#1]{#2}{#3}
   \node [#4] at #3 {$#5$};
 }
@@ -144,7 +171,7 @@
 \newcommand{\assev}[5][black]{% Asse verticale.
   % Sintassi: \assev[parametri]{yi}{yf}{x}{var}
   % Esempio di chiamata:
-  %% \disegno{\asseo{-7}{+7}{0}{t}}
+  %% \disegno{\assev{-7}{+7}{0}{t}}
   \asse[#1]{(#4, #2-.3)}{(#4, #3+.3)}{left}{#5}
 }
 
@@ -182,37 +209,38 @@
     \asseo[#1]{#2+.6}{#3-.6}{#4}{#5}
 }
 
-\NewDocumentCommand \rcomvar{s O{black} m m m m m m}{
+
+\NewDocumentCommand \rcom{s O{black} m m m m O{x} O{y}}{
   % Riferimento Cartesiano Ortogonale Monometrico.
   % Se c'è l'asterisco non viene disegnata la griglia.
-  % Sintassi: \rcomvar[*][parametri]{xi}{xf}{yi}{yf}{varasc}{varord}
+  % Ha due effetti collaterali:
+  % 1. inizializza le 6 macro:
+  % \rcminx, \rcmaxx, \rcminy, \rcmaxy, \rcmaxxx, \rcmaxyy.
+  % 2. Inizializza tkzInit.
+  % Sintassi: \rcom[*][parametri]{xi}{xf}{yi}{yf}[varasc=x][varord=y]
   % Esempio di chiamata:
-  %% \disegno{\rcomvar*{-7}{+7}{-11}{+10}{t}{s}
-  %% \disegno{\rcomvar{-7}{+7}{-11}{+10}{t}{s}
-  \IfBooleanF{#1}
-    {\draw[gray!50, very thin, step=1]
-      (#3-0.3, #5-0.3) grid (#4+0.3, #6+0.3);}
-  \begin{scope}[-{Stealth[length=2mm, open, round]}, #2] % Assi
-    \draw (#3-0.3, 0) -- (#4+0.5, 0)
-      node [below, xshift=-3pt] {$#7$};
-    \draw (0, #5-0.3) -- (0, #6+0.5)
-      node [left, yshift=-3pt] {$#8$};
+  %% \disegno{\rcom*{-7}{+7}{-11}{+10}[t][p]
+  %% \disegno{\rcom{-7}{+7}{-11}{+10}[t][p]
+  % Da notare che gli ultimi due parametri sono opzionali,
+  % vanno tra parentesi quadre!
+  \pgfmathsetmacro{\rcminx}{#3 - 1/\scalex}
+  \pgfmathsetmacro{\rcmaxx}{#4 + 1/\scalex}
+  \pgfmathsetmacro{\rcminy}{#5 - 1/\scaley}
+  \pgfmathsetmacro{\rcmaxy}{#6 + 1/\scaley}
+  \pgfmathsetmacro{\rcmaxxx}{#4 + 3/\scalex}
+  \pgfmathsetmacro{\rcmaxyy}{#6 + 3/\scaley}
+  \IfBooleanF{#1}{
+    \draw[gray!50, very thin, step=1]
+      (\rcminx, \rcminy) grid (\rcmaxx, \rcmaxy);
+  }
+  \begin{scope}[-{Stealth[length=2mm, open, round]}, #2]
+    \draw (\rcminx, 0) -- (\rcmaxxx, 0) node [below, xshift=-3pt] {$#7$};
+    \draw (0, \rcminy) -- (0, \rcmaxyy) node [left, yshift=-3pt] {$#8$};
   \end{scope}
+  \tkzInit[xmin=\rcminx, xmax=\rcmaxx, ymin=\rcminy, ymax=\rcmaxy]
 }
 
-\NewDocumentCommand \rcom{s O{black} m m m m}{
-  % Riferimento Cartesiano Ortogonale Monometrico.
-  % Se c'è l'asterisco non viene disegnata la griglia.
-  % Sintassi: \rcomvar[*][parametri]{xi}{xf}{yi}{yf}
-  % Esempio di chiamata:
-  %% \disegno{\rcom*{-7}{+7}{-11}{+10}
-  %% \disegno{\rcom{-7}{+7}{-11}{+10}
-  \IfBooleanTF{#1}
-    {\rcomvar*[#2]{#3}{#4}{#5}{#6}{x}{y}}
-    {\rcomvar[#2]{#3}{#4}{#5}{#6}{x}{y}}
-}
-
-\newcommand{\disegnapunti}[2][gray]{%
+\newcommand{\disegnapunti}[2][\fillpunto]{%
   % Sintassi: \disegnapunti[colore]{listapunti}
   % punti di una funzione.
   % esempio di chiamata:
@@ -238,6 +266,39 @@
       \draw [#1](\x, \y) node {\small$\lab$};}
 }
 
+\NewDocumentCommand \nodoepunto{s O{fill=\fillpunto} m m m}{%
+  % Circolo di raggio 1.2 con un'etichetta.
+  % La versione starred disegna il punto come un cerchietto pieno.
+  % Sintassi:
+  % \nodoepunto[opzioni punto]{posizione}{opzioni etichetta}{etichetta}
+  % Esempi:
+  % \nodoepunto*{(2, 5)}{below right}{A}
+  % \nodoepunto{(2, 5)}{below right}{B}
+  % \nodoepunto[fill=blue!40]{(2, 5)}{below right}{C}
+  \IfBooleanTF{#1}
+    {\fill[#2] #3 circle (1.2pt) node[#4] {$#5$};}
+    {\draw[#2] #3 circle (1.2pt) node[#4] {$#5$};}
+}
+
+\NewDocumentCommand \nodi{s m}{%
+  % Disegna dei punti e delle etichette nel piano cartesiano.
+  % La versione starred non disegna i punti.
+  % Sintassi:
+  % \nodi{listanodi}
+  % Dove listanodi contiene elementi fatti così:
+  % <xpunto>/<ypunto>/<posizione etichetta>/<etichetta>
+  % Esempi:
+  % \nodi*{2.3/2.8//x(t) = -t^2 +2t +2, 1.9/-.5//v(t) = -2t +2,
+  %        .5/-1.8//a(t) = -2}
+  \IfBooleanTF{#1}{
+    \foreach \px/\py/\pa/\la in {#2}
+      {\draw (\px, \py) node[\pa]{$\la$};}
+  }{
+    \foreach \px/\py/\pa/\la in {#2}
+      {\nodoepunto[fill=\fillpunto]{(\px, \py)}{\pa}{\la}}
+  }
+}
+
 \newcommand{\xbar}[7]{
   % Sintassi:
   % \xbar{x}{y}{lx}{\colorline}{\colorpoint}{\colorlabel}{\lbelow}
@@ -257,87 +318,94 @@
         (0, #2) node [left] {\small $#3$} -- (#1, #2);
 }
 
-\NewDocumentCommand{\gnomino}
+\NewDocumentCommand \gnomino
   {m O{above right} m O{below} m O{left} m m O{#8}}{
   % Sintassi:
-  % \gnomino{pos}[parn]{nome}[parx]{labx}[pary]{laby}{parline}{parpoint}
+  % \gnomino{pos}[parn]{nome}[parx]{labx}[pary]{laby}{parline}[parpoint]
   % Esempio di chiamata:
   % \disegno{
   %   \rcom{-4}{+4}{-4}{+4}
   %   \gnomino{(-3.0, 0.5)}[above right]{C}
   %     [black, below=5pt]{-3}[right]{+0.5}{red!50!black}{violet}}
+  \coordinate (P) at #1;            % Le seguenti righe estraggono
+  \pgfpointanchor{P}{center}        % le coordinate di #1 in: \xp e \yp.
+  \pgfgetlastxy{\rawxp}{\rawyp}%
+  \pgfmathsetmacro{\xp}{\rawxp / \scalex * 25.4 / 72.27}%
+  \pgfmathsetmacro{\yp}{\rawyp / \scaley * 25.4 / 72.27}%
   \draw [thin, dashed, #8]
-        #1 |- node [#4] {\small $#5$} (0, 0)
-        #1 -| node [#6] {\small $#7$} (0, 0);
-  \filldraw #1 [#9] circle(1.5pt) node [#2]{$#3$};
+        (P) -- (\xp, 0) node [#4] {\small $#5$}
+        (P) -- (0, \yp) node [#6] {\small $#7$};
+  \nodoepunto{(P)}{#2}{#3}
 }
 
-\newcommand{\graficoxy}[6]{  % Grafico di una funzione.
-  % Sintassi: \graficoxy{xmi}{xma}{ymi}{yma}{colore}{funzione}
-  % Esempio di chiamata:
-  % \disegno{\graficoxy{-7}{+7}{-11}{+10}{blue!50!black}{2*x+3}}
-  \rcom{#1}{#2}{#3}{#4}
-  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
-  \tkzFct[domain=#1-0.3:#2+0.3, ultra thick, #5]{#6}
-}
-
-\newcommand{\graficixy}[5]{  % Grafico di più funzioni.
-  % Sintassi: \graficixy{xmi}{xma}{ymi}{yma}{lista funzione/colore}
+\NewDocumentCommand \drawgrafico{O{\colorfun} m}{
+  % Traccia una funzione.
+  % Sintassi: \drawgrafico[colore]{funzione}
   % Esempio di chiamata:
   % \disegno{
-  %   \graficixy{0}{7}{0}{7}{{x-2}/blue, {x*x/2.}/red, {(x-2)**2/2.}/violet}
+  %   \rcom{0}{+8}{0}{+8}
+  %   \drawgrafico{sin(x)}
+  %   \drawgrafico[\colorder]{cos(x)}
   % }
-  \rcom{#1}{#2}{#3}{#4}
-  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
-  \foreach \funzione/\colore in {#5}{
-    \tkzFct[domain=#1-0.3:#2+0.3, ultra thick, color=\colore]{\funzione}
+  \tkzFct[domain=\rcminx:\rcmaxx, \dimfun, #1]{#2}
+}
+
+
+\NewDocumentCommand \drawgrafici{m}{%
+  % Traccia le funzioni contenute nella lista passata come argomento.
+  % Sintassi: \drawgrafici{listafunzioni}
+  % Dove listafunzioni è formata da elementi <colore>/<funzione>
+  % Esempio di chiamata:
+  % \disegno{
+  %   \rcom{0}{+8}{0}{+8}
+  %   \drawgrafici{\colorfun/sin(x), \colorder/cos(x)}
+  % }
+  \foreach \colore/\funzione in {#1}{
+    \tkzFct[domain=\rcminx:\rcmaxx, \dimfun, \colore]{\funzione}
   }
 }
 
-\newcommand{\graficospezzato}[7]{  % Grafico di una funzione.
-  % Sintassi:  \grafparti{xmi}{xma}{ymi}{yma}{colore}{f}{intervalli}
+\NewDocumentCommand{\graficospezzato}{O{\colorfun} m m}{%
+  % Tratti del grafico di una funzione.
+  % Sintassi:  graficospezzato[colore]{funzione}{intervalli}
   % Esempio di chiamata:
-  % \disegno{\graficospezzato{-7}{+7}{-11}{+10}{blue!50!black}
+  % \disegno{\rcom{-5}{+5}{-5}{+5}
+  %          \graficospezzato[blue!50!red]
   %                          {(-2*x-5)/(x**2-x-6)}
   %                          {-8.3/-2.01, -1.99/+2.9, +3.1/8.3}}
-  \rcom{#1}{#2}{#3}{#4}
-  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
-  \foreach \mii/\mai in {#7}{
-    \tkzFct[domain=\mii:\mai, ultra thick, #5]{#6}}
+  \foreach \midom/\madom in {#3}{%
+    \tkzFct[domain=\midom:\madom, \dimfun, #1]{#2}}%
 }
 
-\newcommand{\grafparti}[7]{%
-  % Sintassi:  \grafparti{xmi}{xma}{ymi}{yma}{colore}{listaf}{listap}
+\NewDocumentCommand \drawgrafparti{O{\colorfun} m m}{%
+  % Sintassi:  \grafparti[colore=\colorfun]{listaf}{listap}
   % Dove gli elementi di listaf sono: <da>/<a>/<funzione>
   % Dove gli elementi di listap sono: <xp>/<yp>/<colore>
   % Esempio chiamata:
   %   \disegno{
-  %     \grafparti{0}{10}{0}{8}{green!50!black}
-  %               {-.3/+4/-0.62*x*x+3.34*x+1.46,
-  %               +4/+7/-1.03*x+9.4,
-  %               +7/+9.25/(-(1.65*(x-3.65)+0.66)+10)**-1+2.35,
-  %               +9.35/+10.3/(-(1.65*(x-3.65)+0.66)+10)**-1+2.35
-  %               }
-  %               {4/4.88/white, 4/5.28/blue, 7/2.19/white, 7/2.61/blue}
+  %     \rcom{0}{10}{0}{8}
+  %     \drawgrafparti[red!50!black]
+  %       {-.3/+4/-0.62*x*x+3.34*x+1.46,
+  %        +4/+7/-1.03*x+9.4,
+  %        +7/+9.25/(-(1.65*(x-3.65)+0.66)+10)**-1+2.35,
+  %        +9.35/+10.3/(-(1.65*(x-3.65)+0.66)+10)**-1+2.35}
+  %       {4/4.88/white, 4/5.28/blue, 7/2.19/white, 7/2.61/blue}
   %   }
-  % % Da notare l'uso di ``(...)**-1'' per evitare ``/'' che va in conflitto
-  % % con la sintassi di \foreach
-  \rcom{#1}{#2}{#3}{#4}
-  \tkzInit[xmin=#1-0.3,xmax=#2+0.3,ymin=#3-0.3,ymax=#4+0.3]
-  \foreach \da/\fino/\func in {#6} {
-    \tkzFct[domain=\da:\fino, ultra thick, #5] {\func}}
-  \foreach \px/\py/\pc in {#7} {
+  % % Da notare l'uso di ``(...)**-1'' per evitare ``/'' che va in
+  % % conflitto con la sintassi di \foreach
+  \foreach \da/\fino/\func in {#2} {
+    \tkzFct[domain=\da:\fino, ultra thick, #1] {\func}}
+  \foreach \px/\py/\pc in {#3} {
     \filldraw (\px, \py) [fill=\pc] circle(1.5pt);}
 }
 
-\newcommand{\fpunti}[3]{% ERA:\fpoints
+\newcommand{\fpunti}[3]{%
   % Sintassi: \fpunti{funzione}{colore}{lista x}
   % punti di una funzione.
   % esempio di chiamata:
-  %   \disegno{
-  %     \rcom{-3}{+8}{-4}{+12}
-  %     \tkzInit[xmin=-3.3, xmax=+8.3, ymin=-4.3, ymax=+12.3]
-  %     \fpunti{1./3*\x*\x -2*\x +5}{blue!50!black}{-2, ..., 8}
+  %   \disegno[10]{
+  %  \fpunti{4*\x*\x*\x -10*\x*\x +6*\x}
+  %    {blue!50!black}{-0.2, -0.1, ...,2}
   %   }
     \foreach \x in {#3}
       \filldraw [#2] (\x, #1) circle (2pt);
@@ -349,7 +417,6 @@
   % esempio di chiamata:
   %   \disegno{
   %     \rcom{-3}{+8}{-4}{+12}
-  %     \tkzInit[xmin=-3.3, xmax=+8.3, ymin=-4.3, ymax=+12.3]
   %     \graficoepunti{ultra thick, color=blue!50!black, domain=-3.3:+8.3}
   %                   {1./3*\x*\x -2*\x +5}
   %                   {green!50!black}{-2, ..., 8}
@@ -357,19 +424,6 @@
   \tkzFct[#1]{#2}
     \foreach \x in {#4}
       \filldraw [#3] (\x, #2) circle (2pt);
-}
-
-\newcommand{\rcomfpunti}[7]{% ERA: \rcomfpoints
-  % Sintassi: \rcomfpunti{xmi}{xma}{ymi}{yma}{funzione}{colore}{lista x}
-  % punti di una funzione.
-  % esempio di chiamata:
-  %   \disegno[10]{
-  %     \rcomfpunti{-1}{+3}{-2}{+4}
-  %       {4*\x*\x*\x -10*\x*\x +6*\x}{blue!50!black}{-0.2, -0.1, ...,2}
-  %   }
-  \rcom{#1}{#2}{#3}{#4}
-  \foreach \x in {#7}
-    \filldraw [#6] (\x, #5) circle (2pt);
 }
 
 \newcommand{\boxfcomposta}{% Rappresentazione di una funzione composta
@@ -487,13 +541,25 @@
   \coordinate [label={ #3 $\testo$}] (T) at (\posizione);
 }
 
+\NewDocumentCommand \circlecp{s O{[]} m m}{
+  % Disegna una circonferenza dati il centro e un punto.
+  % La versione starred non disegna la circonferenza.
+  % Sintassi: \circlecp[parametri]{centro}{punto}
+  % Esempio: \circlecp[red, thick, fill=yellow!20]{(0,0)}{(3,4)}
+  \IfBooleanTF{#1}
+    {\path[#2] #3 let \p1 = ($ #4 - #3 $), \n1 = {veclen(\x1,\y1)} in
+       circle (\n1);}
+    {\draw[#2] #3 let \p1 = ($ #4 - #3 $), \n1 = {veclen(\x1,\y1)} in
+       circle (\n1);}
+}
+
 \def \centerarc[#1](#2)(#3:#4:#5){% Dis. arco partendo dal centro
   % Sintassi: [draw options] (center) (initial angle:final angle:radius)
   \draw[#1] ([shift=(#3:#5)]#2) arc (#3:#4:#5);
 }
 
 \def \angolodraw[#1](#2)(#3:#4:#5)#6{% Marca un angolo.
-  % Sintassi: [draw opt] (centro) (angoloini:angolofin:raggio)etichetta
+  % Sintassi: [draw opt] (vertice) (angoloini:angolofin:raggio)etichetta
   % Esempio di chiamata:
   % \disegno{
   % \draw (8, 5) -- ++(-40:30mm)
@@ -502,6 +568,29 @@
   % }
   \centerarc[#1](#2)(#3:#4:#5)
   \draw (#2) ++(#3/2+#4/2:#5*1.3) node [#1] {\(#6\)};
+}
+
+\newcommand{\angolomark}[6][]{% Marca un angolo.
+  % Sintassi: \angolomark[opt]{(vertice)}{angini}{angfin}{raggio}{etichetta}
+  % Esempio di chiamata:
+  % \disegno{
+  % \draw (8, 5) -- ++(-40:30mm)
+  %       (8, 5) -- ++(+5:30mm);
+  % \angolomark[thick, blue]{(8, 3)}{-40}{5}{8mm}{\alpha}
+  % }
+  \centerarc[#1]#2(#3:#4:#5)
+  \draw #2 ++(#3/2+#4/2:#5*1.3) node [#1] {\(#6\)};
+}
+
+\newcommand{\angolomarkr}[4][]{% Marca un angolo retto.
+  % Sintassi: [draw opt]{(vertice)}{angoloini}{lato}
+  % Esempio di chiamata:
+  % \disegno{
+  % \draw (14, 3) -- ++(-40:20mm)
+  %       (14, 3) -- ++(+50:20mm);
+  % \angolodrawr[very thick, red]{(14, 3)}{-40}{3mm}
+  % }
+  \draw[#1] #2 ++(#3:#4) -- ++({#3+90}:#4) -- ++({#3+180}:#4);
 }
 
 \newcommand{\molla}[4]{% Disegna una molla.
@@ -516,7 +605,7 @@
 }
 
 \newcommand{\ellisse}[4][]{
-  % Ellisse dati: parametri, centro, semiassi, colore
+  % Ellisse dati: parametri, centro, semiasse a, semiasse b.
   % Sintassi: \ellisse[parametri]{centro}{semiasse a}{semiasse b}
   % Esempio di chiamata:
   % \ellisse[ultra thick, Maroon!50!black]{(3, 2)}{5}{4}
@@ -534,6 +623,12 @@
   \draw [-angle 45] (block 1.east) --++ (+.5, 0) node [right] {#3};
 }
 
+\newcommand{\inssol}[4][0]{% Rappresentazione dell'Insieme Soluzione
+  % Sintassi; \inssol{grafica}{operatori}{parentesi}
+  Insieme Soluzione:\\
+  \hspace*{#1mm}{\small
+  \raisebox{-2mm}{\scalebox{.8}{#2}}; \quad #3; \quad #4}
+}
 \newcommand{\cerchietto}[2]{% Cerchietto
   % Sintassi: \cerchietto{posx}{posy}
   % Esempio di chiamata:
@@ -583,20 +678,103 @@
   \disegno{\rettcre[#1]{#2}}
 }
 
+\newcommand{\parabolaudz}[6][x]{% % Parabola a<>0 e Delta>0
+  % Sintassi:
+  % \parabolaudz{equazione par.}{colore1}{colore2}{label1}{label2}
+  % Esempio:
+  % \parabolaudz{+.28*x*x-.6}{blue}{red}{-5}{+7}
+  \def \para{#2}
+  \asseo{-3}{+3}{0}{#1}
+  \tkzInit[xmin=-4,xmax=+4,ymin=-.8,ymax=+1.0]
+  \tkzFct[domain=-3:-1.414, ultra thick, #3!50!black]{\para}
+  \tkzFct[domain=-1.414:+1.414, ultra thick, #4!50!black]{\para}
+  \tkzFct[domain=+1.414:+3, ultra thick, #3!50!black]{\para}
+    \draw [black] (-1.414, -.3) -- (-1.414, +.8) node [above] {$#5$}
+                  (+1.414, -.3) -- (+1.414, +.8) node [above] {$#6$};
+    \foreach \x in {-1.414, +1.414} {
+      \draw[fill=orange] (\x,0) circle (1.5pt);}
+}
+
+\newcommand{\parabolaudzc}[4][x]{% % Parabola a<>0 e Delta=0
+  % Sintassi:
+  % \parabolaudz{equazione par.}{colore1}{label1}
+  % Esempio:
+  % \parabolaudzc{+.15*x*x}{blue}{#2}
+  \def \para{#2}
+  \asseo{-3}{+3}{0}{#1}
+  \tkzInit[xmin=-4,xmax=+4,ymin=-.8,ymax=+1.0]
+  \tkzFct[domain=-3:+3, ultra thick, #3!50!black]{\para}
+    \draw [black] (0, -.3) -- (0, +.8) node [above] {$#4$};
+      \draw[fill=orange] (0,0) circle (1.5pt);
+}
+
+\newcommand{\parabolaudi}[3][x]{% % Parabola a<>0 e Delta<0
+  % Sintassi:
+  % \parabolaudz{equazione par.}{colore1}
+  % Esempio:
+  % \parabolaudi{+.15*x*x+.4}{blue}
+  \def \para{#2}
+  \asseo{-3}{+3}{0}{#1}
+  \tkzInit[xmin=-4,xmax=+4,ymin=-1.0,ymax=+1.3]
+  \tkzFct[domain=-3:+3, ultra thick, #3!50!black]{\para}
+}
+
+\newcommand{\parabolauz}[3][x]{% % Parabola a>0 e Delta>0
+  \parabolaudz{+.28*x*x-.6}{blue}{red}{#2}{#3}
+}
+
+\newcommand{\paraboladz}[3][x]{% % Parabola a<0 e Delta>0
+  \parabolaudz{-.28*x*x+.6}{red}{blue}{#2}{#3}
+}
+
+\newcommand{\parabolauzc}[2][x]{% % Parabola a>0 e Delta=0
+  \parabolaudzc{+.15*x*x}{blue}{#2}
+}
+
+\newcommand{\paraboladzc}[2][x]{% % Parabola a<0 e Delta=0
+  \parabolaudzc{-.15*x*x}{red}{#2}
+}
+
+\newcommand{\parabolaui}[1][x]{% % Parabola a>0 e Delta<0
+  \parabolaudi{+.15*x*x+.4}{blue}
+}
+
+\newcommand{\paraboladi}[1][x]{% % Parabola a<0 e Delta<0
+  \parabolaudi{-.15*x*x-.2}{red}
+}
+
+\NewDocumentCommand \tresegni{m s m s m}{
+  % Segno di un polinomio di primo grado.
+  % Se c'è l'asterisco lo zero viene reso con una crocetta.
+  % Sintassi: \tresegni[*]{primosegno}{secondosegno}
+  % Esempio di chiamata:
+  % \disegno{\tresegni*{-}{+}
+  % \disegno{\tresegni{-}{+}
+  % \disegno{\tresegni{-}*{+}
+  \draw [black]
+    (-2.5, .3) node{$#1$} (0, .3) node{$#3$} (+2.5, .3) node{$#5$};
+  {\IfBooleanTF{#2}
+      {\crocetta{-1.4}{.4}}
+      {\cerchietto{-1.4}{.4}}}
+  {\IfBooleanTF{#4}
+      {\crocetta{+1.4}{.4}}
+      {\cerchietto{+1.4}{.4}}}
+}
+
   % \newcommand{\segni}[3]{% Segni della retta
   %   \node at (-2, .4) {$#1$};
   %   %   \draw (0, .4) circle (3pt);
   %   #2{0}{.4}
   %   \node  at (+2, .4) {$#3$};
   % }
-\NewDocumentCommand \segni{s m s m}{
+\NewDocumentCommand \duesegni{s m s m}{
   % Segno di un polinomio di primo grado.
   % Se c'è l'asterisco lo zero viene reso con una crocetta.
   % Sintassi: \segni[*]{primosegno}{secondosegno}
   % Esempio di chiamata:
-  % \disegno{\segni*{-}{+}
-  % \disegno{\segni{-}{+}
-  % \disegno{\segni{-}*{+}
+  % \disegno{\duesegni*{-}{+}
+  % \disegno{\duesegni{-}{+}
+  % \disegno{\duesegni{-}*{+}
   \node at (-2, .4) {$#2$};
   \IfBooleanF{#3}
     {\IfBooleanTF{#1}
@@ -609,8 +787,8 @@
   \disegno{
     \rettdec[#2]{#3}
     \IfBooleanTF{#1}
-      {\segni*{+}{-}}
-      {\segni{+}{-}}
+      {\duesegni*{+}{-}}
+      {\duesegni{+}{-}}
   }
 }
 
@@ -618,22 +796,106 @@
   \disegno{
     \rettcre[#2]{#3}
     \IfBooleanTF{#1}
-      {\segni*{-}{+}}
-      {\segni{-}{+}}
+      {\duesegni*{-}{+}}
+      {\duesegni{-}{+}}
   }
 }
 
 \newcommand{\segnipos}[1][x]{% segni retta positiva
   \disegno[5]{
     \rettpos[#1]
-    \segni{+}*{+}
+    \duesegni{+}*{+}
   }
 }
 
 \newcommand{\segnineg}[1][x]{% segni retta negativa
   \disegno[5]{
     \rettneg[#1]
-    \segni{-}*{-}
+    \duesegni{-}*{-}
+  }
+}
+
+\NewDocumentCommand{\segniparauz}{O{x} s m s m}{%
+  % Parabola con a>0 e Delta>0 e i segni corrispondenti.
+  % Esempi di chiamata:
+  % \segniparauz{-1}{+3}
+  % \segniparauz{-1}{+3}
+  % \segniparauz[k]*{-1}*{+3}
+  \disegno{
+    \parabolauz[#1]{#3}{#5}
+  {\IfBooleanTF{#2}
+      {{\IfBooleanTF{#4}
+        {\tresegni{+}*{-}*{+}}
+        {\tresegni{+}*{-}{+}}}}
+      {{\IfBooleanTF{#4}
+        {\tresegni{+}{-}*{+}}
+        {\tresegni{+}{-}{+}}}}}
+  }
+}
+
+\NewDocumentCommand{\segniparadz}{O{x} s m s m}{%
+  % Parabola con a<0 e Delta>0 e i segni corrispondenti.
+  % Esempi di chiamata:
+  % \segniparadz{-1}{+3}
+  % \segniparadz{-1}{+3}
+  % \segniparadz[k]*{-1}*{+3}
+  \disegno{
+    \paraboladz[#1]{#3}{#5}
+    {\IfBooleanTF{#2}
+      {{\IfBooleanTF{#4}
+        {\tresegni{-}*{+}*{-}}
+        {\tresegni{-}*{+}{-}}}}
+      {{\IfBooleanTF{#4}
+        {\tresegni{-}{+}*{-}}
+        {\tresegni{-}{+}{-}}}}}
+  }
+}
+
+\NewDocumentCommand{\segniparauzc}{O{x} s m}{%
+  % Parabola con a>0 e Delta=0 e i segni corrispondenti.
+  % Esempi di chiamata:
+  %
+  \disegno{
+    \parabolauzc[#1]{#3}
+  {\IfBooleanTF{#2}
+    {\duesegni{+}*{+}}
+    {\duesegni{+}{+}}}
+  }
+}
+
+\NewDocumentCommand{\segniparadzc}{O{x} s m}{%
+  % Parabola con a<0 e Delta=0 e i segni corrispondenti.
+  % Esempi di chiamata:
+  %
+  \disegno{
+    \paraboladzc[#1]{#3}
+  {\IfBooleanTF{#2}
+    {\duesegni{-}*{-}}
+    {\duesegni{-}{-}}}
+  }
+}
+
+\NewDocumentCommand{\segniparaui}{O{x}}{%
+  % Parabola con a>0 e Delta<0 e i segni corrispondenti.
+  % Esempi di chiamata:
+  %
+  \disegno{
+    \parabolaui[#1]
+  \draw [black]
+    (-3, .3) node{$+$} (-1, .3) node{$+$}
+    (+1, .3) node{$+$} (+3, .3) node{$+$};
+  }
+}
+
+\NewDocumentCommand{\segniparadi}{O{x}}{%
+  % Parabola con a<0 e Delta<0 e i segni corrispondenti.
+  % Esempi di chiamata:
+  %
+  \disegno{
+    \paraboladi[#1]
+  \draw [black]
+    (-3, .3) node{$-$} (-1, .3) node{$-$}
+    (+1, .3) node{$-$} (+3, .3) node{$-$};
   }
 }
 
@@ -933,6 +1195,72 @@
   }
 }
 
+\NewDocumentCommand \trespolosegnidis{s m m m m}{
+  % Grafo intervalli con enne assi e enne segnaposti.
+  % Sintassi:
+  % \trespolo{larghezza}{altezza}
+  %          {lista: posizione verticale/etichetta}
+  %          {lista: posizione orizzontale/etichetta}
+  % Esempi di chiamata:
+  % Trespolo per gli intervalli:
+  % \disegno{
+  % \trespolo{6}{-3}
+  %          {-1/D_1, -2/D_2, -3/D_3}
+  %          {1.5/-1, 3/\frac{1}{8}, 4.5/\frac{2}{7}}
+  % }
+  % Trespolo per i segni (starred):
+  % \disegno{
+  % \trespolo*{6}{-3}
+  %           {-1/D_1, -2/D_2, -3/D_3}
+  %           {1.5/-1, 3/\frac{1}{8}, 4.5/\frac{2}{7}}
+  % }
+  \foreach [count=\i] \l in {#4} { % Numero di assi
+    \global\let\trespolonumassi=\i}
+  \foreach [count=\i] \l in {#5} { % Numero di punti
+    \global\let\trespolonumpunti=\i}
+  \pgfmathsetmacro{\step}{#2/(\trespolonumpunti+1)} % Distanza tra i punti
+
+  \foreach \li [count = \i] in {#4}{
+    \assex[black]{0}{#2}{-\i*#3}
+    \IfBooleanTF{#1}{
+      \node at (0, -\i*#3) [above left] {$\li$};
+    }{
+      \node at (0, -\i*#3) [left=.2] {$\li$};
+    }
+  }
+  \foreach \li [count = \i] in {#5}{
+    \draw (\i*\step, -\trespolonumassi * #3) -- (\i*\step, 0)
+          node [above] {$\li$};
+  }
+}
+
+\newcommand{\cerchietti}[4]{% Disegna i cerchietti nel trespolosegnidis
+  % Sintassi:
+  % \cerchietti{dimx}{npunti}{listapunti}
+  % \cerchietti{10}{3}{1/1, 3/1, 2/2, 1/3, 2/3, 3/3}
+  \pgfmathparse{#1/(#3+1)} \let\step\pgfmathresult
+  \foreach \x/\y in {#4} {\cerchietto{\x*\step}{-\y*#2+.4}}
+}
+
+\newcommand{\crocette}[4]{% Disegna le crocette nel trespolosegnidis
+  % Sintassi:
+  % \crocette{dimx}{npunti}{listapunti}
+  % \crocette{10}{3}{1/1, 3/1, 2/2, 1/3, 2/3, 3/3}
+  \pgfmathparse{#1/(#3+1)} \let\step\pgfmathresult
+  \foreach \x/\y in {#4} {\crocetta{\x*\step}{-\y*#2+.4}}
+}
+
+\newcommand{\segnitrespolo}[4]{% Disegna i segni nel trespolosegnidis
+  % Sintassi:
+  % \segnitrespolo{dimx}{dimy}{npunti}{listapunti}
+  % \segnitrespolo{10}{1.2}{3}{1/1, 3/1, 2/2, 1/3, 2/3, 3/3}
+  \pgfmathparse{#1/(#3+1)} \let\step\pgfmathresult
+  \pgfmathparse{\step / 2} \let\base\pgfmathresult
+  \foreach[count=\y] \riga in {#4}
+    \foreach[count=\x] \s in \riga
+      {\node at (\x*\step -\base, -\y*#2+.4) {\(\s\)};}
+}
+
 \newcommand{\ruffini}[4]{% Divisione con il trespolo di Ruffini
   % Sintassi: \ruffini{rigaa}{rigab}{rigac}{ncolonneF}
   % Esempio di chiamata:
@@ -955,7 +1283,7 @@
   % \disegno{\rettangolo[puntobase]{base}{altezza}{colore}{riempimento}
   % \disegno{\rettangolo{5}{3}{blue!50!black}{blue!5}}
   % \disegno{\rettangolo[(4, 2)]{5}{3}{blue!50!black}{blue!5}}
-  \draw [color=#4, fill=#5]
+  \draw [#4, fill=#5]
     #1 node [below left=-.2] {$A$} -- ++
     (#2, 0) node [below right=-.2] {$B$} -- ++
     (0, #3) node [above right=-.2] {$C$} -- ++

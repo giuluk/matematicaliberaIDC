@@ -6,6 +6,17 @@
 
 \chapter{Divisibilità e scomposizione di polinomi}
 
+\inicapitolo{
+\begin{itemize}[left=0mm, nosep]
+\item cosa vuol dire dividere due polinomi;
+\item la divisione secondo Euclide;
+\item la divisione secondo Ruffini;
+\item come scomporre un polinomio in un prodotto di termini di
+grado inferiore e irriducibili;
+\item conoscere i prodotti notevoli rende i polinomi più comprensibili.
+\end{itemize}
+}
+
 \section{Divisione tra polinomi}
 
 \subsection{Algoritmo di Euclide}\ind{algoritmo di Euclide}
@@ -18,26 +29,27 @@ Si tratta di trovare un quoziente~\(q\) e un resto~\(r<4\),
 in modo che~\(147=q\times~4+r\). 
 Un algoritmo per trovare questi due numeri è quello illustrato a lato.
 
-Verifichiamo che~\(147=36\times~4+3\), dunque~\(q=36\) e~\(r=3\) soddisfano 
-la nostra richiesta.
+Verifichiamo che~\(147=36\times~4+3\), dunque~\(q=36\) e~\(r=3\) 
+soddisfano la nostra richiesta.
 }{
 \immagine{Algoritmo di Euclide applicato alla divisione tra 147  e 4.}
 {\divisionenumerica}
 }
 
-In questo paragrafo ci proponiamo di estendere questo algoritmo dal calcolo 
-numerico al calcolo letterale, in particolare alla divisione tra polinomi.
+In questo paragrafo ci proponiamo di estendere questo algoritmo dal 
+calcolo numerico al calcolo letterale, in particolare alla divisione 
+tra polinomi.
 
-Nell'insieme dei polinomi in una sola variabile, ad esempio~\(x\), vogliamo 
-definire l'operazione di divisione, cioè, assegnati due polinomi, 
-\(A(x)\) \emph{dividendo} e~\(B(x)\) \emph{divisore}, vogliamo determinare 
-altri due polinomi, \(Q(x)\) \emph{quoziente} e~\(R(x)\) \emph{resto},
-con grado di~\(R(x)\) minore del grado di~\(B(x)\), per i 
-quali:~\(A(x) = B(x){\cdot}Q(x) + R(x)\).
+Nell'insieme dei polinomi in una sola variabile, ad esempio~\(x\), 
+vogliamo definire l'operazione di divisione, cioè, assegnati due 
+polinomi, \(A(x)\) \emph{dividendo} e~\(B(x)\) \emph{divisore}, 
+vogliamo determinare altri due polinomi, \(Q(x)\) \emph{quoziente} e 
+\(R(x)\) \emph{resto}, con grado di~\(R(x)\) minore del grado di 
+\(B(x)\), per i quali:~\(A(x) = B(x){\cdot}Q(x) + R(x)\).
 
 Per eseguire la \indtc{polinomio/polinomi}{divisione tra polinomi} 
-si usa un algoritmo molto simile a quello usato per la divisione tra numeri 
-interi. 
+si usa un algoritmo molto simile a quello usato per la divisione tra 
+numeri interi. 
 Illustriamo l'algoritmo con un esempio.
 
 \begin{esempio}{}{}
@@ -67,7 +79,7 @@ Ordina e completa gli operandi.
 \end{enumerate}
 \end{esempio}
 
-\pagebreak %-----------------------------------------
+% \pagebreak %-----------------------------------------
 
 \def \primo{.44}
 \def \secondo{.54}
@@ -93,15 +105,16 @@ quello usato per la divisione tra numeri.
 Calcola il primo monomio del quoziente.
 
 \affiancati{\primo}{\secondo}{
-Dividiamo il primo termine del dividendo per il primo termine del divisore, 
-otteniamo~\(x^2\) che è il primo termine del quoziente;
+Dividiamo il primo termine del dividendo per il primo termine del 
+divisore, otteniamo~\(x^2\) che è il primo termine del quoziente;
 esso va riportato nello spazio dedicato al quoziente.
 }{
 \immagine[.8]{}{\divpolb}
 }
 \end{esempio}
 
-\paragraph{Passo 4: } prodotto del divisore per il termine appena calcolato
+\paragraph{Passo 4: } prodotto del divisore per il termine appena 
+calcolato
 
 \begin{esempio}{}{}
 Calcola il prodotto tra l'ultimo termine calcolato e il divisore.
@@ -121,15 +134,16 @@ segno a ogni addendo.
 Calcola il primo resto.
 
 \affiancati{\primo}{\secondo}{
-Sommiamo il dividendo con il polinomio sottostante e riportiamo il risultato 
-in un'altra riga. 
-Notiamo che ha grado~\(3\), maggiore del grado~\(2\) del divisore, pertanto 
-la  divisione va continuata.
+Sommiamo il dividendo con il polinomio sottostante e riportiamo il 
+risultato in un'altra riga. 
+Notiamo che ha grado~\(3\), maggiore del grado~\(2\) del divisore, 
+pertanto la  divisione va continuata.
 }{
 \immagine[.8]{}{\divpold}
 }
 \end{esempio}
 
+\needspace{5\baselineskip}
 \paragraph{Passo 6: } procedi in modo ricorsivo
 
 \begin{esempio}{}{}
@@ -165,8 +179,8 @@ resto è~ \(R(x)=+{\dfrac{11}{3}}x-\dfrac{2}{3}\).
 
 \begin{esempio}{}{}
 
-Verifichiamo se abbiamo svolto correttamente i calcoli; dovrebbe risultare, 
-come detto sopra: \(Q(x)\cdot B(x)+R(x) = A(x)\).
+Verifichiamo se abbiamo svolto correttamente i calcoli; dovrebbe 
+risultare, come detto sopra: \(Q(x)\cdot B(x)+R(x) = A(x)\).
 
 \vspace{-1.5em}
 \begin{equation*}
@@ -202,8 +216,8 @@ euclidea non vale.
 
 \begin{definizione}{}{}
 Si dice che un polinomio~\(A\) (dividendo) è
-\indc{polinomio/polinomi}{polinomio divisibile} \textbf{divisibile} per un
-polinomio~\(B\)  (divisore) se il resto della divisione è \(0\), cioè
+\indc{polinomio/polinomi}{polinomio divisibile} \textbf{divisibile} per 
+un polinomio~\(B\)  (divisore) se il resto della divisione è \(0\), cioè
 se esiste un polinomio~\(Q\) (quoziente) per il quale~\(A = Q \cdot B\).
 \end{definizione}
 
@@ -244,8 +258,8 @@ Si può dimostrare che i polinomi~\(Q(x)\) e~\(R(x)\) sono unici.
 % di grado~\(n-m\) e un polinomio~\(R(x)\) di grado~\(g<m\).
 % Si dimostra che i polinomi~\(Q(x)\) e~\(R(x)\) sono unici.
 
-Se~\(R(x)\) è il polinomio nullo, la divisione è esatta e il polinomio~\(A\) 
-è divisibile per il polinomio~\(B\).
+Se~\(R(x)\) è il polinomio nullo, la divisione è esatta e il polinomio 
+\(A\) è divisibile per il polinomio~\(B\).
 
 % \section{Polinomi in più variabili}
 % Per la divisione tra polinomi in più variabili riportiamo soltanto qualche 
@@ -315,10 +329,10 @@ Questa regola deriva dall'algoritmo di Euclide ma lo rende più semplice.
 %  \end{enumeratea}
 % \end{procedura}
 
-Partiamo da un esempio e eseguiamo innanzitutto la divisione con l'algoritmo 
-di Euclide:
+Partiamo da un esempio e eseguiamo innanzitutto la divisione con 
+l'algoritmo di Euclide:
 
-% ( 3 x^4 +8 x^3 +9 x^2 +4 x -5 ) : ( x +2 ) = 3 x^3 +2 x^2 +5 x -6, R= 7 %
+% (3 x^4 +8 x^3 +9 x^2 +4 x -5) : (x +2) = 3 x^3 +2 x^2 +5 x -6, R= 7 %
 
 \[\tonda{3 x^4 +8 x^3 +9 x^2 +4 x -5} : (x + 2)\]
 
@@ -342,7 +356,8 @@ risultati.
 Tutti gli altri valori sono inutili o ripetuti. 
 }
 La regola di Ruffini permette di scrivere solo i dati necessari,
-ma come si possono ottenere tutti i coefficienti senza l'algoritmo di Euclide?
+ma come si possono ottenere tutti i coefficienti senza l'algoritmo di 
+Euclide?
 Lo vediamo in questo esempio:
 
 \affiancati{.50}{.50}{
@@ -362,8 +377,8 @@ Come è riassunto nel diagramma a fianco dove le frecce
 verdi tratteggiate indicano \emph{addizioni} e quelle 
 rosse punteggiate indicano \emph{moltiplicazione}.
 }{
-\immagine[.8]{Divisione con il metodo di Ruffini con evidenziati i valori 
-riportati dall'algoritmo di Euclide.}
+\immagine[.8]{Divisione con il metodo di Ruffini con evidenziati i 
+valori riportati dall'algoritmo di Euclide.}
 {\ruffinic}
 \immagine[.8]{Divisione con il metodo di Ruffini con frecce che 
 indicano il procedimento.}
@@ -416,7 +431,8 @@ Eseguire la seguente divisione: \\
 \(\tonda{-5x^4 +50x^3 -7x +77  } : \tonda{x -10}\)
 % \(\tonda{-3a+a^{3}+1}:(a-3)\)
 
-Il divisore è del tipo \((x + x_0)\) quindi posso usare la regola di Ruffini.
+Il divisore è del tipo \((x + x_0)\) quindi posso usare la regola di 
+Ruffini.
 Prima di tutto mettiamo in ordine il dividendo completandolo:
 
 \(\tonda{-5x^4 +50x^3 +0x^2 -7x +77  } : \tonda{x -10}\)
@@ -424,8 +440,8 @@ Prima di tutto mettiamo in ordine il dividendo completandolo:
 
 \affiancati{.54}{.44}{
 Poi inseriamo i dati nello schema di Ruffini ed eseguiamo addizioni e 
-moltiplicazioni. Dobbiamo ricordarci di cambiare segno al termine noto del 
-divisore.
+moltiplicazioni. Dobbiamo ricordarci di cambiare segno al termine noto 
+del divisore.
 
 Infine scriviamo il risultato: \\
 \(Q = -5 x^3 -7 ; \quad R = +7\)
@@ -442,18 +458,20 @@ Infine scriviamo il risultato: \\
 \begin{teorema}{del resto}{}
 Il resto della divisione di un polinomio~\(A(x)\) per un
 binomio del tipo~\(x+k\) è uguale al valore che~\(A(x)\) assume quando
-al posto della variabile~\(x\) si sostituisce il valore~\(-k\), \(R=A(-k)\).
+al posto della variabile~\(x\) si sostituisce il valore~\(-k\), 
+\(R=A(-k)\).
 \end{teorema}
 
 \begin{proof}{}{}
 Dalla divisione di~\(A(x)\) per~\(x+k\) otteniamo la seguente
 uguaglianza:
 \[(x+k)\cdot Q(x)+R=A(x)\]
-in cui si è scritto~\(R\) anziché \(R(x)\), poiché essendo il divisore di 
-primo grado, il resto è di grado zero quindi è una costante.
+in cui si è scritto~\(R\) anziché \(R(x)\), poiché essendo il divisore 
+di primo grado, il resto è di grado zero quindi è una costante.
 
 Essendo tale relazione valida per qualsiasi valore che si attribuisce
-alla variabile~\(x\), sostituiamo al suo posto il valore~\(-k\) e otteniamo:
+alla variabile~\(x\), sostituiamo al suo posto il valore~\(-k\) e 
+otteniamo:
 \[(-k+k) \cdot Q(k)+R=A(-k)\]
 Ma: \((-k+k)=0\) quindi l'espressione precedente diventa:\\[.5em]
 \phantom{.}\hfill 
@@ -475,8 +493,8 @@ che risulti: \\
 \emph{Prima implicazione}: \quad se \(A(x)\) è divisibile 
 per~\(x+k\) \quad allora \quad \(A(-k)=0\).
 
-Poiché \(A(x)\) è divisibile per~\(x+k\), per definizione di divisibilità 
-deve essere \(R=0\). 
+Poiché \(A(x)\) è divisibile per~\(x+k\), per definizione di 
+divisibilità deve essere \(R=0\). 
 Ma, per il teorema del resto, \(A(-k)=R=0\), 
 quindi, per la proprietà transitiva dell'uguaglianza, \(A(-k)=0\).
 
@@ -502,23 +520,14 @@ moltiplicati tra loro diano come risultato il polinomio stesso.
 Si può paragonare la \indtc{polinomio/polinomi}{scomposizione in fattori}
 di un polinomio alla scomposizione in fattori dei numeri naturali.
 
-\begin{minipage}{.4\textwidth}
-\begin{inaccessibleblock}[Grafo ad albero della scomposizione del numero 42]
-\begin{center}
-% \input{\folder lbr/fig050_scmp.pgf}
+\affiancati{.39}{.59}{
+\immagine{Grafo ad albero della scomposizione del numero 42}
 \scompfattnum
-\end{center}
-\end{inaccessibleblock}
-\end{minipage}
-\begin{minipage}{.6\textwidth}
-\begin{inaccessibleblock}[Grafo ad albero della scomposizione del 
-polinomio:~\(3a^{3}b^{2}-3ab^{4}\)]
-\begin{center}
-% \input{\folder lbr/fig051_scmp.pgf}
+}{
+\immagine{Grafo ad albero della scomposizione del 
+polinomio:~\(3a^{3}b^{2}-3ab^{4}\)}
 \scompfattpol
-\end{center}
-\end{inaccessibleblock}
-\end{minipage}
+}
 
 Per esempio, scomporre il numero~\(42\) significa scriverlo 
 come~\(2\cdot 3 \cdot 7\) dove~\(2\),~\(3\) e~\(7\) sono i suoi fattori 
@@ -535,10 +544,10 @@ fattori di \(3a^{3}b^{2}-3ab^{4}\) eseguendo le moltiplicazioni:
 \[3ab^{2}(a-b)(a+b)=3ab^{2}(a^{2}+ab-ba-b^{2})=
   3ab^{2}\tonda{a^{2}-b^{2}}=3a^{3}b^{2}-3ab^{4}\]
 
-La scomposizione termina quando non è possibile scomporre ulteriormente i 
-fattori individuati.
-Come per i numeri, la scomposizione in fattori dei polinomi identifica il 
-polinomio in maniera univoca (a meno di multipli).
+La scomposizione termina quando non è possibile scomporre ulteriormente 
+i fattori individuati.
+Come per i numeri, la scomposizione in fattori dei polinomi identifica 
+il polinomio in maniera univoca (a meno di multipli).
 
 \begin{definizione}{}{}
 Un polinomio si dice \textbf{riducibile} (scomponibile) se può essere
@@ -551,12 +560,14 @@ La caratteristica di un polinomio di essere irriducibile dipende
 dall'insieme 
 numerico al quale appartengono i coefficienti del polinomio;
 uno stesso polinomio può essere irriducibile nell'insieme dei numeri 
-razionali, ma riducibile in quello dei numeri reali o ancora in quello dei 
-complessi.
-Dalla definizione consegue che un polinomio di primo grado è irriducibile.
+razionali, ma riducibile in quello dei numeri reali o ancora in quello 
+dei complessi.
+Dalla definizione consegue che un polinomio di primo grado è 
+irriducibile.
 
 \begin{definizione}{}{}
-La scomposizione in fattori di un polinomio è la sua \textbf{scrittura come prodotto} di fattori irriducibili.
+La scomposizione in fattori di un polinomio è la sua \textbf{scrittura 
+come prodotto} di fattori irriducibili.
 \end{definizione}
 
 Di seguito vedremo alcuni metodi per scomporre in fattori i polinomi.
@@ -569,8 +580,8 @@ Di seguito vedremo alcuni metodi per scomporre in fattori i polinomi.
 \subsubsection{Raccoglimento totale}
 \indc{scomposizione}{raccoglimento totale a fattore comune}
 
-Questo è il primo metodo che si deve cercare di utilizzare per scomporre un 
-polinomio.
+Questo è il primo metodo che si deve cercare di utilizzare per scomporre 
+un polinomio.
 Il metodo si basa sulla proprietà distributiva della moltiplicazione 
 rispetto all'addizione.
 Prendiamo in considerazione il seguente prodotto:~\(a(x+y+z)=ax+ay+az\).
@@ -587,12 +598,13 @@ o mettere ``in evidenza''. Perciò scriviamo:
 \begin{procedura}{}{}
 Mettere in evidenza il fattore comune:
 \begin{enumeratea}
-\item trovare il~\(\mcd\) di tutti i termini che formano il polinomio: tutti 
-i fattori in comune con l'esponente minimo con cui compaiono;
+\item trovare il~\(\mcd\) di tutti i termini che formano il polinomio: 
+tutti i fattori in comune con l'esponente minimo con cui compaiono;
 \item scrivere il polinomio come prodotto del~\(\mcd\) per il polinomio 
-ottenuto dividendo ciascun monomio del polinomio di partenza per il~\(\mcd\)
-\item verificare la scomposizione eseguendo la moltiplicazione per vedere se 
- il prodotto dà come risultato il polinomio di partenza.
+ottenuto dividendo ciascun monomio del polinomio di partenza per il 
+\(\mcd\); 
+\item verificare la scomposizione eseguendo la moltiplicazione per 
+vedere se il prodotto dà come risultato il polinomio di partenza.
 \end{enumeratea}
 \end{procedura}
 
@@ -617,8 +629,8 @@ minore:~\(\mcd=3a^2b\)
 Scomporre in fattori~\(5a^{2}x^2-10ax^{5}\).
 \begin{enumerate} [left=0mm, noitemsep]
 \item tra i coefficienti numerici il fattore comune è~\(5\), 
-tra le parti letterali sono in comune le lettere~\(a\) con esponente \(1\) 
-e~\(x\) con esponente~\(2\):~\(\mcd=5ax^2\)
+tra le parti letterali sono in comune le lettere~\(a\) con esponente 
+\(1\) e \(x\) con esponente~\(2\): \quad \(\mcd=5ax^2\)
 \item divido ciascun termine del polinomio per~\(5ax^2\):
 
 \vspace{-1.2em}
@@ -721,33 +733,34 @@ Proviamo a mettere in evidenza per gruppi di termini: tra i primi tre
 raccogliamo \(a\) e tra gli altri tre raccogliamo \(b\) ottenendo:
 \(a(x+y+z)+b(x+y+z)\). 
 
-Ora risulta semplice vedere che il trinomio~\((x+y+z)\) è in comune e quindi 
-lo possiamo mettere in evidenza. Riassumendo avremo:
+Ora risulta semplice vedere che il trinomio~\((x+y+z)\) è in comune e 
+quindi lo possiamo mettere in evidenza. Riassumendo avremo:
 \[ax+ay+az+bx+by+bz=a(x+y+z)+b(x+y+z)=(x+y+z)(a+b)\]
 \end{esempio}
 
 \begin{procedura}{}{}
 Eseguire il \indtc{scomposizione}{raccoglimento parziale}.
 \begin{enumeratea}
-\item Dopo aver verificato che non è possibile effettuare un raccoglimento a 
-fattore comune totale, raggruppo i monomi in modo che in ogni gruppo sia 
-possibile mettere in comune qualche fattore;
+\item Dopo aver verificato che non è possibile effettuare un 
+raccoglimento a fattore comune totale, raggruppo i monomi in modo che 
+in ogni gruppo sia possibile mettere in comune qualche fattore;
 \item verifico se la nuova scrittura del polinomio ha un polinomio 
 (binomio, trinomio\ldots) comune a tutti i termini;
-\item se è presente il fattore comune a tutti i termini lo metto in evidenza;
-\item se il fattore comune non è presente la scomposizione è fallita, allora 
-posso provare a raggruppare diversamente i monomi o abbandonare questo 
-metodo.
+\item se è presente il fattore comune a tutti i termini lo metto in 
+evidenza;
+\item se il fattore comune non è presente la scomposizione è fallita, 
+allora posso provare a raggruppare diversamente i monomi o abbandonare 
+questo metodo.
 \end{enumeratea}
 \end{procedura}
 
 \begin{esempio}{}{}
 Scomporre in fattori~\(ax+ay+bx+ab\).
 \begin{enumerate} [left=0mm, noitemsep]
-\item Provo a mettere in evidenza la~\(a\) nel primo e secondo termine e 
-la~\(b\) nel terzo e quarto termine:~\(ax+ay+bx+ab=a(x+y)+b(x+a)\)
-\item non c'è nessun fattore comune: il metodo è fallito, il polinomio non 
-si può scomporre.
+\item Provo a mettere in evidenza la~\(a\) nel primo e secondo termine 
+e la~\(b\) nel terzo e quarto termine:~\(ax+ay+bx+ab=a(x+y)+b(x+a)\)
+\item non c'è nessun fattore comune: il metodo è fallito, il polinomio 
+non si può scomporre.
 \end{enumerate}
 \end{esempio}
 
@@ -756,9 +769,9 @@ si può scomporre.
 \begin{esempio}{}{}
 Scomporre in fattori~\(bx-2ab+2ax-4a^{2}\).
 \begin{enumerate} [left=0mm, noitemsep]
-\item Non vi sono fattori da mettere a fattore comune totale, proviamo con 
-il raccoglimento parziale:~\(b\) nei primi due monomi e~\(2a\) negli altri 
-due;
+\item Non vi sono fattori da mettere a fattore comune totale, proviamo 
+con il raccoglimento parziale:~\(b\) nei primi due monomi e~\(2a\) 
+negli altri due;
 \item \(\uline{bx} -\uline{2ab}+\uuline{2ax}-
   \uuline{4a^{2}}=
   b(\uline{x-2a})+2a(\uline{x-2a})=(x-2a)(b+2a)\).
@@ -807,17 +820,17 @@ raccoglimento parziale: \(5a(\uline{b^{2}}-\uline{2bc}
 \subsection{Riconoscimento di prodotti notevoli}
 \label{subsec:divpol_prodnot}
 
-Un importante strumento per la scomposizione di polinomi è legato al saper 
-\indtc{scomposizione}{riconoscere i prodotti notevoli}.
-Ogni prodotto notevole mette a disposizione un metodo per scomporre in 
-fattori i polinomi.
+Un importante strumento per la scomposizione di polinomi è legato al 
+saper \indtc{scomposizione}{riconoscere i prodotti notevoli}.
+Ogni prodotto notevole mette a disposizione un metodo per scomporre 
+in fattori i polinomi.
 
 \subsubsection{Differenza di due quadrati}
 \label{subsubsec:divpol_difquad}
 
 Un binomio che sia la differenza dei quadrati di due monomi può essere 
-scomposto come prodotto tra la somma dei due monomi (basi dei quadrati) e 
-la loro differenza.
+scomposto come prodotto tra la somma dei due monomi (basi dei quadrati) 
+e la loro differenza.
 
 \vspace{-1.0em}
 \begin{equation*}
@@ -878,8 +891,8 @@ di quadrati. Riportiamo i casi principali:
 \begin{esempio}{}{}
 Scomporre in fattori~\(4a^{2}-4b^{2}-c^{2}+4bc\).
 
-Gli ultimi tre termini possono essere raggruppati per formare il quadrato di 
-un binomio.
+Gli ultimi tre termini possono essere raggruppati per formare il 
+quadrato di un binomio.
 
 \vspace{-2.0em}
 \begin{equation*}
@@ -917,6 +930,7 @@ Scomporre in fattori~\(a^{2}+1+2a+6bc-b^{2}-9c^{2}\).
 % \ref{ese:16.37}, \ref{ese:16.38}, \ref{ese:16.39}}
 % 
 % \vspazio\ovalbox{\ref{ese:16.40}, \ref{ese:16.41}}
+
 \subsubsection{Quadrato di un binomio}
 \label{subsubsec:divpol_quadbin}
 
@@ -930,8 +944,8 @@ quadrato di un binomio, secondo il prodotto notevole:
 \vspace{-2.0em}
 \[(A-B)^{2}=A^{2}-2AB+B^{2}\quad \Rightarrow \quad 
   A^{2}-2AB+B^{2}=(A-B)^{2}\]
-Poiché il quadrato di un numero è sempre positivo, valgono anche le seguenti 
-uguaglianze.
+Poiché il quadrato di un numero è sempre positivo, valgono anche le 
+seguenti uguaglianze.
 \[(-A-B)^{2}=(A+B)^{2}\quad\Rightarrow\quad 
   A^{2}+2AB+B^{2}=(A+B)^{2}=(-A-B)^{2}\]
 
@@ -979,17 +993,18 @@ Si ha dunque:
 Individuare il quadrato di un binomio:
 \begin{enumeratea}
 \item individuare le basi dei due quadrati;
-\item verificare se il terzo termine è il doppio prodotto delle due basi;
+\item verificare se il terzo termine è il doppio prodotto delle due 
+basi;
 \item scrivere tra parentesi le basi dei due quadrati e elevare al 
 quadrato la parentesi;
-\item mettere il segno ``più'' o ``meno'' in accordo al segno del termine 
-che non è un quadrato.
+\item mettere il segno ``più'' o ``meno'' in accordo al segno del 
+termine che non è un quadrato.
 \end{enumeratea}
 \end{procedura}
 
-Può capitare che i quadrati compaiano con il coefficiente negativo, ma si 
-può rimediare mettendo in evidenza il segno ``meno'' (raccogliendo il 
-fattore \(-1\)).
+Può capitare che i quadrati compaiano con il coefficiente negativo, 
+ma si può rimediare mettendo in evidenza il segno ``meno'' 
+(raccogliendo il fattore \(-1\)).
 
 \begin{esempio}{}{}
 Scomporre in fattori~\(-9a^{2}+12{ab}-4b^{2}\).
@@ -1043,9 +1058,9 @@ seguenti regole.
 \begin{equation*}
 A^{2}+B^{2}+C^{2}+2AB+2AC+2BC=(A+B+C)^{2}=(-A-B-C)^{2}
 \end{equation*}
-Notiamo che i doppi prodotti possono essere tutt'e tre positivi, oppure uno 
-positivo e due negativi: indicano se i rispettivi monomi sono concordi o 
-discordi.
+Notiamo che i doppi prodotti possono essere tutt'e tre positivi, oppure 
+uno positivo e due negativi: indicano se i rispettivi monomi sono 
+concordi o discordi.
 
 \begin{esempio}{}{}
 Scomporre in fattori~\(16a^{4}+b^{2}+1+8a^{2}b+8a^{2}+2b\).
@@ -1069,8 +1084,8 @@ Scomporre in fattori~\(x^4+y^{2}+z^{2}-2x^2y-2x^2z+2yz\).
 \begin{esempio}{}{}
 Scomporre in fattori~\(x^4-2x^3+3x^2-2x+1\).
 
-In alcuni casi anche un polinomio di cinque termini può essere il quadrato di 
-un trinomio.
+In alcuni casi anche un polinomio di cinque termini può essere il 
+quadrato di un trinomio.
 Per far venire fuori il quadrato del trinomio si può scindere il 
 termine~\(3x^2\) come somma:
 
@@ -1095,10 +1110,11 @@ stessa:
 \subsubsection{Cubo di un binomio}
 \label{subsubsec:divpol_cubobin}
 
-I cubi di binomi sono di solito facilmente riconoscibili. Un quadrinomio è lo 
-sviluppo del cubo di un binomio se due suoi termini sono i cubi di due monomi 
-e gli altri due termini sono i tripli prodotti tra uno dei due monomi ed il 
-quadrato dell'altro, secondo le seguenti formule.
+I cubi di binomi sono di solito facilmente riconoscibili. 
+Un quadrinomio è lo sviluppo del cubo di un binomio se due suoi termini 
+sono i cubi di due monomi e gli altri due termini sono i tripli prodotti 
+tra uno dei due monomi ed il quadrato dell'altro, secondo le seguenti 
+formule.
 \[(A+B)^{3}=A^{3}+3A^{2}B+3AB^{2}+B^{3}\quad \Rightarrow \quad 
 A^{3}+3A^{2}B+3AB^{2}+B^{3}=(A+B)^{3}\]
 \[(A-B)^{3}=A^{3}-3A^{2}B+3AB^{2}-B^{3}\quad \Rightarrow \quad 
@@ -1107,22 +1123,23 @@ A^{3}-3A^{2}B+3AB^{2}-B^{3}=(A-B)^{3}\]
 -A^{3}+3A^{2}B-3AB^{2}+B^{3}=(-A+B)^{3}\]
 \[(-A-B)^{3}=-A^{3}-3A^{2}B-3AB^{2}-B^{3}\quad \Rightarrow \quad 
 -A^{3}-3A^{2}B-3AB^{2}-B^{3}=(-A-B)^{3}\]
-Per il cubo non si pone il problema, come per il quadrato, del segno della 
-base, perché un numero, elevato ad esponente dispari, se è positivo rimane 
-positivo, se è negativo rimane negativo.
+Per il cubo non si pone il problema, come per il quadrato, del segno 
+della base, perché un numero, elevato ad esponente dispari, se è 
+positivo rimane positivo, se è negativo rimane negativo.
 
 \begin{esempio}{}{}
 Scomporre in fattori~\(8a^{3}+12a^{2}b+6{ab}^{2}+b^{3}\).
 
 Notiamo che il primo ed il quarto termine sono cubi, rispettivamente 
 di~\(2a\) e di~\(b\), 
-il secondo termine è il triplo prodotto tra il quadrato di~\(2a\) e~\(b\), 
-il terzo è il triplo prodotto tra~\(2a\) e il quadrato di~\(b\).
+il secondo termine è il triplo prodotto tra il quadrato di~\(2a\) e 
+\(b\), il terzo è il triplo prodotto tra~\(2a\) e il quadrato di~\(b\).
 Abbiamo dunque:
 
 \vspace{-1.5em}
 \[8a^{3}+12a^{2}b+6ab^{2}+b^{3}=
-  (2a)^{3}+3\cdot (2a)^{2}\cdot (b)+3\cdot (2a)\cdot (b)^{2}=(2a+b)^{3}\]
+  (2a)^{3}+3\cdot (2a)^{2}\cdot (b)+3\cdot (2a)\cdot (b)^{2}=
+  (2a+b)^{3}\]
 \end{esempio}
 
 \begin{esempio}{}{}
@@ -1134,14 +1151,15 @@ Dunque:
 
 \vspace{-1.5em}
 \[-27x^3+27x^2-9x+1=
-  (-3x)^{3}+3\cdot (-3x)^{2}\cdot 1+3\cdot (-3x)\cdot 1^{2}+1=(-3x+1)^{3}\]
+  (-3x)^{3}+3\cdot (-3x)^{2}\cdot 1+3\cdot (-3x)\cdot 
+  1^{2}+1=(-3x+1)^{3}\]
 \end{esempio}
 
 \begin{esempio}{}{}
 Scomporre in fattori~\(x^6-x^4+\dfrac{1}{3}x^2-\dfrac{1}{27}\).
 
-Le basi del cubo sono~\(x^2\) e~\(-\dfrac{1}{3}\) i termini centrali sono i 
-tripli prodotti, quindi~\(\tonda{x^2-\dfrac{1}{3}}^{3}\).
+Le basi del cubo sono~\(x^2\) e~\(-\dfrac{1}{3}\) i termini centrali 
+sono i tripli prodotti, quindi~\(\tonda{x^2-\dfrac{1}{3}}^{3}\).
 \end{esempio}
 % \ovalbox{\risolvii \ref{ese:16.20}, \ref{ese:16.21}, \ref{ese:16.22}, 
 % \ref{ese:16.23}, \ref{ese:16.24},\ref{ese:16.25}, \ref{ese:16.26}, 
@@ -1156,8 +1174,8 @@ tripli prodotti, quindi~\(\tonda{x^2-\dfrac{1}{3}}^{3}\).
 \subsection{Altre tecniche di scomposizione}
 \label{subsec:divpol_altretecniche}
 
-\subsubsection{Trinomi particolari}\indc{scomposizione}{scomporre trinomi 
-particolari}
+\subsubsection{Trinomi particolari}
+\indc{scomposizione}{scomporre trinomi particolari}
 \label{subsubsec:trinpart}
 
 Consideriamo il seguente prodotto:
@@ -1173,8 +1191,8 @@ Leggendo la formula precedente da destra verso sinistra:
 =\tonda{x+A}\cdot\tonda{x+B}\]
 Possiamo allora concludere che se abbiamo un trinomio di secondo grado
 in una sola lettera, a coefficienti interi, avente il termine di
-secondo grado con coefficiente~\(1\), se riusciamo a trovare due numeri~\(A\) 
-e~\(B\) tali che la loro somma (\(S\)) sia uguale al
+secondo grado con coefficiente~\(1\), se riusciamo a trovare due 
+numeri~\(A\) e~\(B\) tali che la loro somma (\(S\)) sia uguale al
 coefficiente del termine di primo grado ed il loro prodotto (\(P\)) sia 
 uguale al termine noto, allora il polinomio è scomponibile nel 
 prodotto~\((x+A)(x+B)\).
@@ -1238,7 +1256,8 @@ Dato che \(S = +4\) il polinomio si scompone:
 Scomponi: \(x^2-\overset{S}{3}x-\overset{P}{10}\)
 
 Le coppie di numeri il cui prodotto è~\(P=-10\) sono:\\ 
-\(\{\coppia{-1}{+10};~\coppia{+1}{-10};~\coppia{-2}{+5};~\coppia{+2}{-5}\}\).
+\(\{\coppia{-1}{+10};~\coppia{+1}{-10};~\coppia{-2}{+5};~\coppia{+2}{-5}
+\}\).
 
 Dato che~\(S=-3\), la scomposizione sarà:
 
@@ -1298,8 +1317,8 @@ Non possiamo applicare la regola del trinomio caratteristico dato che
 Dobbiamo trovare due numeri \(m\) e \(n\) il cui prodotto sia: 
 \(P = a \cdot c = 2 \cdot 1 = 2\) e la somma sia: \(S = b = -3\).
 In questo esempio: \(m = -2\) e \(n = -1\).
-A questo punto spezziamo il monomio centrale nella somma di due monomi in 
-questo modo
+A questo punto spezziamo il monomio centrale nella somma di due monomi 
+in questo modo:
 
 \vspace{-1.0em}
 \[2x^2-3x+1=2x^2\underbrace{-2x-x}_{-3x}+1.\]
@@ -1338,9 +1357,9 @@ su cui poi eseguire un raccoglimento parziale.
 Anche il teorema e la regola di Ruffini aiutano a scomporre in fattori i 
 polinomi\indc{scomposizione}{scomporre con Ruffini}.
 
-Chiamiamo \emph{zeri}\indc{polinomio/polinomi}{zeri di un polinomio} di un 
-polinomio o \emph{zeri} di una funzione in 
-una variabile, i valori \(k\) che, se sostituiti alla variabile, annullano 
+Chiamiamo \emph{zeri}\indc{polinomio/polinomi}{zeri di un polinomio} di 
+un polinomio o \emph{zeri} di una funzione in una variabile, i valori 
+\(k\) che, se sostituiti alla variabile, annullano 
 il valore del polinomio o della funzione: \(P(k) = 0\).
 
 Il teorema di Ruffini dice che:
@@ -1366,9 +1385,9 @@ Per scomporre un polinomio \(P(x)\), possiamo:
 Gli \emph{zeri} di un polinomio vengono anche detti \emph{radici del 
 polinomio}.
 
-Gli zeri (o radici) di un polinomio a coefficienti interi, non vanno cercati 
-andando a casaccio, ma abbiamo degli elementi per restringere il campo di 
-ricerca: 
+Gli zeri (o radici) di un polinomio a coefficienti interi, non vanno 
+cercati andando a casaccio, ma abbiamo degli elementi per restringere 
+il campo di ricerca: 
 \emph{le radici intere del polinomio vanno cercate tra i divisori del 
 termine noto}.
 
@@ -1378,8 +1397,8 @@ Scomponi: \(p(x)=x^3+x^2-10x+8\).
 \begin{soluzione}{}{}
 Le radici intere del polinomio sono da ricercare nell'insieme dei 
 divisori di \(8\), precisamente in~\(\{\pm~1;\pm~2;\pm~4;\pm~8\}\).
-Sostituiamo uno alla volta questi numeri nel polinomio, finché non troviamo 
-quello che lo annulla.\\
+Sostituiamo uno alla volta questi numeri nel polinomio, finché non 
+troviamo quello che lo annulla.\\
 Per~\(x=-1\) si ha
 \(P(-1)=(-1)^{3}+(-1)^{2}-10\cdot (-1)+8=-1+1+10+8=18\),\\
 Per~\(x=+1\) si ha
@@ -1405,7 +1424,8 @@ Possiamo usare lo stesso metodo per fattorizzare il quoziente:
 Uno zero di questo polinomio è: \(+2\). 
 Usiamo ancora il metodo di Ruffini per dividere: 
 \(\tonda{x^2+2x-8} : \tonda{x-2}\).
-Possiamo farlo prolungando lo schema di Ruffini, come mostrato qui a fianco.
+Possiamo farlo prolungando lo schema di Ruffini, come mostrato qui a 
+fianco.
 }{
 \immagine[.8]{Divisione multipla con il metodo di Ruffini.}
 {\scompruffiniac}
@@ -1429,8 +1449,8 @@ Sostituiamo questi numeri al posto della~\(x\), finché non troviamo la
 radice\dots\\
 Per~\(x=1\) si ha: \quad \(P(1)=1-5-7+29+30\), \\
 senza effettuare il calcolo si nota 
-che i numeri positivi superano quelli negativi, quindi~1 non è una radice,
-invece, per~\(x=-1\) si ha:
+che i numeri positivi superano quelli negativi, quindi~1 non è una 
+radice, invece, per~\(x=-1\) si ha:
 
 \affiancati{.48}{.48}{
 \immagine[.8]{Divisione multipla con il metodo di Ruffini.}
@@ -1458,8 +1478,8 @@ Non sempre è possibile scomporre un polinomio utilizzando solo numeri
 interi. In alcuni casi possiamo provare con le frazioni, in particolare
 quando il coefficiente del termine di grado maggiore non è~1. In
 questi casi possiamo cercare la radice del polinomio tra le frazioni
-del tipo~\(\dfrac{p}{q}\), dove~\(p\) è un divisore del termine noto e~\(q\) 
-è un divisore del coefficiente del termine di grado maggiore.
+del tipo~\(\dfrac{p}{q}\), dove~\(p\) è un divisore del termine noto e 
+\(q\) è un divisore del coefficiente del termine di grado maggiore.
 
 \begin{esempio}{}{}
 Scomponi: \(6x^2-x-2\)
@@ -1513,7 +1533,7 @@ fattore si ottiene:
 Un binomio omogeneo è un binomio del tipo~\(x^{n} \mp a^{n}\).
 Vediamo come scomporlo a seconda del valore di \(n\).
 
-\begin{itemize}[nosep]
+\begin{itemize}[left=0mm, nosep]
 \item \(n=1\)
 \begin{itemize}[nosep]
 \item \(x+a\) è irriducibile perché di primo grado.
@@ -1641,7 +1661,8 @@ di questi suggerimenti:
 
 \begin{enumerate}
 \item analizzare se si può effettuare \emph{un raccoglimento totale};
-\item \emph{contare il numero di termini} di cui si compone il polinomio:
+\item \emph{contare il numero di termini} di cui si compone il 
+polinomio:
 \begin{enumerate}
 \item con \emph{due} termini analizzare se il binomio è
   \begin{enumerate}
@@ -1660,7 +1681,8 @@ di questi suggerimenti:
   \(A^{2}\pm~2AB+B^{2}=\tonda{A\pm B}^{2}\)
 \item un \emph{trinomio particolare} del tipo~\(x^2+Sx+P=(x+a)(x+b)\) \\
   con~\(a+b=S\) e~\(a\cdot b=P\)
-\item un \emph{falso quadrato}, che è irriducibile~\(A^{2}\pm AB+B^{2}\).
+\item un \emph{falso quadrato}, che è irriducibile 
+\(A^{2}\pm AB+B^{2}\).
   \end{enumerate}
 \item con \emph{quattro} termini analizzare se è
   \begin{enumerate}
@@ -1931,4 +1953,3 @@ a^{2}x^2+2ax^2-3x^2-4a^{2}-8a+12 =
 &=(x+2)(x-2)(a-1)(a+3)\\
 \end{align*}
 \end{esempio}
-

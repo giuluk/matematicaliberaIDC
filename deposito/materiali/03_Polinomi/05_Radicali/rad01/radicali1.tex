@@ -1,10 +1,23 @@
-% (c)~2012 Dimitrios Vrettos - d.vrettos@gmail.com
+% % (c)~2012 Dimitrios Vrettos - d.vrettos@gmail.com
 % (c)~2014 Claudio.carboncinii - claudio.carboncini@gmail.com
 % (c) 2014 Daniele Zambelli - daniele.zambelli@gmail.com
 
 \input{\folder radicali1_grafici}
 
 \chapter{Radicali}
+
+\inicapitolo{
+\begin{itemize}[left=0mm, nosep]
+\item  potenza e radice sono operazioni inverse l'una dell'altra;
+\item un'infinità di radici non ha risultato reale, ma di altre radici
+consideriamo solo uno dei risultati possibili;
+\item \(\sqrt{2}\) è un numero speciale per più di un motivo;
+\item operazioni e espressioni con i radicali;
+\item i numeri irrazionali e i numeri reali;
+\item la retta cartesiana è un buon modello per l'insieme dei reali;
+\item il valore assoluto, le sue proprietà, le funzioni associate.
+\end{itemize}
+}
 
 \section{Dalle potenze alle radici}
 \label{sec:radicali_potenze_radici}
@@ -100,9 +113,9 @@ chiamiamo:}
 \(b\): ~~ \emph{radice}.
 }\\[.5em]
 \normalsize
-Osserviamo che, come nelle potenze usiamo la stessa parola per indicare 
-l'operazione e il risultato dell'operazione, si deve capire dal contesto il 
-significato della parola ``radice''.
+Osserviamo che, come nelle potenze, usiamo la stessa parola per indicare
+l'operazione e il risultato dell'operazione: quindi si deve capire dal
+contesto il significato della parola ``radice''.
 
 Per quanto detto, potremmo, in prima approssimazione,  dare la seguente 
 definizione: 
@@ -131,7 +144,7 @@ Usando la definizione precedente calcola le seguenti radici:
 Affrontiamo con un po' di giusta pignoleria i quattro problemi:
 \begin{enumerate}
 \item Vogliamo trovare il numero che elevato alla 
-quarta dia come risultato~\(-16\): \(x^4=-16\)
+quarta dia come risultato~\(-16\):\quad \(x^4=-16\)
 
 Se ci ricordiamo le riflessioni fatte sulle potenze, dovrebbe tornarci alla 
 mente che una potenza con esponente pari è sempre positiva: nessun numero 
@@ -1649,8 +1662,8 @@ positivo.
 %  \end{esempio}
 % % 
 
-La radice di un'altra radice è uguale a una radice con lo stesso radicando 
-che ha per indice il prodotto degli indici delle radici: 
+La radice di un'altra radice è uguale a una radice con lo stesso 
+radicando che ha per indice il prodotto degli indici delle radici: 
 \(\sqrt[m]{\sqrt[n]a}=\sqrt[m\cdot n]a\). 
 Anche questa proprietà si può spiegare con le proprietà delle potenze 
 trasformando la radice in potenza con esponente frazionario: 
@@ -1670,14 +1683,15 @@ Potenza di radice e radice di radice.
 \end{esempio}
 
 \begin{esempio}{}{}
-Data l'espressione \(E=\sqrt[5]{3\cdot\sqrt{2}}\) ridurla a unico radicale.
+Data l'espressione \(E=\sqrt[5]{3\cdot\sqrt{2}}\) ridurla a unico 
+radicale.
 
 In questo caso non possiamo subito applicare la regola annunciata, ma 
-dobbiamo  portare il fattore esterno dentro la radice più interna ottenendo 
-\(\sqrt[5]{\sqrt{3^2 \cdot 2}}=\sqrt[10]{18}\).
+dobbiamo  portare il fattore esterno dentro la radice più interna 
+ottenendo \(\sqrt[5]{\sqrt{3^2 \cdot 2}}=\sqrt[10]{18}\).
 
-Osserviamo che l'espressione \(E=\sqrt[5]{3+\sqrt{2}}\) non si può ridurre 
-ad unico radicale, se non sotto determinate condizioni.
+Osserviamo che l'espressione \(E=\sqrt[5]{3+\sqrt{2}}\) non si può 
+ridurre ad unico radicale, se non sotto determinate condizioni.
 % che analizzeremo in seguito.
 \end{esempio}
 % 
@@ -1688,27 +1702,26 @@ ad unico radicale, se non sotto determinate condizioni.
 \subsection{Somma di radicali}\indc{radici}{somma di radicali}
 % \label{sec:radicali_somma}
 
-Si dice \emph{radicale} un'espressione del tipo \(a\sqrt[n]b\) con \(a\) e 
-\(b\) numeri reali, \(b \geqslant 0\) ed \(n\in \N\). 
+Si dice \emph{radicale} un'espressione del tipo \(a\sqrt[n]b\) con 
+\(a\) e \(b\) numeri reali, \(b \geqslant 0\) ed \(n\in \N\). 
 Il numero \(a\) prende il nome di \emph{coefficiente} del radicale.
 
-Operare con i radicali è simile al modo di operare con i monomi. Infatti è 
-possibile effettuare somme algebriche soltanto se i radicali hanno lo 
-stesso 
-indice e lo stesso radicando, mentre si possono sempre effettuare 
-moltiplicazioni e divisioni dopo averli ridotti allo stesso indice.
+Operare con i radicali è simile al modo di operare con i monomi. 
+Infatti è possibile effettuare somme algebriche soltanto se i radicali 
+hanno lo stesso indice e lo stesso radicando, mentre si possono sempre 
+effettuare moltiplicazioni e divisioni dopo averli ridotti allo stesso 
+indice.
 \begin{definizione}{}{}
-Due radicali si dicono \textbf{simili} se hanno lo stesso indice e lo stesso
-radicando.
+Due radicali si dicono \textbf{simili} se hanno lo stesso indice e lo 
+stesso radicando.
 \end{definizione}
 
-È possibile effettuare somme algebriche soltanto se i radicali sono simili, 
-si eseguono le somme allo stesso modo in cui si eseguono le somme 
-algebriche 
-dei monomi.
+È possibile effettuare somme algebriche soltanto se i radicali sono 
+simili, si eseguono le somme allo stesso modo in cui si eseguono le 
+somme algebriche dei monomi.
 
-Attenzione l'operazione \(\sqrt{2}+\sqrt{3}=\sqrt 5\)\, è errata in quanto i 
-radicali addendi non sono simili.
+Attenzione l'operazione \(\sqrt{2}+\sqrt{3}=\sqrt 5\)\, è errata in 
+quanto i radicali addendi non sono simili.
 
 % \newpage %-----------------------------------------------
 
@@ -2621,7 +2634,7 @@ Potenza di radice e radice di radice.
 % \end{htmulticols}
 \end{esempio}
 
-\pagebreak %------------------------------------------------
+% \pagebreak %------------------------------------------------
 
 \paragraph{Somma di radicali}~
 
@@ -2647,6 +2660,7 @@ anche in questo caso non cambiano le \(\CE\)
 \end{esempio}
 % 
 
+\needspace{7\baselineskip}
 \paragraph{Razionalizzazione del denominatore di una frazione}~
 
 \begin{esempi}{}{}

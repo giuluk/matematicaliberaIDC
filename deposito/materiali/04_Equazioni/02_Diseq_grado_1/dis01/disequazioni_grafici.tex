@@ -69,14 +69,14 @@
 \newcommand{\segnidec}[2][x]{% Retta decrescente
   \disegno[5]{
     \rettdec[#1]{#2}
-    \segni{+}{-}
+    \duesegni{+}{-}
   }
 }
 
 \newcommand{\segnicre}[2][x]{% Retta crescente
   \disegno[5]{
     \rettcre[#1]{#2}
-    \segni{-}{+}
+    \duesegni{-}{+}
   }
 }
 \newcommand{\segnipos}[1][x]{% segni retta positiva
@@ -106,42 +106,42 @@
 }
 \makeatother
 
-\newcommand{\trespolosegnidisREMOVE}[6]{% Deprecato: usare trespolo!
-  % Esempio di chiamata:
-  %% \trespolosegni{5}{1.2}{3}{f(x), g(x), f(x)\cdot g(x)}{2}{2, 5}
-  \def \dimx{#1}
-  \def \dimy{#2}
-  \def \numassi{#3}
-  \def \labassi{#4}
-  \def \numpunti{#5}
-  \def \labpunti{#6}
-  \foreach \li [count = \i] in \labassi{
-    \assex{-\dimx}{\dimx}{-\i*\dimy}
-    \node at (-\dimx, -\i*\dimy) (posy) [above left=-.2] {$\li$};
-  }
-  \pgfmathparse{\dimx*2 / (\numpunti+1)} \let\largx\pgfmathresult
-  \foreach \li [count = \i] in \labpunti{
-    \draw (\i*\largx-\dimx, -\numassi * \dimy) -- (\i*\largx-\dimx, 0)
-          node [above] {$\li$};
-  }
-}
+% \newcommand{\trespolosegnidisREMOVE}[6]{% Deprecato: usare trespolo!
+%   % Esempio di chiamata:
+%   %% \trespolosegni{5}{1.2}{3}{f(x), g(x), f(x)\cdot g(x)}{2}{2, 5}
+%   \def \dimx{#1}
+%   \def \dimy{#2}
+%   \def \numassi{#3}
+%   \def \labassi{#4}
+%   \def \numpunti{#5}
+%   \def \labpunti{#6}
+%   \foreach \li [count = \i] in \labassi{
+%     \assex{-\dimx}{\dimx}{-\i*\dimy}
+%     \node at (-\dimx, -\i*\dimy) (posy) [above left=-.2] {$\li$};
+%   }
+%   \pgfmathparse{\dimx*2 / (\numpunti+1)} \let\largx\pgfmathresult
+%   \foreach \li [count = \i] in \labpunti{
+%     \draw (\i*\largx-\dimx, -\numassi * \dimy) -- (\i*\largx-\dimx, 0)
+%           node [above] {$\li$};
+%   }
+% }
 
 \newcommand{\segniprodottoa}{% Segno del prodotto di due funzioni
-  \foreach \x/\y in {+1.67/-.6, -1.67/-1.7, -1.67/-2.8, +1.67/-2.8}
+  \foreach \x/\y in {4/-.6, 2/-1.6, 4/-2.6, 2/-2.6}
     \cerchietto{\x}{\y}
-  \foreach \x/\s in {-3.5/-, 0/-, 3.5/+}
+  \foreach \x/\s in {1/-, 3/-, 5/+}
     \node at (\x, -1.1) [above] {$\s$};
-  \foreach \x/\s in {-3.5/-, 0/+, 3.5/+}
-    \node at (\x, -2.2) [above] {$\s$};
-  \foreach \x/\s in {-3.5/+, 0/-, 3.5/+}
-    \node at (\x, -3.3) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/+}
+    \node at (\x, -2.1) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/-, 5/+}
+    \node at (\x, -3.0) [above] {$\s$};
 }
 
 \newcommand{\segnoprodottoa}{% Segno del prodotto di due funzioni
   \disegno{
-    \trespolo*{5}{1.1}
+    \trespolo*{6}{-3}
               {-1/x-4, -2/x+2, -3/\tonda{x-4}\tonda{x+2}}
-              {3.3/-2, 6.6/+4}
+              {2/-2, 4/+4}
     \segniprodottoa
   }
 }
@@ -149,31 +149,31 @@
 \newcommand{\segnoprodottoas}{
 % Segno del prodotto di due funzioni indicate in modo simbolico
   \disegno{
-    \trespolo*{5}{1.1}
+    \trespolo*{6}{-3}
               {-1/f_1(x), -2/f_2(x), -3/f(x) = f_1(x) \cdot f_2(x)}
-              {3.3/-2, 6.6/+4}
+              {2/-2, 4/+4}
     \segniprodottoa
   }
 }
 
 \newcommand{\segniquozientea}{% Segni del quoziente di due funzioni
-  \foreach \x/\y in {+1.67/-.6, +1.67/-2.8}
+  \foreach \x/\y in {4/-.6, 4/-2.6}
     \cerchietto{\x}{\y}
-  \foreach \x/\y in {-1.67/-1.7, -1.67/-2.8}
+  \foreach \x/\y in {2/-1.6, 2/-2.6}
     \crocetta{\x}{\y}
-  \foreach \x/\s in {-3.5/+, 0/+, 3.5/-}
+  \foreach \x/\s in {1/+, 3/+, 5/-}
     \node at (\x, -1.1) [above] {$\s$};
-  \foreach \x/\s in {-3.5/-, 0/+, 3.5/+}
-    \node at (\x, -2.2) [above] {$\s$};
-  \foreach \x/\s in {-3.5/-, 0/+, 3.5/-}
-    \node at (\x, -3.3) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/+}
+    \node at (\x, -2.1) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/-}
+    \node at (\x, -3.) [above] {$\s$};
 }
 
 \newcommand{\segnoquozientea}{% Segno del quoziente di due funzioni
   \disegno{
-    \trespolo*{5}{1.1}
+    \trespolo*{6}{-3}
               {-1/-3x-4, -2/2x+7, -3/\tonda{-3x-4} / \tonda{2x+7}}
-              {3.3/-\frac{7}{2}, 6.6/-\frac{4}{3}}
+              {2/-\frac{7}{2}, 4/-\frac{4}{3}}
     \segniquozientea
   }
 }
@@ -181,100 +181,98 @@
 \newcommand{\segnoquozienteas}{
 % Segno del quoziente di due funzioni indicate in modo simbolico
   \disegno{
-    \trespolo*{5}{1.1}
-              {-1/num(x), -2/den(x), -3/f(x) = num(x) / den(x)}
-              {3.3/-\frac{7}{2}, 6.6/-\frac{4}{3}}
+    \trespolo*{6}{-3}
+              {-1/N, -2/D, -3/F}
+              {2/-\frac{7}{2}, 4/-\frac{4}{3}}
     \segniquozientea
   }
 }
 
 \newcommand{\segnimista}{% Segni del prodotto e quoziente di più funzioni
-  \foreach \x/\y in {+0/-0.6, 2.67/-1.7, -2.67/-2.8,
-                     +0/-6.1, 2.67/-6.1, -2.67/-6.1}
+  \foreach \x/\y in {6/-0.6, 8/-1.6, 4/-2.6,
+                     6/-5.6, 8/-5.6, 4/-5.6}
     \cerchietto{\x}{\y};
-  \foreach \x/\y in {-5.33/-5.0, 5.33/-3.9,
-                     -5.33/-6.1, 5.33/-6.1}
+  \foreach \x/\y in {10/-3.6, 2/-4.6,
+                     10/-5.6, 2/-5.6}
     \crocetta{\x}{\y};
-  \foreach \x/\s in {-6.67/-, -4/-, -1.33/-, +1.33/+, +4/+, +6.67/+}
-    \node at (\x, -1.1) [above] {$\s$};
-  \foreach \x/\s in {-6.67/+, -4/+, -1.33/+, +1.33/+, +4/-, +6.67/-}
-    \node at (\x, -2.2) [above] {$\s$};
-  \foreach \x/\s in {-6.67/-, -4/-, -1.33/+, +1.33/+, +4/+, +6.67/+}
-    \node at (\x, -3.3) [above] {$\s$};
-  \foreach \x/\s in {-6.67/-, -4/-, -1.33/+, +1.33/+, +4/+, +6.67/+}
-    \node at (\x, -3.3) [above] {$\s$};
-  \foreach \x/\s in {-6.67/-, -4/-, -1.33/-, +1.33/-, +4/-, +6.67/+}
-    \node at (\x, -4.4) [above] {$\s$};
-  \foreach \x/\s in {-6.67/-, -4/+, -1.33/+, +1.33/+, +4/+, +6.67/+}
-    \node at (\x, -5.5) [above] {$\s$};
-  \foreach \x/\s in {-6.67/+, -4/-, -1.33/+, +1.33/-, +4/+, +6.67/-}
-    \node at (\x, -6.6) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/-, 5/-, 7/+, 9/+, 11/+}
+    \node at (\x, -1) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/+, 5/+, 7/+, 9/-, 11/-}
+    \node at (\x, -2) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/-, 5/+, 7/+, 9/+, 11/+}
+    \node at (\x, -3) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/-, 5/-, 7/-, 9/-, 11/+}
+    \node at (\x, -4) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/+, 7/+, 9/+, 11/+}
+    \node at (\x, -5) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/-, 5/+, 7/-, 9/+, 11/-}
+    \node at (\x, -6) [above] {$\s$};
 }
 
 \newcommand{\segnomista}{% Segno del prodotto e quoziente di più funzioni
   \disegno{
-    \trespolo*{8}{1.1}
+    \trespolo*{12}{-6}
               {-1/x, -2/-2x+1, -3/2x+1, -4/x-2, -5/x+5, -6/f(x)}
-              {2.6/-5, 5.3/-\frac{1}{2}, 8/0, 10.6/+\frac{1}{2}, 13.4/+2}
+              {2/-5, 4/-\frac{1}{2}, 6/0, 8/+\frac{1}{2}, 10/+2}
     \segnimista
   }
 }
 
 \newcommand{\segnimistadisa}{% Segni del prodotto e quoziente di più funzioni
-  \foreach \x/\y in {+3/-0.6, 0/-1.7,
-                     +3/-3.9, 0/-3.9}
+  \foreach \x/\y in {4/-0.6, 6/-1.6,
+                     4/-3.6, 6/-3.6}
     \cerchietto{\x}{\y};
-  \foreach \x/\y in {-3/-2.8, -3/-3.9}
+  \foreach \x/\y in {2/-2.6, 2/-3.6}
     \crocetta{\x}{\y};
-  \foreach \x/\s in {-4.5/-, -1.5/-, +1.5/-, +4.5/+}
-    \node at (\x, -1.1) [above] {$\s$};
-  \foreach \x/\s in {-4.5/+, -1.5/+, +1.5/-, +4.5/-}
-    \node at (\x, -2.2) [above] {$\s$};
-  \foreach \x/\s in {-4.5/-, -1.5/+, +1.5/+, +4.5/+}
-    \node at (\x, -3.3) [above] {$\s$};
-  \foreach \x/\s in {-4.5/+, -1.5/-, +1.5/+, +4.5/-}
-    \node at (\x, -4.4) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/-, 5/-, 7/+}
+    \node at (\x, -1) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/+, 5/-, 7/-}
+    \node at (\x, -2) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/+, 7/+}
+    \node at (\x, -3) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/-, 5/+, 7/-}
+    \node at (\x, -4) [above] {$\s$};
 }
 
 \newcommand{\segnomistadisa}{% Segno del prodotto e quoziente di più funzioni
   \disegno{
-    \trespolo*{6}{1.1}
+    \trespolo*{8}{-4}
               {-1/x-2, -2/-2x+1, -3/x+3, -4/f(x)}
-              {3/-3, 6/+\frac{1}{2}, 9/+2}
+              {2/-3, 4/+\frac{1}{2}, 6/+2}
     \segnimistadisa
   }
 }
 
 \newcommand{\segnifratta}{% Segni del quoziente di due funzioni
-  \foreach \x/\y in {+1.67/-.6, +1.67/-2.8}
+  \foreach \x/\y in {4/-.6, 4/-2.6}
     \cerchietto{\x}{\y}
-  \foreach \x/\y in {-1.67/-1.7, -1.67/-2.8}
+  \foreach \x/\y in {2/-1.6, 2/-2.6}
     \crocetta{\x}{\y}
-  \foreach \x/\s in {-3.5/+, 0/+, 3.5/-}
-    \node at (\x, -1.1) [above] {$\s$};
-  \foreach \x/\s in {-3.5/-, 0/+, 3.5/+}
-    \node at (\x, -2.2) [above] {$\s$};
-  \foreach \x/\s in {-3.5/-, 0/+, 3.5/-}
-    \node at (\x, -3.3) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/+, 5/-}
+    \node at (\x, -1) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/+}
+    \node at (\x, -2) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/-}
+    \node at (\x, -3) [above] {$\s$};
 }
 
 \newcommand{\segnofratta}{% Segno del quoziente di due funzioni
   \disegno{
-    \trespolo*{5}{1.1}
-              {-1/-3x+4, -2/x+2, -3/f(x)}
-              {3.3/-2, 6.7/+3}
+    \trespolo*{6}{-3}
+              {-1/-2x+6, -2/x+2, -3/f(x)}
+              {2/-2, 4/+3}
     \segnifratta
   }
 }
 
 \newcommand{\soluzionefratta}{% Trespolo con soluzione di una dis. fratta
   \disegno{
-    \trespolo*{5}{1.1}
-              {-1/-3x+4, -2/x+2, -3/f(x)}
-              {3.3/-2, 6.7/+3}
+    \trespolo*{6}{-3}
+              {-1/-2x+6, -2/x+2, -3/f(x)}
+              {2/-2, 4/+3}
     \segnifratta
-    \ray{-3.3}{-5}{-1.67}{}{white}
-    \ray{-3.3}{+5}{+1.67}{}{blue}
+    \ray{-3}{0}{2}{}{white}
+    \ray{-3}{6}{4}{}{blue}
   }
 }
 
@@ -297,27 +295,27 @@
   }
 }
 
-\newcommand{\trespoloREMOVE}[4]{% Deprecato: usare trespolo!
-  % Esempio di chiamata:
-  % \disegno{
-  %   \trespolo{9}{-6}
-  %                      {-1/$A$, -2/$B$, -3/$C$, 
-  %                       -4/$A \cup B$, -5/$B \cap C$, -6/$A - B$}
-  %                      {1.5/-5, 3/-2, 4.5/3, 6/6, 7.5/9}
-  % }
-  \def \dimx{#1}
-  \def \dimy{#2}
-  \def \eassi{#3}
-  \def \epunti{#4}
-   \foreach \posy/\ea in {#3}{
-     \node at (0, \posy) [left] {\ea};
-%      \assex{0}{\dimx}{\posy}          % Perché incricca il compilatore???
-     \assev{0}{\posy}{\dimx}{\posy}
-%      \asse{0}{\dimx}{\posy}{$x$}    % Perché incricca il compilatore???
-   }
-   \foreach \i/\e in {#4}
-     \draw (\i, \dimy) -- (\i, -0.5) node [above] {\e};
-}
+% \newcommand{\trespoloREMOVE}[4]{% Deprecato: usare trespolo!
+%   % Esempio di chiamata:
+%   % \disegno{
+%   %   \trespolo{9}{-6}
+%   %                      {-1/$A$, -2/$B$, -3/$C$, 
+%   %                       -4/$A \cup B$, -5/$B \cap C$, -6/$A - B$}
+%   %                      {1.5/-5, 3/-2, 4.5/3, 6/6, 7.5/9}
+%   % }
+%   \def \dimx{#1}
+%   \def \dimy{#2}
+%   \def \eassi{#3}
+%   \def \epunti{#4}
+%    \foreach \posy/\ea in {#3}{
+%      \node at (0, \posy) [left] {\ea};
+% %      \assex{0}{\dimx}{\posy}          % Perché incricca il compilatore???
+%      \assev{0}{\posy}{\dimx}{\posy}
+% %      \asse{0}{\dimx}{\posy}{$x$}    % Perché incricca il compilatore???
+%    }
+%    \foreach \i/\e in {#4}
+%      \draw (\i, \dimy) -- (\i, -0.5) node [above] {\e};
+% }
 
 \newcommand {\sistemaa}{% Grafo per operazioni tra intervalli
   \disegno{
@@ -335,21 +333,21 @@
 }
 
 \newcommand{\segnioss}{% Segni del quoziente di due funzioni
-  \foreach \x/\y in {+1./-.6, +1./-2.8}
+  \foreach \x/\y in {4/-.6, 4/-2.6}
     \cerchietto{\x}{\y}
-  \foreach \x/\y in {-1./-1.7, -1./-2.8}
+  \foreach \x/\y in {2/-1.6, 2/-2.6}
     \crocetta{\x}{\y}
-  \foreach \x/\s in {-2/+, 0/+, 2/-}
-    \node at (\x, -1.1) [above] {$\s$};
-  \foreach \x/\s in {-2/-, 0/+, 2/+}
-    \node at (\x, -2.2) [above] {$\s$};
-  \foreach \x/\s in {-2/-, 0/+, 2/-}
-    \node at (\x, -3.3) [above] {$\s$};
+  \foreach \x/\s in {1/+, 3/+, 5/-}
+    \node at (\x, -1) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/+}
+    \node at (\x, -2) [above] {$\s$};
+  \foreach \x/\s in {1/-, 3/+, 5/-}
+    \node at (\x, -3) [above] {$\s$};
 }
 
 \newcommand{\ossegni}{% Segno del quoziente di due funzioni
   \disegno{
-    \trespolo*{3}{1.1}
+    \trespolo*{6}{-3}
               {-1/f(x), -2/g(x), -3/f(x)/g(x)}
               {2/a, 4/b}
     \segnioss
@@ -378,9 +376,13 @@
     \ray{-1}{6}{2}{}{blue}
     \ray{-2}{0}{4}{}{white}
     \inti{-3}{2}{4}{}{}{blue}{white}
-  \def \taba{10}
-  \def \tabb{17}
-  \node at (\taba, -3) {$-\dfrac{13}{2} \le x < +\dfrac{2}{9}$}; 
+  \def \taba{9}
+  \def \tabb{15}
+  \node at (\taba, -3) {$-\dfrac{13}{2} \leqslant x < +\dfrac{2}{9}$}; 
   \node at (\tabb, -3) {$\intervca{-\dfrac{13}{2}}{+\dfrac{2}{9}}$};
   }
+}
+
+\newcommand{\disinterva}{% 
+  \disegno{\raylconasse{0}{5}{2.5}{+3}{white}{x}}
 }
